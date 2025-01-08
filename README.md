@@ -5,4 +5,4 @@ Stedman Halliday on the Web
 ```
 bundle exec jekyll serve --baseurl="" --watch
 ```
-aliased to `jekyll-watch`
+aliased to `jekyll-run`
