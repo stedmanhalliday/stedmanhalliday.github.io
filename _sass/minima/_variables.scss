@@ -1,0 +1,45 @@
+@use "sass:color";
+
+// Define defaults for each variable.
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit:     30px !default;
+
+$text-color:       #d0d0d0 !default;
+$background-color: #101010 !default;
+$brand-color:      #61B3AF !default;
+
+$grey-color:       #808080 !default;
+$grey-color-light: color.scale($grey-color, $lightness: 40%) !default;
+$grey-color-dark:  color.scale($grey-color, $lightness: -25%) !default;
+
+$table-text-align: left !default;
+
+$content-width:    800px !default;
+$on-palm:          600px !default;
+$on-laptop:        800px !default;
+
+// Common placeholder selectors
+%vertical-rhythm {
+  margin-bottom: $spacing-unit * 0.5;
+}
+
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+} 
