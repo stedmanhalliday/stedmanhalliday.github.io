@@ -4,9 +4,9 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
+  background-color: #e8e8e8;
   min-height: $spacing-unit * 1.865;
+  padding: 0 32px;
 
   // Positioning context for the mobile navigation icon
   position: relative;

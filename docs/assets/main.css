@@ -220,9 +220,9 @@ table td {
  * Site header
  */
 .site-header {
-  border-top: 5px solid #606060;
-  border-bottom: 1px solid rgb(178.8, 178.8, 178.8);
+  background-color: #e8e8e8;
   min-height: 55.95px;
+  padding: 0 32px;
   position: relative;
 }
 
@@ -708,3 +708,5 @@ table td {
 .highlight .gi {
   color: #a6e22e;
 }
+
+/*# sourceMappingURL=main.css.map */
