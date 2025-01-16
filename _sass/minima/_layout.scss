@@ -178,7 +178,7 @@
  * Page content
  */
 .page-content {
-  padding: $spacing-unit 0;
+  padding: calc(2.5*$spacing-unit) 0;
   flex: 1;
 }
 
