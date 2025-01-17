@@ -116,15 +116,7 @@ a {
 
   &:hover {
     color: $text-color;
-    text-decoration: underline;
-  }
-
-  .social-media-list &:hover {
     text-decoration: none;
-
-    .username {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -155,7 +147,7 @@ code {
   @include relative-font-size(0.9375);
   border: 1px solid rgba($grey-color-dark, 0.5);
   border-radius: 4px;
-  background-color: #0d0f12;
+  background-color: $background-color-dark;
 }
 
 code {

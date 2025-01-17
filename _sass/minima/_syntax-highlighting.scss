@@ -4,16 +4,16 @@
  * Syntax highlighting styles
  */
 .highlight {
-  background: #0d0f12;
+  background: $background-color-dark;
   @extend %vertical-rhythm;
 
   .highlighter-rouge & {
-    background: #0d0f12;
+    background: $background-color-dark;
   }
 
 
-  pre { background-color: #0d0f12; }
-  .hll { background-color: #0d0f12; }
+  pre { background-color: $background-color-dark; }
+  .hll { background-color: $background-color-dark; }
   .c { color: #75715e } /* Comment */
   .err { color: #960050; background-color: #1e0010 } /* Error */
   .k { color: #66d9ef } /* Keyword */
