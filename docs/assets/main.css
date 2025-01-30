@@ -222,6 +222,8 @@ table td {
 }
 
 .site-title {
+  display: flex;
+  align-items: center;
   line-height: 64px;
   margin-bottom: 0;
   float: left;
@@ -234,6 +236,13 @@ table td {
 }
 .site-title:hover {
   color: #606060;
+}
+.site-title:hover .monogram {
+  fill: #606060;
+}
+.site-title .monogram {
+  margin-right: 0.5rem;
+  fill: #0d0f12;
 }
 
 .site-nav {
