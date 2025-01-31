@@ -1,12 +1,12 @@
 <header class="site-header" role="banner">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
+    {% assign default_paths = site.pages | map: "path" %}
+    {% assign page_paths = site.header_pages | default: default_paths %}
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">
       {% include icons/monogram.svg %}
       <span>{{ site.title | escape }}</span>
     </a>
 
-    {%- if page_paths -%}
+    {% if page_paths %}
       <nav class="site-nav">
         <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
@@ -18,10 +18,10 @@
         </label>
 
         <div class="trigger">
-          {%- for link in site.data.navigation -%}
+          {% for link in site.data.navigation %}
           <a class="page-link" href="{{ link.url | relative_url }}">{{ link.text | escape }}</a>
-          {%- endfor -%}
+          {% endfor %}
         </div>
       </nav>
-    {%- endif -%}
+    {% endif %}
 </header>
