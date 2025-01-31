@@ -148,6 +148,19 @@
     height: 100vh;
 }
 
+.connect-link {
+    & .connect-icon {
+        fill: $background-color;
+        transition: 0.25s;
+    }
+
+    &:hover {
+        & .connect-icon {
+            fill: $grey-color-dark;
+        }
+    }
+}
+
 /**
  * Site footer
  */

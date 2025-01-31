@@ -2,7 +2,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var options = {
-            strings: ['a&nbsp;designer.', 'a&nbsp;programmer.', 'an&nbsp;entrepreneur.'],
+            strings: ['a&nbsp;designer.', 'a&nbsp;developer.', 'an&nbsp;artist.', 'an&nbsp;entrepreneur.', 'a&nbsp;trainer.', 'a&nbsp;tinkerer.', 'a&nbsp;friend :)'],
             typeSpeed: 32,
             backDelay: 3200,
             backSpeed: 32,
@@ -58,7 +58,13 @@ BEGIN STYLES
     .col2 {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 2rem;
+        grid-gap: 3rem;
+    }
+
+    .connect-icons {
+        display: grid;
+        grid-template-columns: 2.5rem 2.5rem 2.5rem;
+        grid-gap: 1.5rem;
     }
 
     @media screen and (max-width: 1200px) {
@@ -128,11 +134,15 @@ BEGIN MARKUP
             <div class="col2">
                 <div>
                     <h2 class="divider-thin">I am currently...</h2>
-                    <p>planning an experimental 12-week apprenticeship to radically improve health and wellness.</p>
+                    <p>planning an experimental 12-week health and wellness apprenticeship.</p>
                 </div>
                 <div>
                     <h2 class="divider-thin">Let's connect.</h2>
-                    <p>Email me, connect with me on LinkedIn, or follow me on X (Twitter).</p>
+                    <div class="connect-icons">
+                        <a class="connect-link" title="Email" href="mailto:{{site.email}}?subject=Let's%20connect.">{% include icons/icon-email-circle.svg %}</a>
+                        <a class="connect-link" title="LinkedIn" href="https://linkedin.com/in/stedmanhalliday" target="_blank">{% include icons/icon-linkedin-circle.svg %}</a>
+                        <a class="connect-link" title="X (Twitter)" href="https://x.com/stedmanhalliday" target="_blank">{% include icons/icon-x-circle.svg %}</a>
+                    </div>
                 </div>
             </div>
         </div>

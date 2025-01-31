@@ -387,6 +387,14 @@ table td {
   height: 100vh;
 }
 
+.connect-link .connect-icon {
+  fill: #111418;
+  transition: 0.25s;
+}
+.connect-link:hover .connect-icon {
+  fill: #64748b;
+}
+
 /**
  * Site footer
  */
