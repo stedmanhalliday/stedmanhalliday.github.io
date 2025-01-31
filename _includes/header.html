@@ -19,7 +19,7 @@
 
         <div class="trigger">
           {% for link in site.data.navigation %}
-          <a class="page-link" href="{{ link.url | relative_url }}">{{ link.text | escape }}</a>
+          <a class="page-link {% if link.url == page.url %}current{% endif %}" href="{{ link.url | relative_url }}">{{ link.text | escape }}</a>
           {% endfor %}
         </div>
       </nav>

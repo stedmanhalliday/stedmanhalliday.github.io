@@ -304,6 +304,21 @@ table td {
 .site-nav .page-link:hover {
   color: #64748b;
 }
+.site-nav .page-link.current {
+  position: relative;
+}
+.site-nav .page-link.current::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: rgb(184.0751046025, 192.2391213389, 203.9748953975);
+}
 .site-nav .page-link:not(:last-child) {
   margin-right: 20px;
 }

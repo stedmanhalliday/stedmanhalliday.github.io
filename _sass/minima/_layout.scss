@@ -62,6 +62,23 @@
       color: $grey-color-dark;
     }
 
+    &.current {
+      position: relative;
+      // border-bottom: 2px solid black;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -.75rem;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        width: 8px;
+        height: 8px;
+        border-radius: 2px;
+        background: $grey-color-light;
+      }
+    }
+
     // Gaps between nav items, but not on the last one
     &:not(:last-child) {
       margin-right: 20px;
