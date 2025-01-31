@@ -84,7 +84,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var options = {
-            strings: ['a designer.', 'a programmer.', 'an entrepreneur.'],
+            strings: ['a&nbsp;designer.', 'a&nbsp;programmer.', 'an&nbsp;entrepreneur.'],
             typeSpeed: 32,
             backDelay: 3200,
             backSpeed: 32,
@@ -101,6 +101,10 @@ BEGIN STYLES
 <style type="text/css">
     .hero {
         background-color: #e8e8e8;
+        background-image: url("/assets/srh-portrait-bg.png");
+        background-position: -8vw bottom;
+        background-size: 88vh;
+        background-repeat: no-repeat;
         color: #0d0f12;
     }
 
@@ -111,13 +115,21 @@ BEGIN STYLES
         justify-content: center;
     }
 
+    .frame {
+        display: none;
+    }
+
     .copy {
-        transform: translateX(12.5%) translateY(-25%);
+        transform: translate(12.5%, -25%);
     }
 
     .heading {
         font-size: 2.5rem;
-        line-height: 1;
+        line-height: 1.2;
+    }
+
+    .break {
+        display: none;
     }
 
     .subheading {
@@ -130,7 +142,58 @@ BEGIN STYLES
         grid-gap: 2rem;
     }
 
-    @media screen and (max-width: 980px) {}
+    @media screen and (max-width: 1200px) {
+        .copy {
+            max-width: 36rem;
+            transform: translate(32%, -25%);
+        }
+
+        .heading {
+            font-size: 2rem;
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+        .hero {
+            background-image: none;
+        }
+
+        .wrapper {
+            align-items: center;
+        }
+
+        .frame {
+            display: block;
+        }
+
+        .copy {
+            transform: translate(8.5%, -12.5%);
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .wrapper {
+            justify-content: flex-start;
+            padding-top: 4rem;
+        }
+
+        .copy {
+            max-width: 100%;
+            transform: translate(0);
+        }
+
+        .heading {
+            height: 2em;
+        }
+
+        .break {
+            display: block;
+        }
+
+        .col2 {
+            display: block;
+        }
+    }
 </style>
 <!-- ***
 END STYLES
@@ -139,7 +202,83 @@ BEGIN MARKUP
 <section class="hero">
     <div class="wrapper">
         <div class="copy">
-            <h1 class="heading">Stedman Halliday is <span id="title"></span></h1>
+            <style>
+    @keyframes rotateSlash {
+        0% {
+            transform: rotate3d(0, 1, 0, 0deg);
+        }
+
+        12.5% {
+            transform: rotate3d(0, 1, 0, 360deg);
+        }
+
+        100% {
+            transform: rotate3d(0, 1, 0, 360deg);
+        }
+    }
+
+    .frame {
+        position: absolute;
+        z-index: -1;
+        transform: translate(-72%, -32%);
+        background-color: #e0e0e0;
+        padding-top: 1rem;
+        width: 8rem;
+        height: 7rem;
+        border: 1px solid rgb(184.0751046025, 192.2391213389, 203.9748953975);
+    }
+
+    .frame::before {
+        content: '';
+        position: absolute;
+        top: 17px;
+        left: -1rem;
+        width: 6px;
+        height: 6px;
+        background: #0d0f12;
+    }
+
+    .frame::after {
+        content: '/';
+        position: absolute;
+        top: -1.5rem;
+        left: -2px;
+        font-size: 2.5rem;
+        font-weight: 700;
+        animation: rotateSlash 4800ms linear infinite;
+    }
+
+    .avatar {
+        background-image: url("/assets/srh-portrait-bg.png");
+        background-size: 128%;
+        background-position: center top;
+        background-repeat: no-repeat;
+        height: 100%;
+    }
+
+    @media screen and (max-width: 767px) {
+        .frame {
+            position: static;
+            transform: translate(0);
+            margin-bottom: 2rem;
+        }
+
+        .frame::before {
+            left: 6.75rem;
+        }
+
+        .frame::after {
+            left: 7.5rem;
+        }
+    }
+</style>
+
+<div class="frame">
+    <div class="avatar">
+
+    </div>
+</div>
+            <h1 class="heading">Stedman Halliday is <br class="break" /><span id="title"></span></h1>
             <p class="subheading">I'm a technical generalist based in San Francisco creating values-aligned products,
                 brands, media, and experiences.</p>
             <div class="col2">

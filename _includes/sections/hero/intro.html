@@ -2,7 +2,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         var options = {
-            strings: ['a designer.', 'a programmer.', 'an entrepreneur.'],
+            strings: ['a&nbsp;designer.', 'a&nbsp;programmer.', 'an&nbsp;entrepreneur.'],
             typeSpeed: 32,
             backDelay: 3200,
             backSpeed: 32,
@@ -19,6 +19,10 @@ BEGIN STYLES
 <style type="text/css">
     .hero {
         background-color: #e8e8e8;
+        background-image: url("{{ 'assets/srh-portrait-bg.png' | relative_url }}");
+        background-position: -8vw bottom;
+        background-size: 88vh;
+        background-repeat: no-repeat;
         color: #0d0f12;
     }
 
@@ -29,13 +33,21 @@ BEGIN STYLES
         justify-content: center;
     }
 
+    .frame {
+        display: none;
+    }
+
     .copy {
-        transform: translateX(12.5%) translateY(-25%);
+        transform: translate(12.5%, -25%);
     }
 
     .heading {
         font-size: 2.5rem;
-        line-height: 1;
+        line-height: 1.2;
+    }
+
+    .break {
+        display: none;
     }
 
     .subheading {
@@ -48,7 +60,58 @@ BEGIN STYLES
         grid-gap: 2rem;
     }
 
-    @media screen and (max-width: 980px) {}
+    @media screen and (max-width: 1200px) {
+        .copy {
+            max-width: 36rem;
+            transform: translate(32%, -25%);
+        }
+
+        .heading {
+            font-size: 2rem;
+        }
+    }
+
+    @media screen and (max-width: 960px) {
+        .hero {
+            background-image: none;
+        }
+
+        .wrapper {
+            align-items: center;
+        }
+
+        .frame {
+            display: block;
+        }
+
+        .copy {
+            transform: translate(8.5%, -12.5%);
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .wrapper {
+            justify-content: flex-start;
+            padding-top: 4rem;
+        }
+
+        .copy {
+            max-width: 100%;
+            transform: translate(0);
+        }
+
+        .heading {
+            height: 2em;
+        }
+
+        .break {
+            display: block;
+        }
+
+        .col2 {
+            display: block;
+        }
+    }
 </style>
 <!-- ***
 END STYLES
@@ -57,7 +120,8 @@ BEGIN MARKUP
 <section class="hero">
     <div class="wrapper">
         <div class="copy">
-            <h1 class="heading">Stedman Halliday is <span id="title"></span></h1>
+            {% include avatar.html %}
+            <h1 class="heading">Stedman Halliday is <br class="break" /><span id="title"></span></h1>
             <p class="subheading">I'm a technical generalist based in San Francisco creating values-aligned products,
                 brands, media, and experiences.</p>
             <div class="col2">

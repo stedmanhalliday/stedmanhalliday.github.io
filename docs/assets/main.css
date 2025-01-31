@@ -265,8 +265,13 @@ table td {
 .site-header {
   background-color: #e8e8e8;
   min-height: 64px;
-  padding: 0 32px;
+  padding: 0 2rem;
   position: relative;
+}
+@media screen and (max-width: 600px) {
+  .site-header {
+    padding: 0 1rem;
+  }
 }
 
 .site-title {
