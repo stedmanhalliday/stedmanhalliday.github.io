@@ -307,17 +307,12 @@ table td {
 .site-nav .page-link.current {
   position: relative;
 }
-.site-nav .page-link.current::after {
-  content: "";
-  display: block;
+.site-nav .page-link.current::before {
+  content: "/";
   position: absolute;
-  bottom: -0.75rem;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  width: 8px;
-  height: 8px;
-  border-radius: 2px;
-  background: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  left: -0.5rem;
+  font-weight: 700;
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
 }
 .site-nav .page-link:not(:last-child) {
   margin-right: 20px;

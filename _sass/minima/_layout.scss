@@ -64,18 +64,13 @@
 
     &.current {
       position: relative;
-      // border-bottom: 2px solid black;
-      &::after {
-        content: '';
-        display: block;
+
+      &::before {
+        content: '/';
         position: absolute;
-        bottom: -.75rem;
-        left: 50%;
-        transform: translateX(-50%) rotate(45deg);
-        width: 8px;
-        height: 8px;
-        border-radius: 2px;
-        background: $grey-color;
+        left: -.5rem;
+        font-weight: 700;
+        color: $grey-color
       }
     }
 
