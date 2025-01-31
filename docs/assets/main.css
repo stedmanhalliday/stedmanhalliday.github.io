@@ -268,7 +268,7 @@ table td {
   padding: 0 2rem;
   position: relative;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .site-header {
     padding: 0 1rem;
   }
