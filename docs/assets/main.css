@@ -14,7 +14,7 @@ figure {
   margin-bottom: 16px;
 }
 
-.footer-col-wrapper:after, .wrapper:after {
+.wrapper:after {
   content: "";
   display: table;
   clear: both;
@@ -385,11 +385,8 @@ table td {
 .site-footer {
   background-color: #0d0f12;
   padding: 48px 0 16px;
-}
-
-.footer-heading {
-  font-size: 18px;
-  margin-bottom: 16px;
+  font-size: 14.08px;
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
 }
 
 .contact-list,
@@ -398,51 +395,6 @@ table td {
   margin-left: 0;
 }
 
-.footer-col-wrapper {
-  font-size: 15px;
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
-  margin-left: -16px;
-}
-
-.footer-col {
-  float: left;
-  margin-bottom: 16px;
-  padding-left: 16px;
-}
-
-.footer-col-1 {
-  width: -webkit-calc(35% - (32px / 2));
-  width: calc(35% - 32px / 2);
-}
-
-.footer-col-2 {
-  width: -webkit-calc(20% - (32px / 2));
-  width: calc(20% - 32px / 2);
-}
-
-.footer-col-3 {
-  width: -webkit-calc(45% - (32px / 2));
-  width: calc(45% - 32px / 2);
-}
-
-@media screen and (max-width: 800px) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (32px / 2));
-    width: calc(50% - 32px / 2);
-  }
-  .footer-col-3 {
-    width: -webkit-calc(100% - (32px / 2));
-    width: calc(100% - 32px / 2);
-  }
-}
-@media screen and (max-width: 600px) {
-  .footer-col {
-    float: none;
-    width: -webkit-calc(100% - (32px / 2));
-    width: calc(100% - 32px / 2);
-  }
-}
 /**
  * Page content
  */
