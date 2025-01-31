@@ -67,6 +67,23 @@ BEGIN STYLES
         grid-gap: 1.5rem;
     }
 
+    .connect-link {
+        transition: 0.25s;
+    }
+
+    .connect-link:hover {
+        transform: translateY(-2px);
+    }
+
+    .connect-link .connect-icon {
+        fill: #111418;
+        transition: 0.25s;
+    }
+
+    .connect-link:hover .connect-icon {
+        fill: #64748b;
+    }
+
     @media screen and (max-width: 1200px) {
         .copy {
             max-width: 36rem;
@@ -144,9 +161,13 @@ BEGIN MARKUP
                 <div>
                     <h2 class="divider-thin">Let's connect.</h2>
                     <div class="connect-icons">
-                        <a class="connect-link" title="Email" href="mailto:{{site.email}}?subject=Let's%20connect.">{% include icons/icon-email-circle.svg %}</a>
-                        <a class="connect-link" title="LinkedIn" href="https://linkedin.com/in/{{site.linkedin_username}}" target="_blank">{% include icons/icon-linkedin-circle.svg %}</a>
-                        <a class="connect-link" title="X (Twitter)" href="https://x.com/{{site.twitter_username}}" target="_blank">{% include icons/icon-x-circle.svg %}</a>
+                        <a class="connect-link" title="Email" href="mailto:{{site.email}}?subject=Let's%20connect.">{%
+                            include icons/icon-email-circle.svg %}</a>
+                        <a class="connect-link" title="LinkedIn"
+                            href="https://linkedin.com/in/{{site.linkedin_username}}" target="_blank">{% include
+                            icons/icon-linkedin-circle.svg %}</a>
+                        <a class="connect-link" title="X (Twitter)" href="https://x.com/{{site.twitter_username}}"
+                            target="_blank">{% include icons/icon-x-circle.svg %}</a>
                     </div>
                 </div>
             </div>
