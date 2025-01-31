@@ -138,6 +138,7 @@ h6 {
 a {
   color: #61B3AF;
   text-decoration: none;
+  transition: 0.25s;
 }
 a:visited {
   color: rgb(76.1948717949, 158.4051282051, 154.3948717949);
@@ -283,6 +284,7 @@ table td {
 .site-title .monogram {
   margin-right: 0.5rem;
   fill: #0d0f12;
+  transition: 0.25s;
 }
 
 .site-nav {
