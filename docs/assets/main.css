@@ -285,7 +285,7 @@ table td {
   letter-spacing: 0.048em;
 }
 .site-title, .site-title:visited {
-  color: #0d0f12;
+  color: #111418;
 }
 .site-title:hover {
   color: #64748b;
@@ -295,7 +295,7 @@ table td {
 }
 .site-title .monogram {
   margin-right: 0.5rem;
-  fill: #0d0f12;
+  fill: #111418;
   transition: 0.25s;
 }
 
@@ -310,8 +310,11 @@ table td {
   display: none;
 }
 .site-nav .page-link {
-  color: #0d0f12;
+  color: #111418;
   line-height: 64px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.024em;
 }
 .site-nav .page-link:hover {
   color: #64748b;
