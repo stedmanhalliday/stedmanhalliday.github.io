@@ -123,7 +123,7 @@ h6 {
 a {
     color: $accent-color;
     text-decoration: none;
-    transition: .25s;
+    transition: 0.25s;
 
     &:visited {
         color: color.scale($accent-color, $lightness: -15%);
@@ -244,4 +244,11 @@ table {
     td {
         border: 1px solid $grey-color-light;
     }
+}
+
+/**
+ * Dividers
+ */
+.divider-thin {
+    border-bottom: 1px solid $grey-color-light;
 }

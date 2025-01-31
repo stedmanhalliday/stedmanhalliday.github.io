@@ -79,13 +79,87 @@
 </header>
 
 
+    
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var options = {
+            strings: ['a designer.', 'a programmer.', 'an entrepreneur.'],
+            typeSpeed: 32,
+            backDelay: 3200,
+            backSpeed: 32,
+            showCursor: false,
+            loop: true
+        };
+        var typed = new Typed('#title', options);
+    });
+</script>
+<!-- ***
+END SCRIPTS
+BEGIN STYLES
+*** -->
+<style type="text/css">
+    .hero {
+        background-color: #e8e8e8;
+        color: #0d0f12;
+    }
+
+    .wrapper {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .copy {
+        transform: translateX(12.5%) translateY(-25%);
+    }
+
+    .heading {
+        font-size: 2.5rem;
+        line-height: 1;
+    }
+
+    .subheading {
+        font-size: 1.25rem;
+    }
+
+    .col2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+
+    @media screen and (max-width: 980px) {}
+</style>
+<!-- ***
+END STYLES
+BEGIN MARKUP
+*** -->
+<section class="hero">
+    <div class="wrapper">
+        <div class="copy">
+            <h1 class="heading">Stedman Halliday is <span id="title"></span></h1>
+            <p class="subheading">I'm a technical generalist based in San Francisco creating values-aligned products,
+                brands, media, and experiences.</p>
+            <div class="col2">
+                <div>
+                    <h2 class="divider-thin">I am currently...</h2>
+                    <p>planning an experimental 12-week apprenticeship to radically improve health and wellness.</p>
+                </div>
+                <div>
+                    <h2 class="divider-thin">Let's connect.</h2>
+                    <p>Email me, connect with me on LinkedIn, or follow me on X (Twitter).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
-    <div class="hero intro">
-    content
-</div>
-</div>
+        
       </div>
     </main>
 

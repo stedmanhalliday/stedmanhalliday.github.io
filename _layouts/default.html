@@ -7,6 +7,10 @@
 
     {% include sections/minima/header.html %}
 
+    {% if page.hero %}
+    {% include sections/hero/{{page.hero}}.html %}
+    {% endif %}
+
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}

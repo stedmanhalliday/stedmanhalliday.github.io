@@ -4,7 +4,7 @@
  * Site header
  */
 .site-header {
-  background-color: #e8e8e8;
+  background-color: $background-color-light;
   min-height: $spacing-unit * 2;
   padding: 0 32px;
 
@@ -70,7 +70,7 @@
         position: absolute;
         left: -.5rem;
         font-weight: 700;
-        color: $grey-color
+        color: $grey-color;
       }
     }
 
@@ -134,7 +134,12 @@
   }
 }
 
-
+/**
+ * Hero sections
+ */
+.hero {
+  height: 100vh;
+}
 
 /**
  * Site footer
