@@ -2,24 +2,67 @@
 permalink: /404.html
 layout: default
 ---
-
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var options = {
+      strings: ['Searching', 'Error: 404'],
+      typeSpeed: 32,
+      backDelay: 3200,
+      backSpeed: 32,
+      showCursor: true,
+      cursorChar: '_'
+    };
+    var typed = new Typed('.error', options);
+  });
+</script>
 <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
     max-width: 600px;
     text-align: center;
   }
+
   h1 {
     margin: 30px 0;
     font-size: 4em;
     line-height: 1;
     letter-spacing: -1px;
+    height: 1em;
+    animation: glitch 1.5s infinite alternate;
+  }
+
+  /* Glitch Animation */
+  @keyframes glitch {
+    0% {
+      text-shadow: 2px 2px #64748b, -2px -2px cyan;
+    }
+
+    20% {
+      text-shadow: -2px -2px #64748b, 2px 2px cyan;
+    }
+
+    40% {
+      text-shadow: 3px -3px #61B3AF, -3px 3px #64748b;
+    }
+
+    60% {
+      text-shadow: -3px 3px cyan, 3px -3px #64748b;
+    }
+
+    80% {
+      text-shadow: 4px 4px #e8e8e8, -4px -4px #64748b;
+    }
+
+    100% {
+      text-shadow: -4px -4px #64748b, 4px 4px cyan;
+    }
   }
 </style>
 
 <div class="container">
-  <h1>404</h1>
-
-  <p><strong>Page not found :(</strong></p>
+  <h1><span class="error"></span></h1>
+  <h2>Page not found</h2>
   <p>The requested page could not be found.</p>
+  <a class="back-link" href="/">Go Back Home</a>
 </div>
