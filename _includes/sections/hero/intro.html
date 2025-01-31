@@ -55,7 +55,7 @@ BEGIN STYLES
         font-size: 1.25rem;
     }
 
-    .col2 {
+    .hero .columns {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 3rem;
@@ -100,7 +100,7 @@ BEGIN STYLES
             background-image: none;
         }
 
-        .wrapper {
+        .hero .wrapper {
             align-items: center;
         }
 
@@ -118,7 +118,7 @@ BEGIN STYLES
             height: auto;
         }
 
-        .wrapper {
+        .hero .wrapper {
             justify-content: flex-start;
             padding: 2.5rem 1rem 4rem;
             height: auto;
@@ -137,7 +137,7 @@ BEGIN STYLES
             display: block;
         }
 
-        .col2 {
+        .hero .columns {
             display: block;
         }
     }
@@ -153,12 +153,12 @@ BEGIN MARKUP
             <h1 class="heading">Stedman Halliday is <br class="break" /><span id="title"></span></h1>
             <p class="subheading">I'm a technical generalist based in San Francisco creating values-aligned products,
                 brands, media, and experiences.</p>
-            <div class="col2">
-                <div>
+            <div class="columns">
+                <div class="column">
                     <h2 class="divider-thin">I am currently...</h2>
                     <p>planning an experimental 12-week health and wellness apprenticeship.</p>
                 </div>
-                <div>
+                <div class="column">
                     <h2 class="divider-thin">Let's connect.</h2>
                     <div class="connect-icons">
                         <a class="connect-link" title="Email" href="mailto:{{site.email}}?subject=Let's%20connect.">{%

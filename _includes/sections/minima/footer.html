@@ -1,18 +1,31 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ site.baseurl }}"></data>
+<footer class="site-footer">
 
   <div class="wrapper">
-      <div class="footer-col footer-col-1">
-        <p>
-          {% if site.author %}
-            {{ site.author | escape }}
-            {% else %}
-            {{ site.title | escape }}
-            {% endif %}
-        </p>
+    <div class="footer-monogram">{% include icons/monogram.svg %}</div>
+    <div class="columns">
+      <div class="column">
+        <div>
+          <h3>{% if site.author %}{{ site.author | escape }}{% else %}{{ site.title | escape }}{% endif %}</h3>
           {% include sections/minima/social.html %}
+        </div>
       </div>
-
+      <div class="column">
+        <h3>Quick links</h3>
+        <ul class="footer-list">
+          {% for link in site.data.navigation.footer.quick_links %}
+          <li><a href="{{ link.url | relative_url }}">{{ link.text | escape }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="column">
+        <h3>Top posts</h3>
+        <ul class="footer-list">
+          {% for link in site.data.navigation.footer.top_posts %}
+          <li><a href="{{ link.url | relative_url }}">{{ link.text | escape }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
     <p>&copy;{{ site.time | date: '%Y' }}</p>
   </div>
 

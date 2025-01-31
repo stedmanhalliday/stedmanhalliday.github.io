@@ -1,2 +1,13 @@
+header:
 - text: Blog
   url: /blog/
+
+footer:
+  quick_links:
+  - text: Blog archive
+    url: /blog/
+  - text: Cool 404 bro
+    url: /notfound/
+  top_posts:
+  - text: Welcome to Jekyll
+    url: /welcome-to-jekyll/

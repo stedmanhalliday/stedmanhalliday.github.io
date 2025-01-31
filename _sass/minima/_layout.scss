@@ -124,7 +124,7 @@
         }
 
         .page-link.current::before {
-          color: $grey-color-dark;
+            color: $grey-color-dark;
         }
     }
 }
@@ -144,24 +144,32 @@
     padding: 1.5 * $spacing-unit 0 0.5 * $spacing-unit;
     @include relative-font-size(0.88);
     color: $grey-color;
+
+    & h3 {
+        margin-bottom: 0.5rem;
+    }
+
+    & .columns {
+        display: flex;
+        justify-content: space-between;
+
+        @include media-query($on-palm) {
+          flex-direction: column;
+        }
+    }
+
+    & .monogram {
+        fill: $grey-color;
+        margin-bottom: 1.5rem;
+    }
 }
 
-// .footer-heading {
-//     @include relative-font-size(1.125);
-//     margin-bottom: $spacing-unit * 0.5;
-// }
-
-.contact-list,
+.footer-list,
 .social-media-list {
     list-style: none;
     margin-left: 0;
+    line-height: 2;
 }
-
-// .footer-col-wrapper {
-//     @include relative-font-size(0.9375);
-//     color: $grey-color;
-//     margin-left: -$spacing-unit * 0.5;
-// }
 
 /**
  * Page content

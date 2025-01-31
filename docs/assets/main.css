@@ -221,10 +221,6 @@ pre > code {
   vertical-align: text-top;
 }
 
-.social-media-list li + li {
-  padding-top: 5px;
-}
-
 /**
  * Tables
  */
@@ -257,6 +253,13 @@ table td {
  */
 .divider-thin {
   border-bottom: 1px solid rgb(184.0751046025, 192.2391213389, 203.9748953975);
+}
+
+/**
+ * Utility
+ */
+.mb-0 {
+  margin-bottom: 0;
 }
 
 /**
@@ -388,11 +391,28 @@ table td {
   font-size: 14.08px;
   color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
 }
+.site-footer h3 {
+  margin-bottom: 0.5rem;
+}
+.site-footer .columns {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 600px) {
+  .site-footer .columns {
+    flex-direction: column;
+  }
+}
+.site-footer .monogram {
+  fill: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  margin-bottom: 1.5rem;
+}
 
-.contact-list,
+.footer-list,
 .social-media-list {
   list-style: none;
   margin-left: 0;
+  line-height: 2;
 }
 
 /**

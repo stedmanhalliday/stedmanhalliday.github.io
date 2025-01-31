@@ -211,12 +211,6 @@ pre {
     vertical-align: text-top;
 }
 
-.social-media-list {
-    li + li {
-        padding-top: 5px;
-    }
-}
-
 /**
  * Tables
  */
@@ -251,4 +245,11 @@ table {
  */
 .divider-thin {
     border-bottom: 1px solid $grey-color-light;
+}
+
+/**
+ * Utility
+ */
+.mb-0 {
+    margin-bottom: 0;
 }
