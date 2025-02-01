@@ -246,3 +246,18 @@ table {
 .divider-thin {
     border-bottom: 1px solid $grey-color-light;
 }
+
+/**
+ * Utility
+ */
+.mt-50 {
+    margin-top: 0.5 * $spacing-unit;
+}
+
+.mt-100 {
+    margin-top: $spacing-unit;
+}
+
+.mt-200 {
+    margin-top: 2 * $spacing-unit;
+}

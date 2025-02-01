@@ -196,15 +196,35 @@
     }
 }
 
+.post-link {
+    display: block;
+    @include relative-font-size(1.5);
+}
+
+/**
+ * Posts
+ */
+
 .post-header {
     padding-bottom: $spacing-unit;
     border-bottom: 1px solid $grey-color-dark;
+    margin-bottom: 2 * $spacing-unit;
+}
+
+.post-title {
+    @include relative-font-size(2.625);
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        @include relative-font-size(2.25);
+    }
 }
 
 .post-meta {
     display: flex;
     flex-direction: column;
-    gap: 0.5*$spacing-unit;
+    gap: 0.5 * $spacing-unit;
     font-size: $small-font-size;
     color: $grey-color;
 }
@@ -236,28 +256,6 @@
         &:hover {
             background-color: $accent-color;
         }
-    }
-}
-
-.post-link {
-    display: block;
-    @include relative-font-size(1.5);
-}
-
-/**
- * Posts
- */
-.post-header {
-    margin-bottom: $spacing-unit;
-}
-
-.post-title {
-    @include relative-font-size(2.625);
-    letter-spacing: -1px;
-    line-height: 1;
-
-    @include media-query($on-laptop) {
-        @include relative-font-size(2.25);
     }
 }
 
