@@ -169,9 +169,12 @@ html.is-animating .transition-fade {
         }
     }
 
-    & .monogram {
-        fill: $grey-color;
+    & .footer-monogram {
         margin-bottom: 1.5rem;
+
+        & .monogram {
+            fill: $grey-color;
+        }
     }
 }
 

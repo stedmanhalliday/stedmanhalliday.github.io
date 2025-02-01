@@ -437,9 +437,11 @@ html.is-animating .transition-fade {
     flex-direction: column;
   }
 }
-.site-footer .monogram {
-  fill: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+.site-footer .footer-monogram {
   margin-bottom: 1.5rem;
+}
+.site-footer .footer-monogram .monogram {
+  fill: rgb(136.7918410042, 150.3985355649, 169.9581589958);
 }
 
 .footer-list,
