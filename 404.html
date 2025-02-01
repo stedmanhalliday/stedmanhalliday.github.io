@@ -2,20 +2,7 @@
 permalink: /404.html
 layout: default
 ---
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var options = {
-      strings: ['Searching', 'Error: 404'],
-      typeSpeed: 32,
-      backDelay: 3200,
-      backSpeed: 32,
-      showCursor: true,
-      cursorChar: '_'
-    };
-    var typed = new Typed('.error', options);
-  });
-</script>
+
 <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
@@ -61,7 +48,7 @@ layout: default
 </style>
 
 <div class="container">
-  <h1><span class="error"></span></h1>
+  <h1><span id="error"></span></h1>
   <h2>Page not found</h2>
   <p>The requested page could not be found.</p>
   <a class="back-link" href="/">Go Back Home</a>
