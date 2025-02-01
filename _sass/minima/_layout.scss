@@ -261,10 +261,9 @@ html.is-animating .transition-fade {
         background-color: $grey-color-light;
         color: $background-color;
         padding: 1px 0.5em 2px;
-        // border-radius: 2px;
         font-weight: 700;
 
-        &:hover {
+        &:hover, &:focus {
             background-color: $accent-color;
         }
     }
@@ -296,4 +295,8 @@ html.is-animating .transition-fade {
             @include relative-font-size(1.125);
         }
     }
+}
+
+.post-article-sub h3 {
+    text-align: center;
 }
