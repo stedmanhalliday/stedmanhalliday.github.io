@@ -18,8 +18,8 @@ layout: default
             class="p-author h-card" itemprop="name">{{ author }}</span></span>
         {% endif %}
       </p>
-      {% if page.summary %}
-      <p class="post-summary">{{ page.summary }}</p>
+      {% if page.description %}
+      <p class="post-summary">{{ page.description }}</p>
       {% endif %}
       <ul class="post-tags">
         {% for tag in page.tags %}
