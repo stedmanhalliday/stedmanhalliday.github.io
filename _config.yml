@@ -33,7 +33,18 @@ linkedin_username: stedmanhalliday
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-archives
 destination: docs/
+jekyll-archives:
+  enabled: [tags]
+  layouts:
+    year: blog
+    month: blog
+    tag: tag_archive
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    tag: '/tag/:name/'
 
 # Exclude from processing.
 # The following items will not be processed, by default.
