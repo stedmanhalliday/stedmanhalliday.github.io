@@ -63,8 +63,18 @@ function batchUpdates() {
     updateNavLinks();
 }
 
-// Run Typed.js on first page load
+// Run functions on first page load
 document.addEventListener("DOMContentLoaded", batchUpdates);
 
-// Run Typed.js again after each Swup transition
+// Run functions after each Swup transition
 swup.hooks.on('page:view', batchUpdates);
+
+// Confirm form submissions
+document.addEventListener("submit", e => {
+    const form = e.target;
+    form.querySelectorAll("*").forEach(el => {
+        el.classList.contains("form-title") ?
+            el.innerHTML = "Thanks for subscribing!" :
+            el.style.visibility = "hidden";
+    });
+});
