@@ -156,7 +156,6 @@ blockquote {
   border-left: 4px solid rgb(184.0751046025, 192.2391213389, 203.9748953975);
   padding-left: 16px;
   font-size: 18px;
-  letter-spacing: -1px;
   font-style: italic;
 }
 blockquote > :last-child {
@@ -268,6 +267,18 @@ table td {
 
 .mt-200 {
   margin-top: 64px;
+}
+
+/**
+ * Transitions
+ */
+html.is-changing .transition-fade {
+  transition: opacity 0.25s;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
 }
 
 /**

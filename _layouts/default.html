@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
+<body>
+  {% include sections/minima/header.html %}
 
-    {% include sections/minima/header.html %}
-
+  <main id="swup" class="transition-fade">
     {% if page.hero %}
     {% include sections/hero/{{page.hero}}.html %}
     {% endif %}
 
-    <main class="page-content" aria-label="Content">
+    <section class="page-content" aria-label="Content">
       <div class="wrapper">
         {{ content }}
       </div>
-    </main>
+    </section>
+  </main>
 
-    {% include sections/minima/footer.html %}
-
-  </body>
+  {% include sections/minima/footer.html %}
+</body>
 
 </html>
