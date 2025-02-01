@@ -33,16 +33,6 @@ layout: default
     {{ content }}
   </div>
 
-  <form class="post-article-sub mt-200"
-    action="https://api.follow.it/subscription-form/WTh6S3NnTDU1bUxLS01SdXAyaVZaTGtDaU1YTEtMSWhMSmN3VkZmRWxQNlQzR2RBcGFhcTJIMC9qZnkvSHl0eEZtZXFtbWtMWG1ZTXRMYllzb3F6clZxOUE3TlcwQ3I1VmZRUklWVS80Z2ZIM0hwSDg0dVVWdE5mbjRvaTUxWEx8eEFmSEt0azh3b1JuR2xpYTJoMnd4TzRmUVBrbDQ2dHdybmErVURXRUZPaz0=/8"
-    method="post">
-    <h3>Subscribe for email updates</h3>
-    <div class="form-group inline">
-      <input type="email" class="form-control" name="email" placeholder="you@here.now">
-      <button type="submit" class="btn btn-primary">Subscribe</button>
-    </div>
-  </form>
-
   {% if site.disqus.shortname %}
   {% include sections/minima/disqus_comments.html %}
   {% endif %}
