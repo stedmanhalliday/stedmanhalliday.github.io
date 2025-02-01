@@ -25,6 +25,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   Stedman Halliday on the Web
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://stedmanhalliday.com" # the base hostname & protocol for your site, e.g. http://example.com
+google_analytics: G-SQV444EF7D
+
+# Social media links
 twitter_username: stedmanhalliday
 linkedin_username: stedmanhalliday
 #github_username:  stedmanhalliday
