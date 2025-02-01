@@ -9,22 +9,16 @@
           {% include sections/minima/social.html %}
         </div>
       </div>
+      {% for group in site.data.navigation.footer %}
       <div class="column">
-        <h3>Quick links</h3>
+        <h3>{{ group.heading }}</h3>
         <ul class="footer-list">
-          {% for link in site.data.navigation.footer.quick_links %}
+          {% for link in group.links %}
           <li><a href="{{ link.url | relative_url }}">{{ link.text | escape }}</a></li>
           {% endfor %}
         </ul>
       </div>
-      <div class="column">
-        <h3>Top posts</h3>
-        <ul class="footer-list">
-          {% for link in site.data.navigation.footer.top_posts %}
-          <li><a href="{{ link.url | relative_url }}">{{ link.text | escape }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
+      {% endfor %}
     </div>
     <p>&copy;{{ site.time | date: '%Y' }}</p>
   </div>
