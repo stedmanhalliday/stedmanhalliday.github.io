@@ -260,3 +260,19 @@ table {
 .mt-200 {
     margin-top: 2 * $spacing-unit;
 }
+
+/**
+ * Loading
+ */
+@keyframes skeleton-loading {
+    0% {
+        background-color: rgba($grey-color-dark, 0.08);
+    }
+    100% {
+        background-color: rgba($grey-color-dark, 0.16);
+    }
+}
+
+iframe {
+    animation: skeleton-loading 1s linear infinite alternate;
+}

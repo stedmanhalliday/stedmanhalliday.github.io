@@ -270,7 +270,22 @@ table td {
 }
 
 /**
- * Transitions
+ * Loading
+ */
+@keyframes skeleton-loading {
+  0% {
+    background-color: rgba(100, 116, 139, 0.08);
+  }
+  100% {
+    background-color: rgba(100, 116, 139, 0.16);
+  }
+}
+iframe {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+/**
+ * Page transitions
  */
 html.is-changing .transition-fade {
   transition: opacity 0.25s;

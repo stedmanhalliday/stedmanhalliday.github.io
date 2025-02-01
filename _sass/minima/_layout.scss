@@ -1,7 +1,7 @@
 @use "variables" as *;
 
 /**
- * Transitions
+ * Page transitions
  */
 html.is-changing .transition-fade {
     transition: opacity 0.25s;
