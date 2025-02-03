@@ -76,11 +76,8 @@ jekyll-archives:
 deploy:
 - git checkout main
 - git merge dev
-- git commit -am 'deploy to production'
 - git push
 - git checkout dev
-- git merge main
-- git push
 
 # Exclude from processing.
 # The following items will not be processed, by default.
