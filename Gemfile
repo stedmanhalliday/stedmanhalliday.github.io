@@ -19,6 +19,7 @@ group :jekyll_plugins do
   gem "jekyll-archives", "~> 2.3.0"
   gem 'jekyll-loading-lazy'
   gem 'jekyll-email-protect'
+  gem 'jekyll-deploy'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

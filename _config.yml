@@ -71,6 +71,15 @@ jekyll-archives:
         year: "/:year/"
         month: "/:year/:month/"
         tag: "/tag/:name/"
+
+# Deploy settings
+deploy:
+- git checkout main
+- git commit -am 'deploy to production'
+- git push
+- git checkout dev
+- git merge main
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
