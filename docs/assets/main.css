@@ -518,7 +518,7 @@ html.is-animating .transition-fade {
   font-size: 42px;
   letter-spacing: -1px;
   line-height: 1.25em;
-  max-width: 20ch;
+  max-width: 24ch;
 }
 @media screen and (max-width: 800px) {
   .post-title {
@@ -543,7 +543,7 @@ html.is-animating .transition-fade {
 }
 
 .post-summary > p {
-  max-width: 60ch;
+  max-width: 64ch;
   margin: 0;
 }
 

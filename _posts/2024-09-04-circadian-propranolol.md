@@ -1,10 +1,12 @@
 ---
 layout: post
-title: "Circadian Rhythm Alteration with Propanolol"
+title: "Circadian Rhythm Alteration with Propranolol"
 date: 2024-09-04
 tags: [health, drugs, sleep]
 description: "Reset your sleep clock or beat jetlag with beta blockers"
 author: Stedman Halliday and [quixoteknight](https://substack.com/@quixoteknight)
+slug: circadian-propranolol
+permalink: /:slug
 ---
 
 Ever wished you could hack your sleep schedule, beat jetlag, or stay sharp through an all-nighter without feeling like a zombie? Enter propranolol—a seemingly ordinary beta blocker with some extraordinary tricks up its sleeve. From calming anxiety to resetting your internal clock, propranolol might just be the secret weapon you've been looking for to take control of your sleep and energy levels.
@@ -73,7 +75,7 @@ Drue Wetsel, a 25-year-old software engineer, has been stuck in a nocturnal rout
 
 ## Conclusion
 
-In conclusion, propranolol is a versatile non-selective beta blocker with a range of applications, from managing anxiety and essential tremors to preventing serious complications in conditions like thyroid storm and cirrhosis. Its ability to cross the blood-brain barrier makes it particularly effective for altering circadian rhythms, offering a solution for those needing to reset their sleep schedules. However, caution is necessary, especially for individuals with respiratory conditions, as propranolol can exacerbate issues like asthma and COPD. Consult a healthcare professional for guidance before using propanolol.
+In conclusion, propranolol is a versatile non-selective beta blocker with a range of applications, from managing anxiety and essential tremors to preventing serious complications in conditions like thyroid storm and cirrhosis. Its ability to cross the blood-brain barrier makes it particularly effective for altering circadian rhythms, offering a solution for those needing to reset their sleep schedules. However, caution is necessary, especially for individuals with respiratory conditions, as propranolol can exacerbate issues like asthma and COPD. Consult a healthcare professional for guidance before using propranolol.
 
 <div class="soft-break"></div>
 
