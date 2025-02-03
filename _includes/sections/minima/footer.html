@@ -5,7 +5,7 @@
     <div class="columns">
       <div class="column">
         <div>
-          <h3>{% if site.author %}{{ site.author | escape }}{% else %}{{ site.title | escape }}{% endif %}</h3>
+          <h3>{% if site.author.name %}{{ site.author.name | escape }}{% else %}{{ site.title | escape }}{% endif %}</h3>
           {% include sections/minima/social.html %}
         </div>
       </div>
