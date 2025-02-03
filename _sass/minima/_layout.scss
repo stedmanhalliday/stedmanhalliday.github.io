@@ -228,7 +228,8 @@ html.is-animating .transition-fade {
 .post-title {
     @include relative-font-size(2.625);
     letter-spacing: -1px;
-    line-height: 1;
+    line-height: 1.125em;
+    max-width: 20ch;
 
     @include media-query($on-laptop) {
         @include relative-font-size(2.25);
@@ -249,7 +250,7 @@ html.is-animating .transition-fade {
 }
 
 .post-summary > p {
-    max-width: 32em;
+    max-width: 60ch;
     margin: 0;
 }
 
