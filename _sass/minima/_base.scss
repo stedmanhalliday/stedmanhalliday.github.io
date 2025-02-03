@@ -277,12 +277,13 @@ table {
     margin-top: 2 * $spacing-unit;
 }
 
-.flex {
+.flex-center {
     display: flex;
+    justify-content: center;
 }
 
-.justify-content-center {
-    justify-content: center;
+.text-center {
+    text-align: center;
 }
 
 /**

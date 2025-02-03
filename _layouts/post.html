@@ -6,7 +6,7 @@ layout: default
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <div class="post-meta">
-      <p class="byline">
+      <div class="byline">
         <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
           {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
           {{ page.date | date: date_format }}
@@ -15,13 +15,13 @@ layout: default
         {% if page.author %}{% assign author = page.author %}
         {% elsif site.author.name %}{% assign author = site.author.name %}{% endif %}
         &ensp;•&ensp;&nbsp;<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
-            class="p-author h-card" itemprop="name">{{ author }}</span></span>
+            class="p-author h-card" itemprop="name">{{ author | markdownify }}</span></span>
         {% endif %}
         {% assign words = content | count_words %}
         {% if words >= 500 %}
         &ensp;•&ensp;&nbsp;<span>{{ words }} words ({{ content | reading_time | pluralize: "min" }})</span>
         {% endif %}
-      </p>
+      </div>
       {% if page.description %}
       <div class="post-summary">{{ page.description | markdownify }}</div>
       {% endif %}

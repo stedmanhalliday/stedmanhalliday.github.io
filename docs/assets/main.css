@@ -285,12 +285,13 @@ table td {
   margin-top: 64px;
 }
 
-.flex {
+.flex-center {
   display: flex;
+  justify-content: center;
 }
 
-.justify-content-center {
-  justify-content: center;
+.text-center {
+  text-align: center;
 }
 
 /**
@@ -516,7 +517,8 @@ html.is-animating .transition-fade {
 .post-title {
   font-size: 42px;
   letter-spacing: -1px;
-  line-height: 1;
+  line-height: 1.25em;
+  max-width: 20ch;
 }
 @media screen and (max-width: 800px) {
   .post-title {
@@ -534,11 +536,14 @@ html.is-animating .transition-fade {
 
 .byline {
   font-weight: 700;
-  margin: 0;
+  margin-bottom: 0;
+}
+.byline p {
+  display: inline;
 }
 
 .post-summary > p {
-  max-width: 32em;
+  max-width: 60ch;
   margin: 0;
 }
 
