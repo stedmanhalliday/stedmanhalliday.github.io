@@ -62,6 +62,7 @@ plugins:
     - jekyll-email-protect
     - jekyll-target-blank
     - jekyll-sitemap
+    - jekyll-twitter-plugin
 destination: docs/
 jekyll-archives:
     enabled: [tags]
@@ -88,19 +89,20 @@ deploy:
 #
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
-#
+
 exclude:
--  .sass-cache/
--  .jekyll-cache/
--  gemfiles/
--  Gemfile
--  Gemfile.lock
--  node_modules/
--  vendor/bundle/
--  vendor/cache/
--  vendor/gems/
--  vendor/ruby/
--  package.json
--  package-lock.json
--  README.md
--  webpack.config.js
+- .sass-cache/
+- .jekyll-cache/
+- gemfiles/
+- Gemfile
+- Gemfile.lock
+- node_modules/
+- vendor/bundle/
+- vendor/cache/
+- vendor/gems/
+- vendor/ruby/
+- package.json
+- package-lock.json
+- README.md
+- webpack.config.js
+- .tweet-cache/

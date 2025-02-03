@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .highlight, h1,
 h2,
 h3,
@@ -251,7 +252,22 @@ table td {
  * Dividers
  */
 .divider-thin {
+  border-bottom: 1px solid #64748b;
+}
+
+.divider-thin-light {
   border-bottom: 1px solid rgb(184.0751046025, 192.2391213389, 203.9748953975);
+}
+
+.soft-break {
+  margin: 64px auto;
+  text-align: center;
+}
+.soft-break::after {
+  content: "— ◇ —";
+  font-size: 1rem;
+  color: #64748b;
+  letter-spacing: 1em;
 }
 
 /**
@@ -267,6 +283,14 @@ table td {
 
 .mt-200 {
   margin-top: 64px;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-content-center {
+  justify-content: center;
 }
 
 /**
