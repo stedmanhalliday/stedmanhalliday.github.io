@@ -59,6 +59,7 @@ plugins:
     - jekyll-feed
     - jekyll-archives
     - jekyll-loading-lazy
+    - jekyll-email-protect
 destination: docs/
 jekyll-archives:
     enabled: [tags]

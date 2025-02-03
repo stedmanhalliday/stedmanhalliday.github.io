@@ -18,6 +18,7 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem "jekyll-archives", "~> 2.3.0"
   gem 'jekyll-loading-lazy'
+  gem 'jekyll-email-protect'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

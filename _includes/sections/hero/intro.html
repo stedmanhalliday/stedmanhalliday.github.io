@@ -135,7 +135,7 @@ BEGIN MARKUP
                 <div class="column">
                     <h2 class="divider-thin">Let's connect.</h2>
                     <div class="connect-icons">
-                        <a class="connect-link" title="Email" href="mailto:{{site.email}}?subject=Let's%20connect.">{%
+                        <a class="connect-link" title="Email" href="mailto:{{site.email | encode_email }}?subject=Let's%20connect.">{%
                             include icons/icon-email-circle.svg %}</a>
                         <a class="connect-link" title="LinkedIn"
                             href="https://linkedin.com/in/{{site.linkedin_username}}" target="_blank">{% include
