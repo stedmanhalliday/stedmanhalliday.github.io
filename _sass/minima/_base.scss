@@ -143,7 +143,12 @@ blockquote {
     border-left: 4px solid $grey-color-light;
     padding-left: $spacing-unit * 0.5;
     @include relative-font-size(1.125);
-    font-style: italic;
+
+    & cite {
+        font-size: 1em;
+        font-style: normal;
+        color: $grey-color-light;
+    }
 
     > :last-child {
         margin-bottom: 0;

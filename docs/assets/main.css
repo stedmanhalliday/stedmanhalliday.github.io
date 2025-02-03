@@ -157,7 +157,11 @@ blockquote {
   border-left: 4px solid rgb(184.0751046025, 192.2391213389, 203.9748953975);
   padding-left: 16px;
   font-size: 18px;
-  font-style: italic;
+}
+blockquote cite {
+  font-size: 1em;
+  font-style: normal;
+  color: rgb(184.0751046025, 192.2391213389, 203.9748953975);
 }
 blockquote > :last-child {
   margin-bottom: 0;
