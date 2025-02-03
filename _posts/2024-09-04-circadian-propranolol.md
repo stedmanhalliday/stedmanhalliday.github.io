@@ -7,7 +7,7 @@ description: "Reset your sleep clock or beat jetlag with beta blockers"
 author: Stedman Halliday and [quixoteknight](https://substack.com/@quixoteknight)
 slug: circadian-propranolol
 permalink: /:slug
-image: /assets/images/2024-09-04-circadian-propranolol-00.jpg
+image: /assets/img/2024-09-04-circadian-propranolol-00.jpg
 ---
 
 ![{{ page.title }}]({{ page.image }})

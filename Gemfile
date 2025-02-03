@@ -26,6 +26,7 @@ group :jekyll_plugins do
   gem 'nokogiri'
   gem 'liquid_reading_time'
   gem 'liquid_pluralize'
+  gem 'jekyll-compress-images'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

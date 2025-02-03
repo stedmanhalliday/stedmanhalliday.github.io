@@ -66,6 +66,7 @@ plugins:
     - nokogiri
     - liquid_reading_time
     - liquid_pluralize
+    - jekyll-compress-images
 destination: docs/
 jekyll-archives:
     enabled: [tags]
