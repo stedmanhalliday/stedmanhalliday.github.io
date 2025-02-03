@@ -75,6 +75,7 @@ jekyll-archives:
 # Deploy settings
 deploy:
 - git checkout main
+- git merge dev
 - git commit -am 'deploy to production'
 - git push
 - git checkout dev
