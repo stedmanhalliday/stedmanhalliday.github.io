@@ -19,7 +19,7 @@ layout: default
         {% endif %}
       </p>
       {% if page.description %}
-      <p class="post-summary">{{ page.description | markdownify }}</p>
+      <div class="post-summary">{{ page.description | markdownify }}</div>
       {% endif %}
       <ul class="post-tags">
         {% for tag in page.tags %}
