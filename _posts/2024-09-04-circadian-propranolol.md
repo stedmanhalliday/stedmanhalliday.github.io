@@ -7,10 +7,14 @@ description: "Reset your sleep clock or beat jetlag with beta blockers"
 author: Stedman Halliday and [quixoteknight](https://substack.com/@quixoteknight)
 slug: circadian-propranolol
 permalink: /:slug
-
+image: /assets/images/2024-09-04-circadian-propranolol-00.jpg
 ---
 
-Ever wished you could hack your sleep schedule, beat jetlag, or stay sharp through an all-nighter without feeling like a zombie? Enter propranolol—a seemingly ordinary beta blocker with some extraordinary tricks up its sleeve. From calming anxiety to resetting your internal clock, propranolol might just be the secret weapon you've been looking for to take control of your sleep and energy levels.
+![{{ page.title }}]({{ page.image }})
+
+<p class="mt-200">Ever wished you could hack your sleep schedule, beat jetlag, or stay sharp through an all-nighter without feeling like a zombie? Enter propranolol—a seemingly ordinary beta blocker with some extraordinary tricks up its sleeve. From calming anxiety to resetting your internal clock, propranolol might just be the secret weapon you've been looking for to take control of your sleep and energy levels.</p>
+
+{% include divider-thin.html %}
 
 ## Overview of beta blockers
 

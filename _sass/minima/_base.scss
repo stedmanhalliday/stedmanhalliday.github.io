@@ -273,8 +273,14 @@ table {
     margin-top: $spacing-unit;
 }
 
-.mt-200 {
+.mt-200,
+.mv-200 {
     margin-top: 2 * $spacing-unit;
+}
+
+.mb-200,
+.mv-200 {
+    margin-bottom: 2 * $spacing-unit;
 }
 
 .flex-center {

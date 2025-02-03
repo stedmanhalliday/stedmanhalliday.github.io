@@ -281,8 +281,14 @@ table td {
   margin-top: 32px;
 }
 
-.mt-200 {
+.mt-200,
+.mv-200 {
   margin-top: 64px;
+}
+
+.mb-200,
+.mv-200 {
+  margin-bottom: 64px;
 }
 
 .flex-center {
