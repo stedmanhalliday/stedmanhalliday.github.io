@@ -79,6 +79,7 @@ deploy:
 - git push
 - git checkout dev
 - git merge main
+- git push
 
 # Exclude from processing.
 # The following items will not be processed, by default.
