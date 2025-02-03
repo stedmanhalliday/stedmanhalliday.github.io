@@ -14,8 +14,12 @@ layout: default
         {% if page.author or site.author.name %}
         {% if page.author %}{% assign author = page.author %}
         {% elsif site.author.name %}{% assign author = site.author.name %}{% endif %}
-        &ensp;|&ensp;&nbsp;<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
+        &ensp;•&ensp;&nbsp;<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span
             class="p-author h-card" itemprop="name">{{ author }}</span></span>
+        {% endif %}
+        {% assign words = content | count_words %}
+        {% if words >= 500 %}
+        &ensp;•&ensp;&nbsp;<span>{{ words }} words ({{ content | reading_time | pluralize: "min" }})</span>
         {% endif %}
       </p>
       {% if page.description %}

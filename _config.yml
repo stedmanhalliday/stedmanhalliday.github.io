@@ -63,6 +63,9 @@ plugins:
     - jekyll-target-blank
     - jekyll-sitemap
     - jekyll-twitter-plugin
+    - nokogiri
+    - liquid_reading_time
+    - liquid_pluralize
 destination: docs/
 jekyll-archives:
     enabled: [tags]
