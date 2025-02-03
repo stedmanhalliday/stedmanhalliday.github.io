@@ -7,6 +7,7 @@ description: "Reset your sleep clock or beat jetlag with beta blockers"
 author: Stedman Halliday and [quixoteknight](https://substack.com/@quixoteknight)
 slug: circadian-propranolol
 permalink: /:slug
+
 ---
 
 Ever wished you could hack your sleep schedule, beat jetlag, or stay sharp through an all-nighter without feeling like a zombie? Enter propranolol—a seemingly ordinary beta blocker with some extraordinary tricks up its sleeve. From calming anxiety to resetting your internal clock, propranolol might just be the secret weapon you've been looking for to take control of your sleep and energy levels.
@@ -28,6 +29,8 @@ Non-selective beta blockers block both beta-1 and beta-2 receptors. Since beta-2
 ### Applications for Anxiety
 
 This mechanism is particularly beneficial for individuals with social anxiety or general anxiety disorders, as it mitigates physical symptoms of anxiety.
+
+{% include soft-break.html %}
 
 ## Propranolol specifics
 
@@ -59,6 +62,8 @@ Drue Wetsel, a 25-year-old software engineer, has been stuck in a nocturnal rout
 
 -   **Following days:** Drue sticks to the midnight-to-8 am sleep schedule, using propranolol and mild stimulants as needed, until it becomes his new norm.
 
+{% include soft-break.html %}
+
 ## Additional medical applications
 
 **Thyroid storm management:** Propranolol helps manage dangerously fast heart rate and high blood pressure caused by excessive thyroid hormone by slowing down the heart and easing other symptoms like anxiety and tremors.
@@ -77,9 +82,9 @@ Drue Wetsel, a 25-year-old software engineer, has been stuck in a nocturnal rout
 
 In conclusion, propranolol is a versatile non-selective beta blocker with a range of applications, from managing anxiety and essential tremors to preventing serious complications in conditions like thyroid storm and cirrhosis. Its ability to cross the blood-brain barrier makes it particularly effective for altering circadian rhythms, offering a solution for those needing to reset their sleep schedules. However, caution is necessary, especially for individuals with respiratory conditions, as propranolol can exacerbate issues like asthma and COPD. Consult a healthcare professional for guidance before using propranolol.
 
-<div class="soft-break"></div>
+{% include soft-break.html %}
 
-Special thanks to [quixoteknight](https://substack.com/@quixoteknight) for enriching this post with invaluable insights into medical pharmacology. Read what they have to say about melatonin:
+Special thanks to [quixoteknight](https://substack.com/@quixoteknight) for enriching this post with invaluable insights into medical pharmacology. Read what they have to say about melatonin next.
 
 <h2 class="mt-200 text-center">Related content</h2>
 <div class="substack-post-embed" style="margin: 0 auto; border-radius: 12px; overflow: hidden"><p lang="en">Melatonin: MMTYWTK Addendum by QK</p><p>Fun Practical Applications of Abusing Endogenous Neurohormones</p><a data-post-link href="https://optimizeeverything.substack.com/p/melatonin-mmtywtk-addendum">Read on Substack</a></div><script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>

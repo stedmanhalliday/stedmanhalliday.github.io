@@ -15,3 +15,7 @@ footer:
       url: /tag/music/
     - text: 7 songs
       url: /tag/7-songs/
+- heading: Top posts
+  links:
+    - text: Circadian Propranolol
+      url: /circadian-propranolol
