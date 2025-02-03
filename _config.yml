@@ -60,6 +60,7 @@ plugins:
     - jekyll-archives
     - jekyll-loading-lazy
     - jekyll-email-protect
+    - jekyll-target-blank
 destination: docs/
 jekyll-archives:
     enabled: [tags]
