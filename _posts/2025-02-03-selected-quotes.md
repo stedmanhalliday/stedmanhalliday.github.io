@@ -31,3 +31,7 @@ _For the works of Goethe are not Goethe and the volumes of Dostoevsky are not Do
 _If you consider any man a friend whom you do not trust as you trust yourself, you are mightily mistaken and you do not sufficiently understand what true friendship means… When friendship is settled, you must trust; before friendship is formed, you must pass judgment. Those persons indeed put last first and confound their duties, who… judge a man after they have made him their friend, instead of making him their friend after they have judged him. Ponder for a long time whether you shall admit a given person to your friendship; but when you have decided to admit him, welcome him with all your heart and soul. Speak as boldly with him as with yourself… Regard him as loyal and you will make him loyal._
 >
 ><cite>—Seneca the Younger</cite>
+
+{% include soft-break.html %}
+
+Did you like this post? {% include snippets/twitter-dm.html %} and let me know what resonated with you.
