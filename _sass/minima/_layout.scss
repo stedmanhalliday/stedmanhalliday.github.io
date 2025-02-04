@@ -225,7 +225,8 @@ html.is-animating .transition-fade {
     margin-bottom: 2 * $spacing-unit;
 }
 
-.post-title {
+.post-title,
+.page-heading {
     @include relative-font-size(2.625);
     letter-spacing: -1px;
     line-height: 1.25em;
