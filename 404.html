@@ -4,52 +4,68 @@ layout: default
 ---
 
 <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-    height: 1em;
-    animation: glitch 1.5s infinite alternate;
-  }
-
-  /* Glitch Animation */
-  @keyframes glitch {
-    0% {
-      text-shadow: 2px 2px #64748b, -2px -2px cyan;
+    .container {
+        margin: 10px auto;
+        max-width: 600px;
+        text-align: center;
     }
 
-    20% {
-      text-shadow: -2px -2px #64748b, 2px 2px cyan;
+    h1 {
+        margin: 30px 0;
+        font-size: 4em;
+        line-height: 1;
+        letter-spacing: -1px;
+        height: 1em;
+        animation: glitch 3.2s infinite alternate;
     }
 
-    40% {
-      text-shadow: 3px -3px #61B3AF, -3px 3px #64748b;
-    }
+    /* Glitch Animation */
+    @keyframes glitch {
+        0% {
+            text-shadow: 2px 2px #64748b, -2px -2px cyan;
+        }
 
-    60% {
-      text-shadow: -3px 3px cyan, 3px -3px #64748b;
-    }
+        20% {
+            text-shadow: -2px -2px #64748b, 2px 2px cyan;
+        }
 
-    80% {
-      text-shadow: 4px 4px #e8e8e8, -4px -4px #64748b;
-    }
+        40% {
+            text-shadow: 3px -3px #61B3AF, -3px 3px #64748b;
+        }
 
-    100% {
-      text-shadow: -4px -4px #64748b, 4px 4px cyan;
+        60% {
+            text-shadow: -3px 3px cyan, 3px -3px #64748b;
+        }
+
+        80% {
+            text-shadow: 4px 4px #e8e8e8, -4px -4px #64748b;
+        }
+
+        100% {
+            text-shadow: -4px -4px #64748b, 4px 4px cyan;
+        }
     }
-  }
 </style>
 
 <div class="container">
-  <h1><span id="error"></span></h1>
-  <h2>Page not found</h2>
-  <p>The requested page could not be found.</p>
-  <a class="back-link" href="/">Go Back Home</a>
+    <h1><span id="error">Error: 404</span></h1>
+    <h2>Page not found</h2>
+    <p>The requested page could not be found.</p>
+    <a class="back-link" href="/">Go Back Home</a>
 </div>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    var errorElement = document.querySelector("#error");
+    if (errorElement) {
+        var errorOptions = {
+            strings: ["Searching", "Error: 404"],
+            typeSpeed: 32,
+            startDelay: 3200,
+            backDelay: 3200,
+            backSpeed: 32,
+            showCursor: true,
+            cursorChar: "_",
+        };
+        new Typed("#error", errorOptions);
+    }
+</script>

@@ -37,6 +37,10 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 3rem;
+
+        & :first-child h2 {
+            margin-bottom: 0.75em;
+        }
     }
 
     .connect-icons {
@@ -124,7 +128,7 @@ BEGIN MARKUP
     <div class="wrapper">
         <div class="copy">
             {% include avatar.html %}
-            <h1 class="heading">Stedman Halliday is <br class="break" /><span id="title"></span></h1>
+            <h1 class="heading">Stedman Halliday is <br class="break" /><span id="title">a designer.</span></h1>
             <p class="subheading">I'm a technical generalist based in San Francisco creating values-aligned products,
                 brands, media, and experiences.</p>
             <div class="columns">
@@ -135,7 +139,8 @@ BEGIN MARKUP
                 <div class="column">
                     <h2 class="divider-thin-light">Let's connect.</h2>
                     <div class="connect-icons">
-                        <a class="connect-link" title="Email" href="mailto:{{site.email | encode_email }}?subject=Let's%20connect.">{%
+                        <a class="connect-link" title="Email"
+                            href="mailto:{{site.email | encode_email }}?subject=Let's%20connect.">{%
                             include icons/icon-email-circle.svg %}</a>
                         <a class="connect-link" title="LinkedIn"
                             href="https://linkedin.com/in/{{site.linkedin_username}}" target="_blank">{% include
@@ -148,3 +153,27 @@ BEGIN MARKUP
         </div>
     </div>
 </section>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    var titleElement = document.querySelector("#title");
+    if (titleElement) {
+        var heroIntroOptions = {
+            strings: [
+                "a&nbsp;developer.",
+                "an&nbsp;artist.",
+                "an&nbsp;entrepreneur.",
+                "a&nbsp;coach.",
+                "a&nbsp;tinkerer.",
+                "a&nbsp;friend :)",
+                "a&nbsp;designer."
+            ],
+            typeSpeed: 32,
+            startDelay: 3200,
+            backDelay: 3200,
+            backSpeed: 32,
+            showCursor: false,
+            loop: true,
+        };
+        new Typed("#title", heroIntroOptions);
+    }
+</script>
