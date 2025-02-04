@@ -26,8 +26,8 @@ jekyll deploy
 ## Command aliases
 set aliases in `~/.zshrc`
 ```
-alias jekyll-run='npm run build && bundle exec jekyll serve --baseurl=""  --watch'
-alias jekyll-drafts='npm run build && bundle exec jekyll serve --baseurl="" --watch --drafts'
-alias jekyll-build='npm run build && JEKYLL_ENV=production jekyll build'
+alias jekyll-serve='jekyll serve'
+alias jekyll-drafts='jekyll serve --drafts'
+alias jekyll-build='JEKYLL_ENV=production jekyll build'
 alias jekyll-deploy='jekyll deploy'
 ```
