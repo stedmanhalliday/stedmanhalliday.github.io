@@ -12,12 +12,12 @@ footer:
 - heading: Top tags
   links:
     - text: health
-      url: /tag/health/
+      url: /blog/tag/health/
     - text: music
-      url: /tag/music/
+      url: /blog/tag/music/
     - text: reflection
-      url: /tag/reflection/
+      url: /blog/tag/reflection/
 - heading: Top posts
   links:
     - text: Circadian Propranolol
-      url: /circadian-propranolol
+      url: /blog/circadian-propranolol

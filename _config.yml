@@ -24,10 +24,15 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://stedmanhalliday.com" # the base hostname & protocol for your site, e.g. http://example.com
 google_analytics: G-SQV444EF7D
 
+# Permalinks
+collections:
+    posts:
+        permalink: /blog/:year/:month/:day/:title
+
 # Social media links
 twitter_username: stedmanhalliday
 linkedin_username: stedmanhalliday
-#github_username:  stedmanhalliday
+# github_username:  stedmanhalliday
 
 # Jekyll SEO
 tagline: Home
@@ -38,8 +43,8 @@ author:
     twitter: stedmanhalliday
     url: https://stedmanhalliday.com
 twitter:
-  username: stedmanhalliday
-  card: summary
+    username: stedmanhalliday
+    card: summary
 social:
     name: Stedman Halliday
     links:
@@ -48,10 +53,10 @@ social:
 
 # Front matter defaults
 defaults:
-  - scope:
-      path: ""
-    values:
-      image: /assets/og-image.png
+    - scope:
+          path: ""
+      values:
+          image: /assets/og-image.png
 
 # Build settings
 theme: minima
@@ -75,18 +80,16 @@ jekyll-archives:
         month: blog
         tag: tag_archive
     permalinks:
-        year: "/:year/"
-        month: "/:year/:month/"
-        tag: "/tag/:name/"
+        tag: "/blog/tag/:name/"
 imageoptim:
-  verbose: false
+    verbose: false
 
 # Deploy settings
 deploy:
-- git checkout main
-- git merge dev
-- git push
-- git checkout dev
+    - git checkout main
+    - git merge dev
+    - git push
+    - git checkout dev
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -97,18 +100,15 @@ deploy:
 # their entries' file path in the `include:` list.
 
 exclude:
-- .sass-cache/
-- .jekyll-cache/
-- gemfiles/
-- Gemfile
-- Gemfile.lock
-- node_modules/
-- vendor/bundle/
-- vendor/cache/
-- vendor/gems/
-- vendor/ruby/
-- package.json
-- package-lock.json
-- README.md
-- webpack.config.js
-- .tweet-cache/
+    - .sass-cache/
+    - .jekyll-cache/
+    - gemfiles/
+    - Gemfile
+    - Gemfile.lock
+    - node_modules/
+    - vendor/bundle/
+    - vendor/cache/
+    - vendor/gems/
+    - vendor/ruby/
+    - README.md
+    - .tweet-cache/

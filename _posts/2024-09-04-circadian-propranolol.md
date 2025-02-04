@@ -5,7 +5,7 @@ date: 2024-09-04
 author: Stedman Halliday and [quixoteknight](https://substack.com/@quixoteknight)
 description: "Reset your sleep clock or beat jetlag with beta blockers"
 tags: [health, drugs, sleep]
-permalink: /circadian-propranolol
+permalink: /blog/circadian-propranolol
 image: /assets/img/2024-09-04-circadian-propranolol-00.jpg
 ---
 
