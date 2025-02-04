@@ -1,8 +1,11 @@
 import Typed from "typed.js";
 import Swup from "swup";
+import SwupScriptsPlugin from '@swup/scripts-plugin';
 
 // Initialize Swup globally
-const swup = new Swup();
+const swup = new Swup({
+    plugins: [new SwupScriptsPlugin()]
+});
 
 // Update nav links
 function updateNavLinks() {
