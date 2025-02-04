@@ -2,11 +2,10 @@
 layout: post
 title: "Circadian Rhythm Alteration with Propranolol"
 date: 2024-09-04
-tags: [health, drugs, sleep]
-description: "Reset your sleep clock or beat jetlag with beta blockers"
 author: Stedman Halliday and [quixoteknight](https://substack.com/@quixoteknight)
-slug: circadian-propranolol
-permalink: /:slug
+description: "Reset your sleep clock or beat jetlag with beta blockers"
+tags: [health, drugs, sleep]
+permalink: /circadian-propranolol
 image: /assets/img/2024-09-04-circadian-propranolol-00.jpg
 ---
 
@@ -88,7 +87,7 @@ In conclusion, propranolol is a versatile non-selective beta blocker with a rang
 
 {% include soft-break.html %}
 
-{% include snippets/twitter-dm.html %} if you enjoyed this post of if you've got any corrections I should know about. Special thanks to [quixoteknight](https://substack.com/@quixoteknight) for enriching this post with invaluable insights into medical pharmacology. Read what they have to say about melatonin next.
+{% include snippets/twitter-dm.html %} if you enjoyed this post or if you've got any corrections I should know about. Special thanks to [quixoteknight](https://substack.com/@quixoteknight) for enriching this post with invaluable insights into medical pharmacology. Read what they have to say about melatonin next.
 
 <h2 class="mt-200 text-center">Related content</h2>
 <div class="substack-post-embed" style="margin: 0 auto; border-radius: 12px; overflow: hidden"><p lang="en">Melatonin: MMTYWTK Addendum by QK</p><p>Fun Practical Applications of Abusing Endogenous Neurohormones</p><a data-post-link href="https://optimizeeverything.substack.com/p/melatonin-mmtywtk-addendum">Read on Substack</a></div><script async src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>
