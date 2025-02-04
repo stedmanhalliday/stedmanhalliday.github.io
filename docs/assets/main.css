@@ -494,6 +494,14 @@ html.is-animating .transition-fade {
   flex: 1;
 }
 
+.back-link::before {
+  content: "← ";
+}
+
+.next-link::after {
+  content: " ↑";
+}
+
 .page-heading {
   font-size: 32px;
 }

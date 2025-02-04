@@ -193,6 +193,14 @@ html.is-animating .transition-fade {
     flex: 1;
 }
 
+.back-link::before {
+    content: '\2190\2002';
+}
+
+.next-link::after {
+    content: '\2002\2191'
+}
+
 .page-heading {
     @include relative-font-size(2);
 }
