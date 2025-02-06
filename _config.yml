@@ -28,6 +28,9 @@ google_analytics: G-SQV444EF7D
 collections:
     posts:
         permalink: /blog/:year/:month/:day/:title
+    pages:
+        output: true
+        permalink: /:title
 
 # Social media links
 twitter_username: stedmanhalliday

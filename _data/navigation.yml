@@ -1,6 +1,8 @@
 header:
 - text: Blog
   url: /blog/
+- text: About
+  url: /about/
 
 footer:
 - heading: Quick links
@@ -9,6 +11,8 @@ footer:
       url: /
     - text: Blog
       url: /blog/
+    - text: About
+      url: /about/
 - heading: Top tags
   links:
     - text: health
