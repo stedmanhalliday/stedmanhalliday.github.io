@@ -194,11 +194,11 @@ html.is-animating .transition-fade {
 }
 
 .back-link::before {
-    content: '\2190\2002';
+    content: "\2190\2002";
 }
 
 .next-link::after {
-    content: '\2002\2191'
+    content: "\2002\2191";
 }
 
 .page-heading {
@@ -311,6 +311,19 @@ html.is-animating .transition-fade {
 
         @include media-query($on-laptop) {
             @include relative-font-size(1.125);
+        }
+    }
+
+    li {
+        margin-bottom: 1em;
+    }
+
+    > figure {
+        & img {
+            margin: 0 auto;
+        }
+        & figcaption {
+            text-align: center;
         }
     }
 }

@@ -99,12 +99,18 @@ img {
 /**
  * Figures
  */
+figure {
+  margin: 64px auto;
+}
+
 figure > img {
   display: block;
 }
 
 figcaption {
+  margin-top: 1em;
   font-size: 14px;
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
 }
 
 /**
@@ -153,10 +159,21 @@ a:hover {
  * Blockquotes
  */
 blockquote {
+  margin: 32px auto;
   color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
   border-left: 4px solid rgb(184.0751046025, 192.2391213389, 203.9748953975);
   padding-left: 16px;
   font-size: 18px;
+}
+blockquote.bigquote {
+  border-left: none;
+  padding: 32px 64px;
+  font-size: 26px;
+}
+@media screen and (max-width: 800px) {
+  blockquote.bigquote {
+    font-size: 22px;
+  }
 }
 blockquote cite {
   font-size: 1em;
@@ -610,6 +627,15 @@ html.is-animating .transition-fade {
   .post-content h4 {
     font-size: 18px;
   }
+}
+.post-content li {
+  margin-bottom: 1em;
+}
+.post-content > figure img {
+  margin: 0 auto;
+}
+.post-content > figure figcaption {
+  text-align: center;
 }
 
 /**
