@@ -153,7 +153,8 @@ blockquote {
 
     &.bigquote {
         border-left: none;
-        padding: $spacing-unit 2 * $spacing-unit;
+        margin: 2 * $spacing-unit auto;
+        padding: 0 2 * $spacing-unit;
 
         @include relative-font-size(1.625);
 
@@ -288,12 +289,24 @@ table {
 /**
  * Utility
  */
-.mt-50 {
+.mt-50,
+.mv-50 {
     margin-top: 0.5 * $spacing-unit;
 }
 
-.mt-100 {
+.mb-50,
+.mv-50 {
+    margin-bottom: 0.5 * $spacing-unit;
+}
+
+.mt-100,
+.mv-100 {
     margin-top: $spacing-unit;
+}
+
+.mb-100,
+.mv-100 {
+    margin-bottom: $spacing-unit;
 }
 
 .mt-200,

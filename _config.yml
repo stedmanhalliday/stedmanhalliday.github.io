@@ -75,6 +75,7 @@ plugins:
     - liquid_reading_time
     - liquid_pluralize
     - jekyll-compress-images
+    - jekyll-youtube
 destination: docs/
 jekyll-archives:
     enabled: [tags]

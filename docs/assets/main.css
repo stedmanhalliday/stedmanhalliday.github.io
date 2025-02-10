@@ -167,7 +167,8 @@ blockquote {
 }
 blockquote.bigquote {
   border-left: none;
-  padding: 32px 64px;
+  margin: 64px auto;
+  padding: 0 64px;
   font-size: 26px;
 }
 @media screen and (max-width: 800px) {
@@ -294,12 +295,24 @@ table td {
 /**
  * Utility
  */
-.mt-50 {
+.mt-50,
+.mv-50 {
   margin-top: 16px;
 }
 
-.mt-100 {
+.mb-50,
+.mv-50 {
+  margin-bottom: 16px;
+}
+
+.mt-100,
+.mv-100 {
   margin-top: 32px;
+}
+
+.mb-100,
+.mv-100 {
+  margin-bottom: 32px;
 }
 
 .mt-200,
