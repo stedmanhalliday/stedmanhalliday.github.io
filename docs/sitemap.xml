@@ -2,15 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://stedmanhalliday.com/404.html</loc>
-<lastmod>2025-02-11T17:59:12-08:00</lastmod>
+<lastmod>2025-02-12T15:53:08-08:00</lastmod>
 </url>
 <url>
 <loc>https://stedmanhalliday.com/about/</loc>
-<lastmod>2025-02-11T17:59:12-08:00</lastmod>
+<lastmod>2025-02-12T15:53:08-08:00</lastmod>
 </url>
 <url>
 <loc>https://stedmanhalliday.com/blog/</loc>
-<lastmod>2025-02-11T17:59:12-08:00</lastmod>
+<lastmod>2025-02-12T15:53:08-08:00</lastmod>
 </url>
 <url>
 <loc>https://stedmanhalliday.com/blog/2017/11/22/toxic-design-community</loc>
@@ -41,6 +41,10 @@
 <lastmod>2025-02-03T00:00:00-08:00</lastmod>
 </url>
 <url>
+<loc>https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024</loc>
+<lastmod>2025-02-12T00:00:00-08:00</lastmod>
+</url>
+<url>
 <loc>https://stedmanhalliday.com/</loc>
 </url>
 <url>
@@ -51,6 +55,9 @@
 </url>
 <url>
 <loc>https://stedmanhalliday.com/blog/tag/software/</loc>
+</url>
+<url>
+<loc>https://stedmanhalliday.com/blog/tag/code/</loc>
 </url>
 <url>
 <loc>https://stedmanhalliday.com/blog/tag/community/</loc>
@@ -81,6 +88,9 @@
 </url>
 <url>
 <loc>https://stedmanhalliday.com/blog/tag/quotes/</loc>
+</url>
+<url>
+<loc>https://stedmanhalliday.com/blog/tag/data/</loc>
 </url>
 <url>
 <loc>https://stedmanhalliday.com/assets/stedman-halliday-resume.pdf</loc>

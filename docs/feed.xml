@@ -1,4 +1,175 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://stedmanhalliday.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stedmanhalliday.com/" rel="alternate" type="text/html" /><updated>2025-02-11T17:59:12-08:00</updated><id>https://stedmanhalliday.com/feed.xml</id><title type="html">Stedman Halliday</title><subtitle>Stedman Halliday is a technical generalist based in San Francisco creating values-aligned products, brands, media, and experiences.</subtitle><author><name>Stedman Halliday</name></author><entry><title type="html">Selected Quotes: Feb 2025</title><link href="https://stedmanhalliday.com/blog/2025/02/03/selected-quotes" rel="alternate" type="text/html" title="Selected Quotes: Feb 2025" /><published>2025-02-03T00:00:00-08:00</published><updated>2025-02-03T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2025/02/03/selected-quotes</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2025/02/03/selected-quotes"><![CDATA[<h2 id="hermann-hesse-on-not-reading">Hermann Hesse on <em>not</em> reading</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://stedmanhalliday.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stedmanhalliday.com/" rel="alternate" type="text/html" /><updated>2025-02-12T15:53:08-08:00</updated><id>https://stedmanhalliday.com/feed.xml</id><title type="html">Stedman Halliday</title><subtitle>Stedman Halliday is a technical generalist based in San Francisco creating values-aligned products, brands, media, and experiences.</subtitle><author><name>Stedman Halliday</name></author><entry><title type="html">skrrtStats 2021–2024</title><link href="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024" rel="alternate" type="text/html" title="skrrtStats 2021–2024" /><published>2025-02-12T00:00:00-08:00</published><updated>2025-02-12T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024"><![CDATA[<p>I am undeniably a <a href="https://twitch.tv/yungskrrt">Yung Skrrt</a> superfan. There is something (several specific things, actually) about his music that triggers a deep fixation in me with roots as low as the limbic tier. I’ll write a blog post about them someday in honor of the Gimbus GOAT King of Internet Music.</p>
+
+<p>For now, I’ll collate annual analytics for my Yung Skrrt streaming data which I’ve been collecting for four years running. I’ll also share <a href="#diy">my code</a> so you can generate insights from your own Spotify streaming data for your favorite artists.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="skrrtstats-2024">skrrtStats 2024</h2>
+
+<p>51.59 listening hours (2.15 days) for 261 unique tracks</p>
+
+<figure><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6hr9d48fg8MQOelqGl4kZE?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></figure>
+
+<figure>
+<img alt="skrrtStats 2024" src="/assets/img/2025-02-12-skrrtStats-2024.png" />
+</figure>
+
+<h2 id="skrrtstats-2023">skrrtStats 2023</h2>
+
+<p>67.56 listening hours (2.82 days) for 223 unique tracks</p>
+
+<figure><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0ha7OKLcawZOxyqVt7Me10?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></figure>
+
+<figure>
+<img alt="skrrtStats 2023" src="/assets/img/2025-02-12-skrrtStats-2023.png" />
+</figure>
+
+<h2 id="skrrtstats-2022">skrrtStats 2022</h2>
+
+<p>96.50 listening hours (4.02 days) for 223 unique tracks</p>
+
+<figure><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4lHoMCeulPnLI0KYSKdfx2?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></figure>
+
+<figure>
+<img alt="skrrtStats 2022" src="/assets/img/2025-02-12-skrrtStats-2022.png" />
+</figure>
+
+<h2 id="skrrtstats-2021">skrrtStats 2021</h2>
+
+<p>55.54 listening hours (2.31 days) for 142 unique tracks</p>
+
+<figure><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/1coJjj2WcBxR9k8GvNgwT8?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></figure>
+
+<figure>
+<img alt="skrrtStats 2021" src="/assets/img/2025-02-12-skrrtStats-2021.png" />
+</figure>
+
+<div class="soft-break"></div>
+
+<h2 id="diy">Generate your own insights</h2>
+
+<p>Try generating your own insights for any artist of your choice from your own Spotify listening data. Here’s how:</p>
+
+<ol>
+  <li>Visit the Spotify Account privacy page and log in</li>
+  <li>Request a copy of your personal data with the Download your data tool
+    <ul>
+      <li>Use the normal option, not <em>Extended streaming history</em></li>
+      <li>It will take some time for Spotify to process your data and email you back with a download link</li>
+      <li>Download and unarchive your data</li>
+    </ul>
+  </li>
+  <li>Download code from <a href="https://gist.github.com/stedmanhalliday/910dbf4fe1193d2849966fe28bbc56c6">this gist</a>, or copy it to a new file from the block below</li>
+  <li>Place the script file in the same directory as the unarchived data folder (<code class="language-plaintext highlighter-rouge">Spotify Account Data</code>)</li>
+  <li>Edit the constants up top for the artist and number of top tracks you’d like to output</li>
+  <li>Run the script from the command line with <a href="https://nodejs.org/en">Node.js</a> or an equivalent JavaScript runtime environment</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">ARTIST</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Yung Skrrt</span><span class="dl">"</span><span class="p">;</span>    <span class="c1">// substitute any artist (ensure exact match)</span>
+<span class="kd">const</span> <span class="nx">TOP_TRACKS</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>           <span class="c1">// number of top trackx to display</span>
+
+<span class="c1">// time conversion constants</span>
+<span class="kd">const</span> <span class="nx">MS_IN_HR</span> <span class="o">=</span> <span class="mi">3600000</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">HRS_IN_DAY</span> <span class="o">=</span> <span class="mi">24</span><span class="p">;</span>
+
+<span class="c1">// GOTTA HIT THE STORAGE SPOT, GET UP IN THE STASH!</span>
+<span class="c1">// retreive and consolidate streaming data</span>
+<span class="kd">const</span> <span class="nx">streams0</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./Spotify Account Data/StreamingHistory_music_0.json</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">streams1</span> <span class="o">=</span> <span class="nf">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">./Spotify Account Data/StreamingHistory_music_1.json</span><span class="dl">"</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">streams</span> <span class="o">=</span> <span class="nx">streams0</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="nx">streams1</span><span class="p">);</span>
+
+<span class="c1">// filter to streams of tracks by artist</span>
+<span class="kd">const</span> <span class="nx">artistStreams</span> <span class="o">=</span> <span class="nx">streams</span><span class="p">.</span><span class="nf">filter</span><span class="p">(</span><span class="nx">stream</span> <span class="o">=&gt;</span> <span class="nx">stream</span><span class="p">.</span><span class="nx">artistName</span> <span class="o">===</span> <span class="nx">ARTIST</span><span class="p">);</span>
+
+<span class="c1">// return play duration of all artist streams in milliseconds</span>
+<span class="kd">function</span> <span class="nf">getDuration</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">duration</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="nx">artistStreams</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nx">stream</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">duration</span> <span class="o">+=</span> <span class="nx">stream</span><span class="p">.</span><span class="nx">msPlayed</span><span class="p">;</span>
+    <span class="p">});</span>
+    <span class="k">return</span> <span class="nx">duration</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// return duration in hours</span>
+<span class="kd">function</span> <span class="nf">getDurationInHours</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return </span><span class="p">(</span><span class="nf">getDuration</span><span class="p">()</span><span class="o">/</span><span class="nx">MS_IN_HR</span><span class="p">).</span><span class="nf">round</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// return duration in days</span>
+<span class="kd">function</span> <span class="nf">getDurationInDays</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return </span><span class="p">(</span><span class="nf">getDuration</span><span class="p">()</span><span class="o">/</span><span class="nx">MS_IN_HR</span><span class="o">/</span><span class="nx">HRS_IN_DAY</span><span class="p">).</span><span class="nf">round</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// return a sorted (descending) Map&lt;trackName, playCount&gt;</span>
+<span class="kd">function</span> <span class="nf">getTracksByPlayCount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">trackCounts</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">();</span>
+    <span class="nx">artistStreams</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nx">stream</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">trackCounts</span><span class="p">.</span><span class="nf">has</span><span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">trackName</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nx">trackCounts</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">trackName</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">count</span> <span class="o">=</span> <span class="nx">trackCounts</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">trackName</span><span class="p">);</span>
+            <span class="nx">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="nx">trackCounts</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">stream</span><span class="p">.</span><span class="nx">trackName</span><span class="p">,</span> <span class="nx">count</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="kd">const</span> <span class="nx">trackRanks</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Map</span><span class="p">([...</span><span class="nx">trackCounts</span><span class="p">.</span><span class="nf">entries</span><span class="p">()].</span><span class="nf">sort</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="nx">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span>
+    <span class="k">return</span> <span class="nx">trackRanks</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// return a string listing the first n top tracks</span>
+<span class="kd">function</span> <span class="nf">listTopTracks</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">trackCounts</span> <span class="o">=</span> <span class="nf">getTracksByPlayCount</span><span class="p">().</span><span class="nf">entries</span><span class="p">();</span>
+    <span class="kd">let</span> <span class="nx">topTracksList</span> <span class="o">=</span> <span class="dl">""</span><span class="p">;</span>
+    <span class="kd">let</span> <span class="nx">rank</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+    <span class="k">for </span><span class="p">(</span><span class="nx">track</span> <span class="k">of</span> <span class="nx">trackCounts</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if </span><span class="p">(</span><span class="nx">rank</span> <span class="o">&gt;</span> <span class="nx">TOP_TRACKS</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="nx">topTracksList</span> <span class="o">+=</span> <span class="nc">String</span><span class="p">(</span><span class="nx">rank</span><span class="p">).</span><span class="nf">padStart</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="dl">'</span><span class="s1">0</span><span class="dl">'</span><span class="p">)</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">. </span><span class="se">\"</span><span class="dl">"</span> <span class="o">+</span> 
+        <span class="nx">track</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="se">\"</span><span class="s2"> with </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">track</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> plays </span><span class="se">\n</span><span class="dl">"</span><span class="p">;</span>
+        <span class="nx">rank</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">topTracksList</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// decimal rounding (to hundredths)</span>
+<span class="nb">Number</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">round</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">num</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
+    <span class="k">return </span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nf">round</span><span class="p">(</span><span class="nx">num</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">).</span><span class="nf">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// string formatter</span>
+<span class="nb">String</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">format</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="k">this</span><span class="p">,</span>
+        <span class="nx">i</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+
+    <span class="k">while </span><span class="p">(</span><span class="nx">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">s</span> <span class="o">=</span> <span class="nx">s</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="k">new</span> <span class="nc">RegExp</span><span class="p">(</span><span class="dl">'</span><span class="se">\\</span><span class="s1">{</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">i</span> <span class="o">+</span> <span class="dl">'</span><span class="se">\\</span><span class="s1">}</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">gm</span><span class="dl">'</span><span class="p">),</span> <span class="nx">arguments</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// STATS UP, STATS UP!</span>
+<span class="c1">// print artist stats</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span>
+    <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span> 
+    <span class="dl">"</span><span class="s2">You listened to {0} for {1} hours. That's {2} days. </span><span class="se">\n</span><span class="dl">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nx">ARTIST</span><span class="p">,</span> <span class="nf">getDurationInHours</span><span class="p">(),</span> <span class="nf">getDurationInDays</span><span class="p">())</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="s2">You listened to {0} unique {1} songs. </span><span class="se">\n</span><span class="dl">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span><span class="nf">getTracksByPlayCount</span><span class="p">().</span><span class="nx">size</span><span class="p">,</span> <span class="nx">ARTIST</span><span class="p">)</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="s2">Your top </span><span class="dl">"</span> <span class="o">+</span> <span class="nx">ARTIST</span> <span class="o">+</span> <span class="dl">"</span><span class="s2"> tracks </span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="s2">--------------------------</span><span class="se">\n</span><span class="dl">"</span> <span class="o">+</span>
+    <span class="nf">listTopTracks</span><span class="p">()</span> <span class="o">+</span>
+    <span class="dl">"</span><span class="se">\n</span><span class="dl">"</span>
+<span class="p">);</span></code></pre></figure>
+
+<div class="soft-break"></div>
+
+<p>Did you like this post? Do you have thoughts about Yung Skrrt? Wanna show me what your top artist breakdown looks like? 
+<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+skrrtStats+2021%E2%80%932024.">Message me on X (Twitter)</a> and let’s yap about it.</p>]]></content><author><name>Stedman Halliday</name></author><category term="music" /><category term="software" /><category term="data" /><category term="code" /><summary type="html"><![CDATA[Annual analytics for my Yung Skrrt streaming data]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2025-02-12-skrrtStats-2022.png" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2025-02-12-skrrtStats-2022.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Selected Quotes: Feb 2025</title><link href="https://stedmanhalliday.com/blog/2025/02/03/selected-quotes" rel="alternate" type="text/html" title="Selected Quotes: Feb 2025" /><published>2025-02-03T00:00:00-08:00</published><updated>2025-02-03T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2025/02/03/selected-quotes</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2025/02/03/selected-quotes"><![CDATA[<h2 id="hermann-hesse-on-not-reading">Hermann Hesse on <em>not</em> reading</h2>
 
 <blockquote>
   <p><em>Stand just once at the stage where the stone by the road means as much to you as Goethe and Tolstoy, you will thereafter gain from Goethe, Tolstoy, and all poets infinitely more value, more sap and honey, more affirmation of life and of yourself than ever before.</em></p>
@@ -909,4 +1080,4 @@
 <div class="soft-break"></div>
 
 <p>What did you think of this post? 
-<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+Q%26A%3A+Why+are+toxic%2C+competitive+attitudes+so+common+in+the+design+community%3F.">Message me on X (Twitter)</a> and let me know if you’ve got thoughts on any of these topics.</p>]]></content><author><name>Stedman Halliday for [Prototypr](https://blog.prototypr.io/)</name></author><category term="design" /><category term="engineering" /><category term="software" /><category term="community" /><summary type="html"><![CDATA[Structural and historical rationales for fellowship and competition in design practice]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/og-image.png" /><media:content medium="image" url="https://stedmanhalliday.com/assets/og-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+Q%26A%3A+Why+are+toxic%2C+competitive+attitudes+so+common+in+the+design+community%3F.">Message me on X (Twitter)</a> and let me know if you’ve got thoughts on any of these topics.</p>]]></content><author><name>Stedman Halliday for [Prototypr](https://blog.prototypr.io/)</name></author><category term="design" /><category term="engineering" /><category term="software" /><category term="code" /><category term="community" /><summary type="html"><![CDATA[Structural and historical rationales for fellowship and competition in design practice]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/og-image.png" /><media:content medium="image" url="https://stedmanhalliday.com/assets/og-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
