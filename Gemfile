@@ -28,6 +28,7 @@ group :jekyll_plugins do
   gem 'liquid_pluralize'
   gem 'jekyll-compress-images'
   gem 'jekyll-youtube'
+  gem 'jekyll-compose'
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

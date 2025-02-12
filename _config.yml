@@ -61,6 +61,14 @@ defaults:
       values:
           image: /assets/og-image.png
 
+jekyll_compose:
+  default_front_matter:
+    drafts:
+      layout: post
+      date:
+      description:
+      tags:
+
 # Build settings
 theme: minima
 plugins:

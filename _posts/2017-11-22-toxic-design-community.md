@@ -2,7 +2,7 @@
 layout: post
 title: "Q&A: Why are toxic, competitive attitudes so common in the design community?"
 date: 2017-11-22
-author: Stedman Halliday for [Prototypr.io](https://blog.prototypr.io/)
+author: Stedman Halliday for [Prototypr](https://blog.prototypr.io/)
 description: "Structural and historical rationales for fellowship and competition in design practice"
 tags: [design, engineering, software, community]
 ---
