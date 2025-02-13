@@ -225,7 +225,7 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
 
 <h2 id="diy">Generate your own insights</h2>
 
-<p>Try generating your own insights for any artist of your choice from your own Spotify listening data. Here’s how:</p>
+<p>Generate insights for any artist of your choice from your own Spotify streaming data. Here’s how:</p>
 
 <ol>
   <li>Visit the Spotify Account privacy page and log in</li>
@@ -242,6 +242,10 @@ if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNo
   <li>Edit the constants up top for the artist and number of top tracks you’d like to output</li>
   <li>Run the script from the command line with <a href="https://nodejs.org/en" target="_blank" rel="noopener noreferrer">Node.js</a> or an equivalent JavaScript runtime environment</li>
 </ol>
+
+<ul>
+  <li>Bonus: use <a href="https://carbon.now.sh/" target="_blank" rel="noopener noreferrer">Carbon</a> to generate cool snapshots of your stats like the ones I’ve featured in this post</li>
+</ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">ARTIST</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Yung Skrrt</span><span class="dl">"</span><span class="p">;</span>    <span class="c1">// substitute any artist (ensure exact match)</span>
 <span class="kd">const</span> <span class="nx">TOP_TRACKS</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>           <span class="c1">// number of top trackx to display</span>

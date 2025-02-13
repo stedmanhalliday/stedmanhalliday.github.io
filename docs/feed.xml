@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://stedmanhalliday.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stedmanhalliday.com/" rel="alternate" type="text/html" /><updated>2025-02-12T15:53:08-08:00</updated><id>https://stedmanhalliday.com/feed.xml</id><title type="html">Stedman Halliday</title><subtitle>Stedman Halliday is a technical generalist based in San Francisco creating values-aligned products, brands, media, and experiences.</subtitle><author><name>Stedman Halliday</name></author><entry><title type="html">skrrtStats 2021–2024</title><link href="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024" rel="alternate" type="text/html" title="skrrtStats 2021–2024" /><published>2025-02-12T00:00:00-08:00</published><updated>2025-02-12T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024"><![CDATA[<p>I am undeniably a <a href="https://twitch.tv/yungskrrt">Yung Skrrt</a> superfan. There is something (several specific things, actually) about his music that triggers a deep fixation in me with roots as low as the limbic tier. I’ll write a blog post about them someday in honor of the Gimbus GOAT King of Internet Music.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://stedmanhalliday.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stedmanhalliday.com/" rel="alternate" type="text/html" /><updated>2025-02-12T16:56:55-08:00</updated><id>https://stedmanhalliday.com/feed.xml</id><title type="html">Stedman Halliday</title><subtitle>Stedman Halliday is a technical generalist based in San Francisco creating values-aligned products, brands, media, and experiences.</subtitle><author><name>Stedman Halliday</name></author><entry><title type="html">skrrtStats 2021–2024</title><link href="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024" rel="alternate" type="text/html" title="skrrtStats 2021–2024" /><published>2025-02-12T00:00:00-08:00</published><updated>2025-02-12T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024"><![CDATA[<p>I am undeniably a <a href="https://twitch.tv/yungskrrt">Yung Skrrt</a> superfan. There is something (several specific things, actually) about his music that triggers a deep fixation in me with roots as low as the limbic tier. I’ll write a blog post about them someday in honor of the Gimbus GOAT King of Internet Music.</p>
 
 <p>For now, I’ll collate annual analytics for my Yung Skrrt streaming data which I’ve been collecting for four years running. I’ll also share <a href="#diy">my code</a> so you can generate insights from your own Spotify streaming data for your favorite artists.</p>
 
@@ -48,7 +48,7 @@
 
 <h2 id="diy">Generate your own insights</h2>
 
-<p>Try generating your own insights for any artist of your choice from your own Spotify listening data. Here’s how:</p>
+<p>Generate insights for any artist of your choice from your own Spotify streaming data. Here’s how:</p>
 
 <ol>
   <li>Visit the Spotify Account privacy page and log in</li>
@@ -64,6 +64,10 @@
   <li>Edit the constants up top for the artist and number of top tracks you’d like to output</li>
   <li>Run the script from the command line with <a href="https://nodejs.org/en">Node.js</a> or an equivalent JavaScript runtime environment</li>
 </ol>
+
+<ul>
+  <li>Bonus: use <a href="https://carbon.now.sh/">Carbon</a> to generate cool snapshots of your stats like the ones I’ve featured in this post</li>
+</ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">const</span> <span class="nx">ARTIST</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Yung Skrrt</span><span class="dl">"</span><span class="p">;</span>    <span class="c1">// substitute any artist (ensure exact match)</span>
 <span class="kd">const</span> <span class="nx">TOP_TRACKS</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>           <span class="c1">// number of top trackx to display</span>
