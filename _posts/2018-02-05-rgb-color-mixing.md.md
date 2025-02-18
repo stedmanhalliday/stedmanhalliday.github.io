@@ -5,6 +5,7 @@ date: 2018-02-05
 description: Different mental models for understanding additive color mixing
 tags: [design]
 author: Stedman Halliday for [Prototypr](https://blog.prototypr.io/)
+image: /assets/img/2018-02-05-spectrum.png
 ---
 
 ![](/assets/img/2018-02-05-spectrum.webp)

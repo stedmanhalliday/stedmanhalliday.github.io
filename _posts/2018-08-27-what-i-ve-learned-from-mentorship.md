@@ -4,10 +4,11 @@ title: What I’ve Learned from Mentorship
 date: 2018-08-27
 description: Reflecting on my experiences with mentorship
 tags: [design, work, reflection]
+image: /assets/img/2018-08-27-corita-kent.jpg
 ---
 
 <figure>
-<img alt="Sister Corita Kent" src="/assets/img/2018-08-27-corita-kent.webp" />
+<img alt="Sister Corita Kent" src="/assets/img/2018-08-27-corita-kent.jpg" />
 <figcaption>Corita Kent, also known as Sister Mary Corita, was an artist with an innovative approach to design and education. (Source: <a href="https://www.corita.org/">Corita.org</a>)</figcaption>
 </figure>
 

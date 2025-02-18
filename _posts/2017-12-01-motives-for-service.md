@@ -4,6 +4,7 @@ title: "My Motives for Service"
 date: 2017-12-01
 description: "How and why I committed to living and volunteering half a world away from my comfort zone"
 tags: [community, reflection, design, work, travel]
+image: /assets/img/2017-12-01-people_supporting_people.jpg
 ---
 
 ## Stop me if you've heard this one before…
@@ -43,7 +44,7 @@ It was advice that I was at first hesitant to follow, but upon consideration it 
 -   Most importantly: **I helped people whenever possible. I learned that I genuinely just love supporting others. Helping people simultaneously makes me feel useful and feels like the best use of my time; ideal.**
 
 <figure>
-<img alt="People Supporting People" src="/assets/img/2017-12-01-people_supporting_people.webp" />
+<img alt="People Supporting People" src="/assets/img/2017-12-01-people_supporting_people.jpg" />
 <figcaption><a href="http://bijanberahimi.com/">Bijan Berahimi's</a> 2016 poster and staircase for the Facebook Analog Research Laboratory inspire me. "Support others always and see it come back in spades."</figcaption>
 </figure>
 
