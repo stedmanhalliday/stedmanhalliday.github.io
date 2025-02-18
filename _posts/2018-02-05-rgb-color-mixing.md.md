@@ -6,6 +6,7 @@ description: Different mental models for understanding additive color mixing
 tags: [design]
 author: Stedman Halliday for [Prototypr](https://blog.prototypr.io/)
 image: /assets/img/2018-02-05-spectrum.png
+permalink: rgb-color-mixing
 ---
 
 ![](/assets/img/2018-02-05-spectrum.webp)

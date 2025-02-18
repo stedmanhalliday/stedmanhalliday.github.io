@@ -5,6 +5,7 @@ date: 2018-08-27
 description: Reflecting on my experiences with mentorship
 tags: [design, work, reflection]
 image: /assets/img/2018-08-27-corita-kent.jpg
+permalink: lessons-from-mentorship
 ---
 
 <figure>
