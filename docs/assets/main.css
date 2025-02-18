@@ -531,7 +531,7 @@ html.is-animating .transition-fade {
 }
 
 .next-link::after {
-  content: " ↑";
+  content: " →";
 }
 
 .page-heading {
