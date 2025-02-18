@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://stedmanhalliday.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stedmanhalliday.com/" rel="alternate" type="text/html" /><updated>2025-02-17T22:04:40-08:00</updated><id>https://stedmanhalliday.com/feed.xml</id><title type="html">Stedman Halliday</title><subtitle>Stedman Halliday is a technical generalist based in San Francisco creating values-aligned products, brands, media, and experiences.</subtitle><author><name>Stedman Halliday</name></author><entry><title type="html">skrrtStats 2021–2024</title><link href="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024" rel="alternate" type="text/html" title="skrrtStats 2021–2024" /><published>2025-02-12T00:00:00-08:00</published><updated>2025-02-12T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024"><![CDATA[<p>I am undeniably a <a href="https://twitch.tv/yungskrrt">Yung Skrrt</a> superfan. There is something (several specific things, actually) about his music that triggers a deep fixation in me with roots as low as the limbic tier. I’ll write a blog post about them someday in honor of the Gimbus GOAT King of Internet Music.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://stedmanhalliday.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stedmanhalliday.com/" rel="alternate" type="text/html" /><updated>2025-02-18T00:29:29-08:00</updated><id>https://stedmanhalliday.com/feed.xml</id><title type="html">Stedman Halliday</title><subtitle>Stedman Halliday is a technical generalist based in San Francisco creating values-aligned products, brands, media, and experiences.</subtitle><author><name>Stedman Halliday</name></author><entry><title type="html">skrrtStats 2021–2024</title><link href="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024" rel="alternate" type="text/html" title="skrrtStats 2021–2024" /><published>2025-02-12T00:00:00-08:00</published><updated>2025-02-12T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024"><![CDATA[<p>I am undeniably a <a href="https://twitch.tv/yungskrrt">Yung Skrrt</a> superfan. There is something (several specific things, actually) about his music that triggers a deep fixation in me with roots as low as the limbic tier. I’ll write a blog post about them someday in honor of the Gimbus GOAT King of Internet Music.</p>
 
 <p>For now, I’ll collate annual analytics for my Yung Skrrt streaming data which I’ve been collecting for four years running. I’ll also share <a href="#diy">my code</a> so you can generate insights from your own Spotify streaming data for your favorite artists.</p>
 
@@ -332,7 +332,387 @@
 
 <h2 class="mt-200 text-center">Related content</h2>
 <div class="substack-post-embed" style="margin: 0 auto; border-radius: 12px; overflow: hidden"><p lang="en">Melatonin: MMTYWTK Addendum by QK</p><p>Fun Practical Applications of Abusing Endogenous Neurohormones</p><a data-post-link="" href="https://optimizeeverything.substack.com/p/melatonin-mmtywtk-addendum">Read on Substack</a></div>
-<script async="" src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>]]></content><author><name>Stedman Halliday and [quixoteknight](https://substack.com/@quixoteknight)</name></author><category term="health" /><category term="drugs" /><category term="sleep" /><summary type="html"><![CDATA[Reset your sleep clock or beat jetlag with beta blockers]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2024-09-04-circadian-propranolol-00.jpg" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2024-09-04-circadian-propranolol-00.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Mailchimp Rebrand: First Impressions</title><link href="https://stedmanhalliday.com/blog/2018/09/27/mailchimp-rebrand-first-impressions" rel="alternate" type="text/html" title="Mailchimp Rebrand: First Impressions" /><published>2018-09-27T00:00:00-07:00</published><updated>2018-09-27T00:00:00-07:00</updated><id>https://stedmanhalliday.com/blog/2018/09/27/mailchimp-rebrand-first-impressions</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2018/09/27/mailchimp-rebrand-first-impressions"><![CDATA[<figure>
+<script async="" src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>]]></content><author><name>Stedman Halliday and [quixoteknight](https://substack.com/@quixoteknight)</name></author><category term="health" /><category term="drugs" /><category term="sleep" /><summary type="html"><![CDATA[Reset your sleep clock or beat jetlag with beta blockers]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2024-09-04-circadian-propranolol-00.jpg" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2024-09-04-circadian-propranolol-00.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Notes on Organizational Design</title><link href="https://stedmanhalliday.com/blog/2018/11/30/notes-on-organizational-design" rel="alternate" type="text/html" title="Notes on Organizational Design" /><published>2018-11-30T00:00:00-08:00</published><updated>2018-11-30T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2018/11/30/notes-on-organizational-design</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2018/11/30/notes-on-organizational-design"><![CDATA[<p>This article summarizes two talks on organizational design and design operations (aka “design ops”) by <a href="https://twitter.com/peterme">Peter Merholz</a> and <a href="https://twitter.com/bettay">Kristin Skinner</a>, authors of <em>Org Design for Design Orgs</em>.</p>
+
+<h2 id="context">Context</h2>
+
+<p>I’m a community manager at <a href="https://facebook.com/groups/designguild">Designers Guild</a> where we just completed a pilot run of Facebook’s new Mentorship feature (currently being tested in Groups and Pages). As part of our trial—along with setting up some organizational resources and gathering feedback—I participated in our 8-week, 6-step program as a mentee with a small cohort of other members who applied for the program.</p>
+
+<p>Brad Monahan also moderates Designers Guild and agreed to help out by participating in the program as my mentor. Serendipitously, Brad is also a design manager at Uber and providing direction for designers’ career growth is a core function of his role there. Something that Brad and I began discussing early on is the kind of environment I’d like to work in for the next phase of my design career.</p>
+
+<p>One thing that piqued my interest was the particular way in which Brad described his own job. He doesn’t see moving into management so much as ceasing to design but instead described it as designing different things (teams) to achieve impact in different ways. He unraveled this thread a bit for me and introduced me to a book called <em>Org Design for Design Orgs</em> and the emerging field of design operations (aka <em>design ops</em>). I ended up watching a couple of talks by the authors and annotating them for homework that week.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="org-design-notes-from-peter-merholz">Org Design Notes from Peter Merholz</h2>
+
+<h3 id="org-designs-general-philosophy">Org Design’s General Philosophy</h3>
+
+<p>Merholz contends that service design is the best lens to peer through in order to understand the core philosophy underlying org design.</p>
+
+<blockquote class="bigquote">
+All design is service design.
+</blockquote>
+
+<ul>
+  <li>Many customer touch points occur throughout a <em>journey</em>.</li>
+  <li>Design can inform and drive a diverse set of business processes such as management, marketing, engineering, manufacturing, sales, and support.</li>
+</ul>
+
+<h3 id="organizational-models-for-design-teams">Organizational Models for Design Teams</h3>
+
+<p>Organizational models for design teams can vary quite a bit. Merholz splits these into 3 major categories.</p>
+
+<h4 id="centralized-internal-services">Centralized Internal Services</h4>
+
+<p><em>An in-house agency</em></p>
+
+<ul>
+  <li>This model is project-based.</li>
+  <li>Teams are organized by function.</li>
+  <li>Designers are farmed out on projects as needed.</li>
+</ul>
+
+<figure>
+<img alt="centralized internal services pros and cons" src="/assets/img/2018-11-30-table-0.webp" />
+<figcaption>Common pros and cons of the centralized internal services model</figcaption>
+</figure>
+
+<h4 id="decentralized--embedded">Decentralized &amp; Embedded</h4>
+
+<p><em>Everyone gets a designer; pods in squads</em></p>
+
+<ul>
+  <li>This model is program-based.</li>
+  <li>Designers are embedded as core team members.</li>
+  <li>It’s common for this model to create teams with 1, 2, or few designer(s).</li>
+</ul>
+
+<figure>
+<img alt="decentralized and embedded pros and cons" src="/assets/img/2018-11-30-table-1.webp" />
+<figcaption>Common pros and cons of the decentralized and embedded model</figcaption>
+</figure>
+
+<h4 id="centralized-partnership">Centralized Partnership</h4>
+
+<p><em>The best of both worlds</em></p>
+
+<ul>
+  <li>Senior designers maintain connections to specialized org teams, while not necessarily embedded (i.e. decentralized and embedded model).</li>
+  <li>This makes sense since designers will possess deeper vertical skillsets later in their careers.</li>
+  <li>Less experienced designers become more modular gears, slotting into project functions as needed (i.e. centralized model).</li>
+</ul>
+
+<p><strong>It’s clear that Merholz favors compromise when it comes to the structure of design organizations.</strong> He identifies numerous advantages to hybridity:</p>
+
+<ul>
+  <li>Designers feel supported in their careers, skill development, and daily workplace needs.</li>
+  <li>Design teams maintain commitment to products and features.</li>
+  <li>Centralization helps maintain a holistic view across the entire customer journey and different segments of the organization.</li>
+  <li>Junior designers have mobility after shorter commitments.</li>
+  <li>Teams are organized by steps in the customer journey which prevents frequent team reorganization.</li>
+</ul>
+
+<div class="soft-break"></div>
+
+<h2 id="org-design-notes-from-kristin-skinner">Org Design Notes from Kristin Skinner</h2>
+
+<h3 id="delivering-great-experiences">Delivering Great Experiences</h3>
+
+<blockquote>
+  <p>To deliver great experiences… I just need to get the <strong>__</strong>_____ right.</p>
+</blockquote>
+
+<ul>
+  <li>Design? 🚫 Nope!</li>
+  <li>Strategy? 🚫 Guess again.</li>
+  <li>Organization… ✅ Bingo!</li>
+</ul>
+
+<blockquote class="bigquote">
+To deliver great experiences… I just need to get the organization right.
+</blockquote>
+
+<h3 id="business-first">Business First</h3>
+
+<blockquote>
+  <p><em>Designers need to show up like business people first, just like any other discipline.</em></p>
+
+  <p>—Bob Schwartz, GM Global Design, GE Healthcare</p>
+</blockquote>
+
+<blockquote class="bigquote">
+Lesson #1:
+<br />
+You can’t change the product or service without changing the organization.
+</blockquote>
+
+<h3 id="the-12-qualities-of-effective-design-orgs">The 12 Qualities of Effective Design Orgs</h3>
+
+<p>Skinner identifies three categories of useful qualities in design orgs.</p>
+
+<h4 id="foundation">Foundation</h4>
+
+<p>1. Shared sense of purpose</p>
+
+<p>2. Focused, empowered leadership</p>
+
+<p>3. Authentic user empathy</p>
+
+<p>4. Understand, articulate, and create value</p>
+
+<h4 id="output">Output</h4>
+
+<p>5. Support the entire journey</p>
+
+<p>6. Delivers at all levels of scale</p>
+
+<p>7. Establish and uphold standards of quality</p>
+
+<p>8. Value delivery over perfection</p>
+
+<h4 id="management">Management</h4>
+
+<p>9. Treat team members as people, not resources</p>
+
+<p>10. Diversity of perspective and background</p>
+
+<p>11. Foster a collaborative environment</p>
+
+<p>12. Manage operations effectively</p>
+
+<div class="soft-break"></div>
+
+<h3 id="decision-making">Decision Making</h3>
+
+<blockquote>
+  <p><em>Half the decisions in organizations fail.</em></p>
+
+  <p>—Paul Nutt, Author and Professor, Ohio State University</p>
+</blockquote>
+
+<p><strong>Fragmented decision making can have an outsized impact.</strong></p>
+
+<p>Here are some study results on the number of viable solutions to business problems generated from different decision-making processes (ranked):</p>
+
+<ol>
+  <li>Identifying performance gaps</li>
+  <li>Goal setting</li>
+  <li>Problem solving</li>
+  <li>Leader makes decisions</li>
+</ol>
+
+<p>More inclusive and participatory management styles yield more solutions.</p>
+
+<blockquote class="bigquote">
+Lesson #2:
+<br />
+Much of what causes designers to stress about their work is the result of flawed operations.
+</blockquote>
+
+<h3 id="the-5-stages-of-design-org-evolution">The 5 Stages of Design Org Evolution</h3>
+
+<figure>
+<img alt="Stage 5 design org diagram" src="/assets/img/2018-11-30-distributed-leadership.webp" />
+<figcaption>A diagram of a Stage 5 design org from Skinner’s Keynote</figcaption>
+</figure>
+
+<h4 id="stage-1-the-initial-pair">Stage 1: The Initial Pair</h4>
+
+<p>The smallest design organization possible is a team of 2.</p>
+
+<h5 id="head-of-design">Head of Design</h5>
+
+<ul>
+  <li>Traits: creative, managerial, operational</li>
+  <li>A maker at this stage</li>
+</ul>
+
+<h5 id="product-designer">Product Designer</h5>
+
+<ul>
+  <li>Focuses on structure and surface of design solutions</li>
+  <li>Examples: interaction design, visual design, etc.</li>
+</ul>
+
+<h4 class="mt-200">Stage 2: Full Team</h4>
+
+<ul>
+  <li>This stage may add more product designers.</li>
+  <li>The team now consists of 5–7 people.</li>
+  <li>Specialized hires are brought on (not limited to the examples below):</li>
+</ul>
+
+<h5 id="content-strategist">Content Strategist</h5>
+
+<p>Responsible for <strong>voice and tone</strong>, content structure, and copywriting</p>
+
+<h5 id="communication-designer">Communication Designer</h5>
+
+<p><strong>Owns visual design through multiple channels:</strong> online and offline, brand applications, information design, etc.</p>
+
+<h4 class="mt-200">Stage 3: Design Org</h4>
+
+<p>The org now comprises at least 20 people. More examples of additions follow:</p>
+
+<h5 id="team-lead">Team Lead</h5>
+
+<p>A <strong>people manager</strong> type with <strong>domain expertise</strong> who’s <strong>still practicing</strong></p>
+
+<h5 id="ux-researcher">UX Researcher</h5>
+
+<p>This is a <strong>generative and evaluative</strong> role that is ideally <strong>highly leveraged throughout the org.</strong></p>
+
+<h5 id="head-of-design-revisited">Head of Design (revisited)</h5>
+
+<p>At this stage it’s common for HoD’s to struggle with scale and cede the role to directors with more experience.</p>
+
+<h4 class="mt-200">Stage 4: Coordinated Org</h4>
+
+<p>This stage is primarily focused on managing scale-related complexity.</p>
+
+<h5 id="service-designer">Service Designer</h5>
+
+<p>These designers integrate strategy and structure across teams.</p>
+
+<h5 id="design-lead">Design Lead</h5>
+
+<p>This <strong>people manager</strong> (possibly team lead), is <strong>still practicing.</strong></p>
+
+<h5 id="design-practiceprogram-manager">Design Practice/Program Manager</h5>
+
+<p>This manager focuses on <strong>practice, communication, and prioritization,</strong> working towards an overall objective of <strong>organizational effectiveness.</strong></p>
+
+<h4 class="mt-200">Stage 5: Distributed Leadership</h4>
+
+<p>This is the final growth taxonomy of design organizations in Skinner’s model.</p>
+
+<h5 id="design-director">Design Director</h5>
+
+<p>This leader oversees a swath of <strong>experiences across teams.</strong></p>
+
+<h5 id="creative-director">Creative Director</h5>
+
+<p>This leader establishes <strong>quality standards</strong> via <strong>creative leadership.</strong></p>
+
+<h5 id="research-director">Research Director</h5>
+
+<p>This director leads a team pursuing <strong>research</strong> to create an <strong>insights hub.</strong></p>
+
+<h5 id="creative-technologist">Creative Technologist</h5>
+
+<p>This <strong>designer-developer</strong> (<em>not</em> a front-end dev) <strong>prototypes new experiences.</strong></p>
+
+<div class="soft-break"></div>
+
+<h3 id="when-to-introduce-design-ops">When to Introduce Design Ops</h3>
+
+<p>It’s time to introduce design ops when your org suffers from:</p>
+
+<ul>
+  <li>poor internal coordination (process, communications, file management)</li>
+  <li>difficulty with cross-functional collaboration within the entire org</li>
+  <li>unsuitable project or program staffing</li>
+  <li>poor visibility into related work streams</li>
+  <li>duplicated efforts across teams</li>
+  <li>non-existent measurement infrastructure</li>
+  <li>fragmented decision-making</li>
+</ul>
+
+<h4 class="mt-200">Operational Spectrum</h4>
+
+<h5 id="little-o-operations">“Little o” Operations</h5>
+
+<p>Removes <em>sand in the gears</em> by meeting designers’ daily workplace needs like:</p>
+
+<ul>
+  <li>scheduling and budgets</li>
+  <li>tools and procedures</li>
+  <li>communication and coordination</li>
+  <li>measured by efficacy</li>
+</ul>
+
+<h5 id="big-o-operations">“Big O” Operations</h5>
+
+<p>The <em>work about the work</em> including:</p>
+
+<ul>
+  <li>annual planning for adequate headcount</li>
+  <li>market-appropriate compensation packages</li>
+  <li>performance review adjustments to suit designers</li>
+  <li>facilities and IT to support collaboration</li>
+  <li>policy changes to support real customer research</li>
+</ul>
+
+<blockquote class="bigquote">
+A high-performing design management practice coordinates efforts and knowledge sharing, facilitates prioritization, guides quality and effectiveness, and enables and environment where designers want to grow.
+</blockquote>
+
+<h4 id="design-management">Design Management</h4>
+
+<p>These are examples of roles that work toward the above stated goals:</p>
+
+<h5 id="design-practice-manager">Design Practice Manager</h5>
+
+<ul>
+  <li>partners with design leads to manage <strong>design-related business matters</strong></li>
+  <li>connects HoD to stakeholders and other HODs</li>
+  <li>prioritizes efforts for impact</li>
+  <li>allocates personnel suitably</li>
+  <li>ensures effective delivery</li>
+</ul>
+
+<h5 id="design-program-manager">Design Program Manager</h5>
+
+<ul>
+  <li>partners with design leads on all of the <strong>highest-priority initiatives,</strong> programs, platforms</li>
+  <li>flexes between strategy and tactics within the design process</li>
+  <li>ensures program and team health</li>
+  <li>delivers exceptional human-centered products</li>
+</ul>
+
+<h5 id="design-operations">Design Operations</h5>
+
+<p>This team is core group of operations, finance, and relationship experts providing <strong>shared services across a design org.</strong></p>
+
+<ul>
+  <li>Emphasizes <strong>health of practice,</strong> people, and projects</li>
+  <li>Introduce <strong>measurement and reporting</strong> for better decision-making</li>
+</ul>
+
+<h3 class="mt-200">Roles Summary</h3>
+
+<figure>
+<img alt="table summarizing design org roles" src="/assets/img/2018-11-30-table-2.webp" />
+<figcaption>Summary of core design and leadership roles discussed in the keynote; unlisted positions are possible</figcaption>
+</figure>
+
+<h3 id="final-lessons">Final Lessons</h3>
+
+<blockquote class="bigquote">
+Lesson #3:
+<br />
+There is no one-size-fits-all for design ops.
+</blockquote>
+<blockquote class="bigquote">
+Lesson #4:
+<br />
+It takes a relatively small team to have outsize impact.
+</blockquote>
+<blockquote class="bigquote">
+Lesson #5:
+<br />
+When learning something new, share generously. Don’t fear judgment; judge conservatively.
+</blockquote>
+
+<div class="soft-break"></div>
+
+<p><em>Designers Guild is a Facebook community comprising designers from 100 countries committed to discussing, learning, and growing together. We just celebrated our 15,000 member milestone by releasing a handful of awesome prizes sponsored by some great design-driven companies. Thanks so much to Sketch, Dropbox, UXPin, Skillshare, Adobe Creative Cloud, Semplice, and Animoodles for their generous contributions to our members. Special thanks to Tanner Christensen and Marissa Louie for organizing the giveaway!</em></p>
+
+<div class="soft-break"></div>
+
+<p>Learn anything from this post? 
+<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+Notes+on+Organizational+Design.">Message me on X (Twitter)</a> and tell me what you got out of it.</p>]]></content><author><name>Stedman Halliday</name></author><category term="design" /><category term="work" /><category term="leadership" /><summary type="html"><![CDATA[This article summarizes two talks on organizational design and design operations (aka “design ops”) by Peter Merholz and Kristin Skinner, authors of Org Design for Design Orgs.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/og-image.png" /><media:content medium="image" url="https://stedmanhalliday.com/assets/og-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Mailchimp Rebrand: First Impressions</title><link href="https://stedmanhalliday.com/blog/2018/09/27/mailchimp-rebrand-first-impressions" rel="alternate" type="text/html" title="Mailchimp Rebrand: First Impressions" /><published>2018-09-27T00:00:00-07:00</published><updated>2018-09-27T00:00:00-07:00</updated><id>https://stedmanhalliday.com/blog/2018/09/27/mailchimp-rebrand-first-impressions</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2018/09/27/mailchimp-rebrand-first-impressions"><![CDATA[<figure>
 <img alt="Mailchimp illustration" src="/assets/img/2018-09-27-mailchimp-header.png" />
 </figure>
 
