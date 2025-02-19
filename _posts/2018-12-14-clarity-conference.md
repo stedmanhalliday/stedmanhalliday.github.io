@@ -3,7 +3,7 @@ layout: post
 title: Here's what you missed at Clarity 2018
 date: 2018-12-14
 description: "A recap of talks at Clarity: the design systems conference"
-tags: [design, software]
+tags: [design, software, events]
 ---
 
 [Clarity](https://www.clarityconf.com/) is a design systems conference that was held from December 10–12, 2018 in New York City. It was founded and organized by Jina Anne, a leading design systems advocate who’s done a ton to move this space forward. Figma sponsored my ticket (thanks, Katie Gregorio!), and I promised the [Designers Guild](https://www.facebook.com/groups/designguild/) community that I’d pay it forward with a summary that pulls out some key insights from the talks that I caught. A recap that includes videos of each talk will eventually be posted on the conference’s website and I’ll update this article incrementally as more content becomes available.

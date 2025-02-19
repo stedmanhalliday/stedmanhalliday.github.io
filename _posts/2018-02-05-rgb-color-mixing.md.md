@@ -3,7 +3,7 @@ layout: post
 title: "Q&A: How can digital designers mix RGB colors more effectively?"
 date: 2018-02-05
 description: Different mental models for understanding additive color mixing
-tags: [design]
+tags: [design, code]
 author: Stedman Halliday for [Prototypr](https://blog.prototypr.io/)
 image: /assets/img/2018-02-05-spectrum.png
 permalink: /blog/rgb-color-mixing

@@ -660,6 +660,11 @@ html.is-animating .transition-fade {
   content: " →";
 }
 
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+}
+
 /**
  * Syntax highlighting styles
  */

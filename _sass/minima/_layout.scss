@@ -331,3 +331,8 @@ html.is-animating .transition-fade {
 .next-link::after {
     content: "\2002\2192";
 }
+
+.page-navigation {
+    display: flex;
+    justify-content: space-between;
+}
