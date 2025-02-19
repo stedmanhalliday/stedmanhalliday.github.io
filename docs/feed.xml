@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://stedmanhalliday.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stedmanhalliday.com/" rel="alternate" type="text/html" /><updated>2025-02-18T18:40:27-08:00</updated><id>https://stedmanhalliday.com/feed.xml</id><title type="html">Stedman Halliday</title><subtitle>Stedman Halliday is a technical generalist based in San Francisco creating values-aligned products, brands, media, and experiences.</subtitle><author><name>Stedman Halliday</name></author><entry><title type="html">skrrtStats 2021–2024</title><link href="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024" rel="alternate" type="text/html" title="skrrtStats 2021–2024" /><published>2025-02-12T00:00:00-08:00</published><updated>2025-02-12T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024"><![CDATA[<p>I am undeniably a <a href="https://twitch.tv/yungskrrt">Yung Skrrt</a> superfan. There is something (several specific things, actually) about his music that triggers a deep fixation in me with roots as low as the limbic tier. I’ll write a blog post about them someday in honor of the Gimbus GOAT King of Internet Music.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://stedmanhalliday.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stedmanhalliday.com/" rel="alternate" type="text/html" /><updated>2025-02-18T20:21:10-08:00</updated><id>https://stedmanhalliday.com/feed.xml</id><title type="html">Stedman Halliday</title><subtitle>Stedman Halliday is a technical generalist based in San Francisco creating values-aligned products, brands, media, and experiences.</subtitle><author><name>Stedman Halliday</name></author><entry><title type="html">skrrtStats 2021–2024</title><link href="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024" rel="alternate" type="text/html" title="skrrtStats 2021–2024" /><published>2025-02-12T00:00:00-08:00</published><updated>2025-02-12T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2025/02/12/skrrtstats-2021-2024"><![CDATA[<p>I am undeniably a <a href="https://twitch.tv/yungskrrt">Yung Skrrt</a> superfan. There is something (several specific things, actually) about his music that triggers a deep fixation in me with roots as low as the limbic tier. I’ll write a blog post about them someday in honor of the Gimbus GOAT King of Internet Music.</p>
 
 <p>For now, I’ll collate annual analytics for my Yung Skrrt streaming data which I’ve been collecting for four years running. I’ll also share <a href="#diy">my code</a> so you can generate insights from your own Spotify streaming data for your favorite artists.</p>
 
@@ -332,7 +332,250 @@
 
 <h2 class="mt-200 text-center">Related content</h2>
 <div class="substack-post-embed" style="margin: 0 auto; border-radius: 12px; overflow: hidden"><p lang="en">Melatonin: MMTYWTK Addendum by QK</p><p>Fun Practical Applications of Abusing Endogenous Neurohormones</p><a data-post-link="" href="https://optimizeeverything.substack.com/p/melatonin-mmtywtk-addendum">Read on Substack</a></div>
-<script async="" src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>]]></content><author><name>Stedman Halliday and [quixoteknight](https://substack.com/@quixoteknight)</name></author><category term="health" /><category term="drugs" /><category term="sleep" /><summary type="html"><![CDATA[Reset your sleep clock or beat jetlag with beta blockers]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2024-09-04-circadian-propranolol-00.jpg" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2024-09-04-circadian-propranolol-00.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Notes on Organizational Design</title><link href="https://stedmanhalliday.com/blog/2018/11/30/notes-on-organizational-design" rel="alternate" type="text/html" title="Notes on Organizational Design" /><published>2018-11-30T00:00:00-08:00</published><updated>2018-11-30T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2018/11/30/notes-on-organizational-design</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2018/11/30/notes-on-organizational-design"><![CDATA[<p>This article summarizes two talks on organizational design and design operations (aka “design ops”) by <a href="https://twitter.com/peterme">Peter Merholz</a> and <a href="https://twitter.com/bettay">Kristin Skinner</a>, authors of <em>Org Design for Design Orgs</em>.</p>
+<script async="" src="https://substack.com/embedjs/embed.js" charset="utf-8"></script>]]></content><author><name>Stedman Halliday and [quixoteknight](https://substack.com/@quixoteknight)</name></author><category term="health" /><category term="drugs" /><category term="sleep" /><summary type="html"><![CDATA[Reset your sleep clock or beat jetlag with beta blockers]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2024-09-04-circadian-propranolol-00.jpg" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2024-09-04-circadian-propranolol-00.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Here’s what you missed at Clarity 2018</title><link href="https://stedmanhalliday.com/blog/2018/12/14/clarity-conference" rel="alternate" type="text/html" title="Here’s what you missed at Clarity 2018" /><published>2018-12-14T00:00:00-08:00</published><updated>2018-12-14T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2018/12/14/clarity-conference</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2018/12/14/clarity-conference"><![CDATA[<p><a href="https://www.clarityconf.com/">Clarity</a> is a design systems conference that was held from December 10–12, 2018 in New York City. It was founded and organized by Jina Anne, a leading design systems advocate who’s done a ton to move this space forward. Figma sponsored my ticket (thanks, Katie Gregorio!), and I promised the <a href="https://www.facebook.com/groups/designguild/">Designers Guild</a> community that I’d pay it forward with a summary that pulls out some key insights from the talks that I caught. A recap that includes videos of each talk will eventually be posted on the conference’s website and I’ll update this article incrementally as more content becomes available.</p>
+
+<h2 class="mt-200">Day 1 Morning</h2>
+
+<h3 id="sharon-steed">Sharon Steed</h3>
+
+<p><a href="https://www.clarityconf.com/session/creating-cultures-of-empathy"><em>Creating Cultures of Empathy</em></a></p>
+
+<figure>
+<img alt="Sharon Steed sketch notes" src="/assets/img/2018-12-14-sharon-steed.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p>Sharon Steed kicked off the event mincing no words about one of the defining struggles of her life: she has a speech impediment. Steed spoke about how her experience inspired her to become a <a href="http://communilogue.co/">consultant</a> who advocates for more empathy in business for the benefit of leaders, workers, businesses, and consumers. Below are some key insights from her talk.</p>
+
+<ul>
+  <li>Empathy defines an organization’s culture (shared values, attitudes, standards, and beliefs) which underlies the intent of a design system; who and what companies care about shows through.</li>
+  <li>Work is a big part of love, and love should be a big part of work. Love can be an abstract idea (noun) but in many contexts it connotes a set of small choices we make to consider one another every day in our communication.</li>
+  <li>Practical tactics for increasing workplace empathy:
+    <ol>
+      <li>develop patience</li>
+      <li>cultivate perspective; rephrase your intent, focus on understanding, and persist in seeking consensus</li>
+      <li>form connections by speaking with clear intent</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 class="mt-200">Kim Williams</h3>
+
+<p><a href="https://www.clarityconf.com/session/start-with-your-brand-purpose"><em>Start with Your Brand Purpose</em></a></p>
+
+<figure>
+<img alt="Kim Williams sketch notes" src="/assets/img/2018-12-14-kim-williams.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p><a href="https://twitter.com/kimwms_">Kim Williams</a> got everyone on the same page with a case study of her team’s work on Indeed’s design system. Some insights:</p>
+
+<ul>
+  <li>It’s better to have a hundred people who love your product than a million who like it. Starting there can pay dividends.</li>
+  <li>Design systems are so great because they’re a documented and realized instantiation of so many practice areas that intersect to allow customer centricity: brand identity systems, content strategy, design engineering, discovery and insights, research, design ops, product design, etc.</li>
+  <li>Across different domains of organizational praxis, innovation emerges from the summative constraints of what’s desirable, feasible, and viable.</li>
+</ul>
+
+<h3 class="mt-200">Yesenia Perez-Cruz</h3>
+
+<p><a href="https://www.clarityconf.com/session/scenario-driven-design-systems"><em>Scenario-Driven Design Systems</em></a></p>
+
+<figure>
+<img alt="Yesenia Perez-Cruz sketch notes" src="/assets/img/2018-12-14-yesenia-perez-cruz.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p>Yesenia Perez-Cruz talked about increasing the efficacy of a design system by intelligently utilizing context as a constraint that shapes its focus and intent. She moved through a <a href="https://speakerdeck.com/yeseniaperezcruz/building-flexible-design-systems">case study</a> of how <a href="https://www.vox.com/">Vox</a> pursued a design system that balances the needs of multiple brands and web properties. Key points:</p>
+
+<ul>
+  <li>Don’t start with components—they need context and purpose. Start with language because it shapes content and addresses people. Starting there helps orient systems around semantic differences rather than presentational ones.</li>
+  <li>All patterns should solve specific problems rather than aiming to create a one-size-fits-all solution. Avoid developing patterns for hypothetical situations.</li>
+  <li>In writings on his “atomic design” philosophy, Brad Frost has explicated the UI inventory process from a visual/presentational angle. Perez-Cruz contends that this should be followed by a purpose-driven inventory that identifies the common semantic contexts of UI components.</li>
+</ul>
+
+<div class="soft-break"></div>
+
+<h2 id="day-1-afternoon">Day 1 Afternoon</h2>
+
+<h3 id="sarah-drasner">Sarah Drasner</h3>
+
+<p><a href="https://www.clarityconf.com/session/composable-animation"><em>Composable Animation</em></a></p>
+
+<figure>
+<img alt="Sarah Drasner sketch notes" src="/assets/img/2018-12-14-sarah-drasner.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p>I missed Sarah Drasner’s talk for a lunch interview and office visit, but it was a real favorite when I asked at the after party. I’ll have to check it out when the 2018 recap makes it online.</p>
+
+<h3 class="mt-200">Adekunle Oduye</h3>
+
+<p><a href="https://www.clarityconf.com/session/the-three-ps-of-a-design-system"><em>The Three P’s of a Design System</em></a></p>
+
+<figure>
+<img alt="Adekunle Oduye sketch notes" src="/assets/img/2018-12-14-adekunle-oduye.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p>Adekunle Oduye’s talk focused on the philosophically important details of technical implementation that are key to the cross-functional benefits of a successful design system.</p>
+
+<ul>
+  <li>Design systems are for <em>people!</em> Successful design systems that are heavily and effectively utilized across an organization properly balance the needs of their producers and consumers.</li>
+  <li><em>Process</em> is paramount in the development of a design system in order to align outcomes with goals. It defines how the system compromises with constraints to navigate diverse needs.</li>
+  <li><em>Prototyping</em> is a must! “It’s not real until it’s in the code.”
+The details made this talk and a lot of it speaks for itself. Give it a watch when it’s up!</li>
+</ul>
+
+<h3 class="mt-200">Jennifer Hom</h3>
+
+<p><a href="https://www.clarityconf.com/session/your-face-here"><em>Your Face Here</em></a></p>
+
+<figure>
+<img alt="Jennifer Hom sketch notes" src="/assets/img/2018-12-14-jennifer-hom.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p><a href="https://twitter.com/jhomnomnom">Jennifer Hom</a> humorously delivered a thorough case study on <a href="https://www.wired.com/story/jennifer-hom-illustrations-airbnb/">her work leading illustration for Airbnb’s Design Language System.</a></p>
+
+<ul>
+  <li>Hom made a case for more thorough efforts in illustrative diversity. She exposed strategies for cultivating deeper interest in others’ experiences and translating them into expressive visual language for a design system.</li>
+  <li>She drove home the incredible importance of custom in-house work for high-performing illustration in design systems.</li>
+  <li>She didn’t have a committal answer when asked what the best alternative to in-house work was; it is that invaluable. Sometimes, you just need custom work.</li>
+</ul>
+
+<div class="soft-break"></div>
+
+<h2 id="day-2-morning">Day 2 Morning</h2>
+
+<h3 id="hamish-smyth--jesse-reed">Hamish Smyth &amp; Jesse Reed</h3>
+
+<p><a href="https://www.clarityconf.com/session/preserving-legacy-design-systems"><em>Preserving Legacy Design Systems</em></a></p>
+
+<figure>
+<img alt="Smyth &amp; Reed sketch notes" src="/assets/img/2018-12-14-smyth-reed.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p>I was feeling pretty jetlagged so I slept in a bit and missed this first talk of the morning by Hamish Smyth and Jesse Reed. I’m awaiting the recap.</p>
+
+<h3 class="mt-200">Amélie Lamont</h3>
+
+<p><a href="https://www.clarityconf.com/session/language-of-design"><em>Language of Design</em></a></p>
+
+<figure>
+<img alt="Amélie Lamont sketch notes" src="/assets/img/2018-12-14-amelie-lamont.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p>Amélie Lamont’s talk made some fascinating connections between design systems and language through the lens of poetry. All the snaps for this one 🫰!</p>
+
+<ul>
+  <li>Design systems start with language and we should recognize that words have power.</li>
+  <li>Language is not neutral or apolitical and employing it usefully requires institutional knowledge and consent from individuals with skin in the game.</li>
+  <li>The loudest voices will always be heard, but will they be listened to?</li>
+  <li>Gatekeeping sucks!</li>
+</ul>
+
+<h3 class="mt-200">Dan Mall</h3>
+
+<p><a href="https://www.clarityconf.com/session/putting-the-design-in-design-systems"><em>Putting the Design in Design Systems</em></a></p>
+
+<figure>
+<img alt="Dan Mall sketch notes" src="/assets/img/2018-12-14-dan-mall.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p>Dan Mall’s talk was <em>FUN!</em> He gave out Dum Dums lollipops for design systems jeopardy 😊🍭. The talk was a compelling look at what design systems can actually do for designers and why we shouldn’t be afraid to push them forward in product-oriented organizations.</p>
+
+<ul>
+  <li>Design systems are probably most heavily utilized by… developers. Designers understandably fear automation and it informs our behind-the-scenes relationship with design systems. But there are silver linings!</li>
+  <li>We should be discerning about the things we build into design systems to maximize their utility and ability to scale design at quality within an organization.</li>
+  <li>What makes a museum special is what’s not on the walls (a building with everything is just a warehouse).</li>
+  <li>Design systems should work on the 80/20 principle: they can be used to reduce design effort on the bulk of repeatable tasks so that designers can focus on high-impact work that requires more nuanced attention to detail. This is the unscalable stuff; the stuff there’s usually no time or budget for, but that can synthesize great design moments.</li>
+</ul>
+
+<blockquote>
+  <p><em>Look for things to remove, simplify, and streamline… Stick to what’s truly essential.</em></p>
+
+  <p>—<a href="https://basecamp.com/books/rework">Rework</a> by Jason Fried and DHH</p>
+</blockquote>
+
+<div class="soft-break"></div>
+
+<h2 id="day-2-afternoon">Day 2 Afternoon</h2>
+
+<h3 id="michelle-alvarez--yasmine-evjen">Michelle Alvarez &amp; Yasmine Evjen</h3>
+
+<p><a href="https://www.clarityconf.com/session/material-theming-building-an-expressive-design-system"><em>Material Theming: Building an Expressive Design System</em></a></p>
+
+<figure>
+<img alt="Alvarez &amp; Evjen sketch notes" src="/assets/img/2018-12-14-alvarez-evjen.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p>Michelle Alvarez and Yasmine Evjen discussed Google’s ongoing efforts to extend Material Design’s philosophy. They’re working on theming tools to allow designers more flexibility in brand expression within one of the most widely adopted design systems. You can see some of the fruits of their labor on <a href="https://material.io/design/material-studies/">Material Design’s website.</a></p>
+
+<h3 class="mt-200">Julie Horvath</h3>
+
+<p><a href="https://www.clarityconf.com/session/driving-adoption"><em>Driving Adoption</em></a></p>
+
+<figure>
+<img alt="Julie Horvath sketch notes" src="/assets/img/2018-12-14-julie-horvath.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p>Julie Ann Horvath talked about deftly navigating the process of creating institutional partnerships within organizations to internally evangelize design systems and maximize their efficacy.</p>
+
+<ul>
+  <li>When considering a design system as a solution and stating its value to stakeholders designers should begin by gathering data to quantify the value proposition of investing in a systems undertaking.</li>
+  <li>“Us vs. them” thinking must disappear; good design systems incorporate the needs of diverse producers and consumers both within and outside of an organization. Strategic partnerships are necessary for success and that requires compromise and negotiation.</li>
+  <li>Orgs should invest heavily in the build process and treat delivery as a service or product to be designed. Components don’t create value until live in a production environment.</li>
+</ul>
+
+<h3 class="mt-200">John Maeda</h3>
+
+<p><a href="https://www.clarityconf.com/session/inclusive-design"><em>Inclusive Design</em></a></p>
+
+<figure>
+<img alt="John Maeda sketch notes" src="/assets/img/2018-12-14-john-maeda.webp" />
+<figcaption>Sketch notes by <a href="https://www.clarityconf.com/people/natalya-shelburne">Natalya Shelburne</a></figcaption>
+</figure>
+
+<p>John Maeda followed up on Horvath’s momentum with a personal, humorous, and inspiringly philosophical take on where we are with design systems as 2018 comes to a close.</p>
+
+<ul>
+  <li>We’ve reached the stage of negotiating fluency in thinking about and creating design systems (it happened with stylesheets, responsive design, and many other technology paradigms before).</li>
+  <li>Design systems are a wonderful tool for enforcing organizational collaboration and finally killing <a href="https://stedmanhalliday.com/blog/2017/11/22/toxic-design-community">auteur theory in design.</a> I’ll let you wait for the recap to hear the rest!</li>
+</ul>
+
+<blockquote>
+  <p><em>Once you die, everyone forgets you almost right away… Your SEO just goes down the toilet.</em></p>
+</blockquote>
+
+<div class="soft-break"></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Clarity was a blast! On top of all the great talks mentioned in this summary, there were workshops, happy hours with lightning talks, tech demos, and an after-party with a sweet view on the top floor of the New Museum (check out the <a href="https://www.facebook.com/pg/clarityconf/photos/?tab=album&amp;album_id=2250831095129369">photo album</a>). A very special thanks to Jina and all of the other organizers, speakers, sponsors, and volunteers for pouring a bunch of love into organizing an event where so many amazing voices could be heard. Thanks to Figma and Katie Gregorio as well for selecting me for the conference scholarship!</p>
+
+<h3 id="more-content-from-clarity">More content from Clarity</h3>
+
+<figure>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/4ekeSreFuyQ" frameborder="0" allowfullscreen=""></iframe></div>
+<figcaption>Recap—Clarity 2018 on Youtube
+</figcaption>
+</figure>
+
+<ul>
+  <li><a href="https://www.clarityconf.com/sessions">Sessions</a> (videos, sketch notes, transcripts, etc.) from Clarity</li>
+  <li><a href="https://www.facebook.com/pg/clarityconf/photos/?tab=album&amp;album_id=2250831095129369">Clarity photo album on Facebook</a></li>
+  <li>Another <a href="https://weareadjacent.com/blog/clarity-2018/">enjoyable recap</a> from <a href="https://weareadjacent.com/studio/nate-rooke/">Nate Rooke at Adjacent</a></li>
+</ul>
+
+<div class="soft-break"></div>
+
+<p>Wanna chat about design systems or any of the other topics in this post? 
+<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+Here%27s+what+you+missed+at+Clarity+2018.">Message me on X (Twitter)</a>.</p>]]></content><author><name>Stedman Halliday</name></author><category term="design" /><category term="software" /><summary type="html"><![CDATA[A recap of talks at Clarity: the design systems conference]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/og-image.png" /><media:content medium="image" url="https://stedmanhalliday.com/assets/og-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Notes on Organizational Design</title><link href="https://stedmanhalliday.com/blog/2018/11/30/notes-on-organizational-design" rel="alternate" type="text/html" title="Notes on Organizational Design" /><published>2018-11-30T00:00:00-08:00</published><updated>2018-11-30T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2018/11/30/notes-on-organizational-design</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2018/11/30/notes-on-organizational-design"><![CDATA[<p>This article summarizes two talks on organizational design and design operations (aka “design ops”) by <a href="https://twitter.com/peterme">Peter Merholz</a> and <a href="https://twitter.com/bettay">Kristin Skinner</a>, authors of <em>Org Design for Design Orgs</em>.</p>
 
 <h2 id="context">Context</h2>
 
@@ -1397,175 +1640,4 @@ If Mailchimp truly desires to be more than mail and empower creativity, its prod
 <div class="soft-break mt-50"></div>
 
 <p>Thank you very much for taking the time to read about something that matters a lot to me. 
-<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+My+Motives+for+Service.">Message me on X (Twitter)</a> if you’d like to connect about causes, work, and values that are important to you.</p>]]></content><author><name>Stedman Halliday</name></author><category term="community" /><category term="reflection" /><category term="design" /><category term="work" /><category term="travel" /><summary type="html"><![CDATA[How and why I committed to living and volunteering half a world away from my comfort zone]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2017-12-01-people_supporting_people.jpg" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2017-12-01-people_supporting_people.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Q&amp;amp;A: Why are toxic, competitive attitudes so common in the design community?</title><link href="https://stedmanhalliday.com/blog/2017/11/22/toxic-design-community" rel="alternate" type="text/html" title="Q&amp;amp;A: Why are toxic, competitive attitudes so common in the design community?" /><published>2017-11-22T00:00:00-08:00</published><updated>2017-11-22T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/2017/11/22/toxic-design-community</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2017/11/22/toxic-design-community"><![CDATA[<p><img src="/assets/img/2017-11-22-massimo.webp" alt="Massimo Vignelli" /></p>
-
-<p class="mt-200"><em>Q&amp;A is a column in which I'll post long-form answers to thought-provoking questions. This particular question and its answer are reposted from thread in <a href="https://www.facebook.com/groups/340004709510141">Designers Guild</a>, a Facebook community that I moderate. Designers Guild consists of 10,000+ designers committed to discussing, learning, and growing together.</em></p>
-
-<h2 class="mt-200">The question</h2>
-
-<p><em>A number of discussions last week revolved around design’s prevailing cultural prioritization of competition over cooperation (the collaborative ethos we often see in software development and engineering circles, especially in open-source communities).</em></p>
-
-<p>Some quotes for context:</p>
-
-<blockquote>
-  <p><em>There’s a heavy tendency for designers to compete and contrast themselves with one another rather than cooperate…</em></p>
-
-  <p><em>I guess what I’m not understanding is why designers are less primed to being good at working together in an open-source context than engineers…</em></p>
-
-  <p><em>I’ve also seen design folks click [sic] out into camps, and compete with each other when there was no reason to… (yikes, why do we do that, it’s like we need the pat on the back or the recognition…)</em></p>
-</blockquote>
-
-<p>It would seem that toxic, competitive attitudes which impede collaboration are a widely recognizable problem in the design industry. But the question is: <em>where does the mindset behind the toxicity come from?</em></p>
-
-<div class="soft-break"></div>
-
-<h2 id="the-answer">The answer</h2>
-
-<p>One easy answer that addresses the cultural difference between design and software engineering in this regard is rooted in software’s historical context.</p>
-
-<h3 id="a-brief-history-of-collaboration-in-software-development">A brief history of collaboration in software development</h3>
-
-<p><strong>Software has grown into the monolith it is today with transparency, openness, and community hardwired into its DNA.</strong></p>
-
-<p>Because software development originated in academic research environments, the principles of cooperation and openness for the sake of collective intellectual advancement were easy carryovers from the scientific and academic communities. It also helped that software was not the massively commoditized industry that it has since become; originally there was little incentive to stray from this model.</p>
-
-<p>Richard Stallman effectively spearheaded the free software movement when he announced the GNU Project. In 1985, he founded the <a href="https://fsf.org">Free Software Foundation</a> and penned the <a href="https://www.gnu.org/gnu/manifesto.html">GNU Manifesto</a>, enumerating his reasons for believing so strongly in the values that free software promulgates. Some standout excerpts:</p>
-
-<blockquote>
-  <p><em>I consider that the Golden Rule requires that if I like a program I must share it with other people who like it. Software sellers want to divide the users and conquer them, making each user agree not to share with others. I refuse to break solidarity with other users in this way. I cannot in good conscience sign a nondisclosure agreement or a software license agreement…</em></p>
-
-  <p><em>So that I can continue to use computers without dishonor, I have decided to put together a sufficient body of free software so that I will be able to get along without any software that is not free…</em></p>
-
-  <p><em>Everyone will be permitted to modify and redistribute GNU, but no distributor will be allowed to restrict its further redistribution. That is to say, proprietary modifications will not be allowed. I want to make sure that all versions of GNU remain free…</em></p>
-
-  <p><em>Once GNU is written, everyone will be able to obtain good system software free, just like air…</em></p>
-
-  <p><em>Copying all or parts of a program is as natural to a programmer as breathing, and as productive. It ought to be as free.</em></p>
-
-  <p><cite>—Richard Stallman, <em>GNU Manifesto</em></cite></p>
-</blockquote>
-
-<blockquote class="bigquote">In a word, what Stallman values so staunchly (in addition to freedom) can be described as <em>fellowship.</em></blockquote>
-
-<p>Linus Torvalds followed in Stallman’s footsteps with the open release of the Linux kernel’s source in the early 1990s (later relicensed under a GNU General Public License: a free software license authored by Stallman himself). The combination of GNU’s free software and operating system with the Linux kernel brought about the first entirely free software environment for users. Neither that achievement, nor the entirety of the modern-day Linux ecosystem (not to mention countless other technologies) would be possible without the spirit of fellowship that united thousands of volunteer developers with the aim of constructive collaboration.</p>
-
-<p>The idea of fellowship propagated even further throughout the development community with the advent of the World Wide Web. Tim Berners-Lee proposed and executed his early vision of the Web at CERN, another research environment where open informational exchange was a value of paramount importance. Furthermore, the Web was created for exactly that purpose: it enabled researchers to exchange and browse information with far more efficiency… and exchange they did!</p>
-
-<figure>
-    <img alt="Tim Berners-Lee" src="/assets/img/2017-11-22-berners-lee.webp" />
-    <figcaption>Tim Berners-Lee at CERN in 1994 next to an early iteration of the World Wide Web.</figcaption>
-</figure>
-
-<p>Collaboration and the willing exchange of information continue to be absolutely crucial to the world of software development today. It’s not difficult to see how these ethics are structurally enforced by some undeniable industry realities, specifically:</p>
-
-<ul>
-  <li>The idea that “everything is built on something that was built on something that was built in 1970” encourages borrowing code as a productive and necessary practice.</li>
-  <li>Carefully reading documentation (authored by some other developer) and searching for sources of previously shared information (e.g. Google-fu and browsing Stack Overflow) are some of the most essential platform-independent skills for any professional developer out there today.</li>
-</ul>
-
-<p>So far, this historical background does an alright job of explaining how collaboration has been valuable to software development in the past, but we still lack a satisfactory answer to our main question.</p>
-
-<blockquote class="bigquote">I believe that the essential differences in each industry's culture surrounding willing collaboration come down to categorical differences in how creative value is construed.</blockquote>
-
-<h3 id="why-is-fellowship-valuable-to-engineers">Why is fellowship valuable to engineers?</h3>
-
-<p>As a discipline, engineering is outcome-oriented and largely favors vertical progression. Achievement usually means rigorously honing a focused skillset and digging deeper to spawn new technical outcomes within a specific scope or domain. As an analogy, consider two miners, each in search of a different mineral—let’s say iron and lead. The iron miner has no real interest in unearthing lead other than to trade it with the lead miner for the iron ore that they recover, and the lead miner has a similar attitude. They’ve staked different claims and stated different goals, so they’re not truly competing with one another. However, each stands to gain immensely from collaborating with the other.</p>
-
-<p>By trading ore with one another and sharing mining secrets and techniques, the miners can increase both of their yields. It doesn’t even matter if the result is that the iron miner extracts more lead ore: they would’ve used the same amount of mining resources in their search for iron anyway, but now they can earn revenue by trading with their neighbor. Similarly for the lead miner, all the lead ore that they are trading with the iron miner to obtain would’ve been inaccessible to them anyway, seeing as the iron miner has already staked their claim on that land. This is now ore in the hand that can be traded for at face value rather than prospected for with expected losses.</p>
-
-<p>In a similar fashion, developers don’t really see themselves as direct competitors with others who happen to be digging a different hole (they may often view each other as indirect competitors in the abstract, which leads to rampant impostor syndrome and software development’s own brand of toxic and condescending attitudes, but that’s another story).</p>
-
-<figure>
-    <img alt="Coal miners" src="/assets/img/2017-11-22-miners.webp" />
-    <figcaption>"Real miners don't use Pascal." 🙄</figcaption>
-</figure>
-
-<p>Additional value can also be created on massive scales when insights arise from the intersection of a developer’s own vertical progress with their understanding of parallel innovations. This is similar to the <a href="https://priceonomics.com/the-correlation-between-arts-and-crafts-and-a/">correlation between artistic hobbies and scientific achievement</a>. To summarize, Nobel-Prize-winning scientists are 280% as likely to have a hobby in the arts as are scientists in general. The underlying theory is that experience and vertical achievement in the sciences can cross-pollinate with avocational creative exploration to lend new insights to the scientist’s practical career endeavors.</p>
-
-<figure>
-    <img alt="Nobel scientist hobbies" src="/assets/img/2017-11-22-nobel-hobbies.webp" />
-    <figcaption>A University of Michigan study found that elite scientists have a particular affinity for artistic hobbies.</figcaption>
-</figure>
-
-<p>A good example of value created by crossover innovation in software is how neural networks (a highly academic subject confined to the relatively inaccessible fields of machine learning and deep learning research only a few years ago) are now a fairly commonplace component of consumer technology products. This couldn’t have happened without parallel research in the fields that artificial intelligence is applied to, such as imaging (computer vision and image recognition) and language and acoustics (speech recognition and natural language processing). A neat example that demonstrates both of these ideas is the application of deep learning to <a href="https://blogs.nvidia.com/blog/2016/05/25/deep-learning-paints-videos/">visual art processing</a> and <a href="https://shafeentejani.github.io/2016-12-27/style-transfer/">style transfer</a> (the abilities of AI to identify the styles of a images and apply them to other images).</p>
-
-<figure>
-    <img alt="Deep Photo Style Transfer" src="/assets/img/2017-11-22-style-transfer.webp" />
-    <figcaption>Researchers from Cornell University and Adobe take an original photo (left) and a reference image (center) as input and combine them output a new image (right). This technique is called <a href="https://arxiv.org/abs/1703.07511">Deep Photo Style Transfer</a>.</figcaption>
-</figure>
-
-<p>It turns out that accepting help and being helpful in return are… well, helpful! In the famed words of Sir Isaac Newton (from a letter to Robert Hooke about collaboration, of all subjects):</p>
-
-<blockquote>
-  <p><em>If I have seen further it is by standing on ye sholders [sic] of Giants.</em></p>
-
-  <p><cite>—Sir Isaac Newton, letter to Robert Hooke</cite></p>
-</blockquote>
-
-<blockquote class="bigquote">It doesn't discredit developers to borrow the techniques that they use to achieve their goals because it is the rigor behind executing outcomes that is valued and celebrated.</blockquote>
-
-<p>That’s not to say that the creativity and ingenuity involved in execution are not praiseworthy (in fact, they are frequently lauded). It’s just that the first and most important question in software development is whether or not the outcome actually works.</p>
-
-<blockquote class="bigquote">Ultimately, being a developer is all about having the grit to corral everything together into a practical outcome.</blockquote>
-
-<h3 id="why-do-designers-systematically-fail-to-value-fellowship">Why do designers systematically fail to value fellowship?</h3>
-
-<p>In contrast to software engineering’s cultural endorsement of vertical progression, creative disciplines (design included) largely incentivize horizontal progression. This is an inevitable consequence of rewarding the originality of outcomes and intellect over the rigor of process. For a long time, being a big-name designer hasn’t been about developing reliable and repeatable processes to consistently meet industrial goals. Instead, the idea of success in the design world has largely revolved around the ability to effectively wield cultural capital and trade on style, voice, and personality.</p>
-
-<p>To return to the mining metaphor, imagine if the miners from before had redefined their success along the terms of who has claimed the best stake (not to be confused with the stake that has the highest mineral yield… just the “best” stake, whatever that may arbitrarily mean). The game then becomes all about seeking out new ground, staking a claim, and defining your hole according to criteria that position it as superior to all others dug before it. Within this value system and with these judgment criteria, every miner actually is in direct competition with the next. The design analogs:</p>
-
-<ul>
-  <li><strong>Seeking out new ground</strong>—generating and executing on an “original” concept or aesthetic</li>
-  <li><strong>Staking a claim</strong>—accepting credit for the intellectual labor involved in the generating novelty and/or success of a project</li>
-  <li><strong>Touting your hole as superior</strong>—cleverly rationalizing your design decisions; criticizing others’ design decisions in equal or greater measure; utilizing past successes, cultural knowledge, voice, and cultural identity to increase your brand profile as a designer</li>
-</ul>
-
-<blockquote class="bigquote">In other words, an inordinate amount of the work concerns talking about the work in order to convince others of the the value of the design solution and, by extension, the designer's originality and intellect.</blockquote>
-
-<p>I’ll let Mike M. tell it:</p>
-
-<blockquote>
-  <p><em>Everyone who ever told you good work sells itself was a lying jerk… I was told that good work, really good work, sold itself. And that if you had to stoop to selling it you were demeaning the profession. This is shit advice from shit people.</em></p>
-
-  <p><cite>—Mike Monteiro</cite></p>
-</blockquote>
-
-<p>Monteiro makes a <a href="https://medium.com/mule-design/everyone-who-ever-told-you-good-work-sells-itself-was-a-lying-jerk-65acc1a72f74">good case</a> for why it’s a necessity for designers to develop ancillary presentation skills and learn how to speak about their work. But if it’s true that really good work can’t even sell itself, surely there must be a problem, no? <strong>The implication here is that clients cannot readily understand the value of design without some kind of presentation.</strong></p>
-
-<p>Why is the value of design so inapparent? I’d posit that it’s because most designers don’t explicitly understand how exactly design adds value to its substrates in accordance with their own values and thinking patterns. They may have an intuition for the fact that design has a net-positive effect when executed appropriately, but the fact that the cult of design so frequently values the wrong things (perceived aesthetic novelty and conceptual intellect) makes the value of design incredibly difficult for even designers to quantify.</p>
-
-<p><strong>It would behoove many a designer to realize that value in the realm of commerce is a business concept and not a philosophical one.</strong> Convincing other people of design’s value is about quantifying what it can do for their businesses. Watch <a href="https://www.youtube.com/watch?v=RKXZ7t_RiOE">this video</a> posted in a Designers Guild discussion this week where Chris Do gives a phenomenal master class in just some of the ways that designers can discuss value when doing business. (Note: it’s very different from the ways in which most designers represent the value they can provide to businesses and that’s why it’s successful.)</p>
-
-<div class="soft-break"></div>
-
-<p>The current difficulty with surmounting the design industry’s impasse of misplaced philosophical values arises from the fact that most of 20th century design ran on <strong>auteur theory</strong> (the idea that a single creator is responsible for executing all aspects of a collaborative creative work). Auteur theory is what emphasizes stylistic originality and the intellect of the individual creator above all other important factors that bring a creative project to fruition.</p>
-
-<p>Auteur theory is why we have design “legends” and “rockstars.” It’s why <a href="https://eyeondesign.aiga.org/the-11-types-of-trendy-graphic-design-paul-rand-hated/">Paul Rand</a>, <a href="http://designobserver.com/article.php?id=15458">Massimo Vignelli</a>, and many other a graphic design granddad have wielded cultural capital amassed over their entire careers to convincingly decry nearly everything that’s succeeded them in the postmodern era. Although their criticisms are not entirely invalid, one might question the motives behind such vigorous disapproval of alternative approaches to craft.</p>
-
-<p>How else could these legends of old defend their status as auteurs other than with vigorous criticism? They’re supposed to be singular geniuses who are irreplaceable provisioners of value. In practice, that all too often translates to devaluing things that deviate from modernism (the one <em>successful</em> and <em>correct</em> way to add value—if clients don’t believe that, modernists don’t get paid; if the culture doesn’t believe that, modernists don’t get legacy clout). This is the fault of auteur theory at its peak, and its vestiges are largely to blame for the commonplace toxicity and non-collaborative values in design today.</p>
-
-<figure>
-    <img alt="David Chathas collage" src="/assets/img/2017-11-22-david-chathas-collage.webp" />
-    <figcaption>It's 2017, y'all still mad?! (Images courtesy of <a href="http://www.bestgraphicdesignerintheworld.com/">David Chathas</a></figcaption>
-</figure>
-
-<p>Another problem with rewarding formal originality and perceived intellectual inventiveness over all else is that it makes it difficult to trace the genealogy of ideas, which tell us a lot about how to create value in the future. <a href="https://www.youtube.com/watch?v=oww7oB9rjgw">“Steal like an artist,”</a> has quite a different ring to it than Newton’s modest musings on the shoulders of giants. It’s not too often that software strictly requires anyone to provide citations either, but because the field has developed a culture that does not penalize collective achievement and the re-synthesis of existing ideas, the majority of developers share their resources quite enthusiastically.</p>
-
-<p>In contrast, the value system in the present design landscape ensures that in most cases, we still systematically fail to attribute value to team members whose work goes unrecognized. Additionally, appreciating the output of the designers whose work an outcome intellectually builds upon is optional at best… but things seem to be getting better.</p>
-
-<div class="soft-break"></div>
-
-<h3 id="a-better-future-for-the-value-of-design">A Better Future for the Value of Design</h3>
-
-<p>One good thing about the intersections of design, technology, business, and analytics is that creatives are being held to a more universal and honest standard that is quantifiable from a business perspective. It’s good to be original to the extent that one can, but what do novel outcomes beget in the real world; in other peoples’ utilitarian value systems?</p>
-
-<blockquote class="bigquote">When we cease to reward design outcomes solely for perceived originality and individual intellect, and instead begin to hold them to standards defined by results, maybe the world will better understand the value of design.</blockquote>
-
-<p><em>How suitable was this strategy for the target market? How did this campaign create growth?</em> <strong>If design is a practice of aesthetic utility, designers should probably ask utilitarian questions and take utilitarian measurements.</strong> The leaders who ushered in the precursors of modern design at the Bauhaus a century ago may have made strides into adopting a more scientific process for creating work… but as far as feedback for assessing work, we’re mostly still thinking like artists.</p>
-
-<p>Perhaps if designers start measuring their outcomes in addition to critiquing them, everyone’s contributions to process can come forth and find value. <strong>When people feel valued for their contributions, they contribute abundantly instead of viewing intellect as a scarce resource to sequester for their own gain.</strong> When designers manage to value one another and incentivize valuable contribution on an industry-wide scale, the benefits of collaboration and fellowship will have become central community tenets.</p>
-
-<div class="soft-break"></div>
-
-<p>What did you think of this post? 
-<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+Q%26A%3A+Why+are+toxic%2C+competitive+attitudes+so+common+in+the+design+community%3F.">Message me on X (Twitter)</a> and let me know if you’ve got thoughts on any of these topics.</p>]]></content><author><name>Stedman Halliday for [Prototypr](https://blog.prototypr.io/)</name></author><category term="design" /><category term="engineering" /><category term="software" /><category term="code" /><category term="community" /><summary type="html"><![CDATA[Structural and historical rationales for fellowship and competition in design practice]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/og-image.png" /><media:content medium="image" url="https://stedmanhalliday.com/assets/og-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+My+Motives+for+Service.">Message me on X (Twitter)</a> if you’d like to connect about causes, work, and values that are important to you.</p>]]></content><author><name>Stedman Halliday</name></author><category term="community" /><category term="reflection" /><category term="design" /><category term="work" /><category term="travel" /><summary type="html"><![CDATA[How and why I committed to living and volunteering half a world away from my comfort zone]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2017-12-01-people_supporting_people.jpg" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2017-12-01-people_supporting_people.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
