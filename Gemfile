@@ -16,6 +16,7 @@ gem "minima", "~> 2.5"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-paginate-v2"
   gem "jekyll-archives", "~> 2.3.0"
   gem 'jekyll-loading-lazy'
   gem 'jekyll-email-protect'

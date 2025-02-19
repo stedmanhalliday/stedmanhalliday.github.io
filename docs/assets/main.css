@@ -336,6 +336,10 @@ table td {
   text-align: center;
 }
 
+.grey-color {
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+}
+
 /**
  * Loading
  */
@@ -526,14 +530,6 @@ html.is-animating .transition-fade {
   flex: 1;
 }
 
-.back-link::before {
-  content: "← ";
-}
-
-.next-link::after {
-  content: " →";
-}
-
 .page-heading {
   font-size: 32px;
 }
@@ -651,6 +647,17 @@ html.is-animating .transition-fade {
 }
 .post-content > figure figcaption {
   text-align: center;
+}
+
+/**
+ * Pagination
+ */
+.back-link::before {
+  content: "← ";
+}
+
+.next-link::after {
+  content: " →";
 }
 
 /**
