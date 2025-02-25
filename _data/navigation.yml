@@ -25,6 +25,8 @@ footer:
       url: /blog/tag/reflection/
 - heading: Top posts
   links:
+    - text: How to Fix Nerd Neck
+      url: /blog/nerd-neck
     - text: Circadian Propranolol
       url: /blog/circadian-propranolol
     - text: RGB Color Mixing
