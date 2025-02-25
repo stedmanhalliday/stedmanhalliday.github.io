@@ -332,6 +332,14 @@ table td {
   justify-content: center;
 }
 
+.grid {
+  display: grid;
+  grid-gap: 32px;
+}
+.grid.col2 {
+  grid-template-columns: auto auto;
+}
+
 .text-center {
   text-align: center;
 }
