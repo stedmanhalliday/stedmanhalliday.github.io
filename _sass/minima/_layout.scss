@@ -144,7 +144,11 @@ html.is-animating .transition-fade {
  * Hero sections
  */
 .hero {
-    height: 100vh;
+    height: calc(100vh - 2 * $spacing-unit);
+}
+
+.project-hero {
+    height: calc(100vw * 81 / 256);
 }
 
 /**
@@ -191,6 +195,10 @@ html.is-animating .transition-fade {
 .page-content {
     padding: 2.5 * $spacing-unit 0;
     flex: 1;
+
+    &.project-content {
+        padding-top: 0;
+    }
 }
 
 .page-heading {
