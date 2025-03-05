@@ -209,3 +209,9 @@ Most of my experience with AI/ML-driven interfaces comes from my time at Amazon 
     </div>
     <figcaption>Acura vehicle features web experience with Wunderman Thompson</figcaption>
 </figure>
+
+{% include soft-break.html %}
+<div class="text-center">
+<p>Feeling optimistic about what you've seen here? Let's talk.</p>
+<p><a href="mailto:{{ site.email | encode_email }}?subject=Prime%20Intellect">Email me</a> &ensp; ◇ &ensp; <a href="https://cal.com/stedmanhalliday/15">Schedule a 15-minute call</a></p>
+</div>
