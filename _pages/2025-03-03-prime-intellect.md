@@ -12,7 +12,7 @@ masonry: true
 
 ## Mission: Open + Decentralized AGI
 
-Prime Intellect’s mission aligns with my evolving focus on designing for foundational impact over surface-level appeal. I’ve contributed across industries like consumer electronics, automobiles, education, health, energy, decentralized finance, and more, balancing technical and cultural design challenges. AI’s rapid integration into infrastructure and human experience makes it one of the most critical fields to shape today. My multidisciplinary and cross-functional background in desiging brands, products, media, and experiences equips me to translate Prime Intellect’s vision into a compelling and coherent cultural presence. I’m excited to shape not just the company’s aesthetic but the broader semantic landscape of decentralized intelligence.
+Prime Intellect’s mission aligns with my evolving focus on designing for foundational impact over surface-level appeal. I’ve contributed across industries like consumer electronics, automobiles, education, health, energy, decentralized finance, and more, balancing technical and cultural design challenges. AI’s rapid integration into infrastructure and human experience makes it one of the most critical fields to shape today. My multidisciplinary and cross-functional background in designing brands, products, media, and experiences equips me to translate Prime Intellect’s vision into a compelling and coherent cultural presence. I’m excited to shape not just the company’s aesthetic but the broader semantic landscape of decentralized intelligence.
 
 [About Stedman Halliday](/about) &ensp;◇&ensp; <a href="/assets/stedman-halliday-resume.pdf" target="_blank">Abridged Résumé</a> &ensp;◇&ensp; [LinkedIn](https://linkedin.com/in/stedmanhalliday)
 
@@ -32,7 +32,7 @@ I am a generalist designer with over 15 years of experience integrating the abov
 > -   _Create high-impact graphics, presentations, and marketing assets_
 > -   _Design merch and event collateral that extends our brand into the physical world_
 
-I've designed identities and brand collateral across many contexts: defining look and feel for popular avant garde fashion brands (AWGE, Seventh Heaven, Helder Vices), introducing the invention of flash lending to decentralized finance with Marble Protocol, rebranding Deepak Chopra's digital meditation platform for 1.5 million users, and more. Creators and innovators have trusted me time and again to put them on the map with an aesthetic that speaks to their unique context. My edge when designing for brands comes keenly immersing myself at leading edge of culture and tech, experimenting early on in new territory, and remaining style-agnostic enough to execute powerfully toward any vision.
+I've designed identities and brand collateral across many contexts: defining look and feel for popular avant garde fashion brands (AWGE, Seventh Heaven, Helder Vices), introducing the invention of flash lending to decentralized finance with Marble Protocol, rebranding Deepak Chopra's digital meditation platform for 1.5 million users, and more. Creators and innovators have trusted me time and again to put them on the map with an aesthetic that speaks to their unique context. My advantage when designing for brands comes from keenly immersing myself at the leading edge of culture and tech, experimenting early on in new territory, and remaining style-agnostic enough to execute powerfully toward any vision.
 
 ### Web & UI/UX
 
@@ -40,7 +40,7 @@ I've designed identities and brand collateral across many contexts: defining loo
 > -   _Work with engineers to build fluid, performant user experiences_
 > -   _Maintain and refine a scalable design system_
 
-I’ve been designing for the web for over 15 years, starting with my own consultancy and evolving into an accomplished product designer and design engineer. My love for the web has made this my deepest set of skill trees and driven my fascination with crafting compelling digital experiences. At Amazon, I led design systems and front-end development while embedded with engineering partners, contributing production code to unify third-party deployments on Alexa. My ability to work closely with engineers while thinking about interaction design at scale gives me a strong edge in building effective systems and well-considered interfaces.
+I’ve been designing for the web for over 15 years, starting with my own consultancy and evolving into an accomplished product designer and design engineer. My love for the web has made this my deepest skillset and driven my fascination with crafting compelling digital experiences. At Amazon, I led design systems and front-end development while embedded with engineering partners, contributing production code to unify third-party deployments on Alexa. My ability to work closely with engineers while thinking about interaction design at scale gives me a strong edge in building effective systems and well-considered interfaces.
 
 ### Multimedia & Motion
 
@@ -48,7 +48,7 @@ I’ve been designing for the web for over 15 years, starting with my own consul
 > -   _Optimize video content for maximum impact across platforms_
 > -   _Experiment with 3D, generative art, and interactive storytelling_
 
-My background in digital arts has given me a broad foundation in production methods, from 3D printing and audio engineering to projection mapping and live experience design. While most of my motion work has focused on interaction design, I’ve also produced multimedia content for brands and social marketing. My early work in edtech launching a learning platform for creative technology skills also introduced me to generative art before modern transformer-based AI models, giving me exposure to the artful applications of Python, TensorFlow, and various neural network architectures. I've always relished opportunities to extend graphic media into time and space, whether to create strong impressions through video or to shape live experiences and immersive spaces.
+My background in digital arts has given me a broad foundation in production methods, from 3D printing and audio engineering to projection mapping and live experience design. While most of my motion work has focused on interaction design, I’ve also produced multimedia content for brands, social marketing, and events. My early work in edtech launching a learning platform for creative technology skills also introduced me to generative art before modern transformer-based AI models, giving me exposure to the artful applications of Python, TensorFlow, and various neural network architectures. I've always relished opportunities to extend graphic media into time and space, whether to create strong impressions through video or to shape live experiences and immersive spaces.
 
 {% include soft-break.html %}
 
@@ -62,7 +62,7 @@ My background in digital arts has given me a broad foundation in production meth
 > -   [x] _Fundamental understanding of front-end principles (HTML, CSS, JS a plus)_
 > -   [x] _Ability to execute fast, iterate faster_
 
-I hold a Graphic Design BFA from California Institute of the Arts and two awards from AIGA for excellence in the field. My print work has been featured in numerous Los Angeles exhibitions. I've worked on technical interfaces like admin dashboards for school information systems and was among the first crop of designers to push a more considered visual approach to smart contract analytics. I've been a web developer since day one, written production Typescript for Amazon Alexa's third-party app deployments, and taught web development at the undergrad level. The website you're reading right now is built the old-fashioned way without AI code generation (HTML, CSS, JS, Ruby, Jekyll). I've even hacked Figma with JavaScript injection to output a faithful Echo Show Alexa prototype complete with real-time voice detection.
+I hold a Graphic Design BFA from California Institute of the Arts and have received two awards from AIGA for excellence in the field. My print work has been featured in numerous Los Angeles exhibitions. I've worked on technical interfaces like admin dashboards for school information systems and was among the first crop of designers to push a more considered visual approach to smart contract analytics. I've been a web developer since day one, written production Typescript for Amazon Alexa's third-party app deployments, and taught web development at the undergrad level. The website you're reading right now is built the old-fashioned way without AI code generation (HTML, CSS, JS, Ruby, Jekyll). I've even hacked Figma with JavaScript injection to output a faithful Echo Show Alexa prototype complete with real-time voice detection.
 
 ### Nice to Have
 
