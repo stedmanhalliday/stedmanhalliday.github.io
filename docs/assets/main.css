@@ -362,7 +362,7 @@ table td {
     background-color: rgba(100, 116, 139, 0.16);
   }
 }
-iframe, video.lazy {
+iframe {
   animation: skeleton-loading 1s linear infinite alternate;
 }
 
