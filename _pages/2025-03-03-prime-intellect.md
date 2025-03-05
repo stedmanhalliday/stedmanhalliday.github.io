@@ -4,11 +4,10 @@ title: Senior Generalist Designer
 date: 2022-08-01
 description: Stedman Halliday presents qualifications to join the Prime Intellect team
 tags: [graphics, web, video, UI, design systems]
+no-tag: true
 permalink: /prime-intellect
 hero: pages/prime-intellect-hero
 image: /assets/img/2025-03-03-prime-intellect-hero.png
-no-tag: true
-masonry: true
 ---
 
 ## Mission: Open + Decentralized AGI
