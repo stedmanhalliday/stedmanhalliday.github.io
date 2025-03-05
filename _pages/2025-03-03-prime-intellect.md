@@ -84,8 +84,8 @@ Most of my experience with AI/ML-driven interfaces comes from my time at Amazon 
         <img style="grid-column: span 2" alt="Seventh Heaven brand" src="/assets/img/2019-04-09-seventh-heaven.png">
         <img style="grid-column: span 2" alt="Firmé brand" src="/assets/img/2019-02-13-firme-brand.png">
         <img style="grid-column: span 2" alt="Firmé web archive" src="/assets/img/2019-02-13-firme-web.png">
-        <video autoplay loop preload muted src="/assets/video/2019-02-13-firme-archive.mp4"></video>
-        <video controls autoplay loop preload muted src="/assets/video/2019-02-13-firme-welcome.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2019-02-13-firme-archive.mp4"></video>
+        <video class="lazy" controls autoplay playsinline loop muted data-src="/assets/video/2019-02-13-firme-welcome.mp4"></video>
     </div>
     <figcaption>Identity, motion, and web design for Firmé atelier and Seventh Heaven (collaboration with Paul Um and Guy Glikshtein)</figcaption>
 </figure>
@@ -95,8 +95,8 @@ Most of my experience with AI/ML-driven interfaces comes from my time at Amazon 
         <img style="grid-column: span 2" alt="Javier wedding" src="/assets/img/2023-02-14-pair-mock.png">
         <img alt="Javier wedding" src="/assets/img/2023-02-14-stack-mock.png">
         <img alt="Javier wedding" src="/assets/img/2023-02-14-collateral.webp">
-        <video autoplay loop preload muted src="/assets/video/2023-02-14-javier-dance-floor.mp4"></video>
-        <video controls autoplay loop preload muted src="/assets/video/2023-02-14-javier-dance-floor-2.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted src="/assets/video/2023-02-14-javier-dance-floor.mp4"></video>
+        <video class="lazy" controls autoplay playsinline loop muted data-src="/assets/video/2023-02-14-javier-dance-floor-2.mp4"></video>
     </div>
     <figcaption>Identity, art direction, collateral, and multimedia for the Javier wedding (collaboration with Bradley Krebs)</figcaption>
 </figure>
@@ -125,7 +125,7 @@ Most of my experience with AI/ML-driven interfaces comes from my time at Amazon 
 <figure>
     <div class="grid col2">
         <img alt="Plenum No. 1: Collective Nature poster" src="/assets/img/2016-03-01-collective-nature-poster.jpg">
-        <video autoplay loop preload muted src="/assets/video/2021-02-02-future-flier.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2021-02-02-future-flier.mp4"></video>
     </div>
     <figcaption><em>Plenum No. 1: Collective Nature</em> exhibition poster and Ed Fella Future Flier</figcaption>
 </figure>
@@ -186,9 +186,9 @@ Most of my experience with AI/ML-driven interfaces comes from my time at Amazon 
 
 <figure>
     <div class="grid">
-        <video autoplay loop preload muted src="/assets/video/2021-11-19-alexa-xapp-home.mp4"></video>
-        <video controls autoplay loop preload muted src="/assets/video/2021-11-19-xapp-dash.mp4"></video>
-        <video controls autoplay loop preload muted src="/assets/video/2021-08-02-alexa-multi-agent.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2021-11-19-alexa-xapp-home.mp4"></video>
+        <video class="lazy" controls autoplay playsinline loop muted data-src="/assets/video/2021-11-19-xapp-dash.mp4"></video>
+        <video class="lazy" controls autoplay playsinline loop muted data-src="/assets/video/2021-08-02-alexa-multi-agent.mp4"></video>
         <img alt="ambient Alexa for TV" src="/assets/img/2021-11-19-alexa-moods.png">
         <img alt="ambient Alexa for TV" src="/assets/img/2021-11-19-xApp-ambient-widgets-scene.png">
     </div>
@@ -202,10 +202,10 @@ Most of my experience with AI/ML-driven interfaces comes from my time at Amazon 
         <div style="grid-column: span 2">
             {% youtube "https://youtu.be/ycxuhfgijlU" %}
         </div>
-        <video autoplay loop preload muted src="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav.mp4"></video>
-        <video autoplay loop preload muted src="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav-menu.mp4"></video>
-        <video autoplay loop preload muted src="/assets/video/2020-01-01-acura-features-prototype-connectivity.mp4"></video>
-        <video autoplay loop preload muted src="/assets/video/2020-01-01-acura-features-prototype-exterior.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav-menu.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-connectivity.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-exterior.mp4"></video>
     </div>
     <figcaption>Acura vehicle features web experience with Wunderman Thompson</figcaption>
 </figure>
