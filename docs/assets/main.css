@@ -89,9 +89,9 @@ main {
 }
 
 /**
- * Images
+ * Images and media
  */
-img {
+img, video {
   max-width: 100%;
   vertical-align: middle;
 }
@@ -339,6 +339,9 @@ table td {
 .grid.col2 {
   grid-template-columns: auto auto;
 }
+.grid.col3 {
+  grid-template-columns: auto auto auto;
+}
 
 .text-center {
   text-align: center;
@@ -416,6 +419,7 @@ html.is-animating .transition-fade {
 
 .site-nav {
   position: relative;
+  z-index: 10;
 }
 .site-nav .nav-trigger {
   display: none;
@@ -627,40 +631,40 @@ html.is-animating .transition-fade {
   background-color: #61B3AF;
 }
 
-.post-content {
+.post-content, .page-content {
   margin-bottom: 32px;
 }
-.post-content h2 {
+.post-content h2, .page-content h2 {
   font-size: 32px;
 }
 @media screen and (max-width: 800px) {
-  .post-content h2 {
+  .post-content h2, .page-content h2 {
     font-size: 28px;
   }
 }
-.post-content h3 {
+.post-content h3, .page-content h3 {
   font-size: 26px;
 }
 @media screen and (max-width: 800px) {
-  .post-content h3 {
+  .post-content h3, .page-content h3 {
     font-size: 22px;
   }
 }
-.post-content h4 {
+.post-content h4, .page-content h4 {
   font-size: 20px;
 }
 @media screen and (max-width: 800px) {
-  .post-content h4 {
+  .post-content h4, .page-content h4 {
     font-size: 18px;
   }
 }
-.post-content li {
+.post-content li, .page-content li {
   margin-bottom: 1em;
 }
-.post-content > figure img {
+.post-content figure img, .post-content figure video, .page-content figure img, .page-content figure video {
   margin: 0 auto;
 }
-.post-content > figure figcaption {
+.post-content figure figcaption, .page-content figure figcaption {
   text-align: center;
 }
 

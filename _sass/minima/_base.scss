@@ -71,9 +71,9 @@ main {
 }
 
 /**
- * Images
+ * Images and media
  */
-img {
+img, video {
     max-width: 100%;
     vertical-align: middle;
 }
@@ -332,6 +332,10 @@ table {
 
     &.col2 {
         grid-template-columns: auto auto;
+    }
+    
+    &.col3 {
+        grid-template-columns: auto auto auto;
     }
 }
 

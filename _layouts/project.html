@@ -21,7 +21,7 @@
                         {% endif %}
                         <ul class="post-tags">
                             {% for tag in page.tags %}
-                            <li><a href="/projects/tag/{{ tag | slugify }}">{{ tag }}</a></li>
+                            <li><a {% if page.no-tag %}href="#"{% else %}href="/projects/tag/{{ tag | slugify }}"{% endif %}>{{ tag }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
