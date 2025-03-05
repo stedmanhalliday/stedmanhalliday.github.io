@@ -359,6 +359,6 @@ table {
     }
 }
 
-iframe {
+iframe, video.lazy {
     animation: skeleton-loading 1s linear infinite alternate;
 }
