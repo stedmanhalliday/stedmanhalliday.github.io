@@ -693,13 +693,15 @@ html.is-animating .transition-fade {
  * Pagination
  */
 .back-link::before {
-  content: "← "; /* left arrow with space */
-  flex-shrink: 0; /* prevents shrinking */
+  content: "←";
+  flex-shrink: 0;
+  margin-right: 0.5em;
 }
 
 .next-link::after {
-  content: " →"; /* space with right arrow */
+  content: "→";
   flex-shrink: 0;
+  margin-left: 0.5em;
   position: absolute;
   right: 0;
 }
@@ -711,12 +713,12 @@ html.is-animating .transition-fade {
 }
 .page-navigation span {
   flex: 1;
-  min-width: 0; /* ensures shrinking works in flexbox */
+  min-width: 0;
   position: relative;
 }
 .page-navigation span:nth-child(2) {
   text-align: right;
-  padding-right: 1.5em;
+  padding-right: 1.4em;
 }
 .page-navigation span a {
   display: inline-block;

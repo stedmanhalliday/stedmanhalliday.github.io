@@ -347,13 +347,15 @@ html.is-animating .transition-fade {
  */
 
 .back-link::before {
-    content: "\2190\2002"; /* left arrow with space */
-    flex-shrink: 0; /* prevents shrinking */
+    content: "\2190";
+    flex-shrink: 0;
+    margin-right: 0.5em;
 }
 
 .next-link::after {
-    content: "\2002\2192"; /* space with right arrow */
+    content: "\2192";
     flex-shrink: 0;
+    margin-left: 0.5em;
     position: absolute;
     right: 0;
 }
@@ -365,12 +367,12 @@ html.is-animating .transition-fade {
 
     & span {
         flex: 1;
-        min-width: 0; /* ensures shrinking works in flexbox */
+        min-width: 0;
         position: relative;
 
         &:nth-child(2) {
             text-align: right;
-            padding-right: 1.5em;
+            padding-right: 1.4em;
         }
 
         & a {
