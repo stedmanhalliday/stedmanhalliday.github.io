@@ -635,40 +635,51 @@ html.is-animating .transition-fade {
   background-color: #61B3AF;
 }
 
-.post-content, .page-content {
+.post-content,
+.page-content {
   margin-bottom: 32px;
 }
-.post-content h2, .page-content h2 {
+.post-content h2,
+.page-content h2 {
   font-size: 32px;
 }
 @media screen and (max-width: 800px) {
-  .post-content h2, .page-content h2 {
+  .post-content h2,
+  .page-content h2 {
     font-size: 28px;
   }
 }
-.post-content h3, .page-content h3 {
+.post-content h3,
+.page-content h3 {
   font-size: 26px;
 }
 @media screen and (max-width: 800px) {
-  .post-content h3, .page-content h3 {
+  .post-content h3,
+  .page-content h3 {
     font-size: 22px;
   }
 }
-.post-content h4, .page-content h4 {
+.post-content h4,
+.page-content h4 {
   font-size: 20px;
 }
 @media screen and (max-width: 800px) {
-  .post-content h4, .page-content h4 {
+  .post-content h4,
+  .page-content h4 {
     font-size: 18px;
   }
 }
-.post-content li, .page-content li {
+.post-content li,
+.page-content li {
   margin-bottom: 1em;
 }
-.post-content figure img, .post-content figure video, .page-content figure img, .page-content figure video {
+.post-content figure img, .post-content figure video,
+.page-content figure img,
+.page-content figure video {
   margin: 0 auto;
 }
-.post-content figure figcaption, .page-content figure figcaption {
+.post-content figure figcaption,
+.page-content figure figcaption {
   text-align: center;
 }
 
@@ -676,16 +687,34 @@ html.is-animating .transition-fade {
  * Pagination
  */
 .back-link::before {
-  content: "← ";
+  content: "← "; /* left arrow with space */
+  flex-shrink: 0; /* prevents shrinking */
 }
 
 .next-link::after {
-  content: " →";
+  content: " →"; /* space with right arrow */
+  flex-shrink: 0;
+  position: absolute;
+  right: 0;
 }
 
 .page-navigation {
   display: flex;
   justify-content: space-between;
+  gap: 32px;
+}
+.page-navigation span {
+  flex: 1;
+  min-width: 0; /* ensures shrinking works in flexbox */
+  position: relative;
+}
+.page-navigation span a {
+  display: inline-block;
+  max-width: calc(100% - 1.5em);
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /**
