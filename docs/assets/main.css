@@ -678,6 +678,12 @@ html.is-animating .transition-fade {
 .page-content figure video {
   margin: 0 auto;
 }
+.post-content figure .jekyll-twitter-plugin,
+.page-content figure .jekyll-twitter-plugin {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
 .post-content figure figcaption,
 .page-content figure figcaption {
   text-align: center;
@@ -707,6 +713,10 @@ html.is-animating .transition-fade {
   flex: 1;
   min-width: 0; /* ensures shrinking works in flexbox */
   position: relative;
+}
+.page-navigation span:nth-child(2) {
+  text-align: right;
+  padding-right: 1.5em;
 }
 .page-navigation span a {
   display: inline-block;

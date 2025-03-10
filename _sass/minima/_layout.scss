@@ -329,6 +329,13 @@ html.is-animating .transition-fade {
         & video {
             margin: 0 auto;
         }
+
+        & .jekyll-twitter-plugin {
+            display: flex;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
         & figcaption {
             text-align: center;
         }
@@ -360,6 +367,11 @@ html.is-animating .transition-fade {
         flex: 1;
         min-width: 0; /* ensures shrinking works in flexbox */
         position: relative;
+
+        &:nth-child(2) {
+            text-align: right;
+            padding-right: 1.5em;
+        }
 
         & a {
             display: inline-block;
