@@ -10,7 +10,7 @@ layout: default
             <strong>Top tags:</strong>
             {% assign top_tags = site.data.navigation.footer | where: "heading", "Top tags" %}
             {% for link in top_tags[0].links %}
-            <li><a href="{{ link.url | relative_url }}">{{ link.text | escape }}</a></li>
+            <li class="tag"><a href="{{ link.url | relative_url }}">{{ link.text | escape }}</a></li>
             {% endfor %}
         </ul>
     </div>

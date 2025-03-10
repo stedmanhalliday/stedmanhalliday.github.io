@@ -271,15 +271,19 @@ html.is-animating .transition-fade {
 .post-tags {
     list-style: none;
     display: flex;
-    margin: 0.5rem 0 0;
+    flex-wrap: wrap;
+    margin: 0.5rem 0 1rem;
     gap: 1rem;
+
+    & .tag {
+        margin-bottom: 0;
+    }
 
     & a {
         display: block;
         background-color: $grey-color-light;
         color: $background-color;
         padding: 1px 0.5em 2px;
-        // border-radius: 2px;
         font-weight: 700;
 
         &:hover {

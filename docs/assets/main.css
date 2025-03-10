@@ -617,8 +617,12 @@ html.is-animating .transition-fade {
 .post-tags {
   list-style: none;
   display: flex;
-  margin: 0.5rem 0 0;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 1rem;
   gap: 1rem;
+}
+.post-tags .tag {
+  margin-bottom: 0;
 }
 .post-tags a {
   display: block;
