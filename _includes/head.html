@@ -50,4 +50,25 @@
             var lazyLoadInstance = new LazyLoad({});
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // find all lazy-loaded images and iframes
+            const lazyElements = document.querySelectorAll('img[loading="lazy"], iframe[loading="lazy"]');
+
+            lazyElements.forEach((el) => {
+                // add a loading class to elements
+                el.classList.add("lazy");
+
+                // listen for the load event
+                el.addEventListener("load", () => {
+                    el.classList.remove("lazy");
+                });
+
+                // for cached images that are already loaded
+                if (el.complete) {
+                    el.classList.remove("lazy");
+                }
+            });
+        });
+    </script>
 </head>
