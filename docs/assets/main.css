@@ -702,8 +702,6 @@ html.is-animating .transition-fade {
   content: "→";
   flex-shrink: 0;
   margin-left: 0.5em;
-  position: absolute;
-  right: 0;
 }
 
 .page-navigation {
@@ -712,21 +710,24 @@ html.is-animating .transition-fade {
   gap: 32px;
 }
 .page-navigation span {
-  flex: 1;
-  min-width: 0;
   position: relative;
+  max-width: calc(50% - 1.5em - 16px);
 }
-.page-navigation span:nth-child(2) {
+.page-navigation span.prev-page {
+  padding-left: 1.5em;
+}
+.page-navigation span.prev-page .back-link::before {
+  position: absolute;
+  left: 0;
+}
+.page-navigation span.next-page {
   text-align: right;
-  padding-right: 1.4em;
+  padding-right: 1.5em;
 }
-.page-navigation span a {
-  display: inline-block;
-  max-width: calc(100% - 1.5em);
-  min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.page-navigation span.next-page .next-link::after {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 /**

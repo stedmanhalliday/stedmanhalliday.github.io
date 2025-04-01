@@ -45,12 +45,12 @@ layout: default
 
     <div class="divider-thin mt-200 mb-100"></div>
     <div class="page-navigation">
-        <span>
+        <span class="prev-page">
             {% if page.next.url %}
             <a class="back-link" href="{{page.next.url}}">{{page.next.title}}</a>
             {% endif %}
         </span>
-        <span>
+        <span class="next-page">
             {% if page.previous.url %}
             <a class="next-link" href="{{page.previous.url}}">{{page.previous.title}}</a>
             {% endif %}

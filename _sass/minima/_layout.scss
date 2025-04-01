@@ -356,8 +356,6 @@ html.is-animating .transition-fade {
     content: "\2192";
     flex-shrink: 0;
     margin-left: 0.5em;
-    position: absolute;
-    right: 0;
 }
 
 .page-navigation {
@@ -366,22 +364,29 @@ html.is-animating .transition-fade {
     gap: $spacing-unit;
 
     & span {
-        flex: 1;
-        min-width: 0;
         position: relative;
+        max-width: calc(50% - 1.5em - 0.5*$spacing-unit);
 
-        &:nth-child(2) {
-            text-align: right;
-            padding-right: 1.4em;
+        &.prev-page {
+            padding-left: 1.5em;
+            & .back-link {
+                &::before {
+                    position: absolute;
+                    left: 0;
+                }
+            }
         }
 
-        & a {
-            display: inline-block;
-            max-width: calc(100% - 1.5em);
-            min-width: 0;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        &.next-page {
+            text-align: right;
+            padding-right: 1.5em;
+            & .next-link {
+                &::after {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+            }
         }
     }
 }
