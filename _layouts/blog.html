@@ -37,15 +37,13 @@ layout: default
     {% if paginator.total_pages > 1 %}
     <div class="pagination">
         {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="back-link">Previous</a>
+        <a href="{{ paginator.previous_page_path }}" class="back-link">Prev</a>
         {% else %}
-        <span class="back-link grey-color">Previous</span>
+        <span class="back-link grey-color">Prev</span>
         {% endif %}
-        <span class="grey-color">&emsp;◇&emsp;</span>
         <span class="page_number grey-color">
             Page {{ paginator.page }} of {{ paginator.total_pages }}
         </span>
-        <span class="grey-color">&emsp;◇&emsp;</span>
         {% if paginator.next_page %}
         <a href="{{ paginator.next_page_path }}" class="next-link">Next</a>
         {% else %}
@@ -53,7 +51,7 @@ layout: default
         {% endif %}
     </div>
     {% endif %}
-    <p class="rss-subscribe mt-50 grey-color">Subscribe <a href="{{ '/feed.xml' | relative_url }}">via RSS</a></p>
+    <p class="rss-subscribe mt-50 grey-color text-center">Subscribe <a href="{{ '/feed.xml' | relative_url }}">via RSS</a></p>
     {% else %}
     <h3>No posts found</h3>
     {% endif %}

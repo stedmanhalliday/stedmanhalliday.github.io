@@ -704,6 +704,12 @@ html.is-animating .transition-fade {
   margin-left: 0.5em;
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+
 .page-navigation {
   display: flex;
   justify-content: space-between;
