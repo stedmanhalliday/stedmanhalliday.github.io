@@ -55,6 +55,9 @@ collections:
     pages:
         output: true
         permalink: /:title
+    projects:
+        output: true
+        permalink: /projects/:title
 
 # Social media links
 twitter_username: stedmanhalliday

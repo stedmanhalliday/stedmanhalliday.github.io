@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://stedmanhalliday.com/projects/amazon-alexa</loc>
-<lastmod>2022-08-01T00:00:00-07:00</lastmod>
-</url>
-<url>
 <loc>https://stedmanhalliday.com/prime-intellect</loc>
 <lastmod>2022-08-01T00:00:00-07:00</lastmod>
 </url>
 <url>
 <loc>https://stedmanhalliday.com/404.html</loc>
-<lastmod>2025-04-04T20:45:11-07:00</lastmod>
+<lastmod>2025-04-04T20:49:10-07:00</lastmod>
 </url>
 <url>
 <loc>https://stedmanhalliday.com/about/</loc>
-<lastmod>2025-04-04T20:45:11-07:00</lastmod>
+<lastmod>2025-04-04T20:49:10-07:00</lastmod>
 </url>
 <url>
 <loc>https://stedmanhalliday.com/blog/2017/11/22/toxic-design-community</loc>
@@ -71,6 +67,10 @@
 <url>
 <loc>https://stedmanhalliday.com/blog/2025/03/11/selected-quotes-mar-2025</loc>
 <lastmod>2025-03-11T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>https://stedmanhalliday.com/projects/amazon-alexa</loc>
+<lastmod>2022-08-01T00:00:00-07:00</lastmod>
 </url>
 <url>
 <loc>https://stedmanhalliday.com/</loc>
@@ -145,15 +145,6 @@
 <loc>https://stedmanhalliday.com/blog/tag/data/</loc>
 </url>
 <url>
-<loc>https://stedmanhalliday.com/blog/tag/ux/</loc>
-</url>
-<url>
-<loc>https://stedmanhalliday.com/blog/tag/front-end-development/</loc>
-</url>
-<url>
-<loc>https://stedmanhalliday.com/blog/tag/design-systems/</loc>
-</url>
-<url>
 <loc>https://stedmanhalliday.com/blog/tag/graphics/</loc>
 </url>
 <url>
@@ -164,6 +155,15 @@
 </url>
 <url>
 <loc>https://stedmanhalliday.com/blog/tag/ui/</loc>
+</url>
+<url>
+<loc>https://stedmanhalliday.com/blog/tag/design-systems/</loc>
+</url>
+<url>
+<loc>https://stedmanhalliday.com/blog/tag/ux/</loc>
+</url>
+<url>
+<loc>https://stedmanhalliday.com/blog/tag/front-end-development/</loc>
 </url>
 <url>
 <loc>https://stedmanhalliday.com/assets/stedman-halliday-resume.pdf</loc>
