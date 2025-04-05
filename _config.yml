@@ -87,11 +87,20 @@ defaults:
 
 jekyll_compose:
     default_front_matter:
+        posts:
+            layout: post
+            description:
+            tags: []
+            author: Author
+            permalink: /blog/permalink
+            image: /assets/image_path
         drafts:
             layout: post
-            date:
             description:
-            tags:
+            tags: []
+            author: Author
+            permalink: /blog/permalink
+            image: /assets/image_path
 
 # Build settings
 theme: minima
@@ -110,7 +119,9 @@ plugins:
     - jekyll-compress-images
     - jekyll-youtube
 destination: docs/
-#jekyll-archives:
+
+# jekyll-archives config replaced by autopages
+# jekyll-archives:
 #    enabled: [tags]
 #    layouts:
 #        year: blog
