@@ -104,6 +104,12 @@ jekyll_compose:
             author: Author
             permalink: /blog/permalink
             image: /assets/image_path
+        projects:
+            layout: project
+            description:
+            tags: []
+            permalink: /projects/:title
+            hero: projects/:title-hero
 
 # Build settings
 theme: minima
