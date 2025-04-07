@@ -343,6 +343,11 @@ table td {
   grid-template-columns: auto auto auto;
 }
 
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .text-center {
   text-align: center;
 }
@@ -673,7 +678,8 @@ html.is-animating .transition-fade {
 .page-content li {
   margin-bottom: 1em;
 }
-.post-content figure img, .post-content figure video,
+.post-content figure img,
+.post-content figure video,
 .page-content figure img,
 .page-content figure video {
   margin: 0 auto;
@@ -734,6 +740,46 @@ html.is-animating .transition-fade {
   position: absolute;
   right: 0;
   top: 0;
+}
+
+/**
+ * Projects
+ */
+.featured-work {
+  padding: 64px;
+  padding-bottom: 0;
+}
+.featured-work .grid {
+  margin-top: 32px;
+}
+.featured-work .grid .project {
+  aspect-ratio: 16/9;
+  background-color: #888;
+}
+
+.post-list.projects li {
+  margin-bottom: 32px;
+}
+.post-list.projects li h3 {
+  margin-bottom: 8px;
+}
+.post-list.projects li p {
+  margin-bottom: 1em;
+}
+.post-list.projects li .tag a {
+  display: block;
+  background: none;
+  border: 1px solid rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  box-sizing: border-box;
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  padding: 1px 0.5em 2px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.post-list.projects li .tag a:hover {
+  background-color: #61B3AF;
+  border-color: #61B3AF;
+  color: #111418;
 }
 
 /**

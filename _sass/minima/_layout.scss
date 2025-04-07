@@ -42,12 +42,12 @@ html.is-animating .transition-fade {
 
     &:hover {
         color: $grey-color-dark;
-        & .monogram {
+        .monogram {
             fill: $grey-color-dark;
         }
     }
 
-    & .monogram {
+    .monogram {
         margin-right: 0.5rem;
         fill: $background-color;
         transition: 0.25s;
@@ -161,11 +161,11 @@ html.is-animating .transition-fade {
     @include relative-font-size(0.88);
     color: $grey-color;
 
-    & h3 {
+    h3 {
         margin-bottom: 0.5rem;
     }
 
-    & .columns {
+    .columns {
         display: flex;
         justify-content: space-between;
 
@@ -174,10 +174,10 @@ html.is-animating .transition-fade {
         }
     }
 
-    & .footer-monogram {
+    .footer-monogram {
         margin-bottom: 1.5rem;
 
-        & .monogram {
+        .monogram {
             fill: $grey-color;
         }
     }
@@ -258,7 +258,7 @@ html.is-animating .transition-fade {
     font-weight: 700;
     margin-bottom: 0;
 
-    & p {
+    p {
         display: inline;
     }
 }
@@ -275,11 +275,11 @@ html.is-animating .transition-fade {
     margin: 0.5rem 0 1rem;
     gap: 1rem;
 
-    & .tag {
+    .tag {
         margin-bottom: 0;
     }
 
-    & a {
+    a {
         display: block;
         background-color: $grey-color-light;
         color: $background-color;
@@ -325,18 +325,18 @@ html.is-animating .transition-fade {
     }
 
     figure {
-        & img,
-        & video {
+        img,
+        video {
             margin: 0 auto;
         }
 
-        & .jekyll-twitter-plugin {
+        .jekyll-twitter-plugin {
             display: flex;
             flex-grow: 1;
             justify-content: center;
         }
 
-        & figcaption {
+        figcaption {
             text-align: center;
         }
     }
@@ -369,13 +369,13 @@ html.is-animating .transition-fade {
     justify-content: space-between;
     gap: $spacing-unit;
 
-    & span {
+    span {
         position: relative;
-        max-width: calc(50% - 1.5em - 0.5*$spacing-unit);
+        max-width: calc(50% - 1.5em - 0.5 * $spacing-unit);
 
         &.prev-page {
             padding-left: 1.5em;
-            & .back-link {
+            .back-link {
                 &::before {
                     position: absolute;
                     left: 0;
@@ -386,11 +386,62 @@ html.is-animating .transition-fade {
         &.next-page {
             text-align: right;
             padding-right: 1.5em;
-            & .next-link {
+            .next-link {
                 &::after {
                     position: absolute;
                     right: 0;
                     top: 0;
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Projects
+ */
+
+.featured-work {
+    padding: 2 * $spacing-unit;
+    padding-bottom: 0;
+
+    .grid {
+        margin-top: $spacing-unit;
+
+        .project {
+            aspect-ratio: 16/9;
+            background-color: #888;
+        }
+    }
+}
+
+.post-list.projects {
+    li {
+        margin-bottom: $spacing-unit;
+
+        h3 {
+            margin-bottom: 0.25 * $spacing-unit;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        .tag {
+            a {
+                display: block;
+                background: none;
+                border: 1px solid $grey-color;
+                box-sizing: border-box;
+                color: $grey-color;
+                padding: 1px 0.5em 2px;
+                font-size: $small-font-size;
+                font-weight: 700;
+
+                &:hover {
+                    background-color: $accent-color;
+                    border-color: $accent-color;
+                    color: $background-color;
                 }
             }
         }

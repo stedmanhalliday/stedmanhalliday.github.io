@@ -3,7 +3,6 @@ layout: default
 ---
 
 <div class="blog">
-    <h1 class="page-heading">Work</h1>
     <h2 class="post-list-heading">{{ page.list_title | default: "Projects" }}</h2>
     <div class="post-meta">
         <ul class="post-tags">
@@ -16,19 +15,20 @@ layout: default
     </div>
     <div class="divider-thin mt-100 mb-200"></div>
     {% if site.posts.size > 0 %}
-    <ul class="post-list">
+    <ul class="post-list projects">
         {% for post in paginator.posts %}
         <li>
-            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
             <h3>
                 <a class="post-link" href="{{ post.url | relative_url }}">
                     {{ post.title | escape }}
                 </a>
             </h3>
-            {% if site.show_excerpts %}
-            {{ post.excerpt }}
-            {% endif %}
+            <p>{{ post.description }}</p>
+            <ul class="post-tags">
+                {% for category in post.categories %}
+                <li class="tag small"><a href="/work/category/{{ category | slugify }}">{{ category }}</a></li>
+                {% endfor %}
+            </ul>
         </li>
         {% endfor %}
     </ul>
