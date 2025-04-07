@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<div class="blog">
+    <h1 class="page-heading">Work</h1>
+    <h2 class="post-list-heading">{{ page.list_title | default: "Projects" }}</h2>
+    <div class="post-meta">
+        <ul class="post-tags">
+            <strong>Top categories:</strong>
+            {% assign top_tags = site.data.navigation.footer | where: "heading", "Top tags" %}
+            {% for link in top_tags[0].links %}
+            <li class="tag"><a href="{{ link.url | relative_url }}">{{ link.text | escape }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="divider-thin mt-100 mb-200"></div>
+    {% if site.posts.size > 0 %}
+    <ul class="post-list">
+        {% for post in paginator.posts %}
+        <li>
+            {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h3>
+            {% if site.show_excerpts %}
+            {{ post.excerpt }}
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="divider-thin mt-200 mb-100"></div>
+    <!-- Pagination links -->
+    {% if paginator.total_pages > 1 %}
+    <div class="pagination">
+        {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="back-link">Prev</a>
+        {% else %}
+        <span class="back-link grey-color">Prev</span>
+        {% endif %}
+        <span class="page_number grey-color">
+            Page {{ paginator.page }} of {{ paginator.total_pages }}
+        </span>
+        {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="next-link">Next</a>
+        {% else %}
+        <span class="next-link grey-color">Next</span>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% else %}
+    <h3>No posts found</h3>
+    {% endif %}
+</div>

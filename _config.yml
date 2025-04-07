@@ -28,7 +28,7 @@ google_analytics: G-SQV444EF7D
 # Pagination
 pagination:
     enabled: true
-    collection: 'posts'
+    collection: ['posts', 'projects']
     per_page: 10
     permalink: "/:num/"
     title: ":title"
@@ -47,6 +47,15 @@ autopages:
         slugify:
             mode: "default" # :tag is slugified.
             case: false
+    categories:
+        layouts:
+            - "category_archive.html"
+        title: ":cat"
+        permalink: "/work/category/:cat"
+        silent: false
+        slugify:
+            mode: "default"
+            case: false
 
 # Permalinks
 collections:
@@ -57,7 +66,7 @@ collections:
         permalink: /:title
     projects:
         output: true
-        permalink: /projects/:title
+        permalink: /work/:title
 
 # Social media links
 twitter_username: stedmanhalliday
@@ -108,8 +117,8 @@ jekyll_compose:
             layout: project
             description:
             tags: []
-            permalink: /projects/:title
-            hero: projects/:title-hero
+            permalink: /projects/permalink
+            hero: projects/title-hero
 
 # Build settings
 theme: minima

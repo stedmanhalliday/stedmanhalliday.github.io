@@ -1,4 +1,6 @@
 header:
+- text: Work
+  url: /work/
 - text: Blog
   url: /blog/
 - text: About
@@ -9,6 +11,8 @@ footer:
   links:
     - text: Home
       url: /
+    - text: Work
+      url: /work/
     - text: Blog
       url: /blog/
     - text: About

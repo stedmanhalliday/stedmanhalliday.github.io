@@ -20,8 +20,8 @@
                         <div class="post-summary">{{ page.description | markdownify }}</div>
                         {% endif %}
                         <ul class="post-tags">
-                            {% for tag in page.tags %}
-                            <li class="tag"><a {% if page.no-tag %}href="#"{% else %}href="/projects/tag/{{ tag | slugify }}"{% endif %}>{{ tag }}</a></li>
+                            {% for tag in page.categories %}
+                            <li class="tag"><a {% if page.no-category %}href="#"{% else %}href="/projects/category/{{ tag | slugify }}"{% endif %}>{{ tag }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
