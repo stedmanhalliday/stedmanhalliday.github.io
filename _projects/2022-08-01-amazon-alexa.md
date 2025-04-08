@@ -4,7 +4,7 @@ title: Amazon Alexa
 date: 2022-08-01
 description: Ut fugiat veniam tempor consectetur irure in consequat ex ex culpa
 categories: [ux, front-end development, design systems]
-#image: /assets/img/image_path
+image: /assets/img/2022-08-01-xApp-dash-VUI.webp
 hero: projects/amazon-alexa-hero
 ---
 

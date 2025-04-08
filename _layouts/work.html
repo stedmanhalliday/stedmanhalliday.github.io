@@ -7,8 +7,15 @@ layout: default
     <div class="post-meta">
         <ul class="post-tags">
             <strong>Browse by category:</strong>
-            {{ site.categories.size }}
-            <!-- <li class="tag"><a href="/work/category/{{ category | slugify}}">{{ category }}</a></li> -->
+            {% assign project_categories = "" | split: "|" %}
+            {% for post in site.projects %}
+                {% for category in post.categories %}
+                    {% assign project_categories = project_categories | push: category | uniq %}
+                {% endfor %}
+            {% endfor %}
+            {% for category in project_categories %}
+                <li class="tag"><a href="/work/category/{{ category | slugify}}">{{ category }}</a></li>
+             {% endfor %}
         </ul>
     </div>
     <div class="divider-thin mt-100 mb-200"></div>
@@ -16,7 +23,7 @@ layout: default
     <ul class="post-list projects">
         {% for post in paginator.posts %}
         <li class="project grid col2">
-            <img class="thumbnail" src="{{ post.image }}" alt="{{ post.title }}" />
+            <a href="{{ post.url | relative_url }}"><img class="thumbnail" src="{{ post.image }}" alt="{{ post.title }}" /></a>
             <div>
                 <h3>
                     <a class="post-link" href="{{ post.url | relative_url }}">
