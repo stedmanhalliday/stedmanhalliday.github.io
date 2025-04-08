@@ -78,13 +78,12 @@
         swup.hooks.on('page:view', updateNavLinks);
     </script>
     <script>
-        // lazy load video elements
-        addEventListener("DOMContentLoaded", (event) => {
-            var lazyLoadInstance = new LazyLoad({});
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // lazy load video elements
+            addEventListener("DOMContentLoaded", (event) => {
+                var lazyLoadInstance = new LazyLoad({});
+            });
+
             // find all lazy-loaded images and iframes
             const lazyElements = document.querySelectorAll('img[loading="lazy"], iframe[loading="lazy"]');
 
@@ -102,6 +101,11 @@
                     el.classList.remove("lazy");
                 }
             });
+
+            //reload on orientation change
+            window.addEventListener("orientationchange", function () {
+                window.location.reload()
+            }, false);
         });
     </script>
 </head>
