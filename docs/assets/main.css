@@ -757,16 +757,28 @@ html.is-animating .transition-fade {
   background-color: #888;
 }
 
-.post-list.projects li {
+.post-list.projects .project {
   margin-bottom: 32px;
+  grid-template-columns: 2fr 3fr;
 }
-.post-list.projects li h3 {
+.post-list.projects .project .thumbnail {
+  background: #e8e8e8;
+  aspect-ratio: 16/9;
+}
+.post-list.projects .project > div {
+  align-content: space-around;
+}
+.post-list.projects .project h3 {
+  margin-top: -8px;
   margin-bottom: 8px;
 }
-.post-list.projects li p {
+.post-list.projects .project p {
   margin-bottom: 1em;
 }
-.post-list.projects li .tag a {
+.post-list.projects .project .post-tags {
+  margin-bottom: 0;
+}
+.post-list.projects .project .post-tags .tag a {
   display: block;
   background: none;
   border: 1px solid rgb(136.7918410042, 150.3985355649, 169.9581589958);
@@ -776,7 +788,7 @@ html.is-animating .transition-fade {
   font-size: 14px;
   font-weight: 700;
 }
-.post-list.projects li .tag a:hover {
+.post-list.projects .project .post-tags .tag a:hover {
   background-color: #61B3AF;
   border-color: #61B3AF;
   color: #111418;

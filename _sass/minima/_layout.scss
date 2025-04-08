@@ -416,10 +416,21 @@ html.is-animating .transition-fade {
 }
 
 .post-list.projects {
-    li {
+    .project {
         margin-bottom: $spacing-unit;
+        grid-template-columns: 2fr 3fr;
+
+        .thumbnail {
+            background: $background-color-light;
+            aspect-ratio: 16 / 9;
+        }
+
+        > div {
+            align-content: space-around;
+        }
 
         h3 {
+            margin-top: -0.25 * $spacing-unit;
             margin-bottom: 0.25 * $spacing-unit;
         }
 
@@ -427,21 +438,25 @@ html.is-animating .transition-fade {
             margin-bottom: 1em;
         }
 
-        .tag {
-            a {
-                display: block;
-                background: none;
-                border: 1px solid $grey-color;
-                box-sizing: border-box;
-                color: $grey-color;
-                padding: 1px 0.5em 2px;
-                font-size: $small-font-size;
-                font-weight: 700;
+        .post-tags {
+            margin-bottom: 0;
 
-                &:hover {
-                    background-color: $accent-color;
-                    border-color: $accent-color;
-                    color: $background-color;
+            .tag {
+                a {
+                    display: block;
+                    background: none;
+                    border: 1px solid $grey-color;
+                    box-sizing: border-box;
+                    color: $grey-color;
+                    padding: 1px 0.5em 2px;
+                    font-size: $small-font-size;
+                    font-weight: 700;
+
+                    &:hover {
+                        background-color: $accent-color;
+                        border-color: $accent-color;
+                        color: $background-color;
+                    }
                 }
             }
         }
