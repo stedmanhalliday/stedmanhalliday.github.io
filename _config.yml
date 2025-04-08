@@ -118,6 +118,7 @@ jekyll_compose:
             description:
             tags: []
             permalink: /projects/permalink
+            image: /assets/image_path
             hero: projects/title-hero
 
 # Build settings
