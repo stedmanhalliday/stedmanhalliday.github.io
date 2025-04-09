@@ -5,7 +5,7 @@ date: 2023-07-14
 description: Straightforward skincare routines for people who have things to do
 tags: [health, skin, beauty]
 permalink: /blog/skincare
-# image: /assets/
+image: /assets/img/2023-07-14-skincare.webp
 ---
 
 Plenty of skincare advice is too complicated or unrealistic. This post aims to cut through the noise by offering and explaining simple routines designed for people who want results without a high-maintenance lifestyle in terms of time, money, and effort.
