@@ -10,9 +10,9 @@ image: /assets/img/2023-07-14-skincare.webp
 
 Plenty of skincare advice is too complicated or unrealistic. This post aims to cut through the noise by offering and explaining simple routines designed for people who want results without a high-maintenance lifestyle in terms of time, money, and effort.
 
-## Principles of the routine
+## Routine principles
 
-This routine is optimized for three things: product availability, progression, and flexibility.
+These routines are optimized for three things: product availability, progression, and flexibility.
 
 1. **Product availability**  
    All products are easy to find online or in stores—especially while traveling. Most have solid equivalents from other brands too.
