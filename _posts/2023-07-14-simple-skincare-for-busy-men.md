@@ -77,7 +77,7 @@ Lighter than body sunscreen with better blending, especially for darker skin ton
 1. Rinse with cold water.
 1. Pat dry.
 1. Apply a pea-sized amount of moisturizer.
-1. If your lotion doesn't contain SPF, follow with SPF sunscreen.
+1. If your lotion doesn't contain SPF, follow with sunscreen.
 
 *Note: sunscreen helps minimize UV damage, but if it contains avobenzone or similar ingredients, that's mutually exclusive with minimizing exposure to endocrine disruptors. A good measure is to check the UV index before going outside (I use my smart speaker) or think about how long I'll be exposed to UV radiation and decide whether or not to apply sunscreen accordingly.*
 
