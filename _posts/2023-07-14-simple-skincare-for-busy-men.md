@@ -70,6 +70,11 @@ Lighter than body sunscreen with better blending, especially for darker skin ton
 
 *Note: both recommendations contain avobenzone, a known endocrine disruptor. The way suncreen is regulated in the US makes it difficult to find widely available and affordable options that optimize for healthy ingredients, good appearance and texture, and minimal environmental damage. [Let me know](mailto:{{ site.email | encode_email }}?subject=Sunscreen%20alternatives) if you have any good alternatives that satisfy those criteria.*
 
+<figure>
+    <img src="/assets/img/2023-07-14-skincare-sephora_03.webp" alt="innisfree sunscreen">
+    <figcaption>Even some Korean sunscreens contain avobenzone</figcaption>
+</figure>
+
 ### Morning routine
 
 1. Cleanse face with water and a dime-sized dollop of cleanser.
@@ -80,11 +85,6 @@ Lighter than body sunscreen with better blending, especially for darker skin ton
 1. If your lotion doesn't contain SPF, follow with sunscreen.
 
 *Note: sunscreen helps minimize UV damage, but if it contains avobenzone or similar ingredients, that's mutually exclusive with minimizing exposure to endocrine disruptors. A good measure is to check the UV index before going outside (I use my smart speaker) or think about how long I'll be exposed to UV radiation and decide whether or not to apply sunscreen accordingly.*
-
-<figure>
-    <img src="/assets/img/2023-07-14-skincare-sephora_03.webp" alt="innisfree sunscreen">
-    <figcaption>Even some Korean sunscreens contain avobenzone</figcaption>
-</figure>
 
 ### Post-workout or evening routine
 
