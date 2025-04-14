@@ -33,7 +33,7 @@ Before you even touch a product, some quick upgrades to your habits go a long wa
 - Pat your face dry instead of rubbing it.
 - Hands off! Avoid picking at pimples, zits, or blemishes.
 - Shave with a single-blade razor (safety razors are great).
-- Eat well; proper nutrition does wonders for skin.
+- Eat and hydrate well; proper nutrition does wonders for skin.
 
 {% include soft-break.html %}
 
