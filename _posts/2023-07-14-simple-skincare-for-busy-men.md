@@ -5,7 +5,7 @@ date: 2023-07-14
 description: Straightforward skincare routines for people who have things to do
 tags: [health, skin, beauty]
 permalink: /blog/skincare
-image: /assets/img/2023-07-14-skincare.webp
+image: /assets/img/2023-07-14-skincare-sephora_02.webp
 ---
 
 Plenty of skincare advice is too complicated or unrealistic. This post aims to cut through the noise by offering and explaining simple routines designed for people who want results without a high-maintenance lifestyle in terms of time, money, and effort.
@@ -32,6 +32,8 @@ Before you even touch a product, some quick upgrades to your habits go a long wa
 - After hot water exposure (like a shower), rinse your face with cold water to close your pores.
 - Pat your face dry instead of rubbing it.
 - Hands off! Avoid picking at pimples, zits, or blemishes.
+- Shave with a single-blade razor (safety razors are great).
+- Eat well; proper nutrition does wonders for skin.
 
 {% include soft-break.html %}
 
@@ -78,6 +80,11 @@ Lighter than body sunscreen with better blending, especially for darker skin ton
 1. If your lotion doesn't contain SPF, follow with SPF sunscreen.
 
 *Note: sunscreen helps minimize UV damage, but if it contains avobenzone or similar ingredients, that's mutually exclusive with minimizing exposure to endocrine disruptors. A good measure is to check the UV index before going outside (I use my smart speaker) or think about how long I'll be exposed to UV radiation and decide whether or not to apply sunscreen accordingly.*
+
+<figure>
+    <img src="/assets/img/2023-07-14-skincare-sephora_03.webp" alt="innisfree sunscreen">
+    <figcaption>Even some Korean sunscreens contain avobenzone</figcaption>
+</figure>
 
 ### Post-workout or evening routine
 
@@ -142,17 +149,24 @@ Your skin may need a chance to adapt to retinol at first so graduate your usage 
 
 ## Ready for more?
 
-Full disclosure: this is my personal stopping point. I can be fairly consistent with the above routines and am quite happy with the results. Some may want to explore further (I eventually might too).
+Full disclosure: this has been my personal stopping point for years. I can be fairly consistent with the above routines and am quite happy with the results. Some may want to explore further.
 
-Here are some notes on more specialized routines and ingredients to explore once the basics are dialed. These are based on cursory research, short-term product testing, and conversations with people who know more about skincare than I do.
+Here are some notes on more specialized ingredients and interventions to explore once the basics are dialed. These are based on cursory research, short-term product testing, and conversations with people who know more about skincare than I do.
 
-- [The Ordinary](https://theordinary.com/en-us)
 - Alpha hydroxy acids (AHAs)
 - Beta hydroxy acids (BHAs)
 - Hyaluronic acid
 - Peptides
 - Eye creams or serums (for dark circles, etc.)
 - Red light therapy
+
+<figure>
+    <div class="grid col2">
+        <img src="/assets/img/2023-07-14-skincare-sephora_02.webp" alt="The Ordinary retail display shelf">
+        <img src="/assets/img/2023-07-14-skincare-sephora_01.webp" alt="OLEHENRIKSEN retail display shelf">
+    </div>
+    <figcaption>Getting schooled by my Sephora chaperone</figcaption>
+</figure>
 
 Skincare has pretty wild price extremes (see: [the world's most expensive skin creams](https://rarest.org/general/expensive-face-creams)). Don't assume expensive always means better. Experiment slowly, take notes, and stick with what works. Remember that diminishing returns are real and that skincare should serve your life rather than consume it.
 
