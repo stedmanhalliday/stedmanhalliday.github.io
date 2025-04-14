@@ -131,7 +131,7 @@ Microneedling assists the skin's absorption of topical products, stimulates coll
 ### Nighttime routine
 
 1. Cleanse your face (do *not* scrub; the cream will exfoliate)
-1. Optional: user derma roller to microneedle face lightly (only once per area)
+1. Optional: use derma roller to microneedle face lightly (only once per area)
 1. Apply a pea-sized amount of retinol cream
 1. Skip regular moisturizer on these nights
 
