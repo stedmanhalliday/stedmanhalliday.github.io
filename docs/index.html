@@ -77,13 +77,12 @@
         swup.hooks.on('page:view', updateNavLinks);
     </script>
     <script>
-        // lazy load video elements
-        addEventListener("DOMContentLoaded", (event) => {
-            var lazyLoadInstance = new LazyLoad({});
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // lazy load video elements
+            addEventListener("DOMContentLoaded", (event) => {
+                var lazyLoadInstance = new LazyLoad({});
+            });
+
             // find all lazy-loaded images and iframes
             const lazyElements = document.querySelectorAll('img[loading="lazy"], iframe[loading="lazy"]');
 
@@ -101,6 +100,11 @@
                     el.classList.remove("lazy");
                 }
             });
+
+            //reload on orientation change
+            window.addEventListener("orientationchange", function () {
+                window.location.reload()
+            }, false);
         });
     </script>
 </head>
@@ -161,7 +165,7 @@
     <style type="text/css">
     .hero {
         background-color: #e8e8e8;
-        background-image: url("/assets/img/srh-portrait-bg.png");
+        background-image: url("/assets/img/srh-portrait-bg.webp");
         background-position: -4vw bottom;
         background-size: 72vh;
         background-repeat: no-repeat;
@@ -329,7 +333,7 @@
 
     .avatar {
         display: none;
-        background-image: url("/assets/img/srh-portrait-bg.png");
+        background-image: url("/assets/img/srh-portrait-bg.webp");
         background-size: 128%;
         background-position: center top;
         background-repeat: no-repeat;
@@ -377,7 +381,7 @@
             <div class="columns">
                 <div class="column">
                     <h2 class="divider-thin-light">I am currently...</h2>
-                    <p>growing AI products and planning health and wellness experiments.</p>
+                    <p>building a health and wellness space in the heart of San Francisco.</p>
                 </div>
                 <div class="column">
                     <h2 class="divider-thin-light">Let's connect.</h2>
@@ -444,10 +448,10 @@
     
     <li>
         
-        <span class="post-meta">Mar 11, 2025</span>
+        <span class="post-meta">Apr 28, 2025</span>
         <h3>
-            <a class="post-link" href="/blog/2025/03/11/selected-quotes-mar-2025">
-                Selected Quotes: Mar 2025
+            <a class="post-link" href="/blog/2025/04/28/7-songs-apr-2025">
+                7 Songs: Apr 2025
             </a>
         </h3>
         
@@ -455,10 +459,10 @@
     
     <li>
         
-        <span class="post-meta">Feb 19, 2025</span>
+        <span class="post-meta">Apr 19, 2025</span>
         <h3>
-            <a class="post-link" href="/blog/2025/02/19/7-songs-feb-2025">
-                7 Songs: Feb 2025
+            <a class="post-link" href="/blog/2025/04/19/selected-quotes-apr-2025">
+                Selected Quotes: Apr 2025
             </a>
         </h3>
         
@@ -466,10 +470,10 @@
     
     <li>
         
-        <span class="post-meta">Feb 12, 2025</span>
+        <span class="post-meta">Mar 31, 2025</span>
         <h3>
-            <a class="post-link" href="/blog/2025/02/12/skrrtstats-2021-2024">
-                skrrtStats 2021–2024
+            <a class="post-link" href="/blog/2025/03/31/7-songs-mar-2025">
+                7 Songs: Mar 2025
             </a>
         </h3>
         
@@ -560,9 +564,9 @@
         <h3>Top posts</h3>
         <ul class="footer-list">
           
-          <li><a href="/blog/nerd-neck">How to Fix Nerd Neck</a></li>
+          <li><a href="/blog/nerd-neck">Fix Nerd Neck</a></li>
           
-          <li><a href="/blog/skincare">Simple Skincare for Busy Men</a></li>
+          <li><a href="/blog/skincare">Simple Skincare</a></li>
           
           <li><a href="/blog/rgb-color-mixing">RGB Color Mixing</a></li>
           

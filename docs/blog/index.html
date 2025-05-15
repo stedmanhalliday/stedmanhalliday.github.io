@@ -78,13 +78,12 @@
         swup.hooks.on('page:view', updateNavLinks);
     </script>
     <script>
-        // lazy load video elements
-        addEventListener("DOMContentLoaded", (event) => {
-            var lazyLoadInstance = new LazyLoad({});
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", (event) => {
+            // lazy load video elements
+            addEventListener("DOMContentLoaded", (event) => {
+                var lazyLoadInstance = new LazyLoad({});
+            });
+
             // find all lazy-loaded images and iframes
             const lazyElements = document.querySelectorAll('img[loading="lazy"], iframe[loading="lazy"]');
 
@@ -102,6 +101,11 @@
                     el.classList.remove("lazy");
                 }
             });
+
+            //reload on orientation change
+            window.addEventListener("orientationchange", function () {
+                window.location.reload()
+            }, false);
         });
     </script>
 </head>
@@ -186,6 +190,39 @@
         
         <li>
             
+            <span class="post-meta">Apr 28, 2025</span>
+            <h3>
+                <a class="post-link" href="/blog/2025/04/28/7-songs-apr-2025">
+                    7 Songs: Apr 2025
+                </a>
+            </h3>
+            
+        </li>
+        
+        <li>
+            
+            <span class="post-meta">Apr 19, 2025</span>
+            <h3>
+                <a class="post-link" href="/blog/2025/04/19/selected-quotes-apr-2025">
+                    Selected Quotes: Apr 2025
+                </a>
+            </h3>
+            
+        </li>
+        
+        <li>
+            
+            <span class="post-meta">Mar 31, 2025</span>
+            <h3>
+                <a class="post-link" href="/blog/2025/03/31/7-songs-mar-2025">
+                    7 Songs: Mar 2025
+                </a>
+            </h3>
+            
+        </li>
+        
+        <li>
+            
             <span class="post-meta">Mar 11, 2025</span>
             <h3>
                 <a class="post-link" href="/blog/2025/03/11/selected-quotes-mar-2025">
@@ -256,39 +293,6 @@
             <h3>
                 <a class="post-link" href="/blog/nerd-neck">
                     How to Fix Nerd Neck
-                </a>
-            </h3>
-            
-        </li>
-        
-        <li>
-            
-            <span class="post-meta">Dec 14, 2018</span>
-            <h3>
-                <a class="post-link" href="/blog/2018/12/14/clarity-conference">
-                    Here&#39;s what you missed at Clarity 2018
-                </a>
-            </h3>
-            
-        </li>
-        
-        <li>
-            
-            <span class="post-meta">Nov 30, 2018</span>
-            <h3>
-                <a class="post-link" href="/blog/2018/11/30/notes-on-organizational-design">
-                    Notes on Organizational Design
-                </a>
-            </h3>
-            
-        </li>
-        
-        <li>
-            
-            <span class="post-meta">Sep 27, 2018</span>
-            <h3>
-                <a class="post-link" href="/blog/2018/09/27/mailchimp-rebrand-first-impressions">
-                    Mailchimp Rebrand: First Impressions
                 </a>
             </h3>
             
@@ -395,9 +399,9 @@
         <h3>Top posts</h3>
         <ul class="footer-list">
           
-          <li><a href="/blog/nerd-neck">How to Fix Nerd Neck</a></li>
+          <li><a href="/blog/nerd-neck">Fix Nerd Neck</a></li>
           
-          <li><a href="/blog/skincare">Simple Skincare for Busy Men</a></li>
+          <li><a href="/blog/skincare">Simple Skincare</a></li>
           
           <li><a href="/blog/rgb-color-mixing">RGB Color Mixing</a></li>
           
