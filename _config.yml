@@ -119,7 +119,7 @@ jekyll_compose:
             tags: []
             permalink: /projects/permalink
             image: /assets/image_path
-            hero: projects/title-hero
+            hero: /projects/title-hero
 
 # Build settings
 theme: minima

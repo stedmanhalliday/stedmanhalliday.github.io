@@ -3,9 +3,9 @@ layout: project
 title: Amazon Alexa
 date: 2022-08-01
 description: Alexa Voice Services design lead for multimodal interfaces, third-party platforms, and design systems
-categories: [ux, front-end development, design systems]
+categories: [ux, front-end, design systems]
 image: /assets/img/2022-08-01-xApp-dash-VUI.webp
-hero: projects/amazon-alexa-hero
+hero: /projects/amazon-alexa-hero
 ---
 
 At Amazon, I led UX design for emerging multimodal voice technologies within the Alexa Voice Services organization with a focus on TV and ambient device experiences. I co-owned the xApp design system, unifying third-party deployments across vendors like Samsung and LG, and contributed component and feature design as well as production code in React and TypeScript. My work included prototyping interactive voice experiences in Figma, developing multi-agent attention systems for shared devices, and advancing Alexa's ambient computing vision. I also represented the design org in OEM negotiations, led cross-functional design thinking workshops, and helped shape the future of third-party Alexa through systems strategy and feature development.
@@ -74,22 +74,22 @@ Alexa's ambient experience concepts were driven by a core question: how can we m
 
 {% include soft-break.html %}
 
-## Design systems
+## Internal tools
+
+### Design systems
 
 My most substantial contribution at Alexa was leading the creation of a new design system as part of the xApp initiative: an Alexa Voice Services effort to unify third-party deployments of Alexa into a single, scalable codebase. I began by compiling a comprehensive report on best practices in design systems and accessibility from sources like [*Design Better*](https://designbetterpodcast.com/) and my extensive notes on design systems from attending [Clarity Conference](https://www.clarityconf.com/) which secured cross-org buy-in for the adoption of a unified design system as part of the xApp overhaul.
 
 I subsequently co-owned the new xApp design system with an engineering partner and shifted to operating as an embedded design technologist. I audited and adapted legacy UI, designed new components, and implemented them directly in React and TypeScript. I also prototyped in a live staging environment to test theming, device previews, and responsive behavior, validating design intent against the realities of multiple platforms. Beyond foundational work, I used the design system to ship actual features to production, including the relaunch of the Alexa Home and Settings experiences on TV.
+
+To drive adoption of the xApp design system, I hosted office hours, led working sessions with engineers, and contributed to evolving the spec for scalable innovations (e.g. variable font support and shared source strategies across other Amazon orgs). This work left me proud of my ability to deploy a wide variety of skills in my toolbox, blending design craft, systems thinking, technical implementation, and organizational influence to scale great UX across a wide and varied ecosystem.
 
 <figure>
     {% youtube "https://youtu.be/i9W7jnS35mo" %}
     <figcaption>Alexa for TV xApp redesign walkthrough</figcaption>
 </figure>
 
-To drive adoption of the xApp design system, I hosted office hours, led working sessions with engineers, and contributed to evolving the spec for scalable innovations (e.g. variable font support and shared source strategies across other Amazon orgs). This work left me proud of my ability to deploy a wide variety of skills in my toolbox, blending design craft, systems thinking, technical implementation, and organizational influence to scale great UX across a wide and varied ecosystem.
-
-{% include soft-break.html %}
-
-## Internal tools
+### Multimodal prototyping
 
 Shortly after onboarding, I volunteered to join an internal prototyping working group focused on exploring how Amazon's designers might adopt new tools for creating voice-centric multimodal experiences. It started as an experiment and became a fun and exciting challenge: injecting JavaScript into Figma to drive prototype interactions, view transitions, and audio feedback with real voice recognition. My efforts yielded a process for high-fidelity browser recreations of the Alexa experience on devices like Echo Show with voice and GUI feature parity, sketching the foundation for an internal tool that the working group could formalize for broader use.
 
