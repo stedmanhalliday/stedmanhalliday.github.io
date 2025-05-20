@@ -116,9 +116,8 @@ jekyll_compose:
         projects:
             layout: project
             description:
-            tags: []
-            permalink: /projects/permalink
-            image: /assets/image_path
+            categories: []
+            image: /assets/img/image_path
             hero: /projects/title-hero
 
 # Build settings

@@ -6,11 +6,11 @@
 </url>
 <url>
 <loc>http://localhost:4000/404.html</loc>
-<lastmod>2025-05-20T03:24:48-07:00</lastmod>
+<lastmod>2025-05-20T03:55:03-07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/about/</loc>
-<lastmod>2025-05-20T03:24:48-07:00</lastmod>
+<lastmod>2025-05-20T03:55:03-07:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/blog/2017/11/22/toxic-design-community</loc>
@@ -83,6 +83,10 @@
 <url>
 <loc>http://localhost:4000/blog/2025/04/28/7-songs-apr-2025</loc>
 <lastmod>2025-04-28T00:00:00-07:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/work/tensorflow-resources</loc>
+<lastmod>2017-02-17T00:00:00-08:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/work/contractx</loc>
