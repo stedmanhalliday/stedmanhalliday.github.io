@@ -3,7 +3,7 @@ layout: project
 title: Amazon Alexa
 date: 2022-08-01
 description: Alexa Voice Services design lead for multimodal interfaces, third-party platforms, and design systems
-categories: [ux, front-end, design systems]
+categories: [ux, front-end, design systems, ai]
 image: /assets/img/2022-08-01-xApp-dash-VUI.webp
 hero: /projects/amazon-alexa-hero
 ---
