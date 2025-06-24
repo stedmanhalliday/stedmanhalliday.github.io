@@ -35,7 +35,13 @@ At launch, Marble received 4,000 mailing list signups and galvanized a community
 </figure>
 
 <figure>
-    <a data-fslightbox href="/assets/img/2018-06-08-marble-style-guide-15.png">
+    <img alt="Typographic scale with Marble's brand typeface: F37 Bolton" src="/assets/img/2018-06-08-marble-style-guide-15.png" />
+    <figcaption>Typographic scale with Marble's brand typeface: F37 Bolton</figcaption>
+</figure>
+
+<!-- lightbox example, use first data-attr value across instances for gallery -->
+<figure>
+    <a data-fslightbox="poon" data-href="/assets/img/2018-06-08-marble-style-guide-15.png">
         <img alt="Typographic scale with Marble's brand typeface: F37 Bolton" src="/assets/img/2018-06-08-marble-style-guide-15.png" />
     </a>
     <figcaption>Typographic scale with Marble's brand typeface: F37 Bolton</figcaption>

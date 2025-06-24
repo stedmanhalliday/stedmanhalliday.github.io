@@ -795,6 +795,13 @@ html.is-animating .transition-fade {
 }
 
 /**
+ * Lightbox
+ */
+.fslightbox-container {
+  outline: none;
+}
+
+/**
  * Syntax highlighting styles
  */
 .highlight {
