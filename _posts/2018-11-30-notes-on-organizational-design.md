@@ -333,7 +333,7 @@ There is no one-size-fits-all for design ops.
 <blockquote class="bigquote">
 Lesson #4:
 <br>
-It takes a relatively small team to have outsize impact.
+It takes a relatively small team to have outsized impact.
 </blockquote>
 <blockquote class="bigquote">
 Lesson #5:
