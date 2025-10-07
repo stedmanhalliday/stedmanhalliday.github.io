@@ -34,15 +34,22 @@ The brief was shaped by a discovery process that uncovered opportunities to impr
     <figcaption>Design brief excerpts: current experience and web property ecosystem overviews</figcaption>
 </figure>
 
---------------
-YOU STOPPED HERE
---------------
-
 ## Wireframes
 
 In the wireframing phase, I prioritized creating a visually intuitive and engaging framework for the Microsoft Education Blog's diverse audience. I focused on rich previews to give users a compelling snapshot of content, designed layouts for articles both with and without images, and added multiple avenues for category-based navigation to enable easy topic discovery. Clear typographic and layout hierarchies were established to enhance readability and user engagement. Additionally, I integrated social sharing features and robust search and filtering capabilities to help users efficiently locate specific information. These wireframes laid the groundwork for a user-centric design that balanced the goals of each audience.
 
-![Wireframes: blog home, article layout, and category archive](https://wp.stedmanhalliday.com/wp-content/uploads/2024/06/Blog-home.png)
+<figure>
+    <div class="grid col3">
+        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-home.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-home.webp" alt="blog home wireframe"></a>
+        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Article.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Article.webp" alt="article wireframe"></a>
+        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-archive.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-archive.webp" alt="blog archive wireframe"></a>
+    </div>
+    <div class="grid col2 mt-100">
+        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Category-archive.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Category-archive.webp" alt="category archive wireframe"></a>
+        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Search-results.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Search-results.webp" alt="search results wireframe"></a>
+    </div>
+    <figcaption>Wireframes: blog home, article layout, archives, and search results</figcaption>
+</figure>
 
 ## Prototype
 
