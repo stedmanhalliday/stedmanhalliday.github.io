@@ -55,22 +55,46 @@ In the wireframing phase, I prioritized creating a visually intuitive and engagi
 
 After some iteration on the wireframes, I stitched them into prototype flows to help stakeholders better understand how users would navigate the sitemap through multiple avenues and interact with features like search.
 
-[View prototype video](https://wp.stedmanhalliday.com/wp-content/uploads/2024/06/EDU-blog-prototype.mp4)
+<figure>
+    {% youtube "https://youtu.be/ZstV6hfPb8s" %}
+    <figcaption>Blog prototype</figcaption>
+</figure>
 
 ## High-Fidelity Designs
 
 I worked with other designers on my team to finalize details of the blog's design in higher fidelity to give stakeholders a richer representation of the final product. We focused on layout dimensions, alternate layouts for different kinds of blog content, typographic style, and other fine details to bring the design home.
 
-![Designs: blog home, article layout, and category archive](https://wp.stedmanhalliday.com/wp-content/uploads/2024/06/EDU-Blog-Homepage-scaled.jpg)
+## ![Designs: blog home, article layout, and category archive](https://wp.stedmanhalliday.com/wp-content/uploads/2024/06/EDU-Blog-Homepage-scaled.jpg)
+
+## replace these
+
+<figure>
+    <div class="grid col3">
+        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-home.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-home.webp" alt="blog home wireframe"></a>
+        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Article.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Article.webp" alt="article wireframe"></a>
+        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-archive.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-archive.webp" alt="blog archive wireframe"></a>
+    </div>
+    <div class="grid col2 mt-100">
+        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Category-archive.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Category-archive.webp" alt="category archive wireframe"></a>
+        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Search-results.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Search-results.webp" alt="search results wireframe"></a>
+    </div>
+    <figcaption>Wireframes: blog home, article layout, archives, and search results</figcaption>
+</figure>
 
 ## Documentation
 
 I developed a static website as a documentation resource for the stakeholders of the blog. It acts as a functional specification for all of the components utilized across the sitemap, explaining their characteristics and behavior and in part acting as a style guide. It also breaks down each page layout in the sitemap to explain its component composition. This went beyond the scope of my work as a UX Designer, but it proved extraordinarily helpful in decreasing implementation costs for the client. Their delight drove home the value of going the extra mile, taking ownership, and delivering best-in-class results regardless of my explicit role or title.
 
-[View documentation website video](https://wp.stedmanhalliday.com/wp-content/uploads/2024/06/msft-docs.mp4)
+<figure>
+    {% youtube "https://youtu.be/sNHqM4Ms2WU" %}
+    <figcaption>Functional specification and documentation website</figcaption>
+</figure>
 
 ## Outcome
 
 The relaunch of the Microsoft Education Blog saw positive reception from multiple audience segments whose needs were carefully considered during the discovery and design processes. Educators, administrators, and IT professionals especially found the new taxonomy treatments helpful for surfacing the resources that they needed to navigate the mercurial nature of remote and hybrid education during the pandemic. The redesign of the blog worked in tandem with my efforts on the core Microsoft Education website and other web properties in the Microsoft Education ecosystem to assist and assure parents of students as they stepped deeper into their children's education in the midst of the pandemic. The blog saw record traffic and engagement during this time with a 127% increase in unique visitors for the following quarter and a significant increase in repeat visits.
 
-[View outcome video](https://wp.stedmanhalliday.com/wp-content/uploads/2023/09/outcome.mp4)
+<figure>
+    {% youtube "https://youtu.be/wKLQE2-dWA4" %}
+    <figcaption>Relaunched Microsoft Education Blog</figcaption>
+</figure>
