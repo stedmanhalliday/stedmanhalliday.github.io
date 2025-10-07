@@ -170,6 +170,14 @@ Here are some notes on more specialized ingredients and interventions to explore
 
 Skincare has pretty wild price extremes (see: [the world's most expensive skin creams](https://rarest.org/general/expensive-face-creams)). Don't assume expensive always means better. Experiment slowly, take notes, and stick with what works. Remember that diminishing returns are real and that skincare should serve your life rather than consume it.
 
+### Update
+
+I stopped using lotion on my face. I'm happier with a few milliliters of [water-based multi-peptide serum with hyaluronic acid](https://theordinary.com/en-us/multi-peptide-ha-serum-100613.html). It retains moisture well, but keeps skin matte and has a nice smoothing and firming effect to boot. It is also very economical to apply and easy to travel with.
+
+I am also occasionally applying caffeinated eye cream to my lower eyelids in the morning to alleviate dark circles and puffiness. I'm thinking about a lightweight Gua Sha setup to aid further in this area; I've come to rather dislike the sensation of unexpressed facial lymph nodes.
+
+There's always a lot of new stuff going on to explore in this world!
+
 {% include soft-break.html %}
 
 I hope this gave you a clear path to healthier skin without the fluff. {% include snippets/twitter-dm.html %} if you want to talk routines, ask questions, or offer suggestions. Thanks for reading!
