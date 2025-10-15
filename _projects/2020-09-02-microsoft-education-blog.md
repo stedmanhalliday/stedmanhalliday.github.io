@@ -64,21 +64,18 @@ After some iteration on the wireframes, I stitched them into prototype flows to 
 
 I worked with other designers on my team to finalize details of the blog's design in higher fidelity to give stakeholders a richer representation of the final product. We focused on layout dimensions, alternate layouts for different kinds of blog content, typographic style, and other fine details to bring the design home.
 
-## ![Designs: blog home, article layout, and category archive](https://wp.stedmanhalliday.com/wp-content/uploads/2024/06/EDU-Blog-Homepage-scaled.jpg)
-
-## replace these
-
 <figure>
     <div class="grid col3">
-        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-home.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-home.webp" alt="blog home wireframe"></a>
-        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Article.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Article.webp" alt="article wireframe"></a>
-        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-archive.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Blog-archive.webp" alt="blog archive wireframe"></a>
+        <a data-fslightbox="high-fidelity" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-homepage.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-homepage.webp" alt="blog home"></a>
+        <a data-fslightbox="high-fidelity" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-article-image.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-article-image.webp" alt="blog article with image"></a>
+        <a data-fslightbox="high-fidelity" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-article.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-article.webp" alt="blog article"></a>
     </div>
-    <div class="grid col2 mt-100">
-        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Category-archive.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Category-archive.webp" alt="category archive wireframe"></a>
-        <a data-fslightbox="wireframes" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Search-results.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-wf-Search-results.webp" alt="search results wireframe"></a>
+    <div class="grid col3 mt-100">
+        <a data-fslightbox="high-fidelity" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-archive.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-archive.webp" alt="blog archive"></a>
+        <a data-fslightbox="high-fidelity" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-category-archive.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-category-archive.webp" alt="category archive"></a>
+        <a data-fslightbox="high-fidelity" data-href="/assets/img/2020-09-02-MSFT_EDU-blog-search-results.webp"><img src="/assets/img/2020-09-02-MSFT_EDU-blog-search-results.webp" alt="search results"></a>
     </div>
-    <figcaption>Wireframes: blog home, article layout, archives, and search results</figcaption>
+    <figcaption>High-fidelity designs: blog home, article layouts, archives, and search results</figcaption>
 </figure>
 
 ## Documentation
