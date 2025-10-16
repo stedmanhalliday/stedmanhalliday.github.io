@@ -3,7 +3,7 @@ layout: project
 title: Marble Protocol
 date: 2018-06-08
 description: Brand and web launch for the decentralized finance startup that invented blockchain-based flash loans
-categories: [brand, front-end, blockchain]
+categories: [brand, web dev, blockchain]
 image: /assets/img/2018-06-08-marble-web.png
 hero: /projects/marble-hero
 ---
