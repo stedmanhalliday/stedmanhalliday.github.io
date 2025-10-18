@@ -42,14 +42,10 @@
                 }
             });
         }
-        swup.hooks.on('page:view', updateNavLinks);
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            // lazy load video elements
-            addEventListener("DOMContentLoaded", (event) => {
-                var lazyLoadInstance = new LazyLoad({});
-            });
+
+        // lazyload
+        function lazyLoad() {
+            var lazyLoadInstance = new LazyLoad({});
 
             // find all lazy-loaded images and iframes
             const lazyElements = document.querySelectorAll('img[loading="lazy"], iframe[loading="lazy"]');
@@ -68,11 +64,23 @@
                     el.classList.remove("lazy");
                 }
             });
+        }
 
-            //reload on orientation change
-            window.addEventListener("orientationchange", function () {
-                window.location.reload()
-            }, false);
+        // first load
+        document.addEventListener("DOMContentLoaded", (event) => {
+            updateNavLinks();
+            lazyLoad();
         });
+
+        // on transitions
+        swup.hooks.on('page:view', () => {
+            updateNavLinks();
+            lazyLoad();
+        });
+
+        //reload on orientation change
+        window.addEventListener("orientationchange", function () {
+            window.location.reload()
+        }, false);
     </script>
 </head>

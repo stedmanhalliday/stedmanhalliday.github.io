@@ -15,7 +15,7 @@ Ethereum smart contract explorers (e.g. [Etherscan](https://etherscan.io/)) do n
 </figure>
 
 <figure>
-    {% youtube "https://youtu.be/-1cBvSFPEnI" %}
+    <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2018-05-02-contracTx_01.mp4"></video>
 </figure>
 
 ## Process

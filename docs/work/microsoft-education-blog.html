@@ -22,36 +22,26 @@
 <meta property="og:locale" content="en_US">
 <meta name="description" content="Redesign of the Microsoft Education Blog web experience">
 <meta property="og:description" content="Redesign of the Microsoft Education Blog web experience">
-<link rel="canonical" href="https://stedmanhalliday.com/work/microsoft-education-blog">
-<meta property="og:url" content="https://stedmanhalliday.com/work/microsoft-education-blog">
+<link rel="canonical" href="http://localhost:4000/work/microsoft-education-blog">
+<meta property="og:url" content="http://localhost:4000/work/microsoft-education-blog">
 <meta property="og:site_name" content="Stedman Halliday">
-<meta property="og:image" content="https://stedmanhalliday.com/assets/img/2020-09-02-msft-edu-blog.webp">
+<meta property="og:image" content="http://localhost:4000/assets/img/2020-09-02-msft-edu-blog.webp">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2020-09-02T00:00:00-07:00">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="https://stedmanhalliday.com/assets/img/2020-09-02-msft-edu-blog.webp">
+<meta property="twitter:image" content="http://localhost:4000/assets/img/2020-09-02-msft-edu-blog.webp">
 <meta property="twitter:title" content="Microsoft Education Blog">
 <meta name="twitter:site" content="@stedmanhalliday">
 <meta name="twitter:creator" content="@stedmanhalliday">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Stedman Halliday","url":"https://stedmanhalliday.com"},"dateModified":"2020-09-02T00:00:00-07:00","datePublished":"2020-09-02T00:00:00-07:00","description":"Redesign of the Microsoft Education Blog web experience","headline":"Microsoft Education Blog","image":"https://stedmanhalliday.com/assets/img/2020-09-02-msft-edu-blog.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://stedmanhalliday.com/work/microsoft-education-blog"},"url":"https://stedmanhalliday.com/work/microsoft-education-blog"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Stedman Halliday","url":"https://stedmanhalliday.com"},"dateModified":"2020-09-02T00:00:00-07:00","datePublished":"2020-09-02T00:00:00-07:00","description":"Redesign of the Microsoft Education Blog web experience","headline":"Microsoft Education Blog","image":"http://localhost:4000/assets/img/2020-09-02-msft-edu-blog.webp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/work/microsoft-education-blog"},"url":"http://localhost:4000/work/microsoft-education-blog"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400,700&amp;display=swap" rel="stylesheet">
-    <link type="application/atom+xml" rel="alternate" href="https://stedmanhalliday.com/feed.xml" title="Stedman Halliday">
-    
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SQV444EF7D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SQV444EF7D');
-</script>
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stedman Halliday">
     
     <script src="https://unpkg.com/@swup/scripts-plugin@2"></script>
     <script src="https://unpkg.com/swup@4"></script>
@@ -75,14 +65,10 @@
                 }
             });
         }
-        swup.hooks.on('page:view', updateNavLinks);
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            // lazy load video elements
-            addEventListener("DOMContentLoaded", (event) => {
-                var lazyLoadInstance = new LazyLoad({});
-            });
+
+        // lazyload
+        function lazyLoad() {
+            var lazyLoadInstance = new LazyLoad({});
 
             // find all lazy-loaded images and iframes
             const lazyElements = document.querySelectorAll('img[loading="lazy"], iframe[loading="lazy"]');
@@ -101,12 +87,24 @@
                     el.classList.remove("lazy");
                 }
             });
+        }
 
-            //reload on orientation change
-            window.addEventListener("orientationchange", function () {
-                window.location.reload()
-            }, false);
+        // first load
+        document.addEventListener("DOMContentLoaded", (event) => {
+            updateNavLinks();
+            lazyLoad();
         });
+
+        // on transitions
+        swup.hooks.on('page:view', () => {
+            updateNavLinks();
+            lazyLoad();
+        });
+
+        //reload on orientation change
+        window.addEventListener("orientationchange", function () {
+            window.location.reload()
+        }, false);
     </script>
 </head>
 
@@ -195,9 +193,9 @@
                 </div>
                 <p>I led an end-to-end redesign of the Microsoft Education Blog during the COVID-19 pandemic for Wunderman Thompson. The project took place during a highly dynamic time for the education segment that saw record web traffic as educators, administrators, and other audiences increasingly sought information online to navigate novel challenges related to remote and hybrid education.</p>
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-<div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/wKLQE2-dWA4" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
-</div>
+<figure>
+    <video class="lazy" width="100%" preload="none" autoplay="" playsinline="" loop="" muted="" poster="/assets/og-image.png" data-src="/assets/video/2020-09-02-msft-edu-blog-outcome.mp4"></video>
+</figure>
 
 <div class="soft-break"></div>
 
@@ -243,9 +241,7 @@
 <p>After some iteration on the wireframes, I stitched them into prototype flows to help stakeholders better understand how users would navigate the sitemap through multiple avenues and interact with features like search.</p>
 
 <figure>
-    <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-<div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/ZstV6hfPb8s" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
-</div>
+    <video class="lazy" width="100%" preload="none" autoplay="" playsinline="" loop="" muted="" poster="/assets/og-image.png" data-src="/assets/video/2020-09-02-msft-edu-blog-prototype.mp4"></video>
     <figcaption>Blog prototype</figcaption>
 </figure>
 
@@ -272,9 +268,7 @@
 <p>I developed a static website as a documentation resource for the stakeholders of the blog. It acts as a functional specification for all of the components utilized across the sitemap, explaining their characteristics and behavior and in part acting as a style guide. It also breaks down each page layout in the sitemap to explain its component composition. This went beyond the scope of my work as a UX Designer, but it proved extraordinarily helpful in decreasing implementation costs for the client. Their delight drove home the value of going the extra mile, taking ownership, and delivering best-in-class results regardless of my explicit role or title.</p>
 
 <figure>
-    <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-<div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/sNHqM4Ms2WU" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
-</div>
+    <video class="lazy" width="100%" preload="none" autoplay="" playsinline="" loop="" muted="" poster="/assets/og-image.png" data-src="/assets/video/2020-09-02-msft-edu-blog-docs.mp4"></video>
     <figcaption>Functional specification and documentation website</figcaption>
 </figure>
 
@@ -283,9 +277,7 @@
 <p>The relaunch of the Microsoft Education Blog saw positive reception from multiple audience segments whose needs were carefully considered during the discovery and design processes. Educators, administrators, and IT professionals especially found the new taxonomy treatments helpful for surfacing the resources that they needed to navigate the mercurial nature of remote and hybrid education during the pandemic. The redesign of the blog worked in tandem with my efforts on the core Microsoft Education website and other web properties in the Microsoft Education ecosystem to assist and assure parents of students as they stepped deeper into their children’s education in the midst of the pandemic. The blog saw record traffic and engagement during this time with a 127% increase in unique visitors for the following quarter and a significant increase in repeat visits.</p>
 
 <figure>
-    <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-<div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/wKLQE2-dWA4" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
-</div>
+    <video class="lazy" width="100%" preload="none" autoplay="" playsinline="" loop="" muted="" poster="/assets/og-image.png" data-src="/assets/video/2020-09-02-msft-edu-blog-outcome.mp4"></video>
     <figcaption>Relaunched Microsoft Education Blog</figcaption>
 </figure>
 
