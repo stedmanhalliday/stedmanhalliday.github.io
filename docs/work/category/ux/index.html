@@ -70,14 +70,19 @@
             var lazyLoadInstance = new LazyLoad({});
 
             // find all lazy-loaded images and iframes
-            const lazyElements = document.querySelectorAll('img[loading="lazy"], iframe[loading="lazy"]');
+            const lazyElements = document.querySelectorAll('img[loading="lazy"], iframe[loading="lazy"], video[class="lazy"]');
 
             lazyElements.forEach((el) => {
                 // add a loading class to elements
-                el.classList.add("lazy");
+                if(!el.classList.contains("lazy")){
+                    el.classList.add("lazy");
+                }
 
                 // listen for the load event
                 el.addEventListener("load", () => {
+                    el.classList.remove("lazy");
+                });
+                el.addEventListener("loadeddata", () => {
                     el.classList.remove("lazy");
                 });
 

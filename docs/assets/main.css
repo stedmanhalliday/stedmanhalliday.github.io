@@ -306,6 +306,7 @@ table td {
   }
 }
 .lazy {
+  width: 100%;
   animation: skeleton-loading 1s linear infinite alternate;
 }
 
