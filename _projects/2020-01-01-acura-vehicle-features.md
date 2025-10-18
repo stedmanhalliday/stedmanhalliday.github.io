@@ -17,7 +17,7 @@ ease as well as boost target engagement metrics.
 </figure>
 
 <figure>
-    <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-outcome-desktop.mp4"></video>
+    <video class="lazy" poster="/assets/video/2020-01-01-acura-outcome-desktop-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-outcome-desktop.mp4"></video>
 </figure>
 
 {% include soft-break.html %}
@@ -169,7 +169,7 @@ Granular data on which features proved popular in which contexts provided helpfu
 The team landed on two principal design directions that we'd iteratively expand and refine in tandem with further research and feedback cycles throughout the remainder of the project. After achieving alignment on the initial variations we'd be presenting to Acura, I prototyped some basic interactions and flows to get a rudimentary feel for how the various components in our system might work together to provide affordances for the discovery and exploration of vehicle features.
 
 <figure class="text-center">
-    <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-02-wire-prototype.mp4"></video>
+    <video class="lazy" poster="/assets/video/2020-01-01-acura-02-wire-prototype-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-02-wire-prototype.mp4"></video>
     <figcaption>Low-fidelity interaction prototype</figcaption>
 </figure>
 
@@ -233,20 +233,20 @@ While we zeroed in on a refined vision for elements, compositon, and narrative s
 
 <figure>
     <div class="grid col2">
-        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-mobile-nav-anchor-links.mp4"></video>
-        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-mobile-side-nav.mp4"></video>
-        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-mobile-accordion.mp4"></video>
-        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-mobile-carousel.mp4"></video>
+        <video class="lazy" poster="/assets/video/2020-01-01-acura-features-mobile-nav-anchor-links-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-mobile-nav-anchor-links.mp4"></video>
+        <video class="lazy" poster="/assets/video/2020-01-01-acura-features-mobile-side-nav-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-mobile-side-nav.mp4"></video>
+        <video class="lazy" poster="/assets/video/2020-01-01-acura-features-prototype-mobile-accordion-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-mobile-accordion.mp4"></video>
+        <video class="lazy" poster="/assets/video/2020-01-01-acura-features-prototype-mobile-carousel-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-mobile-carousel.mp4"></video>
     </div>
     <figcaption>High-fidelity mobile interaction prototypes</figcaption>
 </figure>
 
 <figure>
     <div class="grid col2">
-        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav.mp4"></video>
-        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav-menu.mp4"></video>
-        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-connectivity.mp4"></video>
-        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-exterior.mp4"></video>
+        <video class="lazy" poster="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav.mp4"></video>
+        <video class="lazy" poster="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav-menu-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav-menu.mp4"></video>
+        <video class="lazy" poster="/assets/video/2020-01-01-acura-features-prototype-connectivity-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-connectivity.mp4"></video>
+        <video class="lazy" poster="/assets/video/2020-01-01-acura-features-prototype-exterior-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-exterior.mp4"></video>
     </div>
     <figcaption>High-fidelity desktop interaction prototypes</figcaption>
 </figure>
@@ -277,11 +277,11 @@ A key consideration of the redesign was also the adaptability of the experience 
 </figure>
 
 <figure>
-    <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-outcome-desktop.mp4"></video>
+    <video class="lazy" poster="/assets/video/2020-01-01-acura-outcome-desktop-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-outcome-desktop.mp4"></video>
     <figcaption>Redesigned 2021 TLX desktop experience</figcaption>
 </figure>
 
 <figure class="text-center">
-    <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-outcome-mobile.mp4"></video>
+    <video class="lazy" poster="/assets/video/2020-01-01-acura-outcome-mobile-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-outcome-mobile.mp4"></video>
     <figcaption>Redesigned 2021 MDX mobile experience</figcaption>
 </figure>

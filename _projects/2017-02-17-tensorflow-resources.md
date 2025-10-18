@@ -15,7 +15,7 @@ There are several great curated lists of resources on Github for learning about 
 </figure>
 
 <figure>
-    <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2017-02-17-tensorflow-resources_01.mp4"></video>
+    <video class="lazy" poster="/assets/video/2017-02-17-tensorflow-resources_01-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2017-02-17-tensorflow-resources_01.mp4"></video>
 </figure>
 
 ## Process

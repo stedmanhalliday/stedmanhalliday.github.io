@@ -21,11 +21,11 @@ Designing for multi-agent attention systems meant tackling one of the more novel
 Strategically, these efforts solidified our organization's advancement of agent interoperability in contrast to competitors' preferences for zero-sum design strategies. In hindsight, it's exciting to see multi-agent interfaces gaining traction as a natural evolution in AI UX. I'm proud to have explored this terrain before it was a mainstream focus and it energizes me to see the field moving in a direction that validates that early thinking.
 
 <figure>
-    <video class="lazy" controls playsinline data-src="/assets/video/2021-08-02-alexa-multi-agent.mp4"></video>
+    <video class="lazy" poster="/assets/video/2021-08-02-alexa-multi-agent-poster.webp" controls playsinline data-src="/assets/video/2021-08-02-alexa-multi-agent.mp4"></video>
     <figcaption>Multi-agent selection (Vizio and Alexa)</figcaption>
 </figure>
 <figure>
-    <video class="lazy" controls playsinline data-src="/assets/video/2021-08-02-alexa-vizio-adapted_alexa.mp4"></video>
+    <video class="lazy" poster="/assets/video/2021-08-02-alexa-vizio-adapted_alexa-poster.webp" controls playsinline data-src="/assets/video/2021-08-02-alexa-vizio-adapted_alexa.mp4"></video>
     <figcaption>Multi-agent: adapted Alexa</figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ Strategically, these efforts solidified our organization's advancement of agent 
 Multimodal multitasking asked a foundational question: how can users access the full breadth of Alexa's capabilities (voice, GUI, smart home, content, and more) without interrupting what they're already doing? I worked on multiple dashboard and control surface concepts which evolved into a persistent quick-access panel for TV surfaces. The design needed to balance utility with subtlety, surfacing the most relevant actions without overwhelming users or obscuring content. With the help of extensive testing, this work helped define interaction patterns for layered contexts, letting users issue voice commands, glance at timers, or adjust lights while watching video. It expanded our thinking around what ambient assistance can look like when it doesn't dominate the screen.
 
 <figure>
-    <video class="lazy" controls playsinline data-src="/assets/video/2021-11-19-alexa-xApp-dash-full-VUI_comp.mp4"></video>
+    <video class="lazy" poster="/assets/video/2021-11-19-alexa-xApp-dash-full-VUI_comp-poster.webp" controls playsinline data-src="/assets/video/2021-11-19-alexa-xApp-dash-full-VUI_comp.mp4"></video>
     <figcaption>Quick-access dashboard concept</figcaption>
 </figure>
 
@@ -49,7 +49,7 @@ Multimodal multitasking asked a foundational question: how can users access the 
 </figure>
 
 <figure>
-    <video class="lazy" controls playsinline data-src="/assets/video/2021-11-19-xApp-multitasking_QAP_comp.mp4"></video>
+    <video class="lazy" poster="/assets/video/2021-11-19-xApp-multitasking_QAP_comp-poster.webp" controls playsinline data-src="/assets/video/2021-11-19-xApp-multitasking_QAP_comp.mp4"></video>
     <figcaption>Alexa for TV quick-access panel</figcaption>
 </figure>
 
@@ -63,12 +63,12 @@ Alexa's ambient experience concepts were driven by a core question: how can we m
 </figure>
 
 <figure>
-    <video class="lazy" controls playsinline data-src="/assets/video/2021-11-19-alexa-xApp-ambient-sports-mode_comp.webm"></video>
+    <video class="lazy" poster="/assets/video/2021-11-19-alexa-xApp-ambient-sports-mode_comp-poster.webp" controls playsinline data-src="/assets/video/2021-11-19-alexa-xApp-ambient-sports-mode_comp.webm"></video>
     <figcaption>Ambient Alexa: sports mode</figcaption>
 </figure>
 
 <figure>
-    <video class="lazy" controls playsinline data-src="/assets/video/2021-11-19-alexa-xApp-ambient-LOTR_comp.webm"></video>
+    <video class="lazy" poster="/assets/video/2021-11-19-alexa-xApp-ambient-LOTR_comp-poster.webp" controls playsinline data-src="/assets/video/2021-11-19-alexa-xApp-ambient-LOTR_comp.webm"></video>
     <figcaption>Ambient Alexa: Prime TV promo</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ I subsequently co-owned the new xApp design system with an engineering partner a
 To drive adoption of the xApp design system, I hosted office hours, led working sessions with engineers, and contributed to evolving the spec for scalable innovations (e.g. variable font support and shared source strategies across other Amazon orgs). This work left me proud of my ability to deploy a wide variety of skills in my toolbox, blending design craft, systems thinking, technical implementation, and organizational influence to scale great UX across a wide and varied ecosystem.
 
 <figure>
-    <video class="lazy" controls playsinline data-src="/assets/video/2022-07-29-alexa-xApp-walkthrough.mp4"></video>
+    <video class="lazy" poster="/assets/video/2022-07-29-alexa-xApp-walkthrough-poster.webp" controls playsinline data-src="/assets/video/2022-07-29-alexa-xApp-walkthrough.mp4"></video>
     <figcaption>Alexa for TV xApp redesign walkthrough</figcaption>
 </figure>
 
@@ -99,7 +99,7 @@ Shortly after onboarding, I volunteered to join an internal prototyping working 
 </figure>
 
 <figure>
-    <video class="lazy" controls playsinline data-src="/assets/video/2021-07-30-alexa-reminders-video-demo.webm"></video>
+    <video class="lazy" poster="/assets/video/2021-07-30-alexa-reminders-video-demo-poster.webp" controls playsinline data-src="/assets/video/2021-07-30-alexa-reminders-video-demo.webm"></video>
     <figcaption>Alexa reminders browser prototype demo</figcaption>
 </figure>
 
