@@ -17,7 +17,7 @@ ease as well as boost target engagement metrics.
 </figure>
 
 <figure>
-    {% youtube "https://youtu.be/ycxuhfgijlU" %}
+    <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-outcome-desktop.mp4"></video>
 </figure>
 
 {% include soft-break.html %}
@@ -141,3 +141,147 @@ Despite its lesser popularity as an explicitly categorized feature, we recognize
 ## Wireframes, Specs, and Prototypes
 
 Granular data on which features proved popular in which contexts provided helpful directionality when it came time for the design team to prune concepts and align on more focused treatments that could address customer interests and resonate with what people want most in a new vehicle. I authored the initial functional specification document by outlining the appearance and behavior of various components in mobile and desktop viewports and creating structural narratives that explored how different modules could work to support customer understanding of each feature category.
+
+<figure>
+    <div class="grid col3">
+        <a data-fslightbox="specs" data-href="/assets/img/2020-01-01-acura-specs-01-components.webp">
+            <img src="/assets/img/2020-01-01-acura-specs-01-components.webp" alt="component specs">
+        </a>
+        <a data-fslightbox="specs" data-href="/assets/img/2020-01-01-acura-specs-02-components.webp">
+            <img src="/assets/img/2020-01-01-acura-specs-02-components.webp" alt="component specs">
+        </a>
+        <a data-fslightbox="specs" data-href="/assets/img/2020-01-01-acura-specs-03-mobile.webp">
+            <img src="/assets/img/2020-01-01-acura-specs-03-mobile.webp" alt="mobile specs">
+        </a>
+        <a data-fslightbox="specs" data-href="/assets/img/2020-01-01-acura-specs-04-mobile.webp">
+            <img src="/assets/img/2020-01-01-acura-specs-04-mobile.webp" alt="mobile specs">
+        </a>
+        <a data-fslightbox="specs" data-href="/assets/img/2020-01-01-acura-specs-05-desktop.webp">
+            <img src="/assets/img/2020-01-01-acura-specs-05-desktop.webp" alt="desktop specs">
+        </a>
+        <a data-fslightbox="specs" data-href="/assets/img/2020-01-01-acura-specs-06-desktop.webp.webp">
+            <img src="/assets/img/2020-01-01-acura-specs-06-desktop.webp" alt="desktop specs">
+        </a>
+    </div>
+    <figcaption>Early wireframes and functional specifications for components, mobile, and desktop</figcaption>
+</figure>
+
+The team landed on two principal design directions that we'd iteratively expand and refine in tandem with further research and feedback cycles throughout the remainder of the project. After achieving alignment on the initial variations we'd be presenting to Acura, I prototyped some basic interactions and flows to get a rudimentary feel for how the various components in our system might work together to provide affordances for the discovery and exploration of vehicle features.
+
+<figure class="text-center">
+    <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-02-wire-prototype.mp4"></video>
+    <figcaption>Low-fidelity interaction prototype</figcaption>
+</figure>
+
+## User Research
+
+We ran intercept surveys on the live experience and commissioned an independent user research study to dig deeper into the pain points identified in earlier market research and gain further insight into how customers responded to those issues in real time. 12 participants were selected for the study with a 50-50 mobile-desktop split. Each completed a 60-minute session consisting of a one-on-one interview, one usability and one discovery task, and a system usability scale questionnaire. Research findings yielded more recommendations with increased specificity and provided the context the design team needed to further refine experience details to meet underlying user needs.\
+
+<figure>
+    <div class="grid col3">
+        <a data-fslightbox="user research" data-href="/assets/img/2020-01-01-acura-uxr-ux-research_01.webp">
+            <img src="/assets/img/2020-01-01-acura-uxr-ux-research_01.webp" alt="user research">
+        </a>
+        <a data-fslightbox="user research" data-href="/assets/img/2020-01-01-acura-uxr-ux-research_02.webp">
+            <img src="/assets/img/2020-01-01-acura-uxr-ux-research_02.webp" alt="user research">
+        </a>
+        <a data-fslightbox="user research" data-href="/assets/img/2020-01-01-acura-uxr-ux-research_03.webp">
+            <img src="/assets/img/2020-01-01-acura-uxr-ux-research_03.webp" alt="user research">
+        </a>
+        <a data-fslightbox="user research" data-href="/assets/img/2020-01-01-acura-uxr-ux-research_04.webp">
+            <img src="/assets/img/2020-01-01-acura-uxr-ux-research_04.webp" alt="user research">
+        </a>
+        <a data-fslightbox="user research" data-href="/assets/img/2020-01-01-acura-uxr-ux-research_05.webp">
+            <img src="/assets/img/2020-01-01-acura-uxr-ux-research_05.webp" alt="user research">
+        </a>
+        <a data-fslightbox="user research" data-href="/assets/img/2020-01-01-acura-uxr-ux-research_06.webp">
+            <img src="/assets/img/2020-01-01-acura-uxr-ux-research_06.webp" alt="user research">
+        </a>
+    </div>
+    <figcaption>Research insights and recommendations on pathing, valued features, tone, and motives</figcaption>
+</figure>
+
+## High-Fidelity Designs
+
+Armed with a superior understanding of the pain points users were facing, the design team refined functional specifications for components before transitioning toward realizing concepts in higher fidelity. We were aided in this endeavor by new model year photography and CGI assets from Acura as well as the output from our in-house art direction and production team that shot on location.
+
+<figure>
+    <div class="grid col3">
+        <a data-fslightbox="designs" data-href="/assets/img/2020-01-01-acura-designs-01-hero.webp">
+            <img src="/assets/img/2020-01-01-acura-designs-01-hero.webp" alt="high-fidelity designs">
+        </a>
+        <a data-fslightbox="designs" data-href="/assets/img/2020-01-01-acura-designs-02-hero.webp">
+            <img src="/assets/img/2020-01-01-acura-designs-02-hero.webp" alt="high-fidelity designs">
+        </a>
+        <a data-fslightbox="designs" data-href="/assets/img/2020-01-01-acura-designs-03-acura-watch.webp">
+            <img src="/assets/img/2020-01-01-acura-designs-03-acura-watch.webp" alt="high-fidelity designs">
+        </a>
+        <a data-fslightbox="designs" data-href="/assets/img/2020-01-01-acura-designs-04-acura-watch.webp">
+            <img src="/assets/img/2020-01-01-acura-designs-04-acura-watch.webp" alt="high-fidelity designs">
+        </a>
+        <a data-fslightbox="designs" data-href="/assets/img/2020-01-01-acura-designs-05-driver-assist.webp">
+            <img src="/assets/img/2020-01-01-acura-designs-05-driver-assist.webp" alt="high-fidelity designs">
+        </a>
+        <a data-fslightbox="designs" data-href="/assets/img/2020-01-01-acura-designs-06-accessories.webp">
+            <img src="/assets/img/2020-01-01-acura-designs-06-accessories.webp" alt="high-fidelity designs">
+        </a>
+    </div>
+    <figcaption>High-fidelity mobile and desktop mockups from both design concepts</figcaption>
+</figure>
+
+While we zeroed in on a refined vision for elements, compositon, and narrative structure, we once again sought a generative and exploratory approach to the finer details of the experience's look and feel. I prototyped several variations of interactions for both concepts to give our stakeholders an extensive menu of options that could make the experience feel exciting and real for them. We hosted clients at the office for a day-long workshop where they had hands-on time with prototypes and engaged in exercises to validate our interpretations of user research findings and ensure alignment on our strategies for feature presentation, comparative affordances, and more solutions.
+
+<figure>
+    <div class="grid col2">
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-mobile-nav-anchor-links.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-mobile-side-nav.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-mobile-accordion.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-mobile-carousel.mp4"></video>
+    </div>
+    <figcaption>High-fidelity mobile interaction prototypes</figcaption>
+</figure>
+
+<figure>
+    <div class="grid col2">
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-desktop-subnav-menu.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-connectivity.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-features-prototype-exterior.mp4"></video>
+    </div>
+    <figcaption>High-fidelity desktop interaction prototypes</figcaption>
+</figure>
+
+{% include soft-break.html %}
+
+## Outcome
+
+The team arrived at final designs and specifications after a few more iteration and feedback cycles with stakeholders. The all new features design debuted within the 2021 TLX Future Vehicles experience in May of 2020. The TLX is a core model for the brand and the unveil was accentuated by the return of the Type S high-performance variant after a decade-long hiatus. The model was originally slated for a reveal at the New York International Auto Show, but Acura pivoted to an entirely digital launch strategy because of the show's cancellation due to the COVID-19 pandemic. Without a showroom, press events, and test drives, the website became a far more consequential fulcrum for discovery, promotion, consideration, and eventually orders when the TLX went on sale in the fall.
+
+A key consideration of the redesign was also the adaptability of the experience to other models that had different distributions of feature popularity and occupied a different niche for Acura's customers. The features redesign was reprised within the 2022 MDX experience to speak to the premium performance and technology features of the SUV. The new MDX debuted in January of 2021 and went on sale in February.
+
+- 1.28 million monthly visits following September MY21 TLX launch
+- 220% increase in visits during first 3 months compared to MY20 TLX
+- 294% increase in web-generated leads following experience launch
+- 10% increase in submitted quote requests over 3 months
+
+<figure>
+    <div class="grid col2">
+        <a data-fslightbox="outcome" data-href="/assets/img/2020-01-01-acura-outcome-acura-tlx.webp">
+            <img src="/assets/img/2020-01-01-acura-outcome-acura-tlx.webp" alt="2021 Acura TLX features">
+        </a>
+        <a data-fslightbox="outcome" data-href="/assets/img/2020-01-01-acura-outcome-acura-mdx.webp">
+            <img src="/assets/img/2020-01-01-acura-outcome-acura-mdx.webp" alt="2021 Acura MDX features">
+        </a>
+    </div>
+    <figcaption>Redesigned 2021 TLX and MDX vehicle features</figcaption>
+</figure>
+
+<figure>
+    <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-outcome-desktop.mp4"></video>
+    <figcaption>Redesigned 2021 TLX desktop experience</figcaption>
+</figure>
+
+<figure class="text-center">
+    <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2020-01-01-acura-outcome-mobile.mp4"></video>
+    <figcaption>Redesigned 2021 MDX mobile experience</figcaption>
+</figure>
