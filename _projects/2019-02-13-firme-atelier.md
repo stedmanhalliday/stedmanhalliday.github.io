@@ -3,7 +3,7 @@ layout: project
 title: Firmé Atelier
 date: 2019-02-13 00:00 +0000
 description: Web design and development for bespoke fashion studios
-categories: [ux, web dev]
+categories: [ux, dev]
 image: "/assets/img/2019-02-13-firme-brand.png"
 hero: /projects/firme-atelier-hero
 ---

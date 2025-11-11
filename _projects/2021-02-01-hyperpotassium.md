@@ -1,9 +1,9 @@
 ---
 layout: project
 title: Hyperpotassium
-date: 2021-02-03 00:00 +0000
+date: 2021-02-01
 description:
-categories: []
-# permalink: "/projects/:title"
+categories: [web3, video]
+# image: "/projects/:title"
 # hero: projects/:title-hero
 ---

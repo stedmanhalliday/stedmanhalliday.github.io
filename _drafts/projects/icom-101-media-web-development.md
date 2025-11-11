@@ -1,6 +1,6 @@
 ---
 layout: project
-title: 'ICOM-101: Media & Web Development'
+title: 'ICOM-101: Media & development'
 date: 2021-01-15 00:00 +0000
 description:
 categories: []

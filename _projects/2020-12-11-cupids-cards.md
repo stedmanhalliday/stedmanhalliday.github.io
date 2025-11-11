@@ -3,7 +3,7 @@ layout: project
 title: Cupid's Cards
 date: 2020-12-11
 description: Interactive conversation prompts for virtual first dates<br>View on [GitHub](https://github.com/stedmanhalliday/cupids-cards)
-categories: [ux, web dev]
+categories: [ux, dev]
 image: /assets/img/2020-12-11-cupids-cards-thumb.webp
 hero: /projects/cupids-cards-hero
 ---
