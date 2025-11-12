@@ -12,7 +12,7 @@ Cupid's Cards was a playful experiment in human connection during a moment of gl
 
 The experience wasn't just about utility; it was a gesture toward warmth, novelty, and a bit of magic in uncertain times. With randomly generated sigils and richly ornamental themes, Cupid's Cards brought a sense of ritual and delight to the act of getting to know someone over a screen.
 
-The experience received a third place award in the [2021 DubsTech Protothon:](https://protothon2021.webflow.io/) an online UX hackathon associated with theUniversity of Washington.
+I built the app with React and play tested it on several real virtual dates before Hinge released its own in-app card game feature. The experience received a third place award in the [2021 DubsTech Protothon:](https://protothon2021.webflow.io/) an online UX hackathon associated with theUniversity of Washington.
 
 <figure>
     <div class="grid col2">
