@@ -3,7 +3,7 @@ layout: project
 title: Acura Vehicle Features
 date: 2020-01-01
 description: Acura vehicle features web experience
-categories: [ux]
+categories: [ux/ui]
 hero: /projects/acura-hero
 image: /assets/img/2020-01-01-acura-thumbnail.webp
 ---

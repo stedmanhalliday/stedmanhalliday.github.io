@@ -701,8 +701,11 @@ html.is-animating .transition-fade {
   grid-template-columns: 2fr 3fr;
 }
 .post-list.projects .project .thumbnail {
-  background: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   aspect-ratio: 16/9;
+  overflow: hidden;
 }
 .post-list.projects .project > div {
   align-content: space-around;

@@ -3,7 +3,7 @@ layout: project
 title: Microsoft Education Blog
 date: 2020-09-02
 description: Redesign of the Microsoft Education Blog web experience
-categories: [ux]
+categories: [ux/ui]
 hero: /projects/microsoft-education-blog-hero
 image: /assets/img/2020-09-02-msft-edu-blog.webp
 ---

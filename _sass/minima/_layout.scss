@@ -421,8 +421,11 @@ html.is-animating .transition-fade {
         grid-template-columns: 2fr 3fr;
 
         .thumbnail {
-            background: $background-color-light;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             aspect-ratio: 16 / 9;
+            overflow: hidden;
         }
 
         > div {

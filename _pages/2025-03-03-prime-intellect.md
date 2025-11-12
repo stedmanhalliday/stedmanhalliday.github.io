@@ -91,11 +91,11 @@ Most of my experience with AI/ML-driven interfaces comes from my time at Amazon 
 
 <figure>
     <div class="grid col2">
-        <img style="grid-column: span 2" alt="Javier wedding" src="/assets/img/2023-02-14-pair-mock.png">
-        <img alt="Javier wedding" src="/assets/img/2023-02-14-stack-mock.png">
-        <img alt="Javier wedding" src="/assets/img/2023-02-14-collateral.webp">
-        <video class="lazy" autoplay playsinline loop muted src="/assets/video/2023-02-14-javier-dance-floor.mp4"></video>
-        <video class="lazy" controls autoplay playsinline loop muted data-src="/assets/video/2023-02-14-javier-dance-floor-2.mp4"></video>
+        <img style="grid-column: span 2" alt="Javier wedding" src="/assets/img/2023-02-14-javier-wedding-pair-mock.webp">
+        <img alt="Javier wedding invitations" src="/assets/img/2023-02-14-javier-wedding-stack-mock.webp">
+        <img alt="Javier wedding invitations" src="/assets/img/2023-02-14-javier-wedding-collateral.webp">
+        <video class="lazy" autoplay playsinline loop muted poster="/assets/video/2023-02-14-javier-wedding-dance-floor-poster.webp" data-src="/assets/video/2023-02-14-javier-wedding-dance-floor.webm"></video>
+        <video class="lazy" controls autoplay playsinline loop muted poster="/assets/video/2023-02-14-javier-wedding-dance-floor-2-poster.webp" data-src="/assets/video/2023-02-14-javier-wedding-dance-floor-2.webm"></video>
     </div>
     <figcaption>Identity, art direction, collateral, and multimedia for the Javier wedding (collaboration with Bradley Krebs)</figcaption>
 </figure>
@@ -124,7 +124,7 @@ Most of my experience with AI/ML-driven interfaces comes from my time at Amazon 
 <figure>
     <div class="grid col2">
         <img alt="Plenum No. 1: Collective Nature poster" src="/assets/img/2016-03-01-collective-nature-poster.jpg">
-        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2021-02-02-future-flier.mp4"></video>
+        <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2021-02-02-wonderful-future.webm"></video>
     </div>
     <figcaption><em>Plenum No. 1: Collective Nature</em> exhibition poster and Ed Fella Future Flier</figcaption>
 </figure>
