@@ -257,24 +257,26 @@ table {
   margin-bottom: 32px;
   width: 100%;
   text-align: left;
-  color: rgb(236.14, 236.14, 236.14);
+  color: #e8e8e8;
   border-collapse: collapse;
-  border: 1px solid rgb(184.0751046025, 192.2391213389, 203.9748953975);
+  border: 1px solid #64748b;
+}
+table tr {
+  background-color: #111418;
 }
 table tr:nth-child(even) {
-  background-color: rgb(188.3305983264, 196.0047740586, 207.0364016736);
+  background-color: #0d0f12;
 }
 table th,
 table td {
   padding: 10.6666666656px 16px;
 }
 table th {
-  background-color: rgb(186.2028514644, 194.1219476987, 205.5056485356);
-  border: 1px solid rgb(175.047665272, 184.2508117155, 197.480334728);
-  border-bottom-color: rgb(156.9927866109, 168.2741924686, 184.4912133891);
+  background-color: #0d0f12;
+  border: 1px solid #64748b;
 }
 table td {
-  border: 1px solid rgb(184.0751046025, 192.2391213389, 203.9748953975);
+  border: 1px solid #64748b;
 }
 
 /**
