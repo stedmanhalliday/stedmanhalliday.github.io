@@ -46,11 +46,11 @@ The mechanism Land identified is real: humans hyperstition constantly. Every sta
 
 {% include soft-break.html %}
 
-### The Deepfates Program
+### The Deep Fates Program
 
-If you want to understand this story—the intersection of woo and tech, of divination practice and capability explosion—you need to know about Max Anton Brewer, aka [Deepfates.](https://www.deepfates.com/) His work, The Deepfates Program, is the quintessential shaping of this inquiry. The Deepfates Program is not a footnote; it is the throughline.
+If you want to understand this story—the intersection of woo and tech, of divination practice and capability explosion—you need to know about [deepfates.](https://www.deepfates.com/) His work, The Deep Fates Program, is the quintessential shaping of this inquiry. The Deep Fates Program is not a footnote; it is the throughline.
 
-The trickster presentation belies the rigor. Deepfates has taken this theoretical inquiry very seriously as practice and research. Not "wouldn't it be interesting if" but "here is the protocol, here is what changes when you commit to it, here are my tools and practice." That's the difference between philosophy and training. Training changes you. It deposits new patterns in your nervous system. It makes intuition reliable rather than lucky. The Deepfates Program propagates this training across many practitioners for compounding effects.
+The trickster presentation belies the rigor. deepfates has taken this theoretical inquiry very seriously as practice and research. Not "wouldn't it be interesting if" but "here is the protocol, here is what changes when you commit to it, here are my tools and practice." That's the difference between philosophy and training. Training changes you. It deposits new patterns in your nervous system. It makes intuition reliable rather than lucky. The Deep Fates Program propagates this training across many practitioners for compounding effects.
 
 {% include soft-break.html %}
 
