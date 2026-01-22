@@ -4,7 +4,7 @@ title: About Stedman Halliday
 permalink: /about/
 ---
 
-Stedman Halliday is a cross-functional product and design leader based in San Francisco. With over 15 years of experience across startups, creative agencies, and large tech orgs, he brings a versatile skill set that spans design, software, and strategy to shaping products, brands, and teams.
+Stedman Halliday is a cross-functional product and design leader based in San Francisco. With over 15 years of experience across startups, creative agencies, and large tech orgs, he brings a versatile skill set that spans design, software development, and strategy to shaping products, brands, and teams.
 
 In 2025, Stedman tackled AI-focused contract projects building expertise at the intersection of design and intelligent systems: B2B sales agents, consumer AI companions, and multi-agent coordination environments. He also consulted for Eat Blueprint, a longevity-focused fresh meal service acquired by Blueprint Bryan Johnson. His work there encompassed product development, customer success, community engagement, and marketing, achieving a $1M ARR run rate and hosting over 1,000 attendees at local events during Q1 2024. Previously, Stedman led the design of emerging voice and multimodal technologies at Amazon Alexa, where he shaped customer experiences and streamlined third-party integrations with innovative design systems. At Wunderman Thompson, Stedman spearheaded redesigns for key Microsoft platforms during the COVID-19 pandemic, including a transformative update to Microsoft Education that resulted in a 127% increase in traffic during a time of sweeping change across the education category.
 
