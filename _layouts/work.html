@@ -32,7 +32,7 @@ layout: default
                         {{ post.title | escape }}
                     </a>
                 </h3>
-                <p>{{ post.description | markdownify }}</p>
+                <div class="post-description">{{ post.description | markdownify }}</div>
                 <ul class="post-tags">
                     {% for category in post.categories %}
                     <li class="tag small"><a href="/work/category/{{ category | slugify }}">{{ category }}</a></li>

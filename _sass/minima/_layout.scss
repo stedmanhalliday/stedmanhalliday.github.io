@@ -268,6 +268,10 @@ html.is-animating .transition-fade {
     margin: 0;
 }
 
+.post-description {
+    max-width: 60ch;
+}
+
 .post-tags {
     list-style: none;
     display: flex;
