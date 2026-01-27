@@ -26,7 +26,12 @@ layout: default
                     {{ post.title | escape }}
                 </a>
             </h3>
-            <p>{{ post.description | markdownify }}</p>
+            <div class="post-description">{{ post.description | markdownify }}</div>
+            <ul class="post-tags">
+                {% for tag in post.tags %}
+                <li class="tag small"><a href="/blog/tag/{{ tag | slugify }}">{{ tag }}</a></li>
+                {% endfor %}
+            </ul>
             {% if site.show_excerpts %}
             {{ post.excerpt }}
             {% endif %}
