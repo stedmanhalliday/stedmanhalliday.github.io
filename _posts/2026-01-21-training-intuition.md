@@ -2,15 +2,15 @@
 layout: post
 title: Training Intuition at the Edge of the Possible
 date: 2026-01-21
-description:
-tags: [reflection, philosophy, technology, san francisco]
+description: Divination, hyperstitioning, and the punk spirit in the age of artificial intelligence
+tags: [reflection, philosophy, technology, artificial intelligence, san francisco]
 permalink: "/blog/training-intuition"
 image: /assets/img/2026-01-21-iroko-tree.webp
 ---
 
 ![Iroko Tree](/assets/img/2026-01-21-iroko-tree.webp)
 
-## On Divination, Hyperstitioning, and the Punk Spirit in the Age of Artificial Intelligence
+## Divination, Hyperstitioning, and the Punk Spirit in the Age of Artificial Intelligence
 
 *There is no better time and place to be a punk than San Francisco at the dawn of the artificial intelligence age.* I wrote that the moment I decided to move here in 2023, before I fully understood what it would mean to live on top of the tectonic shifts that define this time of transition. Creative tools and the means of production are increasingly democratized by the day. Product in the traditional sense is dead. What remains is the surface between capability and intent.
 
