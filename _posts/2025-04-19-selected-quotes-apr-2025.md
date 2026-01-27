@@ -2,7 +2,7 @@
 layout: post
 title: 'Selected Quotes: Apr 2025'
 date: 2025-04-19
-description: "*Selected Quotes* periodically presents thoughtfully curated quotes to inspire reflection on whatever resonates."
+description: "*Selected Quotes* periodically presents thoughtfully curated quotes to inspire reflection."
 tags: [quotes, reflection]
 ---
 

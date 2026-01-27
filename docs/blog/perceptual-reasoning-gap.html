@@ -20,21 +20,21 @@
 <meta property="og:title" content="The Models [Don’t] Have Eyes">
 <meta name="author" content="Stedman Halliday">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="Closing generative UI’s perceptual intelligence gap">
-<meta property="og:description" content="Closing generative UI’s perceptual intelligence gap">
-<link rel="canonical" href="http://localhost:4000/blog/perceptual-intelligence-gap">
-<meta property="og:url" content="http://localhost:4000/blog/perceptual-intelligence-gap">
+<meta name="description" content="Closing generative UI’s perceptual reasoning gap">
+<meta property="og:description" content="Closing generative UI’s perceptual reasoning gap">
+<link rel="canonical" href="http://localhost:4000/blog/perceptual-reasoning-gap">
+<meta property="og:url" content="http://localhost:4000/blog/perceptual-reasoning-gap">
 <meta property="og:site_name" content="Stedman Halliday">
-<meta property="og:image" content="http://localhost:4000/assets/og-image.png">
+<meta property="og:image" content="http://localhost:4000/assets/img/2026-01-27-perceptual-reasoning-gap.webp">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2026-01-27T00:00:00-08:00">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="http://localhost:4000/assets/og-image.png">
+<meta property="twitter:image" content="http://localhost:4000/assets/img/2026-01-27-perceptual-reasoning-gap.webp">
 <meta property="twitter:title" content="The Models [Don’t] Have Eyes">
 <meta name="twitter:site" content="@stedmanhalliday">
 <meta name="twitter:creator" content="@stedmanhalliday">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Stedman Halliday","url":"https://stedmanhalliday.com"},"dateModified":"2026-01-27T00:00:00-08:00","datePublished":"2026-01-27T00:00:00-08:00","description":"Closing generative UI’s perceptual intelligence gap","headline":"The Models [Don’t] Have Eyes","image":"http://localhost:4000/assets/og-image.png","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/perceptual-intelligence-gap"},"url":"http://localhost:4000/blog/perceptual-intelligence-gap"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Stedman Halliday","url":"https://stedmanhalliday.com"},"dateModified":"2026-01-27T00:00:00-08:00","datePublished":"2026-01-27T00:00:00-08:00","description":"Closing generative UI’s perceptual reasoning gap","headline":"The Models [Don’t] Have Eyes","image":"http://localhost:4000/assets/img/2026-01-27-perceptual-reasoning-gap.webp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/perceptual-reasoning-gap"},"url":"http://localhost:4000/blog/perceptual-reasoning-gap"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/main.css">
@@ -185,12 +185,12 @@
                 
                 
                 
-                 •  <span>995 words (4 mins)</span>
+                 •  <span>1035 words (4 mins)</span>
                 
             </div>
             
             <div class="post-summary">
-<p>Closing generative UI’s perceptual intelligence gap</p>
+<p>Closing generative UI’s perceptual reasoning gap</p>
 </div>
             
             <ul class="post-tags">
@@ -201,7 +201,7 @@
                 
                 <li class="tag"><a href="/blog/tag/engineering">engineering</a></li>
                 
-                <li class="tag"><a href="/blog/tag/code">code</a></li>
+                <li class="tag"><a href="/blog/tag/software">software</a></li>
                 
                 <li class="tag"><a href="/blog/tag/artificial-intelligence">artificial intelligence</a></li>
                 
@@ -210,15 +210,19 @@
     </header>
 
     <div class="post-content e-content" itemprop="articleBody">
-        <p>Anyone who’s vibecoded for more than an afternoon knows the pattern: the AI nails your component logic, wires up your state management, even writes reasonable tests. Then it spends 46 turns failing to center a play button in a circle.</p>
+        <p><img src="/assets/img/2026-01-27-perceptual-reasoning-gap.webp" alt="Perceptual reasoning neural network" loading="lazy"></p>
 
-<p>The memes write themselves. But underneath the frustration is a real architectural limitation worth understanding.</p>
+<h2 id="closing-generative-uis-perceptual-reasoning-gap">Closing Generative UI’s Perceptual Reasoning Gap</h2>
+
+<p>Anyone who’s vibecoded for more than an afternoon knows the pattern: the AI nails your component logic, wires up your state management, even writes reasonable tests. Then it spends 46 turns failing to center a play button in a circle.</p>
+
+<p>The memes about centering a div write themselves. But underneath the frustration is a real architectural limitation worth understanding.</p>
 
 <div class="soft-break"></div>
 
 <h2 id="the-problem-the-models-dont-have-eyes">The Problem: The Models [Don’t] Have Eyes</h2>
 
-<p>As the name suggests, large language models process the world through language [or more abstractly, text; see also <a href="https://scale.com/blog/text-universal-interface" target="_blank" rel="noopener noreferrer"><em>Text Is the Universal Interface</em> by Roon</a>]. When they write CSS, they’re pattern-matching against millions of code examples, statistically converging on what syntactically looks like correct styling. But style isn’t syntax. The true primitive of visual design is human optical perception, and that’s a black box these models presently have little access to.</p>
+<p>As the name suggests, large language models process the world through language [or more abstractly, text; see <a href="https://scale.com/blog/text-universal-interface" target="_blank" rel="noopener noreferrer"><em>Text Is the Universal Interface</em> by Roon</a>]. When they write styles, they’re pattern-matching against millions of code examples, statistically converging on what syntactically looks like correct styling. But syntax isn’t style. The true primitives of visual design are feature detectors in human optical perception. That’s a black box these models presently have little access to.</p>
 
 <p>This matters because metric correctness and optical soundness are often very different things.</p>
 
@@ -231,37 +235,49 @@
   <li>A feedback loop with strong visual perception</li>
 </ol>
 
-<p>Current models don’t rely strongly on either. They generate style values, imagine what visual output probably looks like based mostly on diffing against expected patterns from text samples and sometimes a snapshot, and call it done. There’s a lack of rigor in the intermediate perceptual verification step of the feedback loop.</p>
+<p>Current models don’t rely strongly on either. They generate style values, imagine what visual output probably looks like based mostly on diffing against expected patterns from text samples and sometimes a snapshot, and ship it. There’s a lack of rigor in the intermediate perceptual verification step of the feedback loop.</p>
 
 <div class="soft-break"></div>
 
 <h2 id="why-multimodal-doesnt-solve-this-yet">Why Multimodal Doesn’t Solve This (Yet)</h2>
 
-<p>“But Claude/GPT-4 can see images now!” True. However, bolting vision onto a language model doesn’t automatically create perceptual intelligence. The model can usually describe what it sees decently well, but it can’t yet reliably evaluate whether what it sees matches optical intent before tracing that evaluation back to the specific style values that need adjustment.</p>
+<p>“But Claude/GPT-4 can see images now!” True. However, bolting vision onto a language model doesn’t automatically yield perceptual intelligence. The model can usually describe what it sees decently well, but it can’t yet reliably evaluate whether what it sees matches optical intent before tracing that evaluation back to the specific style values that need adjustment.</p>
 
 <p>The missing piece is a causal link: perception → aesthetic judgment → code modification → verification loop. Abstractly, this is solving for taste, but that’s a superset of the more precisely defined problems in scope here that offer excellent places to start.</p>
 
-<p>The previous generation of UI engineering saw visual regression testing tools like <a href="https://percy.io" target="_blank" rel="noopener noreferrer">Percy</a> that solved a related problem for humans: snapshot the UI, diff against baseline, flag unexpected changes. But that’s change detection, not aesthetic evaluation. And it still requires humans to judge whether changes are improvements.</p>
+<p>The previous generation of UI engineering saw visual regression testing tools like <a href="https://percy.io" target="_blank" rel="noopener noreferrer">Percy</a> that solved a related problem for humans: snapshot the UI, diff against baseline, and flag unexpected changes. But that’s change detection, not aesthetic evaluation; it still requires humans to judge whether changes are improvements or not.</p>
 
-<p>VLA models for robotics are solving this in 3-space and the time domain. Implementations for 2-D screen media would be dramatically simpler, but I don’t know in detail what multimodal efforts in this space look like today that mechanistically rely on a rigorous (if dimensionally constrained) VLA loop. Later extensions could include motion design, 3D tools like Blender, and potentially interface paradigms we haven’t seen yet.</p>
+<p>VLA models for robotics are solving similar problems in 3-space and the time domain. Implementations for 2-D screen media would be dramatically simpler, but I don’t have detailed knowledge about which of today’s multimodal efforts mechanistically rely on rigorous (if dimensionally constrained) VLA loops. Later extensions could include motion design, 3D tools like Blender, and potentially interface paradigms we haven’t seen yet.</p>
 
 <div class="soft-break"></div>
 
-<h2 id="the-workarounds-and-why-theyre-insufficient">The Workarounds (And Why They’re Insufficient)</h2>
+<h2 id="todays-workarounds">Today’s Workarounds</h2>
 
-<p>The current hacks:</p>
+<p>The current tactics:</p>
 
 <ul>
   <li>
 <strong>Style bibles in context</strong>
-<a href="https://vercel.com/design/guidelines" target="_blank" rel="noopener noreferrer">Vercel’s Web Interface Guidelines</a>, <a href="https://refactoringui.com" target="_blank" rel="noopener noreferrer">Refactoring UI</a>: helpful, but you’re just cramming best practices into a text window. No perceptual grounding</li>
+    <ul>
+      <li>
+<a href="https://vercel.com/design/guidelines" target="_blank" rel="noopener noreferrer">Vercel’s Web Interface Guidelines</a> and <a href="https://refactoringui.com" target="_blank" rel="noopener noreferrer">Refactoring UI</a> are helpful distillations of good heuristics, but you’re just cramming best practices into a context window without true perceptual grounding.</li>
+    </ul>
+  </li>
   <li>
 <strong>Agentic tool use</strong>
-Vercel’s <a href="https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices" target="_blank" rel="noopener noreferrer">React Best Practices</a> and <a href="https://skills.sh/vercel-labs/agent-skills/web-design-guidelines" target="_blank" rel="noopener noreferrer">Web Interface Guidelines</a> skills: these are like code snippets on steroids in that allow the models to better apply guidelines intelligently to codebases not included in training data</li>
+    <ul>
+      <li>Vercel’s <a href="https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices" target="_blank" rel="noopener noreferrer">React Best Practices</a> and <a href="https://skills.sh/vercel-labs/agent-skills/web-design-guidelines" target="_blank" rel="noopener noreferrer">Web Interface Guidelines</a> skills are like code snippets on steroids in that they allow the models to better apply guidelines intelligently to codebases not included in training data, but they still can’t <em>see.</em>
+</li>
+      <li>
+<a href="https://github.com/0xdesign/design-plugin" target="_blank" rel="noopener noreferrer">0xdesign/design-plugin</a> generates variations to place in front of a human in the loop for feedback to iterate on, but it still needs a lot of human decision making to bear fruit.</li>
+    </ul>
+  </li>
   <li>
-<strong>Human-in-the-loop feedback</strong>: necessary now, but defeats the point of higher quality generative UI automation at scale</li>
-  <li>
-<strong>Training on “things people like to look at”</strong>: model weights converge on the class of aesthetically pleasing outputs, which gets you directionally correct results more often but lacks precision. The results are inexact and not reliably reproducible; they are the result of statistical convergence rather than perceptual reasoning.</li>
+<strong>Training on “things people like to look at”</strong>
+    <ul>
+      <li>Model weights converge on the class of aesthetically pleasing outputs, which gets you directionally correct results more often but lacks precision. The results are inexact and not reliably reproducible; they are the result of statistical convergence rather than genuinely rigorous perceptual reasoning.</li>
+    </ul>
+  </li>
 </ul>
 
 <p>None of these give models the ability to see their own output and judge it the way a designer would. They are all workarounds that are necessary today but do not address the root issue.</p>
@@ -276,18 +292,18 @@ Vercel’s <a href="https://skills.sh/vercel-labs/agent-skills/vercel-react-best
   <li>Model generates styling code</li>
   <li>Code renders to pixels</li>
   <li>Vision model evaluates rendering against perceptual criteria (not just “does this match the mockup” but “does this look right”—initially at the consumer level, then later to the standards of professional design critique)</li>
-  <li>Evaluation feeds back an explicit loss function with basis in perceptual heuristics; the gradient signal allows explicit correction</li>
-  <li>Iterate until loss is minimized to yield perceptually sound results that users and designers alike expect (on par with and eventually exceeding human capability)</li>
+  <li>Evaluation feeds back an explicit loss function with basis in perceptual heuristics; the gradient signal allows explicit and iterable corrective actions</li>
+  <li>Iterate until loss is minimized to yield perceptually sound results that both users and designers expect (on par with and eventually exceeding human capability)</li>
 </ol>
 
-<p>This isn’t terribly speculative; it’s just VLA with lower-dimensional output. Consider typographic rag: the ragged edge of a text block where lines break at different lengths. A good rag flows smoothly; a bad one creates distracting shapes or awkward word breaks. You want models that can see, articulate, and correct something like this (which corresponds exactly to the vision-language-action loop). Interestingly, a sizable number of practicing designers can’t do this very well either. Most have trained perception and action, but the tradition of craft practice has historically neglected the language step (articulation). Models that close this loop could outperform many humans at the craft layer with futher iteration eventually unlocking the taste layer.</p>
+<p>This isn’t wildly speculative; it’s just VLA with lower-dimensional output. Consider typographic rag: the ragged edge of a text block where lines break at different lengths. A good rag flows smoothly; a bad one creates distracting shapes or awkward word breaks. You want models that can see, articulate, and correct something like this (which corresponds exactly to the vision-language-action loop). Interestingly, a sizable contingent of practicing designers can’t do this exceptionally well either. Most have trained heavily on perception and action, but the tradition of craft practice has historically neglected the language step (articulation) in comparison. Models that close this loop could outperform many humans at the craft layer with futher iteration eventually unlocking the taste layer.</p>
 
-<p>The infrastructure exists. I’m sure it’s being actively developed in some shops. Nonetheless, frontier models are still left wanting despite impressive capability gains with December 2025 releases. Someone needs to build the appropriate training pipelines for perceptual reward models tuned to screen media in order to advance the frontier further. Today’s models can view and describe output, but until they can actually <em>see,</em> aesthetically evaluate, and <em>act</em> on what they perceive, vibecoding will remain stuck at 90% magic, 10% hair-pulling. That final 10% is where taste lives.</p>
+<p>The infrastructure exists. I’m sure it’s being actively developed in some shops. Nonetheless, frontier models are still left wanting despite impressive capability gains with December 2025 releases. Someone needs to build the appropriate training pipelines for perceptual reward models tuned to screen media in order to advance the frontier further. Today’s models can view and describe output, but until they can actually <em>see,</em> aesthetically evaluate, and <em>act</em> on what they perceive, vibecoding will remain stuck at 90% magic, 10% hair-pulling. That final 10% is exactly where taste lives.</p>
 
     </div>
 
     
-    <a class="u-url" href="/blog/perceptual-intelligence-gap" hidden></a>
+    <a class="u-url" href="/blog/perceptual-reasoning-gap" hidden></a>
 
     <div class="divider-thin mt-200 mb-100"></div>
     <div class="page-navigation">

@@ -2,7 +2,7 @@
 layout: post
 title: Notes on Organizational Design
 date: 2018-11-30
-#description:
+description: Summaries of seminal design ops theory
 tags: [design, work, leadership]
 ---
 

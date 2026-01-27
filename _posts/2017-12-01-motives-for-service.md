@@ -2,7 +2,7 @@
 layout: post
 title: "My Motives for Service"
 date: 2017-12-01
-description: "How and why I committed to living and volunteering half a world away from my comfort zone"
+description: "How and why I committed to living and volunteering half a world away"
 tags: [community, reflection, design, work, travel]
 image: /assets/img/2017-12-01-people_supporting_people.jpg
 permalink: /blog/motives-for-service

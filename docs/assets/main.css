@@ -522,6 +522,37 @@ html.is-animating .transition-fade {
 }
 
 /**
+ * Post lists
+ */
+.post-list {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 1rem;
+}
+.post-list h3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.post-list .post-tags {
+  font-size: 14px;
+}
+.post-list .post-tags .tag a {
+  display: block;
+  background: none;
+  border: 1px solid rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  box-sizing: border-box;
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  padding: 1px 0.5em 2px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.post-list .post-tags .tag a:hover {
+  background-color: #61B3AF;
+  border-color: #61B3AF;
+  color: #111418;
+}
+
+/**
  * Posts
  */
 .post-header {

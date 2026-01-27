@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Here's what you missed at Clarity 2018
+title: What you missed at Clarity 2018
 date: 2018-12-14
-description: "A recap of talks at Clarity: the design systems conference"
+description: "A recap of design systems talks"
 tags: [design, software, events]
 ---
 
