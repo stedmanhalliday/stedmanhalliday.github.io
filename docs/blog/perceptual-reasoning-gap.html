@@ -22,26 +22,36 @@
 <meta property="og:locale" content="en_US">
 <meta name="description" content="Closing generative UI’s perceptual reasoning gap">
 <meta property="og:description" content="Closing generative UI’s perceptual reasoning gap">
-<link rel="canonical" href="http://localhost:4000/blog/perceptual-reasoning-gap">
-<meta property="og:url" content="http://localhost:4000/blog/perceptual-reasoning-gap">
+<link rel="canonical" href="https://stedmanhalliday.com/blog/perceptual-reasoning-gap">
+<meta property="og:url" content="https://stedmanhalliday.com/blog/perceptual-reasoning-gap">
 <meta property="og:site_name" content="Stedman Halliday">
-<meta property="og:image" content="http://localhost:4000/assets/img/2026-01-27-perceptual-reasoning-gap.webp">
+<meta property="og:image" content="https://stedmanhalliday.com/assets/img/2026-01-27-perceptual-reasoning-gap.webp">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2026-01-27T00:00:00-08:00">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="twitter:image" content="http://localhost:4000/assets/img/2026-01-27-perceptual-reasoning-gap.webp">
+<meta property="twitter:image" content="https://stedmanhalliday.com/assets/img/2026-01-27-perceptual-reasoning-gap.webp">
 <meta property="twitter:title" content="The Models [Don’t] Have Eyes">
 <meta name="twitter:site" content="@stedmanhalliday">
 <meta name="twitter:creator" content="@stedmanhalliday">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Stedman Halliday","url":"https://stedmanhalliday.com"},"dateModified":"2026-01-27T00:00:00-08:00","datePublished":"2026-01-27T00:00:00-08:00","description":"Closing generative UI’s perceptual reasoning gap","headline":"The Models [Don’t] Have Eyes","image":"http://localhost:4000/assets/img/2026-01-27-perceptual-reasoning-gap.webp","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/perceptual-reasoning-gap"},"url":"http://localhost:4000/blog/perceptual-reasoning-gap"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Stedman Halliday","url":"https://stedmanhalliday.com"},"dateModified":"2026-01-27T00:00:00-08:00","datePublished":"2026-01-27T00:00:00-08:00","description":"Closing generative UI’s perceptual reasoning gap","headline":"The Models [Don’t] Have Eyes","image":"https://stedmanhalliday.com/assets/img/2026-01-27-perceptual-reasoning-gap.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://stedmanhalliday.com/blog/perceptual-reasoning-gap"},"url":"https://stedmanhalliday.com/blog/perceptual-reasoning-gap"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400,700&amp;display=swap" rel="stylesheet">
-    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Stedman Halliday">
+    <link type="application/atom+xml" rel="alternate" href="https://stedmanhalliday.com/feed.xml" title="Stedman Halliday">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SQV444EF7D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SQV444EF7D');
+</script>
     
     <script src="https://unpkg.com/@swup/scripts-plugin@2"></script>
     <script src="https://unpkg.com/swup@4"></script>
@@ -255,29 +265,23 @@
 
 <p>The current tactics:</p>
 
+<p><strong>Style bibles in context</strong></p>
 <ul>
   <li>
-<strong>Style bibles in context</strong>
-    <ul>
-      <li>
 <a href="https://vercel.com/design/guidelines" target="_blank" rel="noopener noreferrer">Vercel’s Web Interface Guidelines</a> and <a href="https://refactoringui.com" target="_blank" rel="noopener noreferrer">Refactoring UI</a> are helpful distillations of good heuristics, but you’re just cramming best practices into a context window without true perceptual grounding.</li>
-    </ul>
-  </li>
-  <li>
-<strong>Agentic tool use</strong>
-    <ul>
-      <li>Vercel’s <a href="https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices" target="_blank" rel="noopener noreferrer">React Best Practices</a> and <a href="https://skills.sh/vercel-labs/agent-skills/web-design-guidelines" target="_blank" rel="noopener noreferrer">Web Interface Guidelines</a> skills are like code snippets on steroids in that they allow the models to better apply guidelines intelligently to codebases not included in training data, but they still can’t <em>see.</em>
+</ul>
+
+<p><strong>Agentic tool use</strong></p>
+<ul>
+  <li>Vercel’s <a href="https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices" target="_blank" rel="noopener noreferrer">React Best Practices</a> and <a href="https://skills.sh/vercel-labs/agent-skills/web-design-guidelines" target="_blank" rel="noopener noreferrer">Web Interface Guidelines</a> skills are like code snippets on steroids in that they allow the models to better apply guidelines intelligently to codebases not included in training data, but they still can’t <em>see.</em>
 </li>
-      <li>
-<a href="https://github.com/0xdesign/design-plugin" target="_blank" rel="noopener noreferrer">0xdesign/design-plugin</a> generates variations to place in front of a human in the loop for feedback to iterate on, but it still needs a lot of human decision making to bear fruit.</li>
-    </ul>
-  </li>
   <li>
-<strong>Training on “things people like to look at”</strong>
-    <ul>
-      <li>Model weights converge on the class of aesthetically pleasing outputs, which gets you directionally correct results more often but lacks precision. The results are inexact and not reliably reproducible; they are the result of statistical convergence rather than genuinely rigorous perceptual reasoning.</li>
-    </ul>
-  </li>
+<a href="https://github.com/0xdesign/design-plugin" target="_blank" rel="noopener noreferrer">0xdesign/design-plugin</a> generates variations to place in front of a human in the loop for feedback to iterate on, but it still needs a lot of human decision making to bear fruit.</li>
+</ul>
+
+<p><strong>Training on “things people like to look at”</strong></p>
+<ul>
+  <li>Model weights converge on the class of aesthetically pleasing outputs, which gets you directionally correct results more often but lacks precision. The results are inexact and not reliably reproducible; they are the result of statistical convergence rather than genuinely rigorous perceptual reasoning.</li>
 </ul>
 
 <p>None of these give models the ability to see their own output and judge it the way a designer would. They are all workarounds that are necessary today but do not address the root issue.</p>

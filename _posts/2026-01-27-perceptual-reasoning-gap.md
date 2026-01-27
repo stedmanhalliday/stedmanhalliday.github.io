@@ -51,13 +51,15 @@ VLA models for robotics are solving similar problems in 3-space and the time dom
 
 The current tactics:
 
-- **Style bibles in context**
-    - [Vercel's Web Interface Guidelines](https://vercel.com/design/guidelines) and [Refactoring UI](https://refactoringui.com) are helpful distillations of good heuristics, but you're just cramming best practices into a context window without true perceptual grounding.
-- **Agentic tool use**
-    - Vercel's [React Best Practices](https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices) and [Web Interface Guidelines](https://skills.sh/vercel-labs/agent-skills/web-design-guidelines) skills are like code snippets on steroids in that they allow the models to better apply guidelines intelligently to codebases not included in training data, but they still can't _see._
-    - [0xdesign/design-plugin](https://github.com/0xdesign/design-plugin) generates variations to place in front of a human in the loop for feedback to iterate on, but it still needs a lot of human decision making to bear fruit.
-- **Training on "things people like to look at"**
-    - Model weights converge on the class of aesthetically pleasing outputs, which gets you directionally correct results more often but lacks precision. The results are inexact and not reliably reproducible; they are the result of statistical convergence rather than genuinely rigorous perceptual reasoning.
+**Style bibles in context**
+- [Vercel's Web Interface Guidelines](https://vercel.com/design/guidelines) and [Refactoring UI](https://refactoringui.com) are helpful distillations of good heuristics, but you're just cramming best practices into a context window without true perceptual grounding.
+
+**Agentic tool use**
+- Vercel's [React Best Practices](https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices) and [Web Interface Guidelines](https://skills.sh/vercel-labs/agent-skills/web-design-guidelines) skills are like code snippets on steroids in that they allow the models to better apply guidelines intelligently to codebases not included in training data, but they still can't _see._
+- [0xdesign/design-plugin](https://github.com/0xdesign/design-plugin) generates variations to place in front of a human in the loop for feedback to iterate on, but it still needs a lot of human decision making to bear fruit.
+
+**Training on "things people like to look at"**
+- Model weights converge on the class of aesthetically pleasing outputs, which gets you directionally correct results more often but lacks precision. The results are inexact and not reliably reproducible; they are the result of statistical convergence rather than genuinely rigorous perceptual reasoning.
 
 None of these give models the ability to see their own output and judge it the way a designer would. They are all workarounds that are necessary today but do not address the root issue.
 
