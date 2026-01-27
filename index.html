@@ -15,6 +15,7 @@ hero: intro
                 {{ post.title | escape }}
             </a>
         </h3>
+        <p>{{ post.description | markdownify }}</p>
         {% if site.show_excerpts %}
         {{ post.excerpt }}
         {% endif %}
