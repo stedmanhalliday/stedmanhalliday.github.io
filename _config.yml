@@ -167,7 +167,6 @@ deploy:
 
 include:
     - .well-known
-    - .nojekyll
 
 exclude:
     - .sass-cache/
