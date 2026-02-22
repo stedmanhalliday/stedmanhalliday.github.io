@@ -3,6 +3,8 @@ title: "COMMS"
 created: 2026-02-21
 tags:
   - ai
+layout: null
+permalink: /.well-known/COMMS.md
 ---
 
 # COMMS.md
