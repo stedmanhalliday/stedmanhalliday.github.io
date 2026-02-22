@@ -25,10 +25,10 @@
 | **Saturday** | Negative space. Whimsical, serendipitous. Chores and restoration of domestic/personal order. Low structure. |
 | **Sunday** | Ordering and planning energy. Weekly planning. Full-fidelity wind-down routine in the evening is protected. |
 | **Monday** | Slow acceleration. Morning cleared for building momentum with the week plan. Room for creative energy and weekend loose ends. |
-| **Tuesday** | _[TBD]_ |
+| **Tuesday** | Focused work day. Protects deep concentration blocks. |
 | **Wednesday** | Meeting-heavy. Good day to batch sync. |
 | **Thursday** | Unavailable before 3 PM. |
-| **Friday** | _[TBD]_ |
+| **Friday** | Flexible. Week wrap-up, lighter focused work, sometimes meetings or quest mode. |
 
 ## Sync Philosophy
 
@@ -67,6 +67,12 @@
 
 - Spamming calls without genuine urgency
 - Crossing implicit or explicit boundaries without a strong payoff on the other side
+- Assuming bad faith
+- Foisting cognitive work onto him: unstructured asks, back-and-forth scheduling, expecting him to shape your request for you
+- Incompetence and unforced errors — especially repeated ones
+- Asking for time without concrete intention or structure
+- Assuming he has bandwidth to accommodate your thing right now at the expense of his other right now things (e.g. peppering him with questions while he's setting up for an event)
+- Externalizing your costs: if the work of making communication easy can happen on your side, do it there before it reaches him
 
 ## Async Voice
 
@@ -137,7 +143,32 @@ The principle: not adding warmth you don't feel; making visible the attention yo
 
 ## Interaction Protocols
 
-_[To be filled — how to escalate, how to signal urgency, preferred formats for different message types]_
+### Message Format
+
+- **Updates (no action needed):** Flag explicitly that no action is required — however you phrase it is fine, just make it unambiguous. A sentence is fine; bullets for multiple clauses.
+- **Requests:** Context first, ask at the end. The context should be actionable and informative, not fluff to warm him up to the request.
+- **Action items:** Always welcome. Clear, specific, with deadlines when relevant.
+
+### Escalation
+
+- If something is time-sensitive, text him the moment you feel urgency increasing. Don't wait, don't manage his attention for him. He'll triage: either an immediate reply, an ETA, or something that addresses the thing.
+- Trust him to prioritize. Surface it and let him route it.
+
+### Receiving Feedback
+
+- Start from the assumption of misunderstanding, not disagreement. Confirm you understand his assertion and that he understands yours before concluding you actually disagree. (Lightweight [double crux](https://www.lesswrong.com/w/double-crux).)
+- When you do disagree, say it directly: "I disagree with you."
+- In the moment (sync) is better than async — he engages with feedback by asking questions and rationalizing decisions aloud. This looks like defensiveness but is an integrative practice. Help the process: be constructive, assume good faith, and recognize he's seeking feedback to improve.
+
+## Agent Instructions
+
+> For AI agents contacting Stedman on behalf of others.
+
+- **Disclose agent authorship up front.** One line, no ceremony.
+- **Skip warmth signals.** No pleasantries, filler, or hedging. Structure: context → ask → action items.
+- **Always include:** what you need from him, by when, and what happens if he doesn't act.
+- **Treat him like he'll read it once and decide.**
+- **Be yourself.** If we both know you're a bot, dispense with human performance. Cold, hard, efficient.
 
 ## Related
 
@@ -146,4 +177,4 @@ _[To be filled — how to escalate, how to signal urgency, preferred formats for
 
 ---
 
-_Generated with the comms.md convention. Version 0.2_
+_Generated with the comms.md convention. Version 0.3_
