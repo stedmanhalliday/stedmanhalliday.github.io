@@ -12,7 +12,7 @@
     cursor: pointer;
     padding: 0.25rem;
     color: $background-color;
-    transition: color 0.25s;
+    transition: color $duration-xl;
 
     &:hover {
         color: $grey-color-dark;
@@ -24,7 +24,7 @@
 
     .search-icon {
         stroke: $background-color;
-        transition: stroke 0.25s;
+        transition: stroke $duration-xl;
     }
 }
 
@@ -34,7 +34,7 @@
 .search-modal {
     position: fixed;
     inset: 0;
-    z-index: 1000;
+    z-index: $z-1000;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -68,7 +68,7 @@
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transition: opacity $duration-lg ease;
 }
 
 .search-dialog {
@@ -79,17 +79,17 @@
     max-width: 560px;
     max-height: 72vh;
     background-color: color.mix($background-color, white, 97%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    border: 1px solid $surface-light-3;
+    border-radius: $radius-xl;
     box-shadow:
         0 0 0 1px rgba(0, 0, 0, 0.3),
         0 2px 6px rgba(0, 0, 0, 0.2),
         0 14px 28px rgba(0, 0, 0, 0.35),
         0 48px 80px rgba(0, 0, 0, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        inset 0 1px 0 $surface-light-1;
     opacity: 0;
     transform: translateY(-6px) scale(0.98);
-    transition: opacity 0.2s ease, transform 0.2s ease;
+    transition: opacity $duration-lg ease, transform $duration-lg ease;
     overflow: hidden;
 
     @include media-query($on-palm) {
@@ -115,8 +115,8 @@
     --pagefind-ui-background: transparent;
     --pagefind-ui-background-secondary: #{rgba($background-color-dark, 0.5)};
     --pagefind-ui-text-secondary: #{$grey-color};
-    --pagefind-ui-border: #{rgba(255, 255, 255, 0.06)};
-    --pagefind-ui-border-secondary: #{rgba(255, 255, 255, 0.04)};
+    --pagefind-ui-border: #{$surface-light-2};
+    --pagefind-ui-border-secondary: #{$surface-light-1};
     --pagefind-ui-border-width: 1px;
     --pagefind-ui-tag: #{rgba($grey-color-dark, 0.4)};
     --pagefind-ui-font: #{$base-font-family};
@@ -139,9 +139,9 @@
     border: none;
     border-radius: 6px;
     color: $text-color;
-    opacity: 0.35;
+    opacity: $opacity-35;
     cursor: pointer;
-    transition: opacity 0.15s, background-color 0.15s;
+    transition: opacity $duration-md, background-color $duration-md;
 
     svg {
         width: 10px;
@@ -149,8 +149,8 @@
     }
 
     &:hover {
-        opacity: 0.7;
-        background-color: rgba(255, 255, 255, 0.06);
+        opacity: $opacity-70;
+        background-color: $surface-light-2;
     }
 }
 
@@ -168,11 +168,11 @@
     }
 
     &::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 2px;
+        background: $surface-light-3;
+        border-radius: $radius-sm;
 
         &:hover {
-            background: rgba(255, 255, 255, 0.14);
+            background: $surface-light-4;
         }
     }
 
@@ -180,7 +180,7 @@
         position: relative;
 
         &::before {
-            opacity: 0.35;
+            opacity: $opacity-35;
         }
     }
 
@@ -188,7 +188,7 @@
         background-color: transparent !important;
         color: $text-color !important;
         border: none !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+        border-bottom: 1px solid $surface-light-2 !important;
         border-radius: 0 !important;
         font-weight: 400 !important;
         letter-spacing: 0.01em;
@@ -213,8 +213,8 @@
 
     .pagefind-ui__search-clear {
         color: $grey-color-dark !important;
-        opacity: 0.7;
-        transition: opacity 0.15s;
+        opacity: $opacity-70;
+        transition: opacity $duration-md;
 
         &:hover {
             color: $text-color !important;
@@ -241,17 +241,17 @@
         position: relative;
         cursor: pointer;
         padding: 0.6rem 1.25rem 0.6rem calc(1.25rem - 2px) !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
+        border-top: 1px solid $surface-light-1 !important;
         border-bottom: none !important;
         border-left: 2px solid transparent;
-        transition: background-color 0.12s ease, border-color 0.12s ease;
+        transition: background-color $duration-sm ease, border-color $duration-sm ease;
 
         &:first-child {
             border-top: none !important;
         }
 
         &:hover {
-            background-color: rgba(255, 255, 255, 0.04);
+            background-color: $surface-light-1;
         }
 
         &.search-result-active {
@@ -276,7 +276,7 @@
         color: $text-color !important;
         font-weight: 600 !important;
         text-decoration: none !important;
-        transition: color 0.15s;
+        transition: color $duration-md;
 
         &::after {
             content: '';
@@ -296,31 +296,31 @@
 
     .pagefind-ui__result-excerpt {
         color: $grey-color !important;
-        opacity: 0.8;
+        opacity: $opacity-80;
         line-height: 1.5;
 
         mark {
             background-color: rgba($accent-color, 0.2);
             color: color.adjust($accent-color, $lightness: 15%);
-            border-radius: 2px;
+            border-radius: $radius-sm;
             padding: 0 2px;
         }
     }
 
     .pagefind-ui__result-tag {
-        background-color: rgba(255, 255, 255, 0.06) !important;
+        background-color: $surface-light-2 !important;
         color: $grey-color !important;
-        border-radius: 4px !important;
+        border-radius: $radius-md !important;
         font-size: calc(12px * var(--pagefind-ui-scale)) !important;
     }
 
     .pagefind-ui__button {
         background-color: transparent !important;
         color: $grey-color !important;
-        border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        border-radius: 8px !important;
+        border: 1px solid $surface-light-3 !important;
+        border-radius: $radius-lg !important;
         font-weight: 500 !important;
-        transition: all 0.15s ease;
+        transition: all $duration-md ease;
 
         &:hover {
             background-color: rgba($accent-color, 0.08) !important;

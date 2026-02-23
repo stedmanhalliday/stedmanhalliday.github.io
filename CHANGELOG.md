@@ -6,20 +6,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-### Fixed
+### Added
 
-- Resolved SPA script reliability issues with Swup page transitions (#13)
+- Global site search with Pagefind and ⌘K / Ctrl+K modal (#13)
+- Keyboard navigation for search results (arrow keys + Enter)
+- Stretched-link pattern for full-row clickable search results
+- Eased underlit gradient glow on search input focus
+- Active result cyan left-border glow effect
+- Search trigger icon in site header navigation
+- Pagefind Jekyll plugin for automatic indexing on build
+- Design tokens system: opacity, surface overlay, duration, radius, and z-index scales
+- Lightbox refresh (`refreshFsLightbox`) on Swup page transitions
+- Twitter widget reload (`twttr.widgets.load`) on Swup page transitions
 
 ### Changed
 
+- Refactored ~35 raw CSS values to use design tokens across stylesheets
 - Moved fslightbox script from project layout to global `<head>` for site-wide availability
 - Moved typed.js script from inline hero/404 to global `<head>` for reliable Swup transitions
 - Loaded Twitter widgets.js globally for consistent embed rendering across SPA navigation
 
-### Added
+### Fixed
 
-- Lightbox refresh (`refreshFsLightbox`) on Swup page transitions
-- Twitter widget reload (`twttr.widgets.load`) on Swup page transitions
+- Resolved SPA script reliability issues with Swup page transitions (#13)
 
 ### Removed
 

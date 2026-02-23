@@ -22,6 +22,35 @@ $grey-color-dark: #64748b !default;
 $grey-color: color.scale($grey-color-dark, $lightness: 25%) !default;
 $grey-color-light: color.scale($grey-color, $lightness: 40%) !default;
 
+// Opacity scale
+$opacity-25: 0.25 !default;
+$opacity-35: 0.35 !default;
+$opacity-50: 0.5 !default;
+$opacity-70: 0.7 !default;
+$opacity-80: 0.8 !default;
+
+// Surface overlays (white on dark)
+$surface-light-1: rgba(255, 255, 255, 0.04) !default;
+$surface-light-2: rgba(255, 255, 255, 0.06) !default;
+$surface-light-3: rgba(255, 255, 255, 0.08) !default;
+$surface-light-4: rgba(255, 255, 255, 0.14) !default;
+
+// Transition durations
+$duration-sm: 0.12s !default;
+$duration-md: 0.15s !default;
+$duration-lg: 0.2s !default;
+$duration-xl: 0.25s !default;
+
+// Border radius
+$radius-sm: 2px !default;
+$radius-md: 4px !default;
+$radius-lg: 8px !default;
+$radius-xl: 12px !default;
+
+// Z-index layers
+$z-10: 10 !default;
+$z-1000: 1000 !default;
+
 $table-text-align: left !default;
 
 $content-width:    800px !default;
