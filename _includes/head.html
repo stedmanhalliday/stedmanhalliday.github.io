@@ -90,6 +90,9 @@
             if (typeof twttr !== 'undefined' && twttr.widgets) {
                 twttr.widgets.load();
             }
+            if (typeof window.closeSearch === 'function') {
+                window.closeSearch();
+            }
         });
 
         //reload on orientation change
