@@ -137,6 +137,7 @@ plugins:
     - jekyll-compress-images
     - jekyll-youtube
 destination: docs/
+keep_files: ["pagefind"]
 
 # jekyll-archives config replaced by autopages
 # jekyll-archives:

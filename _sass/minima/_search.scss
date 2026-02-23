@@ -1,0 +1,331 @@
+@use "variables" as *;
+@use "sass:color";
+
+/**
+ * Search trigger button in header
+ */
+.search-trigger {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    color: $background-color;
+    transition: color 0.25s;
+
+    &:hover {
+        color: $grey-color-dark;
+
+        .search-icon {
+            stroke: $grey-color-dark;
+        }
+    }
+
+    .search-icon {
+        stroke: $background-color;
+        transition: stroke 0.25s;
+    }
+}
+
+/**
+ * Search modal overlay
+ */
+.search-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 12vh;
+    visibility: hidden;
+    pointer-events: none;
+
+    @include media-query($on-palm) {
+        padding-top: 6vh;
+    }
+
+    &.active {
+        visibility: visible;
+        pointer-events: auto;
+
+        .search-backdrop {
+            opacity: 1;
+        }
+
+        .search-dialog {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+}
+
+.search-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.search-dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 560px;
+    max-height: 72vh;
+    background-color: color.mix($background-color, white, 97%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.3),
+        0 2px 6px rgba(0, 0, 0, 0.2),
+        0 14px 28px rgba(0, 0, 0, 0.35),
+        0 48px 80px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    overflow: hidden;
+
+    @include media-query($on-palm) {
+        max-width: calc(100% - 2rem);
+        max-height: 70vh;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 15%;
+        right: 15%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba($accent-color, 0.35), transparent);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    --pagefind-ui-scale: 0.85;
+    --pagefind-ui-primary: #{$accent-color};
+    --pagefind-ui-text: #{$text-color};
+    --pagefind-ui-background: transparent;
+    --pagefind-ui-background-secondary: #{rgba($background-color-dark, 0.5)};
+    --pagefind-ui-text-secondary: #{$grey-color};
+    --pagefind-ui-border: #{rgba(255, 255, 255, 0.06)};
+    --pagefind-ui-border-secondary: #{rgba(255, 255, 255, 0.04)};
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-tag: #{rgba($grey-color-dark, 0.4)};
+    --pagefind-ui-font: #{$base-font-family};
+}
+
+.search-dialog-header {
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    padding: 0.35rem 0.5rem 0;
+}
+
+.search-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    color: $text-color;
+    opacity: 0.35;
+    cursor: pointer;
+    transition: opacity 0.15s, background-color 0.15s;
+
+    svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    &:hover {
+        opacity: 0.7;
+        background-color: rgba(255, 255, 255, 0.06);
+    }
+}
+
+.search-dialog-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 2px;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+    }
+
+    .pagefind-ui__form {
+        position: relative;
+
+        &::before {
+            opacity: 0.35;
+        }
+    }
+
+    .pagefind-ui__search-input {
+        background-color: transparent !important;
+        color: $text-color !important;
+        border: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+        border-radius: 0 !important;
+        font-weight: 400 !important;
+        letter-spacing: 0.01em;
+
+        &::placeholder {
+            color: #94a3b8 !important; // slate-400
+        }
+
+        &:focus {
+            outline: none !important;
+            border-bottom: 1px solid rgba($accent-color, 0.5) !important;
+            background-image: linear-gradient(
+                to top,
+                rgba($accent-color, 0.08),
+                rgba($accent-color, 0.055) 20%,
+                rgba($accent-color, 0.03) 40%,
+                rgba($accent-color, 0.01) 65%,
+                transparent
+            ) !important;
+        }
+    }
+
+    .pagefind-ui__search-clear {
+        color: $grey-color-dark !important;
+        opacity: 0.7;
+        transition: opacity 0.15s;
+
+        &:hover {
+            color: $text-color !important;
+            opacity: 1;
+        }
+    }
+
+    .pagefind-ui__drawer {
+        border-top: none;
+    }
+
+    .pagefind-ui__results-area {
+        margin-top: 0;
+    }
+
+    .pagefind-ui__message {
+        color: $grey-color !important;
+        padding: 0.75rem 1.25rem !important;
+        font-weight: 400 !important;
+        font-size: 13px !important;
+    }
+
+    .pagefind-ui__result {
+        position: relative;
+        cursor: pointer;
+        padding: 0.6rem 1.25rem 0.6rem calc(1.25rem - 2px) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
+        border-bottom: none !important;
+        border-left: 2px solid transparent;
+        transition: background-color 0.12s ease, border-color 0.12s ease;
+
+        &:first-child {
+            border-top: none !important;
+        }
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.04);
+        }
+
+        &.search-result-active {
+            background-color: rgba($accent-color, 0.1) !important;
+            border-left-color: $accent-color;
+            box-shadow:
+                inset 3px 0 8px -2px rgba($accent-color, 0.2),
+                inset 1px 0 16px -4px rgba($accent-color, 0.1);
+
+            .pagefind-ui__result-link {
+                color: $accent-color !important;
+            }
+        }
+
+        a:not(.pagefind-ui__result-link) {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    .pagefind-ui__result-link {
+        color: $text-color !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        transition: color 0.15s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        &:hover {
+            color: $accent-color !important;
+        }
+    }
+
+    .pagefind-ui__result-title {
+        font-weight: 600 !important;
+    }
+
+    .pagefind-ui__result-excerpt {
+        color: $grey-color !important;
+        opacity: 0.8;
+        line-height: 1.5;
+
+        mark {
+            background-color: rgba($accent-color, 0.2);
+            color: color.adjust($accent-color, $lightness: 15%);
+            border-radius: 2px;
+            padding: 0 2px;
+        }
+    }
+
+    .pagefind-ui__result-tag {
+        background-color: rgba(255, 255, 255, 0.06) !important;
+        color: $grey-color !important;
+        border-radius: 4px !important;
+        font-size: calc(12px * var(--pagefind-ui-scale)) !important;
+    }
+
+    .pagefind-ui__button {
+        background-color: transparent !important;
+        color: $grey-color !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 8px !important;
+        font-weight: 500 !important;
+        transition: all 0.15s ease;
+
+        &:hover {
+            background-color: rgba($accent-color, 0.08) !important;
+            border-color: rgba($accent-color, 0.2) !important;
+            color: $accent-color !important;
+        }
+    }
+}

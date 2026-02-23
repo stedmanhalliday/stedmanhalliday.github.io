@@ -48,6 +48,11 @@ body {
     color: $background-color;
 }
 
+:focus-visible {
+    outline: 2px solid rgba($accent-color, 0.7);
+    outline-offset: 2px;
+}
+
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */

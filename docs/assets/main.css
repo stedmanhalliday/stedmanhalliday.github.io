@@ -67,6 +67,11 @@ body {
   color: #111418;
 }
 
+:focus-visible {
+  outline: 2px solid rgba(97, 179, 175, 0.7);
+  outline-offset: 2px;
+}
+
 /**
  * Set `margin-bottom` to maintain vertical rhythm
  */
@@ -1113,5 +1118,285 @@ a[data-fslightbox] {
   color: #a6e22e;
 }
 .highlight { /* Generic.Inserted & Diff Inserted */ }
+
+/**
+ * Search trigger button in header
+ */
+.search-trigger {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  color: #111418;
+  transition: color 0.25s;
+}
+.search-trigger:hover {
+  color: #64748b;
+}
+.search-trigger:hover .search-icon {
+  stroke: #64748b;
+}
+.search-trigger .search-icon {
+  stroke: #111418;
+  transition: stroke 0.25s;
+}
+
+/**
+ * Search modal overlay
+ */
+.search-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  visibility: hidden;
+  pointer-events: none;
+}
+@media screen and (max-width: 600px) {
+  .search-modal {
+    padding-top: 6vh;
+  }
+}
+.search-modal.active {
+  visibility: visible;
+  pointer-events: auto;
+}
+.search-modal.active .search-backdrop {
+  opacity: 1;
+}
+.search-modal.active .search-dialog {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.search-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.search-dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 560px;
+  max-height: 72vh;
+  background-color: rgb(24.14, 27.05, 30.93);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2), 0 14px 28px rgba(0, 0, 0, 0.35), 0 48px 80px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  overflow: hidden;
+}
+@media screen and (max-width: 600px) {
+  .search-dialog {
+    max-width: calc(100% - 2rem);
+    max-height: 70vh;
+  }
+}
+.search-dialog::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(97, 179, 175, 0.35), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+.search-dialog {
+  --pagefind-ui-scale: 0.85;
+  --pagefind-ui-primary: #61B3AF;
+  --pagefind-ui-text: #e8e8e8;
+  --pagefind-ui-background: transparent;
+  --pagefind-ui-background-secondary: rgba(13, 15, 18, 0.5);
+  --pagefind-ui-text-secondary: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  --pagefind-ui-border: rgba(255, 255, 255, 0.06);
+  --pagefind-ui-border-secondary: rgba(255, 255, 255, 0.04);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-tag: rgba(100, 116, 139, 0.4);
+  --pagefind-ui-font: Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+.search-dialog-header {
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  padding: 0.35rem 0.5rem 0;
+}
+
+.search-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  color: #e8e8e8;
+  opacity: 0.35;
+  cursor: pointer;
+  transition: opacity 0.15s, background-color 0.15s;
+}
+.search-close svg {
+  width: 10px;
+  height: 10px;
+}
+.search-close:hover {
+  opacity: 0.7;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.search-dialog-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+}
+.search-dialog-body::-webkit-scrollbar {
+  width: 4px;
+}
+.search-dialog-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.search-dialog-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+}
+.search-dialog-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+.search-dialog-body .pagefind-ui__form {
+  position: relative;
+}
+.search-dialog-body .pagefind-ui__form::before {
+  opacity: 0.35;
+}
+.search-dialog-body .pagefind-ui__search-input {
+  background-color: transparent !important;
+  color: #e8e8e8 !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 0 !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.01em;
+}
+.search-dialog-body .pagefind-ui__search-input::placeholder {
+  color: #94a3b8 !important;
+}
+.search-dialog-body .pagefind-ui__search-input:focus {
+  outline: none !important;
+  border-bottom: 1px solid rgba(97, 179, 175, 0.5) !important;
+  background-image: linear-gradient(to top, rgba(97, 179, 175, 0.08), rgba(97, 179, 175, 0.055) 20%, rgba(97, 179, 175, 0.03) 40%, rgba(97, 179, 175, 0.01) 65%, transparent) !important;
+}
+.search-dialog-body .pagefind-ui__search-clear {
+  color: #64748b !important;
+  opacity: 0.7;
+  transition: opacity 0.15s;
+}
+.search-dialog-body .pagefind-ui__search-clear:hover {
+  color: #e8e8e8 !important;
+  opacity: 1;
+}
+.search-dialog-body .pagefind-ui__drawer {
+  border-top: none;
+}
+.search-dialog-body .pagefind-ui__results-area {
+  margin-top: 0;
+}
+.search-dialog-body .pagefind-ui__message {
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958) !important;
+  padding: 0.75rem 1.25rem !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+}
+.search-dialog-body .pagefind-ui__result {
+  position: relative;
+  cursor: pointer;
+  padding: 0.6rem 1.25rem 0.6rem calc(1.25rem - 2px) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
+  border-bottom: none !important;
+  border-left: 2px solid transparent;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+.search-dialog-body .pagefind-ui__result:first-child {
+  border-top: none !important;
+}
+.search-dialog-body .pagefind-ui__result:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+}
+.search-dialog-body .pagefind-ui__result.search-result-active {
+  background-color: rgba(97, 179, 175, 0.1) !important;
+  border-left-color: #61B3AF;
+  box-shadow: inset 3px 0 8px -2px rgba(97, 179, 175, 0.2), inset 1px 0 16px -4px rgba(97, 179, 175, 0.1);
+}
+.search-dialog-body .pagefind-ui__result.search-result-active .pagefind-ui__result-link {
+  color: #61B3AF !important;
+}
+.search-dialog-body .pagefind-ui__result a:not(.pagefind-ui__result-link) {
+  position: relative;
+  z-index: 1;
+}
+.search-dialog-body .pagefind-ui__result-link {
+  color: #e8e8e8 !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: color 0.15s;
+}
+.search-dialog-body .pagefind-ui__result-link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.search-dialog-body .pagefind-ui__result-link:hover {
+  color: #61B3AF !important;
+}
+.search-dialog-body .pagefind-ui__result-title {
+  font-weight: 600 !important;
+}
+.search-dialog-body .pagefind-ui__result-excerpt {
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958) !important;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+.search-dialog-body .pagefind-ui__result-excerpt mark {
+  background-color: rgba(97, 179, 175, 0.2);
+  color: rgb(148.6538461538, 203.8461538462, 201.1538461538);
+  border-radius: 2px;
+  padding: 0 2px;
+}
+.search-dialog-body .pagefind-ui__result-tag {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958) !important;
+  border-radius: 4px !important;
+  font-size: calc(12px * var(--pagefind-ui-scale)) !important;
+}
+.search-dialog-body .pagefind-ui__button {
+  background-color: transparent !important;
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  transition: all 0.15s ease;
+}
+.search-dialog-body .pagefind-ui__button:hover {
+  background-color: rgba(97, 179, 175, 0.08) !important;
+  border-color: rgba(97, 179, 175, 0.2) !important;
+  color: #61B3AF !important;
+}
 
 /*# sourceMappingURL=main.css.map */
