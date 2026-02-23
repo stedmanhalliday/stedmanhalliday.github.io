@@ -6,17 +6,25 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- Resolved SPA script reliability issues with Swup page transitions (#13)
+
 ### Changed
 
 - Moved fslightbox script from project layout to global `<head>` for site-wide availability
+- Moved typed.js script from inline hero/404 to global `<head>` for reliable Swup transitions
+- Loaded Twitter widgets.js globally for consistent embed rendering across SPA navigation
 
 ### Added
 
-- Lightbox refresh on swup page transitions
+- Lightbox refresh (`refreshFsLightbox`) on Swup page transitions
+- Twitter widget reload (`twttr.widgets.load`) on Swup page transitions
 
 ### Removed
 
 - Per-page fslightbox script tag from project layout
+- Per-page typed.js CDN script tags from hero intro and 404 page
 
 ## [2026-02-22]
 
