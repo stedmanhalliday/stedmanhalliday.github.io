@@ -4,7 +4,7 @@
  * Page transitions
  */
 html.is-changing .transition-fade {
-    transition: opacity 0.25s;
+    transition: opacity $duration-xl;
     opacity: 1;
 }
 html.is-animating .transition-fade {
@@ -50,13 +50,13 @@ html.is-animating .transition-fade {
     .monogram {
         margin-right: 0.5rem;
         fill: $background-color;
-        transition: 0.25s;
+        transition: $duration-xl;
     }
 }
 
 .site-nav {
     position: relative;
-    z-index: 10;
+    z-index: $z-10;
 
     .nav-trigger {
         display: none;

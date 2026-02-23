@@ -140,7 +140,7 @@ h6 {
 a {
     color: $accent-color;
     text-decoration: none;
-    transition: 0.25s;
+    transition: $duration-xl;
 
     &:visited {
         color: color.scale($accent-color, $lightness: -15%);
@@ -192,7 +192,7 @@ pre,
 code {
     @include relative-font-size(0.9375);
     border: 1px solid rgba($grey-color-dark, 0.5);
-    border-radius: 4px;
+    border-radius: $radius-md;
     background-color: $background-color-dark;
 }
 
