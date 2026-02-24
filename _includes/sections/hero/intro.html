@@ -150,25 +150,27 @@
     </div>
 </section>
 <script>
-    var titleElement = document.querySelector("#title");
-    if (titleElement) {
-        var heroIntroOptions = {
-            strings: [
-                "a&nbsp;developer.",
-                "an&nbsp;artist.",
-                "an&nbsp;entrepreneur.",
-                "a&nbsp;coach.",
-                "a&nbsp;tinkerer.",
-                "a&nbsp;friend :)",
-                "a&nbsp;designer."
-            ],
-            typeSpeed: 32,
-            startDelay: 3200,
-            backDelay: 3200,
-            backSpeed: 32,
-            showCursor: false,
-            loop: true,
-        };
-        new Typed("#title", heroIntroOptions);
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+        var titleElement = document.querySelector("#title");
+        if (titleElement) {
+            var heroIntroOptions = {
+                strings: [
+                    "a&nbsp;developer.",
+                    "an&nbsp;artist.",
+                    "an&nbsp;entrepreneur.",
+                    "a&nbsp;coach.",
+                    "a&nbsp;tinkerer.",
+                    "a&nbsp;friend :)",
+                    "a&nbsp;designer."
+                ],
+                typeSpeed: 32,
+                startDelay: 3200,
+                backDelay: 3200,
+                backSpeed: 32,
+                showCursor: false,
+                loop: true,
+            };
+            new Typed("#title", heroIntroOptions);
+        }
+    });
 </script>
