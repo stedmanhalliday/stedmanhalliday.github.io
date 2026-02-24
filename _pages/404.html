@@ -55,18 +55,20 @@ layout: default
     <a class="back-link" href="/">Go Back Home</a>
 </div>
 <script>
-    var errorElement = document.querySelector("#error");
-    if (errorElement) {
-        var errorOptions = {
-            strings: ["Searching", "Error: 404"],
-            typeSpeed: 32,
-            startDelay: 3200,
-            backDelay: 3200,
-            backSpeed: 32,
-            showCursor: true,
-            cursorChar: "_",
-        };
-        new Typed("#error", errorOptions);
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+        var errorElement = document.querySelector("#error");
+        if (errorElement) {
+            var errorOptions = {
+                strings: ["Searching", "Error: 404"],
+                typeSpeed: 32,
+                startDelay: 3200,
+                backDelay: 3200,
+                backSpeed: 32,
+                showCursor: true,
+                cursorChar: "_",
+            };
+            new Typed("#error", errorOptions);
+        }
+    });
 </script>
 </div>

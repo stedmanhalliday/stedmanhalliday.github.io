@@ -1,0 +1,12 @@
+{
+  "name": "stedmanhalliday",
+  "private": true,
+  "description": "Stedman Halliday personal site",
+  "scripts": {
+    "test:html": "./_scripts/test-html.sh",
+    "lighthouse": "lhci autorun"
+  },
+  "devDependencies": {
+    "@lhci/cli": "^0.14.0"
+  }
+}

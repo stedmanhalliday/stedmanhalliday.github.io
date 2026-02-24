@@ -182,3 +182,7 @@ exclude:
     - vendor/ruby/
     - README.md
     - .tweet-cache/
+    - package.json
+    - package-lock.json
+    - lighthouserc.json
+    - .lighthouseci/
