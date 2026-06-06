@@ -16,13 +16,13 @@
     <link rel="manifest" href="/site.webmanifest">
     <!-- end favicon -->
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>The Models [Don’t] Have Eyes | Stedman Halliday</title>
+<title>Seeing Like a Designer | Stedman Halliday</title>
 <meta name="generator" content="Jekyll v4.3.4">
-<meta property="og:title" content="The Models [Don’t] Have Eyes">
+<meta property="og:title" content="Seeing Like a Designer">
 <meta name="author" content="Stedman Halliday">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="Closing generative UI’s perceptual reasoning gap">
-<meta property="og:description" content="Closing generative UI’s perceptual reasoning gap">
+<meta name="description" content="Generative UI’s missing primitive is a vocabulary, not sight">
+<meta property="og:description" content="Generative UI’s missing primitive is a vocabulary, not sight">
 <link rel="canonical" href="https://stedmanhalliday.com/blog/perceptual-reasoning-gap">
 <meta property="og:url" content="https://stedmanhalliday.com/blog/perceptual-reasoning-gap">
 <meta property="og:site_name" content="Stedman Halliday">
@@ -31,11 +31,11 @@
 <meta property="article:published_time" content="2026-01-27T00:00:00-08:00">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:image" content="https://stedmanhalliday.com/assets/img/2026-01-27-perceptual-reasoning-gap.webp">
-<meta property="twitter:title" content="The Models [Don’t] Have Eyes">
+<meta property="twitter:title" content="Seeing Like a Designer">
 <meta name="twitter:site" content="@stedmanhalliday">
 <meta name="twitter:creator" content="@stedmanhalliday">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Stedman Halliday","url":"https://stedmanhalliday.com"},"dateModified":"2026-01-27T00:00:00-08:00","datePublished":"2026-01-27T00:00:00-08:00","description":"Closing generative UI’s perceptual reasoning gap","headline":"The Models [Don’t] Have Eyes","image":"https://stedmanhalliday.com/assets/img/2026-01-27-perceptual-reasoning-gap.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://stedmanhalliday.com/blog/perceptual-reasoning-gap"},"url":"https://stedmanhalliday.com/blog/perceptual-reasoning-gap"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Stedman Halliday","url":"https://stedmanhalliday.com"},"dateModified":"2026-01-27T00:00:00-08:00","datePublished":"2026-01-27T00:00:00-08:00","description":"Generative UI’s missing primitive is a vocabulary, not sight","headline":"Seeing Like a Designer","image":"https://stedmanhalliday.com/assets/img/2026-01-27-perceptual-reasoning-gap.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://stedmanhalliday.com/blog/perceptual-reasoning-gap"},"url":"https://stedmanhalliday.com/blog/perceptual-reasoning-gap"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="stylesheet" href="/assets/main.css">
@@ -43,16 +43,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400,700&amp;display=swap" rel="stylesheet">
     <link type="application/atom+xml" rel="alternate" href="https://stedmanhalliday.com/feed.xml" title="Stedman Halliday">
-    
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SQV444EF7D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SQV444EF7D');
-</script>
     
     <link rel="preconnect" href="https://unpkg.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -133,7 +123,7 @@
 
     <header class="post-header">
         <p><a class="back-link" href="/blog">All posts</a></p>
-        <h1 class="post-title p-name" itemprop="name headline">The Models [Don't] Have Eyes</h1>
+        <h1 class="post-title p-name" itemprop="name headline">Seeing Like a Designer</h1>
         <div class="post-meta">
             <div class="byline">
                 <time class="dt-published" datetime="2026-01-27T00:00:00-08:00" itemprop="datePublished">
@@ -147,12 +137,12 @@
                 
                 
                 
-                 •  <span>1056 words (4 mins)</span>
+                 •  <span>1492 words (6 mins)</span>
                 
             </div>
             
             <div class="post-summary">
-<p>Closing generative UI’s perceptual reasoning gap</p>
+<p>Generative UI’s missing primitive is a vocabulary, not sight</p>
 </div>
             
             <ul class="post-tags">
@@ -174,92 +164,82 @@
     <div class="post-content e-content" itemprop="articleBody">
         <p><img src="/assets/img/2026-01-27-perceptual-reasoning-gap.webp" alt="Perceptual reasoning neural network" loading="lazy"></p>
 
-<h2 id="closing-generative-uis-perceptual-reasoning-gap">Closing Generative UI’s Perceptual Reasoning Gap</h2>
+<h2 id="the-missing-primitive-is-a-vocabulary">The Missing Primitive Is a Vocabulary</h2>
 
 <p>Anyone who’s vibecoded for more than an afternoon knows the pattern: the AI nails your component logic, wires up your state management, even writes reasonable tests. Then it spends 46 turns failing to center a play button in a circle.</p>
 
-<p>The memes about centering a div write themselves. But underneath the frustration is a real architectural limitation worth understanding.</p>
+<p>The memes about centering a div write themselves. But underneath the frustration is a real architectural limitation.</p>
 
 <div class="soft-break"></div>
 
-<h2 id="the-problem-the-models-dont-have-eyes">The Problem: The Models [Don’t] Have Eyes</h2>
+<h2 id="the-problem-isnt-sight">The Problem Isn’t Sight</h2>
 
-<p>As the name suggests, large language models process the world through language [or more abstractly, text; see <a href="https://scale.com/blog/text-universal-interface" target="_blank" rel="noopener noreferrer"><em>Text Is the Universal Interface</em> by Roon</a>]. When they write styles, they’re pattern-matching against millions of code examples, statistically converging on what syntactically looks like correct styling. But syntax isn’t style. The true primitives of visual design are feature detectors in human optical perception. That’s a black box these models presently have little access to.</p>
+<p>It’s tempting to say the models can’t see. They can, after a fashion. Large language models process the world through language [or more abstractly, text; see <a href="https://scale.com/blog/text-universal-interface" target="_blank" rel="noopener noreferrer"><em>Text Is the Universal Interface</em> by Roon</a>], and the multimodal ones can take in an image and describe it well enough. The deeper problem is what they can’t do <em>with</em> what they see.</p>
 
-<p>This matters because metric correctness and optical soundness are often very different things.</p>
+<p>When a model writes styles, it’s pattern-matching against millions of code examples, statistically converging on what syntactically looks like correct styling. But syntax isn’t style. The true primitives of visual design are feature detectors in human optical perception, and above those, a learned vocabulary for reasoning over what the detectors report. That vocabulary is more than perceptual; it’s connotative, a sediment of cultural and artistic meaning laid down across every altarpiece, poster, and illuminated page, all the way back to the painted bulls of Lascaux. Tens of thousands of years of people tacitly agreeing on what marks signify and how forms feel.</p>
 
-<p>The play button problem is a rather trivial example that is likely solved for in most instances today, but it is nonetheless illustrative of the greater issue. Put a triangle inside a circle. The mathematically centered position, equal padding on all sides, looks wrong. The visual weight of the triangle pulls leftward. Every designer knows you nudge it right by a few pixels until it feels centered. That “feel” is the gap.</p>
+<p>The model isn’t working with <em>nothing</em> here. The latent space of language, plus whatever design sense its training instilled, is already a representation of some of that inheritance. It just isn’t a good enough one yet. It stays too coarse for “this looks wrong” to be a reliable move the model can make, or “more geometric” a direction it can travel with much confidence.</p>
 
-<p>The naive approach (metric centering) is trivially encodable. The correct approach (optical centering) requires either:</p>
+<p>So I’d reframe the gap as one of perceptual <em>reasoning</em>, not perception. Sight is the cheap part.</p>
 
-<ol>
-  <li>Geometric construction heuristics, which exist but are rarely encoded <em>generally</em> in training data (as opposed to datasets just including plenty of optically sound examples)</li>
-  <li>A feedback loop with strong visual perception</li>
-</ol>
+<p>Metric correctness and optical soundness are often very different things. The play button problem is trivial and mostly solved today, but it illustrates the larger issue. Put a triangle inside a circle. The mathematically centered position, equal padding on all sides, looks wrong; the visual weight of the triangle pulls leftward. Every designer knows you nudge it right by a few pixels until it feels centered. That “feel” is the gap, and “visual weight” is exactly the kind of vocabulary the model doesn’t have.</p>
 
-<p>Current models don’t rely strongly on either. They generate style values, imagine what visual output probably looks like based mostly on diffing against expected patterns from text samples and sometimes a snapshot, and ship it. There’s a lack of rigor in the intermediate perceptual verification step of the feedback loop.</p>
+<p>Metric centering is trivially encodable. Optical centering needs either geometric construction heuristics, which exist but are rarely encoded in training data as general rules, or a feedback loop with strong visual perception. Current models lean on neither. They generate style values, imagine what the output probably looks like by diffing against patterns from text samples and sometimes a snapshot, and ship it. The intermediate step, perceptual verification, is where the rigor’s missing.</p>
 
 <div class="soft-break"></div>
 
-<h2 id="why-multimodal-doesnt-solve-this-yet">Why Multimodal Doesn’t Solve This (Yet)</h2>
+<h2 id="two-gaps-from-one-absence">Two Gaps From One Absence</h2>
 
-<p>“But Claude/GPT-4 can see images now!” True. However, bolting vision onto a language model doesn’t automatically yield perceptual intelligence. The model can usually describe what it sees decently well, but it can’t yet reliably evaluate whether what it sees matches optical intent before tracing that evaluation back to the specific style values that need adjustment.</p>
+<p>The missing vocabulary opens two gaps, not one.</p>
 
-<p>The missing piece is a causal link: perception → aesthetic judgment → code modification → verification loop. Abstractly, this is solving for taste, but that’s a superset of the more precisely defined problems in scope here that offer excellent places to start.</p>
+<p>The first is the <strong>perceptual gap</strong>, the one above: the model can’t reliably judge whether what it rendered matches optical intent, much less trace that judgment back to the specific values that need to change. The loop (perception, judgment, revision, verification) never closes.</p>
 
-<p>The previous generation of UI engineering saw visual regression testing tools like <a href="https://percy.io" target="_blank" rel="noopener noreferrer">Percy</a> that solved a related problem for humans: snapshot the UI, diff against baseline, and flag unexpected changes. But that’s change detection, not aesthetic evaluation; it still requires humans to judge whether changes are improvements or not.</p>
+<p>The second is quieter and just as limiting: the <strong>steering gap</strong>. Even when the output is salvageable, you can’t reliably <em>direct</em> it. Tell a model “more geometric, lower contrast, more volumetric depth” and you’re mostly hoping, because those axes aren’t represented precisely enough for it to act on them. They live in its general grasp of language and nowhere more exact. Design intent, today, is insufficiently addressable.</p>
 
-<p>VLA models for robotics are solving similar problems in 3-space and the time domain. Implementations for 2-D screen media would be dramatically simpler, but I don’t have detailed knowledge about which of today’s multimodal efforts mechanistically rely on rigorous (if dimensionally constrained) VLA loops. Later extensions could include motion design, 3D tools like Blender, and potentially interface paradigms we haven’t seen yet.</p>
-
-<div class="soft-break"></div>
-
-<h2 id="todays-workarounds">Today’s Workarounds</h2>
-
-<p>The current tactics:</p>
-
-<p><strong>Style bibles in context</strong></p>
-<ul>
-  <li>
-<a href="https://vercel.com/design/guidelines" target="_blank" rel="noopener noreferrer">Vercel’s Web Interface Guidelines</a> and <a href="https://refactoringui.com" target="_blank" rel="noopener noreferrer">Refactoring UI</a> are helpful distillations of good heuristics, but you’re just cramming best practices into a context window without true perceptual grounding.</li>
-</ul>
-
-<p><strong>Agentic tool use</strong></p>
-<ul>
-  <li>Vercel’s <a href="https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices" target="_blank" rel="noopener noreferrer">React Best Practices</a> and <a href="https://skills.sh/vercel-labs/agent-skills/web-design-guidelines" target="_blank" rel="noopener noreferrer">Web Interface Guidelines</a> skills are like code snippets on steroids in that they allow the models to better apply guidelines intelligently to codebases not included in training data, but they still can’t <em>see.</em>
-</li>
-  <li>
-<a href="https://github.com/0xdesign/design-plugin" target="_blank" rel="noopener noreferrer">0xdesign/design-plugin</a> generates variations to place in front of a human in the loop for feedback to iterate on, but it still needs a lot of human decision making to bear fruit.</li>
-</ul>
-
-<p><strong>Training on “things people like to look at”</strong></p>
-<ul>
-  <li>Model weights converge on the class of aesthetically pleasing outputs, which gets you directionally correct results more often but lacks precision. The results are inexact and not reliably reproducible; they are the result of statistical convergence rather than genuinely rigorous perceptual reasoning.</li>
-</ul>
-
-<p>None of these give models the ability to see their own output and judge it the way a designer would. They are all workarounds that are necessary today but do not address the root issue.</p>
+<p>Both gaps are the same absence wearing two faces. Give the model a vocabulary of nameable visual axes and “this looks wrong” becomes a judgment it can render; “more geometric” becomes a direction it can travel. Evaluating a design and steering one turn out to be the same capability seen from either side.</p>
 
 <div class="soft-break"></div>
 
-<h2 id="what-would-actually-work">What Would Actually Work</h2>
+<h2 id="a-system-that-can-only-converge">A System That Can Only Converge</h2>
 
-<p>A lightweight perception-action loop for UI generation:</p>
+<p>Underneath both gaps is a mismatch in how models pursue a design at all.</p>
 
-<ol>
-  <li>Model generates styling code</li>
-  <li>Code renders to pixels</li>
-  <li>Vision model evaluates rendering against perceptual criteria (not just “does this match the mockup” but “does this look right”—initially at the consumer level, then later to the standards of professional design critique)</li>
-  <li>Evaluation feeds back an explicit loss function with basis in perceptual heuristics; the gradient signal allows explicit and iterable corrective actions</li>
-  <li>Iterate until loss is minimized to yield perceptually sound results that both users and designers expect (on par with and eventually exceeding human capability)</li>
-</ol>
+<p>A model runs design as monotone convergence: explore a little, then narrow toward a goal state until it’s done. That’s how it handles most tasks, and for most tasks it’s right. Design isn’t most tasks. Design is iterated divergence and convergence (a double diamond, if you’ve seen the diagram), where each convergence reframes the problem and seeds the next round of divergence. You don’t aim at a known target. You generate options, commit to one, learn what the commitment reveals, and open the problem back up.</p>
 
-<p>This isn’t wildly speculative; it’s just VLA with lower-dimensional output. Consider typographic rag: the ragged edge of a text block where lines break at different lengths. A good rag flows smoothly; a bad one creates distracting shapes or awkward word breaks. You want models that can see, articulate, and correct something like this (which corresponds exactly to the vision-language-action loop). Interestingly, a sizable contingent of practicing designers can’t do this exceptionally well either. Most have trained heavily on perception and action, but the tradition of craft practice has historically neglected the language step (articulation) in comparison. Models that close this loop could outperform many humans at the craft layer with futher iteration eventually unlocking the taste layer.</p>
+<p>A system that can only converge can’t design. It can only finish.</p>
 
-<p>The infrastructure exists. I’m sure it’s being actively developed in some shops. Nonetheless, frontier models are still left wanting despite impressive capability gains with December 2025 releases. Someone needs to build the appropriate training pipelines for perceptual reward models tuned to screen media in order to advance the frontier further. Today’s models can view and describe output, but until they can actually <em>see,</em> aesthetically evaluate, and <em>act</em> on what they perceive, vibecoding will remain stuck at 90% magic, 10% hair-pulling. That final 10% is exactly where taste lives.</p>
+<p>And here the vocabulary matters again, because divergence needs something to diverge <em>along</em>. Without nameable axes, “try something different” is just noise. With them, the model can propose a coherent next move: lower the contrast, make the forms more organic, push the depth. You choose the branch. That’s the difference between a slot machine and an instrument.</p>
 
 <div class="soft-break"></div>
+
+<h2 id="why-the-obvious-fixes-fall-short">Why the Obvious Fixes Fall Short</h2>
+
+<p>“But the models can see images now.” True. Bolting vision onto a language model doesn’t hand it perceptual reasoning. It can describe what it sees; it still can’t reliably evaluate whether what it sees matches intent and then act on the gap. Describing is not judging.</p>
+
+<p>Today’s workarounds all run into the same ceiling. Style bibles in context (<a href="https://vercel.com/design/guidelines" target="_blank" rel="noopener noreferrer">Vercel’s Web Interface Guidelines</a>, <a href="https://refactoringui.com" target="_blank" rel="noopener noreferrer">Refactoring UI</a>) cram good heuristics into a context window with no perceptual grounding. Agentic skills like Vercel’s <a href="https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices" target="_blank" rel="noopener noreferrer">React Best Practices</a> apply those heuristics more intelligently to unfamiliar codebases, but they still can’t <em>see</em>. Tools like <a href="https://github.com/0xdesign/design-plugin" target="_blank" rel="noopener noreferrer">0xdesign/design-plugin</a> generate variations for a human to judge, which just hands the judgment back to you. Training on “things people like to look at” nudges the weights toward pleasing output, but that’s statistical convergence, not reasoning; directionally right, never precise.</p>
+
+<p>Visual regression tools like <a href="https://percy.io" target="_blank" rel="noopener noreferrer">Percy</a> had the right shape for an earlier era: snapshot, diff, flag changes. But that’s change detection, not aesthetic judgment; a human still decides whether a change is an improvement. None of these give the model a way to see its own output and judge it the way a designer would. They’re necessary workarounds, not fixes.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="what-it-would-take">What It Would Take</h2>
+
+<p>The fix isn’t more sight. It’s a vocabulary: a set of visual axes the model can reason in and a person can recognize. Designers already carry this informally: weight, scale, color, space, texture, form, the contrast dimensions you’d name in a critique. Make them precise and shared enough that the model and the designer are pointing at the same thing, and “this looks wrong” stops being ineffable.</p>
+
+<p>Get that, and the loop can finally close: generate, render to pixels, evaluate the render against the axes (“does this look right,” not just “does this match the mockup”), correct, repeat. The same vocabulary, run the other direction, is what you steer with. It’s a vision-language-action loop with unusually low-dimensional output, and the pieces for it exist.</p>
+
+<p>Consider typographic rag, the ragged edge of a text block where lines break at different lengths. A good rag flows; a bad one throws distracting shapes and awkward breaks. You want a model that can see that, name it, and fix it. A fair number of working designers can’t name it either: craft training leans hard on perception and action and neglects articulation. A model that closes the loop could out-articulate most of us at the craft layer, and with more iteration, start reaching the taste layer above it.</p>
+
+<p>Correctness is only the floor, and it’s the least interesting part. Once those axes are steerable they stop being error-correction and become an instrument you can play. You can push a dimension past “right” into something deliberately strange, hold two of them in tension, chase an effect you couldn’t have named going in. That’s the consequence I’m actually excited about: not models that stop making ugly interfaces, but a controllable surface for expression, where a designer decides how far to push each axis and why. Closing the gap makes design correct; the steering it opens up is what makes design expressive.</p>
+
+<div class="soft-break"></div>
+
+<p>Today’s models can view an interface and describe it. Until they can see it, reason about it in a vocabulary, and act on what they find, vibecoding stays at 90% magic and 10% hair-pulling. That final 10% is where taste lives, and taste turns out not to be mystical. It’s a vocabulary: a finite set of things you learned to notice and name. Make it legible to a model and the 10% gets tractable.</p>
+
+<p>The point of doing that isn’t a model that designs without us. It’s a model you can actually direct, one that moves along axes you name, so the person with the taste stays in the loop and gets more done with it. Eyes were never the bottleneck. The words for what the eyes are doing were.</p>
 
 <p>Do you have thoughts on this post? I’d greatly appreciate your feedback. 
-<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+The+Models+%5BDon%27t%5D+Have+Eyes." target="_blank" rel="noopener noreferrer">Message me on X (Twitter)</a> and let’s talk shop.</p>
+<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+Seeing+Like+a+Designer." target="_blank" rel="noopener noreferrer">Message me on X (Twitter)</a> and let’s talk shop.</p>
 
     </div>
 
