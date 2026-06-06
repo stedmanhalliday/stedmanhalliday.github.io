@@ -139,7 +139,7 @@ Now that we have a nice blue swatch, let’s get another concordant swatch going
 </figure>
 
 - We know that adding blue will get us there, but how much blue do we need? This is a good time to revisit the channel ratios.
-- **RGB(0,255,96) = 0:8:3 RGB ratio…** what if we just mixed in double the amount of blue? This would get us a 0:8:6 ratio — not all the way to cyan but enough to cool our green down.
+- **RGB(0,255,96) = 0:8:3 RGB ratio…** what if we just mixed in double the amount of blue? This would get us a 0:8:6 ratio—not all the way to cyan but enough to cool our green down.
 
 <figure>
 <img alt="aquamarine" src="/assets/img/2018-02-05-aquamarine.webp" />

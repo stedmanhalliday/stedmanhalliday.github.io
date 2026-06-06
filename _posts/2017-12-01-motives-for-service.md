@@ -60,7 +60,7 @@ It was advice that I was at first hesitant to follow, but upon consideration it 
 <figcaption>Lost in Liverpool (June 2016)</figcaption>
 </figure>
 
-Reconciling lessons from all of my experiences and understanding how to unify them into a workable vision for my future was going to take substantive consideration. I have Jenny Earnest to thank for pointing me in the right direction when she gifted me a copy of the 2017 edition of *What Color is Your Parachute?*, a classic job-hunting best-seller by Richard N. Bolles. I particularly appreciated the book's helpful suggestion to perform a "self-inventory" so that I might craft that vision with integrity on the basis of my most genuine self — merits, flaws, and all.
+Reconciling lessons from all of my experiences and understanding how to unify them into a workable vision for my future was going to take substantive consideration. I have Jenny Earnest to thank for pointing me in the right direction when she gifted me a copy of the 2017 edition of *What Color is Your Parachute?*, a classic job-hunting best-seller by Richard N. Bolles. I particularly appreciated the book's helpful suggestion to perform a "self-inventory" so that I might craft that vision with integrity on the basis of my most genuine self—merits, flaws, and all.
 
 <figure>
 <img alt="Thank You for Sharing" src="/assets/img/2017-12-01-tyfs.webp">

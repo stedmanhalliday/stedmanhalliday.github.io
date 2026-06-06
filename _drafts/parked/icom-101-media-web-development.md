@@ -6,6 +6,8 @@ description:
 categories: []
 # permalink: "/projects/:title"
 # hero: projects/:title-hero
+parked: 2026-04-22
+blocker: "Gather student work assets from Treehouse Festival before drafting."
 ---
 
 don't forget student work from treehouse festival

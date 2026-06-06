@@ -153,7 +153,7 @@ Dan Mall’s talk was *FUN!* He gave out Dum Dums lollipops for design systems j
 
 > *Look for things to remove, simplify, and streamline… Stick to what’s truly essential.*
 >
-> —[Rework](https://basecamp.com/books/rework) by Jason Fried and DHH
+>—[Rework](https://basecamp.com/books/rework) by Jason Fried and DHH
 
 {% include soft-break.html %}
 

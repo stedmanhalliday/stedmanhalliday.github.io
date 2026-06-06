@@ -186,3 +186,4 @@ exclude:
     - package-lock.json
     - lighthouserc.json
     - .lighthouseci/
+    - tasks/
