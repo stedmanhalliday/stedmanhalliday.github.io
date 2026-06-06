@@ -97,7 +97,7 @@ To deliver great experiences… I just need to get the organization right.
 
 > *Designers need to show up like business people first, just like any other discipline.*
 > 
-> —Bob Schwartz, GM Global Design, GE Healthcare
+>—Bob Schwartz, GM Global Design, GE Healthcare
 
 <blockquote class="bigquote">
 Lesson #1:
