@@ -89,3 +89,7 @@ The disposition, not the costume. That's a lot of what present-day San Francisco
 This is what it's about in the end. Divination is focus training as much as fortune-telling—the deliberate cultivation of the capacity to see paths and then walk them. The same goes for hyperstition: commit to a frame, let it shape attention and action, and earn the right to the future you're pointing at. Trained intuition—tested, kept honest by contact with reality—is what makes any of this more than wishful thinking. It's a choice to say "I'm not sure" and grip the reins anyway, rather than sit idly by and watch as the future slips into attraction basins that siphon your life force and that of those you care for most.
 
 The future is deeply uncertain and incompressible. Choose anyway and write your story.
+
+{% include soft-break.html %}
+
+*Special thanks to [Toby Shorin](https://writing.tobyshorin.com/) for insights and feedback.*
