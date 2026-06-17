@@ -47,6 +47,11 @@ During my time at Eat Blueprint, I developed menu products to align nutrition pr
 </figure>
 
 <figure>
+    {% youtube "https://www.youtube.com/watch?v=JD5dJGODAfs" %}
+    <figcaption>Venture Capitalist Tries Eat Blueprint</figcaption>
+</figure>
+
+<figure>
     <div class="grid col2">
         <a data-fslightbox="social" data-href="/assets/img/2024-01-24-eat-blueprint-jeff.webp"><img src="/assets/img/2024-01-24-eat-blueprint-jeff.webp" alt="Jeff's Eat Blueprint results" /></a>
         <a data-fslightbox="social" data-href="/assets/img/2024-01-24-eat-blueprint-thomas.webp"><img src="/assets/img/2024-01-24-eat-blueprint-thomas.webp" alt="Thomas's Eat Blueprint results" /></a>
