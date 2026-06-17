@@ -8,3 +8,4 @@ vendor/
 .tweet-cache/
 node_modules/
 .lighthouseci/
+.gstack/

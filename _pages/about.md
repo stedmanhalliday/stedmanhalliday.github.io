@@ -12,4 +12,4 @@ Stedman also has a rich background in educational technology and academia. As pa
 
 With a versatile skill set spanning multimedia design, software development, and integrated brand, product, and growth strategy, Stedman is passionate about building solutions that unite technology, creativity, and purpose. He is also an accomplished community builder, having grown Designers Guild into a global network supporting over 20,000 creatives across 100 countries. Today, Stedman focuses on launching and scaling ventures that foster wellness and connection, aligning his expertise with his vision for a healthier world.
 
-<h4><a href="/assets/stedman-halliday-resume.pdf" target="_blank">Stedman's résumé</a></h4>
+<h4><a href="https://linkedin.com/in/stedmanhalliday" target="_blank">LinkedIn</a></h4>
