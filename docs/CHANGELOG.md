@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- Assorted Works page (`/assorted-works`): curated portfolio of work with a grayscale hero and an Overview intro
 - Global site search with Pagefind and ⌘K / Ctrl+K modal (#13)
 - Keyboard navigation for search results (arrow keys + Enter)
 - Stretched-link pattern for full-row clickable search results
@@ -25,13 +26,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Moved fslightbox script from project layout to global `<head>` for site-wide availability
 - Moved typed.js script from inline hero/404 to global `<head>` for reliable Swup transitions
 - Loaded Twitter widgets.js globally for consistent embed rendering across SPA navigation
+- About page résumé link replaced with LinkedIn
 
 ### Fixed
 
 - Resolved SPA script reliability issues with Swup page transitions (#13)
+- Corrected Acura TLX and MDX image references to the existing outcome assets
 
 ### Removed
 
+- Prime Intellect application page (`/prime-intellect`) and its hero
 - Per-page fslightbox script tag from project layout
 - Per-page typed.js CDN script tags from hero intro and 404 page
 
