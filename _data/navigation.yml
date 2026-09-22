@@ -1,6 +1,6 @@
 header:
-#- text: Work
-#  url: /work/
+- text: Work
+  url: /work/
 - text: Blog
   url: /blog/
 - text: About
