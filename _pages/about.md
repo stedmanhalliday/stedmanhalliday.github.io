@@ -9,6 +9,9 @@ permalink: /about/
     .about-bio summary:focus-visible { outline: 2px solid #61B3AF; outline-offset: 2px; }
     .about-bio .about-bio-less, .about-bio[open] .about-bio-more { display: none; }
     .about-bio[open] .about-bio-less { display: inline; }
+    .about-bio-close { padding: 0; border: 0; background: none; font: inherit; color: #61B3AF; cursor: pointer; margin-bottom: 1rem; }
+    .about-bio-close:focus-visible { outline: 2px solid #61B3AF; outline-offset: 2px; }
+    .about-bio.has-close[open] summary { display: none; }
 </style>
 
 Stedman Halliday is a cross-functional product and design leader based in San Francisco. With over 15 years of experience across startups, creative agencies, and large tech orgs, he brings a versatile skill set that spans design, software development, and strategy to shaping products, brands, and teams.
@@ -22,7 +25,26 @@ Stedman also has a rich background in educational technology and academia. As pa
 
 With a versatile skill set spanning multimedia design, software development, and integrated brand, product, and growth strategy, Stedman is passionate about building solutions that unite technology, creativity, and purpose. He is also an accomplished community builder, having grown Designers Guild into a global network supporting over 20,000 creatives across 100 countries. Today, Stedman focuses on launching and scaling ventures that foster wellness and connection, aligning his expertise with his vision for a healthier world.
 
+<button class="about-bio-close" type="button" hidden>See less</button>
+
 </details>
+
+<script>
+    (function () {
+        // With JS, "See less" sits at the end of the bio instead of the top.
+        var bio = document.querySelector(".about-bio");
+        if (!bio) return;
+        var close = bio.querySelector(".about-bio-close");
+        var summary = bio.querySelector("summary");
+        bio.classList.add("has-close");
+        close.hidden = false;
+        close.addEventListener("click", function () {
+            bio.open = false;
+            summary.focus();
+            summary.scrollIntoView({ block: "nearest" });
+        });
+    })();
+</script>
 
 ## Experience
 

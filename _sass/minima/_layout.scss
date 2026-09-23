@@ -435,6 +435,11 @@ html.is-animating .transition-fade {
     }
 }
 
+// Homepage stacks several list sections; give each its own breathing room.
+.blog + .blog {
+    margin-top: $spacing-unit * 2;
+}
+
 /**
  * Projects
  */

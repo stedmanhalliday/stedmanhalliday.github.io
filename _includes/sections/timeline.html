@@ -234,7 +234,7 @@
         {% endfor %}
     </ol>
     {% if include.limit and timeline.size > include.limit %}
-    <button class="timeline-toggle next-link" type="button" aria-expanded="false" hidden>See all experience</button>
+    <button class="timeline-toggle" type="button" aria-expanded="false" hidden>See more</button>
     {% endif %}
 </div>
 <script>
@@ -317,7 +317,7 @@
             toggle.addEventListener("click", function () {
                 var collapsed = root.classList.toggle("is-collapsed");
                 toggle.setAttribute("aria-expanded", String(!collapsed));
-                toggle.textContent = collapsed ? "See all experience" : "Show less";
+                toggle.textContent = collapsed ? "See more" : "See less";
                 if (collapsed) toggle.scrollIntoView({ block: "nearest" });
                 update();
             });
