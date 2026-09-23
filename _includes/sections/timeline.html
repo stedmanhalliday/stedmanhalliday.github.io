@@ -130,20 +130,6 @@
         display: none;
     }
 
-    .timeline-toggle {
-        margin-top: 0.75rem;
-        padding: 0;
-        border: 0;
-        background: none;
-        font: inherit;
-        color: var(--tl-accent);
-        cursor: pointer;
-    }
-
-    .timeline-toggle:focus-visible {
-        outline: 2px solid var(--tl-accent);
-        outline-offset: 2px;
-    }
 
     @media screen and (max-width: 600px) {
         .timeline-years {
@@ -234,7 +220,7 @@
         {% endfor %}
     </ol>
     {% if include.limit and timeline.size > include.limit %}
-    <button class="timeline-toggle" type="button" aria-expanded="false" hidden>See more</button>
+    <button class="timeline-toggle section-cta" type="button" aria-expanded="false" hidden>See more</button>
     {% endif %}
 </div>
 <script>
