@@ -62,7 +62,7 @@ function initScrims() {
         trigger.setAttribute("aria-expanded", "false");
         if (box.id) trigger.setAttribute("aria-controls", box.id);
         trigger.innerHTML =
-            '<span class="scrim-plus" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14" focusable="false">' +
+            '<span class="scrim-plus" aria-hidden="true"><svg viewBox="0 0 16 16" width="10" height="10" focusable="false">' +
             '<path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg></span>' +
             '<span class="scrim-sr">Show full ' + (box.dataset.scrimLabel || "content") + "</span>";
         trigger.addEventListener("click", function () {
