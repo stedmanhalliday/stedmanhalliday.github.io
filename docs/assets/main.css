@@ -724,6 +724,10 @@ html.is-animating .transition-fade {
   top: 0;
 }
 
+.blog + .blog {
+  margin-top: 64px;
+}
+
 /**
  * Projects
  */
