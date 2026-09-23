@@ -120,45 +120,31 @@
         }
     }
 
-    /* Cursor trace: a thin hexagon that follows the pointer across the hero. */
+    /* Flock: small specks drift as a flock, ride the cursor's current,
+       and assemble into the monogram when the cursor rests. */
     .hero {
         position: relative;
-    }
-
-    .hero-trace-layer {
-        position: absolute;
-        inset: 0;
         overflow: hidden;
-        pointer-events: none;
     }
 
-    .hero-trace {
+    /* Canvas ignores inset for sizing, so size it explicitly; copy stays above it. */
+    .hero-flock {
         position: absolute;
         top: 0;
         left: 0;
-        margin: -18px 0 0 -18px;
-        opacity: 0;
-        mix-blend-mode: multiply;
-        transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
     }
 
-    .hero-trace.is-on {
-        opacity: 0.8;
-    }
-
-    @media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
-        .hero-trace-layer {
-            display: none;
-        }
+    .hero .wrapper {
+        position: relative;
+        z-index: 1;
     }
 </style>
 <section class="hero">
-    <div class="hero-trace-layer" aria-hidden="true">
-        <svg class="hero-trace" viewBox="0 0 24 24" width="36" height="36" focusable="false">
-            <polygon points="12,1 21.5,6.5 21.5,17.5 12,23 2.5,17.5 2.5,6.5" fill="none" stroke="#61B3AF"
-                stroke-width="1" vector-effect="non-scaling-stroke" />
-        </svg>
-    </div>
+    <canvas class="hero-flock" aria-hidden="true"></canvas>
     <div class="wrapper">
         <div class="copy">
             {% include avatar.html %}
@@ -211,80 +197,214 @@
 <script>
     (function () {
         var hero = document.querySelector(".hero");
-        var mark = hero && hero.querySelector(".hero-trace");
-        if (!mark) return;
-        var fine = window.matchMedia("(hover: hover) and (pointer: fine)");
-        var still = window.matchMedia("(prefers-reduced-motion: reduce)");
-        var TAU = 90;      // ms: lag time constant for the exponential follow
-        var MAX_TILT = 10; // deg: tilt ceiling on fast horizontal moves
-        var px = 0, py = 0, x = 0, y = 0, tilt = 0, raf = 0, last = 0;
-        var inside = false, onscreen = true;
+        var canvas = hero && hero.querySelector(".hero-flock");
+        var ctx = canvas && canvas.getContext("2d");
+        if (!ctx) return;
 
-        function hide() { inside = false; mark.classList.remove("is-on"); }
-        function stop() { cancelAnimationFrame(raf); raf = 0; }
-        function teardown() {
-            stop();
-            io.disconnect();
-            window.removeEventListener("scroll", onScroll);
-            document.removeEventListener("visibilitychange", onVis);
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+        var INK = "rgba(17, 20, 24, 0.5)";
+        var TEAL = "rgba(97, 179, 175, 0.8)";
+        var REST_MS = 450;   // cursor stillness before the specks form the monogram
+        var CURRENT_R = 160; // px: how far the cursor's current reaches
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+        var W = 0, H = 0, parts = [], formed = false, raf = 0, last = 0, onscreen = true;
+        var mouse = { x: 0, y: 0, vx: 0, vy: 0, t: 0, inside: false, moved: false };
+
+        function size() {
+            var r = hero.getBoundingClientRect();
+            W = r.width;
+            H = r.height;
+            canvas.width = Math.round(W * dpr);
+            canvas.height = Math.round(H * dpr);
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         }
+
+        function seed() {
+            var n = Math.max(50, Math.min(fine ? 170 : 70, Math.round(W * H / 7000)));
+            parts = [];
+            for (var i = 0; i < n; i++) {
+                var a = Math.random() * Math.PI * 2, sp = 0.2 + Math.random() * 0.4;
+                parts.push({
+                    x: Math.random() * W, y: Math.random() * H,
+                    vx: Math.cos(a) * sp, vy: Math.sin(a) * sp,
+                    teal: Math.random() < 0.25, s: Math.random() < 0.2 ? 2.6 : 1.8,
+                    tx: 0, ty: 0, target: false
+                });
+            }
+        }
+
+        // Points along the outlines of the monogram's four tiles: a square split into
+        // quadrants with a gap, turned 45 degrees, centered on (cx, cy).
+        function monogram(cx, cy, n) {
+            var A = 46, G = 5, side = A - G / 2, per = side * 4, pts = [];
+            var tiles = [[G / 2, G / 2], [-A, G / 2], [-A, -A], [G / 2, -A]];
+            for (var i = 0; i < n; i++) {
+                var d = (i / n) * per * 4, tile = tiles[Math.floor(d / per)], e = d % per;
+                var edge = Math.floor(e / side), f = (e % side) / side, u, v;
+                if (edge === 0) { u = f * side; v = 0; }
+                else if (edge === 1) { u = side; v = f * side; }
+                else if (edge === 2) { u = side - f * side; v = side; }
+                else { u = 0; v = side - f * side; }
+                u += tile[0]; v += tile[1];
+                pts.push({ x: cx + (u - v) / Math.SQRT2, y: cy + (u + v) / Math.SQRT2 });
+            }
+            return pts;
+        }
+
+        function form() {
+            formed = true;
+            var n = Math.floor(parts.length * 0.8);
+            var pts = monogram(mouse.x, mouse.y, n);
+            // Pair specks and points by angle around the cursor so paths rarely cross.
+            var angle = function (o) { return Math.atan2(o.y - mouse.y, o.x - mouse.x); };
+            var byAngle = parts.slice().sort(function (p, q) {
+                return Math.hypot(p.x - mouse.x, p.y - mouse.y) - Math.hypot(q.x - mouse.x, q.y - mouse.y);
+            }).slice(0, n).sort(function (p, q) { return angle(p) - angle(q); });
+            pts.sort(function (p, q) { return angle(p) - angle(q); });
+            byAngle.forEach(function (p, i) { p.tx = pts[i].x; p.ty = pts[i].y; p.target = true; });
+        }
+
+        function release() {
+            formed = false;
+            parts.forEach(function (p) {
+                if (!p.target) return;
+                p.target = false;
+                var dx = p.x - mouse.x, dy = p.y - mouse.y, d = Math.hypot(dx, dy) || 1;
+                p.vx += (dx / d) * (0.8 + Math.random());
+                p.vy += (dy / d) * (0.8 + Math.random());
+            });
+        }
+
+        function step(k, now) {
+            if (mouse.inside && !formed && now - mouse.t > REST_MS) form();
+            if (formed && mouse.moved) release();
+            mouse.moved = false;
+            var stirring = mouse.inside && now - mouse.t < 200;
+
+            for (var i = 0; i < parts.length; i++) {
+                var p = parts[i], ax = 0, ay = 0;
+                if (p.target) {
+                    // Spring toward the target; damping scaled to frame time so it settles in ~1s.
+                    var damp = Math.pow(0.78, k);
+                    ax = (p.tx - p.x) * 0.035;
+                    ay = (p.ty - p.y) * 0.035;
+                    p.vx = (p.vx + ax * k) * damp;
+                    p.vy = (p.vy + ay * k) * damp;
+                } else {
+                    // Boids: separation, alignment, cohesion with nearby free specks.
+                    var sx = 0, sy = 0, avx = 0, avy = 0, cx = 0, cy = 0, n = 0;
+                    for (var j = 0; j < parts.length; j++) {
+                        var q = parts[j];
+                        if (q === p || q.target) continue;
+                        var dx = q.x - p.x, dy = q.y - p.y, d2 = dx * dx + dy * dy;
+                        if (d2 > 1600) continue;
+                        n++;
+                        avx += q.vx; avy += q.vy; cx += dx; cy += dy;
+                        if (d2 < 196) { sx -= dx; sy -= dy; }
+                    }
+                    if (n) {
+                        ax += sx * 0.05 + (avx / n - p.vx) * 0.03 + (cx / n) * 0.0008;
+                        ay += sy * 0.05 + (avy / n - p.vy) * 0.03 + (cy / n) * 0.0008;
+                    }
+                    ax += (Math.random() - 0.5) * 0.04;
+                    ay += (Math.random() - 0.5) * 0.04;
+                    if (stirring) {
+                        var mx = p.x - mouse.x, my = p.y - mouse.y, md = Math.hypot(mx, my);
+                        if (md < CURRENT_R) {
+                            var w = 1 - md / CURRENT_R;
+                            ax += mouse.vx * 0.03 * w;
+                            ay += mouse.vy * 0.03 * w;
+                        }
+                    }
+                    p.vx = (p.vx + ax * k) * 0.99;
+                    p.vy = (p.vy + ay * k) * 0.99;
+                    var sp = Math.hypot(p.vx, p.vy), max = stirring ? 2.4 : 0.9;
+                    if (sp > max) { p.vx *= max / sp; p.vy *= max / sp; }
+                    else if (sp < 0.15) { p.vx *= 0.15 / (sp || 1); p.vy *= 0.15 / (sp || 1); }
+                }
+                p.x += p.vx * k;
+                p.y += p.vy * k;
+                if (!p.target) {
+                    if (p.x < -10) p.x = W + 10; else if (p.x > W + 10) p.x = -10;
+                    if (p.y < -10) p.y = H + 10; else if (p.y > H + 10) p.y = -10;
+                }
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, W, H);
+            [false, true].forEach(function (teal) {
+                ctx.fillStyle = teal ? TEAL : INK;
+                for (var i = 0; i < parts.length; i++) {
+                    var p = parts[i];
+                    if (p.teal === teal) ctx.fillRect(p.x - p.s / 2, p.y - p.s / 2, p.s, p.s);
+                }
+            });
+        }
+
+        size();
+        seed();
+        draw();
+        if (reduce) return; // a static dusting, no motion
 
         function frame(now) {
             raf = 0;
             if (!hero.isConnected) return teardown();
-            var dt = Math.min(now - last, 64) || 16;
+            var k = Math.min((now - last) / 16.67, 3) || 1;
             last = now;
-            var k = 1 - Math.exp(-dt / TAU); // frame-rate independent easing
-            var r = hero.getBoundingClientRect();
-            var dx = px - r.left - x, dy = py - r.top - y;
-            x += dx * k;
-            y += dy * k;
-            var aim = Math.max(-MAX_TILT, Math.min(MAX_TILT, (dx * k / dt) * 8));
-            tilt += (aim - tilt) * k;
-            mark.style.transform = "translate3d(" + x.toFixed(1) + "px," + y.toFixed(1) + "px,0) rotate(" + tilt.toFixed(2) + "deg)";
-            // Idle means no frames: stop once the mark settles on the pointer.
-            if (Math.abs(dx) + Math.abs(dy) > 0.3 || Math.abs(tilt) > 0.05) raf = requestAnimationFrame(frame);
+            step(k, now);
+            draw();
+            kick();
         }
-
         function kick() {
-            if (raf || !onscreen || document.hidden) return;
-            last = performance.now();
-            raf = requestAnimationFrame(frame);
+            if (!raf && onscreen && !document.hidden) {
+                if (!last) last = performance.now();
+                raf = requestAnimationFrame(frame);
+            }
         }
+        function stop() { cancelAnimationFrame(raf); raf = 0; last = 0; }
 
         hero.addEventListener("pointermove", function (e) {
-            if (e.pointerType !== "mouse" || !fine.matches || still.matches) return hide();
-            px = e.clientX;
-            py = e.clientY;
-            if (!inside) {
-                // Snap on entry so the mark never flies in from a corner.
-                var r = hero.getBoundingClientRect();
-                x = px - r.left;
-                y = py - r.top;
-                tilt = 0;
-                inside = true;
-                mark.classList.add("is-on");
+            if (e.pointerType !== "mouse" || !fine) return;
+            var r = hero.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+            var now = performance.now(), dt = Math.max(now - mouse.t, 8);
+            if (mouse.inside) {
+                mouse.vx = mouse.vx * 0.6 + ((x - mouse.x) / dt) * 16 * 0.4;
+                mouse.vy = mouse.vy * 0.6 + ((y - mouse.y) / dt) * 16 * 0.4;
             }
-            kick();
+            mouse.x = x; mouse.y = y; mouse.t = now; mouse.inside = true; mouse.moved = true;
         });
-        hero.addEventListener("pointerleave", hide);
+        hero.addEventListener("pointerleave", function () {
+            mouse.inside = false;
+            if (formed) release();
+        });
 
-        // A still mouse over a scrolling page: keep the mark under the cursor.
-        function onScroll() {
-            if (!hero.isConnected) return teardown();
-            if (inside) kick();
-        }
         function onVis() {
             if (!hero.isConnected) return teardown();
-            if (document.hidden) { stop(); hide(); }
+            if (document.hidden) stop(); else kick();
         }
         var io = new IntersectionObserver(function (entries) {
             if (!hero.isConnected) return teardown();
             onscreen = entries[0].isIntersecting;
-            if (!onscreen) { stop(); hide(); }
+            if (onscreen) kick(); else stop();
         });
+        var ro = new ResizeObserver(function () {
+            if (!hero.isConnected) return teardown();
+            var oldW = W;
+            size();
+            if (Math.abs(W - oldW) > 80) seed();
+            draw();
+        });
+        function teardown() {
+            stop();
+            io.disconnect();
+            ro.disconnect();
+            document.removeEventListener("visibilitychange", onVis);
+        }
         io.observe(hero);
-        window.addEventListener("scroll", onScroll, { passive: true });
+        ro.observe(hero);
         document.addEventListener("visibilitychange", onVis);
+        kick();
     })();
 </script>
