@@ -3,6 +3,12 @@ layout: page
 title: About Stedman Halliday
 permalink: /about/
 ---
+<style type="text/css">
+    /* About rhythm: tight within a section, generous between sections. */
+    .post-header { margin-bottom: 48px; }
+    #experience { margin-top: clamp(56px, 7vw, 88px); margin-bottom: 32px; }
+    .doc-card-wrap { margin-top: 64px; }
+</style>
 <div class="scrim-clip" id="about-bio" data-scrim-label="bio" style="--scrim-clip: 13rem;" markdown="1">
 
 Stedman Halliday is a cross-functional product and design leader based in San Francisco. With over 15 years of experience across startups, creative agencies, and large tech orgs, he brings a versatile skill set that spans design, software development, and strategy to shaping products, brands, and teams.
