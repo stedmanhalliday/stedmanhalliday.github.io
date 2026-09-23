@@ -120,8 +120,8 @@ Night cream offers another level progression for a more complete skincare routin
 
 **Retinol night cream**
 
-- [Olay Retinol24 + Peptide](https://www.olay.com/regenerist-retinol-24-night-facial-moisturizer-fragrance-free)
-- [Olay Retinol24 MAX](https://www.olay.com/regenerist-retinol-24-max-night-face-moisturizer) (stronger)
+- [Olay Retinol24 + Peptide](https://www.olay.com/products/olay-retinol24-night-moisturizer)
+- [Olay Retinol24 MAX](https://www.olay.com/products/olay-retinol-24-max-night-moisturizer) (stronger)
 
 **Derma roller (optional)**  
 Microneedling assists the skin's absorption of topical products, stimulates collagen production, and can improve skin texture by reducing the prominence of scars, wrinkles, fine lines, and stretch marks.

@@ -18,7 +18,7 @@ I'm a technical generalist based in San Francisco with over 15 years of experien
 <figure>
     <div class="grid col2">
         <img style="grid-column: span 2" alt="Seventh Heaven brand" src="/assets/img/2019-04-09-seventh-heaven.png">
-        <img style="grid-column: span 2" alt="Firmé brand" src="/assets/img/2019-02-13-firme-brand.png">
+        <img style="grid-column: span 2" alt="Firmé brand" src="/assets/img/2019-02-13-firme-brand.webp">
         <img style="grid-column: span 2" alt="Firmé web archive" src="/assets/img/2019-02-13-firme-web.png">
         <video class="lazy" autoplay playsinline loop muted data-src="/assets/video/2019-02-13-firme-archive.mp4"></video>
         <video class="lazy" controls autoplay playsinline loop muted data-src="/assets/video/2019-02-13-firme-welcome.mp4"></video>
