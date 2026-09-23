@@ -1,24 +1,28 @@
-# Career timeline (homepage). One entry per year; each item is one line.
-# Optional `project:` links the line to the _projects page with that title.
+# Career timeline (homepage). One entry per year. The FIRST item is the
+# year's lead line (always visible); the rest open on click/tap.
+# Optional `project:` links a line to the _projects page with that title.
+# Optional `era:` starts a new chapter at that year.
 - year: 2010
+  era: First clients
   items:
-    - text: Took AP Computer Science in high school.
     - text: Ran a web dev consultancy for small businesses.
     - text: Published iOS games under Omicron Apps.
+    - text: Took AP Computer Science in high school.
 - year: 2011
   items:
     - text: Studied at UCLA's Design Media Arts pre-college program.
 - year: 2012
+  era: Art school & edtech
   items:
     - text: Enrolled in the BFA Graphic Design program at CalArts.
 - year: 2013
   items:
-    - text: Grew a fine-art goods business at Musichead Gallery in Hollywood.
     - text: Managed Lightspace Studio in Culver City for events and food shoots (Eating Well, Wolfgang Puck).
+    - text: Grew a fine-art goods business at Musichead Gallery in Hollywood.
 - year: 2014
   items:
-    - text: "Joined CalArts' first Digital Arts minor class: film, audio, projection, fabrication."
     - text: Joined the Kadenze launch team to widen access to creative tech education.
+    - text: "Joined CalArts' first Digital Arts minor class: film, audio, projection, fabrication."
 - year: 2015
   items:
     - text: Launched Kadenze and Kannu with ~50 institutional partners, incl. Stanford, CalArts, and Ableton.
@@ -27,15 +31,17 @@
     - text: "Graduated from CalArts: BFA Graphic Design, minor in Digital Arts."
     - text: Consulted on product strategy and design for early-stage startups out of Stanford.
 - year: 2017
+  era: Access & crypto
   items:
     - text: Piloted a programming curriculum and learning tools for blind students in Thailand, later adapted into the nation's first university programming course for blind adults.
 - year: 2018
   items:
-    - text: Built ContracTx, a visual explorer for Ethereum smart contracts.
-      project: ContracTx
     - text: "Led brand, web, and launch strategy for Marble: the first flash loan protocol."
       project: Marble Protocol
+    - text: Built ContracTx, a visual explorer for Ethereum smart contracts.
+      project: ContracTx
 - year: 2019
+  era: Agency & big tech
   items:
     - text: Started agency work at Wunderman Thompson (WPP).
 - year: 2020
@@ -57,6 +63,7 @@
   items:
     - text: Trained as a software engineer at Amazon Technical Academy while relocating to SF to build new things.
 - year: 2024
+  era: Operator & AI
   items:
     - text: Grew Eat Blueprint from launch to acquisition by Bryan Johnson.
       project: Eat Blueprint

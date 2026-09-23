@@ -20,12 +20,86 @@
     }
 
     .timeline .timeline-entry {
+        position: relative;
         margin: 0;
         display: grid;
         grid-template-columns: 5rem 1fr;
-        grid-gap: 1.5rem;
-        padding: 0.6rem 0;
+        grid-column-gap: 1.5rem;
+        padding: 0.45rem 0;
         transition: color 0.25s;
+    }
+
+    .timeline .timeline-lines p {
+        margin: 0;
+    }
+
+    .timeline summary {
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .timeline summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .timeline summary:focus-visible {
+        outline: 2px solid var(--tl-accent);
+        outline-offset: 2px;
+    }
+
+    .timeline-more {
+        display: inline-block;
+        margin-left: 0.35rem;
+        padding: 0 0.35rem;
+        border: 1px solid var(--tl-rule);
+        border-radius: 4px;
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+        color: var(--tl-dim);
+        vertical-align: 0.1rem;
+    }
+
+    .timeline details[open] .timeline-more {
+        display: none;
+    }
+
+    .timeline .timeline-lines ul {
+        margin-top: 0.25rem;
+    }
+
+    .timeline-sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    .timeline .timeline-era {
+        grid-column: 1 / -1;
+        margin: 1rem 0 0.35rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--tl-accent);
+    }
+
+    .timeline .timeline-entry:first-child .timeline-era {
+        margin-top: 0;
+    }
+
+    /* Wide screens: chapters hang in the left margin, costing no height. */
+    @media screen and (min-width: 1200px) {
+        .timeline .timeline-era {
+            position: absolute;
+            top: 0.45rem;
+            right: 100%;
+            margin: 0 2rem 0 0;
+            line-height: 1.5rem;
+            white-space: nowrap;
+        }
     }
 
     .timeline h3.timeline-year-label {
@@ -114,7 +188,7 @@
 
         .timeline .timeline-entry {
             display: block;
-            padding: 0.75rem 0;
+            padding: 0.6rem 0;
         }
 
         .timeline h3.timeline-year-label {
@@ -141,14 +215,25 @@
     <ol class="timeline-body">
         {% for entry in site.data.timeline %}
         <li class="timeline-entry" id="tl-{{ entry.year }}">
+            {% if entry.era %}<p class="timeline-era">{{ entry.era }}</p>{% endif %}
             <h3 class="timeline-year-label">{{ entry.year }}</h3>
-            <ul>
-                {% for item in entry.items %}
-                {% if item.project %}{% assign project = site.projects | where: "title", item.project | first %}{% endif %}
-                <li>{% if project %}<a href="{{ project.url | relative_url }}">{{ item.text | escape }}</a>{% else %}{{ item.text | escape }}{% endif %}</li>
-                {% assign project = nil %}
-                {% endfor %}
-            </ul>
+            <div class="timeline-lines">
+                {% assign lead = entry.items | first %}
+                {% capture lead_html %}{% if lead.project %}{% assign project = site.projects | where: "title", lead.project | first %}<a href="{{ project.url | relative_url }}">{{ lead.text | escape }}</a>{% else %}{{ lead.text | escape }}{% endif %}{% endcapture %}
+                {% if entry.items.size > 1 %}
+                {% assign more = entry.items.size | minus: 1 %}
+                <details>
+                    <summary>{{ lead_html }} <span class="timeline-more" aria-hidden="true">+{{ more }}</span><span class="timeline-sr">, {{ more }} more</span></summary>
+                    <ul>
+                        {% for item in entry.items offset: 1 %}
+                        <li>{% if item.project %}{% assign project = site.projects | where: "title", item.project | first %}<a href="{{ project.url | relative_url }}">{{ item.text | escape }}</a>{% else %}{{ item.text | escape }}{% endif %}</li>
+                        {% endfor %}
+                    </ul>
+                </details>
+                {% else %}
+                <p>{{ lead_html }}</p>
+                {% endif %}
+            </div>
         </li>
         {% endfor %}
     </ol>
