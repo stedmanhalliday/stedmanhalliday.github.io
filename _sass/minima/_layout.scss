@@ -435,6 +435,39 @@ html.is-animating .transition-fade {
     }
 }
 
+// Section-ending calls to action (All work, See more, All posts): outlined
+// buttons so they read above body links. Arrows stay on page-changing links only.
+.section-cta {
+    display: inline-flex;
+    align-items: center;
+    margin-top: $spacing-unit * 0.5;
+    padding: 0.6rem 1.1rem;
+    border: 1px solid $accent-color;
+    border-radius: $radius-sm;
+    background: transparent;
+    color: $accent-color;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color $duration-lg, color $duration-lg;
+
+    &:hover {
+        background-color: $accent-color;
+        color: $background-color;
+        text-decoration: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $accent-color;
+        outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+}
+
 // Homepage stacks several list sections; give each its own breathing room.
 .blog + .blog {
     margin-top: $spacing-unit * 2;
