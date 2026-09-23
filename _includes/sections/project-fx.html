@@ -1,6 +1,6 @@
 <style type="text/css">
     /* Window light: a soft accent light follows the pointer across each project row,
-       a highlight tracks it on the thumbnail, and the image drifts with scroll. */
+       a highlight tracks it on the thumbnail, and the thumbnail tilts toward the pointer. */
     .post-list.projects .project {
         position: relative;
         isolation: isolate;
@@ -74,25 +74,16 @@
         outline-offset: 4px;
     }
 
-    @keyframes project-drift {
-        from { translate: 0 -1.2%; }
-        to { translate: 0 1.2%; }
+    /* Hover tilt: the thumbnail tile turns toward the pointer while it's over the row,
+       and lies flat, framed normally, the rest of the time. */
+    .post-list.projects.fx-pointer .thumbnail {
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    @media (prefers-reduced-motion: no-preference) {
-        .post-list.projects.fx-pointer .thumbnail img {
-            scale: 1.03;
-            transform: translate(calc((var(--tx, 0.5) - 0.5) * -6px), calc((var(--ty, 0.5) - 0.5) * -6px));
-            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        @supports (animation-timeline: view()) {
-            .post-list.projects .thumbnail img {
-                scale: 1.03;
-                animation: project-drift linear both;
-                animation-timeline: view();
-            }
-        }
+    .post-list.projects.fx-pointer .project.is-lit .thumbnail {
+        transform: perspective(700px)
+            rotateX(calc((0.5 - var(--ty, 0.5)) * 10deg))
+            rotateY(calc((var(--tx, 0.5) - 0.5) * 12deg));
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -115,7 +106,7 @@
         if (!lists.length) return;
         lists.forEach(function (list) { list.setAttribute("data-fx", ""); });
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-        // Touch and coarse pointers get the CSS scroll drift only.
+        // Touch and coarse pointers get no pointer effects.
         if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
 
         lists.forEach(function (list) {
@@ -153,7 +144,7 @@
                 card.addEventListener("pointerleave", function () {
                     if (raf) { window.cancelAnimationFrame(raf); raf = 0; }
                     card.classList.remove("is-lit");
-                    card.style.removeProperty("--tx"); // image eases back to center
+                    card.style.removeProperty("--tx"); // tile eases back to flat
                     card.style.removeProperty("--ty");
                 });
             });
