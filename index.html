@@ -3,6 +3,35 @@ layout: default
 hero: intro
 ---
 <div class="blog">
+<h2 class="post-list-heading">Selected work</h2>
+<div class="divider-thin mt-100 mb-200"></div>
+<ul class="post-list projects">
+    {% assign featured = "Amazon Alexa|Eat Blueprint|Acura Vehicle Features" | split: "|" %}
+    {% for featured_title in featured %}
+    {% assign post = site.projects | where: "title", featured_title | first %}
+    <li class="project grid col2">
+        <div class="thumbnail">
+            <a href="{{ post.url | relative_url }}"><img src="{{ post.image }}" alt="{{ post.title }}" /></a>
+        </div>
+        <div>
+            <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                </a>
+            </h3>
+            <div class="post-description">{{ post.description | markdownify }}</div>
+            <ul class="post-tags">
+                {% for category in post.categories %}
+                <li class="tag small"><a href="/work/category/{{ category | slugify }}">{{ category }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+<p><a class="next-link" href="/work/">All work</a></p>
+</div>
+<div class="blog">
 <h2 class="post-list-heading">{{ page.list_title | default: "Recent blog posts" }}</h2>
 <div class="divider-thin mt-100 mb-200"></div>
 <ul class="post-list">
