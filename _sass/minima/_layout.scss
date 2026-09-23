@@ -484,12 +484,37 @@ html.is-animating .transition-fade {
     padding: 2 * $spacing-unit;
     padding-bottom: 0;
 
-    .grid {
-        margin-top: $spacing-unit;
+    @media screen and (max-width: $on-palm) {
+        padding: $spacing-unit $spacing-unit * 0.5 0;
+    }
+
+    // Featured project cards: image on top, title and description below.
+    // Extra specificity beats the row layout in `.post-list.projects .project`.
+    .post-list.featured-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin: $spacing-unit 0 0;
+
+        @media screen and (max-width: $on-palm) {
+            grid-template-columns: minmax(0, 1fr);
+        }
 
         .project {
-            aspect-ratio: 16/9;
-            background-color: #888;
+            margin: 0;
+        }
+
+        .project .thumbnail img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .project h3 {
+            margin: $spacing-unit * 0.5 0 $spacing-unit * 0.25;
+        }
+
+        .project .post-description p {
+            margin: 0;
         }
     }
 }
