@@ -119,8 +119,46 @@
             display: block;
         }
     }
+
+    /* Cursor trace: a thin hexagon that follows the pointer across the hero. */
+    .hero {
+        position: relative;
+    }
+
+    .hero-trace-layer {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .hero-trace {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: -18px 0 0 -18px;
+        opacity: 0;
+        mix-blend-mode: multiply;
+        transition: opacity 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .hero-trace.is-on {
+        opacity: 0.8;
+    }
+
+    @media (prefers-reduced-motion: reduce), (hover: none), (pointer: coarse) {
+        .hero-trace-layer {
+            display: none;
+        }
+    }
 </style>
 <section class="hero">
+    <div class="hero-trace-layer" aria-hidden="true">
+        <svg class="hero-trace" viewBox="0 0 24 24" width="36" height="36" focusable="false">
+            <polygon points="12,1 21.5,6.5 21.5,17.5 12,23 2.5,17.5 2.5,6.5" fill="none" stroke="#61B3AF"
+                stroke-width="1" vector-effect="non-scaling-stroke" />
+        </svg>
+    </div>
     <div class="wrapper">
         <div class="copy">
             {% include avatar.html %}
@@ -169,4 +207,84 @@
             new Typed("#title", heroIntroOptions);
         }
     });
+</script>
+<script>
+    (function () {
+        var hero = document.querySelector(".hero");
+        var mark = hero && hero.querySelector(".hero-trace");
+        if (!mark) return;
+        var fine = window.matchMedia("(hover: hover) and (pointer: fine)");
+        var still = window.matchMedia("(prefers-reduced-motion: reduce)");
+        var TAU = 90;      // ms: lag time constant for the exponential follow
+        var MAX_TILT = 10; // deg: tilt ceiling on fast horizontal moves
+        var px = 0, py = 0, x = 0, y = 0, tilt = 0, raf = 0, last = 0;
+        var inside = false, onscreen = true;
+
+        function hide() { inside = false; mark.classList.remove("is-on"); }
+        function stop() { cancelAnimationFrame(raf); raf = 0; }
+        function teardown() {
+            stop();
+            io.disconnect();
+            window.removeEventListener("scroll", onScroll);
+            document.removeEventListener("visibilitychange", onVis);
+        }
+
+        function frame(now) {
+            raf = 0;
+            if (!hero.isConnected) return teardown();
+            var dt = Math.min(now - last, 64) || 16;
+            last = now;
+            var k = 1 - Math.exp(-dt / TAU); // frame-rate independent easing
+            var r = hero.getBoundingClientRect();
+            var dx = px - r.left - x, dy = py - r.top - y;
+            x += dx * k;
+            y += dy * k;
+            var aim = Math.max(-MAX_TILT, Math.min(MAX_TILT, (dx * k / dt) * 8));
+            tilt += (aim - tilt) * k;
+            mark.style.transform = "translate3d(" + x.toFixed(1) + "px," + y.toFixed(1) + "px,0) rotate(" + tilt.toFixed(2) + "deg)";
+            // Idle means no frames: stop once the mark settles on the pointer.
+            if (Math.abs(dx) + Math.abs(dy) > 0.3 || Math.abs(tilt) > 0.05) raf = requestAnimationFrame(frame);
+        }
+
+        function kick() {
+            if (raf || !onscreen || document.hidden) return;
+            last = performance.now();
+            raf = requestAnimationFrame(frame);
+        }
+
+        hero.addEventListener("pointermove", function (e) {
+            if (e.pointerType !== "mouse" || !fine.matches || still.matches) return hide();
+            px = e.clientX;
+            py = e.clientY;
+            if (!inside) {
+                // Snap on entry so the mark never flies in from a corner.
+                var r = hero.getBoundingClientRect();
+                x = px - r.left;
+                y = py - r.top;
+                tilt = 0;
+                inside = true;
+                mark.classList.add("is-on");
+            }
+            kick();
+        });
+        hero.addEventListener("pointerleave", hide);
+
+        // A still mouse over a scrolling page: keep the mark under the cursor.
+        function onScroll() {
+            if (!hero.isConnected) return teardown();
+            if (inside) kick();
+        }
+        function onVis() {
+            if (!hero.isConnected) return teardown();
+            if (document.hidden) { stop(); hide(); }
+        }
+        var io = new IntersectionObserver(function (entries) {
+            if (!hero.isConnected) return teardown();
+            onscreen = entries[0].isIntersecting;
+            if (!onscreen) { stop(); hide(); }
+        });
+        io.observe(hero);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        document.addEventListener("visibilitychange", onVis);
+    })();
 </script>
