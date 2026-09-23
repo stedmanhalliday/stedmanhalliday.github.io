@@ -76,31 +76,6 @@
         white-space: nowrap;
     }
 
-    .timeline .timeline-era {
-        grid-column: 1 / -1;
-        margin: 1rem 0 0.35rem;
-        font-size: 0.75rem;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--tl-accent);
-    }
-
-    .timeline .timeline-entry:first-child .timeline-era {
-        margin-top: 0;
-    }
-
-    /* Wide screens: chapters hang in the left margin, costing no height. */
-    @media screen and (min-width: 1200px) {
-        .timeline .timeline-era {
-            position: absolute;
-            top: 0.45rem;
-            right: 100%;
-            margin: 0 2rem 0 0;
-            line-height: 1.5rem;
-            white-space: nowrap;
-        }
-    }
 
     .timeline h3.timeline-year-label {
         margin: 0;
@@ -133,20 +108,41 @@
         }
     }
 
-    .timeline.is-enhanced .timeline-entry {
+    /* Scroll focus dims the other years, except in the short collapsed preview. */
+    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry {
         color: var(--tl-dim);
     }
 
-    .timeline.is-enhanced .timeline-entry.is-active {
+    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry.is-active {
         color: var(--tl-text);
     }
 
-    .timeline.is-enhanced .timeline-entry.is-active .timeline-year-label {
+    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry.is-active .timeline-year-label {
         color: var(--tl-accent);
     }
 
-    .timeline.is-enhanced .timeline-entry:not(.is-active) a {
+    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry:not(.is-active) a {
         text-decoration-color: var(--tl-rule);
+    }
+
+    .timeline.is-collapsed .timeline-extra,
+    .timeline.is-collapsed .timeline-years {
+        display: none;
+    }
+
+    .timeline-toggle {
+        margin-top: 0.75rem;
+        padding: 0;
+        border: 0;
+        background: none;
+        font: inherit;
+        color: var(--tl-accent);
+        cursor: pointer;
+    }
+
+    .timeline-toggle:focus-visible {
+        outline: 2px solid var(--tl-accent);
+        outline-offset: 2px;
     }
 
     @media screen and (max-width: 600px) {
@@ -204,18 +200,18 @@
         }
     }
 </style>
+{% assign timeline = site.data.timeline | reverse %}
 <div class="timeline">
     <nav class="timeline-years" aria-label="Jump to year">
         <ol>
-            {% for entry in site.data.timeline %}
+            {% for entry in timeline %}
             <li><a href="#tl-{{ entry.year }}" data-no-swup>{{ entry.year }}</a></li>
             {% endfor %}
         </ol>
     </nav>
     <ol class="timeline-body">
-        {% for entry in site.data.timeline %}
-        <li class="timeline-entry" id="tl-{{ entry.year }}">
-            {% if entry.era %}<p class="timeline-era">{{ entry.era }}</p>{% endif %}
+        {% for entry in timeline %}
+        <li class="timeline-entry{% if include.limit and forloop.index > include.limit %} timeline-extra{% endif %}" id="tl-{{ entry.year }}">
             <h3 class="timeline-year-label">{{ entry.year }}</h3>
             <div class="timeline-lines">
                 {% assign lead = entry.items | first %}
@@ -237,6 +233,9 @@
         </li>
         {% endfor %}
     </ol>
+    {% if include.limit and timeline.size > include.limit %}
+    <button class="timeline-toggle next-link" type="button" aria-expanded="false" hidden>See all experience</button>
+    {% endif %}
 </div>
 <script>
     (function () {
@@ -286,6 +285,8 @@
             var line = window.innerHeight * 0.425;
             var index = 0;
             for (var i = 0; i < entries.length; i++) {
+                // Collapsed entries report a zero-size box; skip them.
+                if (!entries[i].getClientRects().length) continue;
                 if (entries[i].getBoundingClientRect().top <= line) index = i;
             }
             if (index !== current) activate(index);
@@ -307,6 +308,20 @@
                 unlockTimer = setTimeout(unlock, 1500);
             });
         });
+
+        // Preview mode: show the first few years, expand in place on request.
+        var toggle = root.querySelector(".timeline-toggle");
+        if (toggle) {
+            root.classList.add("is-collapsed");
+            toggle.hidden = false;
+            toggle.addEventListener("click", function () {
+                var collapsed = root.classList.toggle("is-collapsed");
+                toggle.setAttribute("aria-expanded", String(!collapsed));
+                toggle.textContent = collapsed ? "See all experience" : "Show less";
+                if (collapsed) toggle.scrollIntoView({ block: "nearest" });
+                update();
+            });
+        }
 
         root.classList.add("is-enhanced");
         update();

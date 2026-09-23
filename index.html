@@ -32,9 +32,9 @@ hero: intro
 <p><a class="next-link" href="/work/">All work</a></p>
 </div>
 <div class="blog">
-<h2 class="post-list-heading">Timeline</h2>
+<h2 class="post-list-heading">Experience</h2>
 <div class="divider-thin mt-100 mb-200"></div>
-{% include sections/timeline.html %}
+{% include sections/timeline.html limit=3 %}
 </div>
 <div class="blog">
 <h2 class="post-list-heading">{{ page.list_title | default: "Recent blog posts" }}</h2>
