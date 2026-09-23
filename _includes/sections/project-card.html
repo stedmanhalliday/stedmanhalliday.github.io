@@ -1,0 +1,19 @@
+{% assign card = include.project %}
+<li class="project grid col2">
+    <div class="thumbnail">
+        <a href="{{ card.url | relative_url }}"><img src="{{ card.image }}" alt="{{ card.title }}" /></a>
+    </div>
+    <div>
+        <h3>
+            <a class="post-link" href="{{ card.url | relative_url }}">
+                {{ card.title | escape }}
+            </a>
+        </h3>
+        <div class="post-description">{{ card.description | markdownify }}</div>
+        <ul class="post-tags">
+            {% for category in card.categories %}
+            <li class="tag small"><a href="/work/category/{{ category | slugify }}">{{ category }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</li>
