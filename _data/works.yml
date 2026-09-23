@@ -1,0 +1,6 @@
+# Featured work, shown on the homepage ("Selected work") and at the top of /work.
+# List project titles exactly as they appear in _projects/*.md, in display order.
+featured:
+  - Amazon Alexa
+  - Eat Blueprint
+  - Acura Vehicle Features
