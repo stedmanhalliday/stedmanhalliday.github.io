@@ -65,7 +65,7 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.6.1/index.js" integrity="sha512-yoAPBU4kXVHeCk1Ww6ePpdcKBX5la84YlkgPHRKKGayi42/9jpV5JJEVAbVnRFeG6g81WFnZU+FQ+vJqpW0aMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script defer src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script defer data-swup-ignore-script src="/assets/js/swup-init.js"></script>
+    <script defer data-swup-ignore-script src="/assets/js/swup-init.js?v=1790190405"></script>
 </head>
 
 <body>
@@ -385,7 +385,7 @@
             var heroIntroOptions = {
                 strings: [
                     "a&nbsp;developer.",
-                    "a&nbsp;tinkerer.",
+                    "a&nbsp;strategist.",
                     "a&nbsp;designer."
                 ],
                 typeSpeed: 32,
@@ -404,93 +404,9 @@
     <section class="page-content" aria-label="Content">
       <div class="wrapper">
         <div class="blog">
-<h2 class="post-list-heading">Selected work</h2>
-<div class="divider-thin mt-100 mb-200"></div>
-<ul class="post-list projects">
-    
-    
-    
-    <li class="project grid col2">
-        <div class="thumbnail">
-            <a href="/work/amazon-alexa"><img src="/assets/img/2022-08-01-xApp-dash-VUI.webp" alt="Amazon Alexa" loading="lazy"></a>
-        </div>
-        <div>
-            <h3>
-                <a class="post-link" href="/work/amazon-alexa">
-                    Amazon Alexa
-                </a>
-            </h3>
-            <div class="post-description">
-<p>Alexa Voice Services design lead for multimodal interfaces, third-party platforms, and design systems</p>
-</div>
-            <ul class="post-tags">
-                
-                <li class="tag small"><a href="/work/category/ux-ui">ux/ui</a></li>
-                
-                <li class="tag small"><a href="/work/category/dev">dev</a></li>
-                
-                <li class="tag small"><a href="/work/category/design-systems">design systems</a></li>
-                
-                <li class="tag small"><a href="/work/category/ai">ai</a></li>
-                
-            </ul>
-        </div>
-    </li>
-    
-    
-    <li class="project grid col2">
-        <div class="thumbnail">
-            <a href="/work/eat-blueprint"><img src="/assets/img/2024-01-24-Eat-%20Blueprint-logo.png" alt="Eat Blueprint" loading="lazy"></a>
-        </div>
-        <div>
-            <h3>
-                <a class="post-link" href="/work/eat-blueprint">
-                    Eat Blueprint
-                </a>
-            </h3>
-            <div class="post-description">
-<p>Fresh meal delivery service for longevity optimization<br>Acquired by Blueprint Bryan Johnson</p>
-</div>
-            <ul class="post-tags">
-                
-                <li class="tag small"><a href="/work/category/service-design">service design</a></li>
-                
-                <li class="tag small"><a href="/work/category/brand">brand</a></li>
-                
-                <li class="tag small"><a href="/work/category/health">health</a></li>
-                
-            </ul>
-        </div>
-    </li>
-    
-    
-    <li class="project grid col2">
-        <div class="thumbnail">
-            <a href="/work/acura-vehicle-features"><img src="/assets/img/2020-01-01-acura-thumbnail.webp" alt="Acura Vehicle Features" loading="lazy"></a>
-        </div>
-        <div>
-            <h3>
-                <a class="post-link" href="/work/acura-vehicle-features">
-                    Acura Vehicle Features
-                </a>
-            </h3>
-            <div class="post-description">
-<p>Acura vehicle features web experience</p>
-</div>
-            <ul class="post-tags">
-                
-                <li class="tag small"><a href="/work/category/ux-ui">ux/ui</a></li>
-                
-            </ul>
-        </div>
-    </li>
-    
-</ul>
-<p><a class="next-link" href="/work/">All work</a></p>
-</div>
-<div class="blog">
 <h2 class="post-list-heading">Experience</h2>
 <div class="divider-thin mt-100 mb-200"></div>
+<div class="scrim-clip" id="home-experience" data-scrim-label="experience" style="--scrim-clip: 15rem;">
 <style type="text/css">
     .timeline {
         --tl-dim: #7a8597;
@@ -602,41 +518,27 @@
     }
 
     /* Scroll focus dims the other years, except in the short collapsed preview. */
-    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry {
+    .timeline.is-enhanced:not(.timeline--preview) .timeline-entry {
         color: var(--tl-dim);
     }
 
-    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry.is-active {
+    .timeline.is-enhanced:not(.timeline--preview) .timeline-entry.is-active {
         color: var(--tl-text);
     }
 
-    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry.is-active .timeline-year-label {
+    .timeline.is-enhanced:not(.timeline--preview) .timeline-entry.is-active .timeline-year-label {
         color: var(--tl-accent);
     }
 
-    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry:not(.is-active) a {
+    .timeline.is-enhanced:not(.timeline--preview) .timeline-entry:not(.is-active) a {
         text-decoration-color: var(--tl-rule);
     }
 
-    .timeline.is-collapsed .timeline-extra,
-    .timeline.is-collapsed .timeline-years {
+    /* The homepage preview: no year strip, no dimming (a scrim clips it). */
+    .timeline--preview .timeline-years {
         display: none;
     }
 
-    .timeline-toggle {
-        margin-top: 0.75rem;
-        padding: 0;
-        border: 0;
-        background: none;
-        font: inherit;
-        color: var(--tl-accent);
-        cursor: pointer;
-    }
-
-    .timeline-toggle:focus-visible {
-        outline: 2px solid var(--tl-accent);
-        outline-offset: 2px;
-    }
 
     @media screen and (max-width: 600px) {
         .timeline-years {
@@ -694,7 +596,7 @@
     }
 </style>
 
-<div class="timeline">
+<div class="timeline timeline--preview">
     <nav class="timeline-years" aria-label="Jump to year">
         <ol>
             
@@ -742,7 +644,7 @@
                 
                 
                 
-                <p>Led tech systems for Frontier Tower as a director-level consultant.</p>
+                <p>Led tech systems for Frontier Tower as a director-level consultant</p>
                 
             </div>
         </li>
@@ -755,12 +657,12 @@
                 
                 
                 <details>
-                    <summary>Consulted on AI products: B2B sales agents (11x), a consumer companion (Auren), multi-agent orchestration (Random Labs). <span class="timeline-more" aria-hidden="true">+2</span><span class="timeline-sr">, 2 more</span></summary>
+                    <summary>Consulted on AI products: B2B sales agents (11x), a consumer companion (Auren), multi-agent orchestration (Random Labs) <span class="timeline-more" aria-hidden="true">+2</span><span class="timeline-sr">, 2 more</span></summary>
                     <ul>
                         
-                        <li>Consulted at Automattic on design and product leadership for the Beeper relaunch.</li>
+                        <li>Consulted at Automattic on design and product leadership for the Beeper relaunch</li>
                         
-                        <li>Operated the fitness center at Frontier Tower as an inaugural community leader.</li>
+                        <li>Operated the fitness center at Frontier Tower as an inaugural community leader</li>
                         
                     </ul>
                 </details>
@@ -776,10 +678,10 @@
                 
                 
                 <details>
-                    <summary><a href="/work/eat-blueprint">Grew Eat Blueprint from launch to acquisition by Bryan Johnson.</a> <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
+                    <summary><a href="/work/eat-blueprint">Grew Eat Blueprint from launch to acquisition by Bryan Johnson</a> <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
                     <ul>
                         
-                        <li>Led a product org building a telehealth MVP with Paragon, later Prana.</li>
+                        <li>Led a product org building a telehealth MVP with Paragon, later Prana</li>
                         
                     </ul>
                 </details>
@@ -787,18 +689,18 @@
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2023">
+        <li class="timeline-entry" id="tl-2023">
             <h3 class="timeline-year-label">2023</h3>
             <div class="timeline-lines">
                 
                 
                 
-                <p>Trained as a software engineer at Amazon Technical Academy while relocating to SF to build new things.</p>
+                <p>Deepened software engineering skills within Amazon Technical Academy while relocating to SF to build new things</p>
                 
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2022">
+        <li class="timeline-entry" id="tl-2022">
             <h3 class="timeline-year-label">2022</h3>
             <div class="timeline-lines">
                 
@@ -806,10 +708,10 @@
                 
                 
                 <details>
-                    <summary><a href="/work/amazon-alexa">Owned the Alexa Voice Services design system overhaul from research through implementation and adoption.</a> <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
+                    <summary><a href="/work/amazon-alexa">Owned the Alexa Voice Services design system overhaul from research through implementation and adoption</a> <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
                     <ul>
                         
-                        <li>Shipped a rebuilt Alexa TV app experience.</li>
+                        <li>Shipped a rebuilt Alexa TV app experience</li>
                         
                     </ul>
                 </details>
@@ -817,18 +719,18 @@
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2021">
+        <li class="timeline-entry" id="tl-2021">
             <h3 class="timeline-year-label">2021</h3>
             <div class="timeline-lines">
                 
                 
                 
-                <p><a href="/work/amazon-alexa">Joined Amazon Alexa Voice Services to lead design for multimodal interfaces and third-party platforms.</a></p>
+                <p><a href="/work/amazon-alexa">Joined Amazon Alexa to lead design for multimodal interfaces and third-party platforms</a></p>
                 
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2020">
+        <li class="timeline-entry" id="tl-2020">
             <h3 class="timeline-year-label">2020</h3>
             <div class="timeline-lines">
                 
@@ -836,10 +738,10 @@
                 
                 
                 <details>
-                    <summary><a href="/work/microsoft-education-blog">Microsoft: Windows 11 launch, Surface commercial, COVID-era education strategy.</a> <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
+                    <summary><a href="/work/microsoft-education-blog">Microsoft: Windows 11 launch, Surface commercial, COVID-era education strategy</a> <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
                     <ul>
                         
-                        <li><a href="/work/acura-vehicle-features">Acura: pivot to all-online vehicle sales.</a></li>
+                        <li><a href="/work/acura-vehicle-features">Acura: pivot to all-online vehicle sales</a></li>
                         
                     </ul>
                 </details>
@@ -847,18 +749,18 @@
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2019">
+        <li class="timeline-entry" id="tl-2019">
             <h3 class="timeline-year-label">2019</h3>
             <div class="timeline-lines">
                 
                 
                 
-                <p>Started agency work at Wunderman Thompson (WPP).</p>
+                <p>Started agency work at Wunderman Thompson (WPP)</p>
                 
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2018">
+        <li class="timeline-entry" id="tl-2018">
             <h3 class="timeline-year-label">2018</h3>
             <div class="timeline-lines">
                 
@@ -866,10 +768,10 @@
                 
                 
                 <details>
-                    <summary><a href="/work/marble-protocol">Led brand, web, and launch strategy for Marble: the first flash loan protocol.</a> <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
+                    <summary><a href="/work/marble-protocol">Led brand, web, and launch strategy for Marble: the first flash loan protocol</a> <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
                     <ul>
                         
-                        <li><a href="/work/contractx">Built ContracTx, a visual explorer for Ethereum smart contracts.</a></li>
+                        <li><a href="/work/contractx">Built ContracTx, a visual explorer for Ethereum smart contracts</a></li>
                         
                     </ul>
                 </details>
@@ -877,18 +779,18 @@
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2017">
+        <li class="timeline-entry" id="tl-2017">
             <h3 class="timeline-year-label">2017</h3>
             <div class="timeline-lines">
                 
                 
                 
-                <p>Piloted a programming curriculum and learning tools for blind students in Thailand, later adapted into the nation's first university programming course for blind adults.</p>
+                <p>Piloted a programming curriculum and learning tools for blind students in Thailand, later adapted into the nation's first university programming course for blind adults</p>
                 
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2016">
+        <li class="timeline-entry" id="tl-2016">
             <h3 class="timeline-year-label">2016</h3>
             <div class="timeline-lines">
                 
@@ -896,10 +798,10 @@
                 
                 
                 <details>
-                    <summary>Graduated from CalArts: BFA Graphic Design, minor in Digital Arts. <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
+                    <summary>Graduated from CalArts: BFA Graphic Design, minor in Digital Arts <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
                     <ul>
                         
-                        <li>Consulted on product strategy and design for early-stage startups out of Stanford.</li>
+                        <li>Consulted on product strategy and design for early-stage startups out of Stanford</li>
                         
                     </ul>
                 </details>
@@ -907,18 +809,18 @@
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2015">
+        <li class="timeline-entry" id="tl-2015">
             <h3 class="timeline-year-label">2015</h3>
             <div class="timeline-lines">
                 
                 
                 
-                <p>Launched Kadenze and Kannu with ~50 institutional partners, incl. Stanford, CalArts, and Ableton.</p>
+                <p>Launched Kadenze and Kannu with ~50 institutional partners, incl. Stanford, CalArts, and Ableton</p>
                 
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2014">
+        <li class="timeline-entry" id="tl-2014">
             <h3 class="timeline-year-label">2014</h3>
             <div class="timeline-lines">
                 
@@ -926,10 +828,10 @@
                 
                 
                 <details>
-                    <summary>Joined the Kadenze launch team to widen access to creative tech education. <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
+                    <summary>Joined the Kadenze launch team to widen access to creative tech education <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
                     <ul>
                         
-                        <li>Joined CalArts' first Digital Arts minor class: film, audio, projection, fabrication.</li>
+                        <li>Joined CalArts' first Digital Arts minor class: film, audio, projection, fabrication</li>
                         
                     </ul>
                 </details>
@@ -937,7 +839,7 @@
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2013">
+        <li class="timeline-entry" id="tl-2013">
             <h3 class="timeline-year-label">2013</h3>
             <div class="timeline-lines">
                 
@@ -945,10 +847,10 @@
                 
                 
                 <details>
-                    <summary>Managed Lightspace Studio in Culver City for events and food shoots (Eating Well, Wolfgang Puck). <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
+                    <summary>Managed Lightspace Studio in Culver City for events and food shoots (Eating Well, Wolfgang Puck) <span class="timeline-more" aria-hidden="true">+1</span><span class="timeline-sr">, 1 more</span></summary>
                     <ul>
                         
-                        <li>Grew a fine-art goods business at Musichead Gallery in Hollywood.</li>
+                        <li>Grew a fine-art goods business at Musichead Gallery in Hollywood</li>
                         
                     </ul>
                 </details>
@@ -956,29 +858,29 @@
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2012">
+        <li class="timeline-entry" id="tl-2012">
             <h3 class="timeline-year-label">2012</h3>
             <div class="timeline-lines">
                 
                 
                 
-                <p>Enrolled in the BFA Graphic Design program at CalArts.</p>
+                <p>Enrolled in the BFA Graphic Design program at CalArts</p>
                 
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2011">
+        <li class="timeline-entry" id="tl-2011">
             <h3 class="timeline-year-label">2011</h3>
             <div class="timeline-lines">
                 
                 
                 
-                <p>Studied at UCLA's Design Media Arts pre-college program.</p>
+                <p>Studied at UCLA's Design Media Arts pre-college program</p>
                 
             </div>
         </li>
         
-        <li class="timeline-entry timeline-extra" id="tl-2010">
+        <li class="timeline-entry" id="tl-2010">
             <h3 class="timeline-year-label">2010</h3>
             <div class="timeline-lines">
                 
@@ -986,12 +888,12 @@
                 
                 
                 <details>
-                    <summary>Ran a web dev consultancy for small businesses. <span class="timeline-more" aria-hidden="true">+2</span><span class="timeline-sr">, 2 more</span></summary>
+                    <summary>Ran a web dev consultancy for small businesses <span class="timeline-more" aria-hidden="true">+2</span><span class="timeline-sr">, 2 more</span></summary>
                     <ul>
                         
-                        <li>Published iOS games under Omicron Apps.</li>
+                        <li>Published iOS games under Omicron Apps</li>
                         
-                        <li>Took AP Computer Science in high school.</li>
+                        <li>Took AP Computer Science in high school</li>
                         
                     </ul>
                 </details>
@@ -1000,14 +902,12 @@
         </li>
         
     </ol>
-    
-    <button class="timeline-toggle" type="button" aria-expanded="false" hidden>See more</button>
-    
 </div>
 <script>
     (function () {
         var root = document.querySelector(".timeline");
-        if (!root) return;
+        // The homepage preview is static: no scroll focus.
+        if (!root || root.classList.contains("timeline--preview")) return;
 
         var strip = root.querySelector(".timeline-years");
         var links = [].slice.call(strip.querySelectorAll("a"));
@@ -1076,28 +976,260 @@
             });
         });
 
-        // Preview mode: show the first few years, expand in place on request.
-        var toggle = root.querySelector(".timeline-toggle");
-        if (toggle) {
-            root.classList.add("is-collapsed");
-            toggle.hidden = false;
-            toggle.addEventListener("click", function () {
-                var collapsed = root.classList.toggle("is-collapsed");
-                toggle.setAttribute("aria-expanded", String(!collapsed));
-                toggle.textContent = collapsed ? "See more" : "See less";
-                if (collapsed) toggle.scrollIntoView({ block: "nearest" });
-                update();
-            });
-        }
-
         root.classList.add("is-enhanced");
         update();
     })();
 </script>
 
 </div>
+<p><a class="next-link section-cta" href="/about/">About</a></p>
+</div>
 <div class="blog">
-<h2 class="post-list-heading">Recent blog posts</h2>
+<h2 class="post-list-heading">Featured Work</h2>
+<div class="divider-thin mt-100 mb-200"></div>
+<ul class="post-list projects">
+    
+    
+    
+<li class="project grid col2">
+    <div class="thumbnail">
+        <a href="/work/amazon-alexa"><img src="/assets/img/2022-08-01-xApp-dash-VUI.webp" alt="Amazon Alexa" loading="lazy"></a>
+    </div>
+    <div>
+        <h3>
+            <a class="post-link" href="/work/amazon-alexa">
+                Amazon Alexa
+            </a>
+        </h3>
+        <div class="post-description">
+<p>Alexa Voice Services design lead for multimodal interfaces, third-party platforms, and design systems</p>
+</div>
+        <ul class="post-tags">
+            
+            <li class="tag small"><a href="/work/category/ux-ui">ux/ui</a></li>
+            
+            <li class="tag small"><a href="/work/category/dev">dev</a></li>
+            
+            <li class="tag small"><a href="/work/category/design-systems">design systems</a></li>
+            
+            <li class="tag small"><a href="/work/category/ai">ai</a></li>
+            
+        </ul>
+    </div>
+</li>
+
+    
+    
+    
+<li class="project grid col2">
+    <div class="thumbnail">
+        <a href="/work/eat-blueprint"><img src="/assets/img/2024-01-24-Eat-%20Blueprint-logo.png" alt="Eat Blueprint" loading="lazy"></a>
+    </div>
+    <div>
+        <h3>
+            <a class="post-link" href="/work/eat-blueprint">
+                Eat Blueprint
+            </a>
+        </h3>
+        <div class="post-description">
+<p>Fresh meal delivery service for longevity optimization<br>Acquired by Blueprint Bryan Johnson</p>
+</div>
+        <ul class="post-tags">
+            
+            <li class="tag small"><a href="/work/category/service-design">service design</a></li>
+            
+            <li class="tag small"><a href="/work/category/brand">brand</a></li>
+            
+            <li class="tag small"><a href="/work/category/health">health</a></li>
+            
+        </ul>
+    </div>
+</li>
+
+    
+    
+    
+<li class="project grid col2">
+    <div class="thumbnail">
+        <a href="/work/acura-vehicle-features"><img src="/assets/img/2020-01-01-acura-thumbnail.webp" alt="Acura Vehicle Features" loading="lazy"></a>
+    </div>
+    <div>
+        <h3>
+            <a class="post-link" href="/work/acura-vehicle-features">
+                Acura Vehicle Features
+            </a>
+        </h3>
+        <div class="post-description">
+<p>Acura vehicle features web experience</p>
+</div>
+        <ul class="post-tags">
+            
+            <li class="tag small"><a href="/work/category/ux-ui">ux/ui</a></li>
+            
+        </ul>
+    </div>
+</li>
+
+    
+</ul>
+<style type="text/css">
+    /* Window light: a soft accent light follows the pointer across each project row,
+       a highlight tracks it on the thumbnail, and the thumbnail tilts toward the pointer. */
+    .post-list.projects .project {
+        position: relative;
+        isolation: isolate;
+    }
+
+    /* The light spills softly past each row; clip only at the page edges so it never
+       causes horizontal scroll. overflow-x: clip keeps sticky elements working. */
+    main:has(.post-list.projects) {
+        overflow-x: clip;
+    }
+
+    .post-list.projects .project::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        pointer-events: none;
+        width: 32rem;
+        height: 32rem;
+        margin: -16rem 0 0 -16rem;
+        border-radius: 50%;
+        background: radial-gradient(closest-side, rgba(97, 179, 175, 0.12), rgba(97, 179, 175, 0));
+        translate: var(--mx, 0px) var(--my, 0px);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+    }
+
+    .post-list.projects .thumbnail {
+        position: relative;
+    }
+
+    .post-list.projects .thumbnail::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        width: 20rem;
+        height: 20rem;
+        margin: -10rem 0 0 -10rem;
+        border-radius: 50%;
+        background: radial-gradient(closest-side, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0));
+        translate: var(--sx, 0px) var(--sy, 0px);
+        opacity: 0;
+        transition: opacity 0.35s ease;
+    }
+
+    .post-list.projects .project.is-lit::before,
+    .post-list.projects .project.is-lit .thumbnail::after {
+        opacity: 1;
+    }
+
+    /* Keyboard: the same light, parked, plus a ring on the frame. */
+    .post-list.projects .project:has(:focus-visible)::before {
+        opacity: 1;
+        translate: none;
+        left: 30%;
+        top: 50%;
+    }
+
+    .post-list.projects .project:has(:focus-visible) .thumbnail::after {
+        opacity: 0.7;
+        translate: none;
+        left: 35%;
+        top: 30%;
+    }
+
+    .post-list.projects .project:has(.thumbnail a:focus-visible) .thumbnail {
+        outline: 2px solid #61B3AF;
+        outline-offset: 4px;
+    }
+
+    /* Hover tilt: the thumbnail tile turns toward the pointer while it's over the row,
+       and lies flat, framed normally, the rest of the time. */
+    .post-list.projects.fx-pointer .thumbnail {
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .post-list.projects.fx-pointer .project.is-lit .thumbnail {
+        transform: perspective(700px)
+            rotateX(calc((0.5 - var(--ty, 0.5)) * 10deg))
+            rotateY(calc((var(--tx, 0.5) - 0.5) * 12deg));
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .post-list.projects .project::before,
+        .post-list.projects .thumbnail::after {
+            transition: none;
+        }
+
+        .post-list.projects .project:hover::before {
+            opacity: 1;
+            translate: none;
+            left: 30%;
+            top: 50%;
+        }
+    }
+</style>
+<script>
+    (function () {
+        var lists = document.querySelectorAll(".post-list.projects:not([data-fx])");
+        if (!lists.length) return;
+        lists.forEach(function (list) { list.setAttribute("data-fx", ""); });
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        // Touch and coarse pointers get no pointer effects.
+        if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+        lists.forEach(function (list) {
+            list.classList.add("fx-pointer");
+            list.querySelectorAll(".project").forEach(function (card) {
+                var thumb = card.querySelector(".thumbnail");
+                if (!thumb) return;
+                var x = 0, y = 0, raf = 0;
+
+                function frame() {
+                    raf = 0;
+                    if (!card.isConnected) return;
+                    // Read both rects first, then write, to avoid layout thrash.
+                    var r = card.getBoundingClientRect();
+                    var t = thumb.getBoundingClientRect();
+                    var tx = Math.min(1, Math.max(0, (x - t.left) / t.width));
+                    var ty = Math.min(1, Math.max(0, (y - t.top) / t.height));
+                    var s = card.style;
+                    s.setProperty("--mx", (x - r.left) + "px");
+                    s.setProperty("--my", (y - r.top) + "px");
+                    s.setProperty("--sx", (x - t.left) + "px");
+                    s.setProperty("--sy", (y - t.top) + "px");
+                    s.setProperty("--tx", tx.toFixed(3));
+                    s.setProperty("--ty", ty.toFixed(3));
+                }
+                card.addEventListener("pointerenter", function (e) {
+                    x = e.clientX; y = e.clientY;
+                    frame(); // place the light before it fades in
+                    card.classList.add("is-lit");
+                });
+                card.addEventListener("pointermove", function (e) {
+                    x = e.clientX; y = e.clientY;
+                    if (!raf) raf = window.requestAnimationFrame(frame);
+                });
+                card.addEventListener("pointerleave", function () {
+                    if (raf) { window.cancelAnimationFrame(raf); raf = 0; }
+                    card.classList.remove("is-lit");
+                    card.style.removeProperty("--tx"); // tile eases back to flat
+                    card.style.removeProperty("--ty");
+                });
+            });
+        });
+    })();
+</script>
+
+<p><a class="next-link section-cta" href="/work/">Work</a></p>
+</div>
+<div class="blog">
+<h2 class="post-list-heading">Recent Posts</h2>
 <div class="divider-thin mt-100 mb-200"></div>
 <ul class="post-list">
     
@@ -1179,7 +1311,7 @@
     </li>
     
 </ul>
-<p><a class="next-link" href="/blog">All posts</a></p>
+<p><a class="next-link section-cta" href="/blog">Blog</a></p>
 </div>
       </div>
     </section>
