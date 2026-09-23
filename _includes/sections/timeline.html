@@ -1,0 +1,259 @@
+<style type="text/css">
+    .timeline {
+        --tl-dim: #7a8597;
+        --tl-text: #e8e8e8;
+        --tl-accent: #61B3AF;
+        --tl-rule: rgba(255, 255, 255, 0.14);
+        display: grid;
+        grid-template-columns: 6rem 1fr;
+        grid-gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .timeline ol,
+    .timeline ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .timeline-years {
+        position: sticky;
+        top: 2rem;
+        align-self: start;
+        border-left: 1px solid var(--tl-rule);
+    }
+
+    .timeline-years::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -1px;
+        width: 1px;
+        height: var(--tl-progress, 0);
+        background-color: var(--tl-accent);
+        transition: height 0.25s;
+    }
+
+    .timeline-years a {
+        display: block;
+        padding: 0.05rem 0 0.05rem 1rem;
+        color: var(--tl-dim);
+        font-variant-numeric: tabular-nums;
+        text-decoration: none;
+        transition: color 0.2s, transform 0.2s;
+    }
+
+    .timeline-years a[aria-current="true"] {
+        color: var(--tl-text);
+        font-weight: 700;
+        transform: translateX(0.25rem);
+    }
+
+    .timeline-entry {
+        padding-bottom: 3rem;
+        scroll-margin-top: 2rem;
+        transition: color 0.25s;
+    }
+
+    .timeline-entry li {
+        margin-bottom: 0.35rem;
+    }
+
+    .timeline-entry a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: var(--tl-accent);
+        text-underline-offset: 3px;
+    }
+
+    @media (hover: hover) {
+        .timeline-years a:hover,
+        .timeline-entry a:hover {
+            color: var(--tl-accent);
+        }
+    }
+
+    .timeline-year-label {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    .timeline.is-enhanced .timeline-entry {
+        color: var(--tl-dim);
+    }
+
+    .timeline.is-enhanced .timeline-entry.is-active {
+        color: var(--tl-text);
+    }
+
+    .timeline.is-enhanced .timeline-entry:not(.is-active) a {
+        text-decoration-color: var(--tl-rule);
+    }
+
+    @media screen and (max-width: 600px) {
+        .timeline {
+            display: block;
+        }
+
+        .timeline-years {
+            top: 0;
+            z-index: 10;
+            margin: 0 -1rem 1.5rem;
+            padding: 0 1rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+            border-left: 0;
+            border-bottom: 1px solid var(--tl-rule);
+            background-color: #111418;
+        }
+
+        .timeline-years::-webkit-scrollbar,
+        .timeline-years::before {
+            display: none;
+        }
+
+        .timeline-years ol {
+            display: flex;
+        }
+
+        .timeline-years a {
+            padding: 0.75rem 0.6rem;
+        }
+
+        .timeline-years a[aria-current="true"] {
+            transform: none;
+            box-shadow: inset 0 -2px 0 var(--tl-accent);
+        }
+
+        .timeline-entry {
+            padding-bottom: 2rem;
+            scroll-margin-top: 4.5rem;
+        }
+
+        .timeline.is-enhanced .timeline-entry:not(.is-active) .timeline-year-label {
+            color: var(--tl-dim);
+        }
+
+        .timeline-year-label {
+            position: static;
+            width: auto;
+            height: auto;
+            overflow: visible;
+            clip: auto;
+            margin: 0 0 0.35rem;
+            font-size: 1rem;
+            color: var(--tl-accent);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .timeline-years::before,
+        .timeline-years a,
+        .timeline-entry {
+            transition: none;
+        }
+    }
+</style>
+<div class="timeline">
+    <nav class="timeline-years" aria-label="Jump to year">
+        <ol>
+            {% for entry in site.data.timeline %}
+            <li><a href="#tl-{{ entry.year }}" data-no-swup>{{ entry.year }}</a></li>
+            {% endfor %}
+        </ol>
+    </nav>
+    <ol class="timeline-body">
+        {% for entry in site.data.timeline %}
+        <li class="timeline-entry" id="tl-{{ entry.year }}">
+            <h3 class="timeline-year-label">{{ entry.year }}</h3>
+            <ul>
+                {% for item in entry.items %}
+                {% if item.project %}{% assign project = site.projects | where: "title", item.project | first %}{% endif %}
+                <li>{% if project %}<a href="{{ project.url | relative_url }}">{{ item.text | escape }}</a>{% else %}{{ item.text | escape }}{% endif %}</li>
+                {% assign project = nil %}
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ol>
+</div>
+<script>
+    (function () {
+        var root = document.querySelector(".timeline");
+        if (!root) return;
+
+        var strip = root.querySelector(".timeline-years");
+        var links = [].slice.call(strip.querySelectorAll("a"));
+        var entries = [].slice.call(root.querySelectorAll(".timeline-entry"));
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var locked = false;
+        var unlockTimer;
+
+        function unlock() {
+            locked = false;
+            clearTimeout(unlockTimer);
+            window.removeEventListener("scrollend", unlock);
+        }
+
+        var current = -1;
+
+        function activate(index) {
+            current = index;
+            entries.forEach(function (el, i) { el.classList.toggle("is-active", i === index); });
+            links.forEach(function (a, i) {
+                if (i === index) a.setAttribute("aria-current", "true");
+                else a.removeAttribute("aria-current");
+            });
+            var link = links[index];
+            root.style.setProperty("--tl-progress", link.offsetTop + link.offsetHeight / 2 + "px");
+            // Mobile: keep the active year centered in the horizontal strip.
+            if (strip.scrollWidth > strip.clientWidth) {
+                strip.scrollTo({
+                    left: link.offsetLeft - (strip.clientWidth - link.offsetWidth) / 2,
+                    behavior: reduce ? "auto" : "smooth"
+                });
+            }
+        }
+
+        // Focus goes to the last entry whose top has passed a line just above mid-viewport.
+        function update() {
+            if (!root.isConnected) {
+                // Swup swapped the page out; stop listening.
+                window.removeEventListener("scroll", update);
+                return;
+            }
+            if (locked) return;
+            var line = window.innerHeight * 0.425;
+            var index = 0;
+            for (var i = 0; i < entries.length; i++) {
+                if (entries[i].getBoundingClientRect().top <= line) index = i;
+            }
+            if (index !== current) activate(index);
+        }
+        window.addEventListener("scroll", update, { passive: true });
+
+        // Clicking a year jumps to it; hold focus there until the scroll settles.
+        links.forEach(function (a, i) {
+            a.addEventListener("click", function (event) {
+                event.preventDefault();
+                locked = true;
+                clearTimeout(unlockTimer);
+                activate(i);
+                // Land the entry just under the focus line so scrolling picks up from it.
+                var target = entries[i].getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.425 + 8;
+                window.scrollTo({ top: target, behavior: reduce ? "auto" : "smooth" });
+                // Release on scrollend where supported; the timer covers other browsers.
+                window.addEventListener("scrollend", unlock, { once: true });
+                unlockTimer = setTimeout(unlock, 1500);
+            });
+        });
+
+        root.classList.add("is-enhanced");
+        update();
+    })();
+</script>
