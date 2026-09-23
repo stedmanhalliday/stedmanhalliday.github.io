@@ -4,7 +4,7 @@ title: Firmé Atelier
 date: 2019-02-13 00:00 +0000
 description: Web design and development for bespoke fashion studios
 categories: [ux/ui, dev]
-image: "/assets/img/2019-02-13-firme-brand.png"
+image: "/assets/img/2019-02-13-firme-brand.webp"
 hero: /projects/firme-atelier-hero
 ---
 
@@ -16,7 +16,7 @@ Check out Firmé Atelier in _[The Los Angeles Times](https://www.latimes.com/lif
 
 <figure>
     <div class="grid col2">
-        <img style="grid-column: span 2" alt="Firmé brand" src="/assets/img/2019-02-13-firme-brand.png">
+        <img style="grid-column: span 2" alt="Firmé brand" src="/assets/img/2019-02-13-firme-brand.webp">
         <img style="grid-column: span 2" alt="Firmé web archive" src="/assets/img/2019-02-13-firme-web.png">
         <video class="lazy" poster="/assets/video/2019-02-13-firme-archive-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2019-02-13-firme-archive.mp4"></video>
         <video class="lazy" poster="/assets/video/2019-02-13-firme-welcome-poster.webp" autoplay playsinline loop muted data-src="/assets/video/2019-02-13-firme-welcome.mp4"></video>
