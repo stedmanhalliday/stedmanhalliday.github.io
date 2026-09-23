@@ -150,6 +150,11 @@ html.is-animating .transition-fade {
 
 .project-hero {
     height: calc(100vw * 81 / 256);
+
+    // The wide band collapses to a sliver on phones; use 16:9 there.
+    @include media-query($on-palm) {
+        height: calc(100vw * 9 / 16);
+    }
 }
 
 /**
@@ -700,6 +705,12 @@ html.is-animating .transition-fade {
         margin-bottom: $spacing-unit;
         grid-template-columns: 2fr 3fr;
 
+        // Phones: stack the row, full-width image above the text.
+        @include media-query($on-palm) {
+            grid-template-columns: minmax(0, 1fr);
+            row-gap: 20px;
+        }
+
         .thumbnail {
             display: flex;
             align-items: center;
@@ -828,4 +839,13 @@ a[data-fslightbox] {
 
 .grey-color {
     color: $grey-color;
+}
+
+// Touch screens: taller tag chips so they're easy to tap (desktop stays compact).
+@media (pointer: coarse) {
+    .post-tags a,
+    .post-list.projects .project .post-tags .tag a {
+        padding-top: 5px;
+        padding-bottom: 6px;
+    }
 }
