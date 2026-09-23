@@ -20,16 +20,6 @@ layout: default
     </div>
     <div class="divider-thin mt-100 mb-200"></div>
     {% if site.posts.size > 0 %}
-    {% if paginator.page == 1 %}
-    <h3 class="featured-heading">Featured</h3>
-    <ul class="post-list projects">
-        {% for featured_title in site.data.works.featured %}
-        {% assign post = site.projects | where: "title", featured_title | first %}
-        {% include sections/project-card.html project=post %}
-        {% endfor %}
-    </ul>
-    <div class="divider-thin mt-200 mb-200"></div>
-    {% endif %}
     <ul class="post-list projects">
         {% for post in paginator.posts %}
         {% if paginator.page == 1 and site.data.works.featured contains post.title %}{% continue %}{% endif %}
