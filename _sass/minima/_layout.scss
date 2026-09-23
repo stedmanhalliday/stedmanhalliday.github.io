@@ -471,6 +471,145 @@ html.is-animating .transition-fade {
     }
 }
 
+// Scrim reveal: long content is clipped with a fade that doubles as the
+// expand trigger. JS adds .is-clipped (assets/js/swup-init.js), so without JS
+// the content simply shows in full.
+.scrim-clip {
+    position: relative;
+
+    &.is-clipped {
+        max-height: var(--scrim-clip, 14rem);
+        margin-bottom: $spacing-unit;
+        overflow: hidden;
+    }
+
+    &.is-expanding {
+        overflow: hidden;
+        transition: max-height 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.scrim-trigger {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 6rem;
+    margin: 0;
+    padding: 0 0 0.5rem;
+    border: 0;
+    background: linear-gradient(to bottom, rgba($background-color, 0), $background-color 80%);
+    cursor: pointer;
+
+    &:focus-visible {
+        outline: 2px solid $accent-color;
+        outline-offset: -2px;
+    }
+
+    // A "+" knocked out of a filled accent disc.
+    .scrim-plus {
+        display: grid;
+        place-items: center;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        background-color: $accent-color;
+        color: $background-color;
+        transition: transform $duration-lg;
+    }
+
+    &:hover .scrim-plus {
+        transform: scale(1.1);
+    }
+
+    .scrim-sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .scrim-plus {
+            transition: none;
+        }
+    }
+}
+
+// Document download card (About: résumé).
+.doc-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 28rem;
+    padding: 16px 20px;
+    border: 1px solid $surface-light-4;
+    border-radius: $radius-md;
+    color: $text-color;
+    text-decoration: none;
+    transition: border-color $duration-lg, background-color $duration-lg;
+
+    &:hover {
+        border-color: $accent-color;
+        background-color: rgba($accent-color, 0.06);
+        color: $text-color;
+        text-decoration: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $accent-color;
+        outline-offset: 3px;
+    }
+
+    .doc-card-icon {
+        flex-shrink: 0;
+        color: $accent-color;
+    }
+
+    .doc-card-body {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .doc-card-title {
+        font-weight: 700;
+    }
+
+    .doc-card-meta {
+        color: $grey-color-light;
+        font-size: $small-font-size;
+    }
+
+    .doc-card-action {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+        color: $accent-color;
+        font-size: $small-font-size;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        transition: none;
+    }
+}
+
+.doc-card-wrap {
+    margin-top: $spacing-unit * 1.5;
+}
+
 // Homepage stacks several list sections; give each its own breathing room.
 .blog + .blog {
     margin-top: $spacing-unit * 2;

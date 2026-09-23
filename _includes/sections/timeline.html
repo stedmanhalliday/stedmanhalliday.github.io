@@ -125,7 +125,7 @@
         text-decoration-color: var(--tl-rule);
     }
 
-    /* The homepage preview shows the latest years only: no year strip, no dimming. */
+    /* The homepage preview: no year strip, no dimming (a scrim clips it). */
     .timeline--preview .timeline-years {
         display: none;
     }
@@ -187,17 +187,16 @@
     }
 </style>
 {% assign timeline = site.data.timeline | reverse %}
-{% if include.limit %}{% assign shown = include.limit %}{% else %}{% assign shown = timeline.size %}{% endif %}
-<div class="timeline{% if include.limit %} timeline--preview{% endif %}">
+<div class="timeline{% if include.preview %} timeline--preview{% endif %}">
     <nav class="timeline-years" aria-label="Jump to year">
         <ol>
-            {% for entry in timeline limit: shown %}
+            {% for entry in timeline %}
             <li><a href="#tl-{{ entry.year }}" data-no-swup>{{ entry.year }}</a></li>
             {% endfor %}
         </ol>
     </nav>
     <ol class="timeline-body">
-        {% for entry in timeline limit: shown %}
+        {% for entry in timeline %}
         <li class="timeline-entry" id="tl-{{ entry.year }}">
             <h3 class="timeline-year-label">{{ entry.year }}</h3>
             <div class="timeline-lines">
