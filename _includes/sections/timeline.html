@@ -109,24 +109,24 @@
     }
 
     /* Scroll focus dims the other years, except in the short collapsed preview. */
-    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry {
+    .timeline.is-enhanced:not(.timeline--preview) .timeline-entry {
         color: var(--tl-dim);
     }
 
-    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry.is-active {
+    .timeline.is-enhanced:not(.timeline--preview) .timeline-entry.is-active {
         color: var(--tl-text);
     }
 
-    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry.is-active .timeline-year-label {
+    .timeline.is-enhanced:not(.timeline--preview) .timeline-entry.is-active .timeline-year-label {
         color: var(--tl-accent);
     }
 
-    .timeline.is-enhanced:not(.is-collapsed) .timeline-entry:not(.is-active) a {
+    .timeline.is-enhanced:not(.timeline--preview) .timeline-entry:not(.is-active) a {
         text-decoration-color: var(--tl-rule);
     }
 
-    .timeline.is-collapsed .timeline-extra,
-    .timeline.is-collapsed .timeline-years {
+    /* The homepage preview shows the latest years only: no year strip, no dimming. */
+    .timeline--preview .timeline-years {
         display: none;
     }
 
@@ -187,17 +187,18 @@
     }
 </style>
 {% assign timeline = site.data.timeline | reverse %}
-<div class="timeline">
+{% if include.limit %}{% assign shown = include.limit %}{% else %}{% assign shown = timeline.size %}{% endif %}
+<div class="timeline{% if include.limit %} timeline--preview{% endif %}">
     <nav class="timeline-years" aria-label="Jump to year">
         <ol>
-            {% for entry in timeline %}
+            {% for entry in timeline limit: shown %}
             <li><a href="#tl-{{ entry.year }}" data-no-swup>{{ entry.year }}</a></li>
             {% endfor %}
         </ol>
     </nav>
     <ol class="timeline-body">
-        {% for entry in timeline %}
-        <li class="timeline-entry{% if include.limit and forloop.index > include.limit %} timeline-extra{% endif %}" id="tl-{{ entry.year }}">
+        {% for entry in timeline limit: shown %}
+        <li class="timeline-entry" id="tl-{{ entry.year }}">
             <h3 class="timeline-year-label">{{ entry.year }}</h3>
             <div class="timeline-lines">
                 {% assign lead = entry.items | first %}
@@ -219,14 +220,12 @@
         </li>
         {% endfor %}
     </ol>
-    {% if include.limit and timeline.size > include.limit %}
-    <button class="timeline-toggle section-cta" type="button" aria-expanded="false" hidden>See more</button>
-    {% endif %}
 </div>
 <script>
     (function () {
         var root = document.querySelector(".timeline");
-        if (!root) return;
+        // The homepage preview is static: no scroll focus.
+        if (!root || root.classList.contains("timeline--preview")) return;
 
         var strip = root.querySelector(".timeline-years");
         var links = [].slice.call(strip.querySelectorAll("a"));
@@ -294,20 +293,6 @@
                 unlockTimer = setTimeout(unlock, 1500);
             });
         });
-
-        // Preview mode: show the first few years, expand in place on request.
-        var toggle = root.querySelector(".timeline-toggle");
-        if (toggle) {
-            root.classList.add("is-collapsed");
-            toggle.hidden = false;
-            toggle.addEventListener("click", function () {
-                var collapsed = root.classList.toggle("is-collapsed");
-                toggle.setAttribute("aria-expanded", String(!collapsed));
-                toggle.textContent = collapsed ? "See more" : "See less";
-                if (collapsed) toggle.scrollIntoView({ block: "nearest" });
-                update();
-            });
-        }
 
         root.classList.add("is-enhanced");
         update();

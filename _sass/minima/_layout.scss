@@ -435,19 +435,22 @@ html.is-animating .transition-fade {
     }
 }
 
-// Section-ending calls to action (All work, See more, All posts): outlined
+// Section-ending calls to action (All work, All experience, All posts): outlined
 // buttons so they read above body links. Arrows stay on page-changing links only.
 .section-cta {
     display: inline-flex;
     align-items: center;
     margin-top: $spacing-unit * 0.5;
-    padding: 0.6rem 1.1rem;
+    padding: 0.4rem 1.6rem;
     border: 1px solid $accent-color;
     border-radius: $radius-sm;
     background: transparent;
     color: $accent-color;
     font: inherit;
-    font-weight: 700;
+    font-size: $small-font-size;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
     transition: background-color $duration-lg, color $duration-lg;
