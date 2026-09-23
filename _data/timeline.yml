@@ -3,70 +3,70 @@
 # Optional `project:` links a line to the _projects page with that title.
 - year: 2010
   items:
-    - text: Ran a web dev consultancy for small businesses.
-    - text: Published iOS games under Omicron Apps.
-    - text: Took AP Computer Science in high school.
+    - text: Ran a web dev consultancy for small businesses
+    - text: Published iOS games under Omicron Apps
+    - text: Took AP Computer Science in high school
 - year: 2011
   items:
-    - text: Studied at UCLA's Design Media Arts pre-college program.
+    - text: Studied at UCLA's Design Media Arts pre-college program
 - year: 2012
   items:
-    - text: Enrolled in the BFA Graphic Design program at CalArts.
+    - text: Enrolled in the BFA Graphic Design program at CalArts
 - year: 2013
   items:
-    - text: Managed Lightspace Studio in Culver City for events and food shoots (Eating Well, Wolfgang Puck).
-    - text: Grew a fine-art goods business at Musichead Gallery in Hollywood.
+    - text: Managed Lightspace Studio in Culver City for events and food shoots (Eating Well, Wolfgang Puck)
+    - text: Grew a fine-art goods business at Musichead Gallery in Hollywood
 - year: 2014
   items:
-    - text: Joined the Kadenze launch team to widen access to creative tech education.
-    - text: "Joined CalArts' first Digital Arts minor class: film, audio, projection, fabrication."
+    - text: Joined the Kadenze launch team to widen access to creative tech education
+    - text: "Joined CalArts' first Digital Arts minor class: film, audio, projection, fabrication"
 - year: 2015
   items:
-    - text: Launched Kadenze and Kannu with ~50 institutional partners, incl. Stanford, CalArts, and Ableton.
+    - text: Launched Kadenze and Kannu with ~50 institutional partners, incl. Stanford, CalArts, and Ableton
 - year: 2016
   items:
-    - text: "Graduated from CalArts: BFA Graphic Design, minor in Digital Arts."
-    - text: Consulted on product strategy and design for early-stage startups out of Stanford.
+    - text: "Graduated from CalArts: BFA Graphic Design, minor in Digital Arts"
+    - text: Consulted on product strategy and design for early-stage startups out of Stanford
 - year: 2017
   items:
-    - text: Piloted a programming curriculum and learning tools for blind students in Thailand, later adapted into the nation's first university programming course for blind adults.
+    - text: Piloted a programming curriculum and learning tools for blind students in Thailand, later adapted into the nation's first university programming course for blind adults
 - year: 2018
   items:
-    - text: "Led brand, web, and launch strategy for Marble: the first flash loan protocol."
+    - text: "Led brand, web, and launch strategy for Marble: the first flash loan protocol"
       project: Marble Protocol
-    - text: Built ContracTx, a visual explorer for Ethereum smart contracts.
+    - text: Built ContracTx, a visual explorer for Ethereum smart contracts
       project: ContracTx
 - year: 2019
   items:
-    - text: Started agency work at Wunderman Thompson (WPP).
+    - text: Started agency work at Wunderman Thompson (WPP)
 - year: 2020
   items:
-    - text: "Microsoft: Windows 11 launch, Surface commercial, COVID-era education strategy."
+    - text: "Microsoft: Windows 11 launch, Surface commercial, COVID-era education strategy"
       project: Microsoft Education Blog
-    - text: "Acura: pivot to all-online vehicle sales."
+    - text: "Acura: pivot to all-online vehicle sales"
       project: Acura Vehicle Features
 - year: 2021
   items:
-    - text: Joined Amazon Alexa Voice Services to lead design for multimodal interfaces and third-party platforms.
+    - text: Joined Amazon Alexa Voice Services to lead design for multimodal interfaces and third-party platforms
       project: Amazon Alexa
 - year: 2022
   items:
-    - text: Owned the Alexa Voice Services design system overhaul from research through implementation and adoption.
+    - text: Owned the Alexa Voice Services design system overhaul from research through implementation and adoption
       project: Amazon Alexa
-    - text: Shipped a rebuilt Alexa TV app experience.
+    - text: Shipped a rebuilt Alexa TV app experience
 - year: 2023
   items:
-    - text: Trained as a software engineer at Amazon Technical Academy while relocating to SF to build new things.
+    - text: Deepened software engineering fundamentals at Amazon Technical Academy while relocating to SF to build new things
 - year: 2024
   items:
-    - text: Grew Eat Blueprint from launch to acquisition by Bryan Johnson.
+    - text: Grew Eat Blueprint from launch to acquisition by Bryan Johnson
       project: Eat Blueprint
-    - text: Led a product org building a telehealth MVP with Paragon, later Prana.
+    - text: Led a product org building a telehealth MVP with Paragon, later Prana
 - year: 2025
   items:
-    - text: "Consulted on AI products: B2B sales agents (11x), a consumer companion (Auren), multi-agent orchestration (Random Labs)."
-    - text: Consulted at Automattic on design and product leadership for the Beeper relaunch.
-    - text: Operated the fitness center at Frontier Tower as an inaugural community leader.
+    - text: "Consulted on AI products: B2B sales agents (11x), a consumer companion (Auren), multi-agent orchestration (Random Labs)"
+    - text: Consulted at Automattic on design and product leadership for the Beeper relaunch
+    - text: Operated the fitness center at Frontier Tower as an inaugural community leader
 - year: 2026
   items:
-    - text: Led tech systems for Frontier Tower as a director-level consultant.
+    - text: Led tech systems for Frontier Tower as a director-level consultant
