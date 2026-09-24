@@ -3,7 +3,7 @@
 # Optional `project:` links a line to the _projects page with that title.
 - year: 2010
   items:
-    - text: Ran a web dev consultancy for small businesses
+    - text: Operated a web development consultancy serving SMBs across categories
     - text: Published iOS games under Omicron Apps
     - text: Took AP Computer Science in high school
 - year: 2011
