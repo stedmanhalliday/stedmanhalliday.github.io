@@ -4,9 +4,10 @@
 {% include head.html %}
 
 <body>
+  <a class="skip-link" href="#swup" data-no-swup>Skip to content</a>
   {% include sections/minima/header.html %}
 
-  <main id="swup" class="transition-fade" data-pagefind-body>
+  <main id="swup" class="transition-fade" tabindex="-1">
     {% if page.hero %}
     {% include sections/hero/{{page.hero}}.html %}
     {% endif %}

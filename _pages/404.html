@@ -20,6 +20,12 @@ layout: default
         animation: glitch 3.2s infinite alternate;
     }
 
+    @media (prefers-reduced-motion: reduce) {
+        h1 {
+            animation: none;
+        }
+    }
+
     /* Glitch Animation */
     @keyframes glitch {
         0% {

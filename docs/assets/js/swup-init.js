@@ -66,10 +66,20 @@ function initScrims() {
             '<span class="scrim-plus" aria-hidden="true"><svg viewBox="0 0 16 16" width="10" height="10" focusable="false">' +
             '<path d="M8 2v12M2 8h12" stroke="currentColor" stroke-width="2.25" stroke-linecap="round"/></svg></span>' +
             '<span class="scrim-sr">Show full ' + (box.dataset.scrimLabel || "content") + "</span>";
-        trigger.addEventListener("click", function () {
+        // Keyboard users who tab past the fade into hidden links open it too, keeping their focus.
+        var opened = false;
+        box.addEventListener("focusin", function (event) {
+            if (opened || event.target === trigger || event.target === box) return;
+            // Only links in or under the 6rem fade count; the clear top of the preview stays put.
+            if (event.target.getBoundingClientRect().bottom > box.getBoundingClientRect().bottom - 96) expand(false);
+        });
+        trigger.addEventListener("click", function () { expand(true); });
+        function expand(moveFocus) {
+            if (opened) return;
+            opened = true;
             trigger.remove();
             box.setAttribute("tabindex", "-1");
-            box.focus({ preventScroll: true });
+            if (moveFocus) box.focus({ preventScroll: true });
             box.dispatchEvent(new CustomEvent("scrim:open"));
             if (reduce) {
                 box.classList.remove("is-clipped");
@@ -88,7 +98,7 @@ function initScrims() {
             };
             box.addEventListener("transitionend", release, { once: true });
             setTimeout(release, 700);
-        });
+        }
         box.appendChild(trigger);
     });
 }

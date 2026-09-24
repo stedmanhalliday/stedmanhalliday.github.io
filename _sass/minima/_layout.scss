@@ -12,6 +12,30 @@ html.is-animating .transition-fade {
 }
 
 /**
+ * Skip link: hidden until keyboard focus
+ */
+.skip-link {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: $z-1000;
+    padding: 8px 16px;
+    border-radius: $radius-md;
+    background-color: $background-color;
+    color: $text-color;
+    font-weight: 700;
+    transform: translateY(-200%);
+
+    &:focus {
+        transform: none;
+    }
+}
+
+#swup:focus {
+    outline: none;
+}
+
+/**
  * Site header
  */
 .site-header {
