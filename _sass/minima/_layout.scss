@@ -707,25 +707,26 @@ html.is-animating .transition-fade {
         @include relative-font-size(1.5);
         font-weight: 700;
         line-height: 1.25;
-
-        &::after {
-            content: "→";
-            display: inline-block;
-            margin-left: 0.35em;
-            color: $accent-color;
-            transition: transform $duration-lg;
-        }
-    }
-
-    .route-door-mode {
-        margin-top: 4px;
-        color: $accent-color;
-        font-weight: 700;
     }
 
     .route-door-desc {
         margin-top: 8px;
         color: $grey-color-light;
+    }
+
+    // The action sits at the foot of the card so both doors line up.
+    .route-door-action {
+        margin-top: auto;
+        padding-top: 24px;
+        color: $accent-color;
+        font-weight: 700;
+
+        &::after {
+            content: "→";
+            display: inline-block;
+            margin-left: 0.35em;
+            transition: transform $duration-lg;
+        }
     }
 
     .route-door-lean {
@@ -735,7 +736,7 @@ html.is-animating .transition-fade {
 
     &:hover,
     &:focus-visible {
-        .route-door-title::after {
+        .route-door-action::after {
             transform: translateX(4px);
         }
 
@@ -765,7 +766,7 @@ html.is-animating .transition-fade {
         &,
         .route-door-art rect,
         .route-door-art path,
-        .route-door-title::after {
+        .route-door-action::after {
             transition: none;
         }
 
