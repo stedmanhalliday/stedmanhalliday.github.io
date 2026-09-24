@@ -14,6 +14,11 @@
         padding: 0;
     }
 
+    .timeline-intro {
+        color: var(--tl-dim);
+        margin: 0 0 1.5rem;
+    }
+
     /* The year strip is a mobile control; on wider screens each row carries its own year. */
     .timeline-years {
         display: none;
@@ -186,8 +191,9 @@
         }
     }
 </style>
-{% assign timeline = site.data.timeline | reverse %}
+{% assign timeline = site.data.timeline.years | reverse %}
 <div class="timeline{% if include.preview %} timeline--preview{% endif %}">
+    <p class="timeline-intro">{{ site.data.timeline.description | escape }}</p>
     <nav class="timeline-years" aria-label="Jump to year">
         <ol>
             {% for entry in timeline %}
