@@ -639,6 +639,143 @@ html.is-animating .transition-fade {
     margin-top: $spacing-unit * 1.5;
 }
 
+/**
+ * Route doors: two ways into the work (Gallery for a quick look, Library for depth).
+ * Same card language as .doc-card, scaled up, each with a line glyph of its route.
+ */
+.route-doors {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 0;
+    list-style: none;
+
+    @include media-query($on-palm) {
+        grid-template-columns: 1fr;
+    }
+
+    li {
+        margin: 0;
+    }
+}
+
+.route-door {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 24px;
+    border: 1px solid $surface-light-4;
+    border-radius: $radius-lg;
+    color: $text-color;
+    text-decoration: none;
+    transition: border-color $duration-lg, background-color $duration-lg;
+
+    &,
+    &:visited {
+        color: $text-color;
+    }
+
+    &:hover {
+        border-color: $accent-color;
+        background-color: rgba($accent-color, 0.06);
+        color: $text-color;
+        text-decoration: none;
+    }
+
+    &:focus-visible {
+        outline: 2px solid $accent-color;
+        outline-offset: 3px;
+    }
+
+    .route-door-art {
+        width: 120px;
+        height: 72px;
+        margin-bottom: 24px;
+        overflow: visible;
+        fill: none;
+        stroke: $grey-color;
+        stroke-width: 1.5;
+
+        rect,
+        path {
+            transition: fill 0.3s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.3s, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+    }
+
+    .route-door-title {
+        @include relative-font-size(1.5);
+        font-weight: 700;
+        line-height: 1.25;
+
+        &::after {
+            content: "→";
+            display: inline-block;
+            margin-left: 0.35em;
+            color: $accent-color;
+            transition: transform $duration-lg;
+        }
+    }
+
+    .route-door-mode {
+        margin-top: 4px;
+        color: $accent-color;
+        font-weight: 700;
+    }
+
+    .route-door-desc {
+        margin-top: 8px;
+        color: $grey-color-light;
+    }
+
+    .route-door-lean {
+        transform-box: fill-box;
+        transform-origin: 100% 100%;
+    }
+
+    &:hover,
+    &:focus-visible {
+        .route-door-title::after {
+            transform: translateX(4px);
+        }
+
+        .route-door-art {
+            stroke: $accent-color;
+        }
+
+        // Gallery: the frames fill in one after another.
+        .route-door-art--gallery rect {
+            fill: rgba($accent-color, 0.18);
+
+            @for $i from 1 through 6 {
+                &:nth-child(#{$i}) {
+                    transition-delay: 40ms * ($i - 1);
+                }
+            }
+        }
+
+        // Library: one volume tips off the shelf.
+        .route-door-lean {
+            fill: rgba($accent-color, 0.18);
+            transform: rotate(18deg);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        &,
+        .route-door-art rect,
+        .route-door-art path,
+        .route-door-title::after {
+            transition: none;
+        }
+
+        &:hover .route-door-lean,
+        &:focus-visible .route-door-lean {
+            transform: none;
+        }
+    }
+}
+
 // Homepage stacks several list sections; give each its own breathing room.
 .blog + .blog {
     margin-top: $spacing-unit * 2;
