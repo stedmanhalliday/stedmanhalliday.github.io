@@ -1,0 +1,26 @@
+# Homepage highlight reel (cover flow). Each frame links to its section on /assorted-works.
+# `anchor` must match a <figure id> on _pages/2026-06-17-assorted-works.md.
+- anchor: alexa
+  image: /assets/img/reel/2021-11-19-alexa-moods.webp
+  caption: Alexa for TV production app and interface design
+- anchor: windows-11
+  image: /assets/img/2021-06-27-windows-11-0.webp
+  caption: Windows 11 web launch with Microsoft
+- anchor: prana
+  image: /assets/img/2024-10-02-Prana-pre_seed_deck.webp
+  caption: Prana pre-seed deck and product demo
+- anchor: kadenze
+  image: /assets/img/2014-04-21-ableton-portal.webp
+  caption: Kadenze partner portals for Ableton and Princeton
+- anchor: presence
+  image: /assets/img/reel/2024-08-05-presence-website.webp
+  caption: Presence brand identity for Deepak Chopra meditation content
+- anchor: marble
+  image: /assets/img/2018-06-08-marble-web.png
+  caption: "Marble identity and launch: the first flash loan protocol"
+- anchor: firme
+  image: /assets/img/2019-02-13-firme-brand.webp
+  caption: Firmé atelier identity, motion, and web
+- anchor: balland
+  image: /assets/img/2015-01-22-day-after-reading-sheets.webp
+  caption: Newspaper and typographic posters with Ludovic Balland
