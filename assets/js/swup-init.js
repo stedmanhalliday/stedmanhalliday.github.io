@@ -54,6 +54,7 @@ function initScrims() {
         // Nothing hidden worth revealing: show it all.
         if (box.scrollHeight <= box.clientHeight + 24) {
             box.classList.remove("is-clipped");
+            box.dispatchEvent(new CustomEvent("scrim:open"));
             return;
         }
         var trigger = document.createElement("button");
@@ -69,6 +70,7 @@ function initScrims() {
             trigger.remove();
             box.setAttribute("tabindex", "-1");
             box.focus({ preventScroll: true });
+            box.dispatchEvent(new CustomEvent("scrim:open"));
             if (reduce) {
                 box.classList.remove("is-clipped");
                 return;

@@ -223,9 +223,23 @@
 <script>
     (function () {
         var root = document.querySelector(".timeline");
-        // The homepage preview is static: no scroll focus.
-        if (!root || root.classList.contains("timeline--preview")) return;
+        if (!root) return;
 
+        // The homepage preview stays static until its scrim opens, then behaves like About.
+        if (root.classList.contains("timeline--preview")) {
+            var box = root.closest(".scrim-clip");
+            if (!box) return;
+            var open = function () {
+                root.classList.remove("timeline--preview");
+                enhance();
+            };
+            if (box.hasAttribute("data-scrim-ready") && !box.classList.contains("is-clipped")) open();
+            else box.addEventListener("scrim:open", open, { once: true });
+            return;
+        }
+        enhance();
+
+        function enhance() {
         var strip = root.querySelector(".timeline-years");
         var links = [].slice.call(strip.querySelectorAll("a"));
         var entries = [].slice.call(root.querySelectorAll(".timeline-entry"));
@@ -295,5 +309,6 @@
 
         root.classList.add("is-enhanced");
         update();
+        }
     })();
 </script>
