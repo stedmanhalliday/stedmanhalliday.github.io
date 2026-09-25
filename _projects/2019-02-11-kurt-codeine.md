@@ -1,4 +1,5 @@
 ---
+hidden: true # not a case study; see issue #67
 layout: project
 title: Kurt Codeine Cover Art
 date: 2019-02-11

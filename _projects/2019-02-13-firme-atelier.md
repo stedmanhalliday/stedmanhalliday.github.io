@@ -1,4 +1,5 @@
 ---
+hidden: true # not a case study; see issue #67
 layout: project
 title: Firmé Atelier
 date: 2019-02-13 00:00 +0000

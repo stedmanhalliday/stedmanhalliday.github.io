@@ -9,6 +9,7 @@ layout: default
             <strong>Browse by category:</strong>
             {% assign project_categories = "" | split: "|" %}
             {% for post in site.projects %}
+                {% if post.hidden %}{% continue %}{% endif %}
                 {% for category in post.categories %}
                     {% assign project_categories = project_categories | push: category | uniq %}
                 {% endfor %}
