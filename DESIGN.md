@@ -11,6 +11,7 @@ colors:
   slate: "#8996aa"
   slate-light: "#b8c0cc"
   glass-tint: "rgba(17, 20, 24, 0.55)"
+  glass-lift: "rgba(97, 179, 175, 0.08)"
 typography:
   display:
     fontFamily: "Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
@@ -45,7 +46,7 @@ spacing:
   unit: "32px"
   half: "16px"
   double: "64px"
-  grid-pitch: "32px"
+  grid-pitch: "16px"
   content-width: "800px"
 components:
   button-cta:
@@ -107,7 +108,8 @@ A cool near-black field with soft white text and a single desaturated teal.
 - **Slate Dark** (`slate-dark`): header hover text and post header rules.
 - **Slate** (`slate`): meta text, tag outlines, blockquotes.
 - **Slate Light** (`slate-light`): secondary text such as intros and card meta.
-- **Glass Tint** (`glass-tint`): the tile fill in the Scroll state. It is Board Ink at 55%, so a tile only reads as glass when the grid is behind it.
+- **Glass Tint** (`glass-tint`): the base tile fill in the Scroll state. It is Board Ink at 55%, which softens the grid behind the tile.
+- **Glass Lift** (`glass-lift`): Circuit Teal at 8%, laid over the Glass Tint so the pane carries the grid's color and lifts just off the page.
 
 ### Named Rules
 **The One Current Rule.** Teal is the only hue. The grid, the links, and the CTAs share it. Do not add a second accent for the motion layer.
@@ -130,11 +132,13 @@ A cool near-black field with soft white text and a single desaturated teal.
 
 A single centered column (800px content width) with a 32px spacing unit. Half (16px) sets vertical rhythm between blocks; double (64px) separates sections. Featured work breaks out to 1240px in a three-column grid; project rows use a 2:3 image-to-text split. Under 600px everything stacks to one column. The site header is a 64px light band.
 
-The scroll grid uses its own pitch (`grid-pitch`, 32px), set equal to the spacing unit so traces line up with the vertical rhythm. The grid is fixed to the viewport, not the document, so it reads as a layer under the page, not as page content.
+The scroll grid uses its own pitch (`grid-pitch`, 16px), half the spacing unit, so traces still line up with the vertical rhythm. The grid is fixed to the viewport, not the document, so it reads as a layer under the page, not as page content.
 
 ## Elevation & Depth
 
 The system has no shadows. Depth is a material state that answers to scrolling. There are exactly three states.
+
+The material runs only on browse pages, where rows are the content: home, /work, /blog, and the tag and category archives. Reading pages (posts, case studies, About) stay plain, so nothing moves behind body text or media.
 
 ### Rest
 A flat Board Ink background. No grid. No glass. Tiles are invisible: they have the page color and no blur, border, or shadow. This is the state on load, on idle, and always under `prefers-reduced-motion: reduce`.
@@ -142,7 +146,15 @@ A flat Board Ink background. No grid. No glass. Tiles are invisible: they have t
 ### Scroll
 While the reader scrolls, a fixed layer of fine dotted teal lines fades in over the background, like traces on a circuit board. Lines run on the `grid-pitch` in both axes. Each line is a dotted stroke (1px dots on a 4px period) at `grid-line-opacity`. The layer fades in over `material-rise`.
 
-At the same time, project rows, featured cards, and blog post entries sit on glass tiles. A tile fills with Glass Tint and applies `backdrop-filter: blur(glass-blur)`. The grid behind a tile softens into a haze; the grid between tiles stays sharp. That contrast, and nothing else, draws the tile edge.
+At the same time, project rows, featured cards, and blog post entries sit on glass tiles. A tile fills with Glass Tint and applies `backdrop-filter: blur(glass-blur)`. The grid behind a tile softens into a haze; the grid between tiles stays sharp. That contrast draws the tile edge.
+
+Three flourishes live inside the glass and fade with it:
+- **Frosted grain:** fine white grain at 4.5% makes the pane read as material, not a tint.
+- **Teal lift:** Glass Lift over the tint gives the pane the grid's color.
+- **Specular edge:** a soft 2px highlight sits on the edge the content moves toward: the top while scrolling down, the bottom while scrolling up.
+
+### Hover
+On pointer devices, hovering a project row or blog entry wakes its glass to at least 80%, even at rest, and a soft teal focus light follows the pointer. A teal glow and the specular edge follow the pointer. Hover counts as reader motion, so this does not break the Flat At Rest Rule. Thumbnails do not tilt; the material moves, the content stays still.
 
 ### Decay
 When no scroll event arrives for `scroll-idle`, the grid and the glass ease back to Rest over `material-decay` (750ms, inside the 600–900ms band) with the incumbent ease-out curve. Grid opacity, tile tint, and blur all decay together, so the page never holds a half state. A new scroll during decay reverses it from the current value; it does not restart.
@@ -151,19 +163,21 @@ The material tokens that the frontmatter schema cannot hold live in `.impeccable
 
 | Token | Value | Role |
 |---|---|---|
-| `grid-pitch` | 32px (frontmatter `spacing`) | Distance between trace lines |
+| `grid-pitch` | 16px (frontmatter `spacing`) | Distance between trace lines |
 | `grid-line-opacity` | 0.14 | Peak opacity of the teal traces |
 | `grid-dot` | 1px dot, 4px period | Dotted stroke pattern |
 | `glass-blur` | 12px | Backdrop blur radius on tiles |
-| `glass-tint` | frontmatter `colors` | Tile fill in Scroll |
+| `glass-tint` | frontmatter `colors` | Base tile fill in Scroll |
+| `glass-lift` | frontmatter `colors` | Teal layer over the tint |
+| `glass-grain` | white noise at 4.5% | Frosted texture inside the glass |
 | `material-rise` | 200ms | Fade in from Rest to Scroll |
 | `material-decay` | 750ms | Ease back from Scroll to Rest |
 | `scroll-idle` | 150ms | Quiet time that counts as "scrolling stopped" |
 
 ### Named Rules
-**The Flat At Rest Rule.** If the reader is not scrolling, the page is flat. No grid, glass, or shadow may persist at rest, and none may appear on load.
+**The Flat At Rest Rule.** If the reader is not scrolling or hovering a row, the page is flat. No grid, glass, or shadow may persist at rest, and none may appear on load.
 
-**The No Card Wall Rule.** Glass tiles have no border, no shadow, and no visible fill at rest. Only the blurred grid defines their edge. If a screenshot of the Scroll state reads as a bento or a wall of cards, the tile is too strong: lower the tint or blur, never add an edge.
+**The No Card Wall Rule.** Glass tiles have no border, no shadow, and no visible fill at rest. Only the blurred grid and the transient specular edge define their edge. At least one grid cell (16px) of sharp grid must show between neighboring tiles. If a screenshot of the Scroll state reads as a bento or a wall of cards, the tile is too strong: lower the tint or blur, never add an edge.
 
 **The Still Reader Rule.** Under `prefers-reduced-motion: reduce`, the page stays in Rest. The grid and glass never appear.
 
@@ -189,7 +203,8 @@ Small, precise corners: 2px on CTAs and the scrim plus, 4px on cards, code block
 ### Glass Tile (signature)
 - **Wraps:** project rows, featured cards, and blog post entries. Nothing else.
 - **Rest:** identical to the page. No fill, blur, border, or shadow.
-- **Scroll:** Glass Tint fill plus a 12px backdrop blur, 4px radius. See Elevation & Depth.
+- **Scroll / Hover:** Glass Tint plus Glass Lift, grain, specular edge, and a 12px backdrop blur, 4px radius. See Elevation & Depth.
+- **Tags on live glass:** outlines drop away and tags become teal chips (Circuit Teal at 18%, Paper text). They blend with the tile's material level, so they fade in and out in step with the glass, never after it. A hovered tag keeps its solid teal fill.
 - **Padding:** the tile adds no layout. It must not shift content between states.
 
 ### Navigation
@@ -200,7 +215,7 @@ Small, precise corners: 2px on CTAs and the scrim plus, 4px on cards, code block
 ### Do:
 - **Do** keep the page flat Board Ink at rest and on load.
 - **Do** tie the grid and glass to scroll activity only, and decay them together over 750ms.
-- **Do** keep the grid fixed to the viewport, on a 32px pitch, in teal at 0.14 peak opacity.
+- **Do** keep the grid fixed to the viewport, on a 16px pitch, in teal at 0.14 peak opacity.
 - **Do** keep tile geometry identical across states so nothing moves when the material changes.
 - **Do** honor reduced motion by staying in Rest.
 

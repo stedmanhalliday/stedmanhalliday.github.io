@@ -120,7 +120,7 @@ figure > img {
 figcaption {
   margin-top: 1em;
   font-size: 14px;
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
 }
 
 /**
@@ -159,7 +159,7 @@ a {
   transition: 0.25s;
 }
 a:visited {
-  color: rgb(76.1948717949, 158.4051282051, 154.3948717949);
+  color: rgb(29.8803418803%, 62.1196581197%, 60.547008547%);
 }
 a:hover {
   color: #e8e8e8;
@@ -171,8 +171,8 @@ a:hover {
  */
 blockquote {
   margin: 32px auto;
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
-  border-left: 4px solid rgb(184.0751046025, 192.2391213389, 203.9748953975);
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
+  border-left: 4px solid rgb(72.1863155304%, 75.3878907211%, 79.9901550578%);
   padding-left: 16px;
   font-size: 18px;
 }
@@ -190,7 +190,7 @@ blockquote.bigquote {
 blockquote cite {
   font-size: 1em;
   font-style: normal;
-  color: rgb(184.0751046025, 192.2391213389, 203.9748953975);
+  color: rgb(72.1863155304%, 75.3878907211%, 79.9901550578%);
 }
 blockquote > :last-child {
   margin-bottom: 0;
@@ -250,7 +250,7 @@ pre > code {
   width: 16px;
   height: 16px;
   display: inline-block;
-  fill: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  fill: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
   padding-right: 5px;
   vertical-align: text-top;
 }
@@ -292,7 +292,7 @@ table td {
 }
 
 .divider-thin-light {
-  border-bottom: 1px solid rgb(184.0751046025, 192.2391213389, 203.9748953975);
+  border-bottom: 1px solid rgb(72.1863155304%, 75.3878907211%, 79.9901550578%);
 }
 
 .soft-break {
@@ -427,7 +427,7 @@ html.is-animating .transition-fade {
   position: absolute;
   left: -0.5rem;
   font-weight: 700;
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
 }
 @media screen and (max-width: 600px) {
   .site-nav {
@@ -455,7 +455,7 @@ html.is-animating .transition-fade {
     display: none;
   }
   .site-nav input:checked ~ label[for=nav-trigger] {
-    background: rgb(184.0751046025, 192.2391213389, 203.9748953975);
+    background: rgb(72.1863155304%, 75.3878907211%, 79.9901550578%);
   }
   .site-nav input:checked ~ .trigger {
     display: flex;
@@ -464,7 +464,7 @@ html.is-animating .transition-fade {
     right: 0;
     padding: 1.5rem 2rem;
     gap: 1rem;
-    background: rgb(184.0751046025, 192.2391213389, 203.9748953975);
+    background: rgb(72.1863155304%, 75.3878907211%, 79.9901550578%);
   }
   .site-nav .page-link.current::before {
     color: #64748b;
@@ -494,7 +494,7 @@ html.is-animating .transition-fade {
   background-color: #0d0f12;
   padding: 48px 0 16px;
   font-size: 14.08px;
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
 }
 .site-footer h3 {
   margin-bottom: 0.5rem;
@@ -512,7 +512,7 @@ html.is-animating .transition-fade {
   margin-bottom: 1.5rem;
 }
 .site-footer .footer-monogram .monogram {
-  fill: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  fill: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
 }
 
 .footer-list,
@@ -572,9 +572,9 @@ html.is-animating .transition-fade {
 .post-list .post-tags .tag a {
   display: block;
   background: none;
-  border: 1px solid rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  border: 1px solid rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
   box-sizing: border-box;
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
   padding: 1px 0.5em 2px;
   font-size: 14px;
   font-weight: 700;
@@ -613,7 +613,7 @@ html.is-animating .transition-fade {
   flex-direction: column;
   gap: 16px;
   font-size: 14px;
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
 }
 
 .byline {
@@ -641,7 +641,7 @@ html.is-animating .transition-fade {
 }
 .post-tags a {
   display: block;
-  background-color: rgb(184.0751046025, 192.2391213389, 203.9748953975);
+  background-color: rgb(72.1863155304%, 75.3878907211%, 79.9901550578%);
   color: #111418;
   padding: 1px 0.5em 2px;
   font-weight: 700;
@@ -883,7 +883,7 @@ html.is-animating .transition-fade {
   font-weight: 700;
 }
 .doc-card .doc-card-meta {
-  color: rgb(184.0751046025, 192.2391213389, 203.9748953975);
+  color: rgb(72.1863155304%, 75.3878907211%, 79.9901550578%);
   font-size: 14px;
 }
 .doc-card .doc-card-action {
@@ -919,7 +919,7 @@ html.is-animating .transition-fade {
 .featured-work .page-intro {
   margin: 12px 0 0;
   text-align: center;
-  color: rgb(184.0751046025, 192.2391213389, 203.9748953975);
+  color: rgb(72.1863155304%, 75.3878907211%, 79.9901550578%);
   font-size: 18px;
 }
 @media screen and (max-width: 600px) {
@@ -1007,9 +1007,9 @@ html.is-animating .transition-fade {
 .post-list.projects .project .post-tags .tag a {
   display: block;
   background: none;
-  border: 1px solid rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  border: 1px solid rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
   box-sizing: border-box;
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
   padding: 1px 0.5em 2px;
   font-size: 14px;
   font-weight: 700;
@@ -1095,7 +1095,7 @@ a[data-fslightbox] {
 }
 
 .grey-color {
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
 }
 
 @media (pointer: coarse) {
@@ -1439,7 +1439,7 @@ a[data-fslightbox] {
   width: 100%;
   max-width: 560px;
   max-height: 72vh;
-  background-color: rgb(24.14, 27.05, 30.93);
+  background-color: rgb(9.4666666667%, 10.6078431373%, 12.1294117647%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.2), 0 14px 28px rgba(0, 0, 0, 0.35), 0 48px 80px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
@@ -1471,7 +1471,7 @@ a[data-fslightbox] {
   --pagefind-ui-text: #e8e8e8;
   --pagefind-ui-background: transparent;
   --pagefind-ui-background-secondary: rgba(13, 15, 18, 0.5);
-  --pagefind-ui-text-secondary: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  --pagefind-ui-text-secondary: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%);
   --pagefind-ui-border: rgba(255, 255, 255, 0.06);
   --pagefind-ui-border-secondary: rgba(255, 255, 255, 0.04);
   --pagefind-ui-border-width: 1px;
@@ -1566,7 +1566,7 @@ a[data-fslightbox] {
   margin-top: 0;
 }
 .search-dialog-body .pagefind-ui__message {
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958) !important;
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%) !important;
   padding: 0.75rem 1.25rem !important;
   font-weight: 400 !important;
   font-size: 13px !important;
@@ -1617,25 +1617,25 @@ a[data-fslightbox] {
   font-weight: 600 !important;
 }
 .search-dialog-body .pagefind-ui__result-excerpt {
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958) !important;
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%) !important;
   opacity: 0.8;
   line-height: 1.5;
 }
 .search-dialog-body .pagefind-ui__result-excerpt mark {
   background-color: rgba(97, 179, 175, 0.2);
-  color: rgb(148.6538461538, 203.8461538462, 201.1538461538);
+  color: rgb(58.2956259427%, 79.939668175%, 78.8838612368%);
   border-radius: 2px;
   padding: 0 2px;
 }
 .search-dialog-body .pagefind-ui__result-tag {
   background-color: rgba(255, 255, 255, 0.06) !important;
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958) !important;
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%) !important;
   border-radius: 4px !important;
   font-size: calc(12px * var(--pagefind-ui-scale)) !important;
 }
 .search-dialog-body .pagefind-ui__button {
   background-color: transparent !important;
-  color: rgb(136.7918410042, 150.3985355649, 169.9581589958) !important;
+  color: rgb(53.6438592173%, 58.9798178686%, 66.6502584297%) !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 8px !important;
   font-weight: 500 !important;
@@ -1645,6 +1645,94 @@ a[data-fslightbox] {
   background-color: rgba(97, 179, 175, 0.08) !important;
   border-color: rgba(97, 179, 175, 0.2) !important;
   color: #61B3AF !important;
+}
+
+/**
+ * Scroll material: a dotted circuit grid and glass tiles that surface while the
+ * reader scrolls, then decay to flat. assets/js/material.js drives --material
+ * (0 = rest, 1 = full), sets data-scroll-dir, and adds the grid layer, so without
+ * JS the page stays at rest. Hovering a project row also wakes its glass.
+ */
+.material-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cg fill='none' stroke='%2361B3AF'%3E%3Cpath d='M0 8.5h16M8.5 0v16' stroke-dasharray='1 3'/%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'/%3E%3C/g%3E%3C/svg%3E") center/16px 16px;
+  opacity: calc(var(--material, 0) * 0.14);
+}
+
+@property --glass {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+.post-list > li {
+  --gx: 20px;
+  --gy: 16px;
+  --glass: var(--material, 0);
+  position: relative;
+  isolation: isolate;
+  transition: --glass 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.post-list > li::after {
+  content: "";
+  position: absolute;
+  inset: calc(var(--gy) * -1) calc(var(--gx) * -1);
+  z-index: -2;
+  border-radius: 4px;
+  background-color: rgba(17, 20, 24, 0.55);
+  background-image: radial-gradient(180px 2px at calc(var(--mx, 50%) + var(--gx)) 0, rgba(255, 255, 255, 0.4), transparent), radial-gradient(circle 240px at calc(var(--mx, 50%) + var(--gx)) calc(var(--my, 50%) + var(--gy)), rgba(97, 179, 175, 0.12), transparent), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E"), linear-gradient(rgba(97, 179, 175, 0.08) 0 0);
+  background-size: 100% 2px, auto, 160px 160px, auto;
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+  background-position: top, 0 0, 0 0, 0 0;
+  pointer-events: none;
+  opacity: var(--glass);
+}
+.post-list > li.is-lit {
+  --glass: max(var(--material, 0), 0.8);
+}
+@media screen and (max-width: 800px) {
+  .post-list > li {
+    --gx: 12px;
+    --gy: 12px;
+  }
+}
+
+.post-list:not(.projects) > li {
+  --gy: 8px;
+}
+
+.post-list.featured-cards > li {
+  --gx: 8px;
+  --gy: 12px;
+}
+
+html[data-scroll-dir=up] .post-list > li::after {
+  background-position: bottom, 0 0, 0 0, 0 0;
+}
+
+html.is-material:not(.material-lite) .post-list > li.is-near::after,
+.post-list > li.is-lit::after {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.post-list > li .post-tags .tag.tag a:not(:hover) {
+  border-color: color-mix(in srgb, transparent calc(var(--glass) * 100%), rgb(53.6438592173%, 58.9798178686%, 66.6502584297%));
+  background-color: rgba(97, 179, 175, calc(0.18 * var(--glass)));
+  color: color-mix(in srgb, #e8e8e8 calc(var(--glass) * 100%), rgb(53.6438592173%, 58.9798178686%, 66.6502584297%));
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .material-grid,
+  .post-list > li::after {
+    display: none;
+  }
+  .post-list > li {
+    transition: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

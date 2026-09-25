@@ -41,6 +41,13 @@ $duration-md: 0.15s !default;
 $duration-lg: 0.2s !default;
 $duration-xl: 0.25s !default;
 
+// Scroll material (see DESIGN.md, Elevation & Depth)
+$grid-pitch: 16px !default;
+$grid-line-opacity: 0.14 !default;
+$glass-blur: 12px !default;
+$glass-tint: rgba($background-color, 0.55) !default;
+$glass-lift: rgba($accent-color, 0.08) !default;
+
 // Border radius
 $radius-sm: 2px !default;
 $radius-md: 4px !default;

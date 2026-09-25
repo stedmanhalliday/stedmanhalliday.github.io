@@ -68,6 +68,11 @@
         "role": "neutral",
         "displayName": "Glass Tint",
         "canonical": "rgba(17, 20, 24, 0.55)"
+      },
+      "glass-lift": {
+        "role": "primary",
+        "displayName": "Glass Lift",
+        "canonical": "rgba(97, 179, 175, 0.08)"
       }
     },
     "typographyMeta": {
@@ -96,8 +101,8 @@
     "material": [
       {
         "name": "grid-pitch",
-        "value": "32px",
-        "purpose": "Distance between trace lines, equal to the spacing unit."
+        "value": "16px",
+        "purpose": "Distance between trace lines, half the spacing unit."
       },
       {
         "name": "grid-line-opacity",
@@ -118,6 +123,26 @@
         "name": "glass-tint",
         "value": "{colors.glass-tint}",
         "purpose": "Tile fill in the Scroll state."
+      },
+      {
+        "name": "glass-lift",
+        "value": "{colors.glass-lift}",
+        "purpose": "Teal layer over the tint so the glass carries the grid's color."
+      },
+      {
+        "name": "glass-grain",
+        "value": "fractal noise, white, 4.5%",
+        "purpose": "Frosted texture inside the glass."
+      },
+      {
+        "name": "specular-edge",
+        "value": "180px x 2px white radial at 40%",
+        "purpose": "Highlight on the edge the content moves toward; follows the pointer on hover."
+      },
+      {
+        "name": "hover-glow",
+        "value": "240px teal radial at 12%",
+        "purpose": "Glow that follows the pointer inside a hovered tile."
       }
     ],
     "motion": [
@@ -145,6 +170,11 @@
         "name": "duration-lg",
         "value": "0.2s",
         "purpose": "CTA, tag, and card hover transitions."
+      },
+      {
+        "name": "glass-hover",
+        "value": "300ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Glass wakes to at least 80% on row hover."
       }
     ],
     "breakpoints": [
@@ -216,12 +246,12 @@
       },
       {
         "name": "The Flat At Rest Rule",
-        "body": "If the reader is not scrolling, the page is flat. No grid, glass, or shadow may persist at rest, and none may appear on load.",
+        "body": "If the reader is not scrolling or hovering a row, the page is flat. No grid, glass, or shadow may persist at rest, and none may appear on load.",
         "section": "elevation"
       },
       {
         "name": "The No Card Wall Rule",
-        "body": "Glass tiles have no border, no shadow, and no visible fill at rest. Only the blurred grid defines their edge. If a screenshot of the Scroll state reads as a bento or a wall of cards, the tile is too strong: lower the tint or blur, never add an edge.",
+        "body": "Glass tiles have no border, no shadow, and no visible fill at rest. Only the blurred grid and the transient specular edge define their edge. At least one grid cell (16px) of sharp grid must show between neighboring tiles. If a screenshot of the Scroll state reads as a bento or a wall of cards, the tile is too strong: lower the tint or blur, never add an edge.",
         "section": "elevation"
       },
       {
@@ -233,7 +263,7 @@
     "dos": [
       "**Do** keep the page flat Board Ink at rest and on load.",
       "**Do** tie the grid and glass to scroll activity only, and decay them together over 750ms.",
-      "**Do** keep the grid fixed to the viewport, on a 32px pitch, in teal at 0.14 peak opacity.",
+      "**Do** keep the grid fixed to the viewport, on a 16px pitch, in teal at 0.14 peak opacity.",
       "**Do** keep tile geometry identical across states so nothing moves when the material changes.",
       "**Do** honor reduced motion by staying in Rest."
     ],
