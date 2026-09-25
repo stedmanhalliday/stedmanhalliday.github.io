@@ -1,0 +1,63 @@
+{% comment %} Every project on one line, ordered by _data/index.yml. No dates, by design. {% endcomment %}
+{% assign index_tags = "" | split: "|" %}
+{% for entry in site.data.index %}
+{% if entry.project %}{% assign p = site.projects | where: "title", entry.project | first %}{% assign tags = p.categories %}{% else %}{% assign tags = entry.tags %}{% endif %}
+{% for tag in tags %}{% assign index_tags = index_tags | push: tag %}{% endfor %}
+{% endfor %}
+{% assign index_tags = index_tags | uniq | sort %}
+<section class="work-index-section" aria-labelledby="index-heading">
+    <h2 class="post-list-heading" id="index-heading">Index</h2>
+    <p class="index-sub">Side projects, experiments, and other work</p>
+    <div class="divider-thin mt-100 mb-200"></div>
+    <div class="index-filter" role="group" aria-label="Filter by category" hidden>
+        <button type="button" aria-pressed="true" data-tag="">All</button>
+        {% for tag in index_tags %}<button type="button" aria-pressed="false" data-tag="{{ tag }}">{{ tag }}</button>{% endfor %}
+    </div>
+    <p class="index-count" aria-live="polite"></p>
+    <ul class="index-list">
+        {% for entry in site.data.index %}
+        {% if entry.project %}
+        {% assign p = site.projects | where: "title", entry.project | first %}
+        {% assign title = p.title %}{% assign what = p.description | split: "<br" | first | strip_html | strip %}{% assign tags = p.categories %}{% assign href = p.url | relative_url %}{% assign external = false %}
+        {% else %}
+        {% assign title = entry.title %}{% assign what = entry.what %}{% assign tags = entry.tags %}{% assign href = entry.url %}{% assign external = true %}
+        {% endif %}
+        <li data-tags="|{{ tags | join: '|' }}|">
+            {% if href %}<a class="index-row" href="{{ href }}"{% if external %} target="_blank" rel="noopener"{% endif %}>{% else %}<div class="index-row">{% endif %}
+                <span class="index-name">{{ title | escape }}</span>
+                <span class="index-what">{{ what | escape }}</span>
+                <span class="index-tags">{{ tags | join: " · " }}</span>
+                {% if href %}<span class="index-go" aria-hidden="true">{% if external %}↗{% else %}→{% endif %}</span>{% endif %}
+            {% if href %}</a>{% else %}</div>{% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+<script>
+    (function () {
+        var root = document.querySelector(".work-index-section");
+        if (!root) return;
+        var filter = root.querySelector(".index-filter");
+        var buttons = [].slice.call(filter.querySelectorAll("button"));
+        var rows = [].slice.call(root.querySelectorAll(".index-list > li"));
+        var count = root.querySelector(".index-count");
+
+        function apply(tag) {
+            var shown = 0;
+            rows.forEach(function (li) {
+                var match = !tag || li.dataset.tags.indexOf("|" + tag + "|") !== -1;
+                li.hidden = !match;
+                if (match) shown++;
+            });
+            buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.tag === tag)); });
+            count.textContent = shown + (shown === 1 ? " project" : " projects");
+        }
+
+        buttons.forEach(function (b) {
+            b.addEventListener("click", function () { apply(b.dataset.tag); });
+        });
+        // Without JS the filter stays hidden and every row shows.
+        filter.hidden = false;
+        apply("");
+    })();
+</script>

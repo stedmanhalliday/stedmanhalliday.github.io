@@ -1,0 +1,17 @@
+# /work Index: every project, one line each, in this order (by weight, not date).
+# `project:` pulls the title, description, and categories from _projects/.
+# For work with no page, give `title`, `what`, `tags`, and an optional `url` instead.
+- project: Eat Blueprint
+- project: Microsoft Education Blog
+- project: Amazon Alexa
+- project: hmu.world
+- project: Marble Protocol
+- project: Acura Vehicle Features
+- project: Birdtag
+- project: Firmé Atelier
+- project: Cupid's Cards
+- project: ContracTx
+- project: Javier Wedding
+- project: Kurt Codeine Cover Art
+- project: TensorFlow Resources
+- project: Zora NFTs
