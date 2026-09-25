@@ -1,4 +1,5 @@
 ---
+hidden: true # not a case study; see issue #67
 layout: project
 title: Microsoft Education Blog
 date: 2020-09-02
