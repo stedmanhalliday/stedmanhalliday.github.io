@@ -844,79 +844,325 @@ html.is-animating .transition-fade {
  * Projects
  */
 
-.featured-work {
-    padding: clamp(48px, 6vw, 96px) clamp(16px, 4.5vw, 64px) 0;
-    margin-bottom: clamp(32px, 5vw, 80px);
+/**
+ * Work page: heading, type-led tabs, and one view at a time (Gallery, Case studies, Index).
+ * Full width: the wrapper keeps its gutters (they line up with the header) but drops the 800px cap.
+ */
+.wrapper:has(> .work-page) {
+    max-width: none;
+}
+
+.work-page {
+    max-width: 1616px;
+    margin: 0 auto;
+}
+
+.visually-hidden,
+.work-page.is-tabbed .work-panel-heading {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.work-head {
+    margin-top: -$spacing-unit;
+
+    .page-heading {
+        margin-bottom: 12px;
+    }
 
     .page-intro {
-        margin: 12px 0 0;
-        text-align: center;
+        max-width: 62ch;
+        margin: 0;
         color: $grey-color-light;
         @include relative-font-size(1.125);
     }
+}
 
-    @media screen and (max-width: $on-palm) {
-        padding: $spacing-unit $spacing-unit * 0.5 0;
+// Tabs share the Index's type: dim until current or hovered.
+.work-tabs {
+    position: sticky;
+    top: 0;
+    z-index: $z-10;
+    margin: clamp(40px, 5vw, 64px) -2rem 0;
+    padding: 0 2rem;
+    background-color: $background-color;
+
+    @include media-query($on-laptop) {
+        margin-right: -1rem;
+        margin-left: -1rem;
+        padding: 0 1rem;
     }
 
-    // Featured project cards: image on top, title and description below.
-    // Extra specificity beats the row layout in `.post-list.projects .project`.
-    .post-list.featured-cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: clamp(32px, 3.5vw, 56px) clamp(24px, 3vw, 48px);
-        max-width: 1240px;
-        margin: clamp(32px, 4vw, 56px) auto 0;
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0 clamp(20px, 3vw, 44px);
+        margin: 0;
+        border-bottom: 1px solid $surface-light-4;
+        list-style: none;
+    }
 
-        @media screen and (max-width: $on-palm) {
-            grid-template-columns: minmax(0, 1fr);
+    li {
+        margin: 0;
+    }
+
+    a {
+        position: relative;
+        display: block;
+        padding: 14px 0 16px;
+        color: #7a8597;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+        text-decoration: none;
+        transition: color $duration-xl;
+        @include relative-font-size(1.75);
+
+        @include media-query($on-palm) {
+            @include relative-font-size(1.25);
         }
 
-        .project {
-            margin: 0;
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: -1px;
+            left: 0;
+            height: 2px;
+            background-color: $accent-color;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .project .thumbnail img {
-            display: block;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
+        &[aria-current] {
+            color: $text-color;
+
+            &::after {
+                transform: scaleX(1);
+            }
         }
 
-        .project h3 {
-            margin: 20px 0 8px;
+        &:focus-visible {
+            outline: 2px solid $accent-color;
+            outline-offset: 4px;
         }
+    }
 
-        .project .post-description p {
-            margin: 0;
+    @media (hover: hover) {
+        a:hover {
+            color: $text-color;
+            text-decoration: none;
         }
     }
 }
 
-// /work index: tight groups, generous separations.
-.work-index {
-    > .post-list-heading {
-        margin-bottom: 24px;
+.work-panel {
+    padding-top: clamp(32px, 4vw, 56px);
+    scroll-margin-top: 48px;
+
+    // Without JS the panels stack; give each one room.
+    & + & {
+        margin-top: clamp(64px, 8vw, 112px);
     }
 
-    // "Browse by category": label on its own line, chips with room to breathe.
-    > .post-meta .post-tags {
-        gap: 12px;
-        margin: 0;
+    .work-page.is-tabbed & + & {
+        margin-top: 0;
+    }
 
-        strong {
-            flex-basis: 100%;
-            margin-bottom: 4px;
+    &.is-entering {
+        animation: work-panel-in 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+}
+
+@keyframes work-panel-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+}
+
+// Gallery: on wide screens each caption sits in a left rail beside its media.
+.work-gallery {
+    > figure {
+        margin: 0 0 clamp(64px, 8vw, 120px);
+        scroll-margin-top: 96px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        > figure {
+            display: grid;
+            grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+            align-items: start;
+            column-gap: clamp(32px, 4vw, 64px);
+
+            > .grid {
+                grid-column: 2;
+            }
+
+            > figcaption {
+                position: sticky;
+                top: 96px;
+                grid-row: 1;
+                grid-column: 1;
+                margin: 0;
+                color: $grey-color-light;
+                font-size: $base-font-size;
+                text-align: left;
+            }
+        }
+
+        .grid.col2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid.col3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        // Single-column lockups become two columns; an odd count leads with a wide piece.
+        .grid:not(.col2):not(.col3) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            > :first-child:nth-last-child(odd) {
+                grid-column: span 2;
+            }
+        }
+    }
+}
+
+// Case studies: one lead, then two. The richest view on the page.
+.work-cases {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(48px, 5vw, 80px) clamp(24px, 3vw, 48px);
+    margin: 0;
+    list-style: none;
+
+    @include media-query($on-palm) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.work-case {
+    margin: 0;
+
+    > a {
+        display: block;
+        color: $text-color;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:focus-visible {
+            outline: 2px solid $accent-color;
+            outline-offset: 6px;
         }
     }
 
-    > .post-meta + .divider-thin {
-        margin-top: 48px;
-        margin-bottom: clamp(48px, 5vw, 72px);
+    .work-case-media {
+        display: block;
+        overflow: hidden;
+        background-color: $surface-light-1;
+
+        img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
     }
 
-    .post-list.projects .project {
-        column-gap: clamp(24px, 3.5vw, 48px);
-        margin-bottom: clamp(48px, 5vw, 72px);
+    .work-case-body {
+        padding-top: 24px;
+    }
+
+    .work-case-title {
+        margin: 0 0 8px;
+        @include relative-font-size(1.5);
+    }
+
+    .work-case-desc {
+        max-width: 52ch;
+        margin: 0 0 12px;
+        color: $grey-color-light;
+    }
+
+    .work-case-scope {
+        margin: 0 0 20px;
+        color: #7a8597;
+        font-size: $small-font-size;
+    }
+
+    .work-case-go {
+        display: inline-flex;
+        color: $accent-color;
+        font-weight: 700;
+
+        &::after {
+            transition: transform $duration-lg;
+        }
+    }
+
+    > a:hover,
+    > a:focus-visible {
+        .work-case-media img {
+            transform: scale(1.02);
+        }
+
+        .work-case-go::after {
+            transform: translateX(4px);
+        }
+    }
+
+    &.is-lead {
+        grid-column: 1 / -1;
+
+        @media screen and (min-width: 900px) {
+            > a {
+                display: grid;
+                grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+                align-items: center;
+                gap: clamp(32px, 4vw, 64px);
+            }
+
+            .work-case-body {
+                padding-top: 0;
+            }
+        }
+
+        .work-case-title {
+            @include relative-font-size(2);
+        }
+
+        .work-case-desc {
+            @include relative-font-size(1.125);
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .work-tabs a,
+    .work-tabs a::after,
+    .work-case .work-case-media img,
+    .work-case .work-case-go::after {
+        transition: none;
+    }
+
+    .work-panel.is-entering {
+        animation: none;
+    }
+
+    .work-case > a:hover .work-case-media img,
+    .work-case > a:focus-visible .work-case-media img {
+        transform: none;
     }
 }
 
@@ -1074,15 +1320,27 @@ a[data-fslightbox] {
  * Work index: every project on one line, filterable by category.
  */
 .index-sub {
-    margin: 8px 0 16px;
+    margin: 0 0 clamp(24px, 3vw, 40px);
     color: $grey-color-light;
+    @include relative-font-size(1.125);
+}
+
+// Filter chips on the left, the count on the right.
+.index-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 32px;
+    max-width: 1280px;
+    margin-bottom: 20px;
 }
 
 .index-filter {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin: $spacing-unit 0 16px;
+    margin: 0;
 
     button {
         min-height: 32px;
@@ -1118,12 +1376,13 @@ a[data-fslightbox] {
 }
 
 .index-count {
-    margin-bottom: 8px;
+    margin: 0;
     color: $grey-color;
     font-size: $small-font-size;
 }
 
 .index-list {
+    max-width: 1280px;
     margin: 0;
     border-bottom: 1px solid $surface-light-4;
     list-style: none;
@@ -1136,10 +1395,10 @@ a[data-fslightbox] {
 // Type follows the Experience timeline: dim by default, full contrast on hover.
 .index-row {
     display: grid;
-    grid-template-columns: minmax(10rem, 14rem) 1fr 1.5rem;
+    grid-template-columns: minmax(10rem, 16rem) minmax(0, 1fr) 1.5rem;
     align-items: baseline;
-    gap: 4px 24px;
-    padding: 12px 0;
+    gap: 6px clamp(24px, 3vw, 48px);
+    padding: 20px 0;
     border-top: 1px solid $surface-light-4;
     color: #7a8597;
     transition: color 0.25s;
@@ -1151,6 +1410,21 @@ a[data-fslightbox] {
 
     .index-name {
         font-weight: 700;
+        @include relative-font-size(1.125);
+    }
+
+    // Categories get their own column only where there's room for it.
+    .index-tags {
+        display: none;
+        font-size: $small-font-size;
+    }
+
+    @media screen and (min-width: 1024px) {
+        grid-template-columns: minmax(12rem, 18rem) minmax(0, 1fr) minmax(8rem, 14rem) 1.5rem;
+
+        .index-tags {
+            display: block;
+        }
     }
 
     .index-go {

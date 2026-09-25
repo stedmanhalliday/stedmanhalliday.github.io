@@ -5,15 +5,16 @@
 {% for tag in tags %}{% assign index_tags = index_tags | push: tag %}{% endfor %}
 {% endfor %}
 {% assign index_tags = index_tags | uniq | sort %}
-<section class="work-index-section" id="index" aria-labelledby="index-heading">
-    <h2 class="post-list-heading" id="index-heading">Index</h2>
+<section class="work-panel work-index-section" id="index" aria-labelledby="index-heading">
+    <h2 class="work-panel-heading" id="index-heading">Index</h2>
     <p class="index-sub">Side projects, experiments, and other work</p>
-    <div class="divider-thin mt-100 mb-200"></div>
-    <div class="index-filter" role="group" aria-label="Filter by category" hidden>
-        <button type="button" aria-pressed="true" data-tag="">All</button>
-        {% for tag in index_tags %}<button type="button" aria-pressed="false" data-tag="{{ tag }}">{{ tag }}</button>{% endfor %}
+    <div class="index-tools">
+        <div class="index-filter" role="group" aria-label="Filter by category" hidden>
+            <button type="button" aria-pressed="true" data-tag="">All</button>
+            {% for tag in index_tags %}<button type="button" aria-pressed="false" data-tag="{{ tag }}">{{ tag }}</button>{% endfor %}
+        </div>
+        <p class="index-count" aria-live="polite"></p>
     </div>
-    <p class="index-count" aria-live="polite"></p>
     <ul class="index-list">
         {% for entry in site.data.index %}
         {% if entry.project %}
@@ -26,6 +27,7 @@
             {% if href %}<a class="index-row" href="{{ href }}"{% if external %} target="_blank" rel="noopener"{% endif %}>{% else %}<div class="index-row">{% endif %}
                 <span class="index-name">{{ title | escape }}</span>
                 <span class="index-what">{{ what | escape }}</span>
+                <span class="index-tags">{{ tags | join: ", " }}</span>
                 {% if href %}<span class="index-go" aria-hidden="true">{% if external %}↗{% else %}→{% endif %}</span>{% endif %}
             {% if href %}</a>{% else %}</div>{% endif %}
         </li>
