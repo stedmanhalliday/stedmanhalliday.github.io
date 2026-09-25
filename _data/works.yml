@@ -1,14 +1,7 @@
-# Featured work, shown on the homepage.
+# Featured case studies, shown on the homepage and on /work (the only projects /work lists).
 # List project titles exactly as they appear in _projects/*.md, in display order.
 featured:
   - Amazon Alexa
   - Eat Blueprint
   - Acura Vehicle Features
 
-# Featured case studies, the only projects listed on /work.
-case_studies:
-  - Amazon Alexa
-  - Eat Blueprint
-  - Acura Vehicle Features
-  - Microsoft Education Blog
-  - Marble Protocol
