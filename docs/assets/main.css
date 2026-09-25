@@ -140,14 +140,24 @@ li > ol {
 /**
  * Headings
  */
+@font-face {
+  font-family: "Schibsted Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT"), local("Arial");
+  font-weight: 600 700;
+  size-adjust: 89.3%;
+  ascent-override: 100.8%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: 700;
+  font-family: "Schibsted Grotesk", "Schibsted Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 /**
@@ -378,6 +388,7 @@ html.is-animating .transition-fade {
   display: flex;
   align-items: center;
   text-transform: uppercase;
+  font-family: "Schibsted Grotesk", "Schibsted Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 700;
   letter-spacing: 0.048em;
 }
@@ -554,6 +565,17 @@ html.is-animating .transition-fade {
   font-size: 24px;
 }
 
+.post-list > li .post-link::after {
+  content: "";
+  position: absolute;
+  inset: calc(var(--gy, 0px) * -1) calc(var(--gx, 0px) * -1);
+}
+
+.post-list > li :is(.post-tags, .post-description) a {
+  position: relative;
+  z-index: 1;
+}
+
 /**
  * Post lists
  */
@@ -597,7 +619,7 @@ html.is-animating .transition-fade {
 .post-title,
 .page-heading {
   font-size: 42px;
-  letter-spacing: -1px;
+  letter-spacing: -0.025em;
   line-height: 1.25em;
   max-width: 24ch;
 }
