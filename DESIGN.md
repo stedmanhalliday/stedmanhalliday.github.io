@@ -14,19 +14,21 @@ colors:
   glass-lift: "rgba(97, 179, 175, 0.08)"
 typography:
   display:
-    fontFamily: "Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+    fontFamily: "Schibsted Grotesk, Schibsted Fallback, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
     fontSize: "42px"
-    fontWeight: 700
+    fontWeight: 600
     lineHeight: 1.25
-    letterSpacing: "-1px"
+    letterSpacing: "-0.025em"
   headline:
-    fontFamily: "Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+    fontFamily: "Schibsted Grotesk, Schibsted Fallback, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
     fontSize: "28px"
-    fontWeight: 700
+    fontWeight: 600
+    letterSpacing: "-0.01em"
   title:
-    fontFamily: "Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+    fontFamily: "Schibsted Grotesk, Schibsted Fallback, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
     fontSize: "24px"
-    fontWeight: 700
+    fontWeight: 600
+    letterSpacing: "-0.01em"
   body:
     fontFamily: "Lato, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
     fontSize: "16px"
@@ -90,7 +92,7 @@ This is not an editorial cream-and-serif site, a Dribbble shot wall, or a bento 
 **Key Characteristics:**
 - Flat dark rest state; depth exists only in motion.
 - One accent (teal) that carries links, calls to action, focus, and the grid traces.
-- Lato everywhere, in two weights, with a tight, bold heading voice.
+- Schibsted Grotesk for headings, Lato for everything else.
 - Hairline borders and small radii; no drop shadows.
 
 ## Colors
@@ -116,17 +118,24 @@ A cool near-black field with soft white text and a single desaturated teal.
 
 ## Typography
 
-**Display Font:** Lato (with the system sans stack)
+**Display Font:** Schibsted Grotesk (with a metric-matched Arial fallback, then the system sans stack)
 **Body Font:** Lato (with the system sans stack)
 
-**Character:** One humanist sans in two weights. Bold headings with slight negative tracking read confident. Regular body reads calm.
+**Character:** A newspaper grotesque carries the headings. It is firm, upright, and a little condensed, with a blunt authority that reads like a headline set by an editor rather than a template. Lato carries everything else at two weights and reads calm.
 
 ### Hierarchy
-- **Display** (700, 42px, 1.25): page and post titles. Max 24ch. Drops to 36px under 800px.
-- **Headline** (700, 28px): section headings such as list headings.
-- **Title** (700, 24px): project and post titles in lists.
-- **Body** (400, 16px, 1.5): prose, inside the 800px content column.
-- **Label** (400, 14px, 0.14em, uppercase): CTAs and card actions. Tags use the same size at 700 without tracking.
+- **Display** (Schibsted 600, 42px, 1.25, -0.025em): page and post titles. Max 24ch. Drops to 36px under 800px. The home hero title uses the same face and tracking at 40px (32px under 1200px).
+- **Headline** (Schibsted 600, 28px, -0.01em): section headings such as list headings.
+- **Title** (Schibsted 600, 24px, -0.01em): project and post titles in lists.
+- **Body** (Lato 400, 16px, 1.5): prose, inside the 800px content column.
+- **Label** (Lato 400, 14px, 0.14em, uppercase): CTAs and card actions. Tags use the same size at 700 without tracking.
+- **Site title** (Schibsted 700, uppercase, 0.048em): the wordmark in the header band. Nav links stay Lato.
+
+### Loading
+Both families load in one Google Fonts request with `display=swap`. Schibsted loads as one variable file (wght 600–700). The `Schibsted Fallback` face is local Arial Bold at `size-adjust: 89.3%` with ascent, descent, and line-gap overrides. It keeps the swap shift small.
+
+### Named Rules
+**The Two Voices Rule.** Schibsted is only for headings (h1–h6) and the site title. Body, meta, tags, nav links, and uppercase labels stay Lato. Keep heading tracking at -0.04em or looser and headings at 6rem or smaller.
 
 ## Layout
 

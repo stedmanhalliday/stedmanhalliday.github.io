@@ -78,23 +78,28 @@
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Page and post titles, max 24ch."
+        "purpose": "Page and post titles, max 24ch. Schibsted Grotesk 600, -0.025em.",
+        "fontRole": "heading"
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section and list headings."
+        "purpose": "Section and list headings. Schibsted Grotesk 600, -0.01em.",
+        "fontRole": "heading"
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Project and post titles in lists."
+        "purpose": "Project and post titles in lists. Schibsted Grotesk 600, -0.01em.",
+        "fontRole": "heading"
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Prose in the 800px column."
+        "purpose": "Prose in the 800px column. Lato 400.",
+        "fontRole": "body"
       },
       "label": {
         "displayName": "Label",
-        "purpose": "Uppercase CTAs and card actions."
+        "purpose": "Uppercase CTAs and card actions. Lato 400, stays Lato.",
+        "fontRole": "body"
       }
     },
     "shadows": [],
@@ -218,7 +223,7 @@
       "kind": "nav",
       "description": "Light header band with uppercase bold links.",
       "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-title\" href=\"#\">Stedman Halliday</a><span class=\"ds-nav-links\"><a class=\"ds-nav-link ds-current\" href=\"#\">Work</a><a class=\"ds-nav-link\" href=\"#\">Blog</a><a class=\"ds-nav-link\" href=\"#\">About</a></span></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 2rem; background: #e8e8e8; font: 700 16px/1.5 Lato, sans-serif; text-transform: uppercase; } .ds-nav a { color: #111418; text-decoration: none; } .ds-nav-title { letter-spacing: 0.048em; } .ds-nav-links { display: flex; gap: 1.5rem; } .ds-nav-link { position: relative; letter-spacing: 0.024em; } .ds-nav a:hover { color: #64748b; } .ds-nav a:focus-visible { outline: 2px solid #61B3AF; outline-offset: 3px; } .ds-current::before { content: '/'; position: absolute; left: -0.5rem; color: #8996aa; }"
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 2rem; background: #e8e8e8; font: 700 16px/1.5 Lato, sans-serif; text-transform: uppercase; } .ds-nav a { color: #111418; text-decoration: none; } .ds-nav-title { font-family: 'Schibsted Grotesk', sans-serif; letter-spacing: 0.048em; } .ds-nav-links { display: flex; gap: 1.5rem; } .ds-nav-link { position: relative; letter-spacing: 0.024em; } .ds-nav a:hover { color: #64748b; } .ds-nav a:focus-visible { outline: 2px solid #61B3AF; outline-offset: 3px; } .ds-current::before { content: '/'; position: absolute; left: -0.5rem; color: #8996aa; }"
     },
     {
       "name": "Glass Tile over Circuit Grid",
@@ -235,7 +240,7 @@
     "keyCharacteristics": [
       "Flat dark rest state; depth exists only in motion.",
       "One accent (teal) that carries links, calls to action, focus, and the grid traces.",
-      "Lato everywhere, in two weights, with a tight, bold heading voice.",
+      "Schibsted Grotesk for headings, Lato for everything else.",
       "Hairline borders and small radii; no drop shadows."
     ],
     "rules": [
