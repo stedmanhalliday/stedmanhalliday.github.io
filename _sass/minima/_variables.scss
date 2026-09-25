@@ -1,8 +1,10 @@
 @use "sass:color";
 
 // Define defaults for each variable.
-$heading-font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-$heading-font-weight: 700 !default;
+$heading-font-family: "Schibsted Grotesk", "Schibsted Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$heading-font-weight: 600 !default;
+$heading-letter-spacing: -0.01em !default;
+$display-letter-spacing: -0.025em !default;
 
 $base-font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
 $base-font-size:   16px !default;
@@ -40,6 +42,13 @@ $duration-sm: 0.12s !default;
 $duration-md: 0.15s !default;
 $duration-lg: 0.2s !default;
 $duration-xl: 0.25s !default;
+
+// Scroll material (see DESIGN.md, Elevation & Depth)
+$grid-pitch: 16px !default;
+$grid-line-opacity: 0.14 !default;
+$glass-blur: 12px !default;
+$glass-tint: rgba($background-color, 0.55) !default;
+$glass-lift: rgba($accent-color, 0.08) !default;
 
 // Border radius
 $radius-sm: 2px !default;

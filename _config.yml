@@ -154,6 +154,7 @@ imageoptim:
 # Deploy settings
 deploy:
     - git checkout main
+    - git pull
     - git merge dev
     - git push
     - git checkout dev
@@ -187,3 +188,5 @@ exclude:
     - lighthouserc.json
     - .lighthouseci/
     - tasks/
+    - PRODUCT.md
+    - DESIGN.md
