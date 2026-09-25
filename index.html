@@ -14,13 +14,19 @@ hero: intro
 <h2 class="post-list-heading">Work</h2>
 <div class="divider-thin mt-100 mb-200"></div>
 {% include sections/gallery-door.html %}
-<ul class="post-list projects">
+<ul class="case-row">
     {% for featured_title in site.data.works.featured %}
-    {% assign post = site.projects | where: "title", featured_title | first %}
-    {% include sections/project-card.html project=post %}
+    {% assign card = site.projects | where: "title", featured_title | first %}
+    <li>
+        <a href="{{ card.url | relative_url }}">
+            <img src="{{ card.image | relative_url }}" alt="" loading="lazy" decoding="async">
+            <span class="case-row-title">{{ card.title | escape }}</span>
+            <span class="case-row-scope">{{ card.description | replace: "<br>", " · " | strip_html | strip }}</span>
+        </a>
+    </li>
     {% endfor %}
 </ul>
-{% include sections/project-fx.html %}
+<p><a class="next-link section-cta" href="/work/">Work</a></p>
 </div>
 <div class="blog">
 <h2 class="post-list-heading">{{ page.list_title | default: "Recent Posts" }}</h2>

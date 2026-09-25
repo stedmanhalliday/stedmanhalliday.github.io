@@ -640,377 +640,198 @@ html.is-animating .transition-fade {
 }
 
 /**
- * Route door: the homepage entry to the /work gallery.
- * Same card language as .doc-card, scaled up, with a line glyph of the gallery.
+ * Gallery door: the homepage entry to the /work gallery. A mosaic of real work
+ * gives it the visual weight to lead the section; the case studies follow smaller.
  */
-.route-door {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    height: 100%;
-    padding: 24px;
+.gallery-door {
+    display: block;
+    margin: $spacing-unit * 1.5 0 $spacing-unit;
+    overflow: hidden;
     border: 1px solid $surface-light-4;
     border-radius: $radius-lg;
     color: $text-color;
     text-decoration: none;
-    transition: border-color $duration-lg, background-color $duration-lg;
+    transition: border-color $duration-lg;
 
     &,
-    &:visited {
+    &:visited,
+    &:hover {
         color: $text-color;
+        text-decoration: none;
     }
 
     &:hover {
         border-color: $accent-color;
-        background-color: rgba($accent-color, 0.06);
-        color: $text-color;
-        text-decoration: none;
     }
 
     &:focus-visible {
         outline: 2px solid $accent-color;
         outline-offset: 3px;
     }
-
-    .route-door-art {
-        width: 120px;
-        height: 72px;
-        margin-bottom: 24px;
-        overflow: visible;
-        fill: none;
-        stroke: $grey-color;
-        stroke-width: 1.5;
-
-        rect,
-        path {
-            transition: fill 0.3s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.3s, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-    }
-
-    .route-door-body {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-    }
-
-    // Wide: glyph beside the text, leading the Work section.
-    &.route-door--wide {
-        flex-direction: row;
-        align-items: center;
-        gap: 32px;
-        margin-bottom: $spacing-unit * 1.5;
-        padding: 32px;
-
-        .route-door-art {
-            flex-shrink: 0;
-            width: 160px;
-            height: 96px;
-            margin-bottom: 0;
-        }
-
-        .route-door-action {
-            padding-top: 16px;
-        }
-
-        @include media-query($on-palm) {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 24px;
-            padding: 24px;
-        }
-    }
-
-    .route-door-title {
-        @include relative-font-size(1.5);
-        font-weight: 700;
-        line-height: 1.25;
-    }
-
-    .route-door-desc {
-        margin-top: 8px;
-        color: $grey-color-light;
-    }
-
-    // The action sits at the foot of the card so both doors line up.
-    .route-door-action {
-        margin-top: auto;
-        padding-top: 24px;
-        color: $accent-color;
-        font-weight: 700;
-
-        &::after {
-            content: "→";
-            display: inline-block;
-            margin-left: 0.35em;
-            transition: transform $duration-lg;
-        }
-    }
-
-    &:hover,
-    &:focus-visible {
-        .route-door-action::after {
-            transform: translateX(4px);
-        }
-
-        .route-door-art {
-            stroke: $accent-color;
-        }
-
-        // Gallery: the frames fill in one after another.
-        .route-door-art--gallery rect {
-            fill: rgba($accent-color, 0.18);
-
-            @for $i from 1 through 6 {
-                &:nth-child(#{$i}) {
-                    transition-delay: 40ms * ($i - 1);
-                }
-            }
-        }
-
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        &,
-        .route-door-art rect,
-        .route-door-art path,
-        .route-door-action::after {
-            transition: none;
-        }
-    }
 }
 
-// Homepage stacks several list sections; give each its own breathing room.
-.blog + .blog {
-    margin-top: $spacing-unit * 2;
-}
-
-/**
- * Projects
- */
-
-.featured-work {
-    padding: clamp(48px, 6vw, 96px) clamp(16px, 4.5vw, 64px) 0;
-    margin-bottom: clamp(32px, 5vw, 80px);
-
-    .page-intro {
-        margin: 12px 0 0;
-        text-align: center;
-        color: $grey-color-light;
-        @include relative-font-size(1.125);
-    }
-
-    @media screen and (max-width: $on-palm) {
-        padding: $spacing-unit $spacing-unit * 0.5 0;
-    }
-
-    // Featured project cards: image on top, title and description below.
-    // Extra specificity beats the row layout in `.post-list.projects .project`.
-    .post-list.featured-cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: clamp(32px, 3.5vw, 56px) clamp(24px, 3vw, 48px);
-        max-width: 1240px;
-        margin: clamp(32px, 4vw, 56px) auto 0;
-
-        @media screen and (max-width: $on-palm) {
-            grid-template-columns: minmax(0, 1fr);
-        }
-
-        .project {
-            margin: 0;
-        }
-
-        .project .thumbnail img {
-            display: block;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-        }
-
-        .project h3 {
-            margin: 20px 0 8px;
-        }
-
-        .project .post-description p {
-            margin: 0;
-        }
-    }
-}
-
-// /work index: tight groups, generous separations.
-.work-index {
-    > .post-list-heading {
-        margin-bottom: 24px;
-    }
-
-    // "Browse by category": label on its own line, chips with room to breathe.
-    > .post-meta .post-tags {
-        gap: 12px;
-        margin: 0;
-
-        strong {
-            flex-basis: 100%;
-            margin-bottom: 4px;
-        }
-    }
-
-    > .post-meta + .divider-thin {
-        margin-top: 48px;
-        margin-bottom: clamp(48px, 5vw, 72px);
-    }
-
-    .post-list.projects .project {
-        column-gap: clamp(24px, 3.5vw, 48px);
-        margin-bottom: clamp(48px, 5vw, 72px);
-    }
-}
-
-.post-list.projects {
-    .project {
-        margin-bottom: $spacing-unit;
-        grid-template-columns: 2fr 3fr;
-
-        // Phones: stack the row, full-width image above the text.
-        @include media-query($on-palm) {
-            grid-template-columns: minmax(0, 1fr);
-            row-gap: 20px;
-        }
-
-        .thumbnail {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-        }
-
-        > div {
-            align-content: space-around;
-        }
-
-        h3 {
-            margin-top: -0.25 * $spacing-unit;
-            margin-bottom: 0.25 * $spacing-unit;
-        }
-
-        p {
-            margin-bottom: 1em;
-        }
-
-        .post-tags {
-            margin-bottom: 0;
-
-            .tag {
-                a {
-                    display: block;
-                    background: none;
-                    border: 1px solid $grey-color;
-                    box-sizing: border-box;
-                    color: $grey-color;
-                    padding: 1px 0.5em 2px;
-                    font-size: $small-font-size;
-                    font-weight: 700;
-
-                    &:hover {
-                        background-color: $accent-color;
-                        border-color: $accent-color;
-                        color: $background-color;
-                    }
-                }
-            }
-        }
-    }
-}
-
-/**
- * Lightbox
- */
-
-a[data-fslightbox] {
-    cursor: pointer;
-}
-
-.fslightbox-container {
-    outline: none;
-}
-
-/**
- * Utility
- */
-
-.mt-50,
-.mv-50 {
-    margin-top: 0.5 * $spacing-unit;
-}
-
-.mb-50,
-.mv-50 {
-    margin-bottom: 0.5 * $spacing-unit;
-}
-
-.mt-100,
-.mv-100 {
-    margin-top: $spacing-unit;
-}
-
-.mb-100,
-.mv-100 {
-    margin-bottom: $spacing-unit;
-}
-
-.mt-200,
-.mv-200 {
-    margin-top: 2 * $spacing-unit;
-}
-
-.mb-200,
-.mv-200 {
-    margin-bottom: 2 * $spacing-unit;
-}
-
-.flex-center {
-    display: flex;
-    justify-content: center;
-}
-
-.grid {
+.gallery-door-mosaic {
     display: grid;
-    grid-gap: 32px;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 4px;
+    aspect-ratio: 5 / 2;
+    background-color: $background-color-dark;
 
-    &.col2 {
-        grid-template-columns: auto auto;
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.85);
+        transition: filter 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    &.col3 {
-        grid-template-columns: auto auto auto;
-    }
+    .m-alexa { grid-column: 1; grid-row: 1 / 3; }
+    .m-prana { grid-column: 2 / 4; grid-row: 1; }
+    .m-poster { grid-column: 4; grid-row: 1 / 3; object-position: 50% 20%; }
+    .m-firme { grid-column: 2; grid-row: 2; object-position: 20% 50%; }
+    .m-windows { grid-column: 3; grid-row: 2; }
 
-    @media screen and (max-width: $on-palm) {
-        &.col2,
-        &.col3 {
-            grid-template-columns: auto;
+    @include media-query($on-palm) {
+        grid-template-columns: 1fr 1fr 1fr;
+        aspect-ratio: 3 / 2;
+
+        .m-alexa { grid-column: 1 / 3; grid-row: 1; }
+        .m-poster { grid-column: 3; grid-row: 1 / 3; }
+        .m-prana { grid-column: 1; grid-row: 2; }
+        .m-firme { grid-column: 2; grid-row: 2; }
+        .m-windows { display: none; }
+    }
+}
+
+.gallery-door:hover .gallery-door-mosaic img,
+.gallery-door:focus-visible .gallery-door-mosaic img {
+    filter: brightness(1);
+    transform: scale(1.03);
+}
+
+.gallery-door-body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 16px;
+    padding: 20px 24px;
+
+    @include media-query($on-palm) {
+        flex-direction: column;
+        gap: 4px;
+        padding: 16px 20px 20px;
+
+        .gallery-door-action {
+            margin-top: 8px;
         }
     }
 }
 
-.center {
-    margin-left: auto;
-    margin-right: auto;
+.gallery-door-title {
+    @include relative-font-size(1.5);
+    font-weight: 700;
 }
 
-.text-center {
-    text-align: center;
+.gallery-door-desc {
+    flex: 1;
+    color: $grey-color-light;
 }
 
-.grey-color {
-    color: $grey-color;
+.gallery-door-action {
+    color: $accent-color;
+    font-weight: 700;
+
+    &::after {
+        content: "→";
+        display: inline-block;
+        margin-left: 0.35em;
+        transition: transform $duration-lg;
+    }
 }
 
-// Touch screens: taller tag chips so they're easy to tap (desktop stays compact).
-@media (pointer: coarse) {
-    .post-tags a,
-    .post-list.projects .project .post-tags .tag a {
-        padding-top: 5px;
-        padding-bottom: 6px;
+.gallery-door:hover .gallery-door-action::after,
+.gallery-door:focus-visible .gallery-door-action::after {
+    transform: translateX(4px);
+}
+
+/**
+ * Case row: the featured case studies as a compact three-up, with scope lines
+ * (Amazon, Acura, Bryan Johnson) readable at a glance.
+ */
+.case-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 0 0 $spacing-unit;
+    list-style: none;
+
+    li {
+        margin: 0;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        color: $text-color;
+
+        &:visited {
+            color: $text-color;
+        }
+
+        &:hover .case-row-title {
+            color: $accent-color;
+        }
+    }
+
+    img {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        margin-bottom: 8px;
+        border-radius: $radius-md;
+        object-fit: cover;
+    }
+
+    .case-row-title {
+        font-weight: 700;
+        transition: color $duration-lg;
+    }
+
+    .case-row-scope {
+        color: $grey-color-light;
+        font-size: $small-font-size;
+    }
+
+    @include media-query($on-palm) {
+        grid-template-columns: 1fr;
+        gap: 16px;
+
+        a {
+            display: grid;
+            grid-template-columns: 7rem 1fr;
+            grid-template-rows: auto 1fr;
+            column-gap: 16px;
+        }
+
+        img {
+            grid-row: 1 / 3;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-door,
+    .gallery-door-mosaic img,
+    .gallery-door-action::after,
+    .case-row .case-row-title {
+        transition: none;
+    }
+
+    .gallery-door:hover .gallery-door-mosaic img {
+        transform: none;
     }
 }
 
