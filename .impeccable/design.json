@@ -1,0 +1,248 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-24T00:00:00Z",
+  "title": "Design System: Stedman Halliday",
+  "extensions": {
+    "colorMeta": {
+      "accent-teal": {
+        "role": "primary",
+        "displayName": "Circuit Teal",
+        "canonical": "#61B3AF",
+        "tonalRamp": [
+          "#10302e",
+          "#1c4a47",
+          "#2b6663",
+          "#3c827e",
+          "#4c9e9a",
+          "#61B3AF",
+          "#95cbc9",
+          "#cfe7e6"
+        ]
+      },
+      "accent-teal-deep": {
+        "role": "primary",
+        "displayName": "Deep Circuit Teal",
+        "canonical": "#4c9e9a"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Board Ink",
+        "canonical": "#111418",
+        "tonalRamp": [
+          "#0d0f12",
+          "#111418",
+          "#1c2127",
+          "#2a3038",
+          "#3d444e",
+          "#5a626d",
+          "#8a919b",
+          "#c4c8cd"
+        ]
+      },
+      "ink-deep": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "canonical": "#0d0f12"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#e8e8e8"
+      },
+      "slate-dark": {
+        "role": "neutral",
+        "displayName": "Slate Dark",
+        "canonical": "#64748b"
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "#8996aa"
+      },
+      "slate-light": {
+        "role": "neutral",
+        "displayName": "Slate Light",
+        "canonical": "#b8c0cc"
+      },
+      "glass-tint": {
+        "role": "neutral",
+        "displayName": "Glass Tint",
+        "canonical": "rgba(17, 20, 24, 0.55)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page and post titles, max 24ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section and list headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project and post titles in lists."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose in the 800px column."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase CTAs and card actions."
+      }
+    },
+    "shadows": [],
+    "material": [
+      {
+        "name": "grid-pitch",
+        "value": "32px",
+        "purpose": "Distance between trace lines, equal to the spacing unit."
+      },
+      {
+        "name": "grid-line-opacity",
+        "value": "0.14",
+        "purpose": "Peak opacity of the teal traces in the Scroll state."
+      },
+      {
+        "name": "grid-dot",
+        "value": "1px dot, 4px period",
+        "purpose": "Dotted stroke pattern of each trace."
+      },
+      {
+        "name": "glass-blur",
+        "value": "12px",
+        "purpose": "Backdrop blur radius on glass tiles in the Scroll state."
+      },
+      {
+        "name": "glass-tint",
+        "value": "{colors.glass-tint}",
+        "purpose": "Tile fill in the Scroll state."
+      }
+    ],
+    "motion": [
+      {
+        "name": "material-rise",
+        "value": "200ms ease-out",
+        "purpose": "Fade from Rest to Scroll."
+      },
+      {
+        "name": "material-decay",
+        "value": "750ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Ease from Scroll back to Rest after scrolling stops."
+      },
+      {
+        "name": "scroll-idle",
+        "value": "150ms",
+        "purpose": "Quiet time with no scroll event that counts as stopped."
+      },
+      {
+        "name": "duration-sm",
+        "value": "0.12s",
+        "purpose": "Micro state changes."
+      },
+      {
+        "name": "duration-lg",
+        "value": "0.2s",
+        "purpose": "CTA, tag, and card hover transitions."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "palm",
+        "value": "600px"
+      },
+      {
+        "name": "laptop",
+        "value": "800px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "CTA Button",
+      "kind": "button",
+      "refersTo": "button-cta",
+      "description": "Outlined teal call to action; fills on hover.",
+      "html": "<a class=\"ds-cta\" href=\"#\">See all work</a>",
+      "css": ".ds-cta { display: inline-flex; align-items: center; padding: 0.4rem 1.6rem; border: 1px solid #61B3AF; border-radius: 2px; background: transparent; color: #61B3AF; font: 400 14px/1.5 Lato, sans-serif; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background-color 0.2s, color 0.2s; } .ds-cta:hover { background: #61B3AF; color: #111418; } .ds-cta:focus-visible { outline: 2px solid #61B3AF; outline-offset: 3px; }"
+    },
+    {
+      "name": "Tag",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Outlined category tag on projects and posts.",
+      "html": "<a class=\"ds-tag\" href=\"#\">Brand</a>",
+      "css": ".ds-tag { display: inline-block; padding: 1px 0.5em 2px; border: 1px solid #8996aa; color: #8996aa; font: 700 14px/1.5 Lato, sans-serif; text-decoration: none; } .ds-tag:hover { background: #61B3AF; border-color: #61B3AF; color: #111418; } .ds-tag:focus-visible { outline: 2px solid #61B3AF; outline-offset: 2px; }"
+    },
+    {
+      "name": "Document Card",
+      "kind": "card",
+      "refersTo": "doc-card",
+      "description": "Hairline download card for the résumé.",
+      "html": "<a class=\"ds-doc-card\" href=\"#\"><span class=\"ds-doc-body\"><strong>Résumé</strong><span class=\"ds-doc-meta\">PDF · 1 page</span></span><span class=\"ds-doc-action\">Download</span></a>",
+      "css": ".ds-doc-card { display: flex; align-items: center; gap: 16px; max-width: 28rem; padding: 16px 20px; border: 1px solid rgba(255,255,255,0.14); border-radius: 4px; background: #111418; color: #e8e8e8; font: 400 16px/1.5 Lato, sans-serif; text-decoration: none; transition: border-color 0.2s, background-color 0.2s; } .ds-doc-card:hover { border-color: #61B3AF; background: rgba(97,179,175,0.06); } .ds-doc-card:focus-visible { outline: 2px solid #61B3AF; outline-offset: 3px; } .ds-doc-body { display: flex; flex: 1; flex-direction: column; gap: 2px; } .ds-doc-meta { color: #b8c0cc; font-size: 14px; } .ds-doc-action { color: #61B3AF; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Site Navigation",
+      "kind": "nav",
+      "description": "Light header band with uppercase bold links.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-title\" href=\"#\">Stedman Halliday</a><span class=\"ds-nav-links\"><a class=\"ds-nav-link ds-current\" href=\"#\">Work</a><a class=\"ds-nav-link\" href=\"#\">Blog</a><a class=\"ds-nav-link\" href=\"#\">About</a></span></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 64px; padding: 0 2rem; background: #e8e8e8; font: 700 16px/1.5 Lato, sans-serif; text-transform: uppercase; } .ds-nav a { color: #111418; text-decoration: none; } .ds-nav-title { letter-spacing: 0.048em; } .ds-nav-links { display: flex; gap: 1.5rem; } .ds-nav-link { position: relative; letter-spacing: 0.024em; } .ds-nav a:hover { color: #64748b; } .ds-nav a:focus-visible { outline: 2px solid #61B3AF; outline-offset: 3px; } .ds-current::before { content: '/'; position: absolute; left: -0.5rem; color: #8996aa; }"
+    },
+    {
+      "name": "Glass Tile over Circuit Grid",
+      "kind": "custom",
+      "refersTo": "glass-tile",
+      "description": "Signature material: flat at rest; on hover (standing in for scroll) the dotted teal grid fades in and the tile frosts it. No border, no shadow.",
+      "html": "<div class=\"ds-board\"><div class=\"ds-tile\"><strong>Project title</strong><p>One-line description of the work.</p></div></div>",
+      "css": ".ds-board { position: relative; padding: 48px; background-color: #111418; color: #e8e8e8; font: 400 16px/1.5 Lato, sans-serif; } .ds-board::before { content: ''; position: absolute; inset: 0; opacity: 0; background-image: linear-gradient(90deg, #61B3AF 1px, transparent 1px), linear-gradient(0deg, #61B3AF 1px, transparent 1px); background-size: 32px 32px; -webkit-mask: repeating-linear-gradient(45deg, #000 0 1px, transparent 1px 3px); mask: repeating-linear-gradient(45deg, #000 0 1px, transparent 1px 3px); transition: opacity 750ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-tile { position: relative; padding: 24px; border-radius: 4px; background: transparent; transition: background-color 750ms cubic-bezier(0.22, 1, 0.36, 1), backdrop-filter 750ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-tile p { margin: 8px 0 0; color: #b8c0cc; } .ds-board:hover::before { opacity: 0.14; transition-duration: 200ms; } .ds-board:hover .ds-tile { background: rgba(17, 20, 24, 0.55); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); transition-duration: 200ms; } @media (prefers-reduced-motion: reduce) { .ds-board:hover::before { opacity: 0; } .ds-board:hover .ds-tile { background: transparent; backdrop-filter: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Live Circuit",
+    "overview": "The site is a circuit board at rest. Nothing glows. Nothing floats. The reader sees a plain dark field, light text, and one teal accent. When the reader scrolls, current flows: a fine dotted grid of teal traces fades in, and the work sits on panes of soft glass above it. When the scroll stops, the current drains away and the board goes flat again.\n\nThe effect is proof of craft, not decoration. It appears only in answer to the reader's own motion, so it never competes with the content at rest. Density is low. Moves are few and strong. Every surface earns its depth by responding to something.\n\nThis is not an editorial cream-and-serif site, a Dribbble shot wall, or a bento template. The glass tiles never form a grid of boxes.",
+    "keyCharacteristics": [
+      "Flat dark rest state; depth exists only in motion.",
+      "One accent (teal) that carries links, calls to action, focus, and the grid traces.",
+      "Lato everywhere, in two weights, with a tight, bold heading voice.",
+      "Hairline borders and small radii; no drop shadows."
+    ],
+    "rules": [
+      {
+        "name": "The One Current Rule",
+        "body": "Teal is the only hue. The grid, the links, and the CTAs share it. Do not add a second accent for the motion layer.",
+        "section": "colors"
+      },
+      {
+        "name": "The Flat At Rest Rule",
+        "body": "If the reader is not scrolling, the page is flat. No grid, glass, or shadow may persist at rest, and none may appear on load.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No Card Wall Rule",
+        "body": "Glass tiles have no border, no shadow, and no visible fill at rest. Only the blurred grid defines their edge. If a screenshot of the Scroll state reads as a bento or a wall of cards, the tile is too strong: lower the tint or blur, never add an edge.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Still Reader Rule",
+        "body": "Under `prefers-reduced-motion: reduce`, the page stays in Rest. The grid and glass never appear.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** keep the page flat Board Ink at rest and on load.",
+      "**Do** tie the grid and glass to scroll activity only, and decay them together over 750ms.",
+      "**Do** keep the grid fixed to the viewport, on a 32px pitch, in teal at 0.14 peak opacity.",
+      "**Do** keep tile geometry identical across states so nothing moves when the material changes.",
+      "**Do** honor reduced motion by staying in Rest."
+    ],
+    "donts": [
+      "**Don't** give glass tiles a border, shadow, or resting fill. That makes a card wall.",
+      "**Don't** arrange tiles into a bento or a dense box grid.",
+      "**Don't** add a second accent color for the grid or glass.",
+      "**Don't** use drop shadows anywhere for depth.",
+      "**Don't** let the grid, blur, or tint hold after scrolling stops."
+    ]
+  }
+}
