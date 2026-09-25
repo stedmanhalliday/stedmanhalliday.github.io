@@ -5,7 +5,7 @@
 {% for tag in tags %}{% assign index_tags = index_tags | push: tag %}{% endfor %}
 {% endfor %}
 {% assign index_tags = index_tags | uniq | sort %}
-<section class="work-index-section" aria-labelledby="index-heading">
+<section class="work-index-section" id="index" aria-labelledby="index-heading">
     <h2 class="post-list-heading" id="index-heading">Index</h2>
     <p class="index-sub">Side projects, experiments, and other work</p>
     <div class="divider-thin mt-100 mb-200"></div>
@@ -26,7 +26,6 @@
             {% if href %}<a class="index-row" href="{{ href }}"{% if external %} target="_blank" rel="noopener"{% endif %}>{% else %}<div class="index-row">{% endif %}
                 <span class="index-name">{{ title | escape }}</span>
                 <span class="index-what">{{ what | escape }}</span>
-                <span class="index-tags">{{ tags | join: " · " }}</span>
                 {% if href %}<span class="index-go" aria-hidden="true">{% if external %}↗{% else %}→{% endif %}</span>{% endif %}
             {% if href %}</a>{% else %}</div>{% endif %}
         </li>
