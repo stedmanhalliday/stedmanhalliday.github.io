@@ -32,11 +32,14 @@ $glass-grain: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' widt
 
 // Tiles: project rows, featured cards, and blog entries. The glass hangs outside the
 // content box (--gx, --gy) so nothing shifts between states, and it has no border.
+// --gt/--gb split --gy when text leading makes one edge read deeper than the other.
 // Layers, top to bottom: specular edge on the side of travel, a glow that follows the
 // pointer (--mx/--my from project-fx), grain, and the teal lift.
 .post-list > li {
-    --gx: 20px;
+    --gx: 16px;
     --gy: 16px;
+    --gt: var(--gy);
+    --gb: var(--gy);
     --glass: var(--material, 0);
     position: relative;
     isolation: isolate;
@@ -45,13 +48,13 @@ $glass-grain: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' widt
     &::after {
         content: "";
         position: absolute;
-        inset: calc(var(--gy) * -1) calc(var(--gx) * -1);
+        inset: calc(var(--gt) * -1) calc(var(--gx) * -1) calc(var(--gb) * -1);
         z-index: -2; // under the pointer light in project-fx
         border-radius: $radius-md;
         background-color: $glass-tint;
         background-image:
             radial-gradient(180px 2px at calc(var(--mx, 50%) + var(--gx)) 0, rgba(255, 255, 255, 0.4), transparent),
-            radial-gradient(circle 240px at calc(var(--mx, 50%) + var(--gx)) calc(var(--my, 50%) + var(--gy)), rgba($accent-color, 0.12), transparent),
+            radial-gradient(circle 240px at calc(var(--mx, 50%) + var(--gx)) calc(var(--my, 50%) + var(--gt)), rgba($accent-color, 0.12), transparent),
             url("#{$glass-grain}"),
             linear-gradient($glass-lift 0 0);
         background-size: 100% 2px, auto, 160px 160px, auto;
@@ -72,15 +75,74 @@ $glass-grain: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' widt
     }
 }
 
-// Blog entries sit 32px apart; keep at least one grid cell visible between tiles.
+// Blog entries: the date's half-leading adds ~6px above the ink, so trim the top to
+// match the chips' hard bottom edge. The chips' margin moves outside the tile.
 .post-list:not(.projects) > li {
-    --gy: 8px;
+    --gt: calc(var(--gy) - 6px);
+    margin-bottom: $spacing-unit;
+
+    .post-tags {
+        margin-bottom: 0;
+    }
 }
 
-// Featured cards sit 24px+ apart; keep grid visible between them.
-.post-list.featured-cards > li {
-    --gx: 8px;
-    --gy: 12px;
+// Featured cards share one pane: square cards are too tight in tiles of their own.
+// The pane hangs --gx/--gy outside the grid and wakes when any card is hovered; each
+// card's pointer glow (project-fx) marks the one under the cursor. --gx/--gy on the
+// cards only size the click target now.
+.post-list.featured-cards {
+    --gx: 24px;
+    --gy: 24px;
+    --glass: var(--material, 0);
+    position: relative;
+    isolation: isolate;
+    transition: --glass 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+    &:has(> li.is-lit) {
+        --glass: max(var(--material, 0), 0.8);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: calc(var(--gy) * -1) calc(var(--gx) * -1);
+        z-index: -2;
+        border-radius: $radius-md;
+        background-color: $glass-tint;
+        background-image:
+            radial-gradient(50% 2px at 50% 0, rgba(255, 255, 255, 0.4), transparent),
+            url("#{$glass-grain}"),
+            linear-gradient($glass-lift 0 0);
+        background-size: 100% 2px, 160px 160px, auto;
+        background-repeat: no-repeat, repeat, no-repeat;
+        background-position: top, 0 0, 0 0;
+        pointer-events: none;
+        opacity: var(--glass);
+    }
+
+    @include media-query($on-laptop) {
+        --gx: 12px;
+        --gy: 12px;
+    }
+
+    // Phones: the grid sits 16px from the screen edge, so the pane runs full-bleed.
+    @include media-query($on-palm) {
+        --gx: 16px;
+        --gy: 16px;
+
+        &::after {
+            border-radius: 0;
+        }
+    }
+
+    > li {
+        --gx: 8px;
+        --gy: 8px;
+
+        &::after {
+            display: none;
+        }
+    }
 }
 
 // Scrolling up moves the edge light to the bottom.
@@ -88,9 +150,15 @@ html[data-scroll-dir="up"] .post-list > li::after {
     background-position: bottom, 0 0, 0 0, 0 0;
 }
 
+html[data-scroll-dir="up"] .post-list.featured-cards::after {
+    background-position: bottom, 0 0, 0 0;
+}
+
 // Blur only while the layer is live, and only on tiles near the viewport.
 html.is-material:not(.material-lite) .post-list > li.is-near::after,
-.post-list > li.is-lit::after {
+.post-list > li.is-lit::after,
+html.is-material:not(.material-lite) .post-list.featured-cards:has(> li.is-near)::after,
+.post-list.featured-cards:has(> li.is-lit)::after {
     -webkit-backdrop-filter: blur($glass-blur);
     backdrop-filter: blur($glass-blur);
 }
@@ -108,11 +176,13 @@ html.is-material:not(.material-lite) .post-list > li.is-near::after,
 
 @media (prefers-reduced-motion: reduce) {
     .material-grid,
-    .post-list > li::after {
+    .post-list > li::after,
+    .post-list.featured-cards::after {
         display: none;
     }
 
-    .post-list > li {
+    .post-list > li,
+    .post-list.featured-cards {
         transition: none;
     }
 }
