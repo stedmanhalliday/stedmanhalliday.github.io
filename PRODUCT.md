@@ -13,7 +13,7 @@ Hiring managers and recruiters for senior design and product leadership roles co
 stedmanhalliday.com is Stedman Halliday's personal site: experience, selected work, a résumé, and a blog. Right now it supports a job search ("exploring what's next"). Success: a qualified reader trusts his seniority within 30 seconds and has a clear path to the work, the résumé, and contact.
 
 ## Positioning
-*(Inferred from the About bio and project list; not yet confirmed.)* One person who covers design, code, brand, and growth strategy, with 15+ years across startups, agencies, and large tech. The proof spans scale (Amazon Alexa design lead), founding-team work (Kadenze), and an acquired venture (Eat Blueprint). A design-only or engineering-only portfolio cannot claim that range truthfully.
+*(Inferred from the About bio and project list; not yet confirmed.)* One person who covers design, code, brand, and growth strategy, across startups, agencies, and large tech. The proof spans scale (Amazon Alexa design lead), founding-team work (Kadenze), and an acquired venture (Eat Blueprint). A design-only or engineering-only portfolio cannot claim that range truthfully.
 
 ## Operating Context
 *(Inferred from the repo; not yet confirmed.)*
