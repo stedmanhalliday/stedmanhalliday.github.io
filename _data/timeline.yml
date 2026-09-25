@@ -1,7 +1,7 @@
 # Career timeline (homepage). One entry per year. The FIRST item is the
 # year's lead line (always visible); the rest open on click/tap.
 # Optional `project:` links a line to the _projects page with that title.
-description: 15+ years spanning design, development, and strategy
+description: Design, development, and strategy
 years:
   - year: 2010
     items:
@@ -17,23 +17,24 @@ years:
   - year: 2013
     items:
       - text: Received the AIGA Tomoko Miho Award recognizing design excellence
-      - text: Managed Lightspace Studio in Culver City for events and food shoots (Eating Well, Wolfgang Puck)
+      - text: Managed Lightspace Studio in Culver City for events and food shoots (e.g. Wolfgang Puck)
       - text: Grew a fine-art goods business at Musichead Gallery in Hollywood
   - year: 2014
     items:
-      - text: Joined the Kadenze launch team to widen access to creative tech education
+      - text: Joined the Kadenze founding team to widen access to creative tech education
       - text: Received the AIGA Tomoko Miho Award for a second time
       - text: "Joined CalArts' first Digital Arts minor class: film, audio, projection, fabrication"
   - year: 2015
     items:
-      - text: Launched Kadenze and Kannu with ~50 institutional partners, incl. Stanford, CalArts, and Ableton
+      - text: Launched Kadenze with ~50 institutional partners (e.g. Stanford, Ableton)
   - year: 2016
     items:
       - text: "Graduated from CalArts: BFA Graphic Design, minor in Digital Arts"
       - text: Consulted on product strategy and design for early-stage startups out of Stanford
   - year: 2017
     items:
-      - text: Piloted a programming curriculum and learning tools for blind students in Thailand, later adapted into the nation's first university programming course for blind adults
+      - text: Designed learning tools and a pilot for Thailand's first university programming course for blind students
+      - text: Volunteered as a special educator with the Father Ray Foundation
   - year: 2018
     items:
       - text: "Led brand, web, and launch strategy for Marble: the first flash loan protocol"
@@ -62,17 +63,18 @@ years:
     items:
       - text: Built hmu.world during the buildspace s4 cohort
         project: hmu.world
-      - text: Deepened software engineering skills within Amazon Technical Academy while relocating to SF to build new things
+      - text: Trained in full-stack engineering at Amazon Technical Academy
+      - text: Relocated from Los Angeles to San Francisco
   - year: 2024
     items:
       - text: Grew Eat Blueprint from launch to acquisition by Bryan Johnson
         project: Eat Blueprint
-      - text: Led a product org building a telehealth MVP with Paragon, later Prana
+      - text: Co-founded Paragon, then led product as CPO of Prana, building digital health MVPs
   - year: 2025
     items:
       - text: "Consulted on AI products: B2B sales agents (11x), a consumer companion (Auren), multi-agent orchestration (Random Labs)"
       - text: Consulted at Automattic on design and product leadership for the Beeper relaunch
-      - text: Operated the fitness center at Frontier Tower as an inaugural community leader
+      - text: Founded Frontier Fitness Center as an inaugural community leader at Frontier Tower
   - year: 2026
     items:
-      - text: Led tech systems for Frontier Tower as a director-level consultant
+      - text: Led tech systems for Frontier Tower as Head of Product & Systems

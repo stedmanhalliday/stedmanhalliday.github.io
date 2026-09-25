@@ -10,7 +10,7 @@ image: /assets/img/2026-01-27-perceptual-reasoning-gap.webp
 
 ## Overview
 
-15 years designing and building products, brands, and the systems behind them. Amazon Alexa, Microsoft, Acura, Eat Blueprint (acquired by Bryan Johnson), plus startups and special projects.
+Designing and building products, brands, and the systems behind them. Amazon Alexa, Microsoft, Acura, Eat Blueprint (acquired by Bryan Johnson), plus startups and special projects.
 
 This is the highlight reel: tech, print, and multimedia, shown instead of told.
 
