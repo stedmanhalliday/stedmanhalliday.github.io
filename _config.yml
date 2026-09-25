@@ -188,3 +188,5 @@ exclude:
     - lighthouserc.json
     - .lighthouseci/
     - tasks/
+    - PRODUCT.md
+    - DESIGN.md

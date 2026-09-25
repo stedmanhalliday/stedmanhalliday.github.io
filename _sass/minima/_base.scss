@@ -124,6 +124,17 @@ li {
 /**
  * Headings
  */
+// Metric-matched fallback so the swap to Schibsted Grotesk barely reflows.
+@font-face {
+    font-family: "Schibsted Fallback";
+    src: local("Arial Bold"), local("Arial-BoldMT"), local("Arial");
+    font-weight: 600 700;
+    size-adjust: 89.3%;
+    ascent-override: 100.8%;
+    descent-override: 28%;
+    line-gap-override: 0%;
+}
+
 h1,
 h2,
 h3,
@@ -132,6 +143,7 @@ h5,
 h6 {
     font-family: $heading-font-family;
     font-weight: $heading-font-weight;
+    letter-spacing: $heading-letter-spacing;
 }
 
 /**
