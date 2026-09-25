@@ -1,4 +1,5 @@
 ---
+hidden: true # not a case study; see issue #67
 layout: project
 title: Marble Protocol
 date: 2018-06-08

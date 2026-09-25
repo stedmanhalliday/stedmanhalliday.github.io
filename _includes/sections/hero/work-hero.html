@@ -1,7 +1,6 @@
-{% if paginator.page == 1 %}
 <section class="featured-work">
 <div class="wrapper">
-    <h1 class="page-heading center text-center">Featured Work</h1>
+    <h1 class="page-heading center text-center">Featured Case Studies</h1>
     <p class="page-intro">15+ years across design, development, and strategy</p>
 </div>
 <ul class="post-list projects featured-cards grid col3">
@@ -19,4 +18,4 @@
     {% endfor %}
 </ul>
 </section>
-{% endif %}
+{% include sections/project-fx.html %}

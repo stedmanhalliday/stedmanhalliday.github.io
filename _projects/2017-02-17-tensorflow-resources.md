@@ -1,4 +1,5 @@
 ---
+hidden: true # not a case study; see issue #67
 layout: project
 title: TensorFlow Resources
 date: 2017-02-17
