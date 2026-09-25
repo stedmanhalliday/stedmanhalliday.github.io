@@ -255,11 +255,11 @@ html.is-animating .transition-fade {
 }
 
 // Whole-row click target: the title link stretches over its row, out to the glass
-// tile's edge (--gx/--gy from _material.scss). Tags and inline links sit above it.
+// tile's edge (--gt/--gx/--gb from _material.scss). Tags and inline links sit above it.
 .post-list > li .post-link::after {
     content: "";
     position: absolute;
-    inset: calc(var(--gy, 0px) * -1) calc(var(--gx, 0px) * -1);
+    inset: calc(var(--gt, 0px) * -1) calc(var(--gx, 0px) * -1) calc(var(--gb, 0px) * -1);
 }
 
 .post-list > li :is(.post-tags, .post-description) a {
