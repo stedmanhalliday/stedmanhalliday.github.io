@@ -24,6 +24,7 @@ Senior and trusted first, versatile and curious second, sharp and distinctive th
 3. The site is the craft sample: every detail is evidence of taste.
 4. Range without noise: design, code, music, and health live together under one clear hierarchy.
 5. A person, not a template: voice and specifics over generic portfolio grammar.
+6. Material surfaces on motion: the resting state is a plain dark background. Depth appears only while the reader scrolls, then decays back to flat. The glass tiles are a response to motion, not a layout. They must never read as a bento or card wall, even at rest.
 
 ## Accessibility & Inclusion
 WCAG 2.2 AA: 4.5:1 text contrast, full keyboard access with visible focus, reduced-motion alternatives for all motion, semantic headings and landmarks.
