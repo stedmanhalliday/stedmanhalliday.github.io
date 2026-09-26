@@ -147,6 +147,22 @@ h6 {
 }
 
 /**
+ * Line breaking: avoid one-word last lines in headings and prose
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+blockquote,
+figcaption {
+    text-wrap: pretty;
+}
+
+/**
  * Links
  */
 a {
