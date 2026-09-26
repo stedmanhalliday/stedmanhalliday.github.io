@@ -1,6 +1,7 @@
 # Career timeline (homepage). One entry per year. The FIRST item is the
 # year's lead line (always visible); the rest open on click/tap.
 # Optional `project:` links a line to the _projects page with that title.
+# Optional `url:` links a line to any other page (e.g. a blog post).
 description: Design, development, and strategy
 years:
   - year: 2010
@@ -75,6 +76,8 @@ years:
       - text: "Consulted on AI products: B2B sales agents (11x), a consumer companion (Auren), multi-agent orchestration (Random Labs)"
       - text: Consulted at Automattic on design and product leadership for the Beeper relaunch
       - text: Founded Frontier Fitness Center as an inaugural community leader at Frontier Tower
+        url: /blog/frontier-fitness-center
   - year: 2026
     items:
       - text: Led tech systems for Frontier Tower as Head of Product & Systems
+        url: /blog/frontier-fitness-center

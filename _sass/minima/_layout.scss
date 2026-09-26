@@ -866,6 +866,25 @@ a[data-fslightbox] {
     }
 }
 
+.carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+
+    a {
+        flex: 0 0 85%;
+        scroll-snap-align: start;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+    }
+}
+
 .center {
     margin-left: auto;
     margin-right: auto;
