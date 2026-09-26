@@ -207,14 +207,14 @@
             <h3 class="timeline-year-label">{{ entry.year }}</h3>
             <div class="timeline-lines">
                 {% assign lead = entry.items | first %}
-                {% capture lead_html %}{% if lead.project %}{% assign project = site.projects | where: "title", lead.project | first %}<a href="{{ project.url | relative_url }}">{{ lead.text | escape }}</a>{% else %}{{ lead.text | escape }}{% endif %}{% endcapture %}
+                {% capture lead_html %}{% if lead.project %}{% assign project = site.projects | where: "title", lead.project | first %}<a href="{{ project.url | relative_url }}">{{ lead.text | escape }}</a>{% elsif lead.url %}<a href="{{ lead.url | relative_url }}">{{ lead.text | escape }}</a>{% else %}{{ lead.text | escape }}{% endif %}{% endcapture %}
                 {% if entry.items.size > 1 %}
                 {% assign more = entry.items.size | minus: 1 %}
                 <details>
                     <summary>{{ lead_html }} <span class="timeline-more" aria-hidden="true">+{{ more }}</span><span class="timeline-sr">, {{ more }} more</span></summary>
                     <ul>
                         {% for item in entry.items offset: 1 %}
-                        <li>{% if item.project %}{% assign project = site.projects | where: "title", item.project | first %}<a href="{{ project.url | relative_url }}">{{ item.text | escape }}</a>{% else %}{{ item.text | escape }}{% endif %}</li>
+                        <li>{% if item.project %}{% assign project = site.projects | where: "title", item.project | first %}<a href="{{ project.url | relative_url }}">{{ item.text | escape }}</a>{% elsif item.url %}<a href="{{ item.url | relative_url }}">{{ item.text | escape }}</a>{% else %}{{ item.text | escape }}{% endif %}</li>
                         {% endfor %}
                     </ul>
                 </details>
