@@ -2,9 +2,9 @@
 layout: post
 title: "A Farewell to Frontier Tower"
 date: 2026-07-17
-description: "A look back at building the strangest, most tech-infused office building in the world"
+description: "A look back at the strangest, most tech-infused office building in the world"
 tags: [community, health, san francisco, work, leadership]
-permalink: "/blog/frontier-fitness-center"
+permalink: "/blog/frontier-tower"
 image: /assets/img/2026-07-17-ffc-deck-3.webp
 ---
 
@@ -18,6 +18,11 @@ Frontier Tower is a sixteen-story building on Market Street in San Francisco's S
 Beginning in Q4 of 2024, I helped incubate the project by connecting the founders to local housing and communities and assisting with the fundraising pitch. I joined as a founding citizen and invited the communities around me to join too. That helped grow presale traction ahead of the building purchase. I spent the rest of the year shaping a proposal for a connected wellness lab, then stepped into a community lead role once leadership and I aligned on the mission: progressively develop a concept facility that illustrates the future of wellness by merging ambient intelligence, novel hardware, and social health programming. One part showroom, one part workout space, one part active performance lab.
 
 The building was acquired a few months later and opened its doors to members in April 2025. What followed was one of the wildest projects I've ever worked on: a year and change of experimentation, hijinks, new friendships, chaos, and hard lessons. The same building housed a wet biochemistry lab, a modular makerspace, underground taser knife fights and humanoid robot boxing matches, an arts and culture venue, and a lovely space stewarded by the Human Flourishing Foundation. That floor was the heart and soul of the tower community; it asked critical questions about how technological accelerationism can best benefit people's quality of life.
+
+<figure>
+<a data-fslightbox="hf-hotpot" data-href="/assets/img/2026-07-17-human-flourishing-hotpot-full.webp"><img alt="About thirty people cheering with arms raised around long tables set with pots and bowls in an open loft space" src="/assets/img/2026-07-17-human-flourishing-hotpot.webp" loading="lazy" /></a>
+<figcaption>Community hotpot hosted by Human Flourishing</figcaption>
+</figure>
 
 Frontier Tower in its first year was perhaps best captured by Kylie Robison's walkthrough mini-documentary for Core Memory (I appear in a segment beginning at [12:47](https://www.youtube.com/watch?v=yNo_1nxn4Mw&t=767s)). Video journalist Ashlee Vance called Frontier Tower "perhaps the most tech-infused and strangest office building in the world." I'll remember it as a special nexus of practice shaped by the concurrent dawn of powerful artificial intelligence: a prism refracting a dozen different futures, each citizen inventing their own slice of tomorrow. I'll be telling stories for years about the [Chinese peptide rave](https://www.nytimes.com/2026/01/03/business/chinese-peptides-silicon-valley.html) that made *The New York Times*, and about the smell of crushed lobster ground into the floor like grout after a blockbuster week of OpenClaw launch events (including an Ashton Kutcher appearance).
 
