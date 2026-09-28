@@ -1,0 +1,157 @@
+@use "variables" as *;
+
+/**
+ * Post table of contents: a circuit trace in the right margin. Text is
+ * ragged-right, so that margin is already open space, and the left edge stays
+ * a clean line for the eye to return to. assets/js/toc.js drives two values:
+ * --toc-fill (px of current along the trace, up to the section in view) and
+ * --toc-live (0-1, the scroll material level with the same rise and decay).
+ * At rest the trace is a faint hairline; while the reader scrolls it surfaces
+ * as the grid's dotted teal trace, then drains back to flat.
+ */
+
+$toc-width: 200px;
+$toc-gap: $spacing-unit * 2;
+$toc-via: 6px; // a hollow diamond, the soft-break divider's ◇
+$toc-rail-x: 3px; // rail center, so the via sits on it
+$toc-ease: cubic-bezier(0.22, 1, 0.36, 1);
+// Shown only where the right margin holds the ToC, its gap, and a gutter.
+$toc-min-width: 1340px;
+
+.post-body {
+    position: relative;
+}
+
+.post-toc {
+    display: none;
+}
+
+@media screen and (min-width: $toc-min-width) {
+    .post-toc {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(100% + #{$toc-gap});
+        width: $toc-width;
+    }
+
+    .post-content h2 {
+        scroll-margin-top: $spacing-unit;
+    }
+}
+
+.post-toc-inner {
+    position: sticky;
+    top: $spacing-unit * 2;
+}
+
+// Below the 18px display threshold, so it takes the site's Lato label voice.
+.post-toc-label {
+    margin: 0 0 $spacing-unit * 0.25 $spacing-unit * 0.75;
+    font-size: $small-font-size;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $grey-color;
+}
+
+.post-toc-list {
+    --toc-live: 0;
+    --toc-fill: 0px;
+    position: relative;
+    max-height: calc(100vh - #{$spacing-unit * 5});
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    scrollbar-width: none;
+
+    // The trace: a slate hairline at rest, the grid's dotted teal while live.
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: $toc-rail-x;
+        width: 1px;
+        background:
+            repeating-linear-gradient(to bottom,
+                color-mix(in srgb, $accent-color calc(var(--toc-live) * 85%), transparent) 0 1px,
+                transparent 1px 4px),
+            color-mix(in srgb, $grey-color-dark calc((1 - var(--toc-live)) * 45%), transparent);
+    }
+
+    // The current: solid teal from the top down to the reader's place.
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: $toc-rail-x;
+        width: 1px;
+        height: var(--toc-fill);
+        background: $accent-color;
+        opacity: calc(0.75 + 0.25 * var(--toc-live));
+    }
+
+    li {
+        margin: 0;
+    }
+
+    a,
+    a:visited {
+        position: relative;
+        display: block;
+        padding: 5px 0 5px $spacing-unit * 0.75;
+        font-size: $small-font-size;
+        line-height: 1.4;
+        color: $grey-color;
+        text-wrap: pretty;
+        border-radius: $radius-sm;
+        transition: color $duration-xl $toc-ease;
+
+        // The marker: the soft-break divider's hollow diamond, sitting on the trace.
+        &::before {
+            content: "";
+            position: absolute;
+            top: calc(5px + 0.7em - #{$toc-via * 0.5});
+            left: $toc-rail-x - ($toc-via - 1px) * 0.5;
+            width: $toc-via;
+            height: $toc-via;
+            box-sizing: border-box;
+            border: 1px solid $grey-color;
+            transform: rotate(45deg);
+            background: $background-color;
+            opacity: 0;
+            transition: opacity $duration-xl $toc-ease, border-color $duration-xl $toc-ease;
+        }
+    }
+
+    a:hover {
+        color: $grey-color-light;
+
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    a:focus-visible {
+        outline-offset: -2px;
+    }
+
+    a[aria-current] {
+        color: $text-color;
+
+        &::before {
+            opacity: 1;
+            border-color: $accent-color;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .post-toc-list a,
+    .post-toc-list a::before {
+        transition: none;
+    }
+}

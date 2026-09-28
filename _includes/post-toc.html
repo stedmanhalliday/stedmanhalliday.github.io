@@ -1,0 +1,22 @@
+{% comment %}
+Post table of contents, read from the rendered post so each link uses the id
+kramdown already gave its h2. Shows on posts with 3 or more h2 headings;
+front matter `toc: false` turns it off.
+{% endcomment %}
+{% assign toc_parts = include.html | split: '<h2 id="' %}
+{% assign toc_count = toc_parts.size | minus: 1 %}
+{% if toc_count >= 3 and page.toc != false %}
+<nav class="post-toc" aria-labelledby="post-toc-label">
+    <div class="post-toc-inner">
+    <p class="post-toc-label" id="post-toc-label">Contents</p>
+    <ol class="post-toc-list">
+        {%- for part in toc_parts offset: 1 %}
+        {%- assign toc_id = part | split: '"' | first %}
+        {%- assign toc_title = part | split: '</h2>' | first | remove_first: toc_id | remove_first: '">' | strip_html | strip %}
+        <li><a href="#{{ toc_id }}" data-no-swup>{{ toc_title }}</a></li>
+        {%- endfor %}
+    </ol>
+    </div>
+</nav>
+<script src="{{ '/assets/js/toc.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+{% endif %}
