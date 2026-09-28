@@ -34,8 +34,11 @@ layout: default
         </div>
     </header>
 
-    <div class="post-content e-content" itemprop="articleBody">
-        {{ content }}
+    <div class="post-body">
+        <div class="post-content e-content" itemprop="articleBody">
+            {{ content }}
+        </div>
+        {% include post-toc.html html=content %}
     </div>
 
     {% if site.disqus.shortname %}
