@@ -146,6 +146,14 @@ h6 {
     letter-spacing: $heading-letter-spacing;
 }
 
+// Schibsted is for display sizes only (18px and up). h5 and h6 fall under that.
+h5,
+h6 {
+    font-family: $base-font-family;
+    font-weight: 700;
+    letter-spacing: normal;
+}
+
 /**
  * Line breaking: avoid one-word last lines in headings and prose
  */

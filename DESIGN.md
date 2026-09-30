@@ -128,14 +128,16 @@ A cool near-black field with soft white text and a single desaturated teal.
 - **Headline** (Schibsted 600, 28px, -0.01em): section headings such as list headings.
 - **Title** (Schibsted 600, 24px, -0.01em): project and post titles in lists.
 - **Body** (Lato 400, 16px, 1.5): prose, inside the 800px content column.
-- **Label** (Lato 400, 14px, 0.14em, uppercase): CTAs and card actions. Tags use the same size at 700 without tracking.
+- **Label** (Lato 400, 14px, 0.14em, uppercase): CTAs and card actions. Tags use the same size at 700 without tracking. Small headings such as the post Contents label and the footer column heads are labels too: Lato 700.
 - **Site title** (Schibsted 700, uppercase, 0.048em): the wordmark in the header band. Nav links stay Lato.
 
 ### Loading
 Both families load in one Google Fonts request with `display=swap`. Schibsted loads as one variable file (wght 600–700). The `Schibsted Fallback` face is local Arial Bold at `size-adjust: 89.3%` with ascent, descent, and line-gap overrides. It keeps the swap shift small.
 
 ### Named Rules
-**The Two Voices Rule.** Schibsted is only for headings (h1–h6) and the site title. Body, meta, tags, nav links, and uppercase labels stay Lato. Keep heading tracking at -0.04em or looser and headings at 6rem or smaller.
+**The Two Voices Rule.** Schibsted is only for display text: headings set at 18px or larger, and the site title. Everything under 18px is Lato, even when it is a heading element. This covers the footer column heads, the post Contents label, h5 and h6, body, meta, tags, nav links, buttons, and uppercase labels. The smallest Schibsted size in use is the content h4 on narrow screens (18px). The next size down is 16.5px, so the line falls cleanly between them. Keep heading tracking at -0.04em or looser and headings at 6rem or smaller.
+
+**The Display Threshold Rule.** Before you set Schibsted on a new element, check its computed size. If the size is under 18px (1.125rem), use Lato 700. A small heading in the grotesque reads as a costume, not as authority. Nav links and CTA buttons were tried in Schibsted and rejected for this reason.
 
 ## Layout
 

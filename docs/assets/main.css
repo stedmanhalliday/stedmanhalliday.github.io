@@ -160,6 +160,13 @@ h6 {
   letter-spacing: -0.01em;
 }
 
+h5,
+h6 {
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 700;
+  letter-spacing: normal;
+}
+
 /**
  * Line breaking: avoid one-word last lines in headings and prose
  */
@@ -525,6 +532,9 @@ html.is-animating .transition-fade {
 }
 .site-footer h3 {
   margin-bottom: 0.5rem;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 700;
+  letter-spacing: normal;
 }
 .site-footer .columns {
   display: flex;
@@ -1847,6 +1857,133 @@ html.is-material:not(.material-lite) .post-list.featured-cards:has(> li.is-near)
   }
   .post-list > li,
   .post-list.featured-cards {
+    transition: none;
+  }
+}
+/**
+ * Post table of contents: a circuit trace in the right margin. Text is
+ * ragged-right, so that margin is already open space, and the left edge stays
+ * a clean line for the eye to return to. assets/js/toc.js drives two values:
+ * --toc-fill (px of current along the trace, up to the section in view) and
+ * --toc-live (0-1, the scroll material level with the same rise and decay).
+ * At rest the trace is a faint hairline; while the reader scrolls it surfaces
+ * as the grid's dotted teal trace, then drains back to flat.
+ */
+.post-body {
+  position: relative;
+}
+
+.post-toc {
+  display: none;
+}
+
+@media screen and (min-width: 1340px) {
+  .post-toc {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(100% + 64px);
+    width: 200px;
+  }
+  .post-content h2 {
+    scroll-margin-top: 32px;
+  }
+}
+.post-toc-inner {
+  position: sticky;
+  top: 64px;
+}
+
+.post-toc-label {
+  margin: 0 0 8px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+}
+
+.post-toc-list {
+  --toc-live: 0;
+  --toc-fill: 0px;
+  position: relative;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scrollbar-width: none;
+}
+.post-toc-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  width: 1px;
+  background: repeating-linear-gradient(to bottom, color-mix(in srgb, #61B3AF calc(var(--toc-live) * 85%), transparent) 0 1px, transparent 1px 4px), color-mix(in srgb, #64748b calc((1 - var(--toc-live)) * 45%), transparent);
+}
+.post-toc-list::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 1px;
+  height: var(--toc-fill);
+  background: #61B3AF;
+  opacity: calc(0.75 + 0.25 * var(--toc-live));
+}
+.post-toc-list li {
+  margin: 0;
+}
+.post-toc-list a,
+.post-toc-list a:visited {
+  position: relative;
+  display: block;
+  padding: 5px 0 5px 24px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  text-wrap: pretty;
+  border-radius: 2px;
+  transition: color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.post-toc-list a::before,
+.post-toc-list a:visited::before {
+  content: "";
+  position: absolute;
+  top: calc(5px + 0.7em - 3px);
+  left: 0.5px;
+  width: 6px;
+  height: 6px;
+  box-sizing: border-box;
+  border: 1px solid rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  transform: rotate(45deg);
+  background: #111418;
+  opacity: 0;
+  transition: opacity 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.post-toc-list a:hover {
+  color: rgb(184.0751046025, 192.2391213389, 203.9748953975);
+}
+.post-toc-list a:hover::before {
+  opacity: 1;
+}
+.post-toc-list a:focus-visible {
+  outline-offset: -2px;
+}
+.post-toc-list a[aria-current] {
+  color: #e8e8e8;
+}
+.post-toc-list a[aria-current]::before {
+  opacity: 1;
+  border-color: #61B3AF;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-toc-list a,
+  .post-toc-list a::before {
     transition: none;
   }
 }

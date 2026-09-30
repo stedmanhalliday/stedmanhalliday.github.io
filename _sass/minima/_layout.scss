@@ -191,8 +191,12 @@ html.is-animating .transition-fade {
     @include relative-font-size(0.88);
     color: $grey-color;
 
+    // Below the 18px display threshold (~16.5px here), so Lato.
     h3 {
         margin-bottom: 0.5rem;
+        font-family: $base-font-family;
+        font-weight: 700;
+        letter-spacing: normal;
     }
 
     .columns {
