@@ -8,7 +8,7 @@ image: /assets/img/2018-08-27-corita-kent.jpg
 permalink: /blog/lessons-from-mentorship
 ---
 
-<figure>
+<figure class="cover">
 <img alt="Sister Corita Kent" src="/assets/img/2018-08-27-corita-kent.jpg" />
 <figcaption>Corita Kent, also known as Sister Mary Corita, was an artist with an innovative approach to design and education. (Source: <a href="https://www.corita.org/">Corita.org</a>)</figcaption>
 </figure>

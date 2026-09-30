@@ -8,7 +8,9 @@ permalink: "/blog/perceptual-reasoning-gap"
 image: /assets/img/2026-01-27-perceptual-reasoning-gap.webp
 ---
 
-![Perceptual reasoning neural network](/assets/img/2026-01-27-perceptual-reasoning-gap.webp)
+<figure class="cover">
+<img alt="Perceptual reasoning neural network" src="/assets/img/2026-01-27-perceptual-reasoning-gap.webp" />
+</figure>
 
 ## The Missing Primitive Is a Vocabulary
 

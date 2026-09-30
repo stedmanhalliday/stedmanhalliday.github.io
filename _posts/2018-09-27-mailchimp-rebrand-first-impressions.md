@@ -8,7 +8,7 @@ author: Stedman Halliday for [Prototypr](https://blog.prototypr.io/)
 image: /assets/img/2018-09-27-mailchimp-header.png
 ---
 
-<figure>
+<figure class="cover">
 <img alt="Mailchimp illustration" src="/assets/img/2018-09-27-mailchimp-header.png" />
 </figure>
 
