@@ -9,9 +9,14 @@ tags:
     - artificial intelligence
     - work
 permalink: /blog/designing-with-ai
+image: /assets/img/2026-09-29-neural-network.webp
 ---
 
-_Just here for shop talk? [Skip the story](#just-the-stack-please) to get to the stack._
+<figure class="cover">
+<img alt="Neural network drawn on a cutting mat" src="/assets/img/2026-09-29-neural-network.webp" />
+</figure>
+
+## Training wheels
 
 I first got hands-on with training neural networks through [Kadenze](https://www.kadenze.com), an online learning platform for the arts and creative technology. I joined its founding team as a designer in 2014, at the end of my second year of design school at CalArts. [Parag Mital](https://pkmital.com) later came on as Director of Machine Intelligence, and after the public launch in 2015 he added an exciting AI course to the catalog: _Creative Applications of Deep Learning with TensorFlow_. Kadenze placed real value on lifelong learning, and I took the cue; some time after I graduated with my BFA in 2016, I dug into the course to build new skills.
 
@@ -20,6 +25,7 @@ It's been about ten years since then. Today I spend most of my working hours dir
 {% include soft-break.html %}
 
 ## Just the stack, please
+Here's a straightforward tool summary if you'd rather skip the post:
 
 **Context**
 

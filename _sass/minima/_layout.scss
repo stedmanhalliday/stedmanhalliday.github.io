@@ -415,6 +415,11 @@ html.is-animating .transition-fade {
             margin: 0 auto;
         }
 
+        // Cover sits flush under the post header; keeps the bottom gap.
+        &.cover {
+            margin-top: 0;
+        }
+
         .jekyll-twitter-plugin {
             display: flex;
             flex-grow: 1;

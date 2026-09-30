@@ -8,7 +8,7 @@ permalink: "/blog/frontier-tower"
 image: /assets/img/2026-07-17-ffc-deck-3.webp
 ---
 
-<figure>
+<figure class="cover">
     {% youtube "https://www.youtube.com/watch?v=yNo_1nxn4Mw" %}
     <figcaption>Core Memory episode exploring Frontier Tower</figcaption>
 </figure>

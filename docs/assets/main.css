@@ -742,6 +742,10 @@ html.is-animating .transition-fade {
 .page-content figure video {
   margin: 0 auto;
 }
+.post-content figure.cover,
+.page-content figure.cover {
+  margin-top: 0;
+}
 .post-content figure .jekyll-twitter-plugin,
 .page-content figure .jekyll-twitter-plugin {
   display: flex;

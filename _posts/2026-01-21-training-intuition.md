@@ -8,7 +8,9 @@ permalink: "/blog/training-intuition"
 image: /assets/img/2026-01-21-iroko-tree.webp
 ---
 
-![Iroko Tree](/assets/img/2026-01-21-iroko-tree.webp)
+<figure class="cover">
+<img alt="Iroko Tree" src="/assets/img/2026-01-21-iroko-tree.webp" />
+</figure>
 
 ## Divination, Hyperstitioning, and the Punk Spirit in the Age of Artificial Intelligence
 
