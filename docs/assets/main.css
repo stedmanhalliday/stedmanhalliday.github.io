@@ -748,6 +748,10 @@ html.is-animating .transition-fade {
   flex-grow: 1;
   justify-content: center;
 }
+.post-content figure:has(> .jekyll-twitter-plugin:empty),
+.page-content figure:has(> .jekyll-twitter-plugin:empty) {
+  display: none;
+}
 .post-content figure figcaption,
 .page-content figure figcaption {
   text-align: center;

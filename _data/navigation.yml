@@ -29,13 +29,11 @@ footer:
       url: /blog/tag/reflection/
 - heading: Top posts
   links:
-    - text: Fix Nerd Neck
-      url: /blog/nerd-neck
-    - text: Simple Skincare
-      url: /blog/skincare
+    - text: Designing With AI
+      url: /blog/designing-with-ai
+    - text: Seeing Like a Designer
+      url: /blog/perceptual-reasoning-gap
+    - text: Farewell to Frontier Tower
+      url: /blog/frontier-tower
     - text: RGB Color Mixing
       url: /blog/rgb-color-mixing
-    - text: Motives for Service
-      url: /blog/motives-for-service
-    - text: Lessons from Mentorship
-      url: /blog/lessons-from-mentorship

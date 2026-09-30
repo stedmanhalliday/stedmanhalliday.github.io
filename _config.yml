@@ -190,4 +190,5 @@ exclude:
     - tasks/
     - PRODUCT.md
     - DESIGN.md
+    - _tmp/
     - CLAUDE.md
