@@ -29,8 +29,8 @@ footer:
       url: /blog/tag/reflection/
 - heading: Top posts
   links:
-    - text: Working With AI
-      url: /blog/working-with-ai
+    - text: Designing With AI
+      url: /blog/designing-with-ai
     - text: Seeing Like a Designer
       url: /blog/perceptual-reasoning-gap
     - text: Farewell to Frontier Tower

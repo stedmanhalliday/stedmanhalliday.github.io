@@ -417,6 +417,11 @@ html.is-animating .transition-fade {
             justify-content: center;
         }
 
+        // Failed tweet fetches render empty; hide the figure so no gap remains.
+        &:has(> .jekyll-twitter-plugin:empty) {
+            display: none;
+        }
+
         figcaption {
             text-align: center;
         }
