@@ -10,3 +10,6 @@ node_modules/
 .lighthouseci/
 .gstack/
 _tmp/
+
+# Claude Code personal settings
+.claude/settings.local.json
