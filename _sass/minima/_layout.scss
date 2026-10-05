@@ -993,6 +993,14 @@ html.is-animating .transition-fade {
         scroll-margin-top: 96px;
     }
 
+    // Phones: one item per row. Inline `grid-column: span 2` would otherwise add a
+    // second implicit column and squeeze the rest two-up; only !important beats inline.
+    @include media-query($on-palm) {
+        .grid > * {
+            grid-column: auto !important;
+        }
+    }
+
     // One column: the caption names the project before its media, not a screen later.
     @media screen and (max-width: 1023.98px) {
         > figure {
@@ -1167,10 +1175,12 @@ html.is-animating .transition-fade {
         grid-column: 1 / -1;
 
         @media screen and (min-width: 900px) {
+            // A wider image and a narrower text column, set on the image's bottom edge
+            // like a caption, so the short text doesn't float in an empty half.
             > a {
                 display: grid;
-                grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-                align-items: center;
+                grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+                align-items: end;
                 gap: clamp(32px, 4vw, 64px);
             }
 
