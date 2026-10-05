@@ -443,18 +443,24 @@ html.is-animating .transition-fade {
     }
 }
 
+// Reading measure: prose stops near 75 characters a line on wide screens.
+// Figures and media keep the full column.
+.post-content > p,
+.post-content > ul,
+.post-content > ol,
+.post-content .scrim-clip > p,
+.project-content .wrapper > p,
+.project-content .wrapper > ul,
+.project-content .wrapper > ol {
+    max-width: 30rem;
+}
+
 // Blog posts read on dark: light Lato gets a touch more leading, and a heading
 // sits closer to the text it opens than to the text above it.
 .h-entry .post-content {
     p,
     li {
         line-height: 1.625;
-    }
-
-    h2,
-    h3,
-    h4 {
-        line-height: 1.2;
     }
 
     h2 {

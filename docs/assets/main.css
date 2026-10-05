@@ -158,6 +158,7 @@ h6 {
   font-family: "Schibsted Grotesk", "Schibsted Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 600;
   letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 h5,
@@ -165,6 +166,7 @@ h6 {
   font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 700;
   letter-spacing: normal;
+  line-height: 1.5;
 }
 
 /**
@@ -765,14 +767,19 @@ html.is-animating .transition-fade {
   text-align: center;
 }
 
+.post-content > p,
+.post-content > ul,
+.post-content > ol,
+.post-content .scrim-clip > p,
+.project-content .wrapper > p,
+.project-content .wrapper > ul,
+.project-content .wrapper > ol {
+  max-width: 30rem;
+}
+
 .h-entry .post-content p,
 .h-entry .post-content li {
   line-height: 1.625;
-}
-.h-entry .post-content h2,
-.h-entry .post-content h3,
-.h-entry .post-content h4 {
-  line-height: 1.2;
 }
 .h-entry .post-content h2 {
   margin-top: 2.5rem;
