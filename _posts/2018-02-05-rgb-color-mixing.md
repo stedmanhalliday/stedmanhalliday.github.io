@@ -9,7 +9,9 @@ image: /assets/img/2018-02-05-spectrum.png
 permalink: /blog/rgb-color-mixing
 ---
 
-![](/assets/img/2018-02-05-spectrum.webp)
+<figure class="cover">
+<img alt="" src="/assets/img/2018-02-05-spectrum.webp" />
+</figure>
 
 <p class="mt-200"><em>Q&A is a column in which I’ll post long-form answers to thought-provoking questions. This particular question was inspired by a thread in <a href="https://facebook.com/groups/designguild">Designers Guild</a>, a Facebook community that I moderate. Designers Guild consists of 10,000+ designers committed to discussing, learning, and growing together.</em></p>
 

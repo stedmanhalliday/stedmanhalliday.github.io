@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600..700&family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
     {% feed_meta %}
     {% if jekyll.environment == 'production' and site.google_analytics %}
@@ -34,4 +34,5 @@
     <script defer src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script defer data-swup-ignore-script src="{{ '/assets/js/swup-init.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+    <script defer data-swup-ignore-script src="{{ '/assets/js/material.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 </head>

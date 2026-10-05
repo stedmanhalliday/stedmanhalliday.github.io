@@ -9,7 +9,9 @@ permalink: /blog/circadian-propranolol
 image: /assets/img/2024-09-04-circadian-propranolol-00.jpg
 ---
 
-![{{ page.title }}]({{ page.image }})
+<figure class="cover">
+<img alt="{{ page.title }}" src="{{ page.image }}" />
+</figure>
 
 <p class="mt-200">Propranolol is a sixty-year-old beta blocker most people meet as an anxiety or blood pressure drug. It's also a surprisingly precise lever on your sleep clock, useful for resetting a wrecked schedule, beating jetlag, or pushing through an all-nighter without paying for it the whole next day. The circadian trick is a side effect of one specific thing the drug does in one specific place. Here's the mechanism, and how to actually run a reset.</p>
 

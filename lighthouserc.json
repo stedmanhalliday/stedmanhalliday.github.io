@@ -7,7 +7,9 @@
         "/blog/",
         "/work/",
         "/about/",
-        "/404.html"
+        "/404.html",
+        "/work/amazon-alexa.html",
+        "/blog/2026/01/11/skrrtstats-2025.html"
       ],
       "numberOfRuns": 1
     },

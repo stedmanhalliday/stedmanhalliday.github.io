@@ -140,14 +140,47 @@ li > ol {
 /**
  * Headings
  */
+@font-face {
+  font-family: "Schibsted Fallback";
+  src: local("Arial Bold"), local("Arial-BoldMT"), local("Arial");
+  font-weight: 600 700;
+  size-adjust: 89.3%;
+  ascent-override: 100.8%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+}
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  font-family: "Schibsted Grotesk", "Schibsted Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h5,
+h6 {
   font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 700;
+  letter-spacing: normal;
+}
+
+/**
+ * Line breaking: avoid one-word last lines in headings and prose
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+blockquote,
+figcaption {
+  text-wrap: pretty;
 }
 
 /**
@@ -378,6 +411,7 @@ html.is-animating .transition-fade {
   display: flex;
   align-items: center;
   text-transform: uppercase;
+  font-family: "Schibsted Grotesk", "Schibsted Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 700;
   letter-spacing: 0.048em;
 }
@@ -498,6 +532,9 @@ html.is-animating .transition-fade {
 }
 .site-footer h3 {
   margin-bottom: 0.5rem;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 700;
+  letter-spacing: normal;
 }
 .site-footer .columns {
   display: flex;
@@ -554,6 +591,17 @@ html.is-animating .transition-fade {
   font-size: 24px;
 }
 
+.post-list > li .post-link::after {
+  content: "";
+  position: absolute;
+  inset: calc(var(--gt, 0px) * -1) calc(var(--gx, 0px) * -1) calc(var(--gb, 0px) * -1);
+}
+
+.post-list > li :is(.post-tags, .post-description) a {
+  position: relative;
+  z-index: 1;
+}
+
 /**
  * Post lists
  */
@@ -597,7 +645,7 @@ html.is-animating .transition-fade {
 .post-title,
 .page-heading {
   font-size: 42px;
-  letter-spacing: -1px;
+  letter-spacing: -0.025em;
   line-height: 1.25em;
   max-width: 24ch;
 }
@@ -694,11 +742,19 @@ html.is-animating .transition-fade {
 .page-content figure video {
   margin: 0 auto;
 }
+.post-content figure.cover,
+.page-content figure.cover {
+  margin-top: 0;
+}
 .post-content figure .jekyll-twitter-plugin,
 .page-content figure .jekyll-twitter-plugin {
   display: flex;
   flex-grow: 1;
   justify-content: center;
+}
+.post-content figure:has(> .jekyll-twitter-plugin:empty),
+.page-content figure:has(> .jekyll-twitter-plugin:empty) {
+  display: none;
 }
 .post-content figure figcaption,
 .page-content figure figcaption {
@@ -1083,6 +1139,23 @@ a[data-fslightbox] {
   .grid.col2, .grid.col3 {
     grid-template-columns: auto;
   }
+}
+
+.carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 8px;
+}
+.carousel a {
+  flex: 0 0 85%;
+  scroll-snap-align: start;
+}
+.carousel img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
 }
 
 .center {
@@ -1645,6 +1718,278 @@ a[data-fslightbox] {
   background-color: rgba(97, 179, 175, 0.08) !important;
   border-color: rgba(97, 179, 175, 0.2) !important;
   color: #61B3AF !important;
+}
+
+/**
+ * Scroll material: a dotted circuit grid and glass tiles that surface while the
+ * reader scrolls, then decay to flat. assets/js/material.js drives --material
+ * (0 = rest, 1 = full), sets data-scroll-dir, and adds the grid layer, so without
+ * JS the page stays at rest. Hovering a project row also wakes its glass.
+ */
+.material-grid {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Cg fill='none' stroke='%2361B3AF'%3E%3Cpath d='M0 8.5h16M8.5 0v16' stroke-dasharray='1 3'/%3E%3Ccircle cx='8.5' cy='8.5' r='1.5'/%3E%3C/g%3E%3C/svg%3E") center/16px 16px;
+  opacity: calc(var(--material, 0) * 0.14);
+}
+
+@property --glass {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+.post-list > li {
+  --gx: 16px;
+  --gy: 16px;
+  --gt: var(--gy);
+  --gb: var(--gy);
+  --glass: var(--material, 0);
+  position: relative;
+  isolation: isolate;
+  transition: --glass 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.post-list > li::after {
+  content: "";
+  position: absolute;
+  inset: calc(var(--gt) * -1) calc(var(--gx) * -1) calc(var(--gb) * -1);
+  z-index: -2;
+  border-radius: 4px;
+  background-color: rgba(17, 20, 24, 0.55);
+  background-image: radial-gradient(180px 2px at calc(var(--mx, 50%) + var(--gx)) 0, rgba(255, 255, 255, 0.4), transparent), radial-gradient(circle 240px at calc(var(--mx, 50%) + var(--gx)) calc(var(--my, 50%) + var(--gt)), rgba(97, 179, 175, 0.12), transparent), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E"), linear-gradient(rgba(97, 179, 175, 0.08) 0 0);
+  background-size: 100% 2px, auto, 160px 160px, auto;
+  background-repeat: no-repeat, no-repeat, repeat, no-repeat;
+  background-position: top, 0 0, 0 0, 0 0;
+  pointer-events: none;
+  opacity: var(--glass);
+}
+.post-list > li.is-lit {
+  --glass: max(var(--material, 0), 0.8);
+}
+@media screen and (max-width: 800px) {
+  .post-list > li {
+    --gx: 12px;
+    --gy: 12px;
+  }
+}
+
+.post-list:not(.projects) > li {
+  --gt: calc(var(--gy) - 6px);
+  margin-bottom: 32px;
+}
+.post-list:not(.projects) > li .post-tags {
+  margin-bottom: 0;
+}
+
+.post-list.featured-cards {
+  --gx: 24px;
+  --gy: 24px;
+  --glass: var(--material, 0);
+  position: relative;
+  isolation: isolate;
+  transition: --glass 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.post-list.featured-cards:has(> li.is-lit) {
+  --glass: max(var(--material, 0), 0.8);
+}
+.post-list.featured-cards::after {
+  content: "";
+  position: absolute;
+  inset: calc(var(--gy) * -1) calc(var(--gx) * -1);
+  z-index: -2;
+  border-radius: 4px;
+  background-color: rgba(17, 20, 24, 0.55);
+  background-image: radial-gradient(50% 2px at 50% 0, rgba(255, 255, 255, 0.4), transparent), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E"), linear-gradient(rgba(97, 179, 175, 0.08) 0 0);
+  background-size: 100% 2px, 160px 160px, auto;
+  background-repeat: no-repeat, repeat, no-repeat;
+  background-position: top, 0 0, 0 0;
+  pointer-events: none;
+  opacity: var(--glass);
+}
+@media screen and (max-width: 800px) {
+  .post-list.featured-cards {
+    --gx: 12px;
+    --gy: 12px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .post-list.featured-cards {
+    --gx: 16px;
+    --gy: 16px;
+  }
+  .post-list.featured-cards::after {
+    border-radius: 0;
+  }
+}
+.post-list.featured-cards > li {
+  --gx: 8px;
+  --gy: 8px;
+}
+.post-list.featured-cards > li::after {
+  display: none;
+}
+
+html[data-scroll-dir=up] .post-list > li::after {
+  background-position: bottom, 0 0, 0 0, 0 0;
+}
+
+html[data-scroll-dir=up] .post-list.featured-cards::after {
+  background-position: bottom, 0 0, 0 0;
+}
+
+html.is-material:not(.material-lite) .post-list > li.is-near::after,
+.post-list > li.is-lit::after,
+html.is-material:not(.material-lite) .post-list.featured-cards:has(> li.is-near)::after,
+.post-list.featured-cards:has(> li.is-lit)::after {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.post-list > li .post-tags .tag.tag a:not(:hover) {
+  border-color: color-mix(in srgb, transparent calc(var(--glass) * 100%), rgb(136.7918410042, 150.3985355649, 169.9581589958));
+  background-color: rgba(97, 179, 175, calc(0.18 * var(--glass)));
+  color: color-mix(in srgb, #e8e8e8 calc(var(--glass) * 100%), rgb(136.7918410042, 150.3985355649, 169.9581589958));
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .material-grid,
+  .post-list > li::after,
+  .post-list.featured-cards::after {
+    display: none;
+  }
+  .post-list > li,
+  .post-list.featured-cards {
+    transition: none;
+  }
+}
+/**
+ * Post table of contents: a circuit trace in the right margin. Text is
+ * ragged-right, so that margin is already open space, and the left edge stays
+ * a clean line for the eye to return to. assets/js/toc.js drives two values:
+ * --toc-fill (px of current along the trace, up to the section in view) and
+ * --toc-live (0-1, the scroll material level with the same rise and decay).
+ * At rest the trace is a faint hairline; while the reader scrolls it surfaces
+ * as the grid's dotted teal trace, then drains back to flat.
+ */
+.post-body {
+  position: relative;
+}
+
+.post-toc {
+  display: none;
+}
+
+@media screen and (min-width: 1340px) {
+  .post-toc {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(100% + 64px);
+    width: 200px;
+  }
+  .post-content h2 {
+    scroll-margin-top: 32px;
+  }
+}
+.post-toc-inner {
+  position: sticky;
+  top: 64px;
+}
+
+.post-toc-label {
+  margin: 0 0 8px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+}
+
+.post-toc-list {
+  --toc-live: 0;
+  --toc-fill: 0px;
+  position: relative;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  scrollbar-width: none;
+}
+.post-toc-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  width: 1px;
+  background: repeating-linear-gradient(to bottom, color-mix(in srgb, #61B3AF calc(var(--toc-live) * 85%), transparent) 0 1px, transparent 1px 4px), color-mix(in srgb, #64748b calc((1 - var(--toc-live)) * 45%), transparent);
+}
+.post-toc-list::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 1px;
+  height: var(--toc-fill);
+  background: #61B3AF;
+  opacity: calc(0.75 + 0.25 * var(--toc-live));
+}
+.post-toc-list li {
+  margin: 0;
+}
+.post-toc-list a,
+.post-toc-list a:visited {
+  position: relative;
+  display: block;
+  padding: 5px 0 5px 24px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  text-wrap: pretty;
+  border-radius: 2px;
+  transition: color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.post-toc-list a::before,
+.post-toc-list a:visited::before {
+  content: "";
+  position: absolute;
+  top: calc(5px + 0.7em - 3px);
+  left: 0.5px;
+  width: 6px;
+  height: 6px;
+  box-sizing: border-box;
+  border: 1px solid rgb(136.7918410042, 150.3985355649, 169.9581589958);
+  transform: rotate(45deg);
+  background: #111418;
+  opacity: 0;
+  transition: opacity 0.25s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.post-toc-list a:hover {
+  color: rgb(184.0751046025, 192.2391213389, 203.9748953975);
+}
+.post-toc-list a:hover::before {
+  opacity: 1;
+}
+.post-toc-list a:focus-visible {
+  outline-offset: -2px;
+}
+.post-toc-list a[aria-current] {
+  color: #e8e8e8;
+}
+.post-toc-list a[aria-current]::before {
+  opacity: 1;
+  border-color: #61B3AF;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-toc-list a,
+  .post-toc-list a::before {
+    transition: none;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

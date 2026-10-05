@@ -56,6 +56,7 @@ html.is-animating .transition-fade {
     align-items: center;
 
     text-transform: uppercase;
+    font-family: $heading-font-family;
     font-weight: 700;
     letter-spacing: 0.048em;
 
@@ -190,8 +191,12 @@ html.is-animating .transition-fade {
     @include relative-font-size(0.88);
     color: $grey-color;
 
+    // Below the 18px display threshold (~16.5px here), so Lato.
     h3 {
         margin-bottom: 0.5rem;
+        font-family: $base-font-family;
+        font-weight: 700;
+        letter-spacing: normal;
     }
 
     .columns {
@@ -253,6 +258,19 @@ html.is-animating .transition-fade {
     @include relative-font-size(1.5);
 }
 
+// Whole-row click target: the title link stretches over its row, out to the glass
+// tile's edge (--gt/--gx/--gb from _material.scss). Tags and inline links sit above it.
+.post-list > li .post-link::after {
+    content: "";
+    position: absolute;
+    inset: calc(var(--gt, 0px) * -1) calc(var(--gx, 0px) * -1) calc(var(--gb, 0px) * -1);
+}
+
+.post-list > li :is(.post-tags, .post-description) a {
+    position: relative;
+    z-index: 1;
+}
+
 /**
  * Post lists
  */
@@ -304,7 +322,7 @@ html.is-animating .transition-fade {
 .post-title,
 .page-heading {
     @include relative-font-size(2.625);
-    letter-spacing: -1px;
+    letter-spacing: $display-letter-spacing;
     line-height: 1.25em;
     max-width: 24ch;
 
@@ -397,10 +415,20 @@ html.is-animating .transition-fade {
             margin: 0 auto;
         }
 
+        // Cover sits flush under the post header; keeps the bottom gap.
+        &.cover {
+            margin-top: 0;
+        }
+
         .jekyll-twitter-plugin {
             display: flex;
             flex-grow: 1;
             justify-content: center;
+        }
+
+        // Failed tweet fetches render empty; hide the figure so no gap remains.
+        &:has(> .jekyll-twitter-plugin:empty) {
+            display: none;
         }
 
         figcaption {
@@ -1343,6 +1371,25 @@ a[data-fslightbox] {
         &.col3 {
             grid-template-columns: auto;
         }
+    }
+}
+
+.carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+
+    a {
+        flex: 0 0 85%;
+        scroll-snap-align: start;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
     }
 }
 

@@ -8,7 +8,9 @@ tags: [design, engineering, software, code, community]
 image: /assets/img/2017-11-22-massimo.webp
 ---
 
-![Massimo Vignelli](/assets/img/2017-11-22-massimo.webp)
+<figure class="cover">
+<img alt="Massimo Vignelli" src="/assets/img/2017-11-22-massimo.webp" />
+</figure>
 
 <p class="mt-200"><em>Q&A is a column in which I'll post long-form answers to thought-provoking questions. This particular question and its answer are reposted from thread in <a href="https://www.facebook.com/groups/340004709510141">Designers Guild</a>, a Facebook community that I moderate. Designers Guild consists of 10,000+ designers committed to discussing, learning, and growing together.</em></p>
 

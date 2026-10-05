@@ -1,8 +1,210 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://stedmanhalliday.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stedmanhalliday.com/" rel="alternate" type="text/html" /><updated>2026-09-24T12:07:33-07:00</updated><id>https://stedmanhalliday.com/feed.xml</id><title type="html">Stedman Halliday</title><subtitle>Stedman Halliday is a technical generalist based in San Francisco creating values-aligned products, brands, media, and experiences.</subtitle><author><name>Stedman Halliday</name></author><entry><title type="html">Reflections on My Namesake</title><link href="https://stedmanhalliday.com/blog/namesake" rel="alternate" type="text/html" title="Reflections on My Namesake" /><published>2026-08-06T00:00:00-07:00</published><updated>2026-08-06T00:00:00-07:00</updated><id>https://stedmanhalliday.com/blog/namesake</id><content type="html" xml:base="https://stedmanhalliday.com/blog/namesake"><![CDATA[<p>I discovered a lot more about the man I was named after just a few weeks ago by reading his obituary after a chat with each of my parents. I didn’t expect to feel so differently about my identity afterwards.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://stedmanhalliday.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stedmanhalliday.com/" rel="alternate" type="text/html" /><updated>2026-10-03T16:48:44-07:00</updated><id>https://stedmanhalliday.com/feed.xml</id><title type="html">Stedman Halliday</title><subtitle>Stedman Halliday is a technical generalist based in San Francisco creating values-aligned products, brands, media, and experiences.</subtitle><author><name>Stedman Halliday</name></author><entry><title type="html">Designing With AI: Then &amp;amp; Now</title><link href="https://stedmanhalliday.com/blog/designing-with-ai" rel="alternate" type="text/html" title="Designing With AI: Then &amp;amp; Now" /><published>2026-09-29T00:00:00-07:00</published><updated>2026-09-29T00:00:00-07:00</updated><id>https://stedmanhalliday.com/blog/designing-with-ai</id><content type="html" xml:base="https://stedmanhalliday.com/blog/designing-with-ai"><![CDATA[<figure class="cover">
+<img alt="Neural network drawn on a cutting mat" src="/assets/img/2026-09-29-neural-network.webp" />
+</figure>
+
+<h2 id="training-wheels">Training wheels</h2>
+
+<p>I first got hands-on with training neural networks through <a href="https://www.kadenze.com">Kadenze</a>, an online learning platform for the arts and creative technology. I joined its founding team as a designer in 2014, at the end of my second year of design school at CalArts. <a href="https://pkmital.com">Parag Mital</a> later came on as Director of Machine Intelligence, and after the public launch in 2015 he added an exciting AI course to the catalog: <em>Creative Applications of Deep Learning with TensorFlow</em>. Kadenze placed real value on lifelong learning, and I took the cue; some time after I graduated with my BFA in 2016, I dug into the course to build new skills.</p>
+
+<p>It’s been about ten years since then. Today I spend most of my working hours directing many of those networks’ successors at once and designing the environments they work in. This post captures what changed in between, the tools I use now, and what excites me about the near future of this domain.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="just-the-stack-please">Just the stack, please</h2>
+<p>Here’s a straightforward tool summary if you’d rather skip the post:</p>
+
+<p><strong>Context</strong></p>
+
+<ul>
+  <li><a href="https://bee.computer">Bee</a>: transcribes my face-to-face conversations</li>
+  <li><a href="https://screenpipe.com">screenpipe</a>: records my screen and logs what I browse into my daily notes</li>
+  <li><a href="https://support.google.com/meet/answer/14754931">Gemini</a> and <a href="https://grain.com">Grain</a>: transcribe my virtual meetings</li>
+  <li><a href="https://spokenly.app">Spokenly</a> with <a href="https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3">Parakeet</a>: offline dictation for talking to agents</li>
+  <li><a href="https://obsidian.md">Obsidian</a>: the notes vault every tool reads from and writes back to</li>
+  <li><a href="https://modelcontextprotocol.io">MCP</a>: lets agents reach my texts, email, and Google accounts</li>
+  <li><a href="https://tailscale.com/">Tailscale</a>: connects my always-on Mac Mini to my MacBook and phones</li>
+  <li><a href="https://syncthing.net/">Syncthing</a>: keeps my MacBook and Mac Mini filesystems in sync</li>
+</ul>
+
+<p><strong>Planning</strong></p>
+
+<ul>
+  <li><a href="https://claude.com/product/claude-code">Claude Code</a>: my main agent harness, in the terminal and on my phone</li>
+  <li><a href="https://skills.sh">skills.sh</a> and the <a href="https://openclawdir.com/skills">OpenClaw skills directory</a>: where I find open-source agent skills</li>
+</ul>
+
+<p><strong>Build</strong></p>
+
+<ul>
+  <li><a href="https://herdr.dev">herdr</a> in <a href="https://ghostty.org">Ghostty</a>: runs many terminal panes and Claude Code sessions side by side</li>
+  <li><a href="https://devin.ai/desktop">Devin</a>: the agent-friendly IDE I open when I want my hands on the code</li>
+</ul>
+
+<p><strong>Design</strong></p>
+
+<ul>
+  <li><a href="https://impeccable.style">Impeccable</a>: design vocabulary, audits, and live browser iteration for agents</li>
+  <li><a href="https://deepmind.google/models/gemini-image/">Nano Banana</a>: most of my serious image generation</li>
+</ul>
+
+<div class="soft-break"></div>
+
+<h2 id="learning-the-machinery">Learning the machinery</h2>
+
+<p>Parag’s course had me working with Python and early TensorFlow inside Jupyter notebooks. One of the first exercises taught a network to paint a photo: feed it pixel coordinates, let it guess a color for each, and watch a gray smear resolve into a picture over many rounds of gradient descent. A network learns a function from examples; the function starts as a coarse approximation of something, and you watch it get progressively less wrong over runs. It got deeper after that: autoencoders that squeezed an image into a handful of numbers and rebuilt it, Deep Dream run through Google’s Inception until every cloud had a dog’s face, style transfer on Oxford’s VGG, a DCGAN, and a character-level RNN that learned to write text with the cadence of English and none of the sense.</p>
+
+<p>I revisited neural networks as a creative tool a few years later. The last classical network I trained by hand came out of the COVID lockdowns of 2020–2021. Walks were the only reliable way out of the house. Derrick Schultz’s <a href="https://www.youtube.com/@ArtificialImages">Artificial Images</a> courses were the best school around for artists who wanted to train their own models. For months I photographed organic textures and plant life on those walks and built a dataset of about 200 images. I augmented it to thousands and trained StyleGAN2-ADA on it in Google Colab. Then I pushed the results through further convolutions, interpolations, and style translations to make abstract video art.</p>
+
+<figure>
+    <img src="/assets/img/2026-09-27-nature-dataset-grid.webp" alt="Grid of twelve close-up photos of plants, flowers, and lichen-covered rock" loading="lazy" />
+    <figcaption>Organic textures from my walks</figcaption>
+</figure>
+
+<p>What stuck from those side projects was a conceptual feel for the machinery: a model is a compressed statement about its data, its latent space has a geography you can walk, and the most interesting outputs can live in the interpolations between things it has seen. I’ve tried to keep a participatory ethic and the willingness to try things outside my comfort zone at the center of how I adapt to an era defined by AI acceleration. That’s worth more than any tool I’ve learned to use in production since then.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="the-multi-agent-future">The multi-agent future</h2>
+
+<p>In the summer of 2021 I joined Amazon’s Alexa Voice Services team, where I led design for emerging voice and multimodal technologies. Onboarding was the first time I heard “agent” used the way everyone uses it now: a program with some autonomy that pursues goals on a user’s behalf.</p>
+
+<p>Most of the industry was racing for sole category dominance with one assistant to rule every device. AVS bet on a hierarchy of agents serving one user or group instead. You can see that bet in Amazon’s public programs: Alexa Custom Assistant licensed the underlying technology so partners could build agents of their own. The Voice Interoperability Initiative worked toward agents that could share a device and hand tasks to one another.</p>
+
+<p>On one project, I designed <a href="/work/amazon-alexa">multi-agent attention systems</a> for TVs from partners like Vizio, Samsung, and LG, where Alexa had to coexist with the manufacturer’s own assistant: how a person picks which agent they’re addressing, how each keeps its brand identity, who gets the attentional real estate and when, and how cooperating agents hand off control mid-task.</p>
+
+<figure>
+    <video class="lazy" poster="/assets/video/2021-08-02-alexa-multi-agent-poster.webp" controls="" playsinline="" data-src="/assets/video/2021-08-02-alexa-multi-agent.mp4"></video>
+    <figcaption>Multi-agent selection (Vizio and Alexa)</figcaption>
+</figure>
+
+<p>My org also paid to fill my home with smart home tech that worked with as many assistants as I could bear, so I could dogfood Alexa while developing empathy for users in a multi-agent environment. At the time I had no way to know whether the multi-agent bet would be right, but it rewired my intuitions about multimodality and orchestration. Looking at the agents chaining workflows together on the frontier today, I’d say leadership’s forecasts were sound. True to form: one of Amazon’s Leadership Principles is that leaders Are Right, A Lot.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="eating-around-the-entrées">Eating around the entrées</h2>
+
+<p>The near universal adoption of transformer-based model architectures is the sharpest dividing line for a decisive before/after in the arc of successive capability gains. On one side: GANs, CNNs, and RNNs, networks I could open up and train myself on rented clusters. On the more capable side: transformers and the large language models built on them, exorbitantly expensive to train with hundreds of millions of parameters (trillions now if you’re counting in 2026).</p>
+
+<p>ChatGPT launched at the end of 2022 while I was in paid training for full-stack software engineers at Amazon deepening fundamentals under my years of web development. Corporate AI usage policies and warnings came down from the top within a couple months. I avoided AI entirely for my training assignments because using it would have defeated the purpose of immersing myself in an environment built to practice traditional software engineering.</p>
+
+<p>When it came to my personal work that winter, the models began to take on meaningful chunks of ancillary work around craft: research, ideation, organization, validation, and more. As models trained specifically on coding tasks improved, they also carried bigger slices of prototyping and implementation. Core design stayed mine. A model could write a plausible component, but it took a lot of pushing to get things over the bar in almost all cases. <em>The last 10% is 90%</em> has never felt so true as a maxim.</p>
+
+<p>On Presidents’ Day weekend in 2023, I drove six hours up from Los Angeles to stay at an investor’s home in Sutro Heights while he was traveling. Years earlier, he’d said a couple things that shaped my career, and now he’d offered his place so I could feel out a move to San Francisco. Young people were pouring back into the city and energy was amassing around AI.</p>
+
+<p>Another guest I’d never met answered the door when I pulled up around 10 PM. I woke before dawn, swam out of the 4 AM riptides at Ocean Beach, and made the decision to relocate then and there while walking back up to the house’s infrared sauna. Around the last week of February, I read the first of those corporate AI policies in that living room and felt the shape of change to come in my body. By April, I had signed a lease in Alamo Square with the guy who’d answered the door. We still live in that condo today.</p>
+
+<figure class="mt-100">
+<div class="carousel">
+    <a data-fslightbox="ocean-beach" data-href="/assets/img/2026-09-27-ocean-beach.webp"><img src="/assets/img/2026-09-27-ocean-beach.webp" alt="Ocean Beach before dawn, cypress trees silhouetted against deep blue surf" loading="lazy" /></a>
+    <a data-fslightbox="ocean-beach" data-href="/assets/img/2026-09-27-ocean-beach-currents.webp"><img src="/assets/img/2026-09-27-ocean-beach-currents.webp" alt="Danger sign at Ocean Beach warning of rip currents" loading="lazy" /></a>
+    <a data-fslightbox="ocean-beach" data-href="/assets/img/2026-09-27-sutro-sauna.webp"><img src="/assets/img/2026-09-27-sutro-sauna.webp" alt="A figure silhouetted inside a red-lit infrared sauna" loading="lazy" /></a>
+</div>
+<figcaption>The moment I knew I could</figcaption>
+</figure>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6AIEypVSWSiBWgZdYL0Jnr?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<div class="soft-break"></div>
+
+<h2 id="tomorrow-becomes-today">Tomorrow becomes today</h2>
+
+<p>Frontier lab releases in late 2025 were another dramatic step forward. Google’s <a href="https://deepmind.google/models/gemini-image/">Nano Banana</a> releases made big strides in image quality and intent matching, and Anthropic found something special with Claude Opus 4.5. What distinguished this jump was that it was the first time an end user could launch largely autonomous code-native workflows that accomplished general tasks of significant value without taking on an involved engineering project. Almost overnight, I was living in a terminal for mundane clerical tasks and even design subtasks. I’d used the command line my whole career, but for build tools and scaffolding, not all of this! I started rebuilding nearly every way I use a computer around the shift, and I haven’t stopped.</p>
+
+<p>The multi-agent future showed up on schedule (and in person). In the first week of February 2026, what felt like the whole city’s developer community (and apparently <a href="https://x.com/SiVola/status/2019278493226508644">Ashton Kutcher</a>) lined up <a href="https://x.com/swyx/status/2019233831732277698">around the block</a> for the first ClawCon at <a href="/blog/frontier-tower">Frontier Tower</a>, one of several <a href="https://openclaw.ai">OpenClaw</a> events and hackathons I attended and helped facilitate there. OpenClaw founder Peter Steinberger spoke at ClawCon and returned later for a vibecoding night to lecture and work hands-on with attendees. A truly general harness had arrived and engineers on the frontier embraced multi-agent hierarchies almost immediately. Crushed lobster in the floorboards and preconfigured Mac Minis sold from an <a href="https://x.com/om_patel5/status/2044225790032691437?s=20">agent-operated vending machine</a> were the proof. ClawCon was booking stadiums soon after.</p>
+
+<figure class="flex-center mv-100"><div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">insane line at the <a href="https://x.com/openclaw?ref_src=twsrc%5Etfw">@openclaw</a> meetup tonight to see <a href="https://x.com/steipete?ref_src=twsrc%5Etfw">@steipete</a> do his thing <a href="https://t.co/krHard84PL">pic.twitter.com/krHard84PL</a></p>&mdash; swyx (@swyx) <a href="https://x.com/swyx/status/2019233831732277698?ref_src=twsrc%5Etfw">February 5, 2026</a></blockquote>
+<script async="" src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+
+</div>
+</figure>
+
+<p>Engineering automation kept improving, but design quality from generated code still lagged even after Anthropic’s Claude Design release. I wrote <a href="/blog/perceptual-reasoning-gap"><em>Seeing Like a Designer</em></a> at the start of this year to name what was missing. Models can describe a render, but they lack a vocabulary of visual axes (weight, scale, contrast, texture) to judge it against intent, and without that vocabulary you can’t steer them either. Give a model those words, and “this looks wrong” becomes a judgment it can make and “more geometric” becomes a direction it can travel.</p>
+
+<p>Around the same time, <a href="https://www.paulbakaus.com">Paul Bakaus</a> began building <a href="https://impeccable.style">Impeccable</a>, “the missing design vocabulary for agents.” I met him by chance at a health conference in May, overheard him describing it, and got nerdsniped. He graciously sat down with me for an extra hour of one-on-one onboarding. He also read my blog post and appreciated that it independently named the problem he was solving. Soon after, I used Impeccable to build five projects in a week, and it still anchors how I design natively in code.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="the-stack-phase-by-phase">The stack, phase by phase</h2>
+
+<p>There’s a recurring pattern where a step change in frontier model capabilities absorbs the value prop of countless third-party and open-source tools, which collapses the stack. The same step conversely extends developers’ reach into the near possible, and like a hydra’s heads, new tools sprout where the old ones were cut down. That oscillating contraction and expansion of tooling is only speeding up as models contribute more to recursively improving themselves.</p>
+
+<p>Here’s where my stack sits today.</p>
+
+<h3 id="context">Context</h3>
+
+<p>Everything starts as context, and I’d rather not be the one who remembers or retrieves all of it anymore. I lean on prosthetic knowledge: <em>information that a person does not know, but can access as needed using technology</em> (a phrase I credit to Rich Oglesby’s <a href="https://www.tumblr.com/prostheticknowledge">eponymous art and technology blog</a>). Face-to-face chats become <a href="https://bee.computer">Bee</a> transcripts; virtual meetings become <a href="https://screenpipe.com">screenpipe</a>, <a href="https://support.google.com/meet/answer/14754931">Gemini</a>, or <a href="https://grain.com">Grain</a> transcripts; cron jobs on an always-on Mac Mini pull it all into my <a href="https://obsidian.md">Obsidian</a> vault many times a day. Texts, email, and my Google accounts are reachable through <a href="https://modelcontextprotocol.io">MCP</a> servers and CLI tools when a project needs them.</p>
+
+<p>Visual references move differently than in the moodboard days of old. On my laptop, screenpipe logs what I browse for inspiration into that day’s note and keeps a continuous record of my screen for when I need to remember that Cool Purple Thing I saw on <a href="https://www.are.na">are.na</a> last Thursday. On my phone, references go into a photo cloud album that I pull into an agent’s filesystem scope on demand. From there, models can analyze a collection to output tokens that shape creative direction or write prompts for other tools.</p>
+
+<p>My own prompts sometimes start as speech. I use <a href="https://spokenly.app">Spokenly</a> in offline mode with NVIDIA’s free, local <a href="https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3">Parakeet</a> transcription model so I can hold down a hotkey and talk to agents through my MacBook. Voice came naturally to me after the Alexa years. Dogfooding a houseful of assistants taught me to change the way I speak when I give a machine a command, and that habit carried straight over once agents could listen.</p>
+
+<p>Conversations flow in on their own. References get summoned. The Mac Mini doubles as an always-on home server, connected to my laptop and two phones via <a href="https://tailscale.com/">Tailscale</a> and synced with my MacBook’s filesystem via <a href="https://syncthing.net/">Syncthing</a>. Long-running tasks survive a closed clamshell, and I keep the full power of macOS even when I’m working from an Android phone.</p>
+
+<h3 id="planning">Planning</h3>
+
+<p>Some ideas start as a hand-typed note, a page of paper, or a whiteboard diagram. All of them get pulled early into a shaping session with an agent, usually <a href="https://claude.com/product/claude-code">Claude Code</a> in the terminal (or the mobile app connected to a desktop terminal), running custom skills I’ve built. The one I use most is <code class="language-plaintext highlighter-rouge">/socratic</code>, which draws my thinking out one question at a time until something concrete falls out; <code class="language-plaintext highlighter-rouge">/metaprompt</code> fleshes out and force-multiplies the prompts I hand to other tools.</p>
+
+<p>I occasionally install skills from first-party marketplaces or open ones like <a href="https://skills.sh">skills.sh</a> and the <a href="https://openclawdir.com/skills">OpenClaw skills directory</a>. I limit the skills I invoke by habit since consistent prompting yields more consistent results. Everything else gets handled by skills that choose which other skills to run based on my prompt and the session’s context. Tuning these fragile orchestration systems can turn into a colossal recursive time sink, so I try my best to use the skills I need to get the work done and keep the work ahead of the workflow without giving up incremental gains to workflow for too long.</p>
+
+<h3 id="build">Build</h3>
+
+<p>I use an agent runtime called <a href="https://herdr.dev">herdr</a> inside <a href="https://ghostty.org">Ghostty</a>: a terminal multiplexer where I run several Claude Code sessions in parallel. It’s closer to switching between a bunch of simultaneous text-based role-playing games than to typing code in an IDE.</p>
+
+<p>I used to hand autonomous threads that needed less monitoring to <a href="https://www.conductor.build">Conductor</a>. I do that less now because herdr and Claude Code’s native subagents and worktrees cover the same ground. <a href="https://devin.ai/desktop">Devin</a> (formerly Windsurf) is the IDE I open when I want my hands on the code. Some edits are faster to code by hand than to explain; some agent misses are stubborn enough to fix by hand.</p>
+
+<h3 id="design">Design</h3>
+
+<p><a href="https://impeccable.style">Impeccable</a> runs inside Claude Code and gives me control at a level that makes the most sense for designers: spacing rhythm, type, contrast, and utilities for upholding many pillars of overall system quality instead of just shipping a pile of components. Four things allow Impeccable to stand out as a powerful agent skill for design outcomes:</p>
+
+<ul>
+  <li>Its moveset of design operations that corresponds to a project’s lifecycle (categorically: create, evaluate, refine, simplify, harden, system)</li>
+  <li>A <code class="language-plaintext highlighter-rouge">DESIGN.md</code> spec with a JSON sidecar, which Impeccable interprets more reliably than any spec Claude rolls on its own or pulls from another generic skill</li>
+  <li>Audits that catch AI slop, contrast failures, and similar craft crimes where fluency shows first or is most obviously lacking</li>
+  <li>Live iteration that enables WYSIWYG in the browser but ships code natively instead of working like the “no-code” tools of yesteryear</li>
+</ul>
+
+<p>When a design needs imagery, most of my serious generation runs through <a href="https://deepmind.google/models/gemini-image/">Nano Banana</a>.</p>
+
+<p>Parallel work is where design still hurts. Worktrees let autonomous threads run without interfering with one another or with project state, but design often means addressing several elements at once for the overall gestalt, in context. Split them across worktrees and I can’t see how my best choices look together. Keep them in one and the agents collide: fixing one thing undoes another behind my back until I open the browser preview.</p>
+
+<p><a href="https://jem.computer">Jem Gold</a> took a stab at this combinatorics problem back in 2016 with <a href="https://v10.jem.computer/projects/rene/">René</a>, a declarative design tool that generated every combination of the fonts, colors, and spacing you specified, let you converge on what worked, then diverge again at higher fidelity. I’d spent the start of my career building resources for creative technologists, and René was one of the projects that got me excited about the future of creative tools. The best of both worlds today might be a flow like Impeccable’s live iteration that backgrounds and multiplexes in that spirit: hit multiple elements at once, let them converge, preview them together, and intelligently avoid intersections. For now it’s either too slow and clunky or too hard to judge.</p>
+
+<h3 id="review">Review</h3>
+
+<p>Review depth scales with a pull request’s intent and scope. For a simple visual component, a live localhost instance is usually already open in my browser, so I check it with my own eyes or try to break it. If it lints, the tests pass, and it looks and works like it should, it probably merges without me opening the diff; with today’s tools, hand-reviewing an agent’s pass on a button is a waste of time. The project’s agent loops catch most anomalies through maintained test coverage or later optimization passes. For larger PRs I invoke an automated code review, and when I do read a diff, it’s to check for something I already know I’m looking for.</p>
+
+<h3 id="docs">Docs</h3>
+
+<p>Documentation carried a lot of weight in my design systems work at Amazon. I opened the xApp design system effort with a detailed audit of best practices in design systems and accessibility drawn from sources like <a href="https://designbetterpodcast.com/"><em>Design Better</em></a> and my notes from <a href="https://www.clarityconf.com/">Clarity Conference</a>. That report secured cross-org buy-in for my preferred strategy on the design engineering side of things. To drive adoption, I hosted office hours, led pair programming sessions with engineers consuming and implementing the system, and helped evolve and maintain the spec. Today it would all come together in a rich documentation site: principles up front, with production components running live in sandboxes backed by state machines. <a href="https://storybook.js.org">Storybook</a> was my favorite for this in the past, but I’d explore newer tools before committing to one now.</p>
+
+<p>Vercel’s <a href="https://vercel.com/design/guidelines">Web Interface Guidelines</a> are a solid reference I can point to in <code class="language-plaintext highlighter-rouge">CLAUDE.md</code> or similar agent primers. They present a living set of short, imperative rules for interactions, layout, content, forms, and performance that a person can scan and an agent can apply during generation (Vercel ships them as an <code class="language-plaintext highlighter-rouge">AGENTS.md</code> file too). Vercel’s reach in UI with <a href="https://ui.shadcn.com/">shadcn/ui</a> has been particularly large, and its growth owes a lot to clever architecture. Vercel has done well to prioritize open standards and tasteful defaults in anticipation of an agent-centric web, but there’s a fine line between a world with great defaults and one where everything on the web looks the same (again!).</p>
+
+<div class="soft-break"></div>
+
+<h2 id="building-higher-cathedrals">Building higher cathedrals</h2>
+
+<p>This month’s big launch was <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev">TypeSafe AI</a>’s Jev: a model built to make fast, sensible, consistent decisions. I first heard the founding hypothesis a year earlier on a hike with a TypeSafe engineer. A design that clamps degrees of freedom for the model’s outputs buys predictability without purely deterministic behavior. The architecture (more than the cost and speed gains) is the interesting part: it makes intelligence better glue between a widening range of inputs and common-sense outputs. Paul wants the same for Impeccable with “next step prediction,” which I read as chained design decisions that compose whole units of work without taking the designer’s voice. Better glue means better joinery, sturdier walls, and eventually, higher cathedrals. Somewhere up the chain the experiences start to transcend sense altogether, the point where Clarke said technology and magic become indistinguishable.</p>
+
+<p>That optimism became a research proposal I co-wrote this summer with Jem, whose work on René and other creative tools has shaped my path for at least a decade. It didn’t win a <a href="https://thinkingmachines.ai/news/interactivity-research-grants/">Thinking Machines interactivity grant</a>, but it was a good exercise in imagining the near possible. A revised version may become its own post.</p>
+
+<div class="soft-break"></div>
+
+<p>Ten years ago, I was watching the neural networks of old paint photographs crudely. Today, in San Francisco at the foot of the AI singularity, I’m still watching functions get less wrong—now I get to decide what they’re for, and how my ways of working will grow with them.</p>
+
+<p>If you got this far, I’d greatly appreciate your feedback on this post, opinions about the future of AI tooling and agentic engineering, suggestions for anything I should try next, or whatever else you have to share. 
+<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+Designing+With+AI%3A+Then+%26+Now.">Message me on X (Twitter)</a> and let’s talk shop.</p>]]></content><author><name>Stedman Halliday</name></author><category term="technology" /><category term="design" /><category term="engineering" /><category term="artificial intelligence" /><category term="work" /><summary type="html"><![CDATA[My current AI design and engineering stack and how I got here]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2026-09-29-neural-network.webp" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2026-09-29-neural-network.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Reflections on My Namesake</title><link href="https://stedmanhalliday.com/blog/namesake" rel="alternate" type="text/html" title="Reflections on My Namesake" /><published>2026-08-06T00:00:00-07:00</published><updated>2026-08-06T00:00:00-07:00</updated><id>https://stedmanhalliday.com/blog/namesake</id><content type="html" xml:base="https://stedmanhalliday.com/blog/namesake"><![CDATA[<p>I discovered a lot more about the man I was named after just a few weeks ago by reading his obituary after a chat with each of my parents. I didn’t expect to feel so differently about my identity afterwards. I had a lot to write about after reflecting on it for some time.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="stedman-fitzroy-matthew">Stedman Fitzroy Matthew</h2>
 
 <p>Stedman Fitzroy Matthew was born on Christmas Day of 1950 in Montserrat, West Indies, which happened to be his mother’s birthday as well. He died at the age of 69 in San Francisco on July 30, 2020. The COVID-19 pandemic meant a small funeral. For my entire life up to that morning a few weeks back, the only things I knew about him were that he was a friend of my parents and that they liked his name; that was the full extent of information offered when I asked in my youth.</p>
 
 <p>According to the obituary, Stedman was a regular on Fillmore Street, where I’ve lived since the spring of 2023. I knew my parents met building The Fillmore Center together in the late 1980s but I didn’t know that my father met Stedman playing tennis in Alamo Square Park, a mere block west of my residence. I felt an unusual calling to that particular park when first searching for a place to live in the city and ever since, I’ve told many friends that it is my favorite park in the world. It seems now that there is narrative and spiritual resonance to accompany that feeling. That sense of consonance from the discovery reaches back and rearranges the history of how I felt about my name growing up.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="the-other-one">The other one</h2>
 
 <p>Stedman was a stiff, strange, adult name to hand a kid, and it eventually made me quite shy. Every introduction followed a similar script: I’d say my name, the other person would say it back wrong or don a quizzical expression and ask me to repeat it, I’d say it again or twice or three times more, and then two days later at the same practice or classroom or party they’d have lost it entirely and we’d run the whole exchange from the top. I learned to say it quietly, which made it worse. What I concluded with the infallible logic of a lonely child was that no one wanted to know or remember me or bother staying connected to me.</p>
 
@@ -11,6 +213,10 @@
 <p>Being forgettable is survivable on its own but being the forgettable half of a matched set is different. There’s a control subject standing next to you at all times and everyone can’t help but run the comparison out loud. When you’re a twin you often get to be half of one person at best, and I was routinely assigned the lesser half after a certain age (some people still do it). “Oh, you’re The Other One.” Later in adolescence, our bodies diverged. At age 17, my brother began medaling on Muscle Beach podiums as a competitive bodybuilder and the diminishment stopped being figurative. Most people incorrectly assumed I was the younger twin and many began calling me “the little one” or “the small one” to my face. They did it cheerfully, like how you’d use a nickname somebody had agreed to.</p>
 
 <p>Something I only really worked out after learning more about my name recently was that I couldn’t attribute any significance to it beforehand, and that basically allowed a lifetime of diminishment to leak into my self image, whereas a stronger sense of identity might have offered a protective wall of sorts.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="asking-again">Asking again</h2>
 
 <p>The way I finally asked for more information again was a little silly. A friend posted something that encouraged me to ask my parents about their favorite colors, animals, flowers, and the like. Somewhere in that conversation the older question I’d been carrying since childhood surfaced.</p>
 
@@ -26,9 +232,13 @@
 
 <p>I’m a little stuck on the fact that my parents gave me a name loaded with meaning but then never handed me the meaning, which feels like an act of carelessness or an erasure of that meaning. It stings in a specific way to be named after a man they let fizzle away without event until a search engine told them he’d been dead for a few years. I know my parents love me the way parents love children. I also sometimes feel like they don’t really care quite enough to fully know me as a person. I’ve often felt spiritually discarded and abandoned by them in a forgot-to-bother way more so than an actively harmful one; like most people I introduced myself to growing up. The entire conversation was my father grieving that exact flaw in himself. He regrets the way he let close connections like Gabriel, Stedman, and others lose out to distance or inertia.</p>
 
+<div class="soft-break"></div>
+
+<h2 id="tracing-footprints">Tracing footprints</h2>
+
 <p>Knowing now that I’ve been living inside the footprints of my late namesake’s life for years shifts something. I’ve said before that the Bay Area’s ley lines are special and I feel that now more than ever. I feel like I’m in the right place at the right time to do whatever it is I am meant to with a sense of higher significance about it all. There are some rocks and bandages in the way right now but I’m well on my way down the path.</p>
 
-<p>Stedman was the tallest person in just about every room he ever walked into, but the obituary doesn’t remember him for it once. It remembers him for being gentle and formal and kind; for stewardship and holding things together on behalf of other people. “With his wealth of interests and knowledge and his immense, pure heart, he found delight in everyone.” It’s a funny legacy to leave to someone everyone called small once upon a time. Like the Stedman before me, my heart has always been enormous.</p>
+<p>Stedman was the tallest person in just about every room he ever walked into, but the obituary doesn’t give much weight to that. It instead remembers him for being gentle, formal, and kind; for stewardship and holding things together on behalf of other people. “With his wealth of interests and knowledge and his immense, pure heart, he found delight in everyone.” It’s a funny legacy to leave to someone everyone called small once upon a time. Like the Stedman before me, my heart has always been enormous.</p>
 
 <p>I was home recently and went out to a karaoke bar with my friend Diana, whom I’ve known for about twenty years. Partway through the night she recognized me aloud for being the friend who always shows up. She remembered better than I had that I’ve pulled up to wherever she happened to be in the world: LA, Davis, or even Barcelona just for a night where I slept outside on a sandy beach. She appreciated that I’ve always found a way to stay connected and come through and that helped me see some virtue of mine through another person’s eyes.</p>
 
@@ -36,7 +246,88 @@
 
 <p>There’s an album in a storage unit somewhere in Southern California that contains a photograph of Stedman with my parents. “Just the three of us.” Both of my parents independently remember what they were wearing in it. My father doesn’t want to scan it and send it over. He wants me to come down and look at it in person instead. I think we both agree that it would offer a welcome sense of closure.</p>
 
-<p>I know I’m a little late, but so long Stedman. I guess I’ll see you soon.</p>]]></content><author><name>Stedman Halliday</name></author><category term="reflection" /><category term="community" /><category term="san francisco" /><summary type="html"><![CDATA[What an obituary told me about the man I was named after]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/og-image.png" /><media:content medium="image" url="https://stedmanhalliday.com/assets/og-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Seeing Like a Designer</title><link href="https://stedmanhalliday.com/blog/perceptual-reasoning-gap" rel="alternate" type="text/html" title="Seeing Like a Designer" /><published>2026-01-27T00:00:00-08:00</published><updated>2026-01-27T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/perceptual-reasoning-gap</id><content type="html" xml:base="https://stedmanhalliday.com/blog/perceptual-reasoning-gap"><![CDATA[<p><img src="/assets/img/2026-01-27-perceptual-reasoning-gap.webp" alt="Perceptual reasoning neural network" /></p>
+<p>I know I’m a little late, but so long Stedman. I guess I’ll see you soon.</p>]]></content><author><name>Stedman Halliday</name></author><category term="reflection" /><category term="community" /><category term="san francisco" /><summary type="html"><![CDATA[What an obituary told me about the man I was named after]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/og-image.png" /><media:content medium="image" url="https://stedmanhalliday.com/assets/og-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">A Farewell to Frontier Tower</title><link href="https://stedmanhalliday.com/blog/frontier-tower" rel="alternate" type="text/html" title="A Farewell to Frontier Tower" /><published>2026-07-17T00:00:00-07:00</published><updated>2026-07-17T00:00:00-07:00</updated><id>https://stedmanhalliday.com/blog/frontier-fitness-center</id><content type="html" xml:base="https://stedmanhalliday.com/blog/frontier-tower"><![CDATA[<figure class="cover">
+    <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class="embed-container">    <iframe title="YouTube video player" width="640" height="390" src="//www.youtube.com/embed/yNo_1nxn4Mw" frameborder="0" allowfullscreen=""></iframe></div>
+    <figcaption>Core Memory episode exploring Frontier Tower</figcaption>
+</figure>
+
+<p>Frontier Tower is a sixteen-story building on Market Street in San Francisco’s SoMa neighborhood, built in 1908 as the David Hewes Building. When its founders at Berlinhouse came to San Francisco from Germany with a vision to revitalize vacant and depreciated urban real estate as an experiment in alternative models for living and working in 21st-century cities, I was excited to participate.</p>
+
+<p>Beginning in Q4 of 2024, I helped incubate the project by connecting the founders to local housing and communities and assisting with the fundraising pitch. I joined as a founding citizen and invited the communities around me to join too. That helped grow presale traction ahead of the building purchase. I spent the rest of the year shaping a proposal for a connected wellness lab, then stepped into a community lead role once leadership and I aligned on the mission: progressively develop a concept facility that illustrates the future of wellness by merging ambient intelligence, novel hardware, and social health programming. One part showroom, one part workout space, one part active performance lab.</p>
+
+<p>The building was acquired a few months later and opened its doors to members in April 2025. What followed was one of the wildest projects I’ve ever worked on: a year and change of experimentation, hijinks, new friendships, chaos, and hard lessons. The same building housed a wet biochemistry lab, a modular makerspace, underground taser knife fights and humanoid robot boxing matches, an arts and culture venue, and a lovely space stewarded by the Human Flourishing Foundation. That floor was the heart and soul of the tower community; it asked critical questions about how technological accelerationism can best benefit people’s quality of life.</p>
+
+<figure>
+<a data-fslightbox="hf-hotpot" data-href="/assets/img/2026-07-17-human-flourishing-hotpot-full.webp"><img alt="About thirty people cheering with arms raised around long tables set with pots and bowls in an open loft space" src="/assets/img/2026-07-17-human-flourishing-hotpot.webp" loading="lazy" /></a>
+<figcaption>Community hotpot hosted by Human Flourishing</figcaption>
+</figure>
+
+<p>Frontier Tower in its first year was perhaps best captured by Kylie Robison’s walkthrough mini-documentary for Core Memory (I appear in a segment beginning at <a href="https://www.youtube.com/watch?v=yNo_1nxn4Mw&amp;t=767s">12:47</a>). Video journalist Ashlee Vance called Frontier Tower “perhaps the most tech-infused and strangest office building in the world.” I’ll remember it as a special nexus of practice shaped by the concurrent dawn of powerful artificial intelligence: a prism refracting a dozen different futures, each citizen inventing their own slice of tomorrow. I’ll be telling stories for years about the <a href="https://www.nytimes.com/2026/01/03/business/chinese-peptides-silicon-valley.html">Chinese peptide rave</a> that made <em>The New York Times</em>, and about the smell of crushed lobster ground into the floor like grout after a blockbuster week of OpenClaw launch events (including an Ashton Kutcher appearance).</p>
+
+<p>For all its promise, Frontier Tower still ran like a zoo by the time its first anniversary came around, with roughly 750 citizens under one roof. At the root of most coordination problems was an ad hoc federated governance model that left community leaders with most responsibility for building the culture, serving citizens, and growing the membership, while less involved absentee founders held most decision-making power overseas. Nearly all of the founding community leaders departed over the spring and summer of 2026 as those protracted tensions grew into deeper operational and ethical misalignments with the founders. I chose to end my tenure as a tower citizen and founding community lead in June 2026, which meant a shutdown for Frontier Fitness Center. Below is the farewell letter I shared with the community, along with some original pitch slides and the proposed floor plan filed with the City of San Francisco for a renovated, permanent facility in the building.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="thanks-for-the-ride">Thanks for the Ride</h2>
+
+<p><strong>The top-line update</strong></p>
+
+<ul>
+  <li>Frontier Fitness Center and Berlinhouse have parted ways, and I’ve chosen to end my membership.</li>
+</ul>
+
+<p><strong>What that means for you</strong></p>
+
+<ul>
+  <li>The space stays accessible to members for the time being.</li>
+  <li>There’s still plenty of functional equipment inside to train in a lot of ways.</li>
+  <li>Berlinhouse decides where things go from here now that Frontier Fitness Center has vacated the space.</li>
+</ul>
+
+<p>Here’s how we got here. The build was pitched in three steps:</p>
+
+<ol>
+  <li>Stand up a basic movement space in the annex and pilot a few things.</li>
+  <li>Renovate a fully furnished floor: group fitness, knowledge sharing, social health.</li>
+  <li>Grow the community gym into an active-performance lab and concept showroom, partnered with the colocated BioPunk Lab and the longevity community, pushing the frontier of data-driven human physiology.</li>
+</ol>
+
+<figure class="mt-100">
+<div class="carousel">
+    <a data-fslightbox="ffc-deck" data-href="/assets/img/2026-07-17-ffc-deck-1.webp"><img src="/assets/img/2026-07-17-ffc-deck-1.webp" alt="Frontier Fitness Center title slide" loading="lazy" /></a>
+    <a data-fslightbox="ffc-deck" data-href="/assets/img/2026-07-17-ffc-deck-2.webp"><img src="/assets/img/2026-07-17-ffc-deck-2.webp" alt="Meet the movement: community leader, community members, community values" loading="lazy" /></a>
+    <a data-fslightbox="ffc-deck" data-href="/assets/img/2026-07-17-ffc-deck-3.webp"><img src="/assets/img/2026-07-17-ffc-deck-3.webp" alt="Three phases: community gym, wellness center, fitness frontier" loading="lazy" /></a>
+    <a data-fslightbox="ffc-deck" data-href="/assets/img/2026-07-17-ffc-deck-4.webp"><img src="/assets/img/2026-07-17-ffc-deck-4.webp" alt="Community impact: optimize lifestyle health, move something, applied biology" loading="lazy" /></a>
+</div>
+<figcaption>Frontier Fitness Center proposal, Frontier Tower Co-Creation Summit</figcaption>
+</figure>
+
+<p>Step one got done last summer, right after the tower opened. Dom ran training rentals, facilitators came through for group fitness, jiu jitsu and acro yoga happened on the mats, movement ran all through the Viva City popup, teams prototyped fitness hardware games, and we won a grant to place a novel UV-based sanitation device in the space, all while members got their sweat on daily. That was the whole point.</p>
+
+<p>Step two was the plan for Berlinhouse: fund the 5th-floor renovation and drive construction operations, with my design input and curation, in exchange for free open-gym access for every member in perpetuity. It didn’t go as smoothly as a lot of us hoped, but we moved it down the field. Demolition wrapped in Q4; in Q1 the plans were drafted, revised, and filed with the city (Aboudi carried real weight on permitting and project management, thank you). Those floor plans are on the adjacent page. The tower’s leadership and business model are both in flux, so whether the rest comes to pass is up in the air.</p>
+
+<figure class="mt-100">
+<a data-fslightbox="ffc-plan" data-href="/assets/img/2026-07-17-ffc-floor-5-plan-full.webp"><img alt="Proposed 5th-floor plan: warm-up and recovery floor, cardio row, cable rack, Olympic platform, free weights, a sled run on turf, cold plunge, sauna and recovery room, lounge, and locker rooms" src="/assets/img/2026-07-17-ffc-floor-5-plan.webp" /></a>
+<figcaption>Proposed 5th-floor plan for Frontier Fitness Center</figcaption>
+</figure>
+
+<p>When I started, I asked what would count as a win. The bar was low: a space where people felt excited to move every day, where movement was convenient inside their workday, and where that led to meeting each other and learning something about their own wellness. This experiment didn’t go as far as I wanted, and it still cleared the bar with room to spare. Thank you for showing up for it.</p>
+
+<p>What’s next: I’ve raised money to keep building my vision for data-driven performance on my own. While I iterate, I’m also back at my boutique studio, where you can train with me privately: unlimited DEXA scans, VO2 max testing, private sauna and cold-plunge contrast sessions, and group classes. Scan below to email me if that’s you.</p>
+
+<p>Good luck, thanks for the ride, and I’ll see you in the future.<br />
+— Stedman Halliday</p>
+
+<p><strong>Train with me</strong><br />
+Scan to email me about private training, testing, and recovery.<br />
+Or reach out directly: <a href="mailto:%73%74%65%64%6D%61%6E.%72%68@%67%6D%61%69%6C.%63%6F%6D">stedman.rh<!-- -->@<!-- -->gmail<!-- -->.com</a></p>
+
+<div class="soft-break"></div>
+
+<p>Do you have memories or stories from Frontier Tower? 
+<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+A+Farewell+to+Frontier+Tower.">Message me on X (Twitter)</a> and let’s swap them. I’d love to connect.</p>]]></content><author><name>Stedman Halliday</name></author><category term="community" /><category term="health" /><category term="san francisco" /><category term="work" /><category term="leadership" /><summary type="html"><![CDATA[A look back at the strangest, most tech-infused office building in the world]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2026-07-17-ffc-deck-3.webp" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2026-07-17-ffc-deck-3.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Seeing Like a Designer</title><link href="https://stedmanhalliday.com/blog/perceptual-reasoning-gap" rel="alternate" type="text/html" title="Seeing Like a Designer" /><published>2026-01-27T00:00:00-08:00</published><updated>2026-01-27T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/perceptual-reasoning-gap</id><content type="html" xml:base="https://stedmanhalliday.com/blog/perceptual-reasoning-gap"><![CDATA[<figure class="cover">
+<img alt="Perceptual reasoning neural network" src="/assets/img/2026-01-27-perceptual-reasoning-gap.webp" />
+</figure>
 
 <h2 id="the-missing-primitive-is-a-vocabulary">The Missing Primitive Is a Vocabulary</h2>
 
@@ -113,7 +404,9 @@
 <p>The point of doing that isn’t a model that designs without us. It’s a model you can actually direct, one that moves along axes you name, so the person with the taste stays in the loop and gets more done with it. Eyes were never the bottleneck. The words for what the eyes are doing were.</p>
 
 <p>Do you have thoughts on this post? I’d greatly appreciate your feedback. 
-<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+Seeing+Like+a+Designer.">Message me on X (Twitter)</a> and let’s talk shop.</p>]]></content><author><name>Stedman Halliday</name></author><category term="technology" /><category term="design" /><category term="engineering" /><category term="software" /><category term="artificial intelligence" /><summary type="html"><![CDATA[Generative UI's missing primitive is a vocabulary, not sight]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2026-01-27-perceptual-reasoning-gap.webp" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2026-01-27-perceptual-reasoning-gap.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Training Intuition at the Edge of the Possible</title><link href="https://stedmanhalliday.com/blog/training-intuition" rel="alternate" type="text/html" title="Training Intuition at the Edge of the Possible" /><published>2026-01-21T00:00:00-08:00</published><updated>2026-01-21T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/training-intuition</id><content type="html" xml:base="https://stedmanhalliday.com/blog/training-intuition"><![CDATA[<p><img src="/assets/img/2026-01-21-iroko-tree.webp" alt="Iroko Tree" /></p>
+<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+Seeing+Like+a+Designer.">Message me on X (Twitter)</a> and let’s talk shop.</p>]]></content><author><name>Stedman Halliday</name></author><category term="technology" /><category term="design" /><category term="engineering" /><category term="software" /><category term="artificial intelligence" /><summary type="html"><![CDATA[Generative UI's missing primitive is a vocabulary, not sight]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2026-01-27-perceptual-reasoning-gap.webp" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2026-01-27-perceptual-reasoning-gap.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Training Intuition at the Edge of the Possible</title><link href="https://stedmanhalliday.com/blog/training-intuition" rel="alternate" type="text/html" title="Training Intuition at the Edge of the Possible" /><published>2026-01-21T00:00:00-08:00</published><updated>2026-01-21T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/training-intuition</id><content type="html" xml:base="https://stedmanhalliday.com/blog/training-intuition"><![CDATA[<figure class="cover">
+<img alt="Iroko Tree" src="/assets/img/2026-01-21-iroko-tree.webp" />
+</figure>
 
 <h2 id="divination-hyperstitioning-and-the-punk-spirit-in-the-age-of-artificial-intelligence">Divination, Hyperstitioning, and the Punk Spirit in the Age of Artificial Intelligence</h2>
 
@@ -448,7 +741,7 @@
 
 <div class="soft-break"></div>
 
-<p>For the DIY crowd looking to generate your own artist stats, check out <a href="/blog/skrrtStats2024#diy">last year’s post</a> for code and instructions.</p>
+<p>For the DIY crowd looking to generate your own artist stats, check out <a href="/skrrtStats2024#diy">last year’s post</a> for code and instructions.</p>
 
 <p>Did you like this post? Do you have thoughts about Yung Skrrt? Wanna show me what your top artist breakdown looks like? 
 <a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+skrrtStats+2025.">Message me on X (Twitter)</a> and let’s yap about it.</p>]]></content><author><name>Stedman Halliday</name></author><category term="music" /><category term="data" /><category term="code" /><summary type="html"><![CDATA[Annual analytics for my Yung Skrrt streaming data]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/video/2026-01-12-SkrrtStats2025-video-poster.webp" /><media:content medium="image" url="https://stedmanhalliday.com/assets/video/2026-01-12-SkrrtStats2025-video-poster.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Building Canals: On Songwriting</title><link href="https://stedmanhalliday.com/blog/songwriting" rel="alternate" type="text/html" title="Building Canals: On Songwriting" /><published>2025-11-27T00:00:00-08:00</published><updated>2025-11-27T00:00:00-08:00</updated><id>https://stedmanhalliday.com/blog/songwriting</id><content type="html" xml:base="https://stedmanhalliday.com/blog/songwriting"><![CDATA[<p>I recently finished a recording of a song called <a href="https://untitled.stream/library/project/DmwNTG2NgCvAjKDDIuANA"><em>cocoa</em>.</a> It’s the first one I’ve completed with a vocal performance, and the first I’d call truly done. I started it during the lockdown period of the COVID-19 pandemic, building an instrumental (and later a concept) around a field recording of my mother preparing hot cocoa for me. It took shape slowly, across long intervals of creative stalling and spurts, while I juggled many other projects (I’m a little ashamed it took me five years to the very day, but creative pursuits aren’t always linear and that’s fine). I’m not sure how much I actually like the final product, but I know I don’t hate it. I don’t think it’s pushing a sonic envelope or sitting at some high watermark of intentional craft, but firsts can matter for other reasons. It was important for me to get something out, to finish, to have anything at all to stand on and move forward from.</p>
@@ -724,116 +1017,4 @@
 <div class="soft-break"></div>
 
 <p>If you’ve read this far (thanks), you probably like music quite a lot. 
-<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+7+Songs%3A+Apr+2025.">Message me on X (Twitter)</a> if you’d like to get some <code>🏓 Playlist Ping Pong</code> going or chat about music.</p>]]></content><author><name>Stedman Halliday</name></author><category term="music" /><category term="7 songs" /><summary type="html"><![CDATA[*7 Songs* periodically features curated tracks and commentary for more personal music discovery.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2025-04-28-omnichord-0.jpg" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2025-04-28-omnichord-0.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Selected Quotes: Apr 2025</title><link href="https://stedmanhalliday.com/blog/2025/04/19/selected-quotes-apr-2025" rel="alternate" type="text/html" title="Selected Quotes: Apr 2025" /><published>2025-04-19T00:00:00-07:00</published><updated>2025-04-19T00:00:00-07:00</updated><id>https://stedmanhalliday.com/blog/2025/04/19/selected-quotes-apr-2025</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2025/04/19/selected-quotes-apr-2025"><![CDATA[<h2 id="mike-tyson-on-humility">Mike Tyson on humility</h2>
-
-<blockquote>
-  <p><em>If you’re not humble, life will visit humbleness upon you.</em></p>
-
-  <p><cite>—Mike Tyson</cite></p>
-</blockquote>
-
-<div class="soft-break"></div>
-
-<h2 id="mark-twain-on-humility">Mark Twain on humility</h2>
-
-<blockquote>
-  <p><em>I was gratified to be able to answer promptly, and I did. I said I didn’t know.</em></p>
-
-  <p><cite>—Mark Twain</cite></p>
-</blockquote>
-
-<div class="soft-break"></div>
-
-<h2 id="archbishop-desmond-tutu-on-humility">Archbishop Desmond Tutu on humility</h2>
-
-<blockquote>
-  <p><em>Humility allows us to celebrate the gifts of others, but it does not mean you have to deny your own gifts or shrink from using them.</em></p>
-
-  <p><cite>—Archbishop Desmond Tutu, <em>The Book of Joy</em></cite></p>
-</blockquote>
-
-<div class="soft-break"></div>
-
-<p>Did you like this post? 
-<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+Selected+Quotes%3A+Apr+2025.">Message me on X (Twitter)</a> and let me know what resonated with you.</p>]]></content><author><name>Stedman Halliday</name></author><category term="quotes" /><category term="reflection" /><summary type="html"><![CDATA[*Selected Quotes* periodically presents thoughtfully curated quotes to inspire reflection.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/og-image.png" /><media:content medium="image" url="https://stedmanhalliday.com/assets/og-image.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">7 Songs: Mar 2025</title><link href="https://stedmanhalliday.com/blog/2025/03/31/7-songs-mar-2025" rel="alternate" type="text/html" title="7 Songs: Mar 2025" /><published>2025-03-31T00:00:00-07:00</published><updated>2025-03-31T00:00:00-07:00</updated><id>https://stedmanhalliday.com/blog/2025/03/31/7-songs-mar-2025</id><content type="html" xml:base="https://stedmanhalliday.com/blog/2025/03/31/7-songs-mar-2025"><![CDATA[<h3 id="tears-in-heaveneric-clapton"><em>Tears in Heaven</em>—Eric Clapton</h3>
-
-<p>I can never quite predict the lessons I’ll come away from grief with. What seems true over time is that those lessons become easier to learn and that I grow in my ability to accept and process them more readily (even if some fighting and difficulty are involved). For the last few months, loss is something that has been more salient than I’d ideally like it to be, but I’m emerging from it as a stronger person with a more reassured and independent sense of self. I’m grateful for the transformation brought about by having known someone who is now gone; someone that has always been there for as long as I can remember and will now continue to be there, albeit in a different way.</p>
-
-<p><em>Tears in Heaven</em> is a tune with grief at its core: Clapton’s tragic memorial of his son gone too soon after tumbling through a window at the tender age of four. The forlorn longing in his voice is palpable when he pleadingly asks if his deceased boy would know his name should they meet in heaven. I’m not sure things like that matter to me now—I have known and will remember her name in this life and I am better for it.</p>
-
-<iframe class="mt-50" style="border-radius:12px" src="https://open.spotify.com/embed/track/1kgdslQYmeTR4thk9whoRw?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-<h3 class="mt-200"><em>Self/Less</em>—Alecia Creti</h3>
-
-<p>I featured a track from Gallant in <a href="/blog/2025/02/19/7-songs-feb-2025">last month’s 7 Songs</a> and mentioned I’d had a chance to watch him perform live for the first time in a while at the Independent in San Francisco. Alecia Creti opened for him at that show and it was wonderful to get acquainted with her music alongside her detailed narratives about each number on her setlist. Her vocal performance was astounding and her simultaneous piano accompaniment intimate and moving.</p>
-
-<p>Despite occasionally surfacing twinges of emotional immaturity, her interstitial monologues painted an authentic and endearing portrait of a young artist in the midst of experiencing their dreams come to fruition and developing a stronger sense of self that manifests powerfully in their craft. <em>Self/Less</em> is a track about having the courage and strength to put oneself first when doing so seems to run counter to duty to others (namely family). That theme resonated with me powerfully as I stood in the audience while Alecia belted the words.</p>
-
-<iframe class="mt-50" style="border-radius:12px" src="https://open.spotify.com/embed/track/7358J7q6CvnvVPui2ogvlE?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-<h3 class="mt-200"><em>magnetic</em>—UMI</h3>
-
-<p>I remember a lot about the first time I heard <em>Forest in the City</em> years ago. It was a very fitting record to sulk to as I left the place I call home in a sense more final than ever before—my love for someone receding; unmaintanable in the face of timing, circumstance, and the different ways life tends to work out for different people. <em>magnetic</em> potently highlights that contrast between yearning and realism: love, however broad and deep, isn’t always sufficient to ensure its own preservation.</p>
-
-<p>While once a deeply sad listen, the shape of melancholy it brings forth is different now. It’s about having had the privilege to love, gaining the wisdom to know that sharing a life with someone is about more than feelings, and growing enough to let go of being drawn to someone when that needs to happen to make room for more life.</p>
-
-<iframe class="mt-50" style="border-radius:12px" src="https://open.spotify.com/embed/track/64tHsFnlwPJucfb6ohkkRt?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-<h3 class="mt-200"><em>On a Mountain Under Full Moon</em>—Wicca Phase Springs Eternal feat. Fantasy Camp</h3>
-
-<p>Adam McIlwee sings like a boy with a sometimes magical and other times painful, yet always rich inner world who’s frequently catching himself in the middle of urban or rural nowhere, wistfully appreciating the mysteries of the universe… and I <em>get</em> that. The importance of regarding the moon—full or otherwise—should not be discounted, whether on a mountain or on the range. The outro’s acoustic guitar harmonics with time-stretched reverse delay are a great example of doing a lot with a little. Gestures like that inspire novel approaches to my own arrangements.</p>
-
-<p>More on letting go as a lyrical theme in this one, much of it from the Fantasy Camp feature:</p>
-
-<p><em>It’s the mystery I’m after</em><br />
-<em>It’s the magic I believe in</em><br />
-<em>On a mountain under full moon</em><br />
-<em>I can say goodnight and mean it</em></p>
-
-<p><em>But if you ever really loved me</em><br />
-<em>You would say goodnight and set me free</em></p>
-
-<p><em>So don’t you worry ‘bout me</em><br />
-<em>I kinda like this feeling</em><br />
-<em>I’m the master of my own world</em><br />
-<em>Riding into the evening</em></p>
-
-<figure>
-    <div class="grid col2" style="grid-template-rows: auto auto">
-        <img style="grid-row: 1 / 3" alt="present nowhere" src="/assets/img/2025-03-31-present-nowhere_01.webp" />
-        <img alt="present nowhere" src="/assets/img/2025-03-31-present-nowhere_02.webp" />
-        <img alt="present nowhere" src="/assets/img/2025-03-31-present-nowhere_03.webp" />
-    </div>
-    <figcaption>Thanks Megan. Thanks Dan.</figcaption>
-</figure>
-
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7ENs0e9ZM3azBKM58lDM47?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-<h3 class="mt-200"><em>Heaven Will Come</em>—Tim Hecker</h3>
-
-<p>Tim Hecker’s sonic landscaping feels inextricably focused on evoking the divine, giving equal attention to both its heavenly and haunting auras. If there ever were an assurance that heaven will come, it can be found in reverberating organ progressions textured and modulated with the signatures of careful Max patchwork.</p>
-
-<p>It’s another great soundtrack for momentary nowheres—time between events, space between places that become holy sites unto themselves in newfound ways. Appreciating ambient music conditions an appreciation of being with spaciousness. In Hecker’s work, that spaciousness is a divine void that shifts between light and dark, warm and cool, this world and another. Perhaps here, it can be a shift between the darker sides of grief and the room for something newer and brighter that lies beyond.</p>
-
-<iframe class="mt-50" style="border-radius:12px" src="https://open.spotify.com/embed/track/4XL9nn0qDcLA25X88wxmrw?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-<h3 class="mt-200"><em>A Greater Love</em>—Yves Tumor</h3>
-
-<p><em>A Greater Love</em> is the moody and ethereal conclusion to 2020’s <em>Heaven To A Tortured Mind</em>. It’s a song about change: the change in the seasons, the weather, and the emotions and connections that shift as time has its way with all of us. The power of loss to change us for the better—to beneficially reshape our relationships with others and with ourselves—is an under-acknowledged silver lining of grief.</p>
-
-<iframe class="mt-50" style="border-radius:12px" src="https://open.spotify.com/embed/track/3u3kKwR4TgxtPxJFvVWn7F?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-<h3 class="mt-200"><em>道 (Michi)</em>—Hikaru Utada</h3>
-
-<p>Human beings, narratively obsessed as we are, tend to hope that the culmination of grieving heralds a return to normalcy and perhaps even greener pastures beyond: a road to thriving in greater wholeness. Utada’s <em>道 (Michi)</em>—<em>road</em> in English—draws the contours of that road. It’s the opening track on 2016’s <em>Fantôme</em>: a return from a lengthy hiatus, and a record that Utada takes particular pride in: “[<em>Fantôme</em>] marked the beginning of a new chapter of my life as an artist and as a human being.”</p>
-
-<p>The track and the album as a whole surfaced meditations on loss and grief in the wake of the artist’s mother’s tragic suicide. The chorus offers an enduring reminder that we can be lonely, yet not alone; that life can be grieved but also celebrated and that it can give birth to new life, much like Utada’s career beginnings were inspired by her mother’s musicianship.</p>
-
-<p>It is in 2024’s <em>Science Fiction</em> compilation album that <em>Michi</em> finds new life of its own, still an upbeat and danceable standout even amidst collaborations with A.G. Cook and Floating Points. It was seemingly a happier time for Utada, marking the 25th anniversary of her debut while she raises a child of her own (also featured on the album). I think that’s how I’d like to end this month’s list: with an upbeat and hopeful reflection on what’s possible after grief subsides.</p>
-
-<iframe class="mt-50" style="border-radius:12px" src="https://open.spotify.com/embed/track/4H8iChdvjdsxrxSAVi9Wy1?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-<div class="soft-break"></div>
-
-<p>If you’ve read this far (thanks), you probably like music quite a lot. 
-<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+7+Songs%3A+Mar+2025.">Message me on X (Twitter)</a> if you’d like to get some <code>🏓 Playlist Ping Pong</code> going or chat about music.</p>]]></content><author><name>Stedman Halliday</name></author><category term="music" /><category term="7 songs" /><summary type="html"><![CDATA[*7 Songs* periodically features curated tracks and commentary for more personal music discovery.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2025-03-31-present-nowhere_03.webp" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2025-03-31-present-nowhere_03.webp" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+7+Songs%3A+Apr+2025.">Message me on X (Twitter)</a> if you’d like to get some <code>🏓 Playlist Ping Pong</code> going or chat about music.</p>]]></content><author><name>Stedman Halliday</name></author><category term="music" /><category term="7 songs" /><summary type="html"><![CDATA[*7 Songs* periodically features curated tracks and commentary for more personal music discovery.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stedmanhalliday.com/assets/img/2025-04-28-omnichord-0.jpg" /><media:content medium="image" url="https://stedmanhalliday.com/assets/img/2025-04-28-omnichord-0.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

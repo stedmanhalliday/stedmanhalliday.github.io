@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Stedman Halliday">
+    <meta name="theme-color" content="#111418">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- end favicon -->
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Designing With AI: Then &amp; Now | Stedman Halliday</title>
+<meta name="generator" content="Jekyll v4.3.4">
+<meta property="og:title" content="Designing With AI: Then &amp; Now">
+<meta name="author" content="Stedman Halliday">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="My current AI design and engineering stack and how I got here">
+<meta property="og:description" content="My current AI design and engineering stack and how I got here">
+<link rel="canonical" href="https://stedmanhalliday.com/blog/designing-with-ai">
+<meta property="og:url" content="https://stedmanhalliday.com/blog/designing-with-ai">
+<meta property="og:site_name" content="Stedman Halliday">
+<meta property="og:image" content="https://stedmanhalliday.com/assets/img/2026-09-29-neural-network.webp">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-09-29T00:00:00-07:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:image" content="https://stedmanhalliday.com/assets/img/2026-09-29-neural-network.webp">
+<meta property="twitter:title" content="Designing With AI: Then &amp; Now">
+<meta name="twitter:site" content="@stedmanhalliday">
+<meta name="twitter:creator" content="@stedmanhalliday">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Stedman Halliday","url":"https://stedmanhalliday.com"},"dateModified":"2026-09-29T00:00:00-07:00","datePublished":"2026-09-29T00:00:00-07:00","description":"My current AI design and engineering stack and how I got here","headline":"Designing With AI: Then &amp; Now","image":"https://stedmanhalliday.com/assets/img/2026-09-29-neural-network.webp","mainEntityOfPage":{"@type":"WebPage","@id":"https://stedmanhalliday.com/blog/designing-with-ai"},"url":"https://stedmanhalliday.com/blog/designing-with-ai"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/main.css?v=1791071324">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600..700&amp;family=Lato:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+    <link type="application/atom+xml" rel="alternate" href="https://stedmanhalliday.com/feed.xml" title="Stedman Halliday">
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SQV444EF7D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SQV444EF7D');
+</script>
+    
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://unpkg.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <script defer src="https://unpkg.com/@swup/scripts-plugin@2"></script>
+    <script defer src="https://unpkg.com/swup@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.6.1/index.js" integrity="sha512-yoAPBU4kXVHeCk1Ww6ePpdcKBX5la84YlkgPHRKKGayi42/9jpV5JJEVAbVnRFeG6g81WFnZU+FQ+vJqpW0aMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script defer data-swup-ignore-script src="/assets/js/swup-init.js?v=1791071324"></script>
+    <script defer data-swup-ignore-script src="/assets/js/material.js?v=1791071324"></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#swup" data-no-swup>Skip to content</a>
+  <header class="site-header" role="banner">
+    
+    
+    <a class="site-title" rel="author" href="/">
+      
+<svg class="monogram" width="24px" height="24px" viewbox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+    <g id="Home" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="Extra-Small-(&lt;576px)" transform="translate(-11.000000, -8.000000)">
+            <g id="intro" transform="translate(-442.000000, -83.000000)">
+                <g id="nav" transform="translate(442.000000, 83.000000)">
+                    <g transform="translate(11.000000, 8.000000)">
+                        <path d="M1.17418415,8.7086756 L8.03772957,8.7086756 L8.03772957,11.0845182 C8.03772957,11.6676923 7.56497357,12.1404483 6.9817995,12.1404483 L0.118254083,12.1404483 L0.118254083,9.76460566 C0.118254083,9.18143159 0.591010076,8.7086756 1.17418415,8.7086756 Z" id="Rectangle-3-Copy-6" transform="translate(4.077992, 10.424562) rotate(-45.000000) translate(-4.077992, -10.424562) "></path>
+                        <path d="M4.34746921,11.8819607 L11.2110146,11.8819607 L11.2110146,14.2578033 C11.2110146,14.8409774 10.7382586,15.3137334 10.1550846,15.3137334 L3.29153915,15.3137334 L3.29153915,12.9378907 C3.29153915,12.3547167 3.76429514,11.8819607 4.34746921,11.8819607 Z" id="Rectangle-3-Copy-7" transform="translate(7.251277, 13.597847) rotate(-45.000000) translate(-7.251277, -13.597847) "></path>
+                        <path d="M9.1073968,1.70489661 L14.9150122,1.70489661 C15.4981862,1.70489661 15.9709422,2.17765261 15.9709422,2.76082668 L15.9709422,8.56844203 C15.9709422,9.1516161 15.4981862,9.6243721 14.9150122,9.6243721 L9.1073968,9.6243721 C8.52422273,9.6243721 8.05146674,9.1516161 8.05146674,8.56844203 L8.05146674,2.76082668 C8.05146674,2.17765261 8.52422273,1.70489661 9.1073968,1.70489661 Z" id="Rectangle-4-Copy-6" transform="translate(12.011204, 5.664634) rotate(-45.000000) translate(-12.011204, -5.664634) "></path>
+                        <path d="M8.05146674,14.3980369 L14.9150122,14.3980369 C15.4981862,14.3980369 15.9709422,14.8707929 15.9709422,15.4539669 L15.9709422,21.2615823 C15.9709422,21.8447564 15.4981862,22.3175123 14.9150122,22.3175123 L8.05146674,22.3175123 L8.05146674,14.3980369 Z" id="Rectangle-4-Copy-9" transform="translate(12.011204, 18.357775) rotate(-45.000000) translate(-12.011204, -18.357775) "></path>
+                        <path d="M15.4539669,8.05146674 L22.3175123,8.05146674 L22.3175123,15.9709422 L14.3980369,15.9709422 L14.3980369,9.1073968 C14.3980369,8.52422273 14.8707929,8.05146674 15.4539669,8.05146674 Z" id="Rectangle-4-Copy-8" transform="translate(18.357775, 12.011204) rotate(-45.000000) translate(-18.357775, -12.011204) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+      <span>Stedman Halliday</span>
+    </a>
+
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewbox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+          <a class="page-link " href="/work/">Work</a>
+          
+          <a class="page-link " href="/blog/">Blog</a>
+          
+          <a class="page-link " href="/about/">About</a>
+          
+          <button class="search-trigger" onclick="window.openSearch &amp;&amp; window.openSearch()" type="button" aria-label="Search site">
+            <svg class="search-icon" width="18" height="18" viewbox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="11" cy="7" r="4.5" stroke="currentColor" stroke-width="2" fill="none"></circle>
+              <line x1="7.8" y1="10.2" x2="3.5" y2="14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    
+</header>
+
+
+  <main id="swup" class="transition-fade" tabindex="-1">
+    
+
+    <section class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" data-pagefind-body itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <p><a class="back-link" href="/blog">All posts</a></p>
+        <h1 class="post-title p-name" itemprop="name headline">Designing With AI: Then &amp; Now</h1>
+        <div class="post-meta">
+            <div class="byline">
+                <time class="dt-published" datetime="2026-09-29T00:00:00-07:00" itemprop="datePublished">
+                    
+                    Sep 29, 2026
+                </time>
+                
+                
+                 •  <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name"><p>Stedman Halliday</p>
+</span></span>
+                
+                
+                
+                 •  <span>3507 words (13 mins)</span>
+                
+            </div>
+            
+            <div class="post-summary">
+<p>My current AI design and engineering stack and how I got here</p>
+</div>
+            
+            <ul class="post-tags">
+                
+                <li class="tag"><a href="/blog/tag/technology">technology</a></li>
+                
+                <li class="tag"><a href="/blog/tag/design">design</a></li>
+                
+                <li class="tag"><a href="/blog/tag/engineering">engineering</a></li>
+                
+                <li class="tag"><a href="/blog/tag/artificial-intelligence">artificial intelligence</a></li>
+                
+                <li class="tag"><a href="/blog/tag/work">work</a></li>
+                
+            </ul>
+        </div>
+    </header>
+
+    <div class="post-body">
+        <div class="post-content e-content" itemprop="articleBody">
+            <figure class="cover">
+<img alt="Neural network drawn on a cutting mat" src="/assets/img/2026-09-29-neural-network.webp" loading="lazy">
+</figure>
+
+<h2 id="training-wheels">Training wheels</h2>
+
+<p>I first got hands-on with training neural networks through <a href="https://www.kadenze.com" target="_blank" rel="noopener noreferrer">Kadenze</a>, an online learning platform for the arts and creative technology. I joined its founding team as a designer in 2014, at the end of my second year of design school at CalArts. <a href="https://pkmital.com" target="_blank" rel="noopener noreferrer">Parag Mital</a> later came on as Director of Machine Intelligence, and after the public launch in 2015 he added an exciting AI course to the catalog: <em>Creative Applications of Deep Learning with TensorFlow</em>. Kadenze placed real value on lifelong learning, and I took the cue; some time after I graduated with my BFA in 2016, I dug into the course to build new skills.</p>
+
+<p>It’s been about ten years since then. Today I spend most of my working hours directing many of those networks’ successors at once and designing the environments they work in. This post captures what changed in between, the tools I use now, and what excites me about the near future of this domain.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="just-the-stack-please">Just the stack, please</h2>
+<p>Here’s a straightforward tool summary if you’d rather skip the post:</p>
+
+<p><strong>Context</strong></p>
+
+<ul>
+  <li>
+<a href="https://bee.computer" target="_blank" rel="noopener noreferrer">Bee</a>: transcribes my face-to-face conversations</li>
+  <li>
+<a href="https://screenpipe.com" target="_blank" rel="noopener noreferrer">screenpipe</a>: records my screen and logs what I browse into my daily notes</li>
+  <li>
+<a href="https://support.google.com/meet/answer/14754931" target="_blank" rel="noopener noreferrer">Gemini</a> and <a href="https://grain.com" target="_blank" rel="noopener noreferrer">Grain</a>: transcribe my virtual meetings</li>
+  <li>
+<a href="https://spokenly.app" target="_blank" rel="noopener noreferrer">Spokenly</a> with <a href="https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3" target="_blank" rel="noopener noreferrer">Parakeet</a>: offline dictation for talking to agents</li>
+  <li>
+<a href="https://obsidian.md" target="_blank" rel="noopener noreferrer">Obsidian</a>: the notes vault every tool reads from and writes back to</li>
+  <li>
+<a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer">MCP</a>: lets agents reach my texts, email, and Google accounts</li>
+  <li>
+<a href="https://tailscale.com/" target="_blank" rel="noopener noreferrer">Tailscale</a>: connects my always-on Mac Mini to my MacBook and phones</li>
+  <li>
+<a href="https://syncthing.net/" target="_blank" rel="noopener noreferrer">Syncthing</a>: keeps my MacBook and Mac Mini filesystems in sync</li>
+</ul>
+
+<p><strong>Planning</strong></p>
+
+<ul>
+  <li>
+<a href="https://claude.com/product/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>: my main agent harness, in the terminal and on my phone</li>
+  <li>
+<a href="https://skills.sh" target="_blank" rel="noopener noreferrer">skills.sh</a> and the <a href="https://openclawdir.com/skills" target="_blank" rel="noopener noreferrer">OpenClaw skills directory</a>: where I find open-source agent skills</li>
+</ul>
+
+<p><strong>Build</strong></p>
+
+<ul>
+  <li>
+<a href="https://herdr.dev" target="_blank" rel="noopener noreferrer">herdr</a> in <a href="https://ghostty.org" target="_blank" rel="noopener noreferrer">Ghostty</a>: runs many terminal panes and Claude Code sessions side by side</li>
+  <li>
+<a href="https://devin.ai/desktop" target="_blank" rel="noopener noreferrer">Devin</a>: the agent-friendly IDE I open when I want my hands on the code</li>
+</ul>
+
+<p><strong>Design</strong></p>
+
+<ul>
+  <li>
+<a href="https://impeccable.style" target="_blank" rel="noopener noreferrer">Impeccable</a>: design vocabulary, audits, and live browser iteration for agents</li>
+  <li>
+<a href="https://deepmind.google/models/gemini-image/" target="_blank" rel="noopener noreferrer">Nano Banana</a>: most of my serious image generation</li>
+</ul>
+
+<div class="soft-break"></div>
+
+<h2 id="learning-the-machinery">Learning the machinery</h2>
+
+<p>Parag’s course had me working with Python and early TensorFlow inside Jupyter notebooks. One of the first exercises taught a network to paint a photo: feed it pixel coordinates, let it guess a color for each, and watch a gray smear resolve into a picture over many rounds of gradient descent. A network learns a function from examples; the function starts as a coarse approximation of something, and you watch it get progressively less wrong over runs. It got deeper after that: autoencoders that squeezed an image into a handful of numbers and rebuilt it, Deep Dream run through Google’s Inception until every cloud had a dog’s face, style transfer on Oxford’s VGG, a DCGAN, and a character-level RNN that learned to write text with the cadence of English and none of the sense.</p>
+
+<p>I revisited neural networks as a creative tool a few years later. The last classical network I trained by hand came out of the COVID lockdowns of 2020–2021. Walks were the only reliable way out of the house. Derrick Schultz’s <a href="https://www.youtube.com/@ArtificialImages" target="_blank" rel="noopener noreferrer">Artificial Images</a> courses were the best school around for artists who wanted to train their own models. For months I photographed organic textures and plant life on those walks and built a dataset of about 200 images. I augmented it to thousands and trained StyleGAN2-ADA on it in Google Colab. Then I pushed the results through further convolutions, interpolations, and style translations to make abstract video art.</p>
+
+<figure>
+    <img src="/assets/img/2026-09-27-nature-dataset-grid.webp" alt="Grid of twelve close-up photos of plants, flowers, and lichen-covered rock" loading="lazy">
+    <figcaption>Organic textures from my walks</figcaption>
+</figure>
+
+<p>What stuck from those side projects was a conceptual feel for the machinery: a model is a compressed statement about its data, its latent space has a geography you can walk, and the most interesting outputs can live in the interpolations between things it has seen. I’ve tried to keep a participatory ethic and the willingness to try things outside my comfort zone at the center of how I adapt to an era defined by AI acceleration. That’s worth more than any tool I’ve learned to use in production since then.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="the-multi-agent-future">The multi-agent future</h2>
+
+<p>In the summer of 2021 I joined Amazon’s Alexa Voice Services team, where I led design for emerging voice and multimodal technologies. Onboarding was the first time I heard “agent” used the way everyone uses it now: a program with some autonomy that pursues goals on a user’s behalf.</p>
+
+<p>Most of the industry was racing for sole category dominance with one assistant to rule every device. AVS bet on a hierarchy of agents serving one user or group instead. You can see that bet in Amazon’s public programs: Alexa Custom Assistant licensed the underlying technology so partners could build agents of their own. The Voice Interoperability Initiative worked toward agents that could share a device and hand tasks to one another.</p>
+
+<p>On one project, I designed <a href="/work/amazon-alexa">multi-agent attention systems</a> for TVs from partners like Vizio, Samsung, and LG, where Alexa had to coexist with the manufacturer’s own assistant: how a person picks which agent they’re addressing, how each keeps its brand identity, who gets the attentional real estate and when, and how cooperating agents hand off control mid-task.</p>
+
+<figure>
+    <video class="lazy" poster="/assets/video/2021-08-02-alexa-multi-agent-poster.webp" controls="" playsinline="" data-src="/assets/video/2021-08-02-alexa-multi-agent.mp4"></video>
+    <figcaption>Multi-agent selection (Vizio and Alexa)</figcaption>
+</figure>
+
+<p>My org also paid to fill my home with smart home tech that worked with as many assistants as I could bear, so I could dogfood Alexa while developing empathy for users in a multi-agent environment. At the time I had no way to know whether the multi-agent bet would be right, but it rewired my intuitions about multimodality and orchestration. Looking at the agents chaining workflows together on the frontier today, I’d say leadership’s forecasts were sound. True to form: one of Amazon’s Leadership Principles is that leaders Are Right, A Lot.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="eating-around-the-entrées">Eating around the entrées</h2>
+
+<p>The near universal adoption of transformer-based model architectures is the sharpest dividing line for a decisive before/after in the arc of successive capability gains. On one side: GANs, CNNs, and RNNs, networks I could open up and train myself on rented clusters. On the more capable side: transformers and the large language models built on them, exorbitantly expensive to train with hundreds of millions of parameters (trillions now if you’re counting in 2026).</p>
+
+<p>ChatGPT launched at the end of 2022 while I was in paid training for full-stack software engineers at Amazon deepening fundamentals under my years of web development. Corporate AI usage policies and warnings came down from the top within a couple months. I avoided AI entirely for my training assignments because using it would have defeated the purpose of immersing myself in an environment built to practice traditional software engineering.</p>
+
+<p>When it came to my personal work that winter, the models began to take on meaningful chunks of ancillary work around craft: research, ideation, organization, validation, and more. As models trained specifically on coding tasks improved, they also carried bigger slices of prototyping and implementation. Core design stayed mine. A model could write a plausible component, but it took a lot of pushing to get things over the bar in almost all cases. <em>The last 10% is 90%</em> has never felt so true as a maxim.</p>
+
+<p>On Presidents’ Day weekend in 2023, I drove six hours up from Los Angeles to stay at an investor’s home in Sutro Heights while he was traveling. Years earlier, he’d said a couple things that shaped my career, and now he’d offered his place so I could feel out a move to San Francisco. Young people were pouring back into the city and energy was amassing around AI.</p>
+
+<p>Another guest I’d never met answered the door when I pulled up around 10 PM. I woke before dawn, swam out of the 4 AM riptides at Ocean Beach, and made the decision to relocate then and there while walking back up to the house’s infrared sauna. Around the last week of February, I read the first of those corporate AI policies in that living room and felt the shape of change to come in my body. By April, I had signed a lease in Alamo Square with the guy who’d answered the door. We still live in that condo today.</p>
+
+<figure class="mt-100">
+<div class="carousel">
+    <a data-fslightbox="ocean-beach" data-href="/assets/img/2026-09-27-ocean-beach.webp"><img src="/assets/img/2026-09-27-ocean-beach.webp" alt="Ocean Beach before dawn, cypress trees silhouetted against deep blue surf" loading="lazy"></a>
+    <a data-fslightbox="ocean-beach" data-href="/assets/img/2026-09-27-ocean-beach-currents.webp"><img src="/assets/img/2026-09-27-ocean-beach-currents.webp" alt="Danger sign at Ocean Beach warning of rip currents" loading="lazy"></a>
+    <a data-fslightbox="ocean-beach" data-href="/assets/img/2026-09-27-sutro-sauna.webp"><img src="/assets/img/2026-09-27-sutro-sauna.webp" alt="A figure silhouetted inside a red-lit infrared sauna" loading="lazy"></a>
+</div>
+<figcaption>The moment I knew I could</figcaption>
+</figure>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6AIEypVSWSiBWgZdYL0Jnr?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<div class="soft-break"></div>
+
+<h2 id="tomorrow-becomes-today">Tomorrow becomes today</h2>
+
+<p>Frontier lab releases in late 2025 were another dramatic step forward. Google’s <a href="https://deepmind.google/models/gemini-image/" target="_blank" rel="noopener noreferrer">Nano Banana</a> releases made big strides in image quality and intent matching, and Anthropic found something special with Claude Opus 4.5. What distinguished this jump was that it was the first time an end user could launch largely autonomous code-native workflows that accomplished general tasks of significant value without taking on an involved engineering project. Almost overnight, I was living in a terminal for mundane clerical tasks and even design subtasks. I’d used the command line my whole career, but for build tools and scaffolding, not all of this! I started rebuilding nearly every way I use a computer around the shift, and I haven’t stopped.</p>
+
+<p>The multi-agent future showed up on schedule (and in person). In the first week of February 2026, what felt like the whole city’s developer community (and apparently <a href="https://x.com/SiVola/status/2019278493226508644" target="_blank" rel="noopener noreferrer">Ashton Kutcher</a>) lined up <a href="https://x.com/swyx/status/2019233831732277698" target="_blank" rel="noopener noreferrer">around the block</a> for the first ClawCon at <a href="/blog/frontier-tower">Frontier Tower</a>, one of several <a href="https://openclaw.ai" target="_blank" rel="noopener noreferrer">OpenClaw</a> events and hackathons I attended and helped facilitate there. OpenClaw founder Peter Steinberger spoke at ClawCon and returned later for a vibecoding night to lecture and work hands-on with attendees. A truly general harness had arrived and engineers on the frontier embraced multi-agent hierarchies almost immediately. Crushed lobster in the floorboards and preconfigured Mac Minis sold from an <a href="https://x.com/om_patel5/status/2044225790032691437?s=20" target="_blank" rel="noopener noreferrer">agent-operated vending machine</a> were the proof. ClawCon was booking stadiums soon after.</p>
+
+<figure class="flex-center mv-100"><div class="jekyll-twitter-plugin">
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">insane line at the <a href="https://x.com/openclaw?ref_src=twsrc%5Etfw" target="_blank" rel="noopener noreferrer">@openclaw</a> meetup tonight to see <a href="https://x.com/steipete?ref_src=twsrc%5Etfw" target="_blank" rel="noopener noreferrer">@steipete</a> do his thing <a href="https://t.co/krHard84PL" target="_blank" rel="noopener noreferrer">pic.twitter.com/krHard84PL</a></p>— swyx (@swyx) <a href="https://x.com/swyx/status/2019233831732277698?ref_src=twsrc%5Etfw" target="_blank" rel="noopener noreferrer">February 5, 2026</a>
+</blockquote>
+<script async="" src="https://platform.x.com/widgets.js" charset="utf-8"></script>
+
+</div>
+</figure>
+
+<p>Engineering automation kept improving, but design quality from generated code still lagged even after Anthropic’s Claude Design release. I wrote <a href="/blog/perceptual-reasoning-gap"><em>Seeing Like a Designer</em></a> at the start of this year to name what was missing. Models can describe a render, but they lack a vocabulary of visual axes (weight, scale, contrast, texture) to judge it against intent, and without that vocabulary you can’t steer them either. Give a model those words, and “this looks wrong” becomes a judgment it can make and “more geometric” becomes a direction it can travel.</p>
+
+<p>Around the same time, <a href="https://www.paulbakaus.com" target="_blank" rel="noopener noreferrer">Paul Bakaus</a> began building <a href="https://impeccable.style" target="_blank" rel="noopener noreferrer">Impeccable</a>, “the missing design vocabulary for agents.” I met him by chance at a health conference in May, overheard him describing it, and got nerdsniped. He graciously sat down with me for an extra hour of one-on-one onboarding. He also read my blog post and appreciated that it independently named the problem he was solving. Soon after, I used Impeccable to build five projects in a week, and it still anchors how I design natively in code.</p>
+
+<div class="soft-break"></div>
+
+<h2 id="the-stack-phase-by-phase">The stack, phase by phase</h2>
+
+<p>There’s a recurring pattern where a step change in frontier model capabilities absorbs the value prop of countless third-party and open-source tools, which collapses the stack. The same step conversely extends developers’ reach into the near possible, and like a hydra’s heads, new tools sprout where the old ones were cut down. That oscillating contraction and expansion of tooling is only speeding up as models contribute more to recursively improving themselves.</p>
+
+<p>Here’s where my stack sits today.</p>
+
+<h3 id="context">Context</h3>
+
+<p>Everything starts as context, and I’d rather not be the one who remembers or retrieves all of it anymore. I lean on prosthetic knowledge: <em>information that a person does not know, but can access as needed using technology</em> (a phrase I credit to Rich Oglesby’s <a href="https://www.tumblr.com/prostheticknowledge" target="_blank" rel="noopener noreferrer">eponymous art and technology blog</a>). Face-to-face chats become <a href="https://bee.computer" target="_blank" rel="noopener noreferrer">Bee</a> transcripts; virtual meetings become <a href="https://screenpipe.com" target="_blank" rel="noopener noreferrer">screenpipe</a>, <a href="https://support.google.com/meet/answer/14754931" target="_blank" rel="noopener noreferrer">Gemini</a>, or <a href="https://grain.com" target="_blank" rel="noopener noreferrer">Grain</a> transcripts; cron jobs on an always-on Mac Mini pull it all into my <a href="https://obsidian.md" target="_blank" rel="noopener noreferrer">Obsidian</a> vault many times a day. Texts, email, and my Google accounts are reachable through <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer">MCP</a> servers and CLI tools when a project needs them.</p>
+
+<p>Visual references move differently than in the moodboard days of old. On my laptop, screenpipe logs what I browse for inspiration into that day’s note and keeps a continuous record of my screen for when I need to remember that Cool Purple Thing I saw on <a href="https://www.are.na" target="_blank" rel="noopener noreferrer">are.na</a> last Thursday. On my phone, references go into a photo cloud album that I pull into an agent’s filesystem scope on demand. From there, models can analyze a collection to output tokens that shape creative direction or write prompts for other tools.</p>
+
+<p>My own prompts sometimes start as speech. I use <a href="https://spokenly.app" target="_blank" rel="noopener noreferrer">Spokenly</a> in offline mode with NVIDIA’s free, local <a href="https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3" target="_blank" rel="noopener noreferrer">Parakeet</a> transcription model so I can hold down a hotkey and talk to agents through my MacBook. Voice came naturally to me after the Alexa years. Dogfooding a houseful of assistants taught me to change the way I speak when I give a machine a command, and that habit carried straight over once agents could listen.</p>
+
+<p>Conversations flow in on their own. References get summoned. The Mac Mini doubles as an always-on home server, connected to my laptop and two phones via <a href="https://tailscale.com/" target="_blank" rel="noopener noreferrer">Tailscale</a> and synced with my MacBook’s filesystem via <a href="https://syncthing.net/" target="_blank" rel="noopener noreferrer">Syncthing</a>. Long-running tasks survive a closed clamshell, and I keep the full power of macOS even when I’m working from an Android phone.</p>
+
+<h3 id="planning">Planning</h3>
+
+<p>Some ideas start as a hand-typed note, a page of paper, or a whiteboard diagram. All of them get pulled early into a shaping session with an agent, usually <a href="https://claude.com/product/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a> in the terminal (or the mobile app connected to a desktop terminal), running custom skills I’ve built. The one I use most is <code class="language-plaintext highlighter-rouge">/socratic</code>, which draws my thinking out one question at a time until something concrete falls out; <code class="language-plaintext highlighter-rouge">/metaprompt</code> fleshes out and force-multiplies the prompts I hand to other tools.</p>
+
+<p>I occasionally install skills from first-party marketplaces or open ones like <a href="https://skills.sh" target="_blank" rel="noopener noreferrer">skills.sh</a> and the <a href="https://openclawdir.com/skills" target="_blank" rel="noopener noreferrer">OpenClaw skills directory</a>. I limit the skills I invoke by habit since consistent prompting yields more consistent results. Everything else gets handled by skills that choose which other skills to run based on my prompt and the session’s context. Tuning these fragile orchestration systems can turn into a colossal recursive time sink, so I try my best to use the skills I need to get the work done and keep the work ahead of the workflow without giving up incremental gains to workflow for too long.</p>
+
+<h3 id="build">Build</h3>
+
+<p>I use an agent runtime called <a href="https://herdr.dev" target="_blank" rel="noopener noreferrer">herdr</a> inside <a href="https://ghostty.org" target="_blank" rel="noopener noreferrer">Ghostty</a>: a terminal multiplexer where I run several Claude Code sessions in parallel. It’s closer to switching between a bunch of simultaneous text-based role-playing games than to typing code in an IDE.</p>
+
+<p>I used to hand autonomous threads that needed less monitoring to <a href="https://www.conductor.build" target="_blank" rel="noopener noreferrer">Conductor</a>. I do that less now because herdr and Claude Code’s native subagents and worktrees cover the same ground. <a href="https://devin.ai/desktop" target="_blank" rel="noopener noreferrer">Devin</a> (formerly Windsurf) is the IDE I open when I want my hands on the code. Some edits are faster to code by hand than to explain; some agent misses are stubborn enough to fix by hand.</p>
+
+<h3 id="design">Design</h3>
+
+<p><a href="https://impeccable.style" target="_blank" rel="noopener noreferrer">Impeccable</a> runs inside Claude Code and gives me control at a level that makes the most sense for designers: spacing rhythm, type, contrast, and utilities for upholding many pillars of overall system quality instead of just shipping a pile of components. Four things allow Impeccable to stand out as a powerful agent skill for design outcomes:</p>
+
+<ul>
+  <li>Its moveset of design operations that corresponds to a project’s lifecycle (categorically: create, evaluate, refine, simplify, harden, system)</li>
+  <li>A <code class="language-plaintext highlighter-rouge">DESIGN.md</code> spec with a JSON sidecar, which Impeccable interprets more reliably than any spec Claude rolls on its own or pulls from another generic skill</li>
+  <li>Audits that catch AI slop, contrast failures, and similar craft crimes where fluency shows first or is most obviously lacking</li>
+  <li>Live iteration that enables WYSIWYG in the browser but ships code natively instead of working like the “no-code” tools of yesteryear</li>
+</ul>
+
+<p>When a design needs imagery, most of my serious generation runs through <a href="https://deepmind.google/models/gemini-image/" target="_blank" rel="noopener noreferrer">Nano Banana</a>.</p>
+
+<p>Parallel work is where design still hurts. Worktrees let autonomous threads run without interfering with one another or with project state, but design often means addressing several elements at once for the overall gestalt, in context. Split them across worktrees and I can’t see how my best choices look together. Keep them in one and the agents collide: fixing one thing undoes another behind my back until I open the browser preview.</p>
+
+<p><a href="https://jem.computer" target="_blank" rel="noopener noreferrer">Jem Gold</a> took a stab at this combinatorics problem back in 2016 with <a href="https://v10.jem.computer/projects/rene/" target="_blank" rel="noopener noreferrer">René</a>, a declarative design tool that generated every combination of the fonts, colors, and spacing you specified, let you converge on what worked, then diverge again at higher fidelity. I’d spent the start of my career building resources for creative technologists, and René was one of the projects that got me excited about the future of creative tools. The best of both worlds today might be a flow like Impeccable’s live iteration that backgrounds and multiplexes in that spirit: hit multiple elements at once, let them converge, preview them together, and intelligently avoid intersections. For now it’s either too slow and clunky or too hard to judge.</p>
+
+<h3 id="review">Review</h3>
+
+<p>Review depth scales with a pull request’s intent and scope. For a simple visual component, a live localhost instance is usually already open in my browser, so I check it with my own eyes or try to break it. If it lints, the tests pass, and it looks and works like it should, it probably merges without me opening the diff; with today’s tools, hand-reviewing an agent’s pass on a button is a waste of time. The project’s agent loops catch most anomalies through maintained test coverage or later optimization passes. For larger PRs I invoke an automated code review, and when I do read a diff, it’s to check for something I already know I’m looking for.</p>
+
+<h3 id="docs">Docs</h3>
+
+<p>Documentation carried a lot of weight in my design systems work at Amazon. I opened the xApp design system effort with a detailed audit of best practices in design systems and accessibility drawn from sources like <a href="https://designbetterpodcast.com/" target="_blank" rel="noopener noreferrer"><em>Design Better</em></a> and my notes from <a href="https://www.clarityconf.com/" target="_blank" rel="noopener noreferrer">Clarity Conference</a>. That report secured cross-org buy-in for my preferred strategy on the design engineering side of things. To drive adoption, I hosted office hours, led pair programming sessions with engineers consuming and implementing the system, and helped evolve and maintain the spec. Today it would all come together in a rich documentation site: principles up front, with production components running live in sandboxes backed by state machines. <a href="https://storybook.js.org" target="_blank" rel="noopener noreferrer">Storybook</a> was my favorite for this in the past, but I’d explore newer tools before committing to one now.</p>
+
+<p>Vercel’s <a href="https://vercel.com/design/guidelines" target="_blank" rel="noopener noreferrer">Web Interface Guidelines</a> are a solid reference I can point to in <code class="language-plaintext highlighter-rouge">CLAUDE.md</code> or similar agent primers. They present a living set of short, imperative rules for interactions, layout, content, forms, and performance that a person can scan and an agent can apply during generation (Vercel ships them as an <code class="language-plaintext highlighter-rouge">AGENTS.md</code> file too). Vercel’s reach in UI with <a href="https://ui.shadcn.com/" target="_blank" rel="noopener noreferrer">shadcn/ui</a> has been particularly large, and its growth owes a lot to clever architecture. Vercel has done well to prioritize open standards and tasteful defaults in anticipation of an agent-centric web, but there’s a fine line between a world with great defaults and one where everything on the web looks the same (again!).</p>
+
+<div class="soft-break"></div>
+
+<h2 id="building-higher-cathedrals">Building higher cathedrals</h2>
+
+<p>This month’s big launch was <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" target="_blank" rel="noopener noreferrer">TypeSafe AI</a>’s Jev: a model built to make fast, sensible, consistent decisions. I first heard the founding hypothesis a year earlier on a hike with a TypeSafe engineer. A design that clamps degrees of freedom for the model’s outputs buys predictability without purely deterministic behavior. The architecture (more than the cost and speed gains) is the interesting part: it makes intelligence better glue between a widening range of inputs and common-sense outputs. Paul wants the same for Impeccable with “next step prediction,” which I read as chained design decisions that compose whole units of work without taking the designer’s voice. Better glue means better joinery, sturdier walls, and eventually, higher cathedrals. Somewhere up the chain the experiences start to transcend sense altogether, the point where Clarke said technology and magic become indistinguishable.</p>
+
+<p>That optimism became a research proposal I co-wrote this summer with Jem, whose work on René and other creative tools has shaped my path for at least a decade. It didn’t win a <a href="https://thinkingmachines.ai/news/interactivity-research-grants/" target="_blank" rel="noopener noreferrer">Thinking Machines interactivity grant</a>, but it was a good exercise in imagining the near possible. A revised version may become its own post.</p>
+
+<div class="soft-break"></div>
+
+<p>Ten years ago, I was watching the neural networks of old paint photographs crudely. Today, in San Francisco at the foot of the AI singularity, I’m still watching functions get less wrong—now I get to decide what they’re for, and how my ways of working will grow with them.</p>
+
+<p>If you got this far, I’d greatly appreciate your feedback on this post, opinions about the future of AI tooling and agentic engineering, suggestions for anything I should try next, or whatever else you have to share. 
+<a href="https://x.com/messages/compose?recipient_id=1632742023991300096&amp;text=Hey%2C+I+just+read+Designing+With+AI%3A+Then+%26+Now." target="_blank" rel="noopener noreferrer">Message me on X (Twitter)</a> and let’s talk shop.</p>
+
+        </div>
+        
+
+
+
+<nav class="post-toc" aria-labelledby="post-toc-label">
+    <div class="post-toc-inner">
+    <p class="post-toc-label" id="post-toc-label">Contents</p>
+    <ol class="post-toc-list">
+        <li><a href="#training-wheels" data-no-swup>Training wheels</a></li>
+        <li><a href="#just-the-stack-please" data-no-swup>Just the stack, please</a></li>
+        <li><a href="#learning-the-machinery" data-no-swup>Learning the machinery</a></li>
+        <li><a href="#the-multi-agent-future" data-no-swup>The multi-agent future</a></li>
+        <li><a href="#eating-around-the-entr%C3%A9es" data-no-swup>Eating around the entrées</a></li>
+        <li><a href="#tomorrow-becomes-today" data-no-swup>Tomorrow becomes today</a></li>
+        <li><a href="#the-stack-phase-by-phase" data-no-swup>The stack, phase by phase</a></li>
+        <li><a href="#building-higher-cathedrals" data-no-swup>Building higher cathedrals</a></li>
+    </ol>
+    </div>
+</nav>
+<script src="/assets/js/toc.js?v=1791071324"></script>
+
+
+    </div>
+
+    
+    <a class="u-url" href="/blog/designing-with-ai" hidden></a>
+
+    <div class="divider-thin mt-200 mb-100"></div>
+    <div class="page-navigation">
+        <span class="prev-page">
+            
+        </span>
+        <span class="next-page">
+            
+            <a class="next-link" href="/blog/namesake">Reflections on My Namesake</a>
+            
+        </span>
+    </div>
+</article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+
+  <div class="wrapper">
+    <div class="footer-monogram"><a href="/" aria-label="Home">
+<svg class="monogram" width="24px" height="24px" viewbox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000">
+    <g id="Home" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="Extra-Small-(&lt;576px)" transform="translate(-11.000000, -8.000000)">
+            <g id="intro" transform="translate(-442.000000, -83.000000)">
+                <g id="nav" transform="translate(442.000000, 83.000000)">
+                    <g transform="translate(11.000000, 8.000000)">
+                        <path d="M1.17418415,8.7086756 L8.03772957,8.7086756 L8.03772957,11.0845182 C8.03772957,11.6676923 7.56497357,12.1404483 6.9817995,12.1404483 L0.118254083,12.1404483 L0.118254083,9.76460566 C0.118254083,9.18143159 0.591010076,8.7086756 1.17418415,8.7086756 Z" id="Rectangle-3-Copy-6" transform="translate(4.077992, 10.424562) rotate(-45.000000) translate(-4.077992, -10.424562) "></path>
+                        <path d="M4.34746921,11.8819607 L11.2110146,11.8819607 L11.2110146,14.2578033 C11.2110146,14.8409774 10.7382586,15.3137334 10.1550846,15.3137334 L3.29153915,15.3137334 L3.29153915,12.9378907 C3.29153915,12.3547167 3.76429514,11.8819607 4.34746921,11.8819607 Z" id="Rectangle-3-Copy-7" transform="translate(7.251277, 13.597847) rotate(-45.000000) translate(-7.251277, -13.597847) "></path>
+                        <path d="M9.1073968,1.70489661 L14.9150122,1.70489661 C15.4981862,1.70489661 15.9709422,2.17765261 15.9709422,2.76082668 L15.9709422,8.56844203 C15.9709422,9.1516161 15.4981862,9.6243721 14.9150122,9.6243721 L9.1073968,9.6243721 C8.52422273,9.6243721 8.05146674,9.1516161 8.05146674,8.56844203 L8.05146674,2.76082668 C8.05146674,2.17765261 8.52422273,1.70489661 9.1073968,1.70489661 Z" id="Rectangle-4-Copy-6" transform="translate(12.011204, 5.664634) rotate(-45.000000) translate(-12.011204, -5.664634) "></path>
+                        <path d="M8.05146674,14.3980369 L14.9150122,14.3980369 C15.4981862,14.3980369 15.9709422,14.8707929 15.9709422,15.4539669 L15.9709422,21.2615823 C15.9709422,21.8447564 15.4981862,22.3175123 14.9150122,22.3175123 L8.05146674,22.3175123 L8.05146674,14.3980369 Z" id="Rectangle-4-Copy-9" transform="translate(12.011204, 18.357775) rotate(-45.000000) translate(-12.011204, -18.357775) "></path>
+                        <path d="M15.4539669,8.05146674 L22.3175123,8.05146674 L22.3175123,15.9709422 L14.3980369,15.9709422 L14.3980369,9.1073968 C14.3980369,8.52422273 14.8707929,8.05146674 15.4539669,8.05146674 Z" id="Rectangle-4-Copy-8" transform="translate(18.357775, 12.011204) rotate(-45.000000) translate(-18.357775, -12.011204) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></a></div>
+    <div class="columns">
+      <div class="column">
+        <div>
+          <h3>Stedman Halliday</h3>
+          <ul class="social-media-list">
+  <li><a href="mailto:%73%74%65%64%6D%61%6E.%72%68@%67%6D%61%69%6C.%63%6F%6D?subject=Let's%20connect."><img class="svg-icon" src="/assets/icon-email.svg" alt="" width="21" height="21" loading="lazy"> <span class="username">Email Stedman</span></a></li>
+  
+  
+  
+  
+  
+  <li><a href="https://www.linkedin.com/in/stedmanhalliday" target="_blank" rel="noopener noreferrer"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg> <span class="username">stedmanhalliday</span></a></li>
+  
+  
+  <li><a href="https://www.twitter.com/stedmanhalliday" target="_blank" rel="noopener noreferrer"><img class="svg-icon" src="/assets/icon-x.svg" alt="" width="21" height="21" loading="lazy"> <span class="username">stedmanhalliday</span></a></li>
+  
+  
+  
+</ul>
+
+        </div>
+      </div>
+      
+      <div class="column">
+        <h3>Quick links</h3>
+        <ul class="footer-list">
+          
+          <li><a href="/">Home</a></li>
+          
+          <li><a href="/work/">Work</a></li>
+          
+          <li><a href="/blog/">Blog</a></li>
+          
+          <li><a href="/about/">About</a></li>
+          
+        </ul>
+      </div>
+      
+      <div class="column">
+        <h3>Top tags</h3>
+        <ul class="footer-list">
+          
+          <li><a href="/blog/tag/design">design</a></li>
+          
+          <li><a href="/blog/tag/health/">health</a></li>
+          
+          <li><a href="/blog/tag/music/">music</a></li>
+          
+          <li><a href="/blog/tag/reflection/">reflection</a></li>
+          
+        </ul>
+      </div>
+      
+      <div class="column">
+        <h3>Top posts</h3>
+        <ul class="footer-list">
+          
+          <li><a href="/blog/designing-with-ai">Designing With AI</a></li>
+          
+          <li><a href="/blog/perceptual-reasoning-gap">Seeing Like a Designer</a></li>
+          
+          <li><a href="/blog/frontier-tower">Farewell to Frontier Tower</a></li>
+          
+          <li><a href="/blog/rgb-color-mixing">RGB Color Mixing</a></li>
+          
+        </ul>
+      </div>
+      
+    </div>
+    <p>©2026 Stedman Halliday</p>
+  </div>
+
+</footer>
+  <div id="search-modal" class="search-modal" aria-hidden="true" role="dialog" aria-label="Site search">
+    <div class="search-backdrop"></div>
+    <div class="search-dialog">
+        <div class="search-dialog-header">
+            <button class="search-close" onclick="window.closeSearch &amp;&amp; window.closeSearch()" type="button" aria-label="Close search">
+                <svg width="14" height="14" viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="search-dialog-body">
+            <div id="search-container"></div>
+        </div>
+    </div>
+</div>
+
+<script data-swup-ignore-script>
+(function() {
+    var searchModal = document.getElementById('search-modal');
+    var searchDialog = searchModal.querySelector('.search-dialog');
+    var pagefindLoaded = false;
+    var pagefindInitialized = false;
+    var previousFocus = null;
+    var activeIndex = -1;
+
+    function loadPagefind(callback) {
+        if (pagefindLoaded) {
+            callback();
+            return;
+        }
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = '/pagefind/pagefind-ui.css';
+        document.head.appendChild(link);
+
+        var script = document.createElement('script');
+        script.src = '/pagefind/pagefind-ui.js';
+        script.onload = function() {
+            pagefindLoaded = true;
+            callback();
+        };
+        script.onerror = function() {
+            var container = document.getElementById('search-container');
+            container.innerHTML = '<p style="padding:1.5rem;opacity:0.5;">Search index not found. Run: <code>npx pagefind --site docs/</code></p>';
+        };
+        document.head.appendChild(script);
+    }
+
+    function initPagefind() {
+        if (pagefindInitialized || typeof PagefindUI === 'undefined') return;
+        new PagefindUI({
+            element: '#search-container',
+            showSubResults: true,
+            showImages: false
+        });
+        pagefindInitialized = true;
+    }
+
+    function getFocusableElements() {
+        return searchDialog.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+    }
+
+    function trapFocus(e) {
+        var focusable = getFocusableElements();
+        if (focusable.length === 0) return;
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+            if (document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            }
+        } else {
+            if (document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        }
+    }
+
+    function clearActiveResult() {
+        var active = searchDialog.querySelectorAll('.search-result-active');
+        for (var i = 0; i < active.length; i++) {
+            active[i].classList.remove('search-result-active');
+        }
+    }
+
+    function setActiveResult(index) {
+        var results = searchDialog.querySelectorAll('.pagefind-ui__result');
+        clearActiveResult();
+        if (index >= 0 && index < results.length) {
+            results[index].classList.add('search-result-active');
+            results[index].scrollIntoView({ block: 'nearest' });
+        }
+    }
+
+    function attachInputListener() {
+        var input = searchModal.querySelector('.pagefind-ui__search-input');
+        if (input && !input._searchNavAttached) {
+            input._searchNavAttached = true;
+            input.addEventListener('input', function() {
+                activeIndex = -1;
+                clearActiveResult();
+            });
+        }
+    }
+
+    function openSearch() {
+        previousFocus = document.activeElement;
+        activeIndex = -1;
+        loadPagefind(function() {
+            initPagefind();
+            searchModal.classList.add('active');
+            searchModal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            setTimeout(function() {
+                var input = searchModal.querySelector('.pagefind-ui__search-input');
+                if (input) {
+                    input.focus();
+                    input.select();
+                }
+                attachInputListener();
+            }, 50);
+        });
+    }
+
+    function closeSearch() {
+        searchModal.classList.remove('active');
+        searchModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        activeIndex = -1;
+        clearActiveResult();
+        if (previousFocus && typeof previousFocus.focus === 'function') {
+            previousFocus.focus();
+            previousFocus = null;
+        }
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            e.preventDefault();
+            if (searchModal.classList.contains('active')) {
+                closeSearch();
+            } else {
+                openSearch();
+            }
+        }
+        if (searchModal.classList.contains('active')) {
+            if (e.key === 'Escape') {
+                e.preventDefault();
+                closeSearch();
+            }
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                var results = searchDialog.querySelectorAll('.pagefind-ui__result');
+                if (results.length > 0) {
+                    activeIndex = Math.min(activeIndex + 1, results.length - 1);
+                    setActiveResult(activeIndex);
+                    var input = searchModal.querySelector('.pagefind-ui__search-input');
+                    if (input && document.activeElement === input) input.blur();
+                }
+            }
+            if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                var results = searchDialog.querySelectorAll('.pagefind-ui__result');
+                activeIndex--;
+                if (activeIndex < 0) {
+                    activeIndex = -1;
+                    clearActiveResult();
+                    var input = searchModal.querySelector('.pagefind-ui__search-input');
+                    if (input) {
+                        input.focus();
+                        var len = input.value.length;
+                        input.setSelectionRange(len, len);
+                    }
+                } else {
+                    setActiveResult(activeIndex);
+                }
+            }
+            if (e.key === 'Enter' && activeIndex >= 0) {
+                e.preventDefault();
+                var results = searchDialog.querySelectorAll('.pagefind-ui__result');
+                if (results[activeIndex]) {
+                    var link = results[activeIndex].querySelector('a[href]');
+                    if (link) {
+                        closeSearch();
+                        window.location.href = link.href;
+                    }
+                }
+            }
+            if (e.key === 'Tab') {
+                trapFocus(e);
+            }
+        }
+    });
+
+    searchModal.querySelector('.search-backdrop').addEventListener('click', closeSearch);
+
+    searchModal.addEventListener('click', function(e) {
+        if (e.target.closest('.pagefind-ui__result a, a.pagefind-ui__result-link')) {
+            closeSearch();
+        }
+    });
+
+    window.openSearch = openSearch;
+    window.closeSearch = closeSearch;
+
+})();
+</script>
+
+</body>
+
+</html>
