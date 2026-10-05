@@ -1,17 +1,14 @@
-{% comment %} Every project on one line, ordered by _data/index.yml. No dates, by design. {% endcomment %}
-{% assign index_tags = "" | split: "|" %}
-{% for entry in site.data.index %}
-{% if entry.project %}{% assign p = site.projects | where: "title", entry.project | first %}{% assign tags = p.categories %}{% else %}{% assign tags = entry.tags %}{% endif %}
-{% for tag in tags %}{% assign index_tags = index_tags | push: tag %}{% endfor %}
-{% endfor %}
-{% assign index_tags = index_tags | uniq | sort %}
+{% comment %} Every project on one line, ordered by _data/index.yml. No dates, by design.
+The filter folds the fine-grained tags into four broad groups; the tags column still shows the originals.
+Health is a domain, not a discipline, and tags one row, so it stays out of the filter. {% endcomment %}
+{% assign index_groups = "Product|Brand|Code|Media" | split: "|" %}
 <section class="work-panel work-index-section" id="index" aria-labelledby="index-heading">
     <h2 class="work-panel-heading" id="index-heading">Index</h2>
     <p class="index-sub">Side projects, experiments, and other work</p>
     <div class="index-tools">
         <div class="index-filter" role="group" aria-label="Filter by category" hidden>
-            <button type="button" aria-pressed="true" data-tag="">All</button>
-            {% for tag in index_tags %}<button type="button" aria-pressed="false" data-tag="{{ tag }}">{{ tag }}</button>{% endfor %}
+            <button type="button" aria-pressed="true" data-group="">All</button>
+            {% for group in index_groups %}<button type="button" aria-pressed="false" data-group="{{ group }}">{{ group }}</button>{% endfor %}
         </div>
         <p class="index-count" aria-live="polite"></p>
     </div>
@@ -23,7 +20,18 @@
         {% else %}
         {% assign title = entry.title %}{% assign what = entry.what %}{% assign tags = entry.tags %}{% assign href = entry.url %}{% assign external = true %}
         {% endif %}
-        <li data-tags="|{{ tags | join: '|' }}|">
+        {% assign groups = "" %}
+        {% for tag in tags %}
+        {% case tag %}
+        {% when "ux/ui", "service design", "design systems" %}{% assign group = "|Product" %}
+        {% when "brand", "print" %}{% assign group = "|Brand" %}
+        {% when "dev", "ai", "web3" %}{% assign group = "|Code" %}
+        {% when "multimedia", "video", "music" %}{% assign group = "|Media" %}
+        {% else %}{% assign group = "" %}
+        {% endcase %}
+        {% unless groups contains group %}{% assign groups = groups | append: group %}{% endunless %}
+        {% endfor %}
+        <li data-groups="{{ groups }}|">
             {% if href %}<a class="index-row" href="{{ href }}"{% if external %} target="_blank" rel="noopener"{% endif %}>{% else %}<div class="index-row">{% endif %}
                 <span class="index-name">{{ title | escape }}</span>
                 <span class="index-what">{{ what | escape }}</span>
@@ -43,19 +51,19 @@
         var rows = [].slice.call(root.querySelectorAll(".index-list > li"));
         var count = root.querySelector(".index-count");
 
-        function apply(tag) {
+        function apply(group) {
             var shown = 0;
             rows.forEach(function (li) {
-                var match = !tag || li.dataset.tags.indexOf("|" + tag + "|") !== -1;
+                var match = !group || li.dataset.groups.indexOf("|" + group + "|") !== -1;
                 li.hidden = !match;
                 if (match) shown++;
             });
-            buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.tag === tag)); });
+            buttons.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.group === group)); });
             count.textContent = shown + (shown === 1 ? " project" : " projects");
         }
 
         buttons.forEach(function (b) {
-            b.addEventListener("click", function () { apply(b.dataset.tag); });
+            b.addEventListener("click", function () { apply(b.dataset.group); });
         });
         // Without JS the filter stays hidden and every row shows.
         filter.hidden = false;

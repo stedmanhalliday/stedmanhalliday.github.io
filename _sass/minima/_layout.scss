@@ -1390,6 +1390,12 @@ a[data-fslightbox] {
             outline: 2px solid $accent-color;
             outline-offset: 2px;
         }
+
+        // Fingers need a bigger target than a pointer.
+        @media (pointer: coarse) {
+            min-height: 44px;
+            padding-inline: 16px;
+        }
     }
 
     @media (hover: hover) {
