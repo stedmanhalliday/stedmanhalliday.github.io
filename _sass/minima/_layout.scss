@@ -993,6 +993,20 @@ html.is-animating .transition-fade {
         scroll-margin-top: 96px;
     }
 
+    // One column: the caption names the project before its media, not a screen later.
+    @media screen and (max-width: 1023.98px) {
+        > figure {
+            display: flex;
+            flex-direction: column;
+
+            > figcaption {
+                order: -1;
+                margin: 0 0 16px;
+                text-align: left;
+            }
+        }
+    }
+
     @media screen and (min-width: 1024px) {
         > figure {
             display: grid;
