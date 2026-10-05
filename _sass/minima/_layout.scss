@@ -346,6 +346,12 @@ html.is-animating .transition-fade {
     p {
         display: inline;
     }
+
+    // Break between the date, author, and length, never inside one.
+    > time,
+    > span {
+        white-space: nowrap;
+    }
 }
 
 .post-summary > p {
@@ -434,6 +440,37 @@ html.is-animating .transition-fade {
         figcaption {
             text-align: center;
         }
+    }
+}
+
+// Blog posts read on dark: light Lato gets a touch more leading, and a heading
+// sits closer to the text it opens than to the text above it.
+.h-entry .post-content {
+    p,
+    li {
+        line-height: 1.625;
+    }
+
+    h2,
+    h3,
+    h4 {
+        line-height: 1.2;
+    }
+
+    h2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    h3,
+    h4 {
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    h2 + h3,
+    h3 + h4 {
+        margin-top: 0;
     }
 }
 
