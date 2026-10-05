@@ -53,6 +53,67 @@ layout: default
         var status = page.querySelector("[data-work-status]");
         var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         var current = -1;
+        var videos = [].slice.call(page.querySelectorAll("video"));
+        var onScreen = [];
+
+        // Reduced motion: no autoplay. The poster stays up and controls let the visitor play it.
+        // This runs before LazyLoad sets the src, so the autoplay attribute never fires.
+        if (reduce) {
+            videos.forEach(function (v) {
+                v.autoplay = false;
+                v.controls = true;
+                v.pause();
+            });
+        }
+
+        // Pause a loop we stopped ourselves, so a visitor's own pause is not undone later.
+        function park(v) {
+            if (v.paused) return;
+            v.dataset.parked = "";
+            v.pause();
+        }
+        function resume(v) {
+            if (reduce || !v.autoplay || !v.currentSrc || "held" in v.dataset) return;
+            if (document.hidden || onScreen.indexOf(v) === -1) return;
+            v.play().catch(function () {});
+        }
+        videos.forEach(function (v) {
+            v.addEventListener("pause", function () {
+                // The browser also pauses muted loops off screen; only an on-screen pause is the visitor's.
+                if ("parked" in v.dataset) delete v.dataset.parked;
+                else if (v.controls && !document.hidden && onScreen.indexOf(v) !== -1) v.dataset.held = "";
+            });
+            v.addEventListener("play", function () { delete v.dataset.held; });
+            // LazyLoad sets the src late; start the loop once it can play, if it is still in view.
+            v.addEventListener("loadeddata", function () { resume(v); });
+        });
+
+        // Loops play only while on screen. A hidden panel counts as off screen.
+        if ("IntersectionObserver" in window) {
+            var watch = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    var v = e.target;
+                    var k = onScreen.indexOf(v);
+                    if (e.isIntersecting && k === -1) onScreen.push(v);
+                    if (!e.isIntersecting && k !== -1) onScreen.splice(k, 1);
+                    if (e.isIntersecting) resume(v);
+                    else park(v);
+                });
+            });
+            videos.forEach(function (v) { watch.observe(v); });
+        } else {
+            onScreen = videos;
+        }
+
+        function onVisibility() {
+            if (!page.isConnected) {
+                document.removeEventListener("visibilitychange", onVisibility);
+                if (watch) watch.disconnect();
+                return;
+            }
+            videos.forEach(document.hidden ? park : resume);
+        }
+        document.addEventListener("visibilitychange", onVisibility);
 
         // The hash picks a view here, so the panels drop their ids:
         // otherwise the browser would jump past the heading and tabs.
@@ -77,11 +138,8 @@ layout: default
             current = i;
             panels.forEach(function (p, j) {
                 p.hidden = j !== i;
-                // Hidden videos keep playing; stop them, and restart the shown panel's loops.
-                p.querySelectorAll("video").forEach(function (v) {
-                    if (j !== i) v.pause();
-                    else if (v.autoplay && v.currentSrc) v.play().catch(function () {});
-                });
+                // Hidden videos keep playing; stop them. The observer restarts the shown panel's loops.
+                if (j !== i) p.querySelectorAll("video").forEach(park);
             });
             links.forEach(function (a, j) {
                 if (j === i) a.setAttribute("aria-current", "page");

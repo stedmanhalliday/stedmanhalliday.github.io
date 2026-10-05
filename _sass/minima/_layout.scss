@@ -1342,6 +1342,11 @@ a[data-fslightbox] {
     gap: 8px;
     margin: 0;
 
+    // Stays hidden until the script wires it up; without JS every row shows.
+    &[hidden] {
+        display: none;
+    }
+
     button {
         min-height: 32px;
         padding: 2px 12px;
