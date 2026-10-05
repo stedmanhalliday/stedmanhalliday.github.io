@@ -5,7 +5,7 @@ title: Javier Wedding
 date: 2023-02-14
 description: Art direction and media for a California wedding
 categories: [brand, print, video, multimedia]
-image: "/assets/img/2023-02-14-javier-wedding-pair-mock.webp"
+image: "/assets/img/2023-02-14-javier-wedding-pair-mock.jpg"
 # hero: projects/:title-hero
 ---
 

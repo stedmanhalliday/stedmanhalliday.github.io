@@ -5,7 +5,7 @@ date: 2026-07-17
 description: "A look back at the strangest, most tech-infused office building in the world"
 tags: [community, health, san francisco, work, leadership]
 permalink: "/blog/frontier-tower"
-image: /assets/img/2026-07-17-ffc-deck-3.webp
+image: /assets/img/2026-07-17-ffc-deck-3.jpg
 ---
 
 <figure class="cover">

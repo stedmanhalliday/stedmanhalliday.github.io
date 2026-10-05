@@ -5,7 +5,7 @@ date: 2017-11-22
 author: Stedman Halliday for [Prototypr](https://blog.prototypr.io/)
 description: "Structural and historical rationales for fellowship and competition in design practice"
 tags: [design, engineering, software, code, community]
-image: /assets/img/2017-11-22-massimo.webp
+image: /assets/img/2017-11-22-massimo.jpg
 ---
 
 <figure class="cover">

@@ -5,7 +5,7 @@ title: TensorFlow Resources
 date: 2017-02-17
 description: Resource directory for Google's TensorFlow machine learning library
 categories: [ux/ui, dev, ai]
-image: "/assets/img/2017-02-17-tensor-flow-0.webp"
+image: "/assets/img/2017-02-17-tensor-flow-0.jpg"
 hero: "/projects/tensorflow-resources-hero"
 ---
 
