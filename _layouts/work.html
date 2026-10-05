@@ -9,7 +9,7 @@ layout: default
     <nav class="work-tabs" aria-label="Work views">
         <ul>
             <li><a href="#gallery" data-no-swup>Gallery</a></li>
-            <li><a href="#case-studies" data-no-swup>Case studies</a></li>
+            <li><a href="#featured" data-no-swup>Featured projects</a></li>
             <li><a href="#index" data-no-swup>Index</a></li>
         </ul>
     </nav>
@@ -18,10 +18,14 @@ layout: default
     <section class="work-panel work-gallery" id="gallery" aria-labelledby="gallery-heading">
         <h2 class="work-panel-heading" id="gallery-heading">Gallery</h2>
         {% include sections/gallery.html %}
+        {% comment %} The gallery ends by handing off to the Index, so the long scroll lands somewhere. {% endcomment %}
+        <div class="work-gallery-end">
+            <a class="section-cta" href="#index" data-no-swup data-work-view>See all {{ site.data.index | size }} projects</a>
+        </div>
     </section>
 
-    <section class="work-panel" id="case-studies" aria-labelledby="case-studies-heading">
-        <h2 class="work-panel-heading" id="case-studies-heading">Case studies</h2>
+    <section class="work-panel" id="featured" aria-labelledby="featured-heading">
+        <h2 class="work-panel-heading" id="featured-heading">Featured projects</h2>
         <ul class="work-cases">
             {% for featured_title in site.data.works.featured %}
             {% assign card = site.projects | where: "title", featured_title | first %}
@@ -32,7 +36,7 @@ layout: default
                         <h3 class="work-case-title">{{ card.title | escape }}</h3>
                         <p class="work-case-desc">{{ card.description | replace: "<br>", ". " | strip_html | escape }}</p>
                         <p class="work-case-scope">{{ card.categories | join: " · " }}</p>
-                        <span class="work-case-go next-link">Read case study</span>
+                        <span class="work-case-go next-link">View project</span>
                     </div>
                 </a>
             </li>
@@ -123,6 +127,8 @@ layout: default
         // A view name opens that view. Any other id (a gallery figure) opens the panel that holds it.
         function viewFromHash() {
             var id = decodeURIComponent(location.hash.slice(1));
+            // Old links used #case-studies before the view became Featured projects.
+            if (id === "case-studies") id = "featured";
             var i = views.indexOf(id);
             if (i !== -1) return i;
             var target = id && document.getElementById(id);
@@ -159,7 +165,10 @@ layout: default
             if (window.scrollY > line) window.scrollTo(0, line);
         }
 
-        links.forEach(function (a, i) {
+        // The tabs, plus any in-page link that opens a view (the gallery's closing link to the Index).
+        links.concat([].slice.call(page.querySelectorAll("[data-work-view]"))).forEach(function (a) {
+            var i = views.indexOf(a.getAttribute("href").slice(1));
+            if (i === -1) return;
             a.addEventListener("click", function (event) {
                 if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
                 event.preventDefault();

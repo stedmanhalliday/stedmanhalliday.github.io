@@ -845,7 +845,7 @@ html.is-animating .transition-fade {
  */
 
 /**
- * Work page: heading, type-led tabs, and one view at a time (Gallery, Case studies, Index).
+ * Work page: heading, type-led tabs, and one view at a time (Gallery, Featured projects, Index).
  * Full width: the wrapper keeps its gutters (they line up with the header) but drops the 800px cap.
  */
 .wrapper:has(> .work-page) {
@@ -1049,7 +1049,7 @@ html.is-animating .transition-fade {
     }
 }
 
-// The two gallery projects with a case study link to it from their caption.
+// The two gallery projects that are also featured link to their project page from the caption.
 .work-fig-go {
     display: flex;
     align-items: center;
@@ -1069,7 +1069,14 @@ html.is-animating .transition-fade {
     }
 }
 
-// Case studies: one lead, then two. The richest view on the page.
+// Closing hand-off from the gallery to the Index, aligned with the media column.
+.work-gallery-end {
+    @media screen and (min-width: 1024px) {
+        padding-left: calc(min(15rem, 100%) + clamp(32px, 4vw, 64px));
+    }
+}
+
+// Featured projects: one lead, then two. The richest view on the page.
 .work-cases {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
