@@ -9,7 +9,7 @@ tags:
     - artificial intelligence
     - work
 permalink: /blog/designing-with-ai
-image: /assets/img/2026-09-29-neural-network.webp
+image: /assets/img/2026-09-29-neural-network.jpg
 ---
 
 <figure class="cover">

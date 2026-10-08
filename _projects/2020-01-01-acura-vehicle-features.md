@@ -5,7 +5,7 @@ date: 2020-01-01
 description: Acura vehicle features web experience supporting a fully online sales funnel
 categories: [ux/ui]
 hero: /projects/acura-hero
-image: /assets/img/2020-01-01-acura-thumbnail.webp
+image: /assets/img/2020-01-01-acura-thumbnail.jpg
 ---
 
 I worked with the team at Wunderman Thompson to refresh Acura's vehicle features web experience. The primary goal of the

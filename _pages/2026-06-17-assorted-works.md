@@ -5,7 +5,7 @@ date: 2026-06-17
 description: A selection of assorted works by Stedman Halliday spanning brand, product, web, and motion design
 categories: [graphics, web, video, UI, design systems]
 permalink: /assorted-works
-image: /assets/img/2026-01-27-perceptual-reasoning-gap.webp
+image: /assets/img/2026-01-27-perceptual-reasoning-gap.jpg
 ---
 
 ## Overview

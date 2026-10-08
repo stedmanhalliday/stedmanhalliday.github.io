@@ -5,7 +5,7 @@ date: 2026-01-21
 description: Divination, hyperstitioning, and the punk spirit in the age of artificial intelligence
 tags: [reflection, philosophy, technology, artificial intelligence, san francisco]
 permalink: "/blog/training-intuition"
-image: /assets/img/2026-01-21-iroko-tree.webp
+image: /assets/img/2026-01-21-iroko-tree.jpg
 ---
 
 <figure class="cover">

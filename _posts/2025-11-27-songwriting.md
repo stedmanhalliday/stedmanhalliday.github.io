@@ -6,7 +6,7 @@ description: Reflections on songwriting process
 tags: [music, reflection]
 author: Stedman Halliday
 permalink: "/blog/songwriting"
-image: "/assets/img/2025-11-03-cocoa-artwork.webp"
+image: "/assets/img/2025-11-03-cocoa-artwork.jpg"
 ---
 
 I recently finished a recording of a song called [*cocoa*.](https://untitled.stream/library/project/DmwNTG2NgCvAjKDDIuANA) It's the first one I've completed with a vocal performance, and the first I'd call truly done. I started it during the lockdown period of the COVID-19 pandemic, building an instrumental (and later a concept) around a field recording of my mother preparing hot cocoa for me. It took shape slowly, across long intervals of creative stalling and spurts, while I juggled many other projects (I'm a little ashamed it took me five years to the very day, but creative pursuits aren't always linear and that's fine). I'm not sure how much I actually like the final product, but I know I don't hate it. I don't think it's pushing a sonic envelope or sitting at some high watermark of intentional craft, but firsts can matter for other reasons. It was important for me to get something out, to finish, to have anything at all to stand on and move forward from.

@@ -6,7 +6,7 @@ date: 2020-09-02
 description: Redesign of the Microsoft Education Blog web experience
 categories: [ux/ui]
 hero: /projects/microsoft-education-blog-hero
-image: /assets/img/2020-09-02-msft-edu-blog.webp
+image: /assets/img/2020-09-02-msft-edu-blog.jpg
 ---
 
 I led an end-to-end redesign of the Microsoft Education Blog during the COVID-19 pandemic for Wunderman Thompson. The project took place during a highly dynamic time for the education segment that saw record web traffic as educators, administrators, and other audiences increasingly sought information online to navigate novel challenges related to remote and hybrid education.

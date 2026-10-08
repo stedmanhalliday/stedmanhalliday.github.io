@@ -5,7 +5,7 @@ date: 2026-01-27
 description: Generative UI's missing primitive is a vocabulary, not sight
 tags: [technology, design, engineering, software, artificial intelligence]
 permalink: "/blog/perceptual-reasoning-gap"
-image: /assets/img/2026-01-27-perceptual-reasoning-gap.webp
+image: /assets/img/2026-01-27-perceptual-reasoning-gap.jpg
 ---
 
 <figure class="cover">

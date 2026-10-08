@@ -5,7 +5,7 @@ title: ContracTx
 date: 2018-05-02
 description: Web app for visually exploring Ethereum smart contracts <br> View on [GitHub](https://github.com/stedmanhalliday/dappTx)
 categories: [ux/ui, dev, web3]
-image: /assets/img/2018-05-02-contracTx-mockup.webp
+image: /assets/img/2018-05-02-contracTx-mockup.jpg
 hero: /projects/contractx-hero
 ---
 
