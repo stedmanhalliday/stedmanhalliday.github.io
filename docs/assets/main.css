@@ -795,6 +795,12 @@ html.is-animating .transition-fade {
 }
 
 @media screen and (min-width: 801px) {
+  article.post,
+  .project-content .wrapper {
+    max-width: 44rem;
+    margin-right: auto;
+    margin-left: auto;
+  }
   .post-content > p,
   .post-content > ul,
   .post-content > ol,
@@ -803,16 +809,12 @@ html.is-animating .transition-fade {
   .project-content .wrapper > ul,
   .project-content .wrapper > ol,
   .project-content .wrapper .scrim-clip > p {
-    font-size: 1.375rem;
-    line-height: 1.5;
+    font-size: 1.1875rem;
+    line-height: 1.55;
   }
   .post-content > blockquote,
   .project-content .wrapper > blockquote {
-    font-size: 1.375rem;
-  }
-  .post-content > blockquote.bigquote,
-  .project-content .wrapper > blockquote.bigquote {
-    font-size: 2rem;
+    font-size: 1.1875rem;
   }
   .post-content p code,
   .post-content li code,
@@ -824,25 +826,9 @@ html.is-animating .transition-fade {
   .project-content .wrapper figcaption {
     font-size: 1rem;
   }
-  .post-content > h2,
-  .project-content .wrapper > h2 {
-    font-size: 2.25rem;
-  }
-  .post-content > h3,
-  .project-content .wrapper > h3 {
-    font-size: 1.875rem;
-  }
-  .post-content > h4,
-  .project-content .wrapper > h4 {
-    font-size: 1.625rem;
-  }
   .h-entry .post-content p,
   .h-entry .post-content li {
-    line-height: 1.5;
-  }
-  .post-title,
-  .project-info .page-heading {
-    font-size: 3rem;
+    line-height: 1.55;
   }
   .post-header .post-meta,
   .project-info .post-meta {
