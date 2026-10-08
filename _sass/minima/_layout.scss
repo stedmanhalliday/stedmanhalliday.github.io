@@ -481,26 +481,29 @@ html.is-animating .transition-fade {
     }
 }
 
-// Desktop reading (posts, case studies, About): a 22px body fills the 736px
-// column at about 77 characters a line, so text and media share one edge.
-// Headings, quotes, captions, and code step up with it. Phones keep 16px.
+// Desktop reading (posts, case studies, About): a 19px body in a 704px
+// column, modeled on paulstamatiou.com. Text and media share one edge.
+// Quotes, captions, and code follow the body. Phones keep 16px.
 @media screen and (min-width: #{$on-laptop + 1px}) {
+    article.post,
+    .project-content .wrapper {
+        max-width: 44rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
     .post-content,
     .project-content .wrapper {
         > p,
         > ul,
         > ol,
         .scrim-clip > p {
-            font-size: 1.375rem;
-            line-height: 1.5;
+            font-size: 1.1875rem;
+            line-height: 1.55;
         }
 
         > blockquote {
-            font-size: 1.375rem;
-        }
-
-        > blockquote.bigquote {
-            font-size: 2rem;
+            font-size: 1.1875rem;
         }
 
         p code,
@@ -511,33 +514,16 @@ html.is-animating .transition-fade {
         figcaption {
             font-size: 1rem;
         }
-
-        > h2 {
-            font-size: 2.25rem;
-        }
-
-        > h3 {
-            font-size: 1.875rem;
-        }
-
-        > h4 {
-            font-size: 1.625rem;
-        }
     }
 
     .h-entry .post-content {
         p,
         li {
-            line-height: 1.5;
+            line-height: 1.55;
         }
     }
 
-    .post-title,
-    .project-info .page-heading {
-        font-size: 3rem;
-    }
-
-    // Meta steps up one size so it doesn't drop 34px below the title.
+    // Meta steps up one size so it doesn't drop far below the title.
     .post-header .post-meta,
     .project-info .post-meta {
         font-size: 1rem;
