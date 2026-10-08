@@ -802,8 +802,10 @@ html.is-animating .transition-fade {
             object-fit: cover;
         }
 
-        .project h3 {
+        // Card titles are h2s under the page h1, sized like the old h3s.
+        .project h2 {
             margin: 20px 0 8px;
+            font-size: 1.17em;
         }
 
         .project .post-description p {
