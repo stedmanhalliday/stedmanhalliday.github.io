@@ -10,9 +10,9 @@
         <div class="thumbnail">
             <a href="{{ card.url | relative_url }}"><img src="{{ card.image }}" alt="{{ card.title }}" /></a>
         </div>
-        <h3>
+        <h2>
             <a class="post-link" href="{{ card.url | relative_url }}">{{ card.title | escape }}</a>
-        </h3>
+        </h2>
         <div class="post-description">{{ card.description | markdownify }}</div>
     </li>
     {% endfor %}

@@ -1078,8 +1078,9 @@ html.is-animating .transition-fade {
   aspect-ratio: 16/9;
   object-fit: cover;
 }
-.featured-work .post-list.featured-cards .project h3 {
+.featured-work .post-list.featured-cards .project h2 {
   margin: 20px 0 8px;
+  font-size: 1.17em;
 }
 .featured-work .post-list.featured-cards .project .post-description p {
   margin: 0;
