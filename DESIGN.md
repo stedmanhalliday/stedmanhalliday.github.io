@@ -128,7 +128,7 @@ A cool near-black field with soft white text and a single desaturated teal.
 - **Headline** (Schibsted 600, 28px, -0.01em): section headings such as list headings.
 - **Title** (Schibsted 600, 24px, -0.01em): project and post titles in lists.
 - **Body** (Lato 400, 16px, 1.5): prose, inside the 800px content column.
-- **Reading** (desktop, over 800px, on posts, case studies, and About): body prose steps up to 19px at 1.55 in a 704px column (44rem), modeled on paulstamatiou.com. Text and media share its edges. Headings keep the base desktop scale. Captions go to 16px. Post and project meta goes to 16px, with the summary at 18px. Phones keep the base sizes.
+- **Reading** (desktop, over 800px, on posts, case studies, and About): body prose steps up to 18px at 1.6 in a 704px column (44rem), after paulstamatiou.com. Text and media share its edges. Headings keep the base desktop scale. Captions go to 16px. Post and project meta goes to 16px, with the summary at 18px. Phones keep the base sizes.
 - **Label** (Lato 400, 14px, 0.14em, uppercase): CTAs and card actions. Tags use the same size at 700 without tracking. Small headings such as the post Contents label and the footer column heads are labels too: Lato 700.
 - **Site title** (Schibsted 700, uppercase, 0.048em): the wordmark in the header band. Nav links stay Lato.
 
