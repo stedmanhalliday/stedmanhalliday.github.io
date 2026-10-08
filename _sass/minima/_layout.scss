@@ -481,7 +481,7 @@ html.is-animating .transition-fade {
     }
 }
 
-// Desktop reading (posts, case studies, About): a 19px body in a 704px
+// Desktop reading (posts, case studies, About): an 18px body in a 704px
 // column, modeled on paulstamatiou.com. Text and media share one edge.
 // Quotes, captions, and code follow the body. Phones keep 16px.
 @media screen and (min-width: #{$on-laptop + 1px}) {
@@ -498,12 +498,12 @@ html.is-animating .transition-fade {
         > ul,
         > ol,
         .scrim-clip > p {
-            font-size: 1.1875rem;
-            line-height: 1.55;
+            font-size: 1.125rem;
+            line-height: 1.6;
         }
 
         > blockquote {
-            font-size: 1.1875rem;
+            font-size: 1.125rem;
         }
 
         p code,
@@ -519,7 +519,7 @@ html.is-animating .transition-fade {
     .h-entry .post-content {
         p,
         li {
-            line-height: 1.55;
+            line-height: 1.6;
         }
     }
 

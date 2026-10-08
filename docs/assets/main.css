@@ -809,12 +809,12 @@ html.is-animating .transition-fade {
   .project-content .wrapper > ul,
   .project-content .wrapper > ol,
   .project-content .wrapper .scrim-clip > p {
-    font-size: 1.1875rem;
-    line-height: 1.55;
+    font-size: 1.125rem;
+    line-height: 1.6;
   }
   .post-content > blockquote,
   .project-content .wrapper > blockquote {
-    font-size: 1.1875rem;
+    font-size: 1.125rem;
   }
   .post-content p code,
   .post-content li code,
@@ -828,7 +828,7 @@ html.is-animating .transition-fade {
   }
   .h-entry .post-content p,
   .h-entry .post-content li {
-    line-height: 1.55;
+    line-height: 1.6;
   }
   .post-header .post-meta,
   .project-info .post-meta {
