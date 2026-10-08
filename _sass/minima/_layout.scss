@@ -222,6 +222,11 @@ html.is-animating .transition-fade {
     list-style: none;
     margin-left: 0;
     line-height: 2;
+
+    // The link takes the full 28px line as its tap target, not just the text.
+    a {
+        display: inline-block;
+    }
 }
 
 /**
@@ -451,6 +456,14 @@ html.is-animating .transition-fade {
         line-height: 1.625;
     }
 
+    // Across all posts at 320-430px, balance leaves far fewer one-word last
+    // lines in section headings than pretty (19 vs 66). Titles stay pretty.
+    h2,
+    h3,
+    h4 {
+        text-wrap: balance;
+    }
+
     h2 {
         margin-top: 2.5rem;
         margin-bottom: 1rem;
@@ -522,6 +535,16 @@ html.is-animating .transition-fade {
     .post-title,
     .project-info .page-heading {
         font-size: 3rem;
+    }
+
+    // Meta steps up one size so it doesn't drop 34px below the title.
+    .post-header .post-meta,
+    .project-info .post-meta {
+        font-size: 1rem;
+
+        .post-summary > p {
+            font-size: 1.125rem;
+        }
     }
 }
 
