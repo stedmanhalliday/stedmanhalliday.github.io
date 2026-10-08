@@ -671,6 +671,10 @@ html.is-animating .transition-fade {
 .byline p {
   display: inline;
 }
+.byline > time,
+.byline > span {
+  white-space: nowrap;
+}
 
 .post-summary > p {
   max-width: 64ch;
@@ -759,6 +763,29 @@ html.is-animating .transition-fade {
 .post-content figure figcaption,
 .page-content figure figcaption {
   text-align: center;
+}
+
+.h-entry .post-content p,
+.h-entry .post-content li {
+  line-height: 1.625;
+}
+.h-entry .post-content h2,
+.h-entry .post-content h3,
+.h-entry .post-content h4 {
+  line-height: 1.2;
+}
+.h-entry .post-content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+.h-entry .post-content h3,
+.h-entry .post-content h4 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.h-entry .post-content h2 + h3,
+.h-entry .post-content h3 + h4 {
+  margin-top: 0;
 }
 
 /**
