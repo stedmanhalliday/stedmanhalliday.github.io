@@ -222,6 +222,11 @@ html.is-animating .transition-fade {
     list-style: none;
     margin-left: 0;
     line-height: 2;
+
+    // The link takes the full 28px line as its tap target, not just the text.
+    a {
+        display: inline-block;
+    }
 }
 
 /**
@@ -346,6 +351,12 @@ html.is-animating .transition-fade {
     p {
         display: inline;
     }
+
+    // Break between the date, author, and length, never inside one.
+    > time,
+    > span {
+        white-space: nowrap;
+    }
 }
 
 .post-summary > p {
@@ -433,6 +444,106 @@ html.is-animating .transition-fade {
 
         figcaption {
             text-align: center;
+        }
+    }
+}
+
+// Blog posts read on dark: light Lato gets a touch more leading, and a heading
+// sits closer to the text it opens than to the text above it.
+.h-entry .post-content {
+    p,
+    li {
+        line-height: 1.625;
+    }
+
+    // Across all posts at 320-430px, balance leaves far fewer one-word last
+    // lines in section headings than pretty (19 vs 66). Titles stay pretty.
+    h2,
+    h3,
+    h4 {
+        text-wrap: balance;
+    }
+
+    h2 {
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    h3,
+    h4 {
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    h2 + h3,
+    h3 + h4 {
+        margin-top: 0;
+    }
+}
+
+// Desktop reading (posts, case studies, About): a 22px body fills the 736px
+// column at about 77 characters a line, so text and media share one edge.
+// Headings, quotes, captions, and code step up with it. Phones keep 16px.
+@media screen and (min-width: #{$on-laptop + 1px}) {
+    .post-content,
+    .project-content .wrapper {
+        > p,
+        > ul,
+        > ol,
+        .scrim-clip > p {
+            font-size: 1.375rem;
+            line-height: 1.5;
+        }
+
+        > blockquote {
+            font-size: 1.375rem;
+        }
+
+        > blockquote.bigquote {
+            font-size: 2rem;
+        }
+
+        p code,
+        li code {
+            font-size: 0.875em;
+        }
+
+        figcaption {
+            font-size: 1rem;
+        }
+
+        > h2 {
+            font-size: 2.25rem;
+        }
+
+        > h3 {
+            font-size: 1.875rem;
+        }
+
+        > h4 {
+            font-size: 1.625rem;
+        }
+    }
+
+    .h-entry .post-content {
+        p,
+        li {
+            line-height: 1.5;
+        }
+    }
+
+    .post-title,
+    .project-info .page-heading {
+        font-size: 3rem;
+    }
+
+    // Meta steps up one size so it doesn't drop 34px below the title.
+    .post-header .post-meta,
+    .project-info .post-meta {
+        font-size: 1rem;
+
+        .post-summary > p {
+            font-size: 1.125rem;
         }
     }
 }
@@ -714,8 +825,10 @@ html.is-animating .transition-fade {
             object-fit: cover;
         }
 
-        .project h3 {
+        // Card titles are h2s under the page h1, sized like the old h3s.
+        .project h2 {
             margin: 20px 0 8px;
+            font-size: 1.17em;
         }
 
         .project .post-description p {

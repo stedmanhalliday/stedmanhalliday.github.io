@@ -58,7 +58,7 @@
         padding: 0 0.35rem;
         border: 1px solid var(--tl-rule);
         border-radius: 4px;
-        font-size: 0.8rem;
+        font-size: 0.875rem;
         line-height: 1.3rem;
         color: var(--tl-dim);
         vertical-align: 0.1rem;
@@ -82,8 +82,12 @@
     }
 
 
+    /* A 16px label, so Lato 700 per the Two Voices Rule, not Schibsted. */
     .timeline h3.timeline-year-label {
         margin: 0;
+        font-family: inherit;
+        font-weight: 700;
+        letter-spacing: normal;
         font-size: 1rem;
         line-height: 1.5rem;
         font-variant-numeric: tabular-nums;
