@@ -451,12 +451,6 @@ html.is-animating .transition-fade {
         line-height: 1.625;
     }
 
-    h2,
-    h3,
-    h4 {
-        line-height: 1.2;
-    }
-
     h2 {
         margin-top: 2.5rem;
         margin-bottom: 1rem;
@@ -471,6 +465,63 @@ html.is-animating .transition-fade {
     h2 + h3,
     h3 + h4 {
         margin-top: 0;
+    }
+}
+
+// Desktop reading (posts, case studies, About): a 22px body fills the 736px
+// column at about 77 characters a line, so text and media share one edge.
+// Headings, quotes, captions, and code step up with it. Phones keep 16px.
+@media screen and (min-width: #{$on-laptop + 1px}) {
+    .post-content,
+    .project-content .wrapper {
+        > p,
+        > ul,
+        > ol,
+        .scrim-clip > p {
+            font-size: 1.375rem;
+            line-height: 1.5;
+        }
+
+        > blockquote {
+            font-size: 1.375rem;
+        }
+
+        > blockquote.bigquote {
+            font-size: 2rem;
+        }
+
+        p code,
+        li code {
+            font-size: 0.875em;
+        }
+
+        figcaption {
+            font-size: 1rem;
+        }
+
+        > h2 {
+            font-size: 2.25rem;
+        }
+
+        > h3 {
+            font-size: 1.875rem;
+        }
+
+        > h4 {
+            font-size: 1.625rem;
+        }
+    }
+
+    .h-entry .post-content {
+        p,
+        li {
+            line-height: 1.5;
+        }
+    }
+
+    .post-title,
+    .project-info .page-heading {
+        font-size: 3rem;
     }
 }
 
