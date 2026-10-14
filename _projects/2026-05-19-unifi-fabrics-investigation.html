@@ -1,0 +1,2700 @@
+---
+# Standalone page: the report ships its own <html>, styles, and scripts, so it skips the site layout and swup.
+# Source: private repo stedmanhalliday/unifi-fabric-report, value-retrospective-redacted.html
+layout: null
+title: UniFi Fabrics Investigation
+date: 2026-05-19
+description: Five-week investigation of access and identity failures in a building's door system, with a BI-quantified cost analysis
+categories: [service design, dev]
+sitemap: false
+---
+{% raw %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UniFi Fabrics Investigation Retrospective. Work sample</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Five weeks of UniFi Fabrics investigation, paired with a BI-quantified evaluation of what the access-and-identity infrastructure is worth.">
+<meta name="author" content="Stedman Halliday">
+<meta name="robots" content="noindex">
+<script>
+  // Apply a saved theme before first paint. Dark is the default.
+  try { if (localStorage.getItem('theme') === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
+  document.documentElement.classList.add('js');
+</script>
+<!-- impeccable-disable all-caps-body: the only hits are section h3 titles inside their disclosure <button>, styled like every other h3 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* FT-governance DARK tokens, verbatim from :root[saved-theme=dark] */
+    --light:           #0f0f12;
+    --lightgray:       #26252a;
+    --gray:            #a0a0ab;
+    --darkgray:        #d9d9d9;
+    --dark:            #f5f5f5;
+    --secondary:       #ae8efe;
+    --tertiary:        #dcc3f2;
+    --highlight:       #ae8efe14;
+    --textHighlight:   #2d224755;
+    /* derived */
+    --rule:            #26252a;
+    --rule-soft:       #1c1b1f;
+    --paper:           #0f0f12;
+    --paper-alt:       #14131a;
+
+    --header-font: 'Bricolage Grotesque', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --body-font:   'IBM Plex Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+
+    --measure: 38em;
+    --page-pad-x: clamp(1.25rem, 5vw, 5.5rem);
+    --page-max: 92rem;
+
+    /* TYPE: one role scale. Every font-size, line-height and tracking reads these. */
+    --text-xs:       0.78rem;                       /* meta, labels, captions, table data */
+    --text-sm:       0.9rem;                        /* mono base, secondary prose, nav */
+    --text-base:     1rem;                          /* prose */
+    --text-md:       1.1rem;                        /* large prose, row names, disclosure mark */
+    --text-subhead:  1.25rem;                       /* phase and finding headings */
+    --text-lede:     clamp(1.15rem, 1.7vw, 1.45rem); /* ledes, figure title, closing quote */
+    --text-title:    clamp(1.56rem, 2vw, 1.75rem);  /* section titles, strip figures */
+    --text-pull:     clamp(1.4rem, 2.5vw, 1.95rem); /* interstitial pull quote */
+    --text-figure:   clamp(2rem, 3.4vw, 2.5rem);    /* ROI figures, type specimen */
+    --text-headline: clamp(1.9rem, 4vw, 3rem);      /* chapter heads */
+    --text-display:  clamp(2.6rem, 7.2vw, 5.4rem);  /* masthead */
+    --text-code:     0.92em;                        /* inline code, relative to its line */
+    /* SVG text, in viewBox units */
+    --svg-glyph:     8px;   /* 44-unit taxonomy glyphs only */
+    --svg-xs:        10px;  /* axis units, micro-chart captions, notes */
+    --svg-sm:        11px;  /* ticks, month labels, values, phase tags */
+    --svg-md:        12px;  /* annotations, callouts, panel titles */
+    --leading-display: 0.95;
+    --leading-heading: 1.05; /* headings, figures, single-line controls */
+    --leading-snug:    1.35; /* ledes, quotes, short names */
+    --leading-compact: 1.45; /* footnotes, deltas, definitions */
+    --leading-body:    1.6;  /* prose and mono text */
+    --track-display:  -0.04em;
+    --track-headline: -0.035em;
+    --track-figure:   -0.025em; /* heading base, figures */
+    --track-title:    -0.01em;  /* ledes, titles, quotes; text below lede size tracks at 0 */
+    --track-data:      0.02em;  /* small mono: meta, captions, ids */
+    --track-tick:      0.06em;  /* chart ticks, panel tags, toggle */
+
+    /* SYSTEM: semantic tokens. Components read these, never raw values. */
+    --label-size:    var(--text-xs);
+    --label-track:   0.14em;
+    --tier-resolved: var(--dark);
+    --tier-dormant:  var(--gray);
+    --tier-open:     var(--secondary);
+    --tier-watch:    var(--tertiary);
+    --surface-open:  color-mix(in srgb, var(--secondary) 14%, var(--paper));
+    --surface-quiet: var(--paper-alt);
+    --focus-ring:    2px solid var(--secondary);
+    /* MOTION: one curve for anything that arrives, one for the single loop; one duration ramp. */
+    --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-loop:     cubic-bezier(0.37, 0, 0.63, 1);
+    --dur-fast:      150ms;  /* hover, color, state feedback */
+    --dur-base:      260ms;  /* indicators, icons, disclosures, filters */
+    --dur-slow:      560ms;  /* builds and wipes: bars, notes, glyphs, theme */
+    --dur-focal:     900ms;  /* the one authored draw; count-up */
+    --dur-linger:    1600ms; /* an arrival mark fading out */
+    --dur-pulse:     4s;     /* the open bug's signal, one cycle */
+    --toc-h:         3.4rem;
+
+    color-scheme: dark;
+  }
+  /* LIGHT THEME: same token names, light values. Print uses the same set below. */
+  :root[data-theme="light"] {
+    --light:         #ffffff;
+    --lightgray:     #dedde4;
+    --gray:          #5b5b66;
+    --darkgray:      #2a2a31;
+    --dark:          #111114;
+    --secondary:     #5d1dfe;
+    --tertiary:      #7446c9;
+    --highlight:     #5d1dfe12;
+    --textHighlight: #e4d9ff;
+    --rule:          #d8d8de;
+    --rule-soft:     #ececf0;
+    --paper:         #fbfbfc;
+    --paper-alt:     #f4f1fd;
+    color-scheme: light;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--darkgray);
+    font-family: var(--body-font);
+    font-size: var(--text-sm);
+    line-height: var(--leading-body);
+    font-feature-settings: 'kern', 'liga';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--textHighlight); color: var(--dark); }
+
+  a {
+    color: var(--secondary);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--secondary) 35%, transparent);
+    transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+  }
+  a:hover { color: var(--tertiary); border-bottom-color: var(--tertiary); }
+
+  /* HEADERS */
+  h1, h2, h3, h4, .display {
+    font-family: var(--header-font);
+    color: var(--dark);
+    font-weight: 700;
+    letter-spacing: var(--track-figure);
+    margin: 0;
+    line-height: var(--leading-heading);
+  }
+  h1.display-hero {
+    font-size: var(--text-display);
+    text-transform: uppercase;
+    letter-spacing: var(--track-display);
+    line-height: var(--leading-display);
+  }
+  h2.chapter {
+    font-size: var(--text-headline);
+    text-transform: uppercase;
+    letter-spacing: var(--track-headline);
+    margin-bottom: 1.4rem;
+  }
+  h3 {
+    font-size: var(--text-title);
+    font-weight: 600;
+    letter-spacing: var(--track-title);
+    color: var(--secondary);
+    margin-top: 2rem;
+    margin-bottom: 0.7rem;
+  }
+  h4.phase {
+    font-family: var(--header-font);
+    font-size: var(--text-subhead);
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--dark);
+    margin: 1.8rem 0 0.6rem;
+  }
+  .disc-phase { border-bottom: 1px solid var(--rule); padding: 1.1rem 0; }
+  .disc-phase h4.phase { margin: 0; }
+  .disc-phase .disc-body { padding-top: 0.9rem; }
+  .disc-phase .disc-body > p:last-child { margin-bottom: 0.3rem; }
+  button.disc-btn {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    align-items: baseline;
+    gap: 1rem;
+    cursor: pointer;
+  }
+  button.disc-btn::after {
+    content: "+";
+    font-family: var(--body-font);
+    font-size: var(--text-md);
+    color: var(--secondary);
+  }
+  button.disc-btn[aria-expanded="true"]::after { content: "\2212"; }
+  button.disc-btn:hover { color: var(--secondary); }
+  button.disc-btn:focus-visible { outline: var(--focus-ring); outline-offset: 3px; }
+  h4.phase .phase-tag {
+    display: inline-block;
+    font-family: var(--body-font);
+    font-size: var(--label-size);
+    font-weight: 500;
+    letter-spacing: var(--label-track);
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-right: 0.8rem;
+    vertical-align: 0.18em;
+  }
+  footer.colophon h3 {
+    font-family: var(--body-font);
+    font-size: var(--label-size);
+    font-weight: 500;
+    letter-spacing: var(--label-track);
+    text-transform: uppercase;
+    color: var(--gray);
+    margin: 0 0 0.7rem;
+  }
+
+  p {
+    margin: 0 0 1.05rem;
+    max-width: var(--measure);
+    color: var(--darkgray);
+  }
+  /* Prose reads in the text face; mono stays for data, labels and code. */
+  p, ul.numbered li, table.taxonomy td.mech, dl.terms dd {
+    font-family: var(--header-font);
+    font-size: var(--text-base);
+    line-height: var(--leading-body);
+  }
+  p.lede {
+    font-family: var(--header-font);
+    font-size: var(--text-lede);
+    line-height: var(--leading-snug);
+    color: var(--dark);
+    font-weight: 500;
+    letter-spacing: var(--track-title);
+    max-width: 40ch;
+  }
+
+  strong { color: var(--dark); font-weight: 600; }
+  em { font-style: normal; color: var(--dark); font-weight: 500; }
+  code, .mono-tight {
+    font-family: var(--body-font);
+    font-size: var(--text-code);
+    background: var(--highlight);
+    color: var(--dark);
+    border-radius: 3px;
+    padding: 0.05em 0.34em;
+  }
+
+  .page {
+    padding: 0 var(--page-pad-x);
+    max-width: var(--page-max);
+    margin: 0 auto;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    padding-top: clamp(2.5rem, 6vw, 5rem);
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+  .masthead .meta-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(1.4rem, 3vw, 2.4rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+    align-items: end;
+  }
+  @media (min-width: 900px) {
+    .masthead .meta-grid { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); }
+  }
+  .masthead .byline { font-size: var(--text-xs); color: var(--gray); line-height: var(--leading-body); }
+  .masthead .byline div + div { margin-top: 0.18rem; }
+  .masthead .byline .role {
+    font-family: var(--body-font);
+    font-size: var(--label-size);
+    letter-spacing: var(--label-track);
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  /* CONTENTS */
+  nav.toc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.8rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--header-font);
+    font-size: var(--text-sm);
+  }
+  nav.toc a { color: var(--dark); border-bottom-color: transparent; }
+  nav.toc a:hover { color: var(--secondary); }
+  [id] { scroll-margin-top: 1.5rem; }
+
+  /* Sticky contents bar with scroll-spy (JS adds .js to <html>). */
+  .js nav.toc {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    align-items: center;
+    min-height: var(--toc-h);
+    padding: 0.55rem 0;
+    margin: 0 calc(-1 * var(--page-pad-x));
+    padding-inline: var(--page-pad-x);
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    -webkit-backdrop-filter: saturate(1.2) blur(10px);
+    backdrop-filter: saturate(1.2) blur(10px);
+  }
+  .js [id] { scroll-margin-top: calc(var(--toc-h) + 1.5rem); }
+  nav.toc a { position: relative; padding: 0.35rem 0; transition: color var(--dur-fast) var(--ease-out); }
+  nav.toc a[aria-current="true"] { color: var(--secondary); }
+  nav.toc a:focus-visible, .theme-toggle:focus-visible, .tier-tabs button:focus-visible { outline: var(--focus-ring); outline-offset: 3px; border-radius: 2px; }
+  .theme-toggle {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 2.25rem;
+    padding: 0.3rem 0.75rem;
+    font: 500 var(--label-size)/var(--leading-heading) var(--body-font);
+    letter-spacing: var(--track-tick);
+    color: var(--darkgray);
+    background: transparent;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+  }
+  .theme-toggle:hover { color: var(--dark); border-color: var(--gray); }
+  .theme-toggle[aria-pressed="true"] { color: var(--secondary); border-color: var(--secondary); }
+  .theme-toggle svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; }
+  @media (max-width: 640px) {
+    .js nav.toc { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 1.3rem; white-space: nowrap; }
+    .js nav.toc::-webkit-scrollbar { display: none; }
+    .theme-toggle span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+    .theme-toggle { padding: 0.3rem 0.6rem; min-width: 2.5rem; justify-content: center; flex: none; position: sticky; right: 0; background: var(--paper); box-shadow: -12px 0 12px var(--paper), var(--page-pad-x) 0 0 var(--paper); }
+  }
+
+  /* Tier filter for the bug grid. */
+  .tier-tabs {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 3px;
+    margin: 0.6rem 0 0.2rem;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    background: var(--paper-alt);
+  }
+  .tier-tabs button {
+    min-height: 2.25rem;
+    padding: 0.35rem 0.8rem;
+    font: 500 var(--label-size)/var(--leading-heading) var(--body-font);
+    letter-spacing: var(--label-track);
+    text-transform: uppercase;
+    color: var(--gray);
+    background: transparent;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: color var(--dur-fast) var(--ease-out), background-color var(--dur-fast) var(--ease-out);
+  }
+  .tier-tabs button:hover { color: var(--dark); }
+  .tier-tabs button[aria-pressed="true"] { color: var(--dark); background: var(--paper); box-shadow: inset 0 0 0 1px var(--rule); }
+  .tier-tabs button[aria-pressed="true"][data-tier="open"] { color: var(--secondary); }
+  .tier-tabs .ct { margin-left: 0.45rem; color: var(--gray); font-variant-numeric: tabular-nums; letter-spacing: 0; }
+  .bg-cell.is-out, .bug-grid-group.is-out { display: none; }
+  .bg-cell.is-in { animation: cell-in var(--dur-base) var(--ease-out); }
+  @keyframes cell-in { from { opacity: 0; } }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+  /* Bug preview card on taxonomy #n links. */
+  .bug-peek {
+    position: fixed;
+    z-index: 30;
+    width: 15rem;
+    pointer-events: none;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    box-shadow: 0 10px 30px -8px rgb(0 0 0 / 0.45);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  }
+  .bug-peek.on { opacity: 1; transform: none; pointer-events: auto; }
+  .bug-peek .bg-cell { border: 0; min-height: 0; }
+  table.taxonomy td.bugs a:focus-visible { outline: var(--focus-ring); outline-offset: 2px; }
+
+  /* MOTION. Only with JS, only without reduced motion, never in print. */
+  .motion .hero-strip:not(.drawn) .hs-area-u,
+  .motion .hero-strip:not(.drawn) .hs-annot,
+  .motion .hero-strip:not(.drawn) .hs-annot-l,
+  .motion .hero-strip:not(.drawn) .hs-callout,
+  .motion .hero-strip:not(.drawn) .hs-phase-tag,
+  .motion .hero-strip:not(.drawn) .hs-dot-c { opacity: 0; }
+  .motion .hero-strip:not(.drawn) .hs-bar,
+  .motion .hero-strip:not(.drawn) .hs-bar-l { transform: scaleY(0); }
+  .motion .hero-strip:not(.drawn) .hs-draw { stroke-dashoffset: 1; }
+  .motion .hero-strip .hs-draw { stroke-dasharray: 1 1; stroke-dashoffset: 0; transition: stroke-dashoffset var(--dur-focal) var(--ease-out); }
+  .motion .hero-strip .hs-bar,
+  .motion .hero-strip .hs-bar-l { transform-box: fill-box; transform-origin: 50% 100%; transition: transform var(--dur-slow) var(--ease-out); }
+  .motion .hero-strip .hs-area-u,
+  .motion .hero-strip .hs-annot,
+  .motion .hero-strip .hs-annot-l,
+  .motion .hero-strip .hs-callout,
+  .motion .hero-strip .hs-phase-tag,
+  .motion .hero-strip .hs-dot-c { transition: opacity var(--dur-slow) var(--ease-out); }
+  /* Panel A draws first, then Panel B, then the reading notes. */
+  .motion .hero-strip .hs-area-u { transition-delay: 300ms; }
+  .motion .hero-strip .hs-b { transition-delay: 450ms; }
+  .motion .hero-strip .hs-dot-c { transition-delay: 900ms; }
+  .motion .hero-strip .hs-annot, .motion .hero-strip .hs-annot-l,
+  .motion .hero-strip .hs-callout, .motion .hero-strip .hs-phase-tag { transition-delay: 1100ms; }
+  .disc-body.is-moving { overflow: hidden; }
+  @media (prefers-reduced-motion: reduce) {
+    .bug-peek { transition: opacity var(--dur-fast); }
+    .bug-peek { transform: none; }
+    .bg-cell.is-in { animation: none; }
+  }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* INTERACTION. One moment per area; each enhances a page that reads fully without it. */
+  /* Browser surfaces wear the palette. Mono measures select as an inverted log line. */
+  html { scrollbar-color: var(--lightgray) var(--paper); -webkit-tap-highlight-color: var(--highlight); }
+  :is(code, .bg-id, .bg-status, .bg-foot, .badge, .data-strip .lbl, .data-strip .delta, .hs-meta, .hs-cap, dl.terms dt, .sample-note dt, .sys-meta)::selection,
+  :is(code, .bg-foot, .data-strip .delta, .hs-meta, .hs-cap, .sys-meta) *::selection { background: var(--secondary); color: var(--paper); }
+
+  /* Contents bar: one indicator travels to the current section. */
+  .toc-ind {
+    position: absolute;
+    left: 0; top: 0;
+    width: 1px; height: 2px;
+    background: var(--secondary);
+    transform-origin: 0 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: transform var(--dur-base) var(--ease-out), opacity var(--dur-fast) var(--ease-out);
+  }
+
+  /* Theme toggle: the sun's rays rise when light is on. */
+  .theme-toggle svg path { transform-box: view-box; transform-origin: 8px 8px; transform: rotate(-45deg) scale(0.72); transition: transform var(--dur-base) var(--ease-out); }
+  .theme-toggle svg circle { transition: fill var(--dur-fast) var(--ease-out); }
+  .theme-toggle:hover svg path { transform: rotate(-20deg) scale(0.86); }
+  .theme-toggle[aria-pressed="true"] svg path { transform: none; }
+  .theme-toggle[aria-pressed="true"] svg circle { fill: currentColor; }
+  /* The new theme pours down from the bar, like a sheet sliding under it. */
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+  :root.theme-wipe::view-transition-new(root) { animation: theme-wipe var(--dur-slow) var(--ease-out); }
+  @keyframes theme-wipe { from { clip-path: inset(0 0 100% 0); } }
+
+  /* Fig. 0: a month crosshair runs through both panels, so the shared axis reads directly. */
+  .hero-strip svg .hs-hit { fill: transparent; }
+  .hero-strip svg .hs-cross { stroke: var(--darkgray); stroke-width: 1; opacity: 0; pointer-events: none; transition: opacity var(--dur-fast) var(--ease-out); }
+  .hero-strip svg.is-crossed .hs-cross { opacity: 0.5; }
+  .hero-strip svg .hs-mlbl.is-hot { fill: var(--dark); }
+  .hero-strip svg .hs-bar.is-hot { opacity: 0.8; }
+  .hero-strip svg .hs-dot-c.is-hot { stroke-width: 2.5; }
+
+  /* Taxonomy glyphs act out their mechanism while the row is hovered or focused. */
+  table.taxonomy .gl-act { transform-box: view-box; transition: transform var(--dur-slow) var(--ease-out); }
+  table.taxonomy .gl-throttle { transform-origin: 6px 0; }
+  table.taxonomy .gl-loop { transform-origin: 22px 22px; }
+  table.taxonomy .gl-reach { transform-origin: 16px 0; }
+  table.taxonomy tr:is(:hover, :focus-within) .gl-lift { transform: translateY(-11px); }
+  table.taxonomy tr:is(:hover, :focus-within) .gl-throttle { transform: scaleX(0.7); }
+  table.taxonomy tr:is(:hover, :focus-within) .gl-loop { transform: rotate(1turn); }
+  table.taxonomy tr:is(:hover, :focus-within) .gl-reach { transform: scaleX(1.375); }
+
+  /* Bug cells: a quiet hover, and a violet edge that fades when a link lands on one. */
+  .bug-grid .bg-cell { transition: background-color var(--dur-fast) var(--ease-out); }
+  .bug-grid .bg-cell:not(.open):hover { background: var(--surface-quiet); }
+  .bg-cell:target { animation: cell-arrive var(--dur-linger) var(--ease-out); }
+  @keyframes cell-arrive { from { outline: 1px solid var(--secondary); outline-offset: -1px; } to { outline: 1px solid transparent; outline-offset: -1px; } }
+
+  /* CROSS-REFERENCE. A phase in Fig. 0, its Timeline passage, and the bugs that passage names light together. */
+  .hero-strip svg.hs-chart * { pointer-events: none; }
+  .hero-strip svg .hs-hit, .hero-strip svg .hs-ph-hit, .hero-strip svg .hs-phase-tag[tabindex] { pointer-events: all; cursor: pointer; }
+  .hero-strip svg .hs-hit { cursor: crosshair; }
+  .hero-strip svg .hs-ph-hit { fill: transparent; }
+  .hero-strip svg .hs-phase-tag:focus { outline: none; }
+  .hero-strip svg .hs-phase-tag:focus-visible { outline: var(--focus-ring); outline-offset: 3px; }
+  .hero-strip svg .hs-cross.is-linked { stroke: var(--secondary); }
+  .hero-strip svg.is-crossed .hs-cross.is-linked { opacity: 1; }
+  .hero-strip svg .hs-phase-tag.is-linked { font-weight: 600; }
+  .js .disc-phase { position: relative; isolation: isolate; }
+  .js .disc-phase::before { content: ""; position: absolute; inset: 0 -0.75rem; z-index: -1; background: var(--highlight); opacity: 0; transition: opacity var(--dur-fast) var(--ease-out); }
+  .js .disc-phase.is-linked::before { opacity: 1; }
+  .bg-cell.is-linked { outline: 1px solid var(--secondary); outline-offset: -1px; }
+  /* The one open bug keeps a slow pulse while it is on screen: still live, still waiting. */
+  .bg-cell.open.is-live svg.bg-chart .bgc-curr { animation: still-live var(--dur-pulse) var(--ease-loop) infinite; }
+  @keyframes still-live { 50% { opacity: 0.45; } }
+  @media (prefers-reduced-motion: reduce) { .bg-cell.open.is-live svg.bg-chart .bgc-curr { animation: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .toc-ind, .theme-toggle svg path, table.taxonomy .gl-act { transition: none; }
+    table.taxonomy tr .gl-act { transform: none !important; }
+  }
+
+  p.to-top { margin: 2.4rem 0 0; font-family: var(--body-font); font-size: var(--text-xs); }
+  p.to-top a { color: var(--gray); border-bottom-color: transparent; }
+  p.to-top a:hover { color: var(--secondary); }
+
+  /* SECTIONS */
+  section.chapter {
+    padding-top: clamp(3rem, 6vw, 5rem);
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+  }
+  section.chapter .chapter-lede {
+    font-family: var(--header-font);
+    font-size: var(--text-lede);
+    color: var(--dark);
+    font-weight: 500;
+    line-height: var(--leading-snug);
+    letter-spacing: var(--track-title);
+    max-width: 50ch;
+    margin-bottom: clamp(2rem, 3.5vw, 3rem);
+  }
+
+  dl.terms {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 0.6rem 2rem;
+    margin: 0 0 2rem;
+    padding: 0;
+  }
+  dl.terms div { display: flex; gap: 0.6rem; align-items: baseline; }
+  dl.terms dt { font-family: var(--body-font); font-size: var(--text-xs); color: var(--secondary); font-weight: 600; white-space: nowrap; }
+  dl.terms dd { margin: 0; font-size: var(--text-sm); color: var(--gray); line-height: var(--leading-compact); }
+
+  /* ============================================================ */
+  /* TYPOGRAPHIC AXIS-RULE between sections */
+  /* ============================================================ */
+  .axis-rule {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 28px;
+    overflow: visible;
+  }
+  .axis-rule svg { display: block; width: 100%; height: 28px; overflow: visible; }
+  .axis-rule .ar-line { stroke: var(--rule); stroke-width: 1; }
+  .axis-rule .ar-tick { stroke: var(--rule); stroke-width: 1; }
+  .axis-rule .ar-tick-l { stroke: var(--secondary); stroke-width: 1; }
+  .axis-rule .ar-lbl {
+    font-family: var(--body-font);
+    font-size: var(--svg-sm);
+    letter-spacing: var(--label-track);
+    text-transform: uppercase;
+    fill: var(--gray);
+  }
+  .axis-rule .ar-lbl-l { fill: var(--secondary); }
+
+  /* ============================================================ */
+  /* HERO STRIP */
+  /* ============================================================ */
+  .hero-strip {
+    margin: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(1rem, 3vw, 2.5rem);
+    padding-top: clamp(2rem, 4vw, 3.2rem);
+  }
+  .hero-strip .hs-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.4rem;
+    align-items: end;
+  }
+  @media (min-width: 900px) {
+    .hero-strip .hs-header { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+  }
+  .hero-strip .hs-title {
+    font-family: var(--header-font);
+    font-weight: 600;
+    color: var(--dark);
+    font-size: var(--text-lede);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--track-title);
+    max-width: 50ch;
+  }
+  .hero-strip .hs-title em { color: var(--secondary); font-style: normal; font-weight: 600; }
+  .hero-strip .hs-meta {
+    font-family: var(--body-font);
+    font-size: var(--text-xs);
+    letter-spacing: var(--track-data);
+    color: var(--gray);
+    line-height: var(--leading-body);
+  }
+  @media (min-width: 900px) { .hero-strip .hs-meta { text-align: right; } }
+  .hero-strip .hs-meta span.dot { color: var(--secondary); margin: 0 0.4rem; }
+  .hero-strip svg.hs-chart { display: block; width: 100%; height: auto; max-width: 100%; }
+  .hero-strip svg .hs-axis { stroke: var(--rule); stroke-width: 1; }
+  .hero-strip svg .hs-grid { stroke: var(--rule-soft); stroke-width: 1; stroke-dasharray: 1 3; }
+  .hero-strip svg .hs-tick { stroke: var(--rule); stroke-width: 1; }
+  .hero-strip svg .hs-tick-l { stroke: var(--secondary); stroke-width: 1; }
+  .hero-strip svg .hs-mlbl {
+    font-family: var(--body-font);
+    font-size: var(--svg-sm);
+    letter-spacing: var(--track-tick);
+    text-transform: uppercase;
+    fill: var(--gray);
+  }
+  .hero-strip svg .hs-ylbl {
+    font-family: var(--body-font);
+    font-size: var(--svg-xs); /* axis units sit at the viewBox edge: the step that never scales */
+    fill: var(--gray);
+  }
+  .hero-strip svg .hs-annot,
+  .hero-strip svg .hs-annot-l {
+    font-family: var(--header-font);
+    font-style: italic;
+    font-size: var(--svg-md);
+    fill: var(--darkgray);
+    font-weight: 500;
+  }
+  .hero-strip svg .hs-annot-l { fill: var(--secondary); }
+  .hero-strip svg .hs-callout {
+    font-family: var(--body-font);
+    font-size: var(--svg-md);
+    fill: var(--dark);
+    font-weight: 500;
+    letter-spacing: var(--track-data);
+  }
+  .hero-strip svg .hs-phase-tag {
+    font-family: var(--body-font);
+    font-size: var(--svg-sm);
+    letter-spacing: var(--label-track);
+    text-transform: uppercase;
+    fill: var(--secondary);
+    font-weight: 500;
+  }
+  .hero-strip svg .hs-panel-tag {
+    font-family: var(--header-font);
+    font-size: var(--svg-md);
+    font-weight: 600;
+    fill: var(--dark);
+    letter-spacing: var(--track-tick);
+    text-transform: uppercase;
+  }
+  .hero-strip svg .hs-panel-sub {
+    font-family: var(--body-font);
+    font-size: var(--svg-md);
+    fill: var(--gray);
+  }
+  .hero-strip svg .hs-bar { fill: var(--darkgray); opacity: 0.45; }
+  .hero-strip svg .hs-bar-l { fill: var(--secondary); }
+  .hero-strip svg .hs-area-u { fill: var(--darkgray); opacity: 0.18; }
+  .hero-strip svg .hs-area-stroke { fill: none; stroke: var(--darkgray); stroke-width: 1.2; }
+  .hero-strip svg .hs-line-c { fill: none; stroke: var(--darkgray); stroke-width: 1.5; stroke-linejoin: round; }
+  .hero-strip svg .hs-dot-c { fill: var(--paper); stroke: var(--darkgray); stroke-width: 1.5; }
+  .hero-strip svg .hs-dot-c.hl { fill: var(--secondary); stroke: var(--secondary); }
+  .hero-strip svg .hs-reboot { stroke: var(--secondary); stroke-width: 1.2; stroke-dasharray: 4 3; }
+  .hero-strip svg .hs-leader { stroke: var(--gray); stroke-width: 0.8; }
+  .hero-strip svg .hs-leader-l { stroke: var(--secondary); stroke-width: 0.8; }
+  .hero-strip svg .hs-phase-band { fill: var(--secondary); }
+  .hero-strip .hs-cap {
+    margin-top: 1rem;
+    font-family: var(--body-font);
+    font-size: var(--text-xs);
+    color: var(--gray);
+    line-height: var(--leading-body);
+    max-width: 78ch;
+    letter-spacing: var(--track-data);
+  }
+  .hero-strip .hs-cap b { color: var(--darkgray); font-weight: 500; }
+
+  .hero-strip .hs-swipe { display: none; }
+  @media (max-width: 899px) {
+    /* The strip keeps its shared axis: scroll it instead of shrinking it. */
+    .hero-strip .hs-scroll {
+      overflow-x: auto;
+      margin: 0 calc(-1 * var(--page-pad-x));
+      padding: 0 var(--page-pad-x) 0.6rem;
+      scrollbar-color: var(--lightgray) transparent;
+    }
+    .hero-strip .hs-scroll:focus-visible { outline: 1px solid var(--secondary); outline-offset: 2px; }
+    .hero-strip svg.hs-chart { width: 1050px; max-width: none; }
+    .hero-strip .hs-swipe {
+      display: block;
+      font-family: var(--body-font);
+      font-size: var(--text-xs);
+      line-height: var(--leading-body);
+      letter-spacing: var(--track-data);
+      color: var(--gray);
+      margin: 0 0 0.6rem;
+    }
+    .hero-strip .hs-swipe b { color: var(--dark); font-weight: 500; }
+    /* The scrolled chart reads at a larger size: redefine the SVG steps, not the roles. */
+    .hero-strip { --svg-sm: 13px; --svg-md: 14px; }
+  }
+
+  /* ============================================================ */
+  /* DATA STRIP (kept from prior, slight refinement) */
+  /* ============================================================ */
+  .data-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 0;
+    margin: 2rem 0 1.6rem;
+    padding: 1.4rem 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .data-strip > div {
+    padding: 0 1.4rem;
+    border-right: 1px solid var(--rule);
+  }
+  .data-strip > div:first-child { padding-left: 0; }
+  .data-strip > div:last-child { border-right: 0; padding-right: 0; }
+  .data-strip .lbl {
+    font-family: var(--body-font);
+    font-size: var(--label-size);
+    color: var(--gray);
+    letter-spacing: var(--label-track);
+    text-transform: uppercase;
+    line-height: var(--leading-compact);
+    display: block;
+    margin-bottom: 0.5rem;
+    order: -1;
+  }
+  .data-strip .n {
+    font-family: var(--header-font);
+    font-size: var(--text-title);
+    font-weight: 600;
+    color: var(--dark);
+    line-height: var(--leading-heading);
+    letter-spacing: var(--track-figure);
+    display: block;
+  }
+  .data-strip .delta {
+    font-family: var(--body-font);
+    font-size: var(--text-xs);
+    color: var(--darkgray);
+    margin-top: 0.5rem;
+    display: block;
+    line-height: var(--leading-compact);
+  }
+  .data-strip .delta b { color: var(--secondary); font-weight: 600; }
+  .data-strip > div { display: flex; flex-direction: column; }
+
+  /* ============================================================ */
+  /* TAXONOMY TABLE + ICONOGRAMS */
+  /* ============================================================ */
+  table.taxonomy {
+    width: 100%;
+    max-width: 68rem;
+    border-collapse: collapse;
+    font-size: var(--text-xs);
+    margin: 1.4rem 0 1.8rem;
+  }
+  table.taxonomy th, table.taxonomy td {
+    text-align: left;
+    padding: 0.9rem 1rem 0.9rem 0;
+    vertical-align: top;
+    border-bottom: 1px solid var(--rule);
+  }
+  table.taxonomy th {
+    font-size: var(--label-size);
+    letter-spacing: var(--label-track);
+    text-transform: uppercase;
+    color: var(--gray);
+    font-weight: 500;
+  }
+  table.taxonomy td.glyph { width: 56px; padding-right: 1.1rem; vertical-align: top; }
+  table.taxonomy td.glyph svg { display: block; width: 44px; height: 44px; }
+  table.taxonomy td.glyph .gl-line { stroke: var(--darkgray); stroke-width: 1.2; fill: none; opacity: 0.7; }
+  table.taxonomy td.glyph .gl-line-l { stroke: var(--secondary); stroke-width: 1.2; fill: none; }
+  table.taxonomy td.glyph .gl-fill { fill: var(--darkgray); opacity: 0.35; }
+  table.taxonomy td.glyph .gl-fill-l { fill: var(--secondary); }
+  table.taxonomy td.glyph .gl-dot { fill: var(--darkgray); }
+  table.taxonomy td.glyph .gl-dot-l { fill: var(--secondary); }
+  table.taxonomy td.glyph .gl-lbl {
+    font-family: var(--body-font);
+    font-size: var(--svg-glyph);
+    fill: var(--dark);
+    font-weight: 500;
+    letter-spacing: var(--track-tick);
+  }
+  table.taxonomy td.family { color: var(--dark); font-weight: 600; width: 20%; }
+  table.taxonomy td.bugs   { color: var(--secondary); font-weight: 500; width: 20%; }
+  table.taxonomy td.mech   { color: var(--darkgray); }
+  @media (max-width: 640px) {
+    table.taxonomy, table.taxonomy tbody { display: block; }
+    table.taxonomy thead { display: none; }
+    table.taxonomy tr {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      column-gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    table.taxonomy td { border: 0; padding: 0; width: auto; }
+    table.taxonomy td.family, table.taxonomy td.bugs { width: auto; }
+    table.taxonomy td.glyph { grid-row: 1 / span 2; width: auto; padding: 0; }
+    table.taxonomy td.mech { grid-column: 1 / -1; margin-top: 0.7rem; }
+  }
+
+  /* ============================================================ */
+  /* BUG FINGERPRINT GRID */
+  /* ============================================================ */
+  .bug-grid-group { margin: 1.4rem 0 0; }
+  .bug-grid-group .bgg-label {
+    font-family: var(--body-font);
+    font-size: var(--text-xs);
+    letter-spacing: var(--track-data);
+    color: var(--gray);
+    font-weight: 500;
+    padding: 1rem 0 0.8rem;
+    margin-bottom: 1rem;
+  }
+  .bug-grid-group .bgg-label::before { content: '· '; color: var(--secondary); }
+  .bug-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-left: 1px solid var(--rule);
+  }
+  .bg-cell {
+    padding: 1rem 1.1rem 1.05rem;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    min-height: 132px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .bg-cell.open { background: var(--surface-open); }
+  .bg-cell.open .bg-name { font-weight: 600; }
+  .bg-cell.open .bg-id { font-size: var(--text-sm); }
+  .bg-cell.cosmetic { background: var(--surface-quiet); }
+  .bg-cell .bg-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem;
+    margin-bottom: 0.55rem;
+  }
+  .bg-cell .bg-id {
+    font-family: var(--body-font);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--secondary);
+    letter-spacing: var(--track-data);
+  }
+  .bg-cell .bg-status {
+    font-family: var(--body-font);
+    font-size: var(--label-size);
+    color: var(--gray);
+    letter-spacing: var(--label-track);
+    text-transform: uppercase;
+  }
+  /* COMPONENT: status badge. One data-tier attribute maps to one tier token. */
+  .badge[data-tier], .bg-cell .bg-status[data-tier], p.bg-legend span[data-tier] { color: var(--tier, var(--gray)); }
+  .badge[data-tier="resolved"], .bg-status[data-tier="resolved"], p.bg-legend span[data-tier="resolved"] { --tier: var(--tier-resolved); }
+  .badge[data-tier="dormant"],  .bg-status[data-tier="dormant"],  p.bg-legend span[data-tier="dormant"]  { --tier: var(--tier-dormant); }
+  .badge[data-tier="open"],     .bg-status[data-tier="open"],     p.bg-legend span[data-tier="open"]     { --tier: var(--tier-open); font-weight: 600; }
+  .badge[data-tier="watch"],    .bg-status[data-tier="watch"],    p.bg-legend span[data-tier="watch"]    { --tier: var(--tier-watch); }
+  p.bg-legend { font-size: var(--text-sm); color: var(--gray); margin-bottom: 0.4rem; }
+  p.bg-note, p.source-note { font-size: var(--text-sm); color: var(--gray); margin-top: 1rem; }
+  p.source-note { margin-top: 1.8rem; max-width: 40em; }
+  p.bg-legend span { font-family: var(--body-font); font-size: var(--label-size); letter-spacing: var(--label-track); text-transform: uppercase; color: var(--gray); }
+  .bg-cell .bg-name {
+    font-family: var(--header-font);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--dark);
+    line-height: var(--leading-snug);
+    letter-spacing: 0;
+    margin-bottom: 0.6rem;
+  }
+  .bg-cell svg.bg-chart { display: block; width: 100%; height: 26px; margin: 0.3rem 0 0.4rem; overflow: visible; }
+  .bg-cell svg.bg-chart .bgc-peak { fill: var(--darkgray); opacity: 0.85; }
+  .bg-cell svg.bg-chart .bgc-curr { fill: var(--darkgray); }
+  .bg-cell.open svg.bg-chart .bgc-curr { fill: var(--secondary); }
+  .bg-cell svg.bg-chart .bgc-zero { fill: none; stroke: var(--gray); stroke-width: 1; stroke-dasharray: 1 2; }
+  .bg-cell svg.bg-chart .bgc-lbl {
+    font-family: var(--body-font);
+    font-size: var(--svg-xs);
+    fill: var(--gray);
+    letter-spacing: var(--track-data);
+  }
+  .bg-cell svg.bg-chart .bgc-val,
+  .bg-cell svg.bg-chart .bgc-val-l {
+    font-family: var(--body-font);
+    font-size: var(--svg-sm);
+    fill: var(--dark);
+    font-weight: 500;
+  }
+  .bg-cell svg.bg-chart .bgc-val-l { fill: var(--dark); }
+  .bg-cell.open svg.bg-chart .bgc-val-l { fill: var(--secondary); }
+  .bg-cell .bg-foot {
+    font-family: var(--body-font);
+    font-size: var(--text-xs);
+    color: var(--gray);
+    line-height: var(--leading-compact);
+  }
+  .bg-cell .bg-foot b { color: var(--dark); font-weight: 500; }
+  .bg-cell .bg-foot code, footer.colophon code { font-size: inherit; }
+  .bg-cell.open .bg-foot b { color: var(--secondary); }
+
+  /* ============================================================ */
+  /* NUMBERED LIST (monitoring, survives, next actions) */
+  /* ============================================================ */
+  ul.numbered { list-style: none; padding: 0; margin: 1.2rem 0; counter-reset: counter-roman; }
+  ul.numbered li {
+    padding: 0.75rem 0 0.75rem 2.2rem;
+    position: relative;
+    color: var(--darkgray);
+    border-bottom: 1px solid var(--rule);
+    max-width: 40em;
+  }
+  ul.numbered li:last-child { border-bottom: 0; }
+  ul.numbered li::before {
+    content: counter(counter-roman, decimal-leading-zero);
+    counter-increment: counter-roman;
+    position: absolute;
+    left: 0;
+    top: 0.9rem;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    color: var(--secondary);
+    letter-spacing: var(--track-data);
+  }
+  ul.numbered strong { display: inline; color: var(--dark); font-weight: 600; }
+
+  /* ============================================================ */
+  /* INTERSTITIAL */
+  /* ============================================================ */
+  .interstitial {
+    padding: clamp(3rem, 5vw, 4.5rem) 0;
+  }
+  .interstitial .pivot {
+    font-family: var(--header-font);
+    font-weight: 500;
+    font-size: var(--text-pull);
+    line-height: var(--leading-snug);
+    color: var(--dark);
+    letter-spacing: var(--track-title);
+    max-width: 52ch;
+  }
+  .interstitial .pivot em { color: var(--secondary); font-style: normal; font-weight: 600; }
+  .interstitial .pivot-sub {
+    font-family: var(--body-font);
+    font-size: var(--text-sm);
+    color: var(--gray);
+    margin-top: 1.4rem;
+    max-width: 56ch;
+  }
+
+  /* ============================================================ */
+  /* ROI FINDINGS + MICRO-VIZ */
+  /* ============================================================ */
+  .roi-finding {
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+  @media (min-width: 900px) {
+    .roi-finding {
+      grid-template-columns: minmax(220px, 260px) minmax(0, 1fr);
+      gap: 2.2rem;
+      align-items: baseline;
+    }
+  }
+  .roi-finding:last-child { border-bottom: 0; }
+  .roi-finding .num {
+    font-family: var(--header-font);
+    font-size: var(--text-figure);
+    font-weight: 700;
+    color: var(--secondary);
+    line-height: var(--leading-heading);
+    letter-spacing: var(--track-figure);
+  }
+  .roi-finding .num .sub {
+    display: block;
+    font-family: var(--body-font);
+    font-size: var(--text-xs);
+    color: var(--gray);
+    letter-spacing: var(--track-data);
+    margin-top: 0.5rem;
+    font-weight: 500;
+    max-width: 22ch;
+    line-height: var(--leading-compact);
+  }
+  .roi-finding svg.micro {
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    margin-top: 1rem;
+    overflow: visible;
+  }
+  .roi-finding svg.micro .m-bar { fill: var(--darkgray); opacity: 0.5; }
+  .roi-finding svg.micro .m-bar-l { fill: var(--secondary); }
+  .roi-finding svg.micro .m-line { fill: none; stroke: var(--darkgray); stroke-width: 1.3; }
+  .roi-finding svg.micro .m-dot { fill: var(--darkgray); }
+  .roi-finding svg.micro .m-dot-l { fill: var(--secondary); }
+  .roi-finding svg.micro .m-dot-ring { fill: var(--paper); stroke: var(--secondary); stroke-width: 1.2; }
+  .roi-finding svg.micro .m-axis { stroke: var(--rule); stroke-width: 1; }
+  .roi-finding svg.micro .m-grid-dot { fill: var(--darkgray); opacity: 0.55; }
+  .roi-finding svg.micro .m-grid-dot-l { fill: var(--secondary); }
+  .roi-finding svg.micro .m-tick-lbl {
+    font-family: var(--body-font);
+    font-size: var(--svg-sm);
+    fill: var(--gray);
+    letter-spacing: var(--track-tick);
+    text-transform: uppercase;
+  }
+  .roi-finding svg.micro .m-val,
+  .roi-finding svg.micro .m-val-l {
+    font-family: var(--body-font);
+    font-size: var(--svg-sm);
+    fill: var(--dark);
+    font-weight: 500;
+  }
+  .roi-finding svg.micro .m-val-l { fill: var(--secondary); }
+  .roi-finding svg.micro .m-annot {
+    font-family: var(--header-font);
+    font-style: italic;
+    font-size: var(--svg-xs);
+    fill: var(--darkgray);
+  }
+  .roi-finding .body h3 {
+    color: var(--dark);
+    text-transform: none;
+    font-family: var(--header-font);
+    font-size: var(--text-subhead);
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+  }
+  .roi-finding .body p {
+    margin: 0 0 0.7rem;
+    max-width: 36em;
+  }
+  .roi-finding .body .link-back {
+    font-family: var(--header-font);
+    font-size: var(--text-sm);
+    color: var(--gray);
+    font-weight: 500;
+    border-top: 1px dotted var(--rule);
+    padding-top: 0.55rem;
+    margin-top: 0.6rem;
+    max-width: 36em;
+  }
+  .roi-finding .body .link-back em { color: var(--secondary); }
+
+  .closing-quote {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    font-family: var(--header-font);
+    font-size: var(--text-lede);
+    font-weight: 500;
+    line-height: var(--leading-snug);
+    color: var(--dark);
+    max-width: 52ch;
+    letter-spacing: var(--track-title);
+  }
+  .closing-quote em { color: var(--secondary); font-style: normal; font-weight: 600; }
+
+  /* COLOPHON */
+  footer.colophon {
+    padding-top: clamp(2.5rem, 4vw, 3.5rem);
+    padding-bottom: clamp(3rem, 5vw, 4.5rem);
+  }
+  footer.colophon .col-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.8rem;
+  }
+  @media (min-width: 900px) { footer.colophon .col-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  footer.colophon p { font-size: var(--text-xs); color: var(--gray); line-height: var(--leading-body); max-width: 42ch; }
+  footer.colophon p b { color: var(--dark); font-weight: 500; }
+  footer.colophon .sig {
+    margin-top: 2.4rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--rule);
+    font-family: var(--header-font);
+    font-weight: 600;
+    color: var(--dark);
+    letter-spacing: var(--track-data);
+    font-size: var(--text-base);
+    text-transform: uppercase;
+  }
+
+  /* PRINT */
+  @media print {
+    :root {
+      --paper: #ffffff;
+      --paper-alt: #f5f3ff;
+      --darkgray: #222;
+      --dark: #111;
+      --gray: #5c5c5c;
+      --secondary: #5d1dfe;
+      --rule: #d8d8dd;
+      --highlight: #5d1dfe0f;
+      --textHighlight: #eae1ff;
+      --tertiary: #7446c9;
+      --lightgray: #dedde4;
+      --text-sm: 10pt; /* paper keeps points: mono base and small prose */
+    }
+    body { background: #fff; color: #222; }
+    .page { padding: 0 1rem; }
+    a { color: #222; border-bottom-color: transparent; }
+    /* Print is static and complete: no controls, no filters, no motion. */
+    .js nav.toc { position: static; background: none; -webkit-backdrop-filter: none; backdrop-filter: none; margin: 0; padding-inline: 0; }
+    .theme-toggle, .tier-tabs, .tier-status, .bug-peek, .toc-ind, .hs-cross, .hs-hits, .hs-ph-hit { display: none !important; }
+    .bg-cell:target, .bg-cell.open.is-live svg.bg-chart .bgc-curr { animation: none; }
+    #ch-investigation .bg-cell.is-linked { outline: 0; }
+    .js .disc-phase::before { content: none; }
+    .bg-cell.is-out { display: flex !important; }
+    .bug-grid-group.is-out { display: block !important; }
+    .disc-body { display: block !important; height: auto !important; }
+    .hero-strip * { transition: none !important; animation: none !important; }
+    .motion .hero-strip .hs-area-u, .motion .hero-strip .hs-annot, .motion .hero-strip .hs-annot-l,
+    .motion .hero-strip .hs-callout, .motion .hero-strip .hs-phase-tag, .motion .hero-strip .hs-dot-c { opacity: 1 !important; }
+    .motion .hero-strip .hs-area-u { opacity: 0.18 !important; }
+    .motion .hero-strip .hs-bar { opacity: 0.45 !important; }
+    .motion .hero-strip .hs-bar, .motion .hero-strip .hs-bar-l { transform: none !important; }
+    .motion .hero-strip .hs-draw { stroke-dashoffset: 0 !important; }
+    section.chapter, .interstitial, .masthead, footer.colophon, .hero-strip { page-break-inside: avoid; }
+    h2.chapter, h1.display-hero { page-break-after: avoid; }
+  }
+
+  /* WORK SAMPLE */
+  .sample-note {
+    margin: 0 0 clamp(2rem, 4vw, 3rem);
+    padding: 1.4rem 0 0.4rem;
+    border-top: 1px solid var(--secondary);
+  }
+  /* The nav's bottom hairline is the threshold; a second rule under it reads as a ladder. */
+  nav.toc + .sample-note { border-top: 0; padding-top: 0; margin-top: clamp(2.5rem, 5vw, 4rem); }
+  .sample-note h2 {
+    font-family: var(--header-font);
+    font-size: var(--text-title);
+    font-weight: 600;
+    letter-spacing: var(--track-title);
+    margin-bottom: 1rem;
+  }
+  .sample-note dl { margin: 0; display: grid; gap: 0.9rem; }
+  .sample-note dl div { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.2rem; }
+  @media (min-width: 900px) { .sample-note dl div { grid-template-columns: 9rem minmax(0, 68ch); gap: 1.5rem; } }
+  .sample-note dt { font-family: var(--body-font); font-size: var(--text-xs); color: var(--secondary); font-weight: 600; }
+  .sample-note dd { margin: 0; font-family: var(--header-font); font-size: var(--text-base); line-height: var(--leading-body); color: var(--darkgray); }
+  .problem { border-top-color: var(--dark); }
+  .problem-lede, .problem-turn { font-family: var(--header-font); font-size: var(--text-md); line-height: var(--leading-body); max-width: 68ch; color: var(--dark); margin: 0 0 1.2rem; }
+  .problem-turn { margin: 1.2rem 0 0; }
+  .problem dl div { padding-bottom: 0.9rem; border-bottom: 1px solid var(--lightgray); }
+  .redact {
+    display: inline-block;
+    width: calc(var(--w) * 0.62em);
+    height: 0.8em;
+    vertical-align: -0.05em;
+    background: var(--lightgray);
+    border-radius: 2px;
+  }
+
+  /* ============================================================ */
+  /* SYSTEM APPENDIX: the report's components, named, with tokens  */
+  /* ============================================================ */
+  .badge {
+    font-family: var(--body-font);
+    font-size: var(--label-size);
+    letter-spacing: var(--label-track);
+    text-transform: uppercase;
+  }
+  section.system { padding-top: clamp(3rem, 6vw, 5rem); padding-bottom: clamp(1rem, 2vw, 2rem); }
+  .sys-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.9rem 2.4rem;
+    padding: 1.3rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  @media (min-width: 900px) {
+    .sys-row { grid-template-columns: 13rem minmax(0, 1fr) minmax(0, 17rem); align-items: start; }
+  }
+  .sys-name { font-family: var(--header-font); font-size: var(--text-md); font-weight: 600; color: var(--dark); line-height: var(--leading-snug); }
+  .sys-name code { display: block; width: fit-content; margin-top: 0.35rem; font-size: var(--text-xs); font-weight: 500; color: var(--gray); background: none; padding: 0; }
+  .sys-spec { display: flex; flex-wrap: wrap; gap: 0.9rem 1.6rem; align-items: flex-start; min-width: 0; }
+  .sys-meta { margin: 0; font-family: var(--body-font); font-size: var(--text-xs); line-height: var(--leading-body); color: var(--gray); }
+  .sys-meta dt { color: var(--darkgray); font-weight: 500; }
+  .sys-meta dd { margin: 0 0 0.5rem; }
+  .sys-meta code { font-size: inherit; background: none; padding: 0; color: var(--darkgray); white-space: nowrap; margin-right: 0.5em; }
+  .sys-swatch { display: grid; gap: 0.4rem; font-family: var(--body-font); font-size: var(--text-xs); color: var(--gray); }
+  .sys-swatch i { display: block; width: 2.6rem; height: 2.6rem; background: var(--c); border: 1px solid var(--rule); }
+  .sys-type { display: grid; gap: 0.2rem; font-family: var(--body-font); font-size: var(--text-xs); color: var(--gray); }
+  .sys-type b { font-size: var(--text-title); line-height: var(--leading-heading); color: var(--dark); font-weight: 600; }
+  .sys-type b.h { font-family: var(--header-font); letter-spacing: var(--track-figure); }
+  .sys-type b.m { font-family: var(--body-font); font-weight: 500; letter-spacing: 0; }
+  .sys-spec .bug-grid { flex: 1 1 100%; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .sys-spec .bg-cell { min-height: 96px; }
+  .sys-spec .bug-grid.sys-solo { flex: 0 1 12rem; }
+  .sys-spec .data-strip { flex: 1 1 100%; margin: 0; padding: 1rem 0; }
+  .sys-spec .disc-phase { flex: 1 1 100%; padding: 0.4rem 0 0.8rem; }
+  .sys-spec h3.phase { margin: 0; font-size: var(--text-md); font-weight: 600; letter-spacing: 0; color: var(--dark); }
+  .sys-spec .disc-body p { font-size: var(--text-sm); margin: 0; }
+  .sys-spec .roi-finding { display: block; padding: 0; border: 0; }
+  .sys-spec dl.terms { flex: 1 1 100%; margin: 0; }
+  /* The duration ramp, drawn to scale; hovering the row plays each step at its own speed. */
+  .sys-dur { display: grid; gap: 0.4rem; font-family: var(--body-font); font-size: var(--text-xs); color: var(--gray); }
+  .sys-dur i { display: block; width: calc(var(--ms) * 0.12px); height: 2px; background: var(--rule); }
+  .sys-dur i::after { content: ""; display: block; height: 100%; background: var(--secondary); transform-origin: left; }
+  .sys-row:hover .sys-dur i::after { animation: dur-sweep var(--d) var(--ease-out); }
+  @keyframes dur-sweep { from { transform: scaleX(0); } }
+  @media (prefers-reduced-motion: reduce) { .sys-row:hover .sys-dur i::after { animation: none; } }
+  /* The two type specimens travel together: one row with the swatches at
+     desktop, their own row below it. */
+  .sys-spec:has(> .sys-swatch)::after { content: ""; flex-basis: 100%; order: 1; margin-top: -0.9rem; }
+  .sys-spec .sys-type { order: 2; }
+  @media (min-width: 1440px) {
+    .sys-spec:has(> .sys-swatch) { column-gap: 0.9rem; }
+    .sys-spec:has(> .sys-swatch)::after { content: none; }
+  }
+
+  /* ============================================================ */
+  /* LINE BREAKING: prose avoids short last lines; headings, ledes, */
+  /* captions and labels balance; tags and badges never break.     */
+  /* ============================================================ */
+  p, li, dd, td.mech, .pivot-sub, .link-back, .problem-lede, .problem-turn, .bg-cell .bg-foot { text-wrap: pretty; }
+  h1, h2, h3, h4, .hs-title, .hs-meta, .hs-cap, .hs-swipe,
+  p.lede, section.chapter .chapter-lede,
+  .interstitial .pivot, .closing-quote,
+  .sample-note dt, .sys-name, .sys-meta dd,
+  .data-strip .lbl, .data-strip .delta, .bug-grid-group .bgg-label,
+  .bg-cell .bg-name, .roi-finding .num .sub,
+  table.taxonomy td.family, table.taxonomy td.bugs, dl.terms dd { text-wrap: balance; }
+  .interstitial .pivot, .closing-quote, p { hanging-punctuation: first; }
+  .badge, .bg-cell .bg-id, .bg-cell .bg-status, h4.phase .phase-tag,
+  .tier-tabs button, .theme-toggle, nav.toc a, .sys-swatch, .sys-type { white-space: nowrap; }
+  /* Inline code that does wrap keeps its tint on both lines. */
+  code { -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  /* Data strip: four across only when every label fits one line. */
+  @media (max-width: 1339px) {
+    .data-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.4rem; }
+    .data-strip > div { padding: 0 1.4rem; }
+    .data-strip > div:nth-child(odd) { padding-left: 0; }
+    .data-strip > div:nth-child(even) { padding-right: 0; border-right: 0; }
+  }
+  @media (max-width: 640px) {
+    .data-strip > div { padding-inline: 1rem; }
+    .data-strip .lbl { min-height: 2lh; }
+  }
+  .nobr { white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ==================== MASTHEAD ==================== -->
+  <header class="masthead">
+    <h1 class="display-hero"><span style="color:var(--secondary)">UniFi Fabrics</span><br>Investigation<br>Retrospective</h1>
+    <div class="meta-grid">
+      <p class="lede">A building&rsquo;s door system failed for five weeks. This is what broke, what it cost, and how we fixed it.</p>
+      <div class="byline">
+        <div><b style="color:var(--dark)">Stedman Halliday</b></div>
+        <div class="role">Head of Product &amp; Systems</div>
+        <div>Coordination, BI analysis, and this report</div>
+        <div style="margin-top:0.5rem">Technical execution: <b style="color:var(--dark)">client infrastructure engineer</b></div>
+        <div>San Francisco &middot; 19&nbsp;May&nbsp;2026</div>
+        <div>Work sample &middot; client details redacted</div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc" id="contents" aria-label="Contents">
+    <a href="#intro">Overview</a>
+    <a href="#fig-0">Time strip</a>
+    <a href="#ch-investigation">Investigation</a>
+    <a href="#ch-cost">Quantified costs</a>
+    <a href="#ch-pattern">Shared pattern</a>
+    <a href="#system">Design notes</a>
+    <button type="button" class="theme-toggle" aria-pressed="false" hidden>
+      <svg class="ic-sun" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3.05 3.05l1.4 1.4M11.55 11.55l1.4 1.4M3.05 12.95l1.4-1.4M11.55 4.45l1.4-1.4"/></svg>
+      <span>Light theme</span>
+    </button>
+  </nav>
+
+  <section class="sample-note intro" id="intro" aria-labelledby="intro-h">
+    <h2 id="intro-h">Overview</h2>
+    <p class="problem-lede">This member building ran its doors on Ubiquiti&rsquo;s UniFi Access. Ubiquiti had sold a technical decision-maker on its Fabrics beta: one console to administrate several sites. The beta came with thin API coverage, shaky reliability, and little support, and many of the building&rsquo;s problems started there.</p>
+    <p class="problem-lede">In spring 2026 the doors started failing. By late April the doors worked only if someone restarted a server every three hours, day and night. The bugs were Ubiquiti&rsquo;s, and its updates said little, so we diagnosed them ourselves: five weeks, fifteen bugs, each filed with stack traces. Firmware and a clean reboot had the doors quiet by mid-May.</p>
+    <p class="problem-lede">I set the priorities and coordinated the investigation between Ubiquiti and the operations team. I collated the engineer&rsquo;s retrospective and the Ubiquiti support case into this report, and designed it so executive and technical leadership could read the same page. Then I went into the data warehouse to price what broken access, and broken member email, had cost.</p>
+  </section>
+
+  <section class="sample-note problem" id="problem" aria-labelledby="problem-h">
+    <h2 id="problem-h">Where things stood in March</h2>
+    <p class="problem-lede">The building, several hundred members across 18&nbsp;levels, opened on UniFi Access with manual door access, no identity system, and no developer APIs. That bought a year of firefighting. By March&nbsp;2026 I had ranked access and identity P0, the blocker under everything else on the roadmap. Here is what that meant on the ground.</p>
+    <dl>
+      <div><dt>Doors at the ceiling</dt><dd>The Door Hub Minis on the front door, lab, and gym hit their storage ceiling. We cut access policies from 40 to 30 and set a hard cap of 32, under a ceiling near 36. One policy too many and the door fails silently; members get locked out.</dd></div>
+      <div><dt>Elevators left open</dt><dd>Two elevator hubs rebooted intermittently between 5 and 9&nbsp;PM. The workaround was to leave the elevators unlocked, which exposed all 18&nbsp;levels overnight. A security failure and a UX failure at once.</dd></div>
+      <div><dt>Identity built, not connected</dt><dd>OpenLDAP held every member and group, and nothing read from it. Fabric had no People Management API, and no member had an LDAP password. Onboarding meant an admin hand-creating each user in the Fabric console: hours to days, with no status sent back to the member.</dd></div>
+      <div><dt>Failure without feedback</dt><dd>A failed tap told nobody whether the credential, the reader, or the hub was at fault. No status page, no self-service path. Members called or texted whoever they could find, and one or two engineers (not on call around the clock) were the only fix.</dd></div>
+      <div><dt>Offboarding on faith</dt><dd>No documented SLA. Leavers could keep live wallet credentials after they left.</dd></div>
+    </dl>
+    <p class="problem-turn">On 17&nbsp;April, door access, policy saves, and credential sync collapsed together. The bugs lived in Ubiquiti's own firmware and server code, and at the April peak the doors needed a cred-server bounce every three hours to keep working. This report covers those five weeks.</p>
+  </section>
+
+  <!-- ==================== HERO STRIP ==================== -->
+  <section class="hero-strip" id="fig-0" aria-label="Two-thread time strip">
+    <div class="hs-header">
+      <h2 class="hs-title">Access incidents and member signals on one timeline, August&nbsp;2025 to May&nbsp;2026</h2>
+      <div class="hs-meta">
+        Fig.&nbsp;0
+        <span class="dot">·</span>
+        Source: case <span class="redact" style="--w:7" role="img" aria-label="redacted case number" title="Support case number redacted"></span>, <span style="font-family:var(--body-font)">bi_live</span> +&nbsp;<span style="font-family:var(--body-font)">bi_external</span>
+      </div>
+    </div>
+
+    <p class="hs-swipe" aria-hidden="true">Top: <b>A &middot; access &amp; identity layer</b>. Bottom: <b>B &middot; member &amp; business layer</b>. Opens on April; &larr; scroll back to August&nbsp;2025.</p>
+    <div class="hs-scroll" tabindex="0" role="region" aria-label="Time strip, scrolls horizontally on small screens">
+    <svg class="hs-chart" viewBox="0 0 1400 440" role="img" aria-label="Time strip showing UniFi bug occurrences over time in the upper panel and BI signals on the same monthly axis in the lower panel">
+      <!-- ============ Panel A: UniFi (top) ============ -->
+      <text class="hs-panel-tag" x="80" y="32">A &middot; Access &amp; identity layer</text>
+      <text class="hs-panel-sub" x="80" y="48">Bug occurrence intensity at the cred-server and unifi-access binaries. Illustrative shape, not to scale.</text>
+
+      <!-- Panel A bounds: x 80..1320, y 60..200 -->
+      <!-- Subtle phase bands (April column area for phases 1-3, May for phase 4) -->
+      <!-- Apr column center: 1134, half-width 62. April spans 1072..1196 -->
+      <rect class="hs-phase-band" x="1072" y="60" width="124" height="140" opacity="0.045" />
+      <!-- Early May before reboot (May 1..13): in May column 1196..1248 -->
+      <rect class="hs-phase-band" x="1196" y="60" width="52" height="140" opacity="0.045" />
+      <!-- Phase 4 (May 13..19) lighter: 1248..1320 -->
+      <rect class="hs-phase-band" x="1248" y="60" width="72" height="140" opacity="0.02" />
+
+      <!-- Bug intensity area (hand-drawn arc) -->
+      <path class="hs-area-u" d="M 80 196 L 1060 196 C 1080 196 1095 194 1105 188 C 1115 180 1124 138 1134 92 C 1144 78 1158 72 1180 70 L 1210 80 L 1235 90 L 1248 96 L 1248 196 L 1320 196 Z" />
+      <path class="hs-area-stroke" d="M 80 196 L 1060 196 C 1080 196 1095 194 1105 188 C 1115 180 1124 138 1134 92 C 1144 78 1158 72 1180 70 L 1210 80 L 1235 90 L 1248 96" />
+      <!-- After reboot, flat baseline -->
+      <path class="hs-area-stroke" d="M 1248 196 L 1320 196" />
+
+      <!-- Phase tags inside panel A -->
+      <line class="hs-leader-l" x1="1095" y1="180" x2="1095" y2="208" />
+      <text class="hs-phase-tag" x="1095" y="220" text-anchor="middle">Ph. 1</text>
+      <line class="hs-leader-l" x1="1148" y1="80" x2="1148" y2="208" />
+      <text class="hs-phase-tag" x="1148" y="220" text-anchor="middle">Ph. 2</text>
+      <line class="hs-leader-l" x1="1215" y1="83" x2="1215" y2="208" />
+      <text class="hs-phase-tag" x="1215" y="220" text-anchor="middle">Ph. 3</text>
+      <line class="hs-leader-l" x1="1285" y1="196" x2="1285" y2="208" />
+      <text class="hs-phase-tag" x="1285" y="220" text-anchor="middle">Ph. 4</text>
+
+      <!-- Callout annotations panel A. Chronological reading order: 17&nbsp;Apr above Apr 27. -->
+      <text class="hs-annot" x="950" y="68">17&nbsp;Apr, acute crisis</text>
+      <line class="hs-leader" x1="1045" y1="71" x2="1105" y2="186" />
+
+      <text class="hs-annot" x="950" y="100">Apr 27, peak: 1,600 429/hr</text>
+      <line class="hs-leader" x1="1122" y1="95" x2="1170" y2="74" />
+
+      <text class="hs-annot-l" x="1262" y="118">Quiet,</text>
+      <text class="hs-annot-l" x="1262" y="134">5 days +</text>
+      <line class="hs-leader-l" x1="1280" y1="138" x2="1295" y2="196" />
+
+      <!-- Panel A y-label -->
+      <text class="hs-ylbl" x="76" y="68" text-anchor="end">peak (rel.)</text>
+      <text class="hs-ylbl" x="76" y="196" text-anchor="end">0</text>
+
+      <!-- ============ Axis (months) ============ -->
+      <line class="hs-axis" x1="80" y1="240" x2="1320" y2="240" />
+
+      <!-- Tick marks at month boundaries (10 columns) -->
+      <!-- Month boundaries at x = 80, 204, 328, 452, 576, 700, 824, 948, 1072, 1196, 1320 -->
+      <line class="hs-tick" x1="80" y1="236" x2="80" y2="244" />
+      <line class="hs-tick" x1="204" y1="236" x2="204" y2="244" />
+      <line class="hs-tick" x1="328" y1="236" x2="328" y2="244" />
+      <line class="hs-tick" x1="452" y1="236" x2="452" y2="244" />
+      <line class="hs-tick" x1="576" y1="236" x2="576" y2="244" />
+      <line class="hs-tick" x1="700" y1="236" x2="700" y2="244" />
+      <line class="hs-tick" x1="824" y1="236" x2="824" y2="244" />
+      <line class="hs-tick" x1="948" y1="236" x2="948" y2="244" />
+      <line class="hs-tick" x1="1072" y1="236" x2="1072" y2="244" />
+      <line class="hs-tick" x1="1196" y1="236" x2="1196" y2="244" />
+      <line class="hs-tick" x1="1320" y1="236" x2="1320" y2="244" />
+
+      <!-- Month labels at column centers -->
+      <text class="hs-mlbl" x="142"  y="262" text-anchor="middle">Aug</text>
+      <text class="hs-mlbl" x="266"  y="262" text-anchor="middle">Sep</text>
+      <text class="hs-mlbl" x="390"  y="262" text-anchor="middle">Oct</text>
+      <text class="hs-mlbl" x="514"  y="262" text-anchor="middle">Nov</text>
+      <text class="hs-mlbl" x="638"  y="262" text-anchor="middle">Dec</text>
+      <text class="hs-mlbl" x="762"  y="262" text-anchor="middle">Jan</text>
+      <text class="hs-mlbl" x="886"  y="262" text-anchor="middle">Feb</text>
+      <text class="hs-mlbl" x="1010" y="262" text-anchor="middle">Mar</text>
+      <text class="hs-mlbl" x="1134" y="262" text-anchor="middle">Apr</text>
+      <text class="hs-mlbl" x="1258" y="262" text-anchor="middle">May</text>
+      <!-- Year markers -->
+      <text class="hs-mlbl" x="142"  y="276" text-anchor="middle">25</text>
+      <text class="hs-mlbl" x="762"  y="276" text-anchor="middle">26</text>
+
+      <!-- EFG REBOOT vertical line crossing both panels -->
+      <line class="hs-reboot" x1="1248" y1="60" x2="1248" y2="400" />
+      <text class="hs-callout" x="1252" y="285" style="fill:var(--secondary);">EFG REBOOT</text>
+      <text class="hs-callout" x="1252" y="298" style="fill:var(--secondary);">13 MAY 13:31 PDT</text>
+
+      <!-- ============ Panel B: BI (bottom) ============ -->
+      <text class="hs-panel-tag" x="80" y="316">B &middot; Member &amp; business layer</text>
+      <text class="hs-panel-sub" x="80" y="332">Monthly transactional emails blocked (bars) and monthly cancellations (line).</text>
+
+      <!-- Panel B baseline -->
+      <line class="hs-axis" x1="80" y1="400" x2="1320" y2="400" />
+
+      <!-- Blocked email bars (scale max 10000 → 50px max bar height) -->
+      <!-- Bar widths: 32, centered at month_center, height = blocked/10000 * 50, anchored to baseline y=400 -->
+      <!-- Aug 36 -->
+      <rect class="hs-bar" x="126" y="399.8" width="32" height="0.2" />
+      <!-- Sep 43 -->
+      <rect class="hs-bar" x="250" y="399.8" width="32" height="0.2" />
+      <!-- Oct 73 -->
+      <rect class="hs-bar" x="374" y="399.6" width="32" height="0.4" />
+      <!-- Nov 1042 -->
+      <rect class="hs-bar" x="498" y="394.8" width="32" height="5.2" />
+      <!-- Dec 1369 -->
+      <rect class="hs-bar" x="622" y="393.2" width="32" height="6.8" />
+      <!-- Jan 1327 -->
+      <rect class="hs-bar" x="746" y="393.4" width="32" height="6.6" />
+      <!-- Feb 8577 -->
+      <rect class="hs-bar-l" x="870" y="357.1" width="32" height="42.9" />
+      <!-- Mar 8872 -->
+      <rect class="hs-bar-l" x="994" y="355.6" width="32" height="44.4" />
+      <!-- Apr 258 -->
+      <rect class="hs-bar" x="1118" y="398.7" width="32" height="1.3" />
+      <!-- May (partial) 332 -->
+      <rect class="hs-bar" x="1242" y="398.3" width="32" height="1.7" />
+
+      <!-- Cancellations line (scale 0..120 → y range 400..340, 60px) -->
+      <!-- (Aug 33,Sep 51,Oct 43,Nov 31,Dec 49,Jan 42,Feb 43,Mar 72,Apr 107,May 57) -->
+      <!-- y = 400 - cancels/120 * 60 -->
+      <polyline class="hs-line-c" points="142,383.5 266,374.5 390,378.5 514,384.5 638,375.5 762,379 886,378.5 1010,364 1134,346.5 1258,371.5" />
+      <!-- Dots -->
+      <circle class="hs-dot-c" cx="142" cy="383.5" r="3" />
+      <circle class="hs-dot-c" cx="266" cy="374.5" r="3" />
+      <circle class="hs-dot-c" cx="390" cy="378.5" r="3" />
+      <circle class="hs-dot-c" cx="514" cy="384.5" r="3" />
+      <circle class="hs-dot-c" cx="638" cy="375.5" r="3" />
+      <circle class="hs-dot-c" cx="762" cy="379" r="3" />
+      <circle class="hs-dot-c" cx="886" cy="378.5" r="3" />
+      <circle class="hs-dot-c" cx="1010" cy="364" r="3" />
+      <circle class="hs-dot-c hl" cx="1134" cy="346.5" r="4" />
+      <circle class="hs-dot-c" cx="1258" cy="371.5" r="3" />
+
+      <!-- Panel B annotations -->
+      <text class="hs-annot-l" x="700" y="320">Feb-Mar deliverability event,</text>
+      <text class="hs-annot-l" x="700" y="334">17,449 blocked</text>
+      <line class="hs-leader-l" x1="830" y1="338" x2="940" y2="358" />
+
+      <text class="hs-annot-l" x="1234" y="318" text-anchor="end">April spike,</text>
+      <text class="hs-annot-l" x="1234" y="332" text-anchor="end">107 cancels, MRR redacted</text>
+      <line class="hs-leader-l" x1="1180" y1="336" x2="1140" y2="350" />
+
+      <!-- Y-axis labels for Panel B -->
+      <text class="hs-ylbl" x="76" y="358" text-anchor="end">10k blocked</text>
+      <text class="hs-ylbl" x="76" y="403" text-anchor="end">0</text>
+      <text class="hs-ylbl" x="1324" y="348" text-anchor="start">120 cancels</text>
+      <text class="hs-ylbl" x="1324" y="403" text-anchor="start">0</text>
+
+      <!-- Cross-panel correlation: subtle curve from Feb-Mar block top to April dot -->
+      <path d="M 1015 358 Q 1080 388 1130 349" fill="none" stroke="var(--gray)" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.5" />
+      <text class="hs-annot-l" x="1088" y="392" text-anchor="middle" style="font-style:italic;">two-month delay</text>
+    </svg>
+    </div>
+
+    <p class="hs-cap"><b>Reading the chart.</b> Panel&nbsp;A: the access layer was loud for a month, then quiet. The bug-occurrence shape collapses to baseline at the EFG reboot on 13&nbsp;May and has held flat for five days. Panel&nbsp;B: the business layer got loud two months earlier. The blocked-email spike in February and March is the upstream cause of April's cancellation peak; the curved leader between them is the time the symptom took to surface.</p>
+  </section>
+
+  <!-- ============== AXIS-RULE break ============== -->
+  <div class="axis-rule" aria-hidden="true">
+    <svg viewBox="0 0 1400 28" preserveAspectRatio="none">
+      <line class="ar-line" x1="0" y1="14" x2="1400" y2="14" />
+      <line class="ar-tick"  x1="0" y1="9"  x2="0" y2="19" />
+      <line class="ar-tick-l" x1="120" y1="11" x2="120" y2="17" />
+      <line class="ar-tick"  x1="270" y1="10" x2="270" y2="18" />
+      <line class="ar-tick"  x1="455" y1="11" x2="455" y2="17" />
+      <line class="ar-tick-l" x1="640" y1="10" x2="640" y2="18" />
+      <line class="ar-tick"  x1="820" y1="11" x2="820" y2="17" />
+      <line class="ar-tick"  x1="1010" y1="11" x2="1010" y2="17" />
+      <line class="ar-tick-l" x1="1180" y1="10" x2="1180" y2="18" />
+      <line class="ar-tick"  x1="1330" y1="11" x2="1330" y2="17" />
+      <line class="ar-tick"  x1="1400" y1="9"  x2="1400" y2="19" />
+    </svg>
+  </div>
+
+  <!-- ==================== CHAPTER ONE ==================== -->
+  <section class="chapter" id="ch-investigation">
+    <h2 class="chapter">The UniFi Fabrics investigation</h2>
+    <p class="chapter-lede">Five weeks chasing a cascade of bugs through Ubiquiti's UniFi Access and Identity stack at a client site. The technical work belongs to the client's infrastructure engineer and Ubiquiti; what follows is the investigation as the engineer structured it, translated for an executive reader.</p>
+
+    <dl class="terms" aria-label="Terms used in this chapter">
+      <div><dt>EFG</dt><dd>the site's UniFi gateway, which runs the access controller</dd></div>
+      <div><dt>UNVR</dt><dd>UniFi video recorders that mirror identity and face data</dd></div>
+      <div><dt>cred-server</dt><dd>the credential service that issues and checks door access</dd></div>
+      <div><dt>watermill</dt><dd>the event queue that syncs changes between those devices</dd></div>
+      <div><dt>429</dt><dd>HTTP &ldquo;too many requests&rdquo;: a rate limiter refusing a call</dd></div>
+    </dl>
+
+    <div class="data-strip">
+      <div>
+        <span class="n">15</span>
+        <span class="lbl">numbered bugs</span>
+        <span class="delta"><b>4 mechanism families</b></span>
+      </div>
+      <div>
+        <span class="n">5 weeks</span>
+        <span class="lbl">17&nbsp;Apr to 18&nbsp;May&nbsp;2026</span>
+        <span class="delta">Site: EFG, <span class="nobr">UNVR-SF</span>, <span class="nobr">UNVR-Cams</span></span>
+      </div>
+      <div>
+        <span class="n">5d&nbsp;1h</span>
+        <span class="lbl">cred-server uptime, current</span>
+        <span class="delta"><b>record</b>, 296&nbsp;MB RSS, no leak</span>
+      </div>
+      <div>
+        <span class="n"><span class="redact" style="--w:7" role="img" aria-label="redacted case number" title="Support case number redacted"></span></span>
+        <span class="lbl">active Ubiquiti support case</span>
+        <span class="delta">multi-bug filing</span>
+      </div>
+    </div>
+
+    <h3>Executive summary</h3>
+    <p>As of 18&nbsp;May&nbsp;2026, all chronic high-impact bugs are dormant. The cred-server has held a single PID for five days and one hour, a record across the investigation. The rate-limit storm, the watermill deadlock, and the access-policy panic family have each been silent for more than five straight days, and the forced bounces have stopped.</p>
+    <p>Two things did it: Ubiquiti firmware bumps shipped during the window (<code>unifi-credential-server</code> through 1.6.119, <code>unifi-access</code> to 4.2.27, <code>unifi-core</code> to 5.1.104) and a clean EFG reboot on 13&nbsp;May that drained accumulated state. They landed together, so the credit can't be split. What we can say is that this quiet behaves differently from every earlier reboot's relief. It has held a full week without rebound; earlier reboots bought hours, or a few days at best.</p>
+    <p>One real issue is still open: <em>Bug&nbsp;#11</em>, the face and credential restore gap. <em>149 user face records</em> are stranded on EFG and don't replicate to the UNVR, so those users re-enroll by hand until Ubiquiti ships the firmware fix. A new, minor panic family (roughly <em>70 occurrences per day</em>) fires on deactivated users' stale devices. It's cosmetic; we filed it for completeness.</p>
+
+    <h3>Timeline</h3>
+
+    <div class="disc disc-phase" data-open>
+      <h4 class="phase"><button type="button" class="disc-btn" aria-expanded="true" aria-controls="disc-1"><span class="phase-tag">Phase 1</span>Acute crisis, 17&nbsp;April</button></h4>
+      <div class="disc-body" id="disc-1">
+      <p>Door access, policy saves, and credential sync all degraded the same morning. The app told users to <em>"ensure your device is connected to the internet."</em> Wrong story. The logs told the real one: the cred-server's rate limiter was 429-throttling the UCS-agent's internal sync calls; the timeouts hit <code>assert.NoError</code> sites (a Go pattern that panics on a returned error instead of handling it); those panicked; and the panic-catching middleware returned <code>HTTP 200</code> with an empty body, swallowing the failure whole. Operators saw a spinner, a timeout, then a network error that pointed nowhere near the cause. The doors were not the&nbsp;doors.</p>
+      <p>Getting the doors back that day took database-level surgery on the UNVR's watermill queue, then a full EFG reboot. A phantom replay in the iOS Access app's audit log (Bug&nbsp;#9) traced to non-idempotent event emission in the UNVR's ingest path for pre-LDAP orphans; a Fabric-level DELETE for affected users mitigated it.</p>
+      </div>
+    </div>
+
+    <div class="disc disc-phase">
+      <h4 class="phase"><button type="button" class="disc-btn" aria-expanded="true" aria-controls="disc-2"><span class="phase-tag">Phase 2</span>The bounce treadmill, late April</button></h4>
+      <div class="disc-body" id="disc-2">
+      <p>Each cred-server bounce bought three to six hours before the rate-limit storm rebuilt to user-impacting levels, and each window ran shorter than the last. The team named it "the bounce treadmill." By 27&nbsp;April the 429 rate had climbed to roughly <em>1,600&nbsp;per hour</em>, the watermill was deadlocked at <em>1,988 pending rows over three and a half days</em>, and the cred-server's <code>json_systemlog</code> id collision (Bug&nbsp;#1) was firing roughly <em>3,600 times per hour</em> in the background.</p>
+      <p>Most of the support-case follow-up files (one per investigation day) came out of this phase, and so did the automation: scheduled status reports to the <code>#unifi-fabric</code> Slack channel, a <code>/restart-credserver</code> skill for ad-hoc bounces, and the watermill-surgery and phantom-replay fixes written up as reusable playbooks. The method settled too. SSH-based log review; corrected source-of-truth log paths (the 429s lived in <code>nginx-identity-hub-access.log</code>, not the usual access log); per-cgroup memory accounting on the UNVR.</p>
+      </div>
+    </div>
+
+    <div class="disc disc-phase">
+      <h4 class="phase"><button type="button" class="disc-btn" aria-expanded="true" aria-controls="disc-3"><span class="phase-tag">Phase 3</span>Bug&nbsp;#15, 6&nbsp;May</button></h4>
+      <div class="disc-body" id="disc-3">
+      <p>A user-visible <em>"Unable to send invitation"</em> error turned out to be a new panic site (<code>SendInvitation</code> in cred-server) on the same <code>assert.NoError</code> anti-pattern as April's panic family. Underneath it, all <em>2,144 rows</em> in the <code>invitation</code> table, going back four months, carried <code>expired_at = 0001-01-01 00:00:00+00</code>: the Go zero value, because the insert path never wrote the field. A read function looked for a row with <code>expired_at &gt; now()</code>, found none, returned an error, and <code>assert.NoError</code> panicked. PanicHandler returned 200 with an empty body; the UI's notification websocket eventually timed out and surfaced the same misleading "internet connection" error.</p>
+      <p>Filed as Bug&nbsp;#15 on case <span class="redact" style="--w:7" role="img" aria-label="redacted case number" title="Support case number redacted"></span> with full stack trace, data condition, and a verified <code>GET /invitation_link</code> workaround. Same bug class as Bug&nbsp;#12, different binary.</p>
+      </div>
+    </div>
+
+    <div class="disc disc-phase">
+      <h4 class="phase"><button type="button" class="disc-btn" aria-expanded="true" aria-controls="disc-4"><span class="phase-tag">Phase 4</span>Quiet, 13&nbsp;May onward</button></h4>
+      <div class="disc-body" id="disc-4">
+      <p>EFG rebooted at 13:31 PDT on 13&nbsp;May. The chronic bugs went dormant and held a full week with no forced bounce (per-bug numbers in the grid below). Earlier reboots bought a honeymoon. This quiet says the underlying conditions changed too, beyond the local state.</p>
+      </div>
+    </div>
+
+    <h3>Root causes</h3>
+    <p>The fifteen numbered bugs cluster into four mechanism families. An executive reader doesn't need the engineering detail; the table is here for its shape. One anti-pattern, propagated through four mechanisms, into fifteen surface symptoms.</p>
+
+    <table class="taxonomy">
+      <thead>
+        <tr><th></th><th>Family</th><th>Bugs</th><th>Mechanism, plain</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="glyph">
+            <svg viewBox="0 0 44 44" role="img" aria-label="200 OK rectangle with hidden spike underneath">
+              <!-- Spike beneath -->
+              <path class="gl-fill-l" d="M 6 38 L 14 38 L 16 22 L 20 30 L 24 14 L 28 30 L 32 22 L 34 38 L 38 38 Z" opacity="0.85" />
+              <!-- Masking rectangle (200 OK) -->
+              <g class="gl-act gl-lift">
+              <rect x="4" y="14" width="36" height="14" fill="var(--paper)" stroke="var(--darkgray)" stroke-width="1.1" />
+              <text x="22" y="24" text-anchor="middle" class="gl-lbl">200 OK</text>
+              <!-- Caret hint that something is hidden -->
+              <line class="gl-line" x1="22" y1="28" x2="22" y2="33" />
+              <line class="gl-line" x1="19" y1="30" x2="22" y2="33" />
+              <line class="gl-line" x1="25" y1="30" x2="22" y2="33" />
+              </g>
+            </svg>
+          </td>
+          <td class="family">assert.NoError panic</td>
+          <td class="bugs">#8, <a href="#bug-10">#10</a>, <a href="#bug-11">#11</a>, <a href="#bug-12">#12</a>, <a href="#bug-13">#13</a>, <a href="#bug-14">#14</a>, <a href="#bug-15">#15</a></td>
+          <td class="mech">Recoverable errors wrapped in <code>assert.NoError</code> panic instead of returning. Panic-catching middleware returns HTTP 200 with empty body. Caller sees success. Downstream state diverges silently.</td>
+        </tr>
+        <tr>
+          <td class="glyph">
+            <svg viewBox="0 0 44 44" role="img" aria-label="Throttling cascade, arrows getting shorter">
+              <g class="gl-act gl-throttle">
+              <line class="gl-line-l" x1="6" y1="12" x2="32" y2="12" />
+              <polyline class="gl-line-l" points="28,8 32,12 28,16" fill="none" />
+              <line class="gl-line-l" x1="6" y1="20" x2="24" y2="20" />
+              <polyline class="gl-line-l" points="20,16 24,20 20,24" fill="none" />
+              <line class="gl-line-l" x1="6" y1="28" x2="16" y2="28" />
+              <polyline class="gl-line-l" points="12,24 16,28 12,32" fill="none" />
+              </g>
+              <line class="gl-line" x1="6" y1="36" x2="9" y2="36" />
+            </svg>
+          </td>
+          <td class="family">Rate-limiter starvation</td>
+          <td class="bugs"><a href="#bug-2">#2</a> plus secondary chain</td>
+          <td class="mech">Per-actor token buckets had no exemption for the internal sync path. After any cred-server downtime, every reconnect 429'd, the agent backed off, and the system never caught up. Throttling cascaded into timeouts at the panic sites above.</td>
+        </tr>
+        <tr>
+          <td class="glyph">
+            <svg viewBox="0 0 44 44" role="img" aria-label="Circular loop with no exit">
+              <g class="gl-act gl-loop">
+              <path class="gl-line" d="M 22 8 A 14 14 0 1 1 8 22" fill="none" />
+              <path class="gl-line-l" d="M 8 22 A 14 14 0 0 0 22 36" fill="none" />
+              <path class="gl-line-l" d="M 22 36 A 14 14 0 0 0 36 22" fill="none" />
+              <path class="gl-line-l" d="M 36 22 A 14 14 0 0 0 22 8" fill="none" />
+              <polyline class="gl-line-l" points="18,10 22,8 22,12" fill="none" />
+              </g>
+              <!-- X over exit (no DLQ) -->
+              <line class="gl-line-l" x1="36" y1="22" x2="40" y2="22" />
+              <line class="gl-line-l" x1="38" y1="20" x2="40" y2="22" />
+              <line class="gl-line-l" x1="38" y1="24" x2="40" y2="22" />
+              <line class="gl-line" x1="38" y1="18" x2="42" y2="26" />
+              <line class="gl-line" x1="38" y1="26" x2="42" y2="18" />
+            </svg>
+          </td>
+          <td class="family">Queue without dead-letter</td>
+          <td class="bugs"><a href="#bug-3">#3</a></td>
+          <td class="mech">The watermill consumer retried failed batches indefinitely. Any non-retryable error deadlocked the cursor. Cleared only by database surgery or a full reboot.</td>
+        </tr>
+        <tr>
+          <td class="glyph">
+            <svg viewBox="0 0 44 44" role="img" aria-label="Two stores that should mirror, diverging on one record">
+              <!-- Left column (source store) -->
+              <rect class="gl-fill" x="4" y="8"  width="12" height="3" />
+              <rect class="gl-fill" x="4" y="14" width="12" height="3" />
+              <rect class="gl-fill-l" x="4" y="20" width="12" height="3" />
+              <rect class="gl-fill" x="4" y="26" width="12" height="3" />
+              <rect class="gl-fill" x="4" y="32" width="12" height="3" />
+              <!-- Right column (mirror store), one row missing at y=20 -->
+              <rect class="gl-fill" x="28" y="8"  width="12" height="3" />
+              <rect class="gl-fill" x="28" y="14" width="12" height="3" />
+              <rect class="gl-fill" x="28" y="26" width="12" height="3" />
+              <rect class="gl-fill" x="28" y="32" width="12" height="3" />
+              <!-- Matching connections (gray, full) -->
+              <line class="gl-line" x1="16" y1="9.5"  x2="28" y2="9.5" />
+              <line class="gl-line" x1="16" y1="15.5" x2="28" y2="15.5" />
+              <line class="gl-line" x1="16" y1="27.5" x2="28" y2="27.5" />
+              <line class="gl-line" x1="16" y1="33.5" x2="28" y2="33.5" />
+              <!-- Broken sync at the diverged row (violet, dashed, stops short) -->
+              <line class="gl-line-l gl-act gl-reach" x1="16" y1="21.5" x2="24" y2="21.5" stroke-dasharray="1.5 1.5" />
+            </svg>
+          </td>
+          <td class="family">Sync data integrity</td>
+          <td class="bugs"><a href="#bug-1">#1</a>, <a href="#bug-4">#4</a>, <a href="#bug-6">#6</a>, <a href="#bug-9">#9</a>, <a href="#bug-11">#11</a>, <a href="#bug-15">#15</a></td>
+          <td class="mech">Write-path bugs leaving fields uninitialized, id-space collisions across services, lost delete tombstones during stuck-watermill windows, and non-idempotent event emission. All visible only as user-side weirdness, never as a clean 4xx or 5xx.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>The through-line is <em>silent failure</em>. A clean 4xx or 5xx would have exposed every one of these within hours. Instead they surfaced days or weeks after the real failure: as 200 OK with an empty body, as audit-log replay on the iOS app, as state quietly drifting apart. At the executive level, the five weeks were the work of making silent failure legible.</p>
+
+    <h3 id="bug-status">Status by bug, 18&nbsp;May&nbsp;2026</h3>
+    <p class="bg-legend"><span data-tier="resolved">Resolved</span>: fixed, or down to a trickle and closed. <span data-tier="dormant">Dormant</span>: silent since the 13&nbsp;May reboot. <span data-tier="open">Open</span>: still hurts users. <span data-tier="watch">Watch</span>: no user impact now; monitored.</p>
+
+    <div class="bug-grid-group">
+      <div class="bgg-label">Resolved or dormant</div>
+      <div class="bug-grid">
+        <!-- #1 cred-server json_systemlog id collision -->
+        <div class="bg-cell" id="bug-1">
+          <div>
+            <div class="bg-head"><span class="bg-id">#1</span><span class="bg-status" data-tier="resolved">resolved</span></div>
+            <div class="bg-name">json_systemlog id collision</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then 3,600/hr, trickle">
+            <rect class="bgc-peak" x="6" y="2" width="14" height="22" />
+            <rect class="bgc-curr" x="32" y="22" width="14" height="2" />
+            <text class="bgc-val" x="54" y="10">3,600/hr</text>
+            <text class="bgc-val-l" x="54" y="23.5">trickle</text>
+          </svg>
+          <div class="bg-foot">cred-server caller-side INSERTs, treating as <b>resolved</b>.</div>
+        </div>
+
+        <!-- #2 cred-server ActorRateLimitMiddleware 429 storm -->
+        <div class="bg-cell" id="bug-2">
+          <div>
+            <div class="bg-head"><span class="bg-id">#2</span><span class="bg-status" data-tier="dormant">dormant</span></div>
+            <div class="bg-name">Rate-limit 429 storm</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then 1,600/hr, 0/hr · 5+ days">
+            <rect class="bgc-peak" x="6" y="6" width="14" height="18" />
+            <rect class="bgc-curr" x="32" y="23" width="14" height="1" />
+            <line class="bgc-zero" x1="2" y1="24" x2="48" y2="24" />
+            <text class="bgc-val" x="54" y="10">1,600/hr</text>
+            <text class="bgc-val-l" x="54" y="23.5"><tspan style="font-weight:600">0/hr</tspan> · 5+ days</text>
+          </svg>
+          <div class="bg-foot">Zero across all nginx tiers since <b>13&nbsp;May reboot</b>.</div>
+        </div>
+
+        <!-- #3 UCS watermill deadlock -->
+        <div class="bg-cell" id="bug-3">
+          <div>
+            <div class="bg-head"><span class="bg-id">#3</span><span class="bg-status" data-tier="dormant">dormant</span></div>
+            <div class="bg-name">Watermill deadlock</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then 1,988 stuck, 0 pending">
+            <rect class="bgc-peak" x="6" y="4" width="14" height="20" />
+            <rect class="bgc-curr" x="32" y="23" width="14" height="1" />
+            <text class="bgc-val" x="54" y="10">1,988 stuck</text>
+            <text class="bgc-val-l" x="54" y="23.5"><tspan style="font-weight:600">0 pending</tspan></text>
+          </svg>
+          <div class="bg-foot">Cursor advancing normally. Held a full week.</div>
+        </div>
+
+        <!-- #7 cred-server goroutine leak -->
+        <div class="bg-cell" id="bug-7">
+          <div>
+            <div class="bg-head"><span class="bg-id">#7</span><span class="bg-status" data-tier="resolved">resolved</span></div>
+            <div class="bg-name">Goroutine leak</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then 1,097 / 10s, confirmed fixed">
+            <rect class="bgc-peak" x="6" y="3" width="14" height="21" />
+            <rect class="bgc-curr" x="32" y="24" width="14" height="0.5" />
+            <text class="bgc-val" x="54" y="10">1,097 / 10s</text>
+            <text class="bgc-val-l" x="54" y="23.5"><tspan style="font-weight:600">confirmed fixed</tspan></text>
+          </svg>
+          <div class="bg-foot">In <b>1.6.115+</b>, holds through 1.6.119.</div>
+        </div>
+
+        <!-- #9 phantom audit replay on iOS app -->
+        <div class="bg-cell" id="bug-9">
+          <div>
+            <div class="bg-head"><span class="bg-id">#9</span><span class="bg-status" data-tier="dormant">dormant</span></div>
+            <div class="bg-name">Phantom audit replay (iOS)</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then 30-min cycles, silent">
+            <rect class="bgc-peak" x="6" y="6" width="3" height="18" />
+            <rect class="bgc-peak" x="11" y="6" width="3" height="18" />
+            <rect class="bgc-peak" x="16" y="6" width="3" height="18" />
+            <rect class="bgc-curr" x="32" y="24" width="14" height="0.5" />
+            <text class="bgc-val" x="54" y="10">30-min cycles</text>
+            <text class="bgc-val-l" x="54" y="23.5"><tspan style="font-weight:600">silent</tspan></text>
+          </svg>
+          <div class="bg-foot">Fabric DELETE workaround validated.</div>
+        </div>
+
+        <!-- #12 unifi-access access-policy panics -->
+        <div class="bg-cell" id="bug-12">
+          <div>
+            <div class="bg-head"><span class="bg-id">#12</span><span class="bg-status" data-tier="dormant">dormant</span></div>
+            <div class="bg-name">Access-policy panics</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then 21 / day, 0 across 7 days">
+            <rect class="bgc-peak" x="6" y="8" width="14" height="16" />
+            <rect class="bgc-curr" x="32" y="23" width="14" height="1" />
+            <text class="bgc-val" x="54" y="10">21 / day</text>
+            <text class="bgc-val-l" x="54" y="23.5"><tspan style="font-weight:600">0 across 7 days</tspan></text>
+          </svg>
+          <div class="bg-foot">UpdateAccessPolicy +&nbsp;CreateAccessPolicy.</div>
+        </div>
+
+        <!-- #13 unifi-access visitor controller panic -->
+        <div class="bg-cell" id="bug-13">
+          <div>
+            <div class="bg-head"><span class="bg-id">#13</span><span class="bg-status" data-tier="dormant">dormant</span></div>
+            <div class="bg-name">Visitor controller panic</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then 6 / day, dormant">
+            <rect class="bgc-peak" x="6" y="14" width="14" height="10" />
+            <rect class="bgc-curr" x="32" y="23" width="14" height="1" />
+            <text class="bgc-val" x="54" y="10">6 / day</text>
+            <text class="bgc-val-l" x="54" y="23.5"><tspan style="font-weight:600">dormant</tspan></text>
+          </svg>
+          <div class="bg-foot">No recent occurrences.</div>
+        </div>
+
+        <!-- #14 result.go response-side panic -->
+        <div class="bg-cell" id="bug-14">
+          <div>
+            <div class="bg-head"><span class="bg-id">#14</span><span class="bg-status" data-tier="dormant">dormant</span></div>
+            <div class="bg-name">result.go response panic</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then 42 / day, dormant">
+            <rect class="bgc-peak" x="6" y="4" width="14" height="20" />
+            <rect class="bgc-curr" x="32" y="23" width="14" height="1" />
+            <text class="bgc-val" x="54" y="10">42 / day</text>
+            <text class="bgc-val-l" x="54" y="23.5"><tspan style="font-weight:600">dormant</tspan></text>
+          </svg>
+          <div class="bg-foot">Response-side panic, <span class="nobr">unifi-access</span>.</div>
+        </div>
+
+        <!-- #15 cred-server SendInvitation panic + zero-value expired_at -->
+        <div class="bg-cell" id="bug-15">
+          <div>
+            <div class="bg-head"><span class="bg-id">#15</span><span class="bg-status" data-tier="dormant">dormant</span></div>
+            <div class="bg-name">SendInvitation panic</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then 18+/day, 0 / 5+ days">
+            <rect class="bgc-peak" x="6" y="10" width="14" height="14" />
+            <rect class="bgc-curr" x="32" y="23" width="14" height="1" />
+            <text class="bgc-val" x="54" y="10">18+/day</text>
+            <text class="bgc-val-l" x="54" y="23.5"><tspan style="font-weight:600">0 / 5+ days</tspan></text>
+          </svg>
+          <div class="bg-foot">2,144 invitation rows had zero-value <code>expired_at</code>. Workaround live.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bug-grid-group">
+      <div class="bgg-label">Open, or on watch</div>
+      <div class="bug-grid">
+        <!-- #11 ProvisonUserFaces + face restore gap -->
+        <div class="bg-cell open" id="bug-11">
+          <div>
+            <div class="bg-head"><span class="bg-id">#11</span><span class="bg-status" data-tier="open">open</span></div>
+            <div class="bg-name">Face / credential restore gap</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then 149 stranded, awaiting firmware">
+            <rect class="bgc-curr" x="6" y="3" width="14" height="21" />
+            <text class="bgc-val-l" x="36" y="10"><tspan style="font-weight:600">149 stranded</tspan></text>
+            <text class="bgc-val" x="36" y="23.5">awaiting firmware</text>
+          </svg>
+          <div class="bg-foot">149 user faces on EFG <b>not replicating</b> to UNVR. Affected users re-enrolling manually.</div>
+        </div>
+
+        <!-- #6 lost delete tombstones -->
+        <div class="bg-cell" id="bug-6">
+          <div>
+            <div class="bg-head"><span class="bg-id">#6</span><span class="bg-status" data-tier="watch">watch</span></div>
+            <div class="bg-name">Lost delete tombstones</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then under review, since 20 Apr">
+            <rect class="bgc-peak" x="6" y="10" width="14" height="14" opacity="0.4" />
+            <text class="bgc-val" x="36" y="10">under review</text>
+            <text class="bgc-val-l" x="36" y="23.5"><tspan style="font-weight:600">since 20 Apr</tspan></text>
+          </svg>
+          <div class="bg-foot">Stuck-watermill windows lose tombstones. With Ubiquiti.</div>
+        </div>
+
+        <!-- #10 assertHasScopes panic -->
+        <div class="bg-cell" id="bug-10">
+          <div>
+            <div class="bg-head"><span class="bg-id">#10</span><span class="bg-status" data-tier="watch">watch</span></div>
+            <div class="bg-name">assertHasScopes panic, V2 router</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then last 21 Apr, verify, 5.1.104">
+            <rect class="bgc-peak" x="6" y="12" width="14" height="12" />
+            <rect class="bgc-curr" x="32" y="23" width="14" height="1" opacity="0.5" />
+            <text class="bgc-val" x="54" y="10">last 21 Apr</text>
+            <text class="bgc-val-l" x="54" y="23.5"><tspan style="font-weight:600">verify, 5.1.104</tspan></text>
+          </svg>
+          <div class="bg-foot">Seen on 5.1.95. Confirm against current.</div>
+        </div>
+
+        <!-- #5 UCS-agent HTTP pool wedge -->
+        <div class="bg-cell" id="bug-5">
+          <div>
+            <div class="bg-head"><span class="bg-id">#5</span><span class="bg-status" data-tier="watch">watch</span></div>
+            <div class="bg-name">UCS-agent HTTP pool wedge</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then not exercised, latent risk">
+            <rect class="bgc-peak" x="6" y="14" width="14" height="10" opacity="0.4" />
+            <text class="bgc-val" x="36" y="10">not exercised</text>
+            <text class="bgc-val-l" x="36" y="23.5"><tspan style="font-weight:600">latent risk</tspan></text>
+          </svg>
+          <div class="bg-foot">Returns if Bug&nbsp;#2 returns. No self-healing path.</div>
+        </div>
+
+        <!-- #4 msr memory ceiling on UNVR -->
+        <div class="bg-cell" id="bug-4">
+          <div>
+            <div class="bg-head"><span class="bg-id">#4</span><span class="bg-status" data-tier="watch">watch</span></div>
+            <div class="bg-name">UNVR msr memory ceiling</div>
+          </div>
+          <svg class="bg-chart" viewBox="0 0 140 26" preserveAspectRatio="xMinYMid meet" role="img" aria-label="Then 1.54M evts, 0 OOM kills">
+            <rect class="bgc-peak" x="6" y="10" width="14" height="14" />
+            <rect class="bgc-peak" x="32" y="8" width="14" height="16" opacity="0.6" />
+            <text class="bgc-val" x="54" y="10">1.54M evts</text>
+            <text class="bgc-val-l" x="54" y="23.5"><tspan style="font-weight:600">0 OOM kills</tspan></text>
+          </svg>
+          <div class="bg-foot">Counter incrementing but stable. <b>Benign</b>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bug-grid-group">
+      <div class="bgg-label">New finding, on watch</div>
+      <div class="bug-grid">
+        <div class="bg-cell cosmetic" style="grid-column: span 2; min-height: 100px;">
+          <div>
+            <div class="bg-head"><span class="bg-id">~70/d</span><span class="bg-status" data-tier="watch">watch</span></div>
+            <div class="bg-name">Deactivated-device panic family</div>
+          </div>
+          <div class="bg-foot" style="max-width:60ch;"><code>BindPushToken</code>, <code>CredAuthLogin</code>, <code>GetUserCredentialById</code>: every occurrence is on a deactivated user's stale device that already has no access. Same anti-pattern as #12 and #15. <b>No operational impact</b>; filed on case <span class="redact" style="--w:7" role="img" aria-label="redacted case number" title="Support case number redacted"></span> as another call-site list in the panic-anti-pattern family.</div>
+        </div>
+      </div>
+    </div>
+    <p class="bg-note">Bug&nbsp;#8 sits in the <code>assert.NoError</code> family above, but the source retrospective gives it no status line, so it has no cell here. The grid shows fourteen of the fifteen numbered bugs.</p>
+
+    <div class="disc disc-more">
+      <h3><button type="button" class="disc-btn" aria-expanded="true" aria-controls="disc-5">What changed</button></h3>
+      <div class="disc-body" id="disc-5">
+      <p>Firmware moved through the window: cred-server 1.6.115 &rarr; 1.6.117 &rarr; 1.6.119+3357; <span class="nobr">unifi-access</span> 4.2.16 &rarr; 4.2.27+11896; unifi-core 5.1.95 &rarr; 5.1.104. Bug&nbsp;#7 (the goroutine leak) was confirmed fixed in 1.6.115, and later versions plausibly account for further reductions. The <span class="nobr">unifi-access</span> panic sites (#12, #13, #14) are quiet on the current version. EFG rebooted at 13:31 PDT on 13&nbsp;May; the watermill drained immediately and the bounces stopped completely.</p>
+      <p>We can't pin the post-13-May quiet on one factor. Earlier firmware bumps in the window didn't produce this much relief, which says the reboot was load-bearing. Earlier reboots bought only hours to days, which says the firmware deltas mattered too. Most likely both. So we call it dormant, not solved.</p>
+      </div>
+    </div>
+
+    <div class="disc disc-more">
+      <h3><button type="button" class="disc-btn" aria-expanded="true" aria-controls="disc-6">Still monitoring</button></h3>
+      <div class="disc-body" id="disc-6">
+      <ul class="numbered">
+        <li><strong>Cred-server uptime trajectory.</strong> Five days and one hour is a record. Track whether it crosses seven, fourteen, thirty days without rebound. Any return of Bug&nbsp;#2 429s in the nginx tier would be the leading indicator.</li>
+        <li><strong>The MSR cgroup events_high counter.</strong> Currently at 1.54M and incrementing, but zero OOM kills. Watch for any actual kill, or for a behavior change.</li>
+        <li><strong>The cosmetic deactivated-device panic family.</strong> Currently no operational impact. Watch for any expansion to live-user call sites.</li>
+        <li><strong>Bug&nbsp;#11 face restore.</strong> No movement; faces remain stranded. Affected users currently re-enrolling on demand as a stopgap.</li>
+        <li><strong>EFG <code>/boot/firmware</code> at 100% disk.</strong> Cosmetic but blocks future firmware updates until an off-hours cleanup&nbsp;window.</li>
+      </ul>
+
+      <p>The status report still posts to <code>#unifi-fabric</code> twice daily (07:00 and 19:00 PDT); auto-bounce has been off since 13&nbsp;May. If a chronic bug regresses, it shows up there within twelve hours.</p>
+      </div>
+    </div>
+
+    <div class="disc disc-more">
+      <h3><button type="button" class="disc-btn" aria-expanded="true" aria-controls="disc-7">What we built</button></h3>
+      <div class="disc-body" id="disc-7">
+      <p>Apart from the fixes, the investigation left behind operating infrastructure that is now standing procedure. A CEO should know about these, because they make the next incident shorter.</p>
+      <ul class="numbered">
+        <li><strong>Twice-daily scheduled status report</strong> to <code>#unifi-fabric</code>, described under monitoring above.</li>
+        <li><strong>An interactive <code>/restart-credserver</code> skill</strong> for ad-hoc bounces with pre and post evidence capture and Slack notification. Now retired from routine use; on standby if Bug&nbsp;#2 returns.</li>
+        <li><strong>A watermill surgery procedure</strong> (<code>reference_watermill_surgery.md</code>): pg_dump, cursor advance, DELETE. Validated across multiple runs.&nbsp;Reusable.</li>
+        <li><strong>A phantom-replay Fabric DELETE workaround</strong> (<code>reference_phantom_replay_fix.md</code>) for pre-LDAP orphans on the iOS audit log path.</li>
+        <li><strong>The bug-class taxonomy</strong> in the table above, which makes each new panic site predictable. The cosmetic deactivated-device family took minutes to diagnose because the pattern was already known.</li>
+        <li><strong>Memory-backed investigation continuity.</strong> Every session resumes with full bug history, log paths, methodology, and operator preferences without re-discovery, across shifts, weeks, and vendors.</li>
+      </ul>
+      </div>
+    </div>
+
+    <h3>Next steps</h3>
+    <ul class="numbered">
+      <li><strong>File the deactivated-user panic call sites</strong> on case <span class="redact" style="--w:7" role="img" aria-label="redacted case number" title="Support case number redacted"></span> as an addendum to the existing <code>assert.NoError</code> anti-pattern asks.</li>
+      <li><strong>Press Ubiquiti on Bug&nbsp;#11</strong> (face restore). This is the only user-impacting issue still open.</li>
+      <li><strong>Defer cred-server bounces indefinitely</strong> unless Bug&nbsp;#2 returns. The treadmill has stopped; don't bounce prophylactically.</li>
+      <li><strong>Plan an off-hours <code>/boot/firmware</code> cleanup</strong> on EFG so the next firmware update is not gated on disk space.</li>
+      <li><strong>Hold the current monitoring posture</strong> through at least one more full firmware release cycle to confirm the remission is not version-specific to 1.6.119 / 4.2.27 / 5.1.104.</li>
+    </ul>
+
+    <p class="source-note">Authored as a client operations retrospective by the client's infrastructure engineer. Source document: <code>UniFi Fabrics Investigation, Retrospective.md</code>. The investigation involved Ubiquiti Inc. directly through case <span class="redact" style="--w:7" role="img" aria-label="redacted case number" title="Support case number redacted"></span> across the full five-week window.</p>
+    <p class="to-top"><a href="#contents">&uarr; Back to contents</a></p>
+  </section>
+
+  <!-- ============== AXIS-RULE break ============== -->
+  <div class="axis-rule" aria-hidden="true">
+    <svg viewBox="0 0 1400 28" preserveAspectRatio="none">
+      <line class="ar-line" x1="0" y1="14" x2="1400" y2="14" />
+      <line class="ar-tick" x1="0" y1="9"  x2="0" y2="19" />
+      <line class="ar-tick-l" x1="200" y1="11" x2="200" y2="17" />
+      <line class="ar-tick" x1="380" y1="11" x2="380" y2="17" />
+      <line class="ar-tick-l" x1="560" y1="10" x2="560" y2="18" />
+      <line class="ar-tick" x1="740" y1="11" x2="740" y2="17" />
+      <line class="ar-tick" x1="920" y1="11" x2="920" y2="17" />
+      <line class="ar-tick-l" x1="1100" y1="10" x2="1100" y2="18" />
+      <line class="ar-tick" x1="1280" y1="11" x2="1280" y2="17" />
+      <line class="ar-tick" x1="1400" y1="9" x2="1400" y2="19" />
+    </svg>
+  </div>
+
+  <!-- ==================== INTERSTITIAL ==================== -->
+  <div class="interstitial">
+    <p class="pivot">
+      The investigation made the access-and-identity pipe legible. The next chapter prices it: what the pipe is <em>worth</em> when it works and when it doesn't, with the BI warehouse as the measuring&nbsp;instrument.
+    </p>
+    <p class="pivot-sub">A door reader that does not open, an approval email that never arrives, a renewal reminder blocked at the gateway: the BI data puts a cost on each.</p>
+  </div>
+
+  <!-- ==================== CHAPTER TWO ==================== -->
+  <section class="chapter" id="ch-cost">
+    <h2 class="chapter">Quantified costs</h2>
+    <p class="chapter-lede">A member who can't get into the building is a churn risk. A member email that never arrives is a revenue risk. The BI warehouse measures both, and shows what the UniFi investigation was protecting in dollar terms.</p>
+
+    <!-- ROI thread 1: base at risk -->
+    <div class="roi-finding">
+      <div>
+        <div class="num">100%<span class="sub">Thread&nbsp;I&nbsp;&middot; The&nbsp;base&nbsp;at&nbsp;risk</span></div>
+        <svg class="micro" viewBox="0 0 240 100" role="img" aria-label="Active members visualized as a grid of small dots">
+          <defs>
+            <pattern id="memberDots" x="0" y="0" width="7.2" height="6" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="3" r="1.3" fill="var(--darkgray)" opacity="0.7" />
+            </pattern>
+            <pattern id="memberDotsAccent" x="0" y="0" width="7.2" height="6" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="3" r="1.3" fill="var(--secondary)" />
+            </pattern>
+          </defs>
+          <rect x="6" y="14" width="225" height="60" fill="url(#memberDots)" />
+          <!-- A few highlighted dots representing the at-risk slice -->
+          <circle cx="216" cy="17" r="1.7" fill="var(--secondary)" />
+          <circle cx="223" cy="17" r="1.7" fill="var(--secondary)" />
+          <circle cx="216" cy="23" r="1.7" fill="var(--secondary)" />
+          <circle cx="223" cy="23" r="1.7" fill="var(--secondary)" />
+          <text class="m-val" x="6" y="86">active members</text>
+          <text class="m-val-l" x="170" y="86">past_due slice</text>
+        </svg>
+      </div>
+      <div class="body">
+        <h3>Every member depends on the door</h3>
+        <p>The client's revenue is monthly member subscriptions. Every member in that base has an access credential and an expectation that the door opens on arrival. The UniFi outage on 17&nbsp;April reached that population within hours. Had it run at peak intensity, the losses would have come as a cohort, not one cancellation a month.</p>
+        <p class="link-back"><em>Read forward:</em> the investigation retired a five-week treadmill that cost operator time, member trust, and on-call hours every week it ran. That is what was at stake.</p>
+      </div>
+    </div>
+
+    <!-- ROI thread 2: comms pipe -->
+    <div class="roi-finding">
+      <div>
+        <div class="num">17,449<span class="sub">Thread&nbsp;II&nbsp;&middot; The&nbsp;comms&nbsp;pipe</span></div>
+        <svg class="micro" viewBox="0 0 240 100" role="img" aria-label="Monthly transactional emails blocked, with Feb and Mar highlighted">
+          <line class="m-axis" x1="6" y1="80" x2="234" y2="80" />
+          <!-- 10 bars; scale 10000 -> 60px max -->
+          <!-- positions every 22.8px starting at x=14 -->
+          <rect class="m-bar" x="14"  y="79.8" width="14" height="0.2" />
+          <rect class="m-bar" x="36.8" y="79.7" width="14" height="0.3" />
+          <rect class="m-bar" x="59.6" y="79.6" width="14" height="0.4" />
+          <rect class="m-bar" x="82.4" y="73.7" width="14" height="6.3" />
+          <rect class="m-bar" x="105.2" y="71.8" width="14" height="8.2" />
+          <rect class="m-bar" x="128"  y="72" width="14" height="8" />
+          <rect class="m-bar-l" x="150.8" y="28.5" width="14" height="51.5" />
+          <rect class="m-bar-l" x="173.6" y="26.7" width="14" height="53.3" />
+          <rect class="m-bar" x="196.4" y="78.5" width="14" height="1.5" />
+          <rect class="m-bar" x="219.2" y="78" width="14" height="2" />
+          <text class="m-tick-lbl" x="21"  y="92" text-anchor="middle">A</text>
+          <text class="m-tick-lbl" x="43.8" y="92" text-anchor="middle">S</text>
+          <text class="m-tick-lbl" x="66.6" y="92" text-anchor="middle">O</text>
+          <text class="m-tick-lbl" x="89.4" y="92" text-anchor="middle">N</text>
+          <text class="m-tick-lbl" x="112.2" y="92" text-anchor="middle">D</text>
+          <text class="m-tick-lbl" x="135" y="92" text-anchor="middle">J</text>
+          <text class="m-tick-lbl" x="157.8" y="92" text-anchor="middle">F</text>
+          <text class="m-tick-lbl" x="180.6" y="92" text-anchor="middle">M</text>
+          <text class="m-tick-lbl" x="203.4" y="92" text-anchor="middle">A</text>
+          <text class="m-tick-lbl" x="226.2" y="92" text-anchor="middle">M</text>
+          <text class="m-val-l" x="234" y="22" text-anchor="end">17,449 blocked, F+M</text>
+        </svg>
+      </div>
+      <div class="body">
+        <h3>Member email failed silently for two months</h3>
+        <p>Between February and March&nbsp;2026, <em>17,449 transactional emails</em> were refused at the destination or blocked at the sender. Newsletter opens fell from roughly <em>75% to 53%</em> in lockstep. That sender carries renewal reminders, password resets, payment-failure notices AND access-support email. When the cred-server rate-limited the UCS-agent, members felt it within hours, because the doors stopped opening. When the email pipe broke for two months, nobody saw it until April's cancellations.</p>
+      </div>
+    </div>
+
+    <!-- ROI thread 3: cost of comms failure -->
+    <div class="roi-finding">
+      <div>
+        <div class="num">1&nbsp;in&nbsp;3<span class="sub">Thread&nbsp;III&nbsp;&middot; Cost&nbsp;of&nbsp;comms&nbsp;failure</span></div>
+        <svg class="micro" viewBox="0 0 240 100" role="img" aria-label="177 of 537 cancellations driven by payment_failed">
+          <!-- Horizontal stacked bar -->
+          <rect x="6" y="40" width="228" height="22" fill="var(--darkgray)" opacity="0.45" />
+          <!-- 177/537 = 33% of width -->
+          <rect class="m-bar-l" x="6" y="40" width="75.3" height="22" />
+          <line class="m-axis" x1="81.3" y1="32" x2="81.3" y2="70" stroke="var(--secondary)" />
+          <text class="m-val-l" x="6" y="32">177 involuntary</text>
+          <text class="m-val" x="234" y="32" text-anchor="end">537 total, 12 mo</text>
+          <text class="m-tick-lbl" x="6" y="80">annual cost: redacted</text>
+          <text class="m-tick-lbl" x="6" y="94">LTV each: redacted</text>
+        </svg>
+      </div>
+      <div class="body">
+        <h3>One in three cancellations was a failed payment</h3>
+        <p>Over the last twelve months, <em>177 cancellations</em> were driven by <code>payment_failed</code> in Stripe. These are members whose card declined and whose recovery emails never reached them. That is <em>one in three</em> of all cancellations, given up by the billing pipeline rather than the product. At observed retention, each prevented involuntary churn is worth about <em>six months</em> of a member's fees. That is the dollar value of "the email reaches the&nbsp;member."</p>
+        <p class="link-back"><em>Read sideways:</em> the same observation applies to access support. A ticket that goes unanswered for three days, a password reset that gets blocked, an approval email that never lands: each one has a measurable cost in the same units.</p>
+      </div>
+    </div>
+
+    <!-- ROI thread 4: April -->
+    <div class="roi-finding">
+      <div>
+        <div class="num">107<span class="sub">Thread&nbsp;IV&nbsp;&middot; April's&nbsp;arithmetic</span></div>
+        <svg class="micro" viewBox="0 0 240 100" role="img" aria-label="Monthly cancellations sparkline with April spike highlighted">
+          <line class="m-axis" x1="6" y1="80" x2="234" y2="80" />
+          <!-- TTM mean reference line -->
+          <line x1="6" y1="59" x2="234" y2="59" stroke="var(--secondary)" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.6" />
+          <text class="m-tick-lbl" x="234" y="56" text-anchor="end">TTM mean ≈ 45</text>
+          <!-- 10 dots, scale 0-120 -> y 80..20 (60px) -->
+          <!-- positions x = 14, 38, 62, 86, 110, 134, 158, 182, 206, 230 -->
+          <polyline class="m-line"
+            points="14,63.5 38,54.5 62,58.5 86,64.5 110,55.5 134,59 158,58.5 182,44 206,26.5 230,51.5" />
+          <circle class="m-dot" cx="14" cy="63.5" r="2" />
+          <circle class="m-dot" cx="38" cy="54.5" r="2" />
+          <circle class="m-dot" cx="62" cy="58.5" r="2" />
+          <circle class="m-dot" cx="86" cy="64.5" r="2" />
+          <circle class="m-dot" cx="110" cy="55.5" r="2" />
+          <circle class="m-dot" cx="134" cy="59" r="2" />
+          <circle class="m-dot" cx="158" cy="58.5" r="2" />
+          <circle class="m-dot" cx="182" cy="44" r="2" />
+          <circle class="m-dot-l" cx="206" cy="26.5" r="3.2" />
+          <circle class="m-dot" cx="230" cy="51.5" r="2" />
+          <text class="m-val-l" x="206" y="20" text-anchor="middle">107</text>
+          <text class="m-tick-lbl" x="206" y="92" text-anchor="middle">Apr</text>
+        </svg>
+      </div>
+      <div class="body">
+        <h3>April&rsquo;s cancellation spike started in February</h3>
+        <p>April&nbsp;2026 logged <em>107 cancellations</em> against a trailing-twelve-month mean of forty-five. The arithmetic is direct: cards declined in February, retry emails were blocked by the deliverability incident, members never updated their card, second retry declined in March, auto-cancellation fired in April. Same structure as the UniFi panic handler returning 200 OK, on a longer clock. Upstream silent failure, downstream visible spike.</p>
+      </div>
+    </div>
+
+    <!-- ROI thread 5: queue exposure -->
+    <div class="roi-finding">
+      <div>
+        <div class="num">19<span class="sub">Thread&nbsp;V&nbsp;&middot; Queue&nbsp;exposure</span></div>
+        <svg class="micro" viewBox="0 0 240 100" role="img" aria-label="19 applicants in queue, 3 marked as waiting longer than three weeks">
+          <!-- Queue of 19 dots in a line, with 3 stale ones marked -->
+          <!-- 19 dots, spacing ~11px starting x=10, y=50 -->
+          <g>
+            <circle class="m-dot-ring" cx="10" cy="50" r="4.5" />
+            <circle class="m-dot-ring" cx="22" cy="50" r="4.5" />
+            <circle class="m-dot-ring" cx="34" cy="50" r="4.5" />
+            <circle class="m-dot" cx="46" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="58" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="70" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="82" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="94" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="106" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="118" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="130" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="142" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="154" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="166" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="178" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="190" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="202" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="214" cy="50" r="3.5" opacity="0.6" />
+            <circle class="m-dot" cx="226" cy="50" r="3.5" opacity="0.6" />
+          </g>
+          <!-- Bracket and label for the stale group -->
+          <path d="M 4 38 L 4 32 L 40 32 L 40 38" fill="none" stroke="var(--secondary)" stroke-width="0.8" />
+          <text class="m-val-l" x="22" y="26" text-anchor="middle">stale &gt; 3 wks</text>
+          <text class="m-tick-lbl" x="10" y="76">3</text>
+          <text class="m-tick-lbl" x="226" y="76" text-anchor="end">19 applicants total</text>
+        </svg>
+      </div>
+      <div class="body">
+        <h3>Applicants stuck waiting on approval emails</h3>
+        <p><em>Nineteen applicants</em> are currently waiting for approval; three of them have been waiting longer than three weeks. Approval emails route through the same affected Brevo sender. The door system hasn't failed the people on the "waiting for approval" list only because it hasn't let them in yet. It's the smallest finding in the chapter and the easiest to reach: a same-day approval SLA plus a verified-reputation sender retires the risk.</p>
+        <p class="link-back"><em>Read forward:</em> the smallest fix in the chapter, the most visible win.</p>
+      </div>
+    </div>
+
+    <p class="closing-quote">The engineer's investigation made the pipe legible. The warehouse priced it. <em>Both numbers point the same direction.</em></p>
+    <p class="to-top"><a href="#contents">&uarr; Back to contents</a></p>
+  </section>
+
+  <!-- ============== AXIS-RULE break ============== -->
+  <div class="axis-rule" aria-hidden="true">
+    <svg viewBox="0 0 1400 28" preserveAspectRatio="none">
+      <line class="ar-line" x1="0" y1="14" x2="1400" y2="14" />
+      <line class="ar-tick" x1="0" y1="9"  x2="0" y2="19" />
+      <line class="ar-tick" x1="180" y1="11" x2="180" y2="17" />
+      <line class="ar-tick-l" x1="360" y1="10" x2="360" y2="18" />
+      <line class="ar-tick" x1="540" y1="11" x2="540" y2="17" />
+      <line class="ar-tick" x1="720" y1="11" x2="720" y2="17" />
+      <line class="ar-tick-l" x1="900" y1="10" x2="900" y2="18" />
+      <line class="ar-tick" x1="1080" y1="11" x2="1080" y2="17" />
+      <line class="ar-tick" x1="1260" y1="11" x2="1260" y2="17" />
+      <line class="ar-tick" x1="1400" y1="9" x2="1400" y2="19" />
+    </svg>
+  </div>
+
+  <!-- ==================== CHAPTER THREE ==================== -->
+  <section class="chapter" id="ch-pattern">
+    <h2 class="chapter">What both investigations share</h2>
+    <p class="chapter-lede">Both investigations describe the same function, applied to different surfaces of the business.</p>
+
+    <h3>The pattern</h3>
+
+    <p>Both threads followed the same path. A misleading surface symptom (&ldquo;ensure your device is connected to the internet&rdquo; on a door reader, an April cancellation spike on a billing dashboard) hid a quiet upstream cause: a panic handler returning 200 OK, or a sending-reputation collapse two months earlier. Each fix needed a map of every actor and what they own (Ubiquiti, the cred-server, and the EFG and UNVR firmware on one side; Stripe, the Brevo sending domain, dunning, and billing-ops on the other), because each fix was a multi-team handoff. And each investigation left infrastructure behind: six standing procedures and a bug-class taxonomy for UniFi, a reusable warehouse-query method for BI. <em>The infrastructure built alongside the investigation is the deliverable.</em></p>
+
+  </section>
+
+  <!-- ==================== DESIGN NOTES ==================== -->
+  <section class="system" id="system" aria-labelledby="system-h">
+    <h2 class="chapter" id="system-h">Design notes</h2>
+    <p class="chapter-lede">Two pieces carry most of the design. <a href="#fig-0">The time strip (Fig.&nbsp;0)</a> puts two layers of failure on one monthly axis, so the delay between them reads directly. <a href="#bug-status">The bug-status grid</a> shows each bug&rsquo;s peak, current level, and status in one cell. Below are the parts the report is built from, with the tokens each one reads. One token set drives the dark, light, and print themes, so a theme changes values, never names.</p>
+
+    <div class="sys-row">
+      <div class="sys-name">Color and type<code>:root</code></div>
+      <div class="sys-spec">
+        <span class="sys-swatch"><i style="--c:var(--secondary)"></i>secondary</span>
+        <span class="sys-swatch"><i style="--c:var(--tertiary)"></i>tertiary</span>
+        <span class="sys-swatch"><i style="--c:var(--dark)"></i>dark</span>
+        <span class="sys-swatch"><i style="--c:var(--darkgray)"></i>darkgray</span>
+        <span class="sys-swatch"><i style="--c:var(--gray)"></i>gray</span>
+        <span class="sys-swatch"><i style="--c:var(--rule)"></i>rule</span>
+        <span class="sys-swatch"><i style="--c:var(--paper)"></i>paper</span>
+        <span class="sys-type"><b class="h">Aa</b>Bricolage Grotesque</span>
+        <span class="sys-type"><b class="m">0.92</b>IBM Plex Mono</span>
+      </div>
+      <dl class="sys-meta">
+        <dt>Rule</dt><dd>One violet points. Grays carry the rest.</dd>
+        <dt>Split</dt><dd>Grotesque argues. Mono measures.</dd>
+      </dl>
+    </div>
+
+    <div class="sys-row">
+      <div class="sys-name">Status badge<code>.badge[data-tier]</code></div>
+      <div class="sys-spec">
+        <span class="badge" data-tier="resolved">resolved</span>
+        <span class="badge" data-tier="dormant">dormant</span>
+        <span class="badge" data-tier="open">open</span>
+        <span class="badge" data-tier="watch">watch</span>
+      </div>
+      <dl class="sys-meta">
+        <dt>Tokens</dt><dd><code>--tier-resolved</code> <code>--tier-dormant</code> <code>--tier-open</code> <code>--tier-watch</code> <code>--label-size</code> <code>--label-track</code></dd>
+        <dt>States</dt><dd>Four tiers, text color only. Open adds weight.</dd>
+      </dl>
+    </div>
+
+    <div class="sys-row">
+      <div class="sys-name">Bug cell<code>.bg-cell</code></div>
+      <div class="sys-spec">
+        <div class="bug-grid">
+          <div class="bg-cell"><div class="bg-head"><span class="bg-id">#n</span><span class="bg-status" data-tier="dormant">dormant</span></div><div class="bg-foot">Default</div></div>
+          <div class="bg-cell open"><div class="bg-head"><span class="bg-id">#n</span><span class="bg-status" data-tier="open">open</span></div><div class="bg-foot"><code>.open</code></div></div>
+          <div class="bg-cell cosmetic"><div class="bg-head"><span class="bg-id">#n</span><span class="bg-status" data-tier="watch">watch</span></div><div class="bg-foot"><code>.cosmetic</code></div></div>
+        </div>
+      </div>
+      <dl class="sys-meta">
+        <dt>Tokens</dt><dd><code>--surface-open</code> <code>--surface-quiet</code> <code>--rule</code></dd>
+        <dt>States</dt><dd>Default, open, quiet, linked. Filtered by tier; previewed from the taxonomy table. The open cell pulses while on screen.</dd>
+      </dl>
+    </div>
+
+    <div class="sys-row">
+      <div class="sys-name">Data strip<code>.data-strip</code></div>
+      <div class="sys-spec">
+        <div class="data-strip">
+          <div><span class="n">00</span><span class="lbl">label</span><span class="delta"><b>key phrase</b>, detail</span></div>
+          <div><span class="n">00</span><span class="lbl">label</span><span class="delta">detail</span></div>
+        </div>
+      </div>
+      <dl class="sys-meta">
+        <dt>Tokens</dt><dd><code>--label-size</code> <code>--label-track</code> <code>--rule</code> <code>--dur-focal</code></dd>
+        <dt>States</dt><dd>Figures count up once on first view. Static in print and with reduced motion.</dd>
+      </dl>
+    </div>
+
+    <div class="sys-row">
+      <div class="sys-name">Disclosure<code>.disc</code></div>
+      <div class="sys-spec">
+        <div class="disc disc-phase">
+          <h3 class="phase"><button type="button" class="disc-btn" aria-expanded="true" aria-controls="disc-sys">Heading as button</button></h3>
+          <div class="disc-body" id="disc-sys"><p>Body text. Opens and closes with a height transition.</p></div>
+        </div>
+      </div>
+      <dl class="sys-meta">
+        <dt>Tokens</dt><dd><code>--secondary</code> <code>--focus-ring</code> <code>--dur-base</code> <code>--dur-fast</code> <code>--ease-out</code></dd>
+        <dt>States</dt><dd>Closed, open, hover, focus. Every disclosure prints open.</dd>
+      </dl>
+    </div>
+
+    <div class="sys-row">
+      <div class="sys-name">ROI finding<code>.roi-finding</code></div>
+      <div class="sys-spec">
+        <div class="roi-finding"><div class="num">00<span class="sub">Thread &middot; label</span></div></div>
+      </div>
+      <dl class="sys-meta">
+        <dt>Tokens</dt><dd><code>--secondary</code> <code>--gray</code> <code>--rule</code></dd>
+        <dt>States</dt><dd>One row per thread. Two columns from 900px.</dd>
+      </dl>
+    </div>
+
+    <div class="sys-row">
+      <div class="sys-name">Terms list<code>dl.terms</code></div>
+      <div class="sys-spec">
+        <dl class="terms"><div><dt>term</dt><dd>a short plain definition</dd></div><div><dt>term</dt><dd>one per jargon word</dd></div></dl>
+      </div>
+      <dl class="sys-meta">
+        <dt>Tokens</dt><dd><code>--secondary</code> <code>--gray</code></dd>
+        <dt>States</dt><dd>Static. Sits before a chapter's first jargon.</dd>
+      </dl>
+    </div>
+
+    <div class="sys-row">
+      <div class="sys-name">Motion<code>--ease-out --dur-*</code></div>
+      <div class="sys-spec">
+        <span class="sys-dur"><i style="--ms:150;--d:var(--dur-fast)"></i>fast 150</span>
+        <span class="sys-dur"><i style="--ms:260;--d:var(--dur-base)"></i>base 260</span>
+        <span class="sys-dur"><i style="--ms:560;--d:var(--dur-slow)"></i>slow 560</span>
+        <span class="sys-dur"><i style="--ms:900;--d:var(--dur-focal)"></i>focal 900</span>
+      </div>
+      <dl class="sys-meta">
+        <dt>Tokens</dt><dd><code>--ease-out</code> <code>--dur-fast</code> <code>--dur-base</code> <code>--dur-slow</code> <code>--dur-focal</code></dd>
+        <dt>States</dt><dd>One curve for anything that arrives. Every state reads complete with reduced motion and in print.</dd>
+      </dl>
+    </div>
+
+    <div class="sys-row">
+      <div class="sys-name">Cross-reference<code>.is-linked</code></div>
+      <div class="sys-spec">
+        <div class="bug-grid sys-solo">
+          <div class="bg-cell is-linked"><div class="bg-head"><span class="bg-id">#n</span><span class="bg-status" data-tier="dormant">dormant</span></div><div class="bg-foot">Linked</div></div>
+        </div>
+      </div>
+      <dl class="sys-meta">
+        <dt>Tokens</dt><dd><code>--secondary</code> <code>--highlight</code> <code>--dur-fast</code></dd>
+        <dt>States</dt><dd>A Fig.&nbsp;0 phase, its passage, and the bugs that passage names light together. Phase tags open their passage.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ==================== COLOPHON ==================== -->
+  <footer class="colophon">
+    <div class="col-grid">
+      <div>
+        <h3>Sources</h3>
+        <p><b>UniFi Fabrics Investigation, Retrospective.md</b>, authored and stewarded by the client's infrastructure engineer. Ubiquiti support case <span class="redact" style="--w:7" role="img" aria-label="redacted case number" title="Support case number redacted"></span>. Window: 17&nbsp;April to 18&nbsp;May&nbsp;2026.</p>
+        <p><b>Client BI data warehouse</b>, read-only access via <code>bi_live</code> and <code>bi_external</code> on 19&nbsp;May&nbsp;2026. Five SQL&nbsp;queries.</p>
+      </div>
+      <div>
+        <h3>Who owns what now</h3>
+        <p><b>UniFi technical execution</b>: the infrastructure engineer. Continued monitoring via the status report. Ubiquiti firmware fix pending for Bug&nbsp;#11.</p>
+        <p><b>BI remediation</b>: the infrastructure engineer for the engineering fixes, billing-ops for dunning, comms for member outreach, the CEO for upward visibility.</p>
+        <p><b>Coordination</b>: Stedman Halliday, Head of Product &amp; Systems, continued.</p>
+      </div>
+      <div>
+        <h3>About this copy</h3>
+        <p>Prepared for the client's CEO. Shared here as a work sample. Client names, the support case number, and all financial figures are redacted. Panel&nbsp;A of the time strip is an illustrative shape, not plotted data.</p>
+      </div>
+    </div>
+    <div class="sig">Designed and written by Stedman Halliday</div>
+  </footer>
+
+</div><!-- /.page -->
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function canMove() { return !reduce.matches; }
+  var hasIO = 'IntersectionObserver' in window;
+  // Motion timings come from the same tokens the CSS reads.
+  var tokens = getComputedStyle(root);
+  var EASE = tokens.getPropertyValue('--ease-out').trim() || 'ease-out';
+  var ms = function (name) { return parseFloat(tokens.getPropertyValue(name)) || 0; };
+
+  // Disclosures: everything stays readable without JS; with JS, only marked sections start open.
+  // Open and close animate height; reduced motion switches instantly.
+  document.querySelectorAll('.disc').forEach(function (d) {
+    var btn = d.querySelector('.disc-btn'), body = d.querySelector('.disc-body'), anim = null;
+    function set(open, animate) {
+      btn.setAttribute('aria-expanded', open);
+      if (anim) { anim.cancel(); anim = null; body.classList.remove('is-moving'); }
+      if (!animate || !canMove() || !body.animate) { body.hidden = !open; return; }
+      body.hidden = false;
+      var h = body.scrollHeight;
+      body.classList.add('is-moving');
+      anim = body.animate(
+        open ? [{ height: '0px', opacity: 0 }, { height: h + 'px', opacity: 1 }]
+             : [{ height: h + 'px', opacity: 1 }, { height: '0px', opacity: 0 }],
+        { duration: open ? ms('--dur-base') : ms('--dur-fast'), easing: EASE });
+      anim.onfinish = function () { body.classList.remove('is-moving'); body.hidden = !open; anim = null; };
+    }
+    set(d.hasAttribute('data-open'), false);
+    btn.addEventListener('click', function () { set(btn.getAttribute('aria-expanded') !== 'true', true); });
+  });
+
+  // Small screens: open the time strip on April and May, where the story is.
+  document.querySelectorAll('.hs-scroll').forEach(function (el) { el.scrollLeft = el.scrollWidth; });
+
+  // Fig. 0 draws once on first view: Panel A's line, then Panel B's bars and line, then the notes.
+  var strip = document.querySelector('.hero-strip');
+  if (strip && hasIO && canMove()) {
+    strip.querySelectorAll('.hs-area-stroke, .hs-line-c').forEach(function (p) { p.setAttribute('pathLength', '1'); p.classList.add('hs-draw'); });
+    strip.querySelectorAll('.hs-bar, .hs-bar-l, .hs-line-c').forEach(function (el) { el.classList.add('hs-b'); });
+    root.classList.add('motion');
+    var stripIO = new IntersectionObserver(function (es) {
+      if (es.some(function (e) { return e.isIntersecting; })) { strip.classList.add('drawn'); stripIO.disconnect(); }
+    }, { threshold: 0.25 });
+    stripIO.observe(strip.querySelector('.hs-scroll') || strip);
+  }
+
+  // Fig. 0 crosshair: pointing at a month marks that column in both panels.
+  var chart = strip && strip.querySelector('svg.hs-chart');
+  if (chart) {
+    var NS = 'http://www.w3.org/2000/svg', X0 = 80, COL = 124;
+    var colOf = function (x) { return Math.floor((x - X0) / COL); };
+    var hot = [];
+    chart.querySelectorAll('.hs-mlbl, .hs-bar, .hs-bar-l, .hs-dot-c').forEach(function (el) {
+      var x = el.tagName === 'circle' ? +el.getAttribute('cx') : +el.getAttribute('x') + (el.tagName === 'rect' ? 16 : 0);
+      var i = colOf(x);
+      (hot[i] = hot[i] || []).push(el);
+    });
+    var cross = document.createElementNS(NS, 'line');
+    cross.setAttribute('class', 'hs-cross');
+    cross.setAttribute('y1', '60'); cross.setAttribute('y2', '400');
+    chart.insertBefore(cross, chart.querySelector('.hs-axis'));
+    var hits = document.createElementNS(NS, 'g');
+    hits.setAttribute('class', 'hs-hits');
+    var lit = -1;
+    var light = function (i) {
+      if (i === lit) return;
+      if (unlink) unlink();
+      (hot[lit] || []).forEach(function (el) { el.classList.remove('is-hot'); });
+      lit = i;
+      chart.classList.toggle('is-crossed', i >= 0);
+      if (i < 0) return;
+      var x = X0 + COL * i + COL / 2;
+      cross.setAttribute('x1', x); cross.setAttribute('x2', x);
+      hot[i].forEach(function (el) { el.classList.add('is-hot'); });
+    };
+    hot.forEach(function (_, i) {
+      var r = document.createElementNS(NS, 'rect');
+      r.setAttribute('class', 'hs-hit');
+      r.setAttribute('x', X0 + COL * i); r.setAttribute('width', COL);
+      r.setAttribute('y', '52'); r.setAttribute('height', '356');
+      r.addEventListener('pointerenter', function () { light(i); });
+      hits.append(r);
+    });
+    chart.append(hits);
+    chart.addEventListener('pointerleave', function () { light(-1); });
+  }
+
+  // Cross-reference: each Fig. 0 phase tag, its Timeline passage, and the bug cells that passage
+  // names ("Bug #n") light together. Phase 4 names no bug; its passage is about the dormant tier.
+  var phaseTags = chart ? [].slice.call(chart.querySelectorAll('.hs-phase-tag')) : [];
+  var phaseDiscs = [].slice.call(document.querySelectorAll('#ch-investigation .disc-phase'));
+  if (phaseTags.length && phaseTags.length === phaseDiscs.length) {
+    var cellById = function (n) { return document.getElementById('bug-' + n); };
+    var phases = phaseDiscs.map(function (d, i) {
+      var named = (d.querySelector('.disc-body').textContent.match(/Bug\s#\d+/g) || []).map(function (m) { return cellById(m.replace(/\D/g, '')); }).filter(Boolean);
+      if (!named.length) named = [].slice.call(document.querySelectorAll('#ch-investigation .bg-cell')).filter(function (c) { var t = c.querySelector('.bg-status'); return t && t.getAttribute('data-tier') === 'dormant'; });
+      return { tag: phaseTags[i], disc: d, cells: named, x: +phaseTags[i].getAttribute('x') };
+    });
+    // A cell links back to the first phase that names it; the tier fallback only claims what is left.
+    var homeOf = new Map();
+    phases.forEach(function (ph) { ph.cells.forEach(function (c) { if (!homeOf.has(c)) homeOf.set(c, ph); }); });
+    var linkedNow = [];
+    // The chart now holds focusable links, so it is a labelled group, not a flat image.
+    chart.setAttribute('role', 'group');
+    var unlink = function () {
+      linkedNow.forEach(function (el) { el.classList.remove('is-linked'); });
+      linkedNow = [];
+      if (lit < 0) chart.classList.remove('is-crossed');
+    };
+    // withCells: false when the link starts from a cell, so one cell does not light its siblings.
+    var link = function (ph, withCells, only) {
+      unlink();
+      lit = -1;
+      (hot.flat ? hot.flat() : []).forEach(function (el) { el.classList.remove('is-hot'); });
+      cross.setAttribute('x1', ph.x); cross.setAttribute('x2', ph.x);
+      linkedNow = [ph.tag, ph.disc, cross].concat(withCells ? ph.cells : only ? [only] : []);
+      linkedNow.forEach(function (el) { el.classList.add('is-linked'); });
+      chart.classList.add('is-crossed');
+    };
+    var go = function (ph, byKey) {
+      var btn = ph.disc.querySelector('.disc-btn');
+      if (btn.getAttribute('aria-expanded') !== 'true') btn.click();
+      ph.disc.scrollIntoView({ block: 'center', behavior: canMove() ? 'smooth' : 'auto' });
+      if (byKey) btn.focus({ preventScroll: true });
+    };
+    phases.forEach(function (ph) {
+      var t = ph.tag, bb = t.getBBox();
+      t.setAttribute('tabindex', '0');
+      t.setAttribute('role', 'link');
+      t.setAttribute('aria-label', [].map.call(ph.disc.querySelector('.disc-btn').childNodes, function (n) { return n.textContent.trim(); }).join(', '));
+      var r = document.createElementNS(NS, 'rect');
+      r.setAttribute('class', 'hs-ph-hit');
+      r.setAttribute('x', bb.x - 6); r.setAttribute('y', bb.y - 14);
+      r.setAttribute('width', bb.width + 12); r.setAttribute('height', bb.height + 18);
+      chart.append(r);
+      [r, t].forEach(function (el) {
+        el.addEventListener('pointerenter', function () { link(ph, true); });
+        el.addEventListener('click', function () { go(ph); });
+      });
+      t.addEventListener('focus', function () { link(ph, true); });
+      t.addEventListener('blur', unlink);
+      t.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); go(ph, true); } });
+      ph.disc.addEventListener('pointerenter', function () { link(ph, true); });
+      ph.disc.addEventListener('pointerleave', unlink);
+      ph.cells.forEach(function (c) {
+        if (homeOf.get(c) !== ph) return;
+        c.addEventListener('pointerenter', function () { link(ph, false, c); });
+        c.addEventListener('pointerleave', unlink);
+      });
+    });
+    chart.addEventListener('pointerleave', unlink);
+  }
+
+  // Bug #11 pulses only while it is on screen.
+  var openCell = document.querySelector('#ch-investigation .bg-cell.open');
+  if (openCell && hasIO && canMove()) {
+    new IntersectionObserver(function (es) { openCell.classList.toggle('is-live', es[0].isIntersecting); }).observe(openCell);
+  }
+
+  // Data-strip figures count up once. The real value stays in the accessibility tree throughout.
+  var counters = [];
+  var dstrip = document.querySelector('#ch-investigation .data-strip');
+  if (dstrip && hasIO && canMove()) {
+    dstrip.querySelectorAll('.n').forEach(function (n) {
+      if (n.children.length || !/\d/.test(n.textContent)) return;
+      var final = n.textContent, shown = document.createElement('span');
+      shown.setAttribute('aria-hidden', 'true');
+      shown.textContent = final.replace(/\d+/g, '0');
+      n.textContent = '';
+      var real = document.createElement('span'); real.className = 'sr-only'; real.textContent = final;
+      n.append(real, shown);
+      counters.push({ n: n, final: final, shown: shown, done: false });
+    });
+    var countIO = new IntersectionObserver(function (es) {
+      if (!es.some(function (e) { return e.isIntersecting; })) return;
+      countIO.disconnect();
+      counters.forEach(function (c) {
+        var t0 = null;
+        c.shown.style.fontVariantNumeric = 'tabular-nums';
+        (function frame(t) {
+          if (c.done) return;
+          if (t0 === null) t0 = t;
+          var k = Math.min(1, (t - t0) / ms('--dur-focal')), e = 1 - Math.pow(1 - k, 4);
+          if (k < 1) {
+            c.shown.textContent = c.final.replace(/\d+/g, function (m) { return Math.round(+m * e); });
+            requestAnimationFrame(frame);
+          } else { finish(c); }
+        })(performance.now());
+      });
+    }, { threshold: 0.5 });
+    countIO.observe(dstrip);
+  }
+  function finish(c) { if (c.done) return; c.done = true; c.n.textContent = c.final; }
+
+  // Tier filter on the bug grid.
+  var legend = document.querySelector('#ch-investigation p.bg-legend');
+  var groups = [].slice.call(document.querySelectorAll('#ch-investigation .bug-grid-group'));
+  var cells = [].slice.call(document.querySelectorAll('#ch-investigation .bug-grid-group .bg-cell'));
+  var filter = function () {};
+  if (legend && cells.length) {
+    var tierOf = function (c) { var s = c.querySelector('.bg-status'); return s ? s.getAttribute('data-tier') : ''; };
+    var names = { resolved: 'Resolved', dormant: 'Dormant', open: 'Open', watch: 'Watch', all: 'All' };
+    var bar = document.createElement('div');
+    bar.className = 'tier-tabs';
+    bar.setAttribute('role', 'group');
+    bar.setAttribute('aria-label', 'Filter bugs by status');
+    var live = document.createElement('p');
+    live.className = 'sr-only tier-status';
+    live.setAttribute('role', 'status');
+    ['resolved', 'dormant', 'open', 'watch', 'all'].forEach(function (t) {
+      var count = t === 'all' ? cells.length : cells.filter(function (c) { return tierOf(c) === t; }).length;
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('data-tier', t);
+      b.setAttribute('aria-pressed', String(t === 'all'));
+      b.append(names[t]);
+      var ct = document.createElement('span'); ct.className = 'ct'; ct.textContent = count; b.append(ct);
+      b.addEventListener('click', function () { filter(t, true); });
+      bar.append(b);
+    });
+    legend.after(bar, live);
+    filter = function (t, announce) {
+      bar.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-tier') === t)); });
+      var shown = 0;
+      cells.forEach(function (c) {
+        var on = t === 'all' || tierOf(c) === t;
+        c.classList.toggle('is-out', !on);
+        c.classList.remove('is-in');
+        if (on) shown++;
+      });
+      if (canMove()) { void bar.offsetWidth; cells.forEach(function (c) { if (!c.classList.contains('is-out')) c.classList.add('is-in'); }); }
+      groups.forEach(function (g) { g.classList.toggle('is-out', !g.querySelector('.bg-cell:not(.is-out)')); });
+      if (announce) live.textContent = 'Showing ' + shown + ' of ' + cells.length + ' bug cells';
+    };
+  }
+  // A link to a filtered-out bug clears the filter first.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#bug-"]');
+    var t = a && document.getElementById(a.hash.slice(1));
+    if (t && t.classList.contains('is-out')) filter('all', true);
+  });
+
+  // Preview card on the taxonomy table's #n links: hover with a mouse, or keyboard focus.
+  var peek = document.createElement('div');
+  peek.className = 'bug-peek';
+  peek.setAttribute('aria-hidden', 'true');
+  document.body.append(peek);
+  var hover = window.matchMedia('(hover: hover) and (pointer: fine)'), timer = null;
+  function showPeek(a) {
+    var cell = document.getElementById(a.hash.slice(1));
+    if (!cell) return;
+    var clone = cell.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.classList.remove('is-out', 'is-in', 'is-live', 'is-linked');
+    peek.replaceChildren(clone);
+    var r = a.getBoundingClientRect(), w = peek.offsetWidth, h = peek.offsetHeight;
+    var x = Math.min(Math.max(8, r.left - 12), window.innerWidth - w - 8);
+    var y = r.bottom + 8;
+    if (y + h > window.innerHeight - 8) y = Math.max(8, r.top - h - 8);
+    peek.style.left = x + 'px';
+    peek.style.top = y + 'px';
+    peek.classList.add('on');
+  }
+  function hidePeek() { clearTimeout(timer); peek.classList.remove('on'); }
+  // WCAG 1.4.13: a short grace period lets the pointer cross the gap and rest on the card.
+  function hideSoon() { clearTimeout(timer); timer = setTimeout(hidePeek, 200); }
+  peek.addEventListener('mouseenter', function () { clearTimeout(timer); });
+  peek.addEventListener('mouseleave', hideSoon);
+  document.querySelectorAll('table.taxonomy td.bugs a[href^="#bug-"]').forEach(function (a) {
+    a.addEventListener('mouseenter', function () { if (!hover.matches) return; clearTimeout(timer); timer = setTimeout(function () { showPeek(a); }, 120); });
+    a.addEventListener('mouseleave', hideSoon);
+    a.addEventListener('focus', function () { if (a.matches(':focus-visible')) showPeek(a); });
+    a.addEventListener('blur', hidePeek);
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hidePeek(); });
+  window.addEventListener('scroll', hidePeek, { passive: true });
+
+  // Light / dark toggle. Dark is the default; the choice is remembered when storage allows.
+  var tbtn = document.querySelector('.theme-toggle');
+  if (tbtn) {
+    var syncTheme = function () { tbtn.setAttribute('aria-pressed', String(root.getAttribute('data-theme') === 'light')); };
+    tbtn.hidden = false;
+    syncTheme();
+    tbtn.addEventListener('click', function () {
+      var light = root.getAttribute('data-theme') !== 'light';
+      function apply() {
+        if (light) root.setAttribute('data-theme', 'light'); else root.removeAttribute('data-theme');
+        syncTheme();
+      }
+      try { localStorage.setItem('theme', light ? 'light' : 'dark'); } catch (e) {}
+      // The new theme wipes down from the bar where it was chosen.
+      if (!document.startViewTransition || !canMove()) { apply(); return; }
+      root.classList.add('theme-wipe');
+      document.startViewTransition(apply).finished.finally(function () { root.classList.remove('theme-wipe'); });
+    });
+  }
+
+  // Scroll-spy for the sticky contents bar.
+  var toc = document.querySelector('nav.toc');
+  var links = toc ? [].slice.call(toc.querySelectorAll('a[href^="#"]')) : [];
+  var targets = links.map(function (a) { return document.getElementById(a.hash.slice(1)); });
+  var ticking = false, current = -1, ind = null;
+  if (toc) {
+    ind = document.createElement('span');
+    ind.className = 'toc-ind';
+    ind.setAttribute('aria-hidden', 'true');
+    toc.append(ind);
+    toc.classList.add('has-ind');
+  }
+  // One indicator slides to the current link; from nothing, it grows in from the link's left edge.
+  function placeInd(animate) {
+    var a = links[current];
+    if (!a) { ind.style.opacity = '0'; return; }
+    var at = 'translate(' + a.offsetLeft + 'px,' + (a.offsetTop + a.offsetHeight - 2) + 'px) ';
+    if (ind.style.opacity !== '1' || !animate) {
+      ind.style.transition = 'none';
+      ind.style.transform = at + (animate ? 'scaleX(0)' : 'scaleX(' + a.offsetWidth + ')');
+      void ind.offsetWidth;
+      ind.style.transition = '';
+    }
+    ind.style.opacity = '1';
+    ind.style.transform = at + 'scaleX(' + a.offsetWidth + ')';
+  }
+  function spy() {
+    ticking = false;
+    var line = toc.offsetHeight + window.innerHeight * 0.25, cur = -1;
+    targets.forEach(function (t, i) { if (t && t.getBoundingClientRect().top <= line) cur = i; });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) cur = targets.length - 1;
+    if (cur === current) return;
+    current = cur;
+    links.forEach(function (a, i) { if (i === cur) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+    placeInd(true);
+    var a = links[cur];
+    if (a && toc.scrollWidth > toc.clientWidth) {
+      var left = a.offsetLeft - 24;
+      if (a.offsetLeft < toc.scrollLeft || a.offsetLeft + a.offsetWidth > toc.scrollLeft + toc.clientWidth) toc.scrollTo({ left: left, behavior: canMove() ? 'smooth' : 'auto' });
+    }
+  }
+  if (toc) {
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(spy); } }, { passive: true });
+    window.addEventListener('resize', function () { spy(); placeInd(false); });
+    if (document.fonts) document.fonts.ready.then(function () { placeInd(false); });
+    spy();
+  }
+
+  // Printed copies are static and complete: every section open, every bug shown, every figure final.
+  window.addEventListener('beforeprint', function () {
+    document.querySelectorAll('.disc-body').forEach(function (b) { b.hidden = false; });
+    if (strip) strip.classList.add('drawn');
+    counters.forEach(finish);
+    filter('all', false);
+    hidePeek();
+  });
+})();
+</script>
+
+</body>
+</html>
+{% endraw %}
